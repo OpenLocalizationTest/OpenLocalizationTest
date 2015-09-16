@@ -1,0 +1,9 @@
+{
+"quality":"human",
+"locales":["zh-CN", "de-DE"],
+"files": {
+  "resx": {
+    "dest": "<locoutput.:locale>",
+  }
+}
+}
