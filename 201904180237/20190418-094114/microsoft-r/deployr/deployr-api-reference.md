@@ -1,0 +1,1513 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="deployr-api-reference.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-d1654b2" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">20cd1eea-d819-421c-a8f6-e0e067dea926f8f1779588b363d4f2475aed3ec642a857854f27.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">f8f1779588b363d4f2475aed3ec642a857854f27</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">20cd1eea-d819-421c-a8f6-e0e067dea926</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">04/18/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\deployr\deployr-api-reference.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>DeployR API Overview - DeployR 8.x</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>DeployR API Reference Guide</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>DeployR API Overview</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to: DeployR 8.x<ept id="p1">**</ept>   (See <bpt id="p2">[</bpt>comparison between 8.x and 9.x<ept id="p2">](../whats-new-in-r-server.md#8vs9)</ept>)</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Looking to deploy with Machine Learning Server?</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Start here<ept id="p1">](../what-is-operationalization.md)</ept>.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>The DeployR API exposes the R platform as a service allowing the integration of R statistics, analytics, and visualizations inside Web, desktop and mobile applications.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>This API is exposed by the DeployR server, a standards-based server technology capable of scaling to meet the needs of enterprise-grade deployments.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>With the advent of DeployR, the full statistics, analytics and visualization capabilities of R can now be directly used inside Web, desktop and mobile applications.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;big&gt;</bpt>Looking for a specific API call? <bpt id="p2">[</bpt>Look in this online API reference.<ept id="p2">](https://microsoft.github.io/deployr-api-docs/8.0.5)</ept><ept id="p1">&lt;/big&gt;</ept></source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>R for Application Developers</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>While data scientists can work with R directly in a console window or IDE, application developers need a different set of tools to use R inside applications.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>The DeployR API exposes <bpt id="p1">**</bpt>R analytics Web services<ept id="p1">**</ept>, making the full capabilities of R available to application developers on a simple yet powerful Web services API.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>As an application developer integrating with <bpt id="p1">**</bpt>DeployR-managed analytics Web services<ept id="p1">**</ept>, typically your interest is in executing R code, not writing it.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Data scientists with R programming skills write R code.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>With one-click in the <bpt id="p1">[</bpt>DeployR Repository Manager<ept id="p1">](deployr-repository-manager-about.md)</ept>, this R code can be turned into a DeployR-managed analytics Web service.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Once R code is exposed by DeployR as a service, an application can make API calls to pass inputs to the service, execute the service, and retrieve outputs from the service.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Those outputs can include R object data, R graphics output such as plots and charts, and any file data written to the working directory associated the current R session.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Each time a service is executed on the API, the service makes use of an R session that is managed by DeployR as a <bpt id="p1">**</bpt>project<ept id="p1">**</ept> on behalf of the application.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Depending on the nature and requirements of your application, you can choose to execute services on <bpt id="p1">[</bpt><bpt id="p2">*</bpt>anonymous<ept id="p2">*</ept> or <bpt id="p3">*</bpt>authenticated<ept id="p3">*</ept> projects<ept id="p1">](#projects)</ept>.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>To simplify integration of R analytics Web services using the DeployR API, we provide <bpt id="p1">[</bpt>several client libraries<ept id="p1">](deployr-tools-and-samples.md)</ept>, which are currently available for Java, JavaScript and .NET developers.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>A major benefit of using these client libraries is that they simplify making calls, encoding data, and handling response markup on the API.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Users on the API</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>The User APIs exist principally to facilitate user authentication with the DeployR server.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Additionally, the <bpt id="p1">[</bpt>/r/user/autosave<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-user-autosave)</ept> call can be used to enable or disable autosave semantics on persistent projects for the duration of the users HTTP session.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Authenticated Users<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>One of the first steps for most typical applications using this API is to provide a mechanism for users to authenticate with the DeployR server by signing-in and signing-out of the application.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>To sign in, a user must provide username and password credentials.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>These credentials are verified by the DeployR server using the <bpt id="p1">[</bpt>/r/user/login<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-user-login)</ept> call.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Credentials are matched against user account data stored in the DeployR database or against user account data stored in LDAP, Active Directory, or PAM directory services.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>If these credentials are verified by the DeployR server, then we say that the user is an <bpt id="p1">*</bpt>authenticated<ept id="p1">*</ept> user.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>An <bpt id="p1">*</bpt>authenticated<ept id="p1">*</ept> user is granted access to the full API, allowing the user to work on <bpt id="p2">[</bpt>projects<ept id="p2">](#projects-on-the-api)</ept>, submit or schedule <bpt id="p3">[</bpt>jobs<ept id="p3">](#jobs-on-the-api)</ept> and work with <bpt id="p4">[</bpt>repository-managed<ept id="p4">](#repository-on-the-api)</ept> files and scripts.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Pre-Authenticated Users<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>There are situations where a user may have been reliably authenticated by some external system such as SiteMinder prior to accessing a DeployR-enabled Web application.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>These types of pre-authentication scenarios are now supported by the server.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Consequently, DeployR-enabled Web applications should omit sign-in and sign-out logic when <bpt id="p1">*</bpt>pre-authenticated<ept id="p1">*</ept> users are expected.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Anonymous Users<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>While many require the security and control associated with <bpt id="p1">*</bpt>authenticated<ept id="p1">*</ept> users, there are cases when an application may want to offer specific services to users without ever establishing a formal verification of the user's identity.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>In such situations, we say that the user is an <bpt id="p1">*</bpt>anonymous<ept id="p1">*</ept> user.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Typically an <bpt id="p1">*</bpt>anonymous<ept id="p1">*</ept> user is an unauthenticated visitor to a DeployR-enabled Web application.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Anonymous<ept id="p1">*</ept> users are only granted access to a single API call, <bpt id="p2">[</bpt>/r/repository/script/execute<ept id="p2">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-execute)</ept>.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Projects on the API</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>A <bpt id="p1">*</bpt>project<ept id="p1">*</ept> on the DeployR API represents an R session.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Most R users are accustomed to working with R interactively in an R console window.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>In this environment, users can input commands to manipulate, analyze, visualize, and interpret object and file data in the R session.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>The set of objects in the R session is collectively known as the <bpt id="p1">*</bpt>workspace<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>The set of files in the R session is collectively known as the <bpt id="p1">*</bpt>working directory<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>The R session environment also supports libraries, which allows the functionality found in R packages to be loaded by the user on-demand.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>The DeployR environment supports this same set of functionalities by introducing the concept of <bpt id="p1">*</bpt>projects<ept id="p1">*</ept> on the API.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>As with working in an R console window, all operations on project APIs are synchronous, where requests are processed serially and blocked until completion.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>The project management APIs facilitate basic lifecycle management for projects.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>DeployR supports a number of different types of projects, each of which is designed to support distinct workflows within client applications.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>The following sections discuss the different types of projects available:</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Anonymous Projects</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>An <bpt id="p1">*</bpt>anonymous project<ept id="p1">*</ept> is a project created by an <bpt id="p2">*</bpt>anonymous user<ept id="p2">*</ept>.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>There are two types of anonymous project: <bpt id="p1">**</bpt>stateless projects<ept id="p1">**</ept> and <bpt id="p2">**</bpt>HTTP blackbox projects<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>The types of projects can be created using the following API calls:</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>API Call</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/script/execute<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-execute)</ept></source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Executes a repository-managed script on an anonymous project</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/script/render<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-render)</ept></source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Executes a repository-managed script on an anonymous project and renders outputs to HTML</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Anonymous<ept id="p1">*</ept> users are not permitted to work directly with the Project APIs.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Those APIs are only available to <bpt id="p1">*</bpt>authenticated<ept id="p1">*</ept> users.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Stateless Projects<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Stateless projects are useful when an application needs to make a one-off request on an R session.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>It may help to think of a stateless project as a disposable R session, that is used once and then discarded.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Once the service request has responded with the results of the execution the R session is shutdown and permanently deleted by the server.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>There are many types of application workflows that can benefit from working with stateless projects.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>HTTP Blackbox Projects<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>With the introduction of HTTP <bpt id="p1">*</bpt>blackbox<ept id="p1">*</ept> projects, stateful R sessions are now available to <bpt id="p2">*</bpt>anonymous<ept id="p2">*</ept> users.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>HTTP blackbox projects are useful when an application needs to maintain the same R session for the duration of an <bpt id="p1">*</bpt>anonymous<ept id="p1">*</ept> user's HTTP session.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Once the HTTP session expires or the server detects that the <bpt id="p1">*</bpt>anonymous<ept id="p1">*</ept> user has been idle (default: 15-minutes idle timeout) the HTTP blackbox project and all associated state are permanently deleted by the server.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>There can only be one HTTP blackbox project live on an HTTP session at any given time.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>To execute an R script on an HTTP blackbox project, enable the <bpt id="p1">***</bpt>blackbox<ept id="p1">***</ept> parameter on the following calls: <bpt id="p2">[</bpt>/r/repository/script/execute<ept id="p2">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-execute)</ept> and <bpt id="p3">[</bpt>/r/repository/script/render<ept id="p3">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-render)</ept></source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>There are two types of data that can be returned when executing an R script on an HTTP blackbox project:</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Unnamed plots generated by the R graphics device on the execution are returned as results</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>Named workspace objects identified on the <bpt id="p1">*</bpt>robjects<ept id="p1">*</ept> parameter can be returned as DeployR-encoded R objects</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>All files in an HTTP blackbox project's working directory are completely hidden from the user.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>These calls also support a <bpt id="p1">***</bpt>recycle<ept id="p1">***</ept> parameter that can be used when working with HTTP blackbox projects.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>When this parameter is enabled, the underlying R session is recycled before the execution occurs.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>Recycling an R session deletes all R objects from the workspace and all files from the working directory.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>The ability to <bpt id="p1">*</bpt>recycle<ept id="p1">*</ept> an HTTP blackbox project gives an <bpt id="p2">*</bpt>anonymous<ept id="p2">*</ept> user control over the R session lifecycle.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>To interrupt an execution on the HTTP blackbox project on the current HTTP session, use the <bpt id="p1">[</bpt>/r/repository/script/interrupt<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-interrupt)</ept>.</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>Authenticated Projects</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>An <bpt id="p1">*</bpt>authenticated project<ept id="p1">*</ept> is a project created by an authenticated user.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>There are three types of authenticated project:</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>Temporary Project</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>User Blackbox Project</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>Persistent Project</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Authenticated projects<ept id="p1">*</ept> can be created using the following API calls:</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>API Call</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/create<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-create)</ept></source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>Creates a new temporary, user blackbox or persistent project</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/pool<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-pool)</ept></source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>Creates a pool of temporary projects</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Authenticated<ept id="p1">*</ept> users own projects.</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>Each <bpt id="p1">*</bpt>authenticated<ept id="p1">*</ept> user can create zero, one or more projects.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>Each project is allocated its own workspace and working directory on the server and maintains its own set of R package dependencies along with a full R command history.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>A user can execute R code on a project using the <bpt id="p1">[</bpt>/r/project/execute/code<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-code)</ept> and <bpt id="p2">[</bpt>/r/project/execute/script<ept id="p2">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-script)</ept> calls and retrieve the R command history for the project using the <bpt id="p3">[</bpt>/r/project/execute/history<ept id="p3">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-history)</ept> call.</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>Given an <bpt id="p1">*</bpt>authenticated<ept id="p1">*</ept> user can do everything an <bpt id="p2">*</bpt>anonymous<ept id="p2">*</ept> user can do on the API, it is possible for an <bpt id="p3">*</bpt>authenticated<ept id="p3">*</ept> user to create and work with <bpt id="p4">*</bpt>anonymous<ept id="p4">*</ept> projects as described in the section <bpt id="p5">[</bpt>Anonymous Projects<ept id="p5">](#anonymous-projects)</ept>.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Temporary Projects<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>Temporary projects are useful when an application needs to maintain the same R session for the duration of an <bpt id="p1">*</bpt>authenticated<ept id="p1">*</ept> user's session within the application.</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>Once the user makes an explicit call on <bpt id="p1">[</bpt>/r/project/close<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-close)</ept> or signs-out of the application the temporary project and all associated state are permanently deleted by the server.</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>A user can create a temporary project by omitting the name parameter on the <bpt id="p1">[</bpt>/r/project/create<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-create)</ept> call or they can create a pool of temporary projects using the <bpt id="p2">[</bpt>/r/project/pool<ept id="p2">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-pool)</ept> call.</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>All unnamed projects are temporary projects.</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>User Blackbox Projects<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>A user blackbox project is a special type of temporary project that limits API access on the underlying R session.</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>User blackbox projects are most useful when an application developer wants to associate a temporary project with a user without granting that user unfettered access to the underlying R session.</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>There are two types of data that can be returned when executing an R script on a user blackbox project:</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">_</bpt>Unnamed plots<ept id="p1">_</ept> generated by the R graphics device on the execution are returned as results</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">_</bpt>Named workspace objects<ept id="p1">_</ept> identified on the robjects parameter can be returned as DeployR-encoded R objects</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>All files in a user blackbox project's working directory are completely hidden from the user.</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>User blackbox projects can be created using the <ph id="ph1">`blackbox`</ph> parameter on the following API calls:</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>API Call</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/create<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-create)</ept></source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>Creates a new project</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/pool<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-pool)</ept></source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>Creates a pool of temporary projects</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>User blackbox projects permit only the following subset of project-related API calls:</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>API Call</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/execute/script<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-script)</ept></source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>Executes a script on project</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/execute/interrupt<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-interrupt)</ept></source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source>Interrupts a code execution on project</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/ping<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-ping)</ept></source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source>Pings a project</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/recycle<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-recycle)</ept></source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source>Recycles a project R session</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/close<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-close)</ept></source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source>Closes a project</source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve">
+          <source>This set of API calls on user blackbox projects is collectively known as the <bpt id="p1">&lt;em&gt;</bpt>User Blackbox API Controls<ept id="p1">&lt;/em&gt;</ept>.</source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve">
+          <source>A user blackbox project also ensure that none of the R code from the R scripts that are executed on that project is ever returned in the response markup.</source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Persistent Projects<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="239" translate="yes" xml:space="preserve">
+          <source>Persistent projects are useful when an application needs to maintain the same R session across multiple user sessions within the application.</source>
+        </trans-unit><trans-unit id="240" translate="yes" xml:space="preserve">
+          <source>A persistent project is stored indefinitely in the server unless it is explicitly deleted by the user.</source>
+        </trans-unit><trans-unit id="241" translate="yes" xml:space="preserve">
+          <source>Each time a user executes R code on their persistent project, the accumulated R objects in the workspace and files in the working directory from previous service executions remain available.</source>
+        </trans-unit><trans-unit id="242" translate="yes" xml:space="preserve">
+          <source>Whenever users return to the server, their own persistent projects are available so that users can pick up where they last left off.</source>
+        </trans-unit><trans-unit id="243" translate="yes" xml:space="preserve">
+          <source>In this way, persistent projects can be developed over days, weeks, months even years.</source>
+        </trans-unit><trans-unit id="244" translate="yes" xml:space="preserve">
+          <source>The server stores the following state for each persistent project:</source>
+        </trans-unit><trans-unit id="245" translate="yes" xml:space="preserve">
+          <source>Project workspace</source>
+        </trans-unit><trans-unit id="246" translate="yes" xml:space="preserve">
+          <source>Project working directory</source>
+        </trans-unit><trans-unit id="247" translate="yes" xml:space="preserve">
+          <source>Project package dependencies</source>
+        </trans-unit><trans-unit id="248" translate="yes" xml:space="preserve">
+          <source>Project R command history and associated results</source>
+        </trans-unit><trans-unit id="249" translate="yes" xml:space="preserve">
+          <source>An <bpt id="p1">*</bpt>authenticated<ept id="p1">*</ept> user can create a persistent project by specifying a value for the <bpt id="p2">*</bpt>name<ept id="p2">*</ept> parameter on the <bpt id="p3">[</bpt>/r/project/create<ept id="p3">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-create)</ept> call.</source>
+        </trans-unit><trans-unit id="250" translate="yes" xml:space="preserve">
+          <source>Alternatively, if a user is working on a temporary project then that project can become persistent once the user makes a call on <bpt id="p1">[</bpt>/r/project/save<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-save)</ept> which has the effect of naming the project.</source>
+        </trans-unit><trans-unit id="251" translate="yes" xml:space="preserve">
+          <source>All <bpt id="p1">*</bpt>named<ept id="p1">*</ept> projects are <bpt id="p2">*</bpt>persistent<ept id="p2">*</ept> projects.</source>
+        </trans-unit><trans-unit id="252" translate="yes" xml:space="preserve">
+          <source>Live Projects on the Grid</source>
+        </trans-unit><trans-unit id="253" translate="yes" xml:space="preserve">
+          <source>A  <bpt id="p1">**</bpt>live project<ept id="p1">**</ept>  is any project, temporary or persistent, that is actively in use on the <bpt id="p2">[</bpt>DeployR grid<ept id="p2">](#architecture)</ept>.</source>
+        </trans-unit><trans-unit id="254" translate="yes" xml:space="preserve">
+          <source>By definition, all temporary projects are live projects.</source>
+        </trans-unit><trans-unit id="255" translate="yes" xml:space="preserve">
+          <source>A user can have zero, one or more projects live on the grid at any one time.</source>
+        </trans-unit><trans-unit id="256" translate="yes" xml:space="preserve">
+          <source>To ensure a fair distribution of server runtime resources across all users, the DeployR administrator can limit the number of live projects permitted for a given user at any one time.</source>
+        </trans-unit><trans-unit id="257" translate="yes" xml:space="preserve">
+          <source>When a user reaches his or her live project limit, all further API calls on new projects are rejected until one or more of that user's current live projects are closed using the <bpt id="p1">[</bpt>/r/project/close<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-close)</ept> call.</source>
+        </trans-unit><trans-unit id="258" translate="yes" xml:space="preserve">
+          <source>Calls that are rejected due to live project limits indicate an appropriate <bpt id="p1">[</bpt>Grid Resource Error<ept id="p1">](#codes)</ept> on the response code.</source>
+        </trans-unit><trans-unit id="259" translate="yes" xml:space="preserve">
+          <source>Working with Project Management APIs</source>
+        </trans-unit><trans-unit id="260" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Creating Projects<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="261" translate="yes" xml:space="preserve">
+          <source>There are a number of ways to create projects on the API, including the following:</source>
+        </trans-unit><trans-unit id="262" translate="yes" xml:space="preserve">
+          <source>API Call</source>
+        </trans-unit><trans-unit id="263" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="264" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/create<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-create)</ept></source>
+        </trans-unit><trans-unit id="265" translate="yes" xml:space="preserve">
+          <source>Create a new project</source>
+        </trans-unit><trans-unit id="266" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/saveas<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-saveas)</ept></source>
+        </trans-unit><trans-unit id="267" translate="yes" xml:space="preserve">
+          <source>Clone an existing project</source>
+        </trans-unit><trans-unit id="268" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/import<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-import)</ept></source>
+        </trans-unit><trans-unit id="269" translate="yes" xml:space="preserve">
+          <source>Import a project archive</source>
+        </trans-unit><trans-unit id="270" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;strong&gt;</bpt>Saving Projects<ept id="p1">&lt;/strong&gt;</ept></source>
+        </trans-unit><trans-unit id="271" translate="yes" xml:space="preserve">
+          <source>There are a number of ways to save projects on the API, including the following:</source>
+        </trans-unit><trans-unit id="272" translate="yes" xml:space="preserve">
+          <source>API Call</source>
+        </trans-unit><trans-unit id="273" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="274" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/save<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-save)</ept></source>
+        </trans-unit><trans-unit id="275" translate="yes" xml:space="preserve">
+          <source>Save an existing project</source>
+        </trans-unit><trans-unit id="276" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/saveas<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-saveas)</ept></source>
+        </trans-unit><trans-unit id="277" translate="yes" xml:space="preserve">
+          <source>Clone an existing project</source>
+        </trans-unit><trans-unit id="278" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/export<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-export)</ept></source>
+        </trans-unit><trans-unit id="279" translate="yes" xml:space="preserve">
+          <source>Export a project archive</source>
+        </trans-unit><trans-unit id="280" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;strong&gt;</bpt>Closing Projects<ept id="p1">&lt;/strong&gt;</ept></source>
+        </trans-unit><trans-unit id="281" translate="yes" xml:space="preserve">
+          <source>To close a live project, use the  <bpt id="p1">[</bpt>/r/project/close<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-close)</ept> API call.</source>
+        </trans-unit><trans-unit id="282" translate="yes" xml:space="preserve">
+          <source>Closing a live project (temporary or persistent) deactivates the project, which in turn removes it from the grid and releases all associated server runtime resources.</source>
+        </trans-unit><trans-unit id="283" translate="yes" xml:space="preserve">
+          <source>Remember, that closing a temporary project will permanently delete that project.</source>
+        </trans-unit><trans-unit id="284" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Deleting Projects<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="285" translate="yes" xml:space="preserve">
+          <source>To delete a persistent project, use the <bpt id="p1">[</bpt>/r/project/delete<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-delete)</ept> API call.</source>
+        </trans-unit><trans-unit id="286" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Project Archives<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="287" translate="yes" xml:space="preserve">
+          <source>A project archive is generated by exporting the entire state of a persistent project into a compressed archive file using the <bpt id="p1">[</bpt>/r/project/export<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-export)</ept> API call.</source>
+        </trans-unit><trans-unit id="288" translate="yes" xml:space="preserve">
+          <source>Once exported, this file resides outside of the DeployR server.</source>
+        </trans-unit><trans-unit id="289" translate="yes" xml:space="preserve">
+          <source>Project archives are useful both as a general backup mechanism and as a means of sharing work between colleagues, particularly colleagues working on different DeployR installations.</source>
+        </trans-unit><trans-unit id="290" translate="yes" xml:space="preserve">
+          <source>A user can import a project archive back into any compatible DeployR server in order to produce a new, persistent project using the <bpt id="p1">[</bpt>/r/project/import<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-import)</ept> API call.</source>
+        </trans-unit><trans-unit id="291" translate="yes" xml:space="preserve">
+          <source>Project Ownership <ph id="ph1">&amp;amp;</ph> Collaboration</source>
+        </trans-unit><trans-unit id="292" translate="yes" xml:space="preserve">
+          <source>As noted, each <bpt id="p1">*</bpt>authenticated<ept id="p1">*</ept> user can create zero, one or more projects.</source>
+        </trans-unit><trans-unit id="293" translate="yes" xml:space="preserve">
+          <source>Each newly created project is by default privately owned, and visible only to its creator.</source>
+        </trans-unit><trans-unit id="294" translate="yes" xml:space="preserve">
+          <source>Such user-based privacy is a central aspect of the DeployR security model.</source>
+        </trans-unit><trans-unit id="295" translate="yes" xml:space="preserve">
+          <source>However, there are scenarios in which a more flexible access model for projects would benefit users by facilitating collaboration among them.</source>
+        </trans-unit><trans-unit id="296" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Persistent Project Read-Only Collaboration<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="297" translate="yes" xml:space="preserve">
+          <source>A project owner may wish to share a project by granting read-only access to fellow <bpt id="p1">*</bpt>authenticated<ept id="p1">*</ept> users on the same DeployR server.</source>
+        </trans-unit><trans-unit id="298" translate="yes" xml:space="preserve">
+          <source>Once read-only access has been granted, it facilitates discussions, demonstrations and so on.</source>
+        </trans-unit><trans-unit id="299" translate="yes" xml:space="preserve">
+          <source>To facilitate these kinds of workflows the <bpt id="p1">[</bpt>/r/project/about/update<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-about-update)</ept> call allows users to toggle the read-only "shared" access controls on any of their private projects.</source>
+        </trans-unit><trans-unit id="300" translate="yes" xml:space="preserve">
+          <source>Using this call to enable shared/read-only access on a project makes the project visible to all authenticated users.</source>
+        </trans-unit><trans-unit id="301" translate="yes" xml:space="preserve">
+          <source>Using this call to disable shared/read-only access on a project makes the project invisible to all but the project owner(s).</source>
+        </trans-unit><trans-unit id="302" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Persistent Project Read-Write Collaboration<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="303" translate="yes" xml:space="preserve">
+          <source>At times a project owner may also wish to grant read-write access on a project to fellow <bpt id="p1">*</bpt>authenticated<ept id="p1">*</ept> users sharing the same DeployR server so they can actively collaborate on the development of a project.</source>
+        </trans-unit><trans-unit id="304" translate="yes" xml:space="preserve">
+          <source>This type of project collaboration would be beneficial, for example, as part of a planned multistage development or simply to permit work on the project to continue when the original project owner goes on vacation.</source>
+        </trans-unit><trans-unit id="305" translate="yes" xml:space="preserve">
+          <source>To facilitate these kinds of workflows a project owner can now grant authorship rights on a project to one or more <bpt id="p1">*</bpt>authenticated<ept id="p1">*</ept> users using the <bpt id="p2">[</bpt>/r/project/grant<ept id="p2">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-grant)</ept> call.</source>
+        </trans-unit><trans-unit id="306" translate="yes" xml:space="preserve">
+          <source>Once a user has been granted authorship rights on a project they effectively co-own the project and can view, modify and even delete the project.</source>
+        </trans-unit><trans-unit id="307" translate="yes" xml:space="preserve">
+          <source>Where multiple users have been granted authorship rights on a project the server ensures that only one user can be actively working on the project at any one time.</source>
+        </trans-unit><trans-unit id="308" translate="yes" xml:space="preserve">
+          <source>Deleting a project with multiple authors simply revokes authorship rights to the project for the caller.</source>
+        </trans-unit><trans-unit id="309" translate="yes" xml:space="preserve">
+          <source>After the call, all other authors on the project still have full access to the project.</source>
+        </trans-unit><trans-unit id="310" translate="yes" xml:space="preserve">
+          <source>If the last remaining author deletes a project, then the project is permanently deleted.</source>
+        </trans-unit><trans-unit id="311" translate="yes" xml:space="preserve">
+          <source>Project Execution APIs</source>
+        </trans-unit><trans-unit id="312" translate="yes" xml:space="preserve">
+          <source>Callers can use the project execution APIs to facilitate the execution of R code and the retrieval of the project's execution history associated results.</source>
+        </trans-unit><trans-unit id="313" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>R Code Execution<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="314" translate="yes" xml:space="preserve">
+          <source>There are two ways to execute R code on a project:</source>
+        </trans-unit><trans-unit id="315" translate="yes" xml:space="preserve">
+          <source>Execute a block of R code directly using the <bpt id="p1">[</bpt>/r/project/execute/code<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-code)</ept> call.</source>
+        </trans-unit><trans-unit id="316" translate="yes" xml:space="preserve">
+          <source>Execute a repository-managed script using the <bpt id="p1">[</bpt>/r/project/execute/script<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-script)</ept> call.</source>
+        </trans-unit><trans-unit id="317" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Important!<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="318" translate="yes" xml:space="preserve">
+          <source>Any project execution can be interrupted using the <bpt id="p1">[</bpt>/r/project/execute/interrupt<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-interrupt)</ept> call.</source>
+        </trans-unit><trans-unit id="319" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>R Code Execution History<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="320" translate="yes" xml:space="preserve">
+          <source>To retrieve the R code execution history on a project, use the <bpt id="p1">[</bpt>/r/project/execute/history<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-history)</ept> call.</source>
+        </trans-unit><trans-unit id="321" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>R Code Execution Artifacts<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="322" translate="yes" xml:space="preserve">
+          <source>Artifacts are files, that are explicitly named in R code and written to the project's working directory.</source>
+        </trans-unit><trans-unit id="323" translate="yes" xml:space="preserve">
+          <source>To retrieve an artifact on a project, use the <bpt id="p1">[</bpt>/r/project/directory/download<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-directory-download)</ept> call.</source>
+        </trans-unit><trans-unit id="324" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>R Code Execution Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="325" translate="yes" xml:space="preserve">
+          <source>Results are files, that are implicitly named in R code, generated by the R graphics device and stored as part of a project's execution history.</source>
+        </trans-unit><trans-unit id="326" translate="yes" xml:space="preserve">
+          <source>To retrieve results on a project, use the <bpt id="p1">[</bpt>/r/project/execute/result/download<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-result-download)</ept> call.</source>
+        </trans-unit><trans-unit id="327" translate="yes" xml:space="preserve">
+          <source>Project Workspace APIs</source>
+        </trans-unit><trans-unit id="328" translate="yes" xml:space="preserve">
+          <source>The project workspace APIs facilitate working with objects found in the project workspace.</source>
+        </trans-unit><trans-unit id="329" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Workspace Object Retrieval<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="330" translate="yes" xml:space="preserve">
+          <source>Retrieve a summary list of objects found in the workspace using the <bpt id="p1">[</bpt>/r/project/workspace/list<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-workspace-list)</ept> call.</source>
+        </trans-unit><trans-unit id="331" translate="yes" xml:space="preserve">
+          <source>Retrieve a DeployR-encoded representation of one or more objects found in the workspace using the <bpt id="p1">[</bpt>/r/project/workspace/get<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-workspace-get)</ept> call.</source>
+        </trans-unit><trans-unit id="332" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Workspace Object Creation<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="333" translate="yes" xml:space="preserve">
+          <source>Typically objects are created in the workspace when commands are executed.</source>
+        </trans-unit><trans-unit id="334" translate="yes" xml:space="preserve">
+          <source>However, there are a number of APIs that allow the direct creation of objects in the workspace:</source>
+        </trans-unit><trans-unit id="335" translate="yes" xml:space="preserve">
+          <source>Upload an object into the workspace from a file on the users computer using the <bpt id="p1">[</bpt>/r/project/workspace/upload<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-workspace-upload)</ept> call.</source>
+        </trans-unit><trans-unit id="336" translate="yes" xml:space="preserve">
+          <source>Transfer an object into the workspace from a URL using the <bpt id="p1">[</bpt>/r/project/workspace/transfer<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-workspace-transfer)</ept> call.</source>
+        </trans-unit><trans-unit id="337" translate="yes" xml:space="preserve">
+          <source>Push an object into the workspace from a DeployR-encoded object using the <bpt id="p1">[</bpt>/r/project/workspace/push<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-workspace-push)</ept> call.</source>
+        </trans-unit><trans-unit id="338" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Workspace Objects and the Repository<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="339" translate="yes" xml:space="preserve">
+          <source>Workspace objects can be stored directly to the repository using the <bpt id="p1">[</bpt>/r/project/workspace/store<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-workspace-store)</ept> call.</source>
+        </trans-unit><trans-unit id="340" translate="yes" xml:space="preserve">
+          <source>Repository-managed files containing R binary objects can be loaded directly to the workspace using the <bpt id="p1">[</bpt>/r/project/workspace/load<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-workspace-load)</ept> call.</source>
+        </trans-unit><trans-unit id="341" translate="yes" xml:space="preserve">
+          <source>Project Directory APIs</source>
+        </trans-unit><trans-unit id="342" translate="yes" xml:space="preserve">
+          <source>The project directory APIs facilitate working with files found in the project working directory.</source>
+        </trans-unit><trans-unit id="343" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Directory File Retrieval<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="344" translate="yes" xml:space="preserve">
+          <source>API Call</source>
+        </trans-unit><trans-unit id="345" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="346" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/directory/list<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-directory-list)</ept></source>
+        </trans-unit><trans-unit id="347" translate="yes" xml:space="preserve">
+          <source>Retrieve a summary list of files found in the working directory</source>
+        </trans-unit><trans-unit id="348" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/directory/download<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-directory-download)</ept></source>
+        </trans-unit><trans-unit id="349" translate="yes" xml:space="preserve">
+          <source>Retrieve individual files found in the working directory</source>
+        </trans-unit><trans-unit id="350" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/directory/download<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-directory-download)</ept></source>
+        </trans-unit><trans-unit id="351" translate="yes" xml:space="preserve">
+          <source>Retrieve a compressed archive containing all files found in the working directory</source>
+        </trans-unit><trans-unit id="352" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;strong&gt;</bpt>Directory File Creation<ept id="p1">&lt;/strong&gt;</ept></source>
+        </trans-unit><trans-unit id="353" translate="yes" xml:space="preserve">
+          <source>Typically files are created in the working directory when commands are executed.</source>
+        </trans-unit><trans-unit id="354" translate="yes" xml:space="preserve">
+          <source>However, there are a number of APIs that allow the direct creation of files in the working directory:</source>
+        </trans-unit><trans-unit id="355" translate="yes" xml:space="preserve">
+          <source>API Call</source>
+        </trans-unit><trans-unit id="356" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="357" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/directory/upload<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-directory-upload)</ept></source>
+        </trans-unit><trans-unit id="358" translate="yes" xml:space="preserve">
+          <source>Upload a file into the working directory from a file on the users computer</source>
+        </trans-unit><trans-unit id="359" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/directory/transfer<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-directory-transfer)</ept></source>
+        </trans-unit><trans-unit id="360" translate="yes" xml:space="preserve">
+          <source>Transfer a file into the working directory from a URL</source>
+        </trans-unit><trans-unit id="361" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/directory/write<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-directory-write)</ept></source>
+        </trans-unit><trans-unit id="362" translate="yes" xml:space="preserve">
+          <source>Write a text file into the working directory</source>
+        </trans-unit><trans-unit id="363" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;strong&gt;</bpt>Directory Files and the Repository<ept id="p1">&lt;/strong&gt;</ept></source>
+        </trans-unit><trans-unit id="364" translate="yes" xml:space="preserve">
+          <source>API Call</source>
+        </trans-unit><trans-unit id="365" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="366" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/directory/store<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-directory-store)</ept></source>
+        </trans-unit><trans-unit id="367" translate="yes" xml:space="preserve">
+          <source>Store directory files directly to the repository</source>
+        </trans-unit><trans-unit id="368" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/directory/load<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-directory-load)</ept></source>
+        </trans-unit><trans-unit id="369" translate="yes" xml:space="preserve">
+          <source>Load repository-managed files directly into the working directory</source>
+        </trans-unit><trans-unit id="370" translate="yes" xml:space="preserve">
+          <source>Project Package APIs</source>
+        </trans-unit><trans-unit id="371" translate="yes" xml:space="preserve">
+          <source>The project package APIs facilitate R package dependency management for projects.</source>
+        </trans-unit><trans-unit id="372" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Directory File Retrieval<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="373" translate="yes" xml:space="preserve">
+          <source>API Call</source>
+        </trans-unit><trans-unit id="374" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="375" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/package/list<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-package-list)</ept></source>
+        </trans-unit><trans-unit id="376" translate="yes" xml:space="preserve">
+          <source>Retrieve a list of all packages loaded for a project</source>
+        </trans-unit><trans-unit id="377" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/package/attach<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-package-attach)</ept></source>
+        </trans-unit><trans-unit id="378" translate="yes" xml:space="preserve">
+          <source>Load individual packages for a project</source>
+        </trans-unit><trans-unit id="379" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/package/detach<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-package-detach)</ept></source>
+        </trans-unit><trans-unit id="380" translate="yes" xml:space="preserve">
+          <source>Unload individual packages for a project</source>
+        </trans-unit><trans-unit id="381" translate="yes" xml:space="preserve">
+          <source>Jobs on the API</source>
+        </trans-unit><trans-unit id="382" translate="yes" xml:space="preserve">
+          <source>Working with R interactively in an R console window or working with projects on the API are both examples of synchronous working environments where a user can make a request that is blocked until processing completes and an appropriate response is generated and returned.</source>
+        </trans-unit><trans-unit id="383" translate="yes" xml:space="preserve">
+          <source>When working with R interactively, the response is displayed as output in the R console window.</source>
+        </trans-unit><trans-unit id="384" translate="yes" xml:space="preserve">
+          <source>When working with projects on the API, the response is well-formed markup on the response stream.</source>
+        </trans-unit><trans-unit id="385" translate="yes" xml:space="preserve">
+          <source>However, there are times when it can be advantageous to permit users to make requests without requiring that they wait for responses.</source>
+        </trans-unit><trans-unit id="386" translate="yes" xml:space="preserve">
+          <source>For example, consider long-running operations that could take hours or even days to complete.</source>
+        </trans-unit><trans-unit id="387" translate="yes" xml:space="preserve">
+          <source>The DeployR environment supports these types of long-running operations by introducing the concept of <bpt id="p1">*</bpt>jobs<ept id="p1">*</ept> on the API.</source>
+        </trans-unit><trans-unit id="388" translate="yes" xml:space="preserve">
+          <source>DeployR managed jobs support the execution of commands in the background on behalf of users.</source>
+        </trans-unit><trans-unit id="389" translate="yes" xml:space="preserve">
+          <source>The Job APIs facilitate working with DeployR managed jobs.</source>
+        </trans-unit><trans-unit id="390" translate="yes" xml:space="preserve">
+          <source>Jobs support the execution of commands in the background on behalf of users.</source>
+        </trans-unit><trans-unit id="391" translate="yes" xml:space="preserve">
+          <source>Submitting Versus Scheduling Jobs</source>
+        </trans-unit><trans-unit id="392" translate="yes" xml:space="preserve">
+          <source>Jobs can be submitted for immediate background execution using the <bpt id="p1">[</bpt>/r/job/submit<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-job-submit)</ept> call.</source>
+        </trans-unit><trans-unit id="393" translate="yes" xml:space="preserve">
+          <source>Jobs can be scheduled for execution at some later date or on a recurring basis using the <bpt id="p1">[</bpt>/r/job/schedule<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-job-schedule)</ept> call.</source>
+        </trans-unit><trans-unit id="394" translate="yes" xml:space="preserve">
+          <source>Job Scheduling Priority</source>
+        </trans-unit><trans-unit id="395" translate="yes" xml:space="preserve">
+          <source>When a user submits or schedules a job, they can identify a high, medium, or low (default) priority for their job.</source>
+        </trans-unit><trans-unit id="396" translate="yes" xml:space="preserve">
+          <source>Each priority level has its own dedicated jobs queue managed by the jobs scheduler.</source>
+        </trans-unit><trans-unit id="397" translate="yes" xml:space="preserve">
+          <source>Jobs in higher priority job queues are guaranteed to be executed on the grid ahead of jobs in lower priority job queues.</source>
+        </trans-unit><trans-unit id="398" translate="yes" xml:space="preserve">
+          <source>Put another way, jobs in higher priority job queues are assigned free slots on the grid ahead of jobs on lower priority queues.</source>
+        </trans-unit><trans-unit id="399" translate="yes" xml:space="preserve">
+          <source>Jobs on the same jobs queue are executed on the grid in the order in which they were submitted.</source>
+        </trans-unit><trans-unit id="400" translate="yes" xml:space="preserve">
+          <source>High, medium, and low priority job queues allow users to expedite higher priority jobs by 'jumping the queue', and to expedite jobs to best fit specific scheduling needs.</source>
+        </trans-unit><trans-unit id="401" translate="yes" xml:space="preserve">
+          <source>Retrieving Job Results</source>
+        </trans-unit><trans-unit id="402" translate="yes" xml:space="preserve">
+          <source>Users can query the status of their jobs using the <bpt id="p1">[</bpt>/r/job/query<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-job-query)</ept> call that returns the current status for a given job.</source>
+        </trans-unit><trans-unit id="403" translate="yes" xml:space="preserve">
+          <source>Users can cancel a scheduled job or an actively running job using the <bpt id="p1">[</bpt>/r/job/cancel<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-job-cancel)</ept> call.</source>
+        </trans-unit><trans-unit id="404" translate="yes" xml:space="preserve">
+          <source>Regardless of whether a job runs to completion or whether a job is interrupted or aborted by the user the DeployR server creates a new project for the user by default.</source>
+        </trans-unit><trans-unit id="405" translate="yes" xml:space="preserve">
+          <source>This project will be named after the job that created it and contains a complete workspace, working directory, package dependencies, command history, and associated results generated by that job.</source>
+        </trans-unit><trans-unit id="406" translate="yes" xml:space="preserve">
+          <source>The user can then work with the full set of Project APIs to manipulate, analyze, visualize, and interpret all of the objects, files, and generated plots resulting from the job.</source>
+        </trans-unit><trans-unit id="407" translate="yes" xml:space="preserve">
+          <source>However, if the <ph id="ph1">`storenoproject`</ph> parameter is set to true when submitting the job then a project is not created when the job completes.</source>
+        </trans-unit><trans-unit id="408" translate="yes" xml:space="preserve">
+          <source>Using the <ph id="ph1">`storenoproject`</ph> parameter can be very resource efficient and improve throughput when the only data you care about has already been stored in the repository using the storeobjects and/or storefiles parameters.</source>
+        </trans-unit><trans-unit id="409" translate="yes" xml:space="preserve">
+          <source>If the <ph id="ph1">`storenoproject`</ph> parameter is not set to true, then a project is always created to hold the results of a job unless the job experiences a runtime error during execution, for example, the R code being executed on the job has syntax errors or attempts to reference undefined objects.</source>
+        </trans-unit><trans-unit id="410" translate="yes" xml:space="preserve">
+          <source>In such cases, see the <ph id="ph1">`statusMsg`</ph> property on a failed job for an indication of the underlying cause of the problem.</source>
+        </trans-unit><trans-unit id="411" translate="yes" xml:space="preserve">
+          <source>All completed, interrupted, and aborted jobs result in new projects for users.</source>
+        </trans-unit><trans-unit id="412" translate="yes" xml:space="preserve">
+          <source>Understanding the Jobs Lifecycle</source>
+        </trans-unit><trans-unit id="413" translate="yes" xml:space="preserve">
+          <source>The following diagram provides an overview of the full set of Job APIs and indicates the lifecycle of jobs managed by those APIs:</source>
+        </trans-unit><trans-unit id="414" translate="yes" xml:space="preserve">
+          <source>Repository on the API</source>
+        </trans-unit><trans-unit id="415" translate="yes" xml:space="preserve">
+          <source>The DeployR environment offers each <bpt id="p1">*</bpt>authenticated<ept id="p1">*</ept> user their own versioned file storage by introducing the concept of a repository on the API.</source>
+        </trans-unit><trans-unit id="416" translate="yes" xml:space="preserve">
+          <source>The repository provides a persistent store for user files of any type, including binary object files, plot image files, data files, simple text files, and files containing blocks of R code that are referred to as <bpt id="p1">[</bpt>repository-managed scripts<ept id="p1">](#reposcripts)</ept>.</source>
+        </trans-unit><trans-unit id="417" translate="yes" xml:space="preserve">
+          <source>Because the repository supports a versioned file system, a full version history for each file is maintained and any version of a file can be retrieved upon request.</source>
+        </trans-unit><trans-unit id="418" translate="yes" xml:space="preserve">
+          <source>By default, each private repository store exposes a single repository directory, known as the root directory.</source>
+        </trans-unit><trans-unit id="419" translate="yes" xml:space="preserve">
+          <source>Users can store files in and retrieve files from their root directory.</source>
+        </trans-unit><trans-unit id="420" translate="yes" xml:space="preserve">
+          <source>In addition, users can manage their own set of custom and archived directories.</source>
+        </trans-unit><trans-unit id="421" translate="yes" xml:space="preserve">
+          <source>Working with the root, custom and archived directories is detailed in the following section.</source>
+        </trans-unit><trans-unit id="422" translate="yes" xml:space="preserve">
+          <source>Repository Directories</source>
+        </trans-unit><trans-unit id="423" translate="yes" xml:space="preserve">
+          <source>The Repository Directory APIs facilitate working with repository-managed directories.</source>
+        </trans-unit><trans-unit id="424" translate="yes" xml:space="preserve">
+          <source>Repository-managed directories fall into two distinct categories:</source>
+        </trans-unit><trans-unit id="425" translate="yes" xml:space="preserve">
+          <source>User Directories</source>
+        </trans-unit><trans-unit id="426" translate="yes" xml:space="preserve">
+          <source>System Directories</source>
+        </trans-unit><trans-unit id="427" translate="yes" xml:space="preserve">
+          <source>User Directories</source>
+        </trans-unit><trans-unit id="428" translate="yes" xml:space="preserve">
+          <source>Each authenticated user maintains their own set of private user directories.</source>
+        </trans-unit><trans-unit id="429" translate="yes" xml:space="preserve">
+          <source>The set of user directories can be further divided into the following user directory types:</source>
+        </trans-unit><trans-unit id="430" translate="yes" xml:space="preserve">
+          <source>Root directory</source>
+        </trans-unit><trans-unit id="431" translate="yes" xml:space="preserve">
+          <source>Custom directories</source>
+        </trans-unit><trans-unit id="432" translate="yes" xml:space="preserve">
+          <source>Archived directories</source>
+        </trans-unit><trans-unit id="433" translate="yes" xml:space="preserve">
+          <source>By default, each authenticated user has access to their own root directory in the repository.</source>
+        </trans-unit><trans-unit id="434" translate="yes" xml:space="preserve">
+          <source>When working with repository Files, all API calls default to operating on the root directory if a specific custom or archived directory is not specified on the directory parameter.</source>
+        </trans-unit><trans-unit id="435" translate="yes" xml:space="preserve">
+          <source>Each authenticated user can also create zero, one or more custom directories.</source>
+        </trans-unit><trans-unit id="436" translate="yes" xml:space="preserve">
+          <source>Each custom directory becomes a subdirectory of the root directory.</source>
+        </trans-unit><trans-unit id="437" translate="yes" xml:space="preserve">
+          <source>Custom directories can be useful to help manage logical groups of files across multiple projects, customers, applications etc.</source>
+        </trans-unit><trans-unit id="438" translate="yes" xml:space="preserve">
+          <source>Users can also archive the contents of their root directory or the contents of any of their custom directories within archived directories.</source>
+        </trans-unit><trans-unit id="439" translate="yes" xml:space="preserve">
+          <source>This can be a useful way to preserve old but valuable files over time while reducing day-to-day directory clutter.</source>
+        </trans-unit><trans-unit id="440" translate="yes" xml:space="preserve">
+          <source>By default, archived directories do not appear in the response markup when a user makes a call to <bpt id="p1">[</bpt>/r/repository/directory/list<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-directory-list)</ept>.</source>
+        </trans-unit><trans-unit id="441" translate="yes" xml:space="preserve">
+          <source>However, when the <ph id="ph1">`archived`</ph> parameter is enabled on that call, any archived directories belonging to the user appears in the response markup.</source>
+        </trans-unit><trans-unit id="442" translate="yes" xml:space="preserve">
+          <source>System Directories</source>
+        </trans-unit><trans-unit id="443" translate="yes" xml:space="preserve">
+          <source>System directories are virtual directories that exist only in the context of the response markup on the <bpt id="p1">[</bpt>/r/repository/directory/list<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-directory-list)</ept> call.</source>
+        </trans-unit><trans-unit id="444" translate="yes" xml:space="preserve">
+          <source>These directories are provided as a convenient way for a user working with the Repository Directory APIs to get access to repository-managed files that are shared or made public by other users.</source>
+        </trans-unit><trans-unit id="445" translate="yes" xml:space="preserve">
+          <source>There are just three system directories:</source>
+        </trans-unit><trans-unit id="446" translate="yes" xml:space="preserve">
+          <source>Restricted directory.</source>
+        </trans-unit><trans-unit id="447" translate="yes" xml:space="preserve">
+          <source>The Restricted system directory maintains a list of files that have been shared-with-restrictions by other authenticated users.</source>
+        </trans-unit><trans-unit id="448" translate="yes" xml:space="preserve">
+          <source>These files have had their access controls set to restricted access.</source>
+        </trans-unit><trans-unit id="449" translate="yes" xml:space="preserve">
+          <source>Shared directory.</source>
+        </trans-unit><trans-unit id="450" translate="yes" xml:space="preserve">
+          <source>The Shared system directory maintains a list of files that have been shared by other authenticated users.</source>
+        </trans-unit><trans-unit id="451" translate="yes" xml:space="preserve">
+          <source>These files have had their access controls set to shared access.</source>
+        </trans-unit><trans-unit id="452" translate="yes" xml:space="preserve">
+          <source>Public directory.</source>
+        </trans-unit><trans-unit id="453" translate="yes" xml:space="preserve">
+          <source>The Public system directory maintains a list of files that have been published by other authenticated users.</source>
+        </trans-unit><trans-unit id="454" translate="yes" xml:space="preserve">
+          <source>These files have had their access controls set to public access.</source>
+        </trans-unit><trans-unit id="455" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Important<ept id="p1">**</ept>: As all files appearing in the system directories belong to other users, these files cannot be copied, moved, modified, archived, or deleted using the Repository Directory APIs.</source>
+        </trans-unit><trans-unit id="456" translate="yes" xml:space="preserve">
+          <source>Repository-Managed Files</source>
+        </trans-unit><trans-unit id="457" translate="yes" xml:space="preserve">
+          <source>Each user has access to a private repository store.</source>
+        </trans-unit><trans-unit id="458" translate="yes" xml:space="preserve">
+          <source>Each file placed in that store is maintained indefinitely by the server unless it is explicitly deleted by the user.</source>
+        </trans-unit><trans-unit id="459" translate="yes" xml:space="preserve">
+          <source>Repository-managed files can be easily loaded by users directly into <bpt id="p1">[</bpt>anonymous projects<ept id="p1">](#anonymous-projects)</ept>, <bpt id="p2">[</bpt>authenticated projects<ept id="p2">](#authenticated-projects)</ept> as well as into jobs.</source>
+        </trans-unit><trans-unit id="460" translate="yes" xml:space="preserve">
+          <source>For example, a binary object file in the repository can be loaded directly into a project workspace using the <bpt id="p1">[</bpt>/r/project/workspace/load<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-workspace-load)</ept> call.</source>
+        </trans-unit><trans-unit id="461" translate="yes" xml:space="preserve">
+          <source>A data file can be loaded directly into a project working directory using the <bpt id="p1">[</bpt>/r/project/directory/load<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-directory-load)</ept> call.</source>
+        </trans-unit><trans-unit id="462" translate="yes" xml:space="preserve">
+          <source>Conversely, objects in a project workspace and files in a project working directory can be stored directly to the repository using the <bpt id="p1">[</bpt>/r/project/workspace/store<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-workspace-store)</ept> and <bpt id="p2">[</bpt>/r/project/directory/store<ept id="p2">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-directory-store)</ept> calls respectively.</source>
+        </trans-unit><trans-unit id="463" translate="yes" xml:space="preserve">
+          <source>Repository-managed files can also be loaded directly into the workspace or working directory ahead of executing code on <bpt id="p1">[</bpt>anonymous projects<ept id="p1">](#anonymous-projects)</ept> or an <bpt id="p2">*</bpt>asynchronous job<ept id="p2">*</ept>.</source>
+        </trans-unit><trans-unit id="464" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Repository File Ownership &amp; Collaboration<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="465" translate="yes" xml:space="preserve">
+          <source>By default, files in a user's private repository are visible only to that user.</source>
+        </trans-unit><trans-unit id="466" translate="yes" xml:space="preserve">
+          <source>Such user-based privacy is a central aspect of the DeployR security model.</source>
+        </trans-unit><trans-unit id="467" translate="yes" xml:space="preserve">
+          <source>However, there are situations that can benefit from a more flexible access model for repository-managed files.</source>
+        </trans-unit><trans-unit id="468" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Repository File Read-Only Collaboration<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="469" translate="yes" xml:space="preserve">
+          <source>A user may wish to share a file in their private repository by granting read-only access to fellow <bpt id="p1">*</bpt>authenticated<ept id="p1">*</ept> and/or <bpt id="p2">*</bpt>anonymous<ept id="p2">*</ept> users.</source>
+        </trans-unit><trans-unit id="470" translate="yes" xml:space="preserve">
+          <source>Once read-only access has been granted to users, they can download and view the file.</source>
+        </trans-unit><trans-unit id="471" translate="yes" xml:space="preserve">
+          <source>In the case of a repository-managed script users can also execute the file.</source>
+        </trans-unit><trans-unit id="472" translate="yes" xml:space="preserve">
+          <source>To facilitate these kinds of workflows the <bpt id="p1">[</bpt>/r/repository/file/update<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-file-update)</ept> call allows users to toggle the read-only access controls on any of their repository-managed files.</source>
+        </trans-unit><trans-unit id="473" translate="yes" xml:space="preserve">
+          <source>Using this call to enable <bpt id="p1">*</bpt>shared<ept id="p1">*</ept> access on a file makes the file visible to <bpt id="p2">*</bpt>authenticated<ept id="p2">*</ept> users.</source>
+        </trans-unit><trans-unit id="474" translate="yes" xml:space="preserve">
+          <source>Using this call to enable <bpt id="p1">*</bpt>published<ept id="p1">*</ept> access on a file makes the file visible to <bpt id="p2">*</bpt>authenticated<ept id="p2">*</ept> and <bpt id="p3">*</bpt>anonymous<ept id="p3">*</ept> users.</source>
+        </trans-unit><trans-unit id="475" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Repository File Read-Write Collaboration<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="476" translate="yes" xml:space="preserve">
+          <source>At times the owner of a repository-managed file may also wish to grant read-write access on a file so that fellow <bpt id="p1">*</bpt>authenticated<ept id="p1">*</ept> users who are sharing the same DeployR server can actively collaborate on the development of a file.</source>
+        </trans-unit><trans-unit id="477" translate="yes" xml:space="preserve">
+          <source>For example, consider a situation where the owner of a repository-managed script wishes to collaborate more closely on its design and implementation with a select group of <bpt id="p1">*</bpt>authenticated<ept id="p1">*</ept> users.</source>
+        </trans-unit><trans-unit id="478" translate="yes" xml:space="preserve">
+          <source>To facilitate this kind of collaborative workflow a user can now grant authorship rights on a repository file to one or more <bpt id="p1">*</bpt>authenticated<ept id="p1">*</ept> users using the <bpt id="p2">[</bpt>/r/repository/file/grant<ept id="p2">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-file-grant)</ept> call.</source>
+        </trans-unit><trans-unit id="479" translate="yes" xml:space="preserve">
+          <source>Once a user has been granted authorship rights on a repository-managed file the user now co-owns the file and has the ability to download, modify and even delete the file.</source>
+        </trans-unit><trans-unit id="480" translate="yes" xml:space="preserve">
+          <source>When modifying a repository-managed file with multiple authors it is the responsibility of the users in the collaborative workflow to ensure the overall consistency of the file.</source>
+        </trans-unit><trans-unit id="481" translate="yes" xml:space="preserve">
+          <source>Deleting a repository-managed file with multiple authors simply revokes authorship rights to the file for the caller.</source>
+        </trans-unit><trans-unit id="482" translate="yes" xml:space="preserve">
+          <source>After the call all other authors on the file will still have full access to the file.</source>
+        </trans-unit><trans-unit id="483" translate="yes" xml:space="preserve">
+          <source>If the last remaining author deletes a repository-managed file, then the file is permanently deleted.</source>
+        </trans-unit><trans-unit id="484" translate="yes" xml:space="preserve">
+          <source>Repository File APIs</source>
+        </trans-unit><trans-unit id="485" translate="yes" xml:space="preserve">
+          <source>The Repository File APIs facilitate working with repository-managed files.</source>
+        </trans-unit><trans-unit id="486" translate="yes" xml:space="preserve">
+          <source>Because the repository supports versioned file storage, multiple versions of any file can exist at any one time and any version can be retrieved upon request.</source>
+        </trans-unit><trans-unit id="487" translate="yes" xml:space="preserve">
+          <source>Each repository-managed file is uniquely identified on the API by the following parameters:</source>
+        </trans-unit><trans-unit id="488" translate="yes" xml:space="preserve">
+          <source>filename - repository file name</source>
+        </trans-unit><trans-unit id="489" translate="yes" xml:space="preserve">
+          <source>author - repository file author</source>
+        </trans-unit><trans-unit id="490" translate="yes" xml:space="preserve">
+          <source>directory - (optional) repository directory name, if omitted, defaults to root directory.</source>
+        </trans-unit><trans-unit id="491" translate="yes" xml:space="preserve">
+          <source>version - (optional) repository file version</source>
+        </trans-unit><trans-unit id="492" translate="yes" xml:space="preserve">
+          <source>Access to each repository-managed file is controlled by a set of properties on the file: restricted, shared, and published respectively.</source>
+        </trans-unit><trans-unit id="493" translate="yes" xml:space="preserve">
+          <source>These properties can be used to control the visibility of the file to other users, both authenticated and anonymous users.</source>
+        </trans-unit><trans-unit id="494" translate="yes" xml:space="preserve">
+          <source>There are four distinct access control levels:</source>
+        </trans-unit><trans-unit id="495" translate="yes" xml:space="preserve">
+          <source>Private - the default access level, the file is visible to it's author(s) only.</source>
+        </trans-unit><trans-unit id="496" translate="yes" xml:space="preserve">
+          <source>Restricted - the file is visible to authenticated users that have been granted one or more of the roles indicated on the restricted property of the file.</source>
+        </trans-unit><trans-unit id="497" translate="yes" xml:space="preserve">
+          <source>Shared - the file is visible to all authenticated users when the shared property is true.</source>
+        </trans-unit><trans-unit id="498" translate="yes" xml:space="preserve">
+          <source>Public - the file is visible to all authenticated and all anonymous users when the published property is true.</source>
+        </trans-unit><trans-unit id="499" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Repository File Retrieval<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="500" translate="yes" xml:space="preserve">
+          <source>API Call</source>
+        </trans-unit><trans-unit id="501" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="502" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/file/list<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-file-list)</ept></source>
+        </trans-unit><trans-unit id="503" translate="yes" xml:space="preserve">
+          <source>Retrieve a list of the files in the repository</source>
+        </trans-unit><trans-unit id="504" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/file/download<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-file-download)</ept></source>
+        </trans-unit><trans-unit id="505" translate="yes" xml:space="preserve">
+          <source>Retrieve individual files in the repository</source>
+        </trans-unit><trans-unit id="506" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/directory/list<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-directory-list)</ept></source>
+        </trans-unit><trans-unit id="507" translate="yes" xml:space="preserve">
+          <source>Retrieve a list of files per repository-managed directory</source>
+        </trans-unit><trans-unit id="508" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/directory/download<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-directory-download)</ept></source>
+        </trans-unit><trans-unit id="509" translate="yes" xml:space="preserve">
+          <source>Retrieve one or more files from a repository-managed directory</source>
+        </trans-unit><trans-unit id="510" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;strong&gt;</bpt>Repository File Creation<ept id="p1">&lt;/strong&gt;</ept></source>
+        </trans-unit><trans-unit id="511" translate="yes" xml:space="preserve">
+          <source>API Call</source>
+        </trans-unit><trans-unit id="512" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="513" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/file/upload<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-file-upload)</ept></source>
+        </trans-unit><trans-unit id="514" translate="yes" xml:space="preserve">
+          <source>Upload a file into the repository from the users computer</source>
+        </trans-unit><trans-unit id="515" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/file/transfer<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-file-transfer)</ept></source>
+        </trans-unit><trans-unit id="516" translate="yes" xml:space="preserve">
+          <source>Transfer a file into the repository from a URL</source>
+        </trans-unit><trans-unit id="517" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/file/write<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-file-write)</ept></source>
+        </trans-unit><trans-unit id="518" translate="yes" xml:space="preserve">
+          <source>Write a text file into the repository</source>
+        </trans-unit><trans-unit id="519" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;strong&gt;</bpt>Repository File Version Control<ept id="p1">&lt;/strong&gt;</ept></source>
+        </trans-unit><trans-unit id="520" translate="yes" xml:space="preserve">
+          <source>API Call</source>
+        </trans-unit><trans-unit id="521" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="522" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/file/list<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-file-list)</ept></source>
+        </trans-unit><trans-unit id="523" translate="yes" xml:space="preserve">
+          <source>Retrieve a list of the files in the repository</source>
+        </trans-unit><trans-unit id="524" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/file/diff<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-file-diff)</ept></source>
+        </trans-unit><trans-unit id="525" translate="yes" xml:space="preserve">
+          <source>Retrieve a generated diff between any version of a text-based file and the latest version of that file</source>
+        </trans-unit><trans-unit id="526" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/file/revert<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-file-revert)</ept></source>
+        </trans-unit><trans-unit id="527" translate="yes" xml:space="preserve">
+          <source>Revert to an older version of specific file in the repository</source>
+        </trans-unit><trans-unit id="528" translate="yes" xml:space="preserve">
+          <source>Repository-Managed Scripts</source>
+        </trans-unit><trans-unit id="529" translate="yes" xml:space="preserve">
+          <source>Repository-managed scripts are a special type of repository-managed file.</source>
+        </trans-unit><trans-unit id="530" translate="yes" xml:space="preserve">
+          <source>Any file with a .r or a .R extension is identified by the server as a repository-managed script.</source>
+        </trans-unit><trans-unit id="531" translate="yes" xml:space="preserve">
+          <source>These scripts are essentially blocks of R code with well-defined inputs and outputs.</source>
+        </trans-unit><trans-unit id="532" translate="yes" xml:space="preserve">
+          <source>While scripts are technically also repository-managed files, they are designed to be exposed as an executable on the API.</source>
+        </trans-unit><trans-unit id="533" translate="yes" xml:space="preserve">
+          <source>Scripts can be created, managed, and deployed using the standard Repository APIs or directly within the* DeployR Repository Manager*.</source>
+        </trans-unit><trans-unit id="534" translate="yes" xml:space="preserve">
+          <source>Refer to the <bpt id="p1">[</bpt>Repository Manager Help<ept id="p1">](deployr-repository-manager-about.md)</ept> for further details.</source>
+        </trans-unit><trans-unit id="535" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Authenticated<ept id="p1">*</ept> users can execute scripts within the context of any project using the <bpt id="p2">[</bpt>/r/project/execute/script<ept id="p2">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-script)</ept> call.</source>
+        </trans-unit><trans-unit id="536" translate="yes" xml:space="preserve">
+          <source>Both <bpt id="p1">*</bpt>authenticated<ept id="p1">*</ept> and <bpt id="p2">*</bpt>anonymous<ept id="p2">*</ept> users can execute scripts within the context of <bpt id="p3">[</bpt>anonymous projects<ept id="p3">](#anonymous-projects)</ept> using the <bpt id="p4">[</bpt>/r/repository/script/execute<ept id="p4">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-execute)</ept> and <bpt id="p5">[</bpt>/r/repository/script/render<ept id="p5">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-render)</ept> calls.</source>
+        </trans-unit><trans-unit id="537" translate="yes" xml:space="preserve">
+          <source>Repository-managed scripts are files in the repository so all API calls described in the section <bpt id="p1">[</bpt>Working with Repository Files<ept id="p1">](#repofiles)</ept> are available to create and manage repository-managed scripts.</source>
+        </trans-unit><trans-unit id="538" translate="yes" xml:space="preserve">
+          <source>Working with the Repository Script APIs</source>
+        </trans-unit><trans-unit id="539" translate="yes" xml:space="preserve">
+          <source>The Repository Script APIs provide some script-specific functionality for repository-managed scripts.</source>
+        </trans-unit><trans-unit id="540" translate="yes" xml:space="preserve">
+          <source>Scripts are blocks of R code with well-defined inputs and outputs.</source>
+        </trans-unit><trans-unit id="541" translate="yes" xml:space="preserve">
+          <source>While scripts are technically also repository-managed files, scripts differ from other repository-managed files as they perform a specific function that can be exposed as an executable on the API.</source>
+        </trans-unit><trans-unit id="542" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Important!<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="543" translate="yes" xml:space="preserve">
+          <source>Repository-managed scripts are files in the repository so all API calls described in the section Working with Repository Files are available to create and manage repository-managed scripts.</source>
+        </trans-unit><trans-unit id="544" translate="yes" xml:space="preserve">
+          <source>Event Stream</source>
+        </trans-unit><trans-unit id="545" translate="yes" xml:space="preserve">
+          <source>The event stream API is unique within the DeployR API as it supports push notifications from the DeployR server to client applications.</source>
+        </trans-unit><trans-unit id="546" translate="yes" xml:space="preserve">
+          <source>Notifications correspond to discrete events that occur within the DeployR server.</source>
+        </trans-unit><trans-unit id="547" translate="yes" xml:space="preserve">
+          <source>Rather than periodically polling the server for updates, a client application can subscribe once to the event stream and then receive event notifications pushed by the server.</source>
+        </trans-unit><trans-unit id="548" translate="yes" xml:space="preserve">
+          <source>There are four distinct event categories:</source>
+        </trans-unit><trans-unit id="549" translate="yes" xml:space="preserve">
+          <source>Stream Lifecycle events</source>
+        </trans-unit><trans-unit id="550" translate="yes" xml:space="preserve">
+          <source>Execution events</source>
+        </trans-unit><trans-unit id="551" translate="yes" xml:space="preserve">
+          <source>Job Lifecycle events</source>
+        </trans-unit><trans-unit id="552" translate="yes" xml:space="preserve">
+          <source>Management events</source>
+        </trans-unit><trans-unit id="553" translate="yes" xml:space="preserve">
+          <source>Stream Lifecycle Events</source>
+        </trans-unit><trans-unit id="554" translate="yes" xml:space="preserve">
+          <source>Stream lifecycle events occur when a client application successfully connects to or disconnects from an event stream on the server.</source>
+        </trans-unit><trans-unit id="555" translate="yes" xml:space="preserve">
+          <source>There are two stream lifecycle events:</source>
+        </trans-unit><trans-unit id="556" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`streamConnectEvent`</ph>.</source>
+        </trans-unit><trans-unit id="557" translate="yes" xml:space="preserve">
+          <source>The data passed on the streamConnectEvent allows the client application to determine the type of event stream connection established with the server: authenticated, anonymous, or management event stream.</source>
+        </trans-unit><trans-unit id="558" translate="yes" xml:space="preserve">
+          <source>The nature of an event stream connection determines the nature of the events that can be delivered on that stream.</source>
+        </trans-unit><trans-unit id="559" translate="yes" xml:space="preserve">
+          <source>More details can be found on event stream types below.</source>
+        </trans-unit><trans-unit id="560" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`streamDisconnectEvent`</ph>.</source>
+        </trans-unit><trans-unit id="561" translate="yes" xml:space="preserve">
+          <source>The streamDisconnectEvent informs a client application that the event stream has been disconnected by the server.</source>
+        </trans-unit><trans-unit id="562" translate="yes" xml:space="preserve">
+          <source>Following a streamDisconnectEvent no further events arrive at the client on that event stream.</source>
+        </trans-unit><trans-unit id="563" translate="yes" xml:space="preserve">
+          <source>Execution Events</source>
+        </trans-unit><trans-unit id="564" translate="yes" xml:space="preserve">
+          <source>Execution events occur when an R session is executing R code (on behalf of an anonymous project, authenticated project or on behalf of a job) or when an execute API call fails.</source>
+        </trans-unit><trans-unit id="565" translate="yes" xml:space="preserve">
+          <source>There are three distinct types of Execution events:</source>
+        </trans-unit><trans-unit id="566" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`executionConsoleEvent`</ph>.</source>
+        </trans-unit><trans-unit id="567" translate="yes" xml:space="preserve">
+          <source>An executionConsoleEvent pushes R console output generated by an R session to the event stream.</source>
+        </trans-unit><trans-unit id="568" translate="yes" xml:space="preserve">
+          <source>Console events are automatically pushed to the event stream each time you execute R code.</source>
+        </trans-unit><trans-unit id="569" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`executionRevoEvent`</ph>.</source>
+        </trans-unit><trans-unit id="570" translate="yes" xml:space="preserve">
+          <source>An executionRevoEvent pushes DeployR-encoded R object data generated by an R session to the event stream.</source>
+        </trans-unit><trans-unit id="571" translate="yes" xml:space="preserve">
+          <source>These events require an explicit call to a DeployR-specific R function called revoEvent().</source>
+        </trans-unit><trans-unit id="572" translate="yes" xml:space="preserve">
+          <source>To retrieve the DeployR-encoded value of any R object in your workspace as a executionRevoEvent, add a call to the revoEvent() function in your R code or script and pass the object name as a parameter to this function, for example:</source>
+        </trans-unit><trans-unit id="573" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`executionErrorEvent`</ph>.</source>
+        </trans-unit><trans-unit id="574" translate="yes" xml:space="preserve">
+          <source>An executionErrorEvent pushes an error message when an execute API call fails for any reason.</source>
+        </trans-unit><trans-unit id="575" translate="yes" xml:space="preserve">
+          <source>These events occur when the caller attempts to execute R code that is syntactically invalid or when parameters such as inputs or preloads passed on the call are invalid.</source>
+        </trans-unit><trans-unit id="576" translate="yes" xml:space="preserve">
+          <source>Job Lifecycle Events</source>
+        </trans-unit><trans-unit id="577" translate="yes" xml:space="preserve">
+          <source>Job lifecycle events occur each time a Job transitions to a new state in its lifecycle, for example when moving from QUEUED to RUNNING state or when moving from RUNNING to COMPLETED or FAILED state.</source>
+        </trans-unit><trans-unit id="578" translate="yes" xml:space="preserve">
+          <source>There is just one type of lifecycle event, <ph id="ph1">`jobLifecycleEvent`</ph>.</source>
+        </trans-unit><trans-unit id="579" translate="yes" xml:space="preserve">
+          <source>Job lifecycle events make it simple for client applications to track the progress of background jobs without having to continuously poll the server for status updates.</source>
+        </trans-unit><trans-unit id="580" translate="yes" xml:space="preserve">
+          <source>Management Events</source>
+        </trans-unit><trans-unit id="581" translate="yes" xml:space="preserve">
+          <source>Management events occur when important runtime conditions are detected by the server.</source>
+        </trans-unit><trans-unit id="582" translate="yes" xml:space="preserve">
+          <source>These are the distinct types of Management events:</source>
+        </trans-unit><trans-unit id="583" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`gridActivityEvent`</ph>.</source>
+        </trans-unit><trans-unit id="584" translate="yes" xml:space="preserve">
+          <source>A gridActivityEvent is pushed to the event stream when a slot on the grid is either activated or deactivated on behalf of an anonymous project, authenticated project or on behalf of a job.</source>
+        </trans-unit><trans-unit id="585" translate="yes" xml:space="preserve">
+          <source>This type of event provides real-time visibility onto grid activity at runtime.</source>
+        </trans-unit><trans-unit id="586" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`gridWarningEvent`</ph>.</source>
+        </trans-unit><trans-unit id="587" translate="yes" xml:space="preserve">
+          <source>A gridWarningEvent is pushed to the event stream when activity on the grid runs up against limits defined by the Concurrent Operation Policies under Server Policies in the DeployR Administration Console or whenever demands on the grid exceed available grid resources.</source>
+        </trans-unit><trans-unit id="588" translate="yes" xml:space="preserve">
+          <source>This type of event signals resource contention and possibly even resource exhaustion and should therefore be of particular interest to the administrator for a DeployR instance.</source>
+        </trans-unit><trans-unit id="589" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`gridHeartbeatEvent`</ph>.</source>
+        </trans-unit><trans-unit id="590" translate="yes" xml:space="preserve">
+          <source>A gridHeartbeatEvent is pushed periodically by the server.</source>
+        </trans-unit><trans-unit id="591" translate="yes" xml:space="preserve">
+          <source>This type of event provides a detailed summary of slot activity across all nodes on the grid.</source>
+        </trans-unit><trans-unit id="592" translate="yes" xml:space="preserve">
+          <source>This event when used in conjunction with gridActivityEvent and gridWarningEvent provides 100% visibility across all live grid activity at runtime.</source>
+        </trans-unit><trans-unit id="593" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`securityLoginEvent`</ph>.</source>
+        </trans-unit><trans-unit id="594" translate="yes" xml:space="preserve">
+          <source>The securityLoginEvent is pushed to the event stream when users  logs in to the server.</source>
+        </trans-unit><trans-unit id="595" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`securityLogoutEvent`</ph>.</source>
+        </trans-unit><trans-unit id="596" translate="yes" xml:space="preserve">
+          <source>The securityLogoutEvent is pushed to the event stream when users log out of the server.</source>
+        </trans-unit><trans-unit id="597" translate="yes" xml:space="preserve">
+          <source>Authenticated, Anonymous, and Management Event Streams</source>
+        </trans-unit><trans-unit id="598" translate="yes" xml:space="preserve">
+          <source>The nature of an event stream connection determines the nature of the events that can be delivered on that stream.</source>
+        </trans-unit><trans-unit id="599" translate="yes" xml:space="preserve">
+          <source>Both the current authenticated status of the caller on the <bpt id="p1">[</bpt>/r/event/stream<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-event-stream)</ept> API call and the parameters passed on that call determine the ultimate nature of the event stream connection.</source>
+        </trans-unit><trans-unit id="600" translate="yes" xml:space="preserve">
+          <source>The following event stream connection types exist:</source>
+        </trans-unit><trans-unit id="601" translate="yes" xml:space="preserve">
+          <source>Authenticated event stream</source>
+        </trans-unit><trans-unit id="602" translate="yes" xml:space="preserve">
+          <source>Anonymous event stream</source>
+        </trans-unit><trans-unit id="603" translate="yes" xml:space="preserve">
+          <source>Management event stream</source>
+        </trans-unit><trans-unit id="604" translate="yes" xml:space="preserve">
+          <source>All streams push a streamHandshakeEvent event when a connection if first established.</source>
+        </trans-unit><trans-unit id="605" translate="yes" xml:space="preserve">
+          <source>The Authenticated event stream pushes execution and job lifecycle events related to a specific authenticated user.</source>
+        </trans-unit><trans-unit id="606" translate="yes" xml:space="preserve">
+          <source>The Anonymous event stream pushes only execution events within the anonymous HTTP Session.</source>
+        </trans-unit><trans-unit id="607" translate="yes" xml:space="preserve">
+          <source>The Management event stream pushes server-wide management events.</source>
+        </trans-unit><trans-unit id="608" translate="yes" xml:space="preserve">
+          <source>DeployR Web Services API Overview</source>
+        </trans-unit><trans-unit id="609" translate="yes" xml:space="preserve">
+          <source>While it is not necessary to understand the internal architecture of the DeployR server in order to use this API the following overview is provided in order to lend context to server administrators intending to support the API and to client application developers intending to use the API.</source>
+        </trans-unit><trans-unit id="610" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>R User Web, Desktop, Mobile Apps<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="611" translate="yes" xml:space="preserve">
+          <source>The R user web, desktop, and mobile apps represent client applications built using the DeployR API.</source>
+        </trans-unit><trans-unit id="612" translate="yes" xml:space="preserve">
+          <source>The API is a fully standardized Web services interface using JSON over HTTP.</source>
+        </trans-unit><trans-unit id="613" translate="yes" xml:space="preserve">
+          <source>This means that any piece of software that is both capable of connecting to the server and parsing either JSON can become a client.</source>
+        </trans-unit><trans-unit id="614" translate="yes" xml:space="preserve">
+          <source>To make life easier for the client developers using this API, DeployR also provides several client libraries.</source>
+        </trans-unit><trans-unit id="615" translate="yes" xml:space="preserve">
+          <source>These client libraries, currently available for Java, JavaScript and .NET developers, simplify making calls, encoding data and handling response markup on the API.</source>
+        </trans-unit><trans-unit id="616" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>DeployR Public API<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="617" translate="yes" xml:space="preserve">
+          <source>This document describes the DeployR Public API and the complete set of API services provided for <bpt id="p1">[</bpt>users<ept id="p1">](#users-on-the-api)</ept>, <bpt id="p2">[</bpt>projects<ept id="p2">](#projects-on-the-api)</ept>, <bpt id="p3">[</bpt>jobs<ept id="p3">](#jobs-on-the-api)</ept>, <bpt id="p4">[</bpt>repository-managed<ept id="p4">](#repository-on-the-api)</ept> files, and scripts and the <bpt id="p5">[</bpt>event stream<ept id="p5">](#event-stream)</ept>.</source>
+        </trans-unit><trans-unit id="618" translate="yes" xml:space="preserve">
+          <source>Using this API directly or by taking advantage of the DeployR client libraries developers can integrate R-based analytics into their client applications.</source>
+        </trans-unit><trans-unit id="619" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>DeployR Administration Console<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="620" translate="yes" xml:space="preserve">
+          <source>The DeployR Administration Console is a browser-based administrators tool used to customize the deployment configuration for the server, tune server runtime behaviors, and facilitate the integration of client applications on the API.</source>
+        </trans-unit><trans-unit id="621" translate="yes" xml:space="preserve">
+          <source>For more information, refer to the <bpt id="p1">[</bpt>Administration Console documentation<ept id="p1">](deployr-admin-console-about.md)</ept>.</source>
+        </trans-unit><trans-unit id="622" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>DeployR Grid Management Framework<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="623" translate="yes" xml:space="preserve">
+          <source>The grid management framework provides load balancing capabilities for intensive R-compute environments.</source>
+        </trans-unit><trans-unit id="624" translate="yes" xml:space="preserve">
+          <source>This framework manages a scalable network of collaborating nodes where each node on the grid contributes its own resources (processor, memory, and disk).</source>
+        </trans-unit><trans-unit id="625" translate="yes" xml:space="preserve">
+          <source>Each node can be used by the server to execute R analyses on behalf of client applications.</source>
+        </trans-unit><trans-unit id="626" translate="yes" xml:space="preserve">
+          <source>For more information, see section <bpt id="p1">[</bpt>Managing the Grid<ept id="p1">](deployr-admin-managing-the-grid.md)</ept>.</source>
+        </trans-unit><trans-unit id="627" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Spring 3 Framework &amp; J2EE Container<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="628" translate="yes" xml:space="preserve">
+          <source>The Spring Framework is a lightweight, modular framework for building enterprise Java applications.</source>
+        </trans-unit><trans-unit id="629" translate="yes" xml:space="preserve">
+          <source>The DeployR server builds on top of the Spring Framework in order to deliver advanced R-based analytics services on-demand in a secure, robust manner.</source>
+        </trans-unit><trans-unit id="630" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Database<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="631" translate="yes" xml:space="preserve">
+          <source>The DeployR server uses a database to manage the reliable persistence of all user, project, and repository data.</source>
+        </trans-unit><trans-unit id="632" translate="yes" xml:space="preserve">
+          <source>Architecture Overview</source>
+        </trans-unit><trans-unit id="633" translate="yes" xml:space="preserve">
+          <source>The DeployR API exposes a set of services via a Web service interface using HTTP(S).</source>
+        </trans-unit><trans-unit id="634" translate="yes" xml:space="preserve">
+          <source>You can send HTTP GET and POST requests to invoke services on the API.</source>
+        </trans-unit><trans-unit id="635" translate="yes" xml:space="preserve">
+          <source>In a nutshell:</source>
+        </trans-unit><trans-unit id="636" translate="yes" xml:space="preserve">
+          <source>HTTP GET method is expected when retrieving data on the API</source>
+        </trans-unit><trans-unit id="637" translate="yes" xml:space="preserve">
+          <source>HTTP POST method is required when submitting, updating, or deleting data on the API</source>
+        </trans-unit><trans-unit id="638" translate="yes" xml:space="preserve">
+          <source>Most API calls respond with well-formed markup.</source>
+        </trans-unit><trans-unit id="639" translate="yes" xml:space="preserve">
+          <source>On such calls, you can request the response markup in JSON format.</source>
+        </trans-unit><trans-unit id="640" translate="yes" xml:space="preserve">
+          <source>Some API calls return binary data such as image plots, structured data like CSV files, or gzip compressed archives.</source>
+        </trans-unit><trans-unit id="641" translate="yes" xml:space="preserve">
+          <source>In all cases, the type of data being returned will always be indicated by the <bpt id="p1">*</bpt>Content-Type<ept id="p1">*</ept> header on the response.</source>
+        </trans-unit><trans-unit id="642" translate="yes" xml:space="preserve">
+          <source>Additionally, each request returns a meaningful HTTP status code on the response.</source>
+        </trans-unit><trans-unit id="643" translate="yes" xml:space="preserve">
+          <source>For a list of response codes that can be indicated on this API and that should be handled by all applications, refer to section <bpt id="p1">[</bpt>API Response Codes<ept id="p1">](#api-response-code-overview)</ept>.</source>
+        </trans-unit><trans-unit id="644" translate="yes" xml:space="preserve">
+          <source>API Parameter Overview</source>
+        </trans-unit><trans-unit id="645" translate="yes" xml:space="preserve">
+          <source>For each service call, there is a documented list of required and optional parameters.</source>
+        </trans-unit><trans-unit id="646" translate="yes" xml:space="preserve">
+          <source>Parameter values are expected to be UTF-8 compliant and URL-encoded.</source>
+        </trans-unit><trans-unit id="647" translate="yes" xml:space="preserve">
+          <source>The DeployR API currently supports the JSON format for data exchange.</source>
+        </trans-unit><trans-unit id="648" translate="yes" xml:space="preserve">
+          <source>Consequently, each method requires the use of the <bpt id="p1">***</bpt>format<ept id="p1">***</ept> parameter in order to specify how the request and response data on the call are encoded.</source>
+        </trans-unit><trans-unit id="649" translate="yes" xml:space="preserve">
+          <source>In the next release, the XML format will no longer be supported.</source>
+        </trans-unit><trans-unit id="650" translate="yes" xml:space="preserve">
+          <source>While all parameters are specified as a name/value pair, some parameter values require complex data.</source>
+        </trans-unit><trans-unit id="651" translate="yes" xml:space="preserve">
+          <source>Whenever complex data is required, a JSON schema defines how these values are to be encoded.</source>
+        </trans-unit><trans-unit id="652" translate="yes" xml:space="preserve">
+          <source>For more information on the schema definitions and specific examples of relevant service calls, see section <bpt id="p1">[</bpt>Web Service API Data Encodings<ept id="p1">](#encode-r-object-data-for-use-on-the-api)</ept>.</source>
+        </trans-unit><trans-unit id="653" translate="yes" xml:space="preserve">
+          <source>API Response Code Overview</source>
+        </trans-unit><trans-unit id="654" translate="yes" xml:space="preserve">
+          <source>Each DeployR API call responds with a meaningful HTTP status code.</source>
+        </trans-unit><trans-unit id="655" translate="yes" xml:space="preserve">
+          <source>Applications using this API should be implemented to handle each of these status codes as appropriate.</source>
+        </trans-unit><trans-unit id="656" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>HTTP Success Codes<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="657" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>200<ept id="p1">**</ept> OK</source>
+        </trans-unit><trans-unit id="658" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;strong&gt;</bpt>HTTP Error Codes<ept id="p1">&lt;/strong&gt;</ept></source>
+        </trans-unit><trans-unit id="659" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>400<ept id="p1">**</ept> Bad Request: invalid data on call</source>
+        </trans-unit><trans-unit id="660" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>401<ept id="p1">**</ept> Unauthorized Access: caller has insufficient privileges</source>
+        </trans-unit><trans-unit id="661" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>403<ept id="p1">**</ept> Forbidden Access: caller is unauthorized</source>
+        </trans-unit><trans-unit id="662" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>405<ept id="p1">**</ept> HTTP Method Disallowed: disallowed HTTP method on call</source>
+        </trans-unit><trans-unit id="663" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>409<ept id="p1">**</ept> Conflict: project is currently busy on call, concurrent call rejected</source>
+        </trans-unit><trans-unit id="664" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>503<ept id="p1">**</ept> Service Temporarily Unavailable: HTTP session temporarily invalidated</source>
+        </trans-unit><trans-unit id="665" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;strong&gt;</bpt>API Call Status <ph id="ph1">&amp;amp;</ph> Error Codes<ept id="p1">&lt;/strong&gt;</ept></source>
+        </trans-unit><trans-unit id="666" translate="yes" xml:space="preserve">
+          <source>When an API call returns an HTTP 200 status code the application should still test the <bpt id="p1">***</bpt>success<ept id="p1">***</ept> property in the response markup on each call to determine whether the DeployR server was able to successfully execute the service on behalf of the caller.</source>
+        </trans-unit><trans-unit id="667" translate="yes" xml:space="preserve">
+          <source>If the <bpt id="p1">***</bpt>success<ept id="p1">***</ept> property in the response markup indicates failure (with a value of <bpt id="p2">**</bpt>false<ept id="p2">**</ept>), then the application can inspect the <bpt id="p3">***</bpt>error<ept id="p3">***</ept> and <bpt id="p4">***</bpt>errorCode<ept id="p4">***</ept> properties in the response markup to determine the underlying cause of that failure.</source>
+        </trans-unit><trans-unit id="668" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">***</bpt>error<ept id="p1">***</ept> property provides a plain text message describing the underlying failure.</source>
+        </trans-unit><trans-unit id="669" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">***</bpt>errorCode<ept id="p1">***</ept> property indicates the nature of the underlying error.</source>
+        </trans-unit><trans-unit id="670" translate="yes" xml:space="preserve">
+          <source>Possible values for the <bpt id="p1">***</bpt>errorCode<ept id="p1">***</ept> property are shown here:</source>
+        </trans-unit><trans-unit id="671" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>900<ept id="p1">**</ept> General Server Error: runtime error.</source>
+        </trans-unit><trans-unit id="672" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>910<ept id="p1">**</ept> Grid Resource Error: maximum number of concurrent live projects exceeded for authenticated user</source>
+        </trans-unit><trans-unit id="673" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>911<ept id="p1">**</ept> Grid Resource Error: maximum number of concurrent live projects exceeded for anonymous user</source>
+        </trans-unit><trans-unit id="674" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>912<ept id="p1">**</ept> Grid Resource Error: maximum number of concurrent live jobs exceeded for authenticated user</source>
+        </trans-unit><trans-unit id="675" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>913<ept id="p1">**</ept> Grid Resource Error: grid resources temporarily at exhaustion.</source>
+        </trans-unit><trans-unit id="676" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>914<ept id="p1">**</ept> Grid Resource Error: grid runtime boundary limit exceeded.</source>
+        </trans-unit><trans-unit id="677" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>915<ept id="p1">**</ept> Grid Resource Error: grid node unresponsive.</source>
+        </trans-unit><trans-unit id="678" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>916<ept id="p1">**</ept> Grid Resource Error: grid node R session unresponsive.</source>
+        </trans-unit><trans-unit id="679" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>917<ept id="p1">**</ept> Grid Resource Error: grid node version incompatible with server.</source>
+        </trans-unit><trans-unit id="680" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>940<ept id="p1">**</ept> Authentication Error: username/password credentials provided are invalid.</source>
+        </trans-unit><trans-unit id="681" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>941<ept id="p1">**</ept> Authentication Error: user has insufficient privileges to log in on the API.</source>
+        </trans-unit><trans-unit id="682" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>942<ept id="p1">**</ept> Authentication Error: another user has already authenticated on the current HTTP session.</source>
+        </trans-unit><trans-unit id="683" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>943<ept id="p1">**</ept> Authentication Error: user account has been disabled by the system administrator</source>
+        </trans-unit><trans-unit id="684" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>944<ept id="p1">**</ept> Authentication Error: user account has been temporarily locked by the system administrator</source>
+        </trans-unit><trans-unit id="685" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>945<ept id="p1">**</ept> Authentication Error: user account password has expired, requires reset</source>
+        </trans-unit><trans-unit id="686" translate="yes" xml:space="preserve">
+          <source>To understand how grid resource errors occur, refer to the sections <bpt id="p1">[</bpt>Managing the Grid<ept id="p1">](deployr-admin-managing-the-grid.md)</ept> and <bpt id="p2">[</bpt>Managing Server Policies<ept id="p2">](deployr-admin-managing-server-policies.md)</ept>.</source>
+        </trans-unit><trans-unit id="687" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Sample API (JSON) response markup indicating error on call:<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="688" translate="yes" xml:space="preserve">
+          <source>Explore the API</source>
+        </trans-unit><trans-unit id="689" translate="yes" xml:space="preserve">
+          <source>To help developers familiarize themselves with the full set of APIs DeployR ships with a Web-based API Explorer tool.</source>
+        </trans-unit><trans-unit id="690" translate="yes" xml:space="preserve">
+          <source>This tool allows developers to explore the DeployR API in an interactive manner.</source>
+        </trans-unit><trans-unit id="691" translate="yes" xml:space="preserve">
+          <source>For more information, see the documentation on the <bpt id="p1">[</bpt>API Explorer Tool<ept id="p1">](deployr-api-explorer-tool.md)</ept>.</source>
+        </trans-unit><trans-unit id="692" translate="yes" xml:space="preserve">
+          <source>API Call Overview</source>
+        </trans-unit><trans-unit id="693" translate="yes" xml:space="preserve">
+          <source>Each of the following <bpt id="p1">*</bpt>"Working with"<ept id="p1">*</ept> sections in the API Reference detail the individual API calls by category.</source>
+        </trans-unit><trans-unit id="694" translate="yes" xml:space="preserve">
+          <source>For each call described in this reference guide, you can review the following information:</source>
+        </trans-unit><trans-unit id="695" translate="yes" xml:space="preserve">
+          <source>Call REST Endpoint</source>
+        </trans-unit><trans-unit id="696" translate="yes" xml:space="preserve">
+          <source>Call Description</source>
+        </trans-unit><trans-unit id="697" translate="yes" xml:space="preserve">
+          <source>Call HTTP Method</source>
+        </trans-unit><trans-unit id="698" translate="yes" xml:space="preserve">
+          <source>Call Request Format</source>
+        </trans-unit><trans-unit id="699" translate="yes" xml:space="preserve">
+          <source>Call Parameter List</source>
+        </trans-unit><trans-unit id="700" translate="yes" xml:space="preserve">
+          <source>Example Call Parameters</source>
+        </trans-unit><trans-unit id="701" translate="yes" xml:space="preserve">
+          <source>Example Call Response Markup (JSON)</source>
+        </trans-unit><trans-unit id="702" translate="yes" xml:space="preserve">
+          <source>Encode R Object Data for use on the API</source>
+        </trans-unit><trans-unit id="703" translate="yes" xml:space="preserve">
+          <source>DeployR-specific encodings are used to encode R object data for use on the API.</source>
+        </trans-unit><trans-unit id="704" translate="yes" xml:space="preserve">
+          <source>Encoded object data can be returned from the server in the response markup on the following calls:</source>
+        </trans-unit><trans-unit id="705" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/workspace/list<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-workspace-list)</ept></source>
+        </trans-unit><trans-unit id="706" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/workspace/get<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-workspace-get)</ept></source>
+        </trans-unit><trans-unit id="707" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/execute/code<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-code)</ept></source>
+        </trans-unit><trans-unit id="708" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/execute/script<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-script)</ept></source>
+        </trans-unit><trans-unit id="709" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/script/execute<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-execute)</ept></source>
+        </trans-unit><trans-unit id="710" translate="yes" xml:space="preserve">
+          <source>Encoded object data can also be sent to the server as parameter values on the following calls:</source>
+        </trans-unit><trans-unit id="711" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/workspace/push<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-workspace-push)</ept></source>
+        </trans-unit><trans-unit id="712" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/execute/script<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-script)</ept></source>
+        </trans-unit><trans-unit id="713" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/script/execute<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-execute)</ept></source>
+        </trans-unit><trans-unit id="714" translate="yes" xml:space="preserve">
+          <source>Each encoded object is defined by the following properties:</source>
+        </trans-unit><trans-unit id="715" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>name<ept id="p1">*</ept> - the name of the encoded object</source>
+        </trans-unit><trans-unit id="716" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>type<ept id="p1">*</ept> - the DeployR-specific encoding type for the encoded object</source>
+        </trans-unit><trans-unit id="717" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>rclass<ept id="p1">*</ept> - the underlying R class for the encoded object</source>
+        </trans-unit><trans-unit id="718" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>value<ept id="p1">*</ept> - the data encapsulated by the encoded object</source>
+        </trans-unit><trans-unit id="719" translate="yes" xml:space="preserve">
+          <source>When encoded objects are returned from the server in the response markup the purpose of the type property is to indicate to developers how to decode the encapsulated data for use within a client application.</source>
+        </trans-unit><trans-unit id="720" translate="yes" xml:space="preserve">
+          <source>For example, an encoded vector object returned on the <bpt id="p1">[</bpt>/r/project/workspace/get<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-workspace-get)</ept> call appears in the response markup as follows:</source>
+        </trans-unit><trans-unit id="721" translate="yes" xml:space="preserve">
+          <source>In the preceding example, the encoded vector, named <bpt id="p1">*</bpt>sample_vector<ept id="p1">*</ept> , indicates a <bpt id="p2">*</bpt>type<ept id="p2">*</ept> property with a value of <bpt id="p3">*</bpt>vector<ept id="p3">*</ept>.</source>
+        </trans-unit><trans-unit id="722" translate="yes" xml:space="preserve">
+          <source>This informs the client application that the <bpt id="p1">*</bpt>value<ept id="p1">*</ept> property on this encoded object contains an array of values.</source>
+        </trans-unit><trans-unit id="723" translate="yes" xml:space="preserve">
+          <source>Those values match the values found in the vector object in the workspace.</source>
+        </trans-unit><trans-unit id="724" translate="yes" xml:space="preserve">
+          <source>When encoded objects are sent as parameters to the server, the client must name each object, and then provide values for the <bpt id="p1">*</bpt>type<ept id="p1">*</ept> and <bpt id="p2">*</bpt>value<ept id="p2">*</ept> properties for each of those objects.</source>
+        </trans-unit><trans-unit id="725" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">*</bpt>rclass<ept id="p1">*</ept> property is determined automatically by the server and need not be specified by the client application.</source>
+        </trans-unit><trans-unit id="726" translate="yes" xml:space="preserve">
+          <source>For example, passing both an encoded logical and an encoded matrix as <bpt id="p1">*</bpt>inputs<ept id="p1">*</ept> on the <bpt id="p2">[</bpt>/r/project/workspace/push<ept id="p2">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-workspace-push)</ept> call is achieved as follows:</source>
+        </trans-unit><trans-unit id="727" translate="yes" xml:space="preserve">
+          <source>In the case of primitive encodings, the type property is optional and can therefore be omitted from the markup being sent to the server.</source>
+        </trans-unit><trans-unit id="728" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;strong&gt;</bpt>DeployR Encoding Types<ept id="p1">&lt;/strong&gt;</ept></source>
+        </trans-unit><trans-unit id="729" translate="yes" xml:space="preserve">
+          <source>The complete list of supported DeployR-encoding types is shown here.</source>
+        </trans-unit><trans-unit id="730" translate="yes" xml:space="preserve">
+          <source>As indicated, these encodings can encode a wide range of different classes of R object:</source>
+        </trans-unit><trans-unit id="731" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">***</bpt>primitive<ept id="p1">***</ept> type encodes R objects with class: character, integer, numeric and logical.</source>
+        </trans-unit><trans-unit id="732" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">***</bpt>date<ept id="p1">***</ept> type encodes R objects with class: Date, POSIXct, and POSIXlt.</source>
+        </trans-unit><trans-unit id="733" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">***</bpt>vector<ept id="p1">***</ept> type encodes R objects with class: vector.</source>
+        </trans-unit><trans-unit id="734" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">***</bpt>matrix<ept id="p1">***</ept> type encodes R objects with class: matrix.</source>
+        </trans-unit><trans-unit id="735" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">***</bpt>factor<ept id="p1">***</ept> type encodes R objects with class: ordered and factor.</source>
+        </trans-unit><trans-unit id="736" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">***</bpt>list<ept id="p1">***</ept> type encodes R objects with class: list.</source>
+        </trans-unit><trans-unit id="737" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">***</bpt>dataframe<ept id="p1">***</ept> type encodes R objects with class: data.frame.</source>
+        </trans-unit><trans-unit id="738" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;strong&gt;</bpt>Sample DeployR Encodings<ept id="p1">&lt;/strong&gt;</ept></source>
+        </trans-unit><trans-unit id="739" translate="yes" xml:space="preserve">
+          <source>The following R code is provided for demonstration purposes.</source>
+        </trans-unit><trans-unit id="740" translate="yes" xml:space="preserve">
+          <source>The code creates a wide range of R objects.</source>
+        </trans-unit><trans-unit id="741" translate="yes" xml:space="preserve">
+          <source>After the following code, you will find sample JSON response markup that demonstrates how each of the objects generated here is encoded on the API.</source>
+        </trans-unit><trans-unit id="742" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>JSON Encodings on API Response Markup<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="743" translate="yes" xml:space="preserve">
+          <source>The following response markup contains annotations that describe each of the supported DeployR R object encodings:</source>
+        </trans-unit><trans-unit id="744" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Sample JSON Encodings for Input Parameters on API<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="745" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>DeployR Encodings Made Easy<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="746" translate="yes" xml:space="preserve">
+          <source>To simplify life for those client developers using The DeployR API, we provide several client libraries for Java, JavaScript, and .NET developers.</source>
+        </trans-unit><trans-unit id="747" translate="yes" xml:space="preserve">
+          <source>A major benefit of using these client libraries is that they greatly simplify the creation of DeployR-encoded object data inputs to the server and the parsing of DeployR-encoded object data as outputs from the server.</source>
+        </trans-unit><trans-unit id="748" translate="yes" xml:space="preserve">
+          <source>API Change History</source>
+        </trans-unit><trans-unit id="749" translate="yes" xml:space="preserve">
+          <source>DeployR for Microsoft R Server 8.0.5</source>
+        </trans-unit><trans-unit id="750" translate="yes" xml:space="preserve">
+          <source>All authenticated APIS now require a Cross-Site Request Forgery (CSRF)   token in the HTTP request header named <ph id="ph1">`X-XSRF-TOKEN`</ph> for POST requests.</source>
+        </trans-unit><trans-unit id="751" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`X-XSRF-TOKEN`</ph> can be obtained from a successful authentication <ph id="ph2">`/r/user/login`</ph> API call.</source>
+        </trans-unit><trans-unit id="752" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`X-XSRF-TOKEN`</ph> value can be retrieved from either the HTTP response header or the <ph id="ph2">`X-XSRF-TOKEN`</ph> property in the response markup.</source>
+        </trans-unit><trans-unit id="753" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`X-XSRF-TOKEN`</ph> name|value must then be included in the HTTP request header for any future authenticated API calls, otherwise an HTTP 403 error is given.</source>
+        </trans-unit><trans-unit id="754" translate="yes" xml:space="preserve">
+          <source>Example:</source>
+        </trans-unit><trans-unit id="755" translate="yes" xml:space="preserve">
+          <source>Affecting all APIS, the <ph id="ph1">`httpcookie`</ph> property has been removed from the response markup in place of the unique request identifier <ph id="ph2">`uid`</ph> (which is not a cookie).</source>
+        </trans-unit><trans-unit id="756" translate="yes" xml:space="preserve">
+          <source>Removal of the Repository Shell Script APIs.</source>
+        </trans-unit><trans-unit id="757" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`/r/repository/shell/execute`</ph> has been removed</source>
+        </trans-unit><trans-unit id="758" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Note:<ept id="p1">**</ept>  Going forward <ph id="ph1">`application/xml`</ph> will become depreciated, supporting only <ph id="ph2">`application/json`</ph> in the response content-type</source>
+        </trans-unit><trans-unit id="759" translate="yes" xml:space="preserve">
+          <source>DeployR 8.0.0</source>
+        </trans-unit><trans-unit id="760" translate="yes" xml:space="preserve">
+          <source>Rebranding and Volume Licensing</source>
+        </trans-unit><trans-unit id="761" translate="yes" xml:space="preserve">
+          <source>This release of DeployR primarily focused on:</source>
+        </trans-unit><trans-unit id="762" translate="yes" xml:space="preserve">
+          <source>rebranding of the product from Revolution Analytics to Microsoft.</source>
+        </trans-unit><trans-unit id="763" translate="yes" xml:space="preserve">
+          <source>defects</source>
+        </trans-unit><trans-unit id="764" translate="yes" xml:space="preserve">
+          <source>DeployR 7.4.1</source>
+        </trans-unit><trans-unit id="765" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Standard Execution Model Changes<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="766" translate="yes" xml:space="preserve">
+          <source>The DeployR API standard execution model has been updated.</source>
+        </trans-unit><trans-unit id="767" translate="yes" xml:space="preserve">
+          <source>A new on-execution parameter has been added:</source>
+        </trans-unit><trans-unit id="768" translate="yes" xml:space="preserve">
+          <source>artifactsoff - (optional) when enabled, artifacts generated in the working directory are neither cached to the database or reported in the response markup</source>
+        </trans-unit><trans-unit id="769" translate="yes" xml:space="preserve">
+          <source>This change applies across all execution APIs:</source>
+        </trans-unit><trans-unit id="770" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/execute/code<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-code)</ept></source>
+        </trans-unit><trans-unit id="771" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/execute/script<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-script)</ept></source>
+        </trans-unit><trans-unit id="772" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/script/execute<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-execute)</ept></source>
+        </trans-unit><trans-unit id="773" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/script/render<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-render)</ept></source>
+        </trans-unit><trans-unit id="774" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/job/submit<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-job-submit)</ept></source>
+        </trans-unit><trans-unit id="775" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/job/schedule<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-job-schedule)</ept></source>
+        </trans-unit><trans-unit id="776" translate="yes" xml:space="preserve">
+          <source>DeployR 7.4</source>
+        </trans-unit><trans-unit id="777" translate="yes" xml:space="preserve">
+          <source>Grid Cluster Targeted Executions</source>
+        </trans-unit><trans-unit id="778" translate="yes" xml:space="preserve">
+          <source>Grid node "cluster" names, used to denote the runtime characteristics of a node, can be assigned by the DeployR admin, using the <bpt id="p1">[</bpt>Administration Console<ept id="p1">](deployr-admin-console-about.md)</ept>, to individual nodes or groups of nodes on the DeployR grid, for example, "hi-mem" or "hi-cpu".</source>
+        </trans-unit><trans-unit id="779" translate="yes" xml:space="preserve">
+          <source>This feature is <bpt id="p1">**</bpt>DeployR Enterprise<ept id="p1">**</ept> only.</source>
+        </trans-unit><trans-unit id="780" translate="yes" xml:space="preserve">
+          <source>By identifying a value on a new <bpt id="p1">*</bpt>cluster<ept id="p1">*</ept> parameter client applications can request tasks be executed on nodes within a specific cluster on the grid on the following calls:</source>
+        </trans-unit><trans-unit id="781" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/create<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-create)</ept></source>
+        </trans-unit><trans-unit id="782" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/pool<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-pool)</ept></source>
+        </trans-unit><trans-unit id="783" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/script/execute<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-execute)</ept></source>
+        </trans-unit><trans-unit id="784" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/script/render<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-render)</ept></source>
+        </trans-unit><trans-unit id="785" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/job/submit<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-job-submit)</ept></source>
+        </trans-unit><trans-unit id="786" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/job/schedule<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-job-schedule)</ept></source>
+        </trans-unit><trans-unit id="787" translate="yes" xml:space="preserve">
+          <source>Cluster names are case-inssensitive so "Hi-Mem" and "hi-mem" indicate the same cluster.</source>
+        </trans-unit><trans-unit id="788" translate="yes" xml:space="preserve">
+          <source>If the cluster indicated on any of these calls fails to match an actual cluster name assigned by the admin on the DeployR grid the call is rejected.</source>
+        </trans-unit><trans-unit id="789" translate="yes" xml:space="preserve">
+          <source>Project Phantom Executions</source>
+        </trans-unit><trans-unit id="790" translate="yes" xml:space="preserve">
+          <source>Phantom executions are a special type of execution on a project that avoids per-execution meta-data being created by the server in the database.</source>
+        </trans-unit><trans-unit id="791" translate="yes" xml:space="preserve">
+          <source>This helps avoid database resource exhaustion on the server when high-throughput, long-lived project pools are in use, such as pools used by the RBroker Framework.</source>
+        </trans-unit><trans-unit id="792" translate="yes" xml:space="preserve">
+          <source>Client applications can request tasks be executed as phantom executions by enabling the value of the new phantom parameter on the following calls:</source>
+        </trans-unit><trans-unit id="793" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/execute/code<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-code)</ept></source>
+        </trans-unit><trans-unit id="794" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/execute/script<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-script)</ept></source>
+        </trans-unit><trans-unit id="795" translate="yes" xml:space="preserve">
+          <source>A phantom execution will not appear in the project history returned by the <bpt id="p1">[</bpt>/r/project/execute/history<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-history)</ept> call.</source>
+        </trans-unit><trans-unit id="796" translate="yes" xml:space="preserve">
+          <source>External Repository Support</source>
+        </trans-unit><trans-unit id="797" translate="yes" xml:space="preserve">
+          <source>DeployR has always provided API support for working with repository-managed files and scripts that have been uploaded into the DeployR Default Repository.</source>
+        </trans-unit><trans-unit id="798" translate="yes" xml:space="preserve">
+          <source>DeployR 7.4 server introduces support for a new repository store known as the DeployR External Repository.</source>
+        </trans-unit><trans-unit id="799" translate="yes" xml:space="preserve">
+          <source>Unlike the default repository which is backed by the MongoDB database, the new external repository is simply a directory on disk from where the DeployR server can list and load files and execute scripts.</source>
+        </trans-unit><trans-unit id="800" translate="yes" xml:space="preserve">
+          <source>Managing files in the external repository is as simple as creating, editing, copying, moving, and deleting files on disk.</source>
+        </trans-unit><trans-unit id="801" translate="yes" xml:space="preserve">
+          <source>All interactions with the external repository on the API are read-only, so files and scripts can be listed, loaded and even executed but not modified in any way on the API.</source>
+        </trans-unit><trans-unit id="802" translate="yes" xml:space="preserve">
+          <source>The DeployR External Repository can be used to provide a seamless bridge between existing file control systems, such as git and svn, and the DeployR server.</source>
+        </trans-unit><trans-unit id="803" translate="yes" xml:space="preserve">
+          <source>Listing external repository-managed files and scripts is supported using a new external parameter on the following set of APIs:</source>
+        </trans-unit><trans-unit id="804" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/file/list<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-file-list)</ept></source>
+        </trans-unit><trans-unit id="805" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/script/list<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-list)</ept></source>
+        </trans-unit><trans-unit id="806" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/directory/list<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-directory-list)</ept></source>
+        </trans-unit><trans-unit id="807" translate="yes" xml:space="preserve">
+          <source>Loading and executing external repository-managed files and scripts use the existing set of filename, directory, and author parameters on the following calls:</source>
+        </trans-unit><trans-unit id="808" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/execute/code<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-code)</ept></source>
+        </trans-unit><trans-unit id="809" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/execute/script<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-script)</ept></source>
+        </trans-unit><trans-unit id="810" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/directory/load<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-directory-load)</ept></source>
+        </trans-unit><trans-unit id="811" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/workspace/load<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-workspace-load)</ept></source>
+        </trans-unit><trans-unit id="812" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/script/execute<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-execute)</ept></source>
+        </trans-unit><trans-unit id="813" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/script/render<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-render)</ept></source>
+        </trans-unit><trans-unit id="814" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/job/submit<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-job-submit)</ept></source>
+        </trans-unit><trans-unit id="815" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/job/schedule<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-job-schedule)</ept></source>
+        </trans-unit><trans-unit id="816" translate="yes" xml:space="preserve">
+          <source>The base directory for the external repository can be found here on DeployR server:</source>
+        </trans-unit><trans-unit id="817" translate="yes" xml:space="preserve">
+          <source>Each user can maintain private, shared, and public files in the external repository at the following locations respectively:</source>
+        </trans-unit><trans-unit id="818" translate="yes" xml:space="preserve">
+          <source>A small number of sample files are deployed to the external repository following each new DeployR 7.4 installation and you may try out the external repository using new support found in the latest <bpt id="p1">[</bpt>API Explorer<ept id="p1">](deployr-api-explorer-tool.md)</ept>.</source>
+        </trans-unit><trans-unit id="819" translate="yes" xml:space="preserve">
+          <source>For more information about working with the new DeployR External Repository, post your questions to the <bpt id="p1">[</bpt>forum<ept id="p1">](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)</ept>.</source>
+        </trans-unit><trans-unit id="820" translate="yes" xml:space="preserve">
+          <source>Default and External Repository Filters</source>
+        </trans-unit><trans-unit id="821" translate="yes" xml:space="preserve">
+          <source>Each of the following APIs has been updated to support more sophisticated filters on results:</source>
+        </trans-unit><trans-unit id="822" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/file/list<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-file-list)</ept></source>
+        </trans-unit><trans-unit id="823" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/directory/list<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-directory-list)</ept></source>
+        </trans-unit><trans-unit id="824" translate="yes" xml:space="preserve">
+          <source>Using the <bpt id="p1">*</bpt>directory<ept id="p1">*</ept> and <bpt id="p2">*</bpt>categoryFilter<ept id="p2">*</ept> independently or together the results returned on these calls can be filtered to specific subsets of available files, for example:</source>
+        </trans-unit><trans-unit id="825" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>(1) Show me all of the data files across all of my directories in the default repository<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="826" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>(2) Show me all of the files in the tutorial directory in the default repository<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="827" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>(3) Show me binary R files within the example-fraud-score directory in the default repository<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="828" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>(4) Show me just R scripts within my private demo directory in the external repository<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="829" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>(5) Show me just R scripts within testuser's public plot directory in the external repository<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="830" translate="yes" xml:space="preserve">
+          <source>Repository Shell Script Execution</source>
+        </trans-unit><trans-unit id="831" translate="yes" xml:space="preserve">
+          <source>The following new Repository Shell API has been added:</source>
+        </trans-unit><trans-unit id="832" translate="yes" xml:space="preserve">
+          <source>/r/repository/shell/execute | Executes a repository-managed shell script on the DeployR server.</source>
+        </trans-unit><trans-unit id="833" translate="yes" xml:space="preserve">
+          <source>For more information about working with this new API, please post your questions to the <bpt id="p1">[</bpt>forum<ept id="p1">](https://social.msdn.microsoft.com/Forums/en-US/home?forum=microsoftr)</ept>.</source>
+        </trans-unit><trans-unit id="834" translate="yes" xml:space="preserve">
+          <source>DeployR 7.3</source>
+        </trans-unit><trans-unit id="835" translate="yes" xml:space="preserve">
+          <source>User Grid Resource Release API</source>
+        </trans-unit><trans-unit id="836" translate="yes" xml:space="preserve">
+          <source>The following new User API has been added:</source>
+        </trans-unit><trans-unit id="837" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/user/release<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-user-release)</ept> | Releases server-wide grid resources held by the currently authenticated user</source>
+        </trans-unit><trans-unit id="838" translate="yes" xml:space="preserve">
+          <source>Standard Execution Model Changes</source>
+        </trans-unit><trans-unit id="839" translate="yes" xml:space="preserve">
+          <source>The DeployR API standard execution model has been updated.</source>
+        </trans-unit><trans-unit id="840" translate="yes" xml:space="preserve">
+          <source>A new pre-execution parameter has been added:</source>
+        </trans-unit><trans-unit id="841" translate="yes" xml:space="preserve">
+          <source>preloadbydirectory - (optional) comma-separated list of repository directory names from which to load the complete set of files in each directory into the working directory prior to execution</source>
+        </trans-unit><trans-unit id="842" translate="yes" xml:space="preserve">
+          <source>Also, a new on-execution parameter has been added:</source>
+        </trans-unit><trans-unit id="843" translate="yes" xml:space="preserve">
+          <source>enableConsoleEvents - (optional) when enabled R console events are delivered on the event stream for the current execution</source>
+        </trans-unit><trans-unit id="844" translate="yes" xml:space="preserve">
+          <source>The introduction of the enableConsoleEvents is a breaking change for those using the <bpt id="p1">[</bpt>event stream<ept id="p1">](#event-stream)</ept>.</source>
+        </trans-unit><trans-unit id="845" translate="yes" xml:space="preserve">
+          <source>Prior versions of DeployR enabled R console events by default and there was no way on the API to disable these events.</source>
+        </trans-unit><trans-unit id="846" translate="yes" xml:space="preserve">
+          <source>As of 7.3, R console events on the event stream are disabled by default and if necessary, must be explicitly requested by enabling this new parameter.</source>
+        </trans-unit><trans-unit id="847" translate="yes" xml:space="preserve">
+          <source>These two changes apply across all execution APIs:</source>
+        </trans-unit><trans-unit id="848" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/execute/code<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-code)</ept></source>
+        </trans-unit><trans-unit id="849" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/execute/script<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-execute-script)</ept></source>
+        </trans-unit><trans-unit id="850" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/script/execute<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-execute)</ept></source>
+        </trans-unit><trans-unit id="851" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/repository/script/render<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-repository-script-render)</ept></source>
+        </trans-unit><trans-unit id="852" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/job/submit<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-job-submit)</ept></source>
+        </trans-unit><trans-unit id="853" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/job/schedule<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-job-schedule)</ept></source>
+        </trans-unit><trans-unit id="854" translate="yes" xml:space="preserve">
+          <source>The new <bpt id="p1">*</bpt>preloadbydirectory<ept id="p1">*</ept> parameter is also supported on the following APIs:</source>
+        </trans-unit><trans-unit id="855" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/create<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-create)</ept></source>
+        </trans-unit><trans-unit id="856" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>/r/project/pool<ept id="p1">](https://microsoft.github.io/deployr-api-docs/8.0.5/#r-project-pool)</ept></source>
+        </trans-unit></group></body></file></xliff>

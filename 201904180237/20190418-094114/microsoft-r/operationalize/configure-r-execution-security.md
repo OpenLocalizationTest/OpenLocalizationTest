@@ -1,0 +1,59 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="configure-r-execution-security.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-d1654b2" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">20cd1eea-d819-421c-a8f6-e0e067dea926287a3695db0783031decf54f53404021bcc236f2.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">287a3695db0783031decf54f53404021bcc236f2</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">20cd1eea-d819-421c-a8f6-e0e067dea926</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">04/18/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\operationalize\configure-r-execution-security.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>R Execution Security Considerations and user isolation - Machine Learning Server</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Learn about security considerations with <ph id="ph1">`deployr-rserve`</ph> which is a forked version of RServe maintained by Microsoft.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>This tool is used when operationalizing analytics with Machine Learning Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>RServe; deployr-rserve; user isolation</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>R Execution Security Considerations</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to: Machine Learning Server, Microsoft R Server 9.x<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><ph id="ph1">`deployr-rserve`</ph><ept id="p1">](https://github.com/Microsoft/deployr-rserve)</ept> is a forked version of RServe maintained by Microsoft.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>In this forked version, parallel R sessions are supported for both Windows and Linux thereby overcoming this limitation in the original rserve package.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>This forked version of RServe is the R execution component behind the compute node for Machine Learning Server (and R Server).</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Compute nodes are used to execute R code as a session or service.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Each compute node has its own <bpt id="p1">[</bpt>pool of R shells<ept id="p1">](configure-evaluate-capacity.md#pool)</ept>.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>This RServe fork acts as an interface to R, which by default is single threaded.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>However, if you use <bpt id="p1">[</bpt>RevoScaleR package functions<ept id="p1">](https://docs.microsoft.com/en-us/machine-learning-server/r-reference/revoscaler/revoscaler#functions-by-category)</ept>, you benefit from multi-threaded processing in the R shell.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>The Execution Context</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Machine Learning Server provides various <bpt id="p1">[</bpt>API calls<ept id="p1">](concept-api.md)</ept> that permit the execution of R scripts and R code.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>All authentication takes place on the web node, and the execution of the R code is managed through Machine Learning Server's custom version of RServe.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>RServe provides a TCP/IP interface to the R Interpreter running on the machine.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>By default, Rserve runs on the same machine as the compute node.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>RServe is started by Windows Service (RServeWinService) that runs under a virtual service account with low privileges.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>RServe inherits the permissions of that virtual service account.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>In the default configuration, Rserve only accepts socket connections from <ph id="ph1">`localhost`</ph>.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>In other words, only those processes running on the same machine where RServe is running can directly connect to it and execute R code.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>The connection from the Compute node to RServe can be further secured by using a username and a password.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>If your configuration requires additional compute capacity, you can add <bpt id="p1">[</bpt>additional compute nodes<ept id="p1">](../operationalize/configure-machine-learning-server-enterprise.md)</ept> for more sophisticated load-balancing capabilities.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Directory &amp; User Isolation Considerations</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>In the R language, users can change files in the file system, download content from the web, download packages, and so on.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>In order to mitigate some of the risks associated with RServe, the service is set up to run using <bpt id="p1">**</bpt>a single locked down account with write permissions<ept id="p1">**</ept> ONLY to the R working directory &lt;MRS_home&gt;\o16n\Rserve\workdir, which is the directory under which R sessions and service calls store artifacts, files, and workspaces.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>While the custom Rserve service can only write to the working directory, there is no user isolation between the session folders.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>However, all sessions execution requests can only be initiated by authenticated users and you can further control user permissions to services using <bpt id="p1">[</bpt>RBAC<ept id="p1">](https://docs.microsoft.com/en-us/machine-learning-server/operationalize/configure-roles)</ept>.</source>
+        </trans-unit></group></body></file></xliff>
