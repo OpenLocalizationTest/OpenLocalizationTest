@@ -1,0 +1,297 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="how-to-revoscaler-data-sql.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-d1654b2" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">31942184-1832-4cbe-8e07-924efec046b4eb867546dec0c61be6a4674f031d19134eee7dd2.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">eb867546dec0c61be6a4674f031d19134eee7dd2</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">31942184-1832-4cbe-8e07-924efec046b4</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">04/18/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\r\how-to-revoscaler-data-sql.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Import SQL data from Azure SQL Database and SQL Server (Machine Learning Server)</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>How to import relational data from Azure SQL and SQL Server databases in RevoScaleR</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Import SQL Server relational data</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article shows you how to import relational data from SQL Server into a data frame or .xdf file in Machine Learning Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Source data can originate from Azure SQL Database, or SQL Server on premises or on <bpt id="p1">[</bpt>an Azure virtual machine<ept id="p1">](https://docs.microsoft.com/sql/linux/sql-server-linux-azure-virtual-machine#a-idconnecta-connect-to-the-linux-vm)</ept>.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Azure subscription, Azure SQL Database, AdventureWorksLT sample database<ept id="p1">](https://docs.microsoft.com/azure/sql-database/sql-database-get-started-portal)</ept></source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server<ept id="p1">](https://www.microsoft.com/sql-server/sql-server-downloads)</ept> (any supported version and edition) with the <bpt id="p2">[</bpt>AdventureWorksDW sample database<ept id="p2">](https://www.microsoft.com/download/details.aspx?id=49502)</ept></source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Machine Learning Server for Windows or Linux</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>R console application (RGui.exe on Windows or Revo64 on Linux)</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Windows users, remember that R is case-sensitive and that file paths use the forward slash as a delimiter.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>How to import from Azure SQL Database</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>The following script imports sample data from Azure SQL database into a local XDF.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>The script sets the connection string, SQL query, XDF file, and the <bpt id="p1">**</bpt>rxImport<ept id="p1">**</ept> command for loading data and saving the output:</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>You can run this script in an R console application, but a few modifications are necessary before you can do it successfully.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Before running the script, review it line by line to see what needs changing.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>1 - Set the connection</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Create the connection object using information from the Azure portal and ODBC Data Source Administrator.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>First, get the ODBC driver name.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>On Windows, search for and then use the <bpt id="p1">**</bpt>ODBC Data Source Administrator (64-bit)<ept id="p1">**</ept> app to view the drivers listed in the <bpt id="p2">**</bpt>Drivers<ept id="p2">**</ept> tab. On Linux, the ODBC driver manager and individual drivers must be installed manually.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>For second, see <bpt id="p1">[</bpt>How to import relational data using ODBC<ept id="p1">](how-to-revoscaler-data-odbc.md)</ept>.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>After <ph id="ph1">`Driver`</ph>, all remaining connection properties from <ph id="ph2">`Server`</ph> to <ph id="ph3">`Connection Timeout`</ph> are obtained from the Azure portal:</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Sign in to the <bpt id="p1">[</bpt>Azure portal<ept id="p1">](https://ms.portal.azure.com)</ept> and locate AdventureWorksLT.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>In <bpt id="p1">**</bpt>Overview &gt; Essentials &gt; Connection strings<ept id="p1">**</ept>, click <bpt id="p2">**</bpt>Show database connection strings<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>On the <bpt id="p1">**</bpt>ODBC<ept id="p1">**</ept> tab, copy the connection information.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>It should look similar to the following string, except the server name and user name will be valid for your database.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>The password is always a placeholder, which you must replace with the actual password used for accessing your database.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>In the R console, provide the <bpt id="p1">*</bpt>sConnString<ept id="p1">*</ept> command based on the example syntax, but with valid values for server name, user name, and password.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>2 - Set firewall rules</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>On Azure SQL Database, access is controlled through firewall rules created for specific IP addresses.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Creating a firewall rule is a requirement for accessing Azure SQL Database from a client application.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>On your client machine running Machine Learning Server, sign in to the <bpt id="p1">[</bpt>Azure portal<ept id="p1">](https://ms.portal.azure.com)</ept> and locate AdventureWorksLT.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Use <bpt id="p1">**</bpt>Overview &gt; Set server firewall &gt; Add client IP<ept id="p1">**</ept> to create a rule for the local client.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Click <bpt id="p1">**</bpt>Save<ept id="p1">**</ept> once the rule is created.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>On a small private network, IP addresses are most likely static, and the IP address detected by the portal is probably correct.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>To confirm, you can use <bpt id="p1">**</bpt>IPConfig<ept id="p1">**</ept> on Windows or <bpt id="p2">**</bpt>hostname -I<ept id="p2">**</ept> on Linux to get your IP address.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>On corporate networks, IP addresses can change on computer restarts, through network address translations, or other reasons described in <bpt id="p1">[</bpt>this article<ept id="p1">](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure)</ept>.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>It can be hard to get the right IP address, even through <bpt id="p1">**</bpt>IPConfig<ept id="p1">**</ept> and <bpt id="p2">**</bpt>hostname -I<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>One way to get the right IP address is from the error message reported on a connection failure.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>If you get the "ODBC Error in SQLDisconnect" error message, it will include this text: "Client with IP address <bpt id="p1">*</bpt>&lt;ip-address&gt;<ept id="p1">*</ept> is not allowed to access the server".</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>The IP address reported in the message is that one actually used on the connection, and it should be specified as the start and ending IP range in your firewall rule in the Azure portal.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Producing this error is easy.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Just run the entire example script (assuming a valid connection string and write permissions to create the XDF), concluding with <bpt id="p1">**</bpt>rxImport<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>When <bpt id="p1">**</bpt>rxImport<ept id="p1">**</ept> fails, copy the IP address reported in the message, and use it to set the firewall rule in the Azure portal.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Wait a few minutes, and then retry the script.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>3 - Set the query</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>In the R console application, create the SQL query object.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>The example query consists of columns from a single table, but any valid T-SQL query providing a rowset is acceptable.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>This table was chosen because it includes numeric data.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Before attempting unqualified <bpt id="p1">*</bpt>SELECT * FROM<ept id="p1">*</ept> queries, review the columns in your database for unhandled data types in R. In AdventureWorksLT, the <bpt id="p2">*</bpt>rowguid(uniqueidentifier)<ept id="p2">*</ept> column is not handled.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Other unsupported data types are <bpt id="p1">[</bpt>listed here<ept id="p1">](https://docs.microsoft.com/sql/advanced-analytics/r/r-libraries-and-data-types#data-types-not-supported-by-r)</ept>.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Queries with unsupported data types produce the error below.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>If you get this error and cannot immediately detect the unhandled data type, incrementally add fields to the query to isolate the problem.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Queries should be data extraction queries (SELECT and SHOW statements) for reading data into a data frame or .xdf file.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>INSERT queries are not supported.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Because queries are used to populate a single data frame or .xdf file, multiple queries (that is, queries separated by a semicolon “;”) are not supported.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Compound queries, however, producing a single extracted table (such as queries linked by AND or OR, or involving multiple FROM clauses) are supported.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>4 - Set the data source</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Create the <bpt id="p1">**</bpt>RxOdbcData<ept id="p1">**</ept> data object using the connection and query object specifying which data to retrieve.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>This exercise uses only a few arguments, but to learn more about data sources, see <bpt id="p1">[</bpt>Data sources in RevoScaleR<ept id="p1">](how-to-revoscaler-data-source.md)</ept>.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>You could substitute <bpt id="p1">**</bpt>RxSqlServerData<ept id="p1">**</ept> for <bpt id="p2">**</bpt>RxOdbcData<ept id="p2">**</ept> if you want the option of setting the compute context to a remote SQL Server instance (for example, if you want to run <bpt id="p3">**</bpt>rxMerge<ept id="p3">**</ept>, <bpt id="p4">**</bpt>rxImport<ept id="p4">**</ept>, or <bpt id="p5">**</bpt>rxSort<ept id="p5">**</ept> on a remote SQL Server that also has a Machine Learning Server installation on the same machine).</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Otherwise, <bpt id="p1">**</bpt>RxOdbcData<ept id="p1">**</ept> is local compute context only.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>5 - Set the output file</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>Create the XDF file to save the data to disk.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Check the folder permissions for write access.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>By default, Windows does not allow external writes by non-local users.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>You might want to create a single folder, such as C:/Users/Temp, and give <bpt id="p1">*</bpt>Everyone<ept id="p1">*</ept> write permissions.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Once the XDF is created, you can move the file elsewhere and delete the folder, or revoke the write permissions you just granted.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>On Linux, you can use this alternative path:</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>6 - Import the data</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>Run <bpt id="p1">**</bpt>rxImport<ept id="p1">**</ept> with <bpt id="p2">*</bpt>inData<ept id="p2">*</ept> and <bpt id="p3">*</bpt>outFile<ept id="p3">*</ept> arguments.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>Include <bpt id="p1">*</bpt>overwrite<ept id="p1">*</ept> so that you can rerun the script with different queries without having to the delete the file each time.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>7 - Return object metadata</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Use <bpt id="p1">**</bpt>rxGetInfo<ept id="p1">**</ept> to return information about the XDF data source, plus the first 50 rows:</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>8 - Return summary statistics</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Use <bpt id="p1">**</bpt>rxSummary<ept id="p1">**</ept> to produce summary statistics on the data.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`~.`</ph> is used to compute summary statistic on numeric fields.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Output shows the central tendencies of the data, including mean values, standard deviation, minimum and maximum values, and whether any observations are missing.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>From the output, you can tell that orders are typically of small quantities and prices.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>How to import from SQL Server</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>The following script demonstrates how to import data from a SQL Server relational database into a local XDF.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>This script is slightly different from the one for Azure SQL Database.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>This one uses the AdventureWorks data warehouse (AdventureWorksDW) for its normalized data.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>As with the previous exercise, modifications are necessary before you can run this script successfully.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>1 - Set the connection</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>Create the connection object using the SQL Server database driver a local server and the sample database.</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>The driver used on the connection is an ODBC driver that is installed by SQL Server.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>You could use the default database driver provided with operating system, but SQL Server Setup also installs drivers.</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>On Windows, ODBC drivers can be listed in the <bpt id="p1">**</bpt>ODBC Data Source Administrator (64-bit)<ept id="p1">**</ept> app on the <bpt id="p2">**</bpt>Drivers<ept id="p2">**</ept> tab. On Linux, the ODBC driver manager and individual drivers must be installed manually.</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>For pointers, see <bpt id="p1">[</bpt>How to import relational data using ODBC<ept id="p1">](how-to-revoscaler-data-odbc.md)</ept>.</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>The Server=(local) refers to a local default instance connected over TCP.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>A named instance is specified as computername$instancename.</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>A remote server has the same syntax, but you should verify that that remote connections are enabled.</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>The defaults for this setting vary depending on which edition is installed.</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>2 - Set the query</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>In the R console application, create the SQL query object.</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>The example query consists of columns from a single view, but any valid T-SQL query providing a rowset is acceptable.</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>This unqualified query works because all columns in this view are supported data types.</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>You could skip this step and specify the query information through <bpt id="p1">**</bpt>RxOdbcData<ept id="p1">**</ept> via the <bpt id="p2">*</bpt>table<ept id="p2">*</ept> argument.</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>Specifically, you could write <ph id="ph1">`sDataSet &lt;- RxOdbcData(table=dbo.vDMPrep, connectionString=sConnString)`</ph>.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>3 - Set the data source</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>Create an <bpt id="p1">**</bpt>RxOdbcData<ept id="p1">**</ept> data source object based on query results.</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>The first example is the simple case.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>RxOdbcData<ept id="p1">**</ept> data source takes arguments that can be used to <bpt id="p2">[</bpt>modify the data set<ept id="p2">](#drilldown-change-datatype)</ept>.</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>A revised object includes syntax that converts characters to factors via <bpt id="p1">*</bpt>stringsAsFactors<ept id="p1">*</ept>, specifies ranges for ages using <bpt id="p2">*</bpt>colInfo<ept id="p2">*</ept>, and <bpt id="p3">*</bpt>colClasses<ept id="p3">*</ept> sets the data type to convert to:</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>Compare before-and-after variable information.</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>On the original data set, the variable information is as follows:</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>After the modifications, the variable information includes default and custom factor levels.</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>Additionally, for Model and OrderNumber, we preserved the original "character" data type using the <bpt id="p1">*</bpt>colClasses<ept id="p1">*</ept> argument.</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>We did this because <bpt id="p1">*</bpt>stringsAsFactors<ept id="p1">*</ept> globally converts character data to factors (levels), and for <bpt id="p2">*</bpt>OrderNumber<ept id="p2">*</ept> and <bpt id="p3">*</bpt>Model<ept id="p3">*</ept>, the number of levels was overkill.</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>4 - Set the output file</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>Create the XDF file to save the data to disk.</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>Check the folder permissions for write access.</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>By default, Windows does not allow external writes by non-local users.</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>You might want to create a single folder, such as C:/Users/Temp, and give <bpt id="p1">*</bpt>Everyone<ept id="p1">*</ept> write permissions.</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>Once the XDF is created, you can move the file elsewhere and delete the folder, or revoke the write permissions you just granted.</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>On Linux, you can use this alternative path:</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>5 - Import the data</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>Run <bpt id="p1">**</bpt>rxImport<ept id="p1">**</ept> with <bpt id="p2">*</bpt>inData<ept id="p2">*</ept> and <bpt id="p3">*</bpt>outFile<ept id="p3">*</ept> arguments.</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>Include <bpt id="p1">*</bpt>overwrite<ept id="p1">*</ept> so that you can rerun the script with different queries without having to the delete the file each time.</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>6 - Return object metadata</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>Use <bpt id="p1">**</bpt>rxGetInfo<ept id="p1">**</ept> to return information about the XDF data source:</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>7 - Return summary statistics</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>Use <bpt id="p1">**</bpt>rxSummary<ept id="p1">**</ept> to produce summary statistics on the data.</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`~.`</ph> is used to compute summary statistic on numeric fields.</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>Output shows the central tendencies of the data, including mean values, standard deviation, minimum and maximum values, and whether any observations are missing.</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>From the output, you can see that Age was probably included in the view by mistake.</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source>There are no values for this variable in the observations retrieved from the data source.</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source>Drill down: Changing data types</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source>Data stored in databases may be stored differently from how you want to store the data in R. As noted in the previous example for on-premises SQL Server, you can add the <ph id="ph1">`colClasses`</ph>, <ph id="ph2">`colInfo`</ph>, and <ph id="ph3">`stringsAsFactors`</ph> arguments to <ph id="ph4">`RxOdbcData`</ph> to specify how columns are stored in R.</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`stringsAsFactors`</ph> argument is the simplest to use.</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source>If specified, any character string column not otherwise accounted for by the <ph id="ph1">`colClasses`</ph> or <ph id="ph2">`colInfo`</ph> argument is stored as a factor in R, with levels defined according to the unique character strings found in the column.</source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`colClasses`</ph> argument allows you to specify a particular R data type for a particular variable.</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`colInfo`</ph> argument is similar, but it also allows you to specify a set of levels for a factor variable.</source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source>The data type must be supported, otherwise the unhandled data type error occurs before the conversion.</source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve">
+          <source>For example, you can't cast a unique identifier as an integer as a bypass mechanism.</source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve">
+          <source>The following example uses the SalelOrderHeader table because it provides more columns, and combines all three arguments to modify the data types of several variables in the claims data:</source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve">
+          <source>Next Steps</source>
+        </trans-unit><trans-unit id="239" translate="yes" xml:space="preserve">
+          <source>Continue on to the following data import articles to learn more about XDF, data source objects, and other data formats:</source>
+        </trans-unit><trans-unit id="240" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server tutorial for R<ept id="p1">](https://docs.microsoft.com/en-us/sql/advanced-analytics/tutorials/deepdive-create-sql-server-data-objects-using-rxsqlserverdata)</ept></source>
+        </trans-unit><trans-unit id="241" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>XDF files<ept id="p1">](concept-what-is-xdf.md)</ept></source>
+        </trans-unit><trans-unit id="242" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Data Sources<ept id="p1">](how-to-revoscaler-data-source.md)</ept></source>
+        </trans-unit><trans-unit id="243" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Import text data<ept id="p1">](how-to-revoscaler-data-import.md)</ept></source>
+        </trans-unit><trans-unit id="244" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Import ODBC data<ept id="p1">](how-to-revoscaler-data-odbc.md)</ept></source>
+        </trans-unit><trans-unit id="245" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Import and consume data on HDFS<ept id="p1">](how-to-revoscaler-data-hdfs.md)</ept></source>
+        </trans-unit><trans-unit id="246" translate="yes" xml:space="preserve">
+          <source>See Also</source>
+        </trans-unit><trans-unit id="247" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RevoScaleR Functions<ept id="p1">](~/r-reference/revoscaler/revoscaler.md)</ept><ph id="ph1"> </ph></source>
+        </trans-unit><trans-unit id="248" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Tutorial: data import and exploration<ept id="p1">](tutorial-revoscaler-data-import-transform.md)</ept> <bpt id="p2">[</bpt>Tutorial: data visualization and analysis<ept id="p2">](tutorial-revoscaler-data-model-analysis.md)</ept></source>
+        </trans-unit></group></body></file></xliff>
