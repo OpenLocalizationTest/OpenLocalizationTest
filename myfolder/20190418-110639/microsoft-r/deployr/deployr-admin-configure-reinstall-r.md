@@ -1,0 +1,143 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="deployr-admin-configure-reinstall-r.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-d1654b2" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">be8355a1-d8a7-4fc6-930e-f4b604fa907f485e840aab61db04ac808d36ad2c068272943ed1.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">485e840aab61db04ac808d36ad2c068272943ed1</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">be8355a1-d8a7-4fc6-930e-f4b604fa907f</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">04/18/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\deployr\deployr-admin-configure-reinstall-r.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Upgrading or Reinstalling Microsoft R Server, Revolution R Open, or R - DeployR 8.x</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Reinstalling R on a machine with DeployR</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Upgrading or Reinstalling R</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to: DeployR 8.x<ept id="p1">**</ept> (See <bpt id="p2">[</bpt>comparison between 8.x and 9.x<ept id="p2">](../whats-new-in-r-server.md#8vs9)</ept>)</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Looking to deploy with Machine Learning Server?</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Start here<ept id="p1">](../what-is-operationalization.md)</ept>.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>On Windows</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Reinstalling Microsoft R Server for DeployR Enterprise</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Carefully follow the order presented whenever you reinstall Microsoft R Server on a Windows machine hosting DeployR Enterprise:</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>On the main DeployR server machine:</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Backup the DeployR database<ept id="p1">](deployr-common-administration-tasks.md)</ept>.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Uninstall the DeployR main server<ept id="p1">](deployr-install-on-windows.md)</ept>.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Uninstall Microsoft R Server using the instructions provided with your existing version of Microsoft R Server.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Install Microsoft R Server and all its prerequisites as described in the instructions provided with that version of Microsoft R Server.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Reinstall the DeployR main server on <bpt id="p1">[</bpt>DeployR for Microsoft R Server<ept id="p1">](deployr-install-on-windows.md)</ept><ph id="ph1"> | </ph><bpt id="p2">[</bpt>DeployR 8.0.0<ept id="p2">](deployr-installing-configuring.md)</ept></source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Restore the DeployR database<ept id="p1">](deployr-common-administration-tasks.md)</ept>.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>On each DeployR grid node machine:</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Uninstall the DeployR grid node<ept id="p1">](deployr-install-on-windows.md)</ept>.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Uninstall Microsoft R Server using the instructions provided with your existing version of Microsoft R Server.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Install Microsoft R Server and all its prerequisites as described in the instructions provided with that version of Microsoft R Server.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Install the DeployR grid node on <bpt id="p1">[</bpt>DeployR for Microsoft R Server<ept id="p1">](deployr-install-on-windows.md)</ept><ph id="ph1"> | </ph><bpt id="p2">[</bpt>DeployR 8.0.0<ept id="p2">](deployr-installing-configuring.md)</ept>.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>For each DeployR Enterprise instance, the server and grid nodes should all run the same version of R.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Reinstalling RRO or R for DeployR Open</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Carefully follow the order presented whenever you reinstall Revolution R Open or CRAN R on a machine hosting DeployR Open 8.0.0:</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>On the main DeployR Open server machine:</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Backup the DeployR database<ept id="p1">](deployr-common-administration-tasks.md)</ept>.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Uninstall the DeployR main server<ept id="p1">](deployr-installing-configuring.md)</ept>.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Uninstall Revolution R Open or CRAN R.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Install Revolution R Open or CRAN R along with all of its prerequisites as described in the Revolution R Open or CRAN R installation instructions.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Reinstall the DeployR main server<ept id="p1">](deployr-installing-configuring.md)</ept>.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Restore the DeployR database<ept id="p1">](deployr-common-administration-tasks.md)</ept>.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Troubleshooting on Windows</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>If Microsoft R Server or Microsoft R Open is not reinstalled as described at the beginning of this document, then Rserve may be missing.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Try the following:</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Run the diagnostics<ept id="p1">](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing)</ept> to determine whether the issue is on the main server or a grid node.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>If RServe is not running and you cannot find it in the <ph id="ph1">`\bin\x64`</ph> subdirectory of the Microsoft R Server install directory, then you must reinstall as described above.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>If there are other issues reported in the <bpt id="p1">[</bpt>diagnostics log<ept id="p1">](deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files)</ept>, attempt to fix them now.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Run the diagnostics again.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>In the event that you need additional support, send the diagnostics tar/zip file to the Microsoft Corporation technical support team.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>On Linux</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Reinstalling Microsoft R Server for DeployR Enterprise</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Carefully follow the order presented whenever you reinstall Microsoft R Server on a Linux machine hosting DeployR for Microsoft R Server:</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>On the main DeployR server machine:</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Stop DeployR<ept id="p1">](deployr-common-administration-tasks.md#startstop)</ept>.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Uninstall Microsoft R Server using the instructions provided with your existing version of Microsoft R Server.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Install Microsoft R Server and all its prerequisites as described in the instructions provided with that version of Microsoft R Server.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Start DeployR<ept id="p1">](deployr-common-administration-tasks.md#startstop)</ept>.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>On each DeployR grid node machine:</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Uninstall the DeployR grid node on <bpt id="p1">[</bpt>DeployR for Microsoft R Server<ept id="p1">](deployr-install-on-linux.md#uninstalling-deployr)</ept><ph id="ph1"> | </ph><bpt id="p2">[</bpt>DeployR 8.0.0<ept id="p2">](deployr-installing-configuring.md#uninstalling-deployr)</ept>.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Uninstall Microsoft R Server using the instructions provided with that product.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Install Microsoft R Server and all its prerequisites as described in that product's instructions.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Install the DeployR grid node<ept id="p1">]()</ept>.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>on <bpt id="p1">[</bpt>DeployR for Microsoft R Server<ept id="p1">](deployr-install-on-linux.md#install-deployr-grid-nodes)</ept><ph id="ph1"> | </ph><bpt id="p2">[</bpt>DeployR 8.0.0<ept id="p2">](deployr-installing-configuring.md#grid-node-install)</ept>.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>For each DeployR Enterprise instance, the server and grid nodes should all run the same version of R.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Reinstalling RRO or R for DeployR Open</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Carefully follow the order presented whenever you reinstall Revolution R Open or CRAN R on a machine hosting DeployR Open 8.0.0:</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>On the main DeployR Open server machine:</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Stop DeployR<ept id="p1">](deployr-common-administration-tasks.md#startstop)</ept>.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Uninstall Revolution R Open or CRAN R.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>Install Revolution R Open or CRAN R along with all of its prerequisites as described in the Revolution R Open or CRAN R installation instructions.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Start DeployR<ept id="p1">](deployr-common-administration-tasks.md#startstop)</ept>.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Troubleshooting on Linux</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>If the issue is that Rserve is not running on a machine, then you'll need to restart it.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>Try the following:</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Run the diagnostics<ept id="p1">](deployr-admin-diagnostics-troubleshooting.md#diagnostic-testing)</ept> to determine whether the issue is on the main server or a grid node.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Make sure there is <bpt id="p1">[</bpt>no activity on the DeployR grid.<ept id="p1">](deployr-admin-managing-the-grid.md#viewing-or-stopping-slot-activity)</ept></source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Stop DeployR on the machine in question.<ept id="p1">](deployr-common-administration-tasks.md#startstop)</ept></source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Attempt to correct all issues reported in the <bpt id="p1">[</bpt>diagnostics log.<ept id="p1">](deployr-admin-diagnostics-troubleshooting.md#inspecting-diagnostic-log-files)</ept></source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Start DeployR on the machine in question.<ept id="p1">](deployr-common-administration-tasks.md#startstop)</ept></source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Run the diagnostics again.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>In the event that you need additional support, send the diagnostics tar/zip file to the Microsoft Corporation technical support team.</source>
+        </trans-unit></group></body></file></xliff>

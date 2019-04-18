@@ -1,0 +1,157 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="how-to-revoscaler-data-hdfs.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-d1654b2" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">be8355a1-d8a7-4fc6-930e-f4b604fa907f16a83a8198f4b76761741098ee9dca1f8f62b104.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">16a83a8198f4b76761741098ee9dca1f8f62b104</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">be8355a1-d8a7-4fc6-930e-f4b604fa907f</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">04/18/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\r\how-to-revoscaler-data-hdfs.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Import HDFS data (Machine Learning Server)</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Load data from Hadoop Distributed File System (HDFS) into a RevoScaleR session in Machine Learning Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Import and consume HDFS data files using RevoScaleR</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article explains how to load data from the Hadoop Distributed File System (HDFS) into an R data frame or an .xdf file.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Example script shows several use cases for using RevoScaleR functions with HDFS data.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Set the file system</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>By default, data is expected to be found on the native file system (Linux).</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>If all your data is on HDFS, you can use <bpt id="p1">**</bpt>rxSetFileSystem<ept id="p1">**</ept> to specify this as a global option:</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>If only some files are on HDFS, keep the native file system default and use the <bpt id="p1">*</bpt>fileSystem<ept id="p1">*</ept> argument on <bpt id="p2">**</bpt>RxTextData<ept id="p2">**</ept> or <bpt id="p3">**</bpt>RxXdfData<ept id="p3">**</ept> data sources to specify which files are on HDFS.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>For example:</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>RxHdfsFileSystem<ept id="p1">**</ept> function creates a file system object for the HDFS file system.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>You can use <bpt id="p1">**</bpt>RxNativeFileSystem<ept id="p1">**</ept> function does the same thing for the native file system.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Load data from HDFS</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Assuming you already have an .xdf file on HDFS, you can load it by creating an <bpt id="p1">**</bpt>RxXdfData<ept id="p1">**</ept> object that takes the .xdf file as an input.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Write XDF to HDFS</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Once you load data from a text file or another source, you can save it as an .xdf file to either HDFS or the native file system.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>The compute context determines where the file can be saved.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>To get the current compute context, use <bpt id="p1">**</bpt>rxGetComputeContext()<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>In a local compute context, out files must be written to the native file system.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>However, by setting the compute context to <bpt id="p1">**</bpt>RxHadoopMR<ept id="p1">**</ept> or <bpt id="p2">**</bpt>RxSpark<ept id="p2">**</ept>, you can write to HDFS.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>The following example shows how to write a data frame as an .xdf file directly to HDFS using the built-in Iris data set.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Set the user name:</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Set folder paths:</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Set compute context:</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Write the XDF to a text file on HDFS:</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Write a composite XDF</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>A <bpt id="p1">*</bpt>composite XDF<ept id="p1">*</ept> refers to a collection of .xdf files rather than a single .xdf out file.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>You can create a composite .xdf if you want to load, refresh, and analyze data as a collection of smaller files that can be managed independently or used collectively, depending on the need.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>A composite set consists of a named parent directory with two subdirectories, <bpt id="p1">*</bpt>data<ept id="p1">*</ept> and <bpt id="p2">*</bpt>metadata<ept id="p2">*</ept>, containing split data .xdfd files and metadata .xdfm files, respectively.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>The .xdfm file contains the metadata for all of the .xdfd files under the same parent folder.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>RxXdfData<ept id="p1">**</ept> is used to specify a composite set, and <bpt id="p2">**</bpt>rxImport<ept id="p2">**</ept> is used to read in the data and output the generated .xdfd files.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>When the compute context is <bpt id="p1">**</bpt>RxHadoopMR<ept id="p1">**</ept>, a composite set of XDF is always created.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>In a local compute context, which you can use on HDFS, you must specify the option <bpt id="p1">*</bpt>createCompositeSet=TRUE<ept id="p1">*</ept> within the <bpt id="p2">**</bpt>RxXdfData<ept id="p2">**</ept> if you want the composite set.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>To create a composite file<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Use <bpt id="p1">**</bpt>RxGetComputeContext()<ept id="p1">**</ept> to determine whether you need to set <bpt id="p2">*</bpt>createCompositeSet<ept id="p2">*</ept>.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>In <bpt id="p1">**</bpt>RxHadoopMR<ept id="p1">**</ept> or <bpt id="p2">**</bpt>RxSpark<ept id="p2">**</ept>, you can omit the argument.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>For local compute context, add <bpt id="p1">*</bpt>createCompositeSet=TRUE<ept id="p1">*</ept> to force the composite set.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Use <bpt id="p1">**</bpt>RxTextData<ept id="p1">**</ept> to create a data source object based on a single file or a directory of files.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Use <bpt id="p1">**</bpt>RxXdfData<ept id="p1">**</ept> to create an XDF for use as the <bpt id="p2">*</bpt>outFile<ept id="p2">*</ept> argument.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Use <bpt id="p1">**</bpt>rxImport<ept id="p1">**</ept> function to read source files and save the output as a composite XDF.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>The following example demonstrates creating a composite set of .xdf files within the native file system in a local compute context using a directory of .csv files as input.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Prior to trying these examples yourself, copy the sample AirlineDemoSmallSplit folder from the sample data directory to /tmp.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Create a second empty folder named testXdf under /tmp to hold the composite file set:</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>This creates a directory named testXdf, with the data and metadata subdirectories, containing the split .xdfd and .xdfm files.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Output should be as follows:</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Run <bpt id="p1">**</bpt>rxGetInfo<ept id="p1">**</ept> to return metadata, including the number of composite data files, and the first 10 rows.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Control generated file output</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Number of generated .xdfd files depends on characteristics of source data, but it is generally one file per HDFS block.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>However, if the original source data is distributed among multiple smaller files, each file counts as a block even if the file size is well below HDFS block size.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>The HDFS block size varies from installation to installation, but is typically either 64MB or 128MB.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>For more in-depth information about the composite XDF format and its use within a Hadoop compute context, see <bpt id="p1">[</bpt>Get started with HadoopMR and RevoScaleR<ept id="p1">](how-to-revoscaler-hadoop.md)</ept>.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Filenames are based on the parent directory name.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Rows per file are influenced by compute context:</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>When compute context is local with <bpt id="p1">*</bpt>createCompositeSet=TRUE<ept id="p1">*</ept>, the number of blocks put into each .xdfd file in the composite set.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>When compute context is HadoopMR, the number of rows in each .xdfd file is determined by the rows assigned to each MapReduce task, and the number of blocks per .xdfd file is therefore determined by <bpt id="p1">*</bpt>rowsPerRead<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Load a composite XDF</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>You can reference a composite XDF using the data source object used as the <bpt id="p1">*</bpt>outFile<ept id="p1">*</ept> for <bpt id="p2">**</bpt>rxImport<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>To load a composite XDF residing on the HDFS file system, set <bpt id="p1">**</bpt>RxXdfData<ept id="p1">**</ept> to the parent folder having data and metadata subdirectories:</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Note that in this example we set the file system to HDFS globally so we did not need to specify the file system within the data source constructors.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>Using RevoScaleR with rhdfs</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>If you are using both RevoScaleR and the RHadoop connector package rhdfs, you need to ensure that the two do not interfere with each other.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>The rhdfs package depends upon the rJava package, which will prevent access to HDFS by RevoScaleR if it is called before RevoScaleR makes its connection to HDFS.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>To prevent this interaction, use the function rxHdfsConnect to establish a connection between RevoScaleR and HDFS.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>An install-time option on Linux can be used to trigger such a call from the Rprofile.site startup file.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>If the install-time option is not chosen, you can add it later by setting the REVOHADOOPHOST and REVOHADOOPPORT environment variables with the host name of your Hadoop name node and the name node’s port number, respectively.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>You can also call rxHdfsConnect interactively within a session, provided you have not yet attempted any other rJava or rhdfs commands.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>For example, the following call will fix a connection between the Hadoop host sandbox-01 and RevoScaleR; if you make a subsequent call to rhdfs, RevoScaleR can continue to use the previously established connection.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Note that once rhdfs (or any other rJava call) has been invoked, you cannot change the host or port you use to connect to RevoScaleR:</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Related articles include best practices for XDF file management, including managing split files, and compute context:</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>XDF files in Microsoft R<ept id="p1">](concept-what-is-xdf.md)</ept></source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Compute context in Microsoft R<ept id="p1">](concept-what-is-compute-context.md)</ept></source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>To further your understanding of RevoScaleR usage with HadoopMR or Spark, continue with the following articles:</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Data import and exploration on Apache Spark<ept id="p1">](how-to-revoscaler-spark.md)</ept></source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Data import and exploration on Hadoop MapReduce<ept id="p1">](how-to-revoscaler-hadoop.md)</ept></source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>See Also</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Machine Learning Server<ept id="p1">](../what-is-machine-learning-server.md)</ept> <bpt id="p2">[</bpt>Install Machine Learning Server on Linux<ept id="p2">](../install/machine-learning-server-linux-install.md)</ept></source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Install Machine Learning Server on Hadoop<ept id="p1">](../install/machine-learning-server-hadoop-install.md)</ept></source>
+        </trans-unit></group></body></file></xliff>
