@@ -1,0 +1,44 @@
+---
+title: 'Machine Learning Server on the Data Science Virtual Machine - Machine Learning Server '
+description: Run Machine Learning Server on the Microsoft Data Science Virtual Machine
+keywords: Machine Learning Server, HDInsight
+author: HeidiSteen
+ms.author: heidist
+manager: cgronlun
+ms.date: 2/16/2018
+ms.topic: conceptual
+ms.prod: mlserver
+ms.openlocfilehash: 54d1bb90b79a69688874bebd77db167d5e2db70e
+ms.sourcegitcommit: 9c76acdc-560c-45e5-982b-fef069067335
+ms.translationtype: HT
+ms.contentlocale: en-US
+ms.lasthandoff: 04/18/2019
+---
+# <a name="machine-learning-server-on-the-data-science-virtual-machine"></a>Machine Learning Server on the Data Science Virtual Machine
+
+The Microsoft Data Science Virtual Machine is an Azure virtual machine (VM) image pre-configured with several popular tools, including Machine Learning Server on the Linux VM and both Machine Learning Server and SQL Server Machine Learning  Services on the Windows.  Machine Learning (Developer Edition) includes the complete R distribution from CRAN and a Python interpreter, plus additional data-analysis functions with big-data capabilities, and the operationalization framework for integrating R and Python into applications as web services. The developer edition is identical to the enterprise Machine Learning  Server edition, but licensed for development/test use.
+
+Through Azure’s worldwide cloud infrastructure, you now have on-demand access to a data science development environment in which you can rapidly derive insights from your data, build predictive models and advanced analytics solutions for deployment to the cloud, on-premises or in a hybrid environment. 
+
+The Microsoft Data Science Virtual Machine jump-starts your analytics project by saving you the trouble of having to discover and install these tools individually. Hosting the data science machine on Azure offers high availability and a consistent set of tools used across your data science team.   It enables you to work on tasks in a variety of languages including R and Python. Visual Studio provides an IDE to develop and test your code that is easy to use. The Azure SDK included in the VM allows you to build your applications using various services on Microsoft’s cloud platform. 
+
+We encourage you to try the Microsoft Data Science Virtual Machine to jumpstart your analytics project. 
+
+## <a name="start-using-machine-learning-server-machine-learning-services-in-the-cloud"></a>Start using Machine Learning Server/ Machine Learning Services in the Cloud
+
+You need to create your own Microsoft Data Science Virtual Machine (VM). To create this VM, you must have an Azure subscription and an Azure storage account. Learn more about creating a Data Science VM see [here.](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm)
+
+After you provision your virtual machine from the image, you can start exploring your data and modeling right away. The data on the virtual machine is stored on the cloud and highly available. 
+
+> There are no software charges for this data science VM image. You only pay for the Azure usage fees, which are dependent on the size of the virtual machine you are provisioning with this VM image. More details on the compute fees can be found  [here](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.standard-data-science-vm).
+
+
+## <a name="learn-more"></a>Learn More
+
++ [Overview of Data Science Virtual Machine](https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-data-science-virtual-machine-overview)
+
++ Provision the Data Science Virtual Machine - [Windows](https://docs.microsoft.com/azure/machine-learning/machine-learning-data-science-provision-vm) | [Linux](https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-data-science-dsvm-ubuntu-intro)
+
++ Use the Data Science Virtual Machine - [Windows](https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-data-science-vm-do-ten-things) | [Linux](https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-data-science-linux-dsvm-walkthrough)
+
++ Try the virtual machine for free via a [30-day Azure free trial](https://azure.microsoft.com/free/)
