@@ -1,0 +1,581 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="revoscalepy-package.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-d1654b2" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">31942184-1832-4cbe-8e07-924efec046b45608c4f7e1982b34525fbfb6220b7feda6e926fd.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">5608c4f7e1982b34525fbfb6220b7feda6e926fd</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">31942184-1832-4cbe-8e07-924efec046b4</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">04/18/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\python-reference\revoscalepy\revoscalepy-package.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>revoscalepy package for Python (Machine Learning Server)</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Function help reference for the revoscalepy Python package of Machine Learning Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>revoscalepy package</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> module is a collection of portable, scalable and distributable Python functions used for importing, transforming, and analyzing data at scale.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>You can use it for descriptive statistics, generalized linear models, logistic regression, classification and regression trees, and decision forests.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Functions run on the <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> interpreter, built on open-source Python, engineered to leverage the multithreaded and multinode architecture of the host platform.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Package details</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Current version:</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>9.3</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Built on:</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Anaconda 4.2<ept id="p1">](https://www.continuum.io/why-anaconda)</ept> distribution of <bpt id="p2">[</bpt>Python 3.5<ept id="p2">](https://www.python.org/doc)</ept></source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Package distribution:</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Machine Learning Server 9.x<ept id="p1">](../../what-is-machine-learning-server.md)</ept></source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server 2017 Machine Learning Services<ept id="p1">](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services)</ept></source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server 2017 Machine Learning Server (Standalone)<ept id="p1">](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone#whats-new-in-microsoft-machine-learning-server)</ept></source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>How to use revoscalepy</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> module is found in Machine Learning Server or SQL Server Machine Learning when you add Python to your installation.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>You get the full collection of proprietary packages plus a Python distribution with its modules and interpreter.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>You can use any Python IDE to write Python script calling functions in <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept>, but the script must run on a computer having our proprietary modules.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>For a review of common tasks, see <bpt id="p1">[</bpt>How to use revoscalepy with Spark<ept id="p1">](../../python/how-to-revoscalepy.md)</ept>.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Run it locally</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>This is the default.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> library runs locally on all platforms.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>On a standalone Linux or Windows system, data and operations are local to the machine.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>On Spark, a local compute context means that data and operations are local to current execution environment (typically, an edge node).</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Run in a remote compute context</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>In a remote compute context, the script running on a local Machine Learning Server shifts execution to a remote Machine Learning Server on Spark or SQL Server.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>For example, script running on Windows might shift execution to a Spark cluster to process data there.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>On Spark, set the compute context to <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept> cluster and give the cluster name.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>In this context, if you call a function that can run in parallel, the task is distributed across data nodes in the cluster, where the operation is co-located with the data.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>On SQL Server, set the compute context to <bpt id="p1">[</bpt>RxInSQLServer<ept id="p1">](RxInSqlServer.md)</ept>.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>There are two primary use cases for remote compute context:</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Call Python functions in T-SQL script or stored procedures running on SQL Server.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Call <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> functions in Python script executing in a SQL Server <bpt id="p2">[</bpt>compute context<ept id="p2">](../../r/concept-what-is-compute-context.md)</ept>.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>In your script, you can set a compute context to shift execution of <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> operations to a remote SQL Server instance that has the <bpt id="p2">**</bpt>revoscalepy<ept id="p2">**</ept> interpreter.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Functions by category</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>The library includes  data transformation and manipulation, visualization, predictions, and statistical analysis functions.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>It also includes functions for controlling jobs, serializing data, and performing common utility tasks.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>This section lists the functions by category to give you an idea of how each one is used.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>The table of contents to lists functions in alphabetical order.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Some function names begin with <ph id="ph1">`rx-`</ph> and others with <ph id="ph2">`Rx`</ph>.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`Rx`</ph> function name prefix is used for class constructors for data sources and compute contexts.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>1-Compute context functions</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Function</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxInSqlServer<ept id="p1">](RxInSqlServer.md)</ept></source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Creates a compute context for running revoscalepy analyses inside a remote Microsoft SQL Server.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxLocalSeq<ept id="p1">](RxLocalSeq.md)</ept></source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>This is the default but you can call it switch back to a local compute context if your script runs in multiple.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Computations using rx_exec will be processed sequentially.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_get_compute_context<ept id="p1">](rx-get-compute-context.md)</ept></source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Returns the current compute context.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_set_compute_context<ept id="p1">](rx-set-compute-context.md)</ept></source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Change the compute context to a different one.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Creates a compute context for running revoscalepy analyses in a remote Spark cluster.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_get_pyspark_connection<ept id="p1">](rx-get-pyspark-connection.md)</ept></source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Gets a connection to a PySpark data set, in support of revoscalepy and PySpark interoperability.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_spark_connect<ept id="p1">](rx-spark-connect.md)</ept></source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>Creates a persistent Spark Connection.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_spark_disconnect<ept id="p1">](rx-spark-disconnect.md)</ept></source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Closes the connection.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>2-Data source functions</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>Data sources are used by <bpt id="p1">[</bpt>microsoftml functions<ept id="p1">](../microsoftml/microsoftml-package.md)</ept> as well as <bpt id="p2">**</bpt>revoscalepy<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Function</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Compute Context</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxDataSource<ept id="p1">](RxDataSource.md)</ept></source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Base class for all revoscalepy data sources.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxHdfsFileSystem<ept id="p1">](RxHdfsFileSystem.md)</ept></source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>Data source is accessed through HDFS instead of Linux.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxNativeFileSystem<ept id="p1">](RxNativeFileSystem.md)</ept></source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Data source is accessed through Linux instead of HDFS.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxHiveData<ept id="p1">](RxHiveData.md)</ept></source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>Generates a data source object from a Hive data file.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxTextData<ept id="p1">](RxTextData.md)</ept></source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>Generates a data source object from a text data file.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxXdfData<ept id="p1">](RxXdfData.md)</ept></source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>Generates a data source object from an XDF data source.</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxOdbcData<ept id="p1">](RxOdbcData.md)</ept></source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>Generates a data source object from an ODBC data source.</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxOrcData<ept id="p1">](RxOrcData.md)</ept></source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>Generates a data source object from an Orc data file.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxParquetData<ept id="p1">](RxParquetData.md)</ept></source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>Generates a data source object from a Parquet data file.</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxSparkData<ept id="p1">](RxSparkData.md)</ept></source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>Generates a data source object from a Spark data source.</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxSparkDataFrame<ept id="p1">](RxSparkDataFrame.md)</ept></source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>Generates a data source object from a Spark data frame.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_get_partitions<ept id="p1">](rx-get-partitions.md)</ept></source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>Get partitions of a partitioned Xdf data source.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_partition<ept id="p1">](rx-partition.md)</ept></source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>Partition input data sources by key values and save the results to a partitioned .xdf on disk.</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_spark_cache_data<ept id="p1">](rx-spark-cache-data.md)</ept></source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>Generates a data source object from cached data.</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_spark_list_data<ept id="p1">](rx-spark-list-data.md)</ept></source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>Generates a data source object from a list.</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_spark_remove_data<ept id="p1">](rx-spark-remove-data.md)</ept></source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>Deletes the Spark cached data source object.</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxSqlServerData<ept id="p1">](RxSqlServerData.md)</ept></source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxInSqlServer<ept id="p1">](RxInSqlServer.md)</ept></source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>Generates a data source object from a SQL table or query.</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>3-Data manipulation (ETL) functions</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>Function</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>Compute Context</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_import<ept id="p1">](rx-import.md)</ept></source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>Import data into an .xdf file or data frame.</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_data_step<ept id="p1">](rx-data-step.md)</ept></source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source>Transform data from an input data set to an output data set.</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source>4-Analytic functions</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source>Function</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source>Compute Context</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_exec_by<ept id="p1">](rx-exec-by.md)</ept></source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source>Execute an arbitrary function in parallel on multiple data nodes.</source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_summary<ept id="p1">](rx-summary.md)</ept></source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve">
+          <source>Produce univariate summaries of objects in revoscalepy.</source>
+        </trans-unit><trans-unit id="239" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_lin_mod<ept id="p1">](rx-lin-mod.md)</ept></source>
+        </trans-unit><trans-unit id="240" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="241" translate="yes" xml:space="preserve">
+          <source>Fit linear models on small or large data.</source>
+        </trans-unit><trans-unit id="242" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_logit<ept id="p1">](rx-logit.md)</ept></source>
+        </trans-unit><trans-unit id="243" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="244" translate="yes" xml:space="preserve">
+          <source>Use rx_logit to fit logistic regression models for small or large data.</source>
+        </trans-unit><trans-unit id="245" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_dtree<ept id="p1">](rx-dtree.md)</ept></source>
+        </trans-unit><trans-unit id="246" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="247" translate="yes" xml:space="preserve">
+          <source>Fit classification and regression trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm.</source>
+        </trans-unit><trans-unit id="248" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_dforest<ept id="p1">](rx-dforest.md)</ept></source>
+        </trans-unit><trans-unit id="249" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="250" translate="yes" xml:space="preserve">
+          <source>Fit classification and regression decision forests on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm.</source>
+        </trans-unit><trans-unit id="251" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_btrees<ept id="p1">](rx-btrees.md)</ept></source>
+        </trans-unit><trans-unit id="252" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="253" translate="yes" xml:space="preserve">
+          <source>Fit stochastic gradient boosted decision trees on an ‘.xdf’ file or data frame for small or large data using parallel external memory algorithm.</source>
+        </trans-unit><trans-unit id="254" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_predict_default<ept id="p1">](rx-predict-default.md)</ept></source>
+        </trans-unit><trans-unit id="255" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="256" translate="yes" xml:space="preserve">
+          <source>Compute predicted values and residuals using rx_lin_mod and rx_logit objects.</source>
+        </trans-unit><trans-unit id="257" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_predict_rx_dforest<ept id="p1">](rx-predict-rx-dforest.md)</ept></source>
+        </trans-unit><trans-unit id="258" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="259" translate="yes" xml:space="preserve">
+          <source>Calculate predicted or fitted values for a data set from an rx_dforest or rx_btrees object.</source>
+        </trans-unit><trans-unit id="260" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_predict_rx_dtree<ept id="p1">](rx-predict-rx-dtree.md)</ept></source>
+        </trans-unit><trans-unit id="261" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="262" translate="yes" xml:space="preserve">
+          <source>Calculate predicted or fitted values for a data set from an rx_dtree object.</source>
+        </trans-unit><trans-unit id="263" translate="yes" xml:space="preserve">
+          <source>5-Job functions</source>
+        </trans-unit><trans-unit id="264" translate="yes" xml:space="preserve">
+          <source>In an <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept> context, job management is built in.</source>
+        </trans-unit><trans-unit id="265" translate="yes" xml:space="preserve">
+          <source>You only need job functions if you want to manually control the Yarn queue.</source>
+        </trans-unit><trans-unit id="266" translate="yes" xml:space="preserve">
+          <source>Function</source>
+        </trans-unit><trans-unit id="267" translate="yes" xml:space="preserve">
+          <source>Compute Context</source>
+        </trans-unit><trans-unit id="268" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="269" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_exec<ept id="p1">](rx-exec.md)</ept></source>
+        </trans-unit><trans-unit id="270" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="271" translate="yes" xml:space="preserve">
+          <source>Allows distributed execution of a function in parallel across nodes (computers) or cores of a “compute context” such as a cluster.</source>
+        </trans-unit><trans-unit id="272" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_cancel_job<ept id="p1">](rx-cancel-job.md)</ept></source>
+        </trans-unit><trans-unit id="273" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="274" translate="yes" xml:space="preserve">
+          <source>Removes all job-related artifacts from the distributed computing resources, including any job results.</source>
+        </trans-unit><trans-unit id="275" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_cleanup_jobs<ept id="p1">](rx-cleanup-jobs.md)</ept></source>
+        </trans-unit><trans-unit id="276" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="277" translate="yes" xml:space="preserve">
+          <source>Removes the artifacts for a specific job.</source>
+        </trans-unit><trans-unit id="278" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxRemoteJob class<ept id="p1">](RxRemoteJob.md)</ept></source>
+        </trans-unit><trans-unit id="279" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="280" translate="yes" xml:space="preserve">
+          <source>Closes the remote job, purging all associated job-related data.</source>
+        </trans-unit><trans-unit id="281" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxRemoteJobStatus<ept id="p1">](RxRemoteJobStatus.md)</ept></source>
+        </trans-unit><trans-unit id="282" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="283" translate="yes" xml:space="preserve">
+          <source>Represents the execution status of a remote Python job.</source>
+        </trans-unit><trans-unit id="284" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_get_job_info<ept id="p1">](rx-get-job-info.md)</ept></source>
+        </trans-unit><trans-unit id="285" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="286" translate="yes" xml:space="preserve">
+          <source>Contains complete information on the job’s compute context as well as other information needed by the distributed computing resources.</source>
+        </trans-unit><trans-unit id="287" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_get_job_output<ept id="p1">](rx-get-job-output.md)</ept></source>
+        </trans-unit><trans-unit id="288" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="289" translate="yes" xml:space="preserve">
+          <source>Returns console output for the nodes participating in a distributed computing job.</source>
+        </trans-unit><trans-unit id="290" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_get_job_results<ept id="p1">](rx-get-job-results.md)</ept></source>
+        </trans-unit><trans-unit id="291" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="292" translate="yes" xml:space="preserve">
+          <source>Returns results of the run or a message stating why results are not available.</source>
+        </trans-unit><trans-unit id="293" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_get_job_status<ept id="p1">](rx-get-job-status.md)</ept></source>
+        </trans-unit><trans-unit id="294" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="295" translate="yes" xml:space="preserve">
+          <source>Obtain distributed computing processing status for the specified job.</source>
+        </trans-unit><trans-unit id="296" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_get_jobs<ept id="p1">](rx-get-jobs.md)</ept></source>
+        </trans-unit><trans-unit id="297" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="298" translate="yes" xml:space="preserve">
+          <source>Returns a list of job objects associated with the given compute context and matching the specified parameters.</source>
+        </trans-unit><trans-unit id="299" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_wait_for_job<ept id="p1">](rx-wait-for-job.md)</ept></source>
+        </trans-unit><trans-unit id="300" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="301" translate="yes" xml:space="preserve">
+          <source>Block on an existing distributed job until completion, effectively turning a non-blocking job into a blocking job.</source>
+        </trans-unit><trans-unit id="302" translate="yes" xml:space="preserve">
+          <source>6-Serialization functions</source>
+        </trans-unit><trans-unit id="303" translate="yes" xml:space="preserve">
+          <source>Function</source>
+        </trans-unit><trans-unit id="304" translate="yes" xml:space="preserve">
+          <source>Compute Context</source>
+        </trans-unit><trans-unit id="305" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="306" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_serialize_model<ept id="p1">](rx-serialize-model.md)</ept></source>
+        </trans-unit><trans-unit id="307" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="308" translate="yes" xml:space="preserve">
+          <source>Serialize a given python model.</source>
+        </trans-unit><trans-unit id="309" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_read_object<ept id="p1">](rx-read-object.md)</ept></source>
+        </trans-unit><trans-unit id="310" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="311" translate="yes" xml:space="preserve">
+          <source>Retrieves an ODBC data source object.</source>
+        </trans-unit><trans-unit id="312" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_read_xdf<ept id="p1">](rx-read-xdf.md)</ept></source>
+        </trans-unit><trans-unit id="313" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="314" translate="yes" xml:space="preserve">
+          <source>Read data from an .xdf file into a data frame.</source>
+        </trans-unit><trans-unit id="315" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_write_object<ept id="p1">](rx-write-object.md)</ept></source>
+        </trans-unit><trans-unit id="316" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="317" translate="yes" xml:space="preserve">
+          <source>Stores an ODBC data source object.</source>
+        </trans-unit><trans-unit id="318" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_delete_object<ept id="p1">](rx-delete-object.md)</ept></source>
+        </trans-unit><trans-unit id="319" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="320" translate="yes" xml:space="preserve">
+          <source>Deletes an object from the ODBC data source.</source>
+        </trans-unit><trans-unit id="321" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_list_keys<ept id="p1">](rx-list-keys.md)</ept></source>
+        </trans-unit><trans-unit id="322" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="323" translate="yes" xml:space="preserve">
+          <source>Enumerates all keys or versions for a given key, depending on the parameters.</source>
+        </trans-unit><trans-unit id="324" translate="yes" xml:space="preserve">
+          <source>7-Utility functions</source>
+        </trans-unit><trans-unit id="325" translate="yes" xml:space="preserve">
+          <source>Function</source>
+        </trans-unit><trans-unit id="326" translate="yes" xml:space="preserve">
+          <source>Compute Context</source>
+        </trans-unit><trans-unit id="327" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="328" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxOptions<ept id="p1">](RxOptions.md)</ept></source>
+        </trans-unit><trans-unit id="329" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="330" translate="yes" xml:space="preserve">
+          <source>Specify and retrieve options needed for <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> computations.</source>
+        </trans-unit><trans-unit id="331" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_get_info<ept id="p1">](rx-get-info.md)</ept></source>
+        </trans-unit><trans-unit id="332" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="333" translate="yes" xml:space="preserve">
+          <source>Get basic information about a <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> data source or data frame.</source>
+        </trans-unit><trans-unit id="334" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_get_var_info<ept id="p1">](rx-get-var-info.md)</ept></source>
+        </trans-unit><trans-unit id="335" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="336" translate="yes" xml:space="preserve">
+          <source>Get variable information for a <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> data source or data frame, including variable names, descriptions, and value labels.</source>
+        </trans-unit><trans-unit id="337" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_get_var_names<ept id="p1">](rx-get-var-names.md)</ept></source>
+        </trans-unit><trans-unit id="338" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="339" translate="yes" xml:space="preserve">
+          <source>Read the variable names for data source or data frame.</source>
+        </trans-unit><trans-unit id="340" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_set_var_info<ept id="p1">](rx-set-var-info.md)</ept></source>
+        </trans-unit><trans-unit id="341" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="342" translate="yes" xml:space="preserve">
+          <source>Set the variable information for an .xdf file, including variable names, descriptions, and value labels, or set attributes for variables in a data frame.</source>
+        </trans-unit><trans-unit id="343" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxMissingValues<ept id="p1">](RxMissingValues.md)</ept></source>
+        </trans-unit><trans-unit id="344" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="345" translate="yes" xml:space="preserve">
+          <source>Provides missing values for various <ph id="ph1">`NumPy`</ph> data types which you can use to mark missing values in a sequence of data in <ph id="ph2">`ndarray`</ph>.</source>
+        </trans-unit><trans-unit id="346" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_privacy_control<ept id="p1">](rx-privacy-control.md)</ept></source>
+        </trans-unit><trans-unit id="347" translate="yes" xml:space="preserve">
+          <source>All</source>
+        </trans-unit><trans-unit id="348" translate="yes" xml:space="preserve">
+          <source>Opt out of <bpt id="p1">[</bpt>usage data collection<ept id="p1">](../../resources-opting-out.md)</ept>.</source>
+        </trans-unit><trans-unit id="349" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_hadoop_command<ept id="p1">](rx-hadoop-command.md)</ept></source>
+        </trans-unit><trans-unit id="350" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="351" translate="yes" xml:space="preserve">
+          <source>Execute arbitrary Hadoop commands and perform standard file operations in Hadoop.</source>
+        </trans-unit><trans-unit id="352" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_hadoop_copy_from_local<ept id="p1">](rx-hadoop-copy-from-local.md)</ept></source>
+        </trans-unit><trans-unit id="353" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="354" translate="yes" xml:space="preserve">
+          <source>Wraps the Hadoop <ph id="ph1">`fs -copyFromLocal`</ph> command.</source>
+        </trans-unit><trans-unit id="355" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_hadoop_copy_to_local<ept id="p1">](rx-hadoop-copy-to-local.md)</ept></source>
+        </trans-unit><trans-unit id="356" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="357" translate="yes" xml:space="preserve">
+          <source>Wraps the Hadoop <ph id="ph1">`fs -copyToLocal`</ph> command.</source>
+        </trans-unit><trans-unit id="358" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_hadoop_copy<ept id="p1">](rx-hadoop-copy.md)</ept></source>
+        </trans-unit><trans-unit id="359" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="360" translate="yes" xml:space="preserve">
+          <source>Wraps the Hadoop <ph id="ph1">`fs -cp`</ph> command.</source>
+        </trans-unit><trans-unit id="361" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_hadoop_file_exists<ept id="p1">](rx-hadoop-file-exists.md)</ept></source>
+        </trans-unit><trans-unit id="362" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="363" translate="yes" xml:space="preserve">
+          <source>Wraps the Hadoop <ph id="ph1">`fs -test -e`</ph> command.</source>
+        </trans-unit><trans-unit id="364" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_hadoop_list_files<ept id="p1">](rx-hadoop-list-files.md)</ept></source>
+        </trans-unit><trans-unit id="365" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="366" translate="yes" xml:space="preserve">
+          <source>Wraps the Hadoop <ph id="ph1">`fs -ls or -lsr`</ph> command.</source>
+        </trans-unit><trans-unit id="367" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_hadoop_make_dir<ept id="p1">](rx-hadoop-make-dir.md)</ept></source>
+        </trans-unit><trans-unit id="368" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="369" translate="yes" xml:space="preserve">
+          <source>Wraps the Hadoop <ph id="ph1">`fs -mkdir -p`</ph> command.</source>
+        </trans-unit><trans-unit id="370" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_hadoop_move<ept id="p1">](rx-hadoop-move.md)</ept></source>
+        </trans-unit><trans-unit id="371" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="372" translate="yes" xml:space="preserve">
+          <source>wraps the Hadoop <ph id="ph1">`fs -mv`</ph> command.</source>
+        </trans-unit><trans-unit id="373" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_hadoop_remove_dir<ept id="p1">](rx-hadoop-remove-dir.md)</ept></source>
+        </trans-unit><trans-unit id="374" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="375" translate="yes" xml:space="preserve">
+          <source>Wraps the Hadoop <ph id="ph1">`fs -rm -r`</ph>  or <ph id="ph2">`fs -rm -r -skipTrash`</ph> command.</source>
+        </trans-unit><trans-unit id="376" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_hadoop_remove<ept id="p1">](rx-hadoop-remove.md)</ept></source>
+        </trans-unit><trans-unit id="377" translate="yes" xml:space="preserve">
+          <source>Local, <bpt id="p1">[</bpt>RxSpark<ept id="p1">](RxSpark.md)</ept></source>
+        </trans-unit><trans-unit id="378" translate="yes" xml:space="preserve">
+          <source>Wraps the Hadoop <ph id="ph1">`fs -rm`</ph> or <ph id="ph2">`fs -rm -skipTrash`</ph> command.</source>
+        </trans-unit><trans-unit id="379" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="380" translate="yes" xml:space="preserve">
+          <source>For Machine Learning Server, try a quickstart as an introduction to <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept>:</source>
+        </trans-unit><trans-unit id="381" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>revoscalepy and PySpark interoperability<ept id="p1">](../../python/tutorial-revoscalepy-pyspark.md)</ept></source>
+        </trans-unit><trans-unit id="382" translate="yes" xml:space="preserve">
+          <source>For SQL Server, add both Python modules to your computer by running setup:</source>
+        </trans-unit><trans-unit id="383" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Set up Python Machine Learning Services<ept id="p1">](https://docs.microsoft.com/sql/advanced-analytics/python/setup-python-machine-learning-services)</ept>.</source>
+        </trans-unit><trans-unit id="384" translate="yes" xml:space="preserve">
+          <source>Follow these SQL Server tutorials for hands-on experience:</source>
+        </trans-unit><trans-unit id="385" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Use revoscalepy to create a model<ept id="p1">](https://docs.microsoft.com/sql/advanced-analytics/tutorials/use-python-revoscalepy-to-create-model)</ept></source>
+        </trans-unit><trans-unit id="386" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Run Python in T-SQL<ept id="p1">](https://docs.microsoft.com/sql/advanced-analytics/tutorials/run-python-using-t-sql)</ept></source>
+        </trans-unit><trans-unit id="387" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="388" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Machine Learning Server<ept id="p1">](../../what-is-machine-learning-server.md)</ept></source>
+        </trans-unit><trans-unit id="389" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server Machine Learning Services with Python<ept id="p1">](https://docs.microsoft.com/sql/advanced-analytics/python/sql-server-python-services)</ept></source>
+        </trans-unit><trans-unit id="390" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server Machine Learning Server (Standalone)<ept id="p1">](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)</ept></source>
+        </trans-unit></group></body></file></xliff>

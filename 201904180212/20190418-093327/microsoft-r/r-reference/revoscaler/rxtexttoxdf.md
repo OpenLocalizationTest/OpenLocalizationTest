@@ -1,0 +1,281 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="rxtexttoxdf.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-d1654b2" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">31942184-1832-4cbe-8e07-924efec046b45bdb8d637b675f586fd86864aec6fc6d713a22ae.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">5bdb8d637b675f586fd86864aec6fc6d713a22ae</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">31942184-1832-4cbe-8e07-924efec046b4</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">04/18/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\r-reference\revoscaler\rxtexttoxdf.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>rxTextToXdf function (revoAnalytics) | Microsoft Docs</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Import text data into to an .xdf file using fastText mode.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Can also use rxImport.</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>(revoAnalytics), rxTextToXdf, file, connection</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>rxTextToXdf: Text File Data Import (to .xdf)</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Import text data into to an .xdf file using <ph id="ph1">`fastText`</ph> mode.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Can also use rxImport.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Usage</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Arguments</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>character string specifying the input comma or whitespace delimited text file.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>either an RxXdfData object or a character string specifying the output .xdf file.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>name of a logical variable in the data set (in quotes) or a logical expression using variables in the data set to specify row selection.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>For example, <ph id="ph1">`rowSelection = "old"`</ph> will use only observations in which the value of the variable <ph id="ph2">`old`</ph> is <ph id="ph3">`TRUE`</ph>.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`rowSelection = (age &gt; 20) &amp; (age &lt; 65) &amp; (log(income) &gt; 10)`</ph> will use only observations in which the value of the <ph id="ph2">`age`</ph> variable is between 20 and 65 and the value of the <ph id="ph3">`log`</ph> of the <ph id="ph4">`income`</ph> variable is greater than 10.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>The row selection is performed after processing any data transformations  (see the arguments <ph id="ph1">`transforms`</ph> or <ph id="ph2">`transformFunc`</ph>).</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>As with all expressions, <ph id="ph1">`rowSelection`</ph> can be defined outside of the function  call using the expression function.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>integer indicating number of leading rows to ignore.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>an expression of the form <ph id="ph1">`list(name = expression, ...)`</ph> representing variable transformations.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>As with all expressions, <ph id="ph1">`transforms`</ph> (or <ph id="ph2">`rowSelection`</ph>)  can be defined outside of the function call using the expression function.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>a named list containing objects that can be referenced by <ph id="ph1">`transforms`</ph>, <ph id="ph2">`transformsFunc`</ph>, and <ph id="ph3">`rowSelection`</ph>.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>variable transformation function.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>See <bpt id="p1">[</bpt>rxTransform<ept id="p1">](rxTransform.md)</ept> for details.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>character vector of input data set variables needed for the transformation function.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>See <bpt id="p1">[</bpt>rxTransform<ept id="p1">](rxTransform.md)</ept> for details.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>character vector defining additional R packages (outside of those specified in <ph id="ph1">`rxGetOption("transformPackages")`</ph>) to be made available and  preloaded for use in variable transformation functions, e.g., those explicitly defined in <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> functions via their <ph id="ph2">`transforms`</ph> and <ph id="ph3">`transformFunc`</ph> arguments or those  defined implicitly via their <ph id="ph4">`formula`</ph> or <ph id="ph5">`rowSelection`</ph> arguments.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`transformPackages`</ph> argument may also be <ph id="ph2">`NULL`</ph>,  indicating that no packages outside <ph id="ph3">`rxGetOption("transformPackages")`</ph> will be preloaded.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>user-defined environment to serve as a parent to  all environments developed internally and used for variable data transformation.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`transformEnvir = NULL`</ph>, a new "hash" environment with parent <ph id="ph2">`baseenv()`</ph> is used instead.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>either <ph id="ph1">`"none"`</ph> to create a new .xdf file or <ph id="ph2">`"rows"`</ph> to append rows to an existing .xdf file.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`outFile`</ph> exists and <ph id="ph2">`append`</ph> is <ph id="ph3">`"none"`</ph>,  then <ph id="ph4">`overwrite`</ph> argument must be set to <ph id="ph5">`TRUE`</ph>.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Note that appending to a factor column normally extends its levels with whatever values are in the appended data, but if levels are explicitly specified using <ph id="ph1">`colInfo`</ph> then it will be extended only with the specified levels - any other values will be added as missings.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>logical value.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`TRUE`</ph>, an existing <ph id="ph2">`outFile`</ph> will be overwritten, or if appending columns existing columns with the same name will be overwritten.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`overwrite`</ph> is ignored if appending rows.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>integer value specifiying the maximum number of rows to import.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>If set to -1, all rows will be imported.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>logical indicating whether or not to automatically convert strings to factors on import.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>This can be overridden by specifying <ph id="ph1">`"character"`</ph> in <ph id="ph2">`colClasses`</ph> and <ph id="ph3">`colInfo`</ph>.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`TRUE`</ph>, the factor levels will be coded in the order encountered.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Since this factor level ordering is row dependent, the preferred method for handling factor columns is to use <ph id="ph1">`colInfo`</ph> with specified <ph id="ph2">`"levels"`</ph>.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>character vector specifying the column types to use when converting the data.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>The element names for the vector are used to identify which column should be converted to which type.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Allowable column types are:</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>"logical" (stored as <ph id="ph1">`uchar`</ph>),</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>"integer" (stored as <ph id="ph1">`int32`</ph>),</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>"factor" (stored as <ph id="ph1">`uint32`</ph>),</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>"ordered" (an ordered factor stored as <ph id="ph1">`uint32`</ph>.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Ordered factors are treated the same as factors in RevoScaleR analysis functions.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>),</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>"float32" (the default for floating point data for .xdf files),</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>"numeric" (stored as <ph id="ph1">`float64`</ph> as in R),</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>"character" (stored as <ph id="ph1">`string`</ph>),</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>"int16" (alternative to integer for smaller storage space),</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>"uint16" (alternative to unsigned integer for smaller storage space)</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Note for <ph id="ph1">`"factor"`</ph> and <ph id="ph2">`"ordered"`</ph> type, the levels will  be coded in the order encountered.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Since this factor level ordering is row dependent,  the preferred method for handling factor columns is to use <ph id="ph1">`colInfo`</ph> with specified <ph id="ph2">`"levels"`</ph>.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Note that equivalent types share the same bullet in the list above; for some types we allow both 'R-friendly' typenames, as well as our own, more specific type names for .xdf data.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Note also that specifying the column as a "factor" type is currently equivalent to "string" - for the moment, if you wish to import a column as factor data you must use the <ph id="ph1">`colInfo`</ph> argument, documented below.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>list of named variable information lists.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Each variable information list contains one or more of the named elements given below.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>The information supplied for <ph id="ph1">`colInfo`</ph> overrides that supplied for <ph id="ph2">`colClasses`</ph>.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Currently available properties for a column information list are:</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`type(character)`</ph> - character string specifying the data type for the variable.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>See <ph id="ph1">`colClasses`</ph> argument description for the available types.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`newName(character)`</ph> - character string specifying a new name for the variable.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`description(character)`</ph> - character string specifying a description  for the variable.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`levels(character vector)`</ph> - levels specified for a column of type "factor".</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>If the levels property is not provided, factor levels will be determined by the entries in the source column.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Blanks or empty strings will be set to missing values.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>If levels are provided, any source column entry that does not match a provided level will be converted to a missing value.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>If an ".rxOther" level is included, all missings will be assigned to that level.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`newLevels(character vector)`</ph> - new or replacement levels  specified for a column of type "factor".</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Must be used in conjunction with the <ph id="ph1">`levels`</ph> component of <ph id="ph2">`colClasses`</ph>.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>After reading in the original data, the labels for each level will be replaced with the <ph id="ph1">`newLevels`</ph>.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`low`</ph> - the minimum data value in the variable (used in computations using the <ph id="ph2">`F()`</ph> function.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`high`</ph> - the maximum data value in the variable (used in computations using the <ph id="ph2">`F()`</ph> function.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>character string containing the missing value code.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>number of rows to read for each chunk of data; if <ph id="ph1">`NULL`</ph>, all rows are read.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>This is the number of rows written per block to the .xdf file unless the number of rows in the read chunk is modified through code in a <bpt id="p1">[</bpt>transformFunc<ept id="p1">](rxTransform.md)</ept>.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>character string containing characters to be used as delimiters.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`NULL`</ph>, the file is assumed to be either comma or tab delimited.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>DEPRECATED.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>Use <ph id="ph1">`firstRowIsColNames`</ph>.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>logical indicating if the first row represents column names.</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`firstRowIsColNames`</ph> is <ph id="ph2">`NULL`</ph>, then column names are auto- detected.</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>The logic for auto-detection is: if the first row contains all values that are interpreted as character and the second row contains at least one value that is interpreted as numeric, then the first row is considered to be column names; else the first row is considered to be the first data row.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>number of rows to use in determining column type.</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>number of rows to read into a temporary buffer.</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>This value could affect the speed of import.</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>Used to specify a column's data type when  only decimal values (possibly mixed with missing (<ph id="ph1">`NA`</ph>) values) are encountered upon first read of the data and the column's type information is not specified via <ph id="ph2">`colInfo`</ph> or <ph id="ph3">`colClasses`</ph>.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>Supported types are "float32" and "numeric", for 32-bit floating point and 64-bit  floating point values, respectively.</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>Used to specify a given column's data type when  only missings (<ph id="ph1">`NA`</ph>s) or blanks are encountered upon first read of the data  and the column's type information is not specified via <ph id="ph2">`colInfo`</ph> or <ph id="ph3">`colClasses`</ph>.</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>Supported types are "float32", "numeric", and "character" for 32-bit floating point, 64-bit floating point and string values, respectively.</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>integer value with options:</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`0`</ph>: no progress is reported.</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`1`</ph>: the number of processed rows is printed and updated.</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`2`</ph>: rows processed and timings are reported.</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`3`</ph>: rows processed and all timings are reported.</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>integer in the range of -1 to 9.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>The higher the value, the greater the  amount of compression - resulting in smaller files but a longer time to create them.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>If  <ph id="ph1">`xdfCompressionLevel`</ph> is set to 0, there will be no compression and files will be compatible  with the 6.0 release of Revolution R Enterprise.</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>If set to -1, a default level of compression  will be used.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>logical value.</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>EXPERIMENTAL.</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`TRUE`</ph>, a composite set of files will be created instead of a single .xdf file.</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>A directory will be created whose name is the same as the .xdf file that would otherwise be created, but with no extension.</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>Subdirectories data and metadata will be created.</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>In the data subdirectory, the data will be split across a set of .xdfd files (see <ph id="ph1">`blocksPerCompositeFile`</ph> below for determining how many blocks of data will be in each file).</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>In the metadata subdirectory  there is a single .xdfm file, which contains the meta data for all of the  .xdfd files in the  data subdirectory.</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>When the <ph id="ph1">`fileSystem`</ph> is "hdfs" a composite set of files is always created.</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>integer value.</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>EXPERIMENTAL.</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`createCompositeSet=TRUE`</ph>, and if the compute context is not <ph id="ph2">`RxHadoopMR`</ph>, this will be the number of blocks put into each .xdfd file in the composite set.</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>When importing is being done on Hadoop using MapReduce, the number of rows per .xdfd file is determined by the rows assigned to each MapReduce task, and the number of blocks per .xdfd file is therefore determined by <ph id="ph1">`rowsPerRead`</ph>.</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>Details</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>Decimal data in text files can be imported into .xdf files and stored as either 32-bit floats or 64-bit doubles.</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>The default for this is 32-bit floats, which can be changed using <bpt id="p1">[</bpt>rxOptions<ept id="p1">](rxOptions.md)</ept>.</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>If stored in 32-bit floats, they are converted into 64-bit doubles whenever they are brought into R. Because there may be no exact binary representation of a particular decimal number, the resulting double may be (slightly) different from a double created by directly converting a decimal value to a double.</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>Thus exact comparisons of values may result in unexpected behavior.</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>For example, if <ph id="ph1">`x`</ph> is imported from a text file with a decimal value of <ph id="ph2">`"1.2"`</ph> and stored as a float in an .xdf file, the closest decimal representation of the stored value displayed as a double is <ph id="ph3">`1.2000000476837158`</ph>.</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>So, bringing it into R as a double and comparing with a decimal constant of <ph id="ph1">`1.2`</ph>, e.g. <ph id="ph2">`x == 1.2`</ph>, will result in <ph id="ph3">`FALSE`</ph> because the decimal constant <ph id="ph4">`1.2`</ph> in the code is being converted directly to a double.</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>To store imported text decimal data as 64-bit doubles in an .xdf file, set the <ph id="ph1">`"defaultDecimalColType"`</ph> to <ph id="ph2">`"numeric"`</ph>.</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>Doing so will increase the size of the .xdf file, since the size of a double is twice that of a float.</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>An error message will be issued if the data being appended is of a different type than the existing data and the conversion might result in a loss of data.</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>For example, appending a float column to an integer column will result in an error unless the column type is explicitly set to <ph id="ph1">`"integer"`</ph> using the <ph id="ph2">`colClasses`</ph> argument.</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>If explicitly set, the float data will then be converted to integer data when imported.</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`Date`</ph> is not currently supported in colClasses or colInfo, but <ph id="ph2">`Date`</ph> variables can be created by importing string data and converting to a <ph id="ph3">`Date`</ph> variable using as.Date in a <ph id="ph4">`transforms`</ph> argument.</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Encoding Details<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source>If the input data source or file contains non-ASCII character information, please use the function <ph id="ph1">`rxImport`</ph> with the encoding settings recommended in the RxImport documentation under 'Encoding Details'</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source>Note</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source>For reasons of performance, <ph id="ph1">`rxTextToXdf`</ph> does not properly handle text files that contain the delimiter character inside a quoted string (for example, the entry <ph id="ph2">`"Wade, John"`</ph> inside a comma delimited file.</source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source>See <bpt id="p1">[</bpt>rxImport<ept id="p1">](rxImport.md)</ept> with <ph id="ph1">`type = "text"`</ph> for importing this type of data.</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source>In addition <ph id="ph1">`rxTextToXdf`</ph> currently requires that all rows of data in the text file contain the same number of entries.</source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source>Date, time, and currency data types are not currently supported and are imported as character data.</source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve">
+          <source>Author(s)</source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve">
+          <source>Microsoft Corporation <bpt id="p1">[</bpt><ph id="ph1">`Microsoft Technical Support`</ph><ept id="p1">](https://go.microsoft.com/fwlink/?LinkID=698556&amp;clcid=0x409)</ept></source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve">
+          <source>See Also</source>
+        </trans-unit><trans-unit id="239" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxImport<ept id="p1">](rxImport.md)</ept>, <bpt id="p2">[</bpt>rxDataStep<ept id="p2">](rxDataStep.md)</ept>, <bpt id="p3">[</bpt>rxFactors<ept id="p3">](rxFactors.md)</ept>, <bpt id="p4">[</bpt>rxTransform<ept id="p4">](rxTransform.md)</ept>.</source>
+        </trans-unit><trans-unit id="240" translate="yes" xml:space="preserve">
+          <source>Examples</source>
+        </trans-unit></group></body></file></xliff>
