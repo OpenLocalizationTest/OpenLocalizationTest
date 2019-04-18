@@ -1,0 +1,431 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="tutorial-r-to-revoscaler.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-d1654b2" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9c76acdc-560c-45e5-982b-fef0690673350c189fc5b2ba83a0bba5b34884a869ae7fe92a1f.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">0c189fc5b2ba83a0bba5b34884a869ae7fe92a1f</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9c76acdc-560c-45e5-982b-fef069067335</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">04/18/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\r\tutorial-r-to-revoscaler.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Basic R commands and RevoScaleR functions: 25 common examples - Machine Learning Server</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Learn and execute basic R commands and RevoScaleR functions on R Client or Machine Learning Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Basic R commands and RevoScaleR functions: 25 common examples</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to: Microsoft R Client, Machine Learning Server<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>If you are new to both R and Machine Learning Server, this tutorial introduces you to 25 (or so) commonly used R functions.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>In this tutorial, you learn how to load small data sets into R and perform simple computations.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>A key point to take away from this tutorial is that you can combine basic R commands and RevoScaleR functions in the same R script.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>This tutorial starts with R commands before transitioning to RevoScaleR functions.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>If you already know R, skip ahead to <bpt id="p1">[</bpt>Explore RevoScaleR Functions<ept id="p1">](#ExploreScaleRFunctions)</ept>.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>R Client and Machine Learning Server are interchangeable in terms of RevoScaleR as long as <bpt id="p1">[</bpt>data fits into memory and processing is single-threaded<ept id="p1">](tutorial-revoscaler-data-import-transform.md#chunking)</ept>.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>If data size exceeds memory, we recommend pushing the <bpt id="p1">[</bpt>compute context<ept id="p1">](concept-what-is-compute-context.md)</ept> to Machine Learning Server.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>This is our simplest tutorial in terms of data and tools, but it's also expansive in its coverage of basic R and RevoScaleR functions.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>To complete the tasks, use the command-line tool <bpt id="p1">**</bpt>RGui.exe<ept id="p1">**</ept> on Windows or start the <bpt id="p2">**</bpt>Revo64<ept id="p2">**</ept> program on Linux.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>On Windows, go to \Program Files\Microsoft\R Client\R_SERVER\bin\x64 and double-click <bpt id="p1">**</bpt>Rgui.exe<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>On Linux, at the command prompt, type <bpt id="p1">**</bpt>Revo64<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>The tutorial uses pre-installed sample data so once you have the software, there is nothing more to download or install.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>The R command prompt is <ph id="ph1">`&gt;`</ph>.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>You can hand-type commands line by line, or copy-paste a multi-line command sequence.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>R is case-sensitive.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>If you hand-type commands in this example, be sure to use the correct case.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Windows users: the file paths in R take a forward slash delimiter (/), required even when the path is on the Windows file system.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Start with R</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Because RevoScaleR is built on R, this tutorial begins with an exploration of common R commands.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Load data</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>R is an environment for analyzing data, so the natural starting point is to load some data.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>For small data sets, such as the following 20 measurements of the speed of light taken from the famous Michelson-Morley experiment, the simplest approach uses R’s <ph id="ph1">`c`</ph> function to combine the data into a vector.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Type or copy the following script and paste it at the <ph id="ph1">`&gt;`</ph><ph id="ph2"> </ph>prompt at the beginning of the command line:</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>When you type the closing parenthesis and press <bpt id="p1">*</bpt>Enter<ept id="p1">*</ept>, R responds as follows:</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>This indicates that R has interpreted what you typed, created a vector with 20 elements, and returned that vector.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>But we have a problem.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>R hasn’t saved what we typed.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>If we want to use this vector again (and that’s the usual reason for creating a vector in the first place), we need to <bpt id="p1">*</bpt>assign<ept id="p1">*</ept> it.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>The R assignment operator has the suggestive form <bpt id="p1">*</bpt><ph id="ph1">&amp;lt;</ph><ph id="ph2">-</ph><ept id="p1">*</ept> to indicate a value is being assigned to a name.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>You can use most combinations of letters, numbers, and periods to form names (but note that names can’t begin with a number).</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Here we’ll use <ph id="ph1">`michelson`</ph>:</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>R responds with a <ph id="ph1">`&gt;`</ph> prompt.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Notice that the named vector is not automatically printed when it is assigned.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>However, you can view the vector by typing its name at the prompt:</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`c`</ph> function is useful for hand typing in small vectors such as you might find in textbook examples, and it is also useful for combining existing vectors.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>For example, if we discovered another five observations that extended the Michelson-Morley data, we could extend the vector using <ph id="ph1">`c`</ph> as follows:</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Generate random data</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Often for testing purposes you want to use randomly generated data.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>R has a number of built-in distributions from which you can generate random numbers; two of the most commonly used are the normal and the uniform distributions.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>To obtain a set of numbers from a normal distribution, you use the <ph id="ph1">`rnorm`</ph> function.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>This example generates 25 random numbers in a normal distribution.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>By default, the data are generated from a standard normal with mean 0 and standard deviation 1.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>You can use the <ph id="ph1">`mean`</ph> and <ph id="ph2">`sd`</ph> arguments to <ph id="ph3">`rnorm`</ph> to specify a different normal distribution:</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Similarly, you can use the <ph id="ph1">`runif`</ph> function to generate random data from a uniform distribution:</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Generate a numeric sequence</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>The default uniform distribution is over the interval 0 to 1.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>You can specify alternatives by setting the <ph id="ph1">`min`</ph> and <ph id="ph2">`max`</ph> arguments:</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Another commonly used vector is the <ph id="ph1">`sequence`</ph>, a uniformly spaced run of numbers.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>For the common case of a run of integers, you can use the infix operator, :, as follows:</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>For more general sequences, use the <ph id="ph1">`seq`</ph> function:</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>If you are working with big data, you’ll still use vectors to manipulate parameters and information about your data, but you'll probably store the data in the RevoScaleR high-performance .xdf file format.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Exploratory Data Analysis</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>After you have some data, you will want to explore it graphically.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>For most small data sets, the place to begin is with the <ph id="ph1">`plot`</ph> function, which provides a default graphical view of the data:</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>For numeric vectors such as ours, the default view is a scatter plot of the observations against their index, resulting in the following plots:</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>For an exploration of the shape of the data, the usual tools are <ph id="ph1">`stem`</ph> (to create a stemplot) and <ph id="ph2">`hist`</ph> (to create a histogram):</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>The resulting histogram is shown as the left plot following.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>We can make the histogram look more like the stemplot by specifying the <ph id="ph1">`nclass`</ph> argument to <ph id="ph2">`hist`</ph>:</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>The resulting histogram is shown as the right plot in the figure following.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>From the histogram and stemplot, it appears that the Michelson-Morley observations are not obviously normal.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>A normal Q-Q plot gives a graphical test of whether a data set is normal:</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>The decided bend in the resulting plot confirms the suspicion that the data are not normal.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Another useful exploratory plot, especially for comparing two distributions, is the boxplot:</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>These plots are great if you have a small data set in memory.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>However, when working with big data, some plot types may not be informative when working directly with the data (for example, scatter plots can produce a large blob of ink) and others may be computational intensive (if sorting is required).</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>A better alternative is the <bpt id="p1">*</bpt>rxHistogram<ept id="p1">*</ept> function in RevoScaleR that efficiently computes and renders histograms for large data sets.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>Additionally, RevoScaleR functions such as <bpt id="p1">*</bpt>rxCube<ept id="p1">*</ept> can provide summary information that is easily amenable to the impressive plotting capabilities provided by R packages.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>Summary Statistics</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>While an informative graphic often gives the fullest description of a data set, numerical summaries provide a useful shorthand for describing certain features of the data.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>For example, estimators such as the mean and median help to locate the data set, and the standard deviation and variance measure the scale or spread of the data.</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>R has a full set of summary statistics available:</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>The generic summary function provides a meaningful summary of a data set; for a numeric vector it provides the five-number summary plus the mean:</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">*</bpt>rxSummary<ept id="p1">*</ept> function in RevoScaleR will efficiently compute summary statistics for a data frame in memory or a large data file stored on disk.</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>Multivariate Data Sets</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>In most disciplines, meaningful data sets have multiple variables, typically observations of various quantities and qualities of individual subjects.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>Such data sets are typically represented as tables in which the columns correspond to variables and the rows correspond to subjects, or cases.</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>In R, such tables can be created as <bpt id="p1">*</bpt>data frame<ept id="p1">*</ept> objects.</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>For example, at the 2008 All-Star Break, the Seattle Mariners had five players who met the minimum qualifications to be considered for a batting title (that is, at least 3.1 at bats per game played by the team).</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>Their statistics are shown in the following table:</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>Copy and paste the table into a text editor (such as Notepad on Windows, or emacs or vi on Unix type machines) and save the file as <bpt id="p1">**</bpt>msStats.txt<ept id="p1">**</ept> in the working directory returned by the <bpt id="p2">*</bpt>getwd<ept id="p2">*</ept> function, for example:</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>On Windows, the working directory is probably a bin folder in program files, and by default you don't have permission to save the file at that location.</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>Use <bpt id="p1">*</bpt>setwd("/Users/TEMP")<ept id="p1">*</ept> to change the working directory to /Users/TEMP and save the file.</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>You can then read the data into R using the <ph id="ph1">`read.table`</ph> function.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>The argument <bpt id="p1">*</bpt>header=TRUE<ept id="p1">*</ept> specifies that the first line is a header of variable names:</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>BA   OBP   SLG   OPS 1 0.304 0.366 0.371 0.737 2 0.298 0.318 0.412 0.729 3 0.273 0.338 0.438 0.776 4 0.267 0.278 0.374 0.656 5 0.259 0.329 0.440 0.769</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>Notice how <ph id="ph1">`read.table`</ph> changed the names of our original “2B" and “3B" columns to be valid R names; R names cannot begin with a numeral.</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>Use built-in datasets package</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>Most small R data sets in daily use are data frames.</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>The built-in package, <bpt id="p1">**</bpt>datasets<ept id="p1">**</ept>, is a rich source of data frames for further experimentation.</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>To list the data sets in this package, use this command:</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>The output is an alphabetized list of data sets that are readily available for use in R functions.</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>In the next section, we will use the built-in data set <bpt id="p1">*</bpt>attitude<ept id="p1">*</ept>, available through the <bpt id="p2">**</bpt>datasets<ept id="p2">**</ept> package.</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>Linear Models</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">*</bpt>attitude<ept id="p1">*</ept> data set is a data frame with 30 observations on 7 variables, measuring the percent proportion of favorable responses to seven survey questions in each of 30 departments.</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>The survey was conducted in a large financial organization; there were approximately 35 respondents in each department.</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>We mentioned that the <ph id="ph1">`plot`</ph> function could be used with virtually any data set to get an initial visualization; let’s see what it gives for the <bpt id="p1">*</bpt>attitude<ept id="p1">*</ept> data:</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>The resulting plot is a pairwise scatter plot of the numeric variables in the data set.</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>The first two variables (<bpt id="p1">*</bpt>rating<ept id="p1">*</ept> and <bpt id="p2">*</bpt>complaints<ept id="p2">*</ept>) show a strong linear relationship.</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>To model that relationship, we use the <ph id="ph1">`lm`</ph> function:</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>To view a summary of the model, we can use the <ph id="ph1">`summary`</ph> function:</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>We can also try to visualize the model using <ph id="ph1">`plot`</ph>:</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>The default plot for a fitted linear model is a set of four plots; by default they are shown one at a time, and you are prompted before each new plot is displayed.</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>To view them all at once, use the <ph id="ph1">`par`</ph> function with the <bpt id="p1">*</bpt>mfrow<ept id="p1">*</ept> parameter to specify a 2 x 2 layout:</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>The rxLinMod function is a full-featured alternative to lm that can efficiently handle large data sets.</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>Also look at rxLogit and rxGlm as alternatives to <ph id="ph1">`glm`</ph>, rxKmeans as an alternative to <ph id="ph2">`kmeans`</ph>, and rxDTree as an alternative to <ph id="ph3">`rpart`</ph>.</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>Matrices and <bpt id="p1">*</bpt>apply<ept id="p1">*</ept> function</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>A matrix is a two-dimensional data array.</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>Unlike data frames, which can have different data types in their columns, matrices may contain data of only one type.</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source>Most commonly, matrices are used to hold numeric data.</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source>You create matrices with the <ph id="ph1">`matrix`</ph> function:</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source>Another matrix example:</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source>Ordinary arithmetic acts <bpt id="p1">*</bpt>element-by-element<ept id="p1">*</ept> on matrices:</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source>Matrix multiplication uses the expected operators:</source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve">
+          <source>Matrix multiplication in the linear algebra sense requires a special operator, <ph id="ph1">`%*%`</ph>:</source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve">
+          <source>Matrix multiplication requires two matrices to be <bpt id="p1">*</bpt>conformable<ept id="p1">*</ept>, which means that the number of <bpt id="p2">*</bpt>columns<ept id="p2">*</ept> of the first matrix is equal to the number of <bpt id="p3">*</bpt>rows<ept id="p3">*</ept> of the second:</source>
+        </trans-unit><trans-unit id="239" translate="yes" xml:space="preserve">
+          <source>When you need to manipulate the rows or columns of a matrix, an incredibly useful tool is the <ph id="ph1">`apply`</ph> function.</source>
+        </trans-unit><trans-unit id="240" translate="yes" xml:space="preserve">
+          <source>With <ph id="ph1">`apply`</ph>, you can apply a function to all the rows or columns of matrix at once.</source>
+        </trans-unit><trans-unit id="241" translate="yes" xml:space="preserve">
+          <source>For example, to find the column products of <bpt id="p1">*</bpt>A<ept id="p1">*</ept>, you could use <ph id="ph1">`apply`</ph> as follows:</source>
+        </trans-unit><trans-unit id="242" translate="yes" xml:space="preserve">
+          <source>The row products are as simple:</source>
+        </trans-unit><trans-unit id="243" translate="yes" xml:space="preserve">
+          <source>To sort the columns of <bpt id="p1">*</bpt>A<ept id="p1">*</ept>, just replace <bpt id="p2">*</bpt>prod<ept id="p2">*</ept> with <bpt id="p3">*</bpt>sort<ept id="p3">*</ept>:</source>
+        </trans-unit><trans-unit id="244" translate="yes" xml:space="preserve">
+          <source>Lists and <bpt id="p1">*</bpt>lapply<ept id="p1">*</ept> function</source>
+        </trans-unit><trans-unit id="245" translate="yes" xml:space="preserve">
+          <source>A <ph id="ph1">`list`</ph> in R is a flexible data object that can be used to combine data of different types and different lengths for almost any purpose.</source>
+        </trans-unit><trans-unit id="246" translate="yes" xml:space="preserve">
+          <source>Arbitrary lists can be created with either the list function or the c function; many other functions, especially the statistical modeling functions, return their output as list objects.</source>
+        </trans-unit><trans-unit id="247" translate="yes" xml:space="preserve">
+          <source>For example, we can combine a character vector, a numeric vector, and a numeric matrix in a single list as follows:</source>
+        </trans-unit><trans-unit id="248" translate="yes" xml:space="preserve">
+          <source>The function <ph id="ph1">`lapply`</ph> can be used to apply the same function to each component of a list in turn:</source>
+        </trans-unit><trans-unit id="249" translate="yes" xml:space="preserve">
+          <source>You will regularly use lists and functions that manipulate them when handling input and output for your big data analyses.</source>
+        </trans-unit><trans-unit id="250" translate="yes" xml:space="preserve">
+          <source>Explore RevoScaleR Functions</source>
+        </trans-unit><trans-unit id="251" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> package, included in Machine Learning Server and R Client, provides a framework for quickly writing start-to-finish, scalable R code for data analysis.</source>
+        </trans-unit><trans-unit id="252" translate="yes" xml:space="preserve">
+          <source>When you start the R console application on a computer that has Machine Learning Server or R Client, the RevoScaleR function library is loaded automatically.</source>
+        </trans-unit><trans-unit id="253" translate="yes" xml:space="preserve">
+          <source>Load Data with <bpt id="p1">*</bpt>rxImport<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="254" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">*</bpt>rxImport<ept id="p1">*</ept> function allows you to import data from fixed or delimited text files, SAS files, SPSS files, or a SQL Server, Teradata, or ODBC connection.</source>
+        </trans-unit><trans-unit id="255" translate="yes" xml:space="preserve">
+          <source>There’s no need to have SAS or SPSS installed on your system to import those file types, but you need a <bpt id="p1">[</bpt>locally installed ODBC driver<ept id="p1">](how-to-revoscaler-data-odbc.md)</ept> for your database to access data on a local or remote computer.</source>
+        </trans-unit><trans-unit id="256" translate="yes" xml:space="preserve">
+          <source>Let’s start simply by using a delimited text file available in the <bpt id="p1">[</bpt>built-in sample data directory<ept id="p1">](sample-built-in-data.md)</ept> of the <bpt id="p2">**</bpt>RevoScaleR<ept id="p2">**</ept> package.</source>
+        </trans-unit><trans-unit id="257" translate="yes" xml:space="preserve">
+          <source>We store the location of the file in a character string (<bpt id="p1">*</bpt>inDataFile<ept id="p1">*</ept>), then import the data into an in-memory data set (data frame) called <bpt id="p2">*</bpt>mortData<ept id="p2">*</ept>:</source>
+        </trans-unit><trans-unit id="258" translate="yes" xml:space="preserve">
+          <source>If we anticipate repeating the same analysis on a larger data set later, we could prepare for that by putting placeholders in our code for output files.</source>
+        </trans-unit><trans-unit id="259" translate="yes" xml:space="preserve">
+          <source>An output file is an XDF file, native to R Client and Machine Learning Server, persisted on disk and structured to hold modular data.</source>
+        </trans-unit><trans-unit id="260" translate="yes" xml:space="preserve">
+          <source>If we included an output file with rxImport, the output object returned from <bpt id="p1">*</bpt>rxImport<ept id="p1">*</ept> would be a small object representing the .xdf file on disk (an RxXdfData object), rather than an in-memory data frame containing all of the data.</source>
+        </trans-unit><trans-unit id="261" translate="yes" xml:space="preserve">
+          <source>For now, let's continue to work with the data in memory.</source>
+        </trans-unit><trans-unit id="262" translate="yes" xml:space="preserve">
+          <source>We can do this by omitting the outFile argument, or by setting the <bpt id="p1">*</bpt>outFile<ept id="p1">*</ept> parameter to NULL.</source>
+        </trans-unit><trans-unit id="263" translate="yes" xml:space="preserve">
+          <source>The following code is equivalent to the importing task of that above:</source>
+        </trans-unit><trans-unit id="264" translate="yes" xml:space="preserve">
+          <source>Retrieve metadata</source>
+        </trans-unit><trans-unit id="265" translate="yes" xml:space="preserve">
+          <source>There are a number of basic methods we can use to learn about the data set and its variables that work on the return object of <bpt id="p1">*</bpt>rxImport<ept id="p1">*</ept>, regardless of whether it is a data frame or <bpt id="p2">*</bpt>RxXdfData<ept id="p2">*</ept> object.</source>
+        </trans-unit><trans-unit id="266" translate="yes" xml:space="preserve">
+          <source>To get the number of rows, cols, and names of the imported data:</source>
+        </trans-unit><trans-unit id="267" translate="yes" xml:space="preserve">
+          <source>Output for these commands is as follows:</source>
+        </trans-unit><trans-unit id="268" translate="yes" xml:space="preserve">
+          <source>To print out the first few rows of the data set, you can use <bpt id="p1">*</bpt>head()<ept id="p1">*</ept>:</source>
+        </trans-unit><trans-unit id="269" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="270" translate="yes" xml:space="preserve">
+          <source>The rxGetInfo function allows you to quickly get information about your data set and its variables all at one time, including more information about variable types and ranges.</source>
+        </trans-unit><trans-unit id="271" translate="yes" xml:space="preserve">
+          <source>Let’s try it on <bpt id="p1">*</bpt>mortData<ept id="p1">*</ept>, having the first three rows of the data set printed out:</source>
+        </trans-unit><trans-unit id="272" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="273" translate="yes" xml:space="preserve">
+          <source>Select and transform with <bpt id="p1">*</bpt>rxDataStep<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="274" translate="yes" xml:space="preserve">
+          <source>The rxDataStep function provides a framework for the majority of your data manipulation tasks.</source>
+        </trans-unit><trans-unit id="275" translate="yes" xml:space="preserve">
+          <source>It allows for row selection (the <bpt id="p1">*</bpt>rowSelection<ept id="p1">*</ept> argument), variable selection (the <bpt id="p2">*</bpt>varsToKeep<ept id="p2">*</ept> or <bpt id="p3">*</bpt>varsToDrop<ept id="p3">*</ept> arguments), and the creation of new variables from existing ones (the <bpt id="p4">*</bpt>transforms<ept id="p4">*</ept> argument).</source>
+        </trans-unit><trans-unit id="276" translate="yes" xml:space="preserve">
+          <source>Here’s an example that does all three with one function call:</source>
+        </trans-unit><trans-unit id="277" translate="yes" xml:space="preserve">
+          <source>Our new data set, <bpt id="p1">*</bpt>mortDataNew<ept id="p1">*</ept>, will not have the variable year, but adds two new variables: a categorical variable named <bpt id="p2">*</bpt>catDebt<ept id="p2">*</ept> that uses R’s <ph id="ph1">`cut`</ph> function to break the <bpt id="p3">*</bpt>ccDebt<ept id="p3">*</ept> variable into two categories, and a logical variable, <bpt id="p4">*</bpt>lowScore<ept id="p4">*</ept>, that is TRUE for individuals with low credit scores.</source>
+        </trans-unit><trans-unit id="278" translate="yes" xml:space="preserve">
+          <source>These <bpt id="p1">*</bpt>transforms<ept id="p1">*</ept> expressions follow the rule that they must be able to operate on a chunk of data at a time; that is, the computation for a single row of data cannot depend on values in other rows of data.</source>
+        </trans-unit><trans-unit id="279" translate="yes" xml:space="preserve">
+          <source>With the <bpt id="p1">*</bpt>rowSelection<ept id="p1">*</ept> argument, we have also removed any observations with high credit scores, above or equal to 850.</source>
+        </trans-unit><trans-unit id="280" translate="yes" xml:space="preserve">
+          <source>We can use the rxGetVarInfo function to confirm:</source>
+        </trans-unit><trans-unit id="281" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="282" translate="yes" xml:space="preserve">
+          <source>Visualize with <bpt id="p1">*</bpt>rxHistogram<ept id="p1">*</ept>, <bpt id="p2">*</bpt>rxCube<ept id="p2">*</ept>, and <bpt id="p3">*</bpt>rxLinePlot<ept id="p3">*</ept></source>
+        </trans-unit><trans-unit id="283" translate="yes" xml:space="preserve">
+          <source>The rxHistogram function shows us the distribution of any of the variables in our data set.</source>
+        </trans-unit><trans-unit id="284" translate="yes" xml:space="preserve">
+          <source>For example, let’s look at credit score:</source>
+        </trans-unit><trans-unit id="285" translate="yes" xml:space="preserve">
+          <source>The rxCube function computes category counts, and can operate on the interaction of categorical variables.</source>
+        </trans-unit><trans-unit id="286" translate="yes" xml:space="preserve">
+          <source>Using the <bpt id="p1">*</bpt>F()<ept id="p1">*</ept> notation to convert a variable into an on-the-fly categorical factor variable (with a level for each integer value), we can compute the counts for each credit score for the two groups who have low and high credit card debt:</source>
+        </trans-unit><trans-unit id="287" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">*</bpt>rxLinePlot<ept id="p1">*</ept> function is a convenient way to plot output from <bpt id="p2">*</bpt>rxCube<ept id="p2">*</ept>.</source>
+        </trans-unit><trans-unit id="288" translate="yes" xml:space="preserve">
+          <source>We use the <bpt id="p1">*</bpt>rxResultsDF<ept id="p1">*</ept> helper function to convert cube output into a data frame convenient for plotting:</source>
+        </trans-unit><trans-unit id="289" translate="yes" xml:space="preserve">
+          <source>Analyze with <bpt id="p1">*</bpt>rxLogit<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="290" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> provides the foundation for a variety of high performance, scalable data analyses.</source>
+        </trans-unit><trans-unit id="291" translate="yes" xml:space="preserve">
+          <source>Here we do a logistic regression, but you probably also want to take look at computing summary statistics (<bpt id="p1">*</bpt>rxSummary<ept id="p1">*</ept>), computing cross-tabs (<bpt id="p2">*</bpt>rxCrossTabs<ept id="p2">*</ept>), estimating linear models (<bpt id="p3">*</bpt>rxLinMod<ept id="p3">*</ept>) or generalized linear models (<bpt id="p4">*</bpt>rxGlm<ept id="p4">*</ept>), and estimating variance-covariance or correlation matrices (<bpt id="p5">*</bpt>rxCovCor<ept id="p5">*</ept>) that can be used as inputs to other R functions such as principal components analysis and factor analysis.</source>
+        </trans-unit><trans-unit id="292" translate="yes" xml:space="preserve">
+          <source>Now, let’s estimate a logistic regression on whether or not an individual defaulted on their loan, using credit card debt and years of employment as independent variables:</source>
+        </trans-unit><trans-unit id="293" translate="yes" xml:space="preserve">
+          <source>We get the following output:</source>
+        </trans-unit><trans-unit id="294" translate="yes" xml:space="preserve">
+          <source>Scale your analysis</source>
+        </trans-unit><trans-unit id="295" translate="yes" xml:space="preserve">
+          <source>Until now, our exploration has been limited to small data sets in memory.</source>
+        </trans-unit><trans-unit id="296" translate="yes" xml:space="preserve">
+          <source>Let’s scale up to a data set with a million rows rather than just 10000.</source>
+        </trans-unit><trans-unit id="297" translate="yes" xml:space="preserve">
+          <source>These larger text data files are available <bpt id="p1">[</bpt>online<ept id="p1">](https://go.microsoft.com/fwlink/?LinkID=698896&amp;clcid=0x409)</ept>.</source>
+        </trans-unit><trans-unit id="298" translate="yes" xml:space="preserve">
+          <source>Windows users should download the zip version, mortDefault.zip, and Linux users mortDefault.tar.gz.</source>
+        </trans-unit><trans-unit id="299" translate="yes" xml:space="preserve">
+          <source>After downloading and unpacking the data, set your path to the correct location in the code below.</source>
+        </trans-unit><trans-unit id="300" translate="yes" xml:space="preserve">
+          <source>It is more efficient to store the imported data on disk, so we also specify the locations for our imported and transformed data sets:</source>
+        </trans-unit><trans-unit id="301" translate="yes" xml:space="preserve">
+          <source>That’s it!</source>
+        </trans-unit><trans-unit id="302" translate="yes" xml:space="preserve">
+          <source>Now you can reuse all of the importing, data step, plotting, and analysis code preceding on the larger data set.</source>
+        </trans-unit><trans-unit id="303" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="304" translate="yes" xml:space="preserve">
+          <source>Because we have specified an output file when importing the data, the returned <bpt id="p1">*</bpt>mortData<ept id="p1">*</ept> object is a small object in memory representing the .xdf data file, rather than a full data frame containing all of the data in memory.</source>
+        </trans-unit><trans-unit id="305" translate="yes" xml:space="preserve">
+          <source>It can be used in <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> analysis functions in the same way as data frames.</source>
+        </trans-unit><trans-unit id="306" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="307" translate="yes" xml:space="preserve">
+          <source>The data step:</source>
+        </trans-unit><trans-unit id="308" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="309" translate="yes" xml:space="preserve">
+          <source>Looking at the data:</source>
+        </trans-unit><trans-unit id="310" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit><trans-unit id="311" translate="yes" xml:space="preserve">
+          <source>Next Steps</source>
+        </trans-unit><trans-unit id="312" translate="yes" xml:space="preserve">
+          <source>Continue on to these tutorials to work with larger data set using the RevoScaleR functions:</source>
+        </trans-unit><trans-unit id="313" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Flight delays data analysis<ept id="p1">](tutorial-revoscaler-large-data-airline.md)</ept></source>
+        </trans-unit><trans-unit id="314" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Loan data analysis<ept id="p1">](tutorial-revoscaler-large-data-loan.md)</ept></source>
+        </trans-unit><trans-unit id="315" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Census data analysis<ept id="p1">](tutorial-revoscaler-large-data-census.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

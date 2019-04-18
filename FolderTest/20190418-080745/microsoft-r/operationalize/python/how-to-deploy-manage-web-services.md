@@ -1,0 +1,169 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="how-to-deploy-manage-web-services.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-d1654b2" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9c76acdc-560c-45e5-982b-fef0690673353f56e021043690b52cf7969d75b400df04a88d43.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">3f56e021043690b52cf7969d75b400df04a88d43</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9c76acdc-560c-45e5-982b-fef069067335</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">04/18/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\operationalize\python\how-to-deploy-manage-web-services.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Deploy, update, &amp; delete Python web services - Machine Learning Server</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Publish, update, and delete Python web services with Machine Learning Server and Microsoft R Server</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Deploy and manage web services in Python</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to: Machine Learning Server<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This article is for data scientists who wants to learn how to deploy and manage Python code/models as <bpt id="p1">[</bpt>analytic web services<ept id="p1">](../concept-what-are-web-services.md)</ept> hosted in Machine Learning Server.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>This article assumes you are proficient in Python.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Using the <bpt id="p1">[</bpt>azureml-model-management-sdk<ept id="p1">](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)</ept>  Python package, which ships with Machine Learning Server, you can develop, test, and <bpt id="p2">[</bpt>deploy these Python analytics<ept id="p2">](#publishService)</ept> as web services in your production environment.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>This package can also be <bpt id="p1">[</bpt>installed locally on a Windows machine<ept id="p1">](../../install/python-libraries-interpreter.md)</ept>, but requires a connection to a Machine Learning Server instance at runtime.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RESTful APIs<ept id="p1">](../concept-api.md)</ept> are also available to provide direct programmatic access to a service's lifecycle.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>By default, web service operations are available to authenticated users.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>However, your administrator can also <bpt id="p1">[</bpt>assign role-based authorization (RBAC)<ept id="p1">](../configure-roles.md)</ept> to further control the permissions around web services.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Web service definition:<ept id="p1">**</ept> In Machine Learning Server, your R and Python code and models can be deployed as web services.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Exposed as web services hosted in Machine Learning Server, these models and code can be accessed and consumed in R, Python, programmatically using REST APIs, or using Swagger generated client libraries.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Web services can be deployed from one platform and consumed on another.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Learn more...<ept id="p1">](../concept-what-are-web-services.md)</ept></source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Overview</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>To deploy your analytics, you must publish them as web services in Machine Learning Server.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Web services offer fast execution and scoring of arbitrary Python or R code and models.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Learn more about web services<ept id="p1">](../concept-what-are-web-services.md)</ept>.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>When you deploy Python code or a model as a web service, a <bpt id="p1">[</bpt>service object<ept id="p1">](../../python-reference/azureml-model-management-sdk/service.md)</ept> containing the client stub for consuming that service is returned.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Once hosted on Machine Learning Server, you can update and manage them.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Authenticated users can  <bpt id="p1">[</bpt>consume web services in Python<ept id="p1">](how-to-consume-web-services.md)</ept> or in a <bpt id="p2">[</bpt>preferred language via Swagger<ept id="p2">](../how-to-build-api-clients-from-swagger-for-app-integration.md)</ept>.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Requirements</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Before you can use the web service management functions in the <bpt id="p1">[</bpt>azureml-model-management-sdk<ept id="p1">](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)</ept> Python package, you must:</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Have access to a Python-enabled instance of Machine Learning Server that was  <bpt id="p1">[</bpt>properly configured<ept id="p1">](../../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)</ept> to host web services.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Authenticate with Machine Learning Server in Python as described in "<bpt id="p1">[</bpt>Connecting to Machine Learning Server<ept id="p1">](how-to-authenticate-in-python.md)</ept>."</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Web service definitions</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>The list of available parameters that can be defined for a web service depends on whether it is a standard or real-time web service.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Parameters for standard web services</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Standard web services, like all web services, are identified by their name and version.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Additional parameters can be defined for the service, including:</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>A description</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Arbitrary Python code as a function or a string, such as <ph id="ph1">`code_fn=(run, init)`</ph> or <ph id="ph2">`code_str=('run', 'init')`</ph></source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Models</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Any model assets</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Inputs</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Outputs for integrators</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Artifacts</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>For a full example, try out the <bpt id="p1">[</bpt>quickstart guide for deploying web services in Python<ept id="p1">](quickstart-deploy-python-web-service.md)</ept>.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>This table presents the supported data types for the input and output schemas of Python web services.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Write these as a reference <ph id="ph1">`bool`</ph> or as a string <ph id="ph2">`'bool'`</ph>.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>I/O data types</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Float <ph id="ph1">&amp;rarr;</ph> float</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Array <ph id="ph1">&amp;rarr;</ph> numpy.array</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Integer <ph id="ph1">&amp;rarr;</ph> int</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Matrix <ph id="ph1">&amp;rarr;</ph> numpy.matrix</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Boolean <ph id="ph1">&amp;rarr;</ph> bool<ph id="ph2">&amp;nbsp;</ph><ph id="ph3">&amp;nbsp;</ph><ph id="ph4">&amp;nbsp;</ph><ph id="ph5">&amp;nbsp;</ph><ph id="ph6">&amp;nbsp;</ph><ph id="ph7">&amp;nbsp;</ph></source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Dataframe <ph id="ph1">&amp;rarr;</ph> numpy.DataFrame</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>String <ph id="ph1">&amp;rarr;</ph> str</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Parameters for real-time web services</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Real-time web services<ept id="p1">](../concept-what-are-web-services.md#realtime)</ept> are also identified by their name and version.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>The following additional parameters can be defined for the real-time service:</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>A description</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>A model created with certain <bpt id="p1">[</bpt>supported functions<ept id="p1">](../concept-what-are-web-services.md#realtime)</ept> and serialized with <bpt id="p2">[</bpt>revoscalepy.rx_serialize_model<ept id="p2">](../../python-reference/revoscalepy/rx-serialize-model.md)</ept></source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Dataframes are assumed for inputs and outputs.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Code is not supported.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>For a full example of real-time web services in Python, try out <bpt id="p1">[</bpt>this Jupyter notebook<ept id="p1">](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Publish_Realtime_Web_Service_in_Python.ipynb)</ept>.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Deploy and update services</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Publish a service</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>To publish a service, specify the name, version, and any other needed parameters.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Be sure to end with '.deploy'.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Here is a standard web service example:</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Here is a real-time web service example:</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>For a full example of real-time web services in Python, try out <bpt id="p1">[</bpt>this Jupyter notebook<ept id="p1">](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Publish_Realtime_Web_Service_in_Python.ipynb)</ept>.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Update an existing service version</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>To update an existing web service, specify the name and version of that service and the parameters that need changed.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>When you use '.redeploy', the service version is overwritten and a new <bpt id="p1">[</bpt>service object<ept id="p1">](../../python-reference/azureml-model-management-sdk/service.md)</ept> containing the client stub for consuming that service is returned.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Update the service with a '.redeploy' such as:</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Publish a new service version</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>You can deploy different versions of a web service.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>To publish a <bpt id="p1">[</bpt>new version of the service<ept id="p1">](../concept-what-are-web-services.md#versioning)</ept>, specify the same name, a new version, and end with '.deploy', such as:</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>Delete web services</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>When you no longer want to keep a web service that you have published, you can delete it.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>If you are <bpt id="p1">[</bpt>assigned to "Owner" role<ept id="p1">](../configure-roles.md)</ept>, you can also delete the services of others.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>You can call 'delete_service' on the 'DeployClient' object to delete a specific service on Machine Learning Server.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>If successful, the status  <bpt id="p1">_</bpt>'True'<ept id="p1">_</ept>  is returned.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>If it fails, then the execution stops and an error message is returned.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>What are web services?<ept id="p1">](../concept-what-are-web-services.md)</ept></source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Quickstart: Deploying web services in Python<ept id="p1">](quickstart-deploy-python-web-service.md)</ept>.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>How to authenticate in Python<ept id="p1">](how-to-authenticate-in-python.md)</ept></source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>How to find, get, and consume web services<ept id="p1">](how-to-consume-web-services.md)</ept></source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>How to consume web services in Python synchronously (request/response)<ept id="p1">](how-to-consume-web-services.md)</ept></source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>How to consume web services in Python asynchronously (batch)<ept id="p1">](how-to-consume-web-services-async.md)</ept></source>
+        </trans-unit></group></body></file></xliff>
