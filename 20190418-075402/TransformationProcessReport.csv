@@ -1,0 +1,10 @@
+README.md,1,Successful
+ThirdPartyNotices,2,Skipped - No tranformation required, this file has been skipped
+.gitignore,2,Skipped - No tranformation required, this file has been skipped
+.openpublishing.build.ps1,2,Skipped - No tranformation required, this file has been skipped
+.gitattributes,2,Skipped - No tranformation required, this file has been skipped
+learn-test-pr\docfx.json,1,Successful
+LICENSE,2,Skipped - No tranformation required, this file has been skipped
+learn-test-pr\achievements.yml,1,Successful
+.openpublishing.publish.config.json,1,Successful
+LICENSE-CODE,2,Skipped - No tranformation required, this file has been skipped
