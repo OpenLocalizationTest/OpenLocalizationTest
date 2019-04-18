@@ -1,0 +1,1007 @@
+microsoft-r\deployr\deployr-admin-diagnostics-troubleshooting.md,1,Successful
+microsoft-r\r-client\install-uninstall.md,1,Successful
+microsoft-r\install\r-server-install-teradata-805.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxrng.md,1,Successful
+microsoft-r\r\how-to-revoscaler-sql-server.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-read-xdf.md,1,Successful
+microsoft-r\r\media\tutorial-large-data-tips\image12.jpeg,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxfindfileinpath.md,1,Successful
+microsoft-r\deployr\deployr-security.md,1,Successful
+microsoft-r\deployr\deployr-admin-console-managing-r-scripts.md,1,Successful
+ThirdPartyNotices,2,Skipped - No tranformation required
+microsoft-r\install\r-server-install-linux-uninstall.md,1,Successful
+microsoft-r\r\media\tutorial-revoscaler-data-import-transform\arrdelay_histogram_2.png,2,Skipped - No tranformation required
+microsoft-r\install\machine-learning-server-on-data-science-vm.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-list-keys.md,1,Successful
+microsoft-r\deployr\deployr-about.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-linear-model\image8.jpeg,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxsetvarinfoxdf.md,1,Successful
+microsoft-r\r-reference\revoutils\revoutils.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-linear-model\image10.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\009.jpg,2,Skipped - No tranformation required
+microsoft-r\operationalize\media\configure-roles\p1.png,2,Skipped - No tranformation required
+microsoft-r\r\how-to-choose-microsoftml-algorithms-cheatsheet.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-generalized-linear-model\image18.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\mrsdeploy\print.serviceDetails.md,1,Successful
+microsoft-r\deployr\deployr-admin-configure-ca-sso.md,1,Successful
+microsoft-r\operationalize\media\how-to-connect-log-in-with-mrsdeploy\mrsdeploy-connect-switch-context.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\microsoftml\mutualinformation-select.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\print.snapshotDetails.md,1,Successful
+microsoft-r\operationalize\python\media\quickstart-application-integration-with-swagger\3-mlserver-azure-resource.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\configure-manage-r-packages.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-get-info.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\visual_debugger_debugging.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxsetinfo.md,1,Successful
+microsoft-r\python-reference\microsoftml\rx-featurize.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxhistogram.md,1,Successful
+microsoft-r\deployr\media\deployr-api-explorer-tool\deployr-api-explorer-tool-3.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\sqlrutils\executestoredprocedure.md,1,Successful
+microsoft-r\operationalize\python\media\quickstart-application-integration-with-swagger\4-jupyter-notebook.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\rx-btrees.md,1,Successful
+microsoft-r\install\machine-learning-server-windows-commandline.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\deleteservice.md,1,Successful
+microsoft-r\r-reference\revoscaler\as.randomForest.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxbtrees.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxrealtimescoring.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxremotefilepath.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\deletesnapshot.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\014.jpg,2,Skipped - No tranformation required
+microsoft-r\r\tutorial-large-data-tips.md,1,Successful
+microsoft-r\install\machine-learning-server-cloudera-install.md,1,Successful
+microsoft-r\r-reference\revoscaler\djiadaily.md,1,Successful
+microsoft-r\r-reference\revoscaler\censusworkers.md,1,Successful
+microsoft-r\r-reference\microsoftml\rxlogisticregression.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxlocalseq.md,1,Successful
+microsoft-r\install\media\r-server-install-cloudera-deploy-activate\cloudera-manager-add-mrs-service.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\010.jpg,2,Skipped - No tranformation required
+microsoft-r\operationalize\media\configure-roles\admin-persona.png,2,Skipped - No tranformation required
+image-sources\o16n-image-source-rserver-operationalization-configuration.pptx,2,Skipped - No tranformation required
+microsoft-r\r\tutorial-rxexecby.md,1,Successful
+microsoft-r\index.yml,1,Successful
+microsoft-r\deployr\media\deployr-repository-manager-about\usingrepoman.png,2,Skipped - No tranformation required
+microsoft-r\r\media\tutorial-revoscaler-data-model-analysis\dayofweek_plot.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxcreatecolinfo.md,1,Successful
+microsoft-r\deployr\media\deployr-data-scientist-getting-started\upload.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\revoscaler-compared-to-base-r.md,1,Successful
+microsoft-r\operationalize\media\configure-start-for-administrators\admin-ha.png,2,Skipped - No tranformation required
+microsoft-r\r\media\tutorial-r-to-revoscaler\image17.png,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-admin-manage-big-data.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxdforestutils.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-get-var-names.md,1,Successful
+microsoft-r\r-client\media\what-is-microsoft-r-client\Step2.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\microsoftml\fasttrees.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\options_dialog_5.jpg,2,Skipped - No tranformation required
+microsoft-r\operationalize\configure-evaluate-capacity.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxfilesystem.md,1,Successful
+microsoft-r\deployr\media\deployr-about\deployr-architecture.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\media\configure-authentication\portal-aad-acct.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\rx-spark-cache-data.md,1,Successful
+microsoft-r\python-reference\microsoftml\n-gram.md,1,Successful
+microsoft-r\r-reference\microsoftml\selectfeatures.md,1,Successful
+microsoft-r\media\what-is-operationalization\about-3.png,2,Skipped - No tranformation required
+README.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\options_dialog_3.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxcrosstabs.md,1,Successful
+microsoft-r\python-reference\microsoftml\rx-oneclass-svm.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxformula.md,1,Successful
+microsoft-r\deployr\media\deployr-data-scientist-getting-started\openfile.png,2,Skipped - No tranformation required
+image-sources\o16n-image-source-modern-policy-servicing.pptx,2,Skipped - No tranformation required
+microsoft-r\python\python-samples.md,1,Successful
+microsoft-r\install\media\machine-learning-server-install\install-topology-standalone.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\mrsdeploy\updateservice.md,1,Successful
+microsoft-r\resources-deprecated-features.md,1,Successful
+microsoft-r\deployr\deployr-admin-managing-access-with-ip-filters.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-console-database\db-tab.png,2,Skipped - No tranformation required
+microsoft-r\r\sample-solutions.md,1,Successful
+microsoft-r\operationalize\python\how-to-deploy-manage-web-services.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxhadoopmr.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxsplitxdf.md,1,Successful
+microsoft-r\python-reference\microsoftml\count-select.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-managing-the-grid\0300001E_576x218.png,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-admin-configure-reinstall-r.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxsparkcachedata.md,1,Successful
+microsoft-r\whats-new-in-r-server.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-get-job-status.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-getting-started\image7.png,2,Skipped - No tranformation required
+microsoft-r\r\rpe\media\revorpe-getting-started\image11.png,2,Skipped - No tranformation required
+microsoft-r\r-client\compatibility-with-server.md,1,Successful
+microsoft-r\r\how-to-revoscaler-naive-bayes.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-console-about\admin-console-home.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\rx-spark-connect.md,1,Successful
+microsoft-r\operationalize\configure-admin-cli-encrypt-credentials.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-data-summaries\image3.png,2,Skipped - No tranformation required
+microsoft-r\breadcrumb\toc.yml,1,Successful
+microsoft-r\operationalize\media\how-to-consume-web-service-interact-in-r\returns91.png,2,Skipped - No tranformation required
+microsoft-r\install\python-libraries-interpreter.md,1,Successful
+microsoft-r\r-reference\revoscaler\airlinedemosmall.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-install-in-cloud\azure-inbound-rules.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxstepplot.md,1,Successful
+microsoft-r\install\r-server-install.md,1,Successful
+microsoft-r\r\tutorial-r-to-revoscaler.md,1,Successful
+microsoft-r\r\scaler-data-merge.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxinsqlserver-class.md,1,Successful
+microsoft-r\python-reference\azureml-model-management-sdk\deploy-client.md,1,Successful
+microsoft-r\operationalize\media\configure-roles\p3.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\RxOdbcData.md,1,Successful
+microsoft-r\r-reference\microsoftml\rxfeaturize.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\serviceOption.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\017.jpg,2,Skipped - No tranformation required
+microsoft-r\install\machine-learning-server-windows-offline.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\006.jpg,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\013.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxpredict.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\rev_r_ent_ui.jpg,2,Skipped - No tranformation required
+microsoft-r\python-reference\microsoftml\load-image.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\solution_explorer.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\media\revoscaler\manip copy.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\002-createagentgroup.jpg,2,Skipped - No tranformation required
+microsoft-r\r\media\how-to-revoscaler-visualize-huge-data-sets\image33.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\mrsdeploy\GetPoolStatus.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-get-jobs.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-monitoring-events\03000023_612x363.png,2,Skipped - No tranformation required
+microsoft-r\r\rpe\media\revorpe-users-guide\step_into_button.jpg,2,Skipped - No tranformation required
+microsoft-r\python-reference\azureml-model-management-sdk\realtime-definition.md,1,Successful
+microsoft-r\operationalize\concept-what-are-web-services.md,1,Successful
+microsoft-r\deployr\deployr-whats-new.md,1,Successful
+microsoft-r\operationalize\media\configure-evaluate-capacity\admin-capacity-results-url.png,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-admin-configure-high-availability.md,1,Successful
+microsoft-r\r-reference\sqlrutils\outputdata.md,1,Successful
+microsoft-r\r\how-to-revoscaler-distributed-computing-background-jobs.md,1,Successful
+microsoft-r\install\r-server-install-cloudera-generate-parcel.md,1,Successful
+microsoft-r\operationalize\configure-machine-learning-server-one-box.md,1,Successful
+microsoft-r\python-reference\microsoftml\categorical.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxspssdata.md,1,Successful
+microsoft-r\r-reference\revoscaler\airlinedata87to08.md,1,Successful
+microsoft-r\operationalize\media\how-to-build-api-clients-from-swagger-for-app-integration\swaggerIO-generateClient.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\sqlrutils\setinputdataquery.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\018.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxreadxdf.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxsqlserverdata.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\call_stack_window.jpg,2,Skipped - No tranformation required
+microsoft-r\docfx.json,1,Successful
+microsoft-r\python-reference\revoscalepy\RxLocalSeq.md,1,Successful
+microsoft-r\r\how-to-revoscaler-hadoop.md,1,Successful
+microsoft-r\operationalize\media\configure-authentication\aad-delegated-permissions.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\rx-cleanup-jobs.md,1,Successful
+microsoft-r\r\tutorial-revoscaler-large-data-census.md,1,Successful
+microsoft-r\install\r-server-install-hadoop-configuration-r-workloads.md,1,Successful
+microsoft-r\deployr\media\deployr-data-scientist-write-portable-r-code\testpage.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\media\how-to-build-api-clients-from-swagger-for-app-integration\api-swagger-workflow.png,2,Skipped - No tranformation required
+microsoft-r\install\media\machine-learning-server-install-azure-vm\gh-readme-page.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\revoscaler-deprecated.md,1,Successful
+microsoft-r\python-reference\microsoftml\rx-ensemble.md,1,Successful
+microsoft-r\r\tutorial-revoscaler-large-data-loan.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-covcor\math3.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\azureml-model-management-sdk\operationalization.md,1,Successful
+microsoft-r\install\machine-learning-server-windows-uninstall.md,1,Successful
+microsoft-r\python-reference\azureml-model-management-sdk\azureml-model-management-sdk.md,1,Successful
+microsoft-r\r-reference\revoutils\revo-home.md,1,Successful
+microsoft-r\install\operationalize-r-server-enterprise-config.md,1,Successful
+microsoft-r\python-reference\microsoftml\rx-neural-network.md,1,Successful
+microsoft-r\deployr\media\deployr-api-explorer-tool\deployr-api-explorer-tool-1.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revopemar\setpemaclass.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-distributed-computing-parallel-jobs\mandelbrot_plot.png,2,Skipped - No tranformation required
+microsoft-r\python\quickstart-binary-classification-with-microsoftml.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-transform-functions\image25.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\configure-admin-cli-ports.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxdistributejob.md,1,Successful
+microsoft-r\deployr\media\deployr-data-scientist-getting-started\addowner.png,2,Skipped - No tranformation required
+microsoft-r\r\how-to-revoscaler-crosstabs.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\object_browser_2.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\microsoftml\neuralnet.md,1,Successful
+microsoft-r\operationalize\configure-admin-cli-compute-uris.md,1,Successful
+microsoft-r\r-reference\microsoftml\microsoftml-package.md,1,Successful
+microsoft-r\deployr\deployr-admin-managing-the-grid.md,1,Successful
+microsoft-r\operationalize\media\configure-authentication\aad-settings-perms-add.png,2,Skipped - No tranformation required
+microsoft-r\r\how-to-revoscaler-decision-tree.md,1,Successful
+microsoft-r\r\media\tutorial-revoscaler-large-data-loan\houseage_plot.png,2,Skipped - No tranformation required
+microsoft-r\r\media\tutorial-r-to-revoscaler\image15.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\rx-get-partitions.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-cancel-job.md,1,Successful
+microsoft-r\r\media\tutorial-r-to-revoscaler\image6.jpeg,2,Skipped - No tranformation required
+microsoft-r\install\microsoftml-install-pretrained-models.md,1,Successful
+microsoft-r\python-reference\microsoftml\smoothed-hinge-loss.md,1,Successful
+microsoft-r\deployr\media\deployr\deployr-architecture.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\mrsdeploy\getservice.md,1,Successful
+microsoft-r\deployr\deployr-admin-install-in-cloud.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-get-job-results.md,1,Successful
+microsoft-r\r\media\tutorial-r-to-revoscaler\image4.JPG,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxopen-methods.md,1,Successful
+microsoft-r\operationalize\media\configure-authentication\aad-settings.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxaddinheritance.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-console-permisssions-with-roles\03000010_624x306.png,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-admin-managing-server-policies.md,1,Successful
+microsoft-r\toc.yml,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\data_editor_dialog.jpg,2,Skipped - No tranformation required
+microsoft-r\python-reference\azureml-model-management-sdk\batch-response.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-linear-model\image13.png,2,Skipped - No tranformation required
+microsoft-r\r\how-to-revoscaler-boosting.md,1,Successful
+microsoft-r\media\what-is-operationalization\about-1.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\microsoftml\mutualinformation.md,1,Successful
+microsoft-r\operationalize\configure-machine-learning-server-enterprise-9-2.md,1,Successful
+microsoft-r\r-reference\microsoftml\extractpixels.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-serialize-model.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-lin-mod.md,1,Successful
+microsoft-r\deployr\deployr-api-reference.md,1,Successful
+microsoft-r\install\r-server-install-hadoop-805.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxxdfdata-class.md,1,Successful
+microsoft-r\rebranding-microsoft-r-server.md,1,Successful
+microsoft-r\resources-more.md,1,Successful
+microsoft-r\deployr\deployr-security-server-access.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxtransform.md,1,Successful
+microsoft-r\r-reference\microsoftml\rxHashEnv.md,1,Successful
+microsoft-r\python-reference\microsoftml\log-loss.md,1,Successful
+microsoft-r\operationalize\configure-r-execution-security.md,1,Successful
+microsoft-r\python\how-to-revoscalepy-jupyter-nb-config.md,1,Successful
+microsoft-r\r-reference\sqlrutils\inputdata.md,1,Successful
+microsoft-r\deployr\media\deployr-repository-manager-files\workflowdeletefile.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-api-explorer-tool\deployr-api-explorer-tool-5.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxsqllibpaths.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-managing-the-grid\03000020_576x294.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\RxRemoteJobStatus.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxodbcdata-class.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\putlocalobject.md,1,Successful
+microsoft-r\operationalize\python\how-to-consume-web-services-async.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxsetcomputecontext.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxgetnodeinfo.md,1,Successful
+microsoft-r\operationalize\how-to-build-api-clients-from-swagger-for-app-integration.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxresultsdf.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-predict-rx-dtree.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-spark-remove-data.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-logit.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxremovepackages.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxchisquaredtest.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxremotecall.md,1,Successful
+microsoft-r\python-reference\microsoftml\select-columns.md,1,Successful
+microsoft-r\operationalize\media\configure-authentication\security.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxwriteobject.md,1,Successful
+microsoft-r\r-reference\microsoftml\getSampleDataDir.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\moved_r_console_window.jpg,2,Skipped - No tranformation required
+microsoft-r\r\media\tutorial-revoscaler-data-model-analysis\crsdeptime_plot.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxgetfuzzydist.md,1,Successful
+microsoft-r\python-reference\revoscalepy\RxParquetData.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxgetvarnames.md,1,Successful
+microsoft-r\r-reference\revoscaler\airontime87to12.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxcomparecontexts.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-distributed-computing-distributed-analysis\plotted_results.png,2,Skipped - No tranformation required
+microsoft-r\media\what-is-operationalization\about-personas.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\021.jpg,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\rx-privacy-control.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-get-compute-context.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-decision-tree\image22.png,2,Skipped - No tranformation required
+microsoft-r\install\r-server-install-linux-server-805.md,1,Successful
+microsoft-r\r\how-to-introduction.md,1,Successful
+microsoft-r\r-reference\microsoftml\resizeimage.md,1,Successful
+microsoft-r\deployr\media\deployr-data-scientist-getting-started\rstudio.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-managing-r-boundaries\03000017.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revopemar\pemamean.md,1,Successful
+microsoft-r\operationalize\media\configure-authentication\aad-create-native-app-done.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-data-scientist-getting-started\email.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\rx-get-job-output.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-distributed-computing-parallel-jobs\birthday_plot.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\rx-get-pyspark-connection.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-managing-access-with-ip-filters\0300001B_205x170.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\microsoftml\squared-loss.md,1,Successful
+microsoft-r\deployr\deployr-repository-manager-testing-debugging-scripts.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxtextdata.md,1,Successful
+microsoft-r\r\concept-what-is-sql-server-r-services.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\debug_tb.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\sqlrutils\registerstoredprocedure.md,1,Successful
+microsoft-r\r-reference\microsoftml\getNetDefinition.md,1,Successful
+microsoft-r\r-client\what-is-microsoft-r-client.md,1,Successful
+microsoft-r\deployr\media\deployr-data-scientist-getting-started\newdir1.png,2,Skipped - No tranformation required
+microsoft-r\install\r-server-vm-data-science.md,1,Successful
+microsoft-r\operationalize\media\how-to-connect-log-in-with-mrsdeploy\mrsdeploy-connect-local.png,2,Skipped - No tranformation required
+microsoft-r\install\media\r-server-install-cloudera-deploy-activate\cloudera-manager-parcel-icon.png,2,Skipped - No tranformation required
+microsoft-r\r\media\how-to-revoscaler-logistic-regression\image15.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxgetvarinfoxdf.md,1,Successful
+microsoft-r\operationalize\media\configure-roles\appdev-persona.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-install-in-cloud\azure-resource-group.png,2,Skipped - No tranformation required
+microsoft-r\r\media\how-to-revoscaler-covcor\math1.png,2,Skipped - No tranformation required
+microsoft-r\r\rpe\media\revorpe-users-guide\select_debug.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\mrsdeploy\getremotefile.md,1,Successful
+microsoft-r\operationalize\media\configure-roles\security-auth-1.png,2,Skipped - No tranformation required
+microsoft-r\r\tutorial-introduction.md,1,Successful
+microsoft-r\r\media\tutorial-revoscaler-large-data-census\wage_income_age_graph_2.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\azureml-model-management-sdk\service-response.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\getremoteobject.md,1,Successful
+microsoft-r\deployr\media\deployr-repository-manager-files\workflowrestorefile.png,2,Skipped - No tranformation required
+microsoft-r\install\machine-learning-server-hadoop-uninstall.md,1,Successful
+microsoft-r\r-reference\microsoftml\rxpredict.md,1,Successful
+microsoft-r\deployr\media\deployr-repository-manager-testing-debugging-scripts\robjects.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\configure-admin-cli-stop-start.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxcovregression.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\visual_debugger_breakpoint.jpg,2,Skipped - No tranformation required
+microsoft-r\operationalize\media\configure-authentication\aad-create-web-app.png,2,Skipped - No tranformation required
+microsoft-r\install\operationalize-r-server-one-box-config.md,1,Successful
+microsoft-r\python-reference\introducing-python-package-reference.md,1,Successful
+microsoft-r\deployr\deployr-administrator-getting-started.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxexecby.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-visualize-huge-data-sets\image30.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\azureml-model-management-sdk\mlserver.md,1,Successful
+.gitignore,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxspark-class.md,1,Successful
+microsoft-r\python-reference\revoscalepy\RxSparkDataFrame.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxPredict.rxDForest.md,1,Successful
+microsoft-r\operationalize\configure-start-for-administrators.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxexecbypartition.md,1,Successful
+microsoft-r\r\how-to-revoscaler-distributed-computing-distributed-analysis.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxsyncpackages.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxgetjobresults.md,1,Successful
+microsoft-r\python-reference\azureml-model-management-sdk\service.md,1,Successful
+microsoft-r\deployr\media\deployr\deployr-api-asynch-jobs.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxpingnodes.md,1,Successful
+microsoft-r\r-reference\revoscaler\media\revoscaler\manip.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-console-managing-r-scripts\03000013_575x258.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\005-modifyagentconfig.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\media\revoscaler\analytics copy.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\rx-hadoop-copy.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxsortxdf.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-read-object.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxstopengine.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxhpcserver-class.md,1,Successful
+microsoft-r\r-reference\revoutils\getrevorepos.md,1,Successful
+microsoft-r\r-reference\revoscaler\as.naiveBayes.md,1,Successful
+microsoft-r\install\media\machine-learning-server-install-azure-vm\azure-vm-list.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\rx-data-step.md,1,Successful
+microsoft-r\python\media\jupyternb-new-mmlspy.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxexpression.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-linear-model\image11.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\quickstart-publish-r-web-service.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-predict.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxmakernodenames.md,1,Successful
+microsoft-r\r\how-to-revoscaler-data-transform.md,1,Successful
+microsoft-r\r\media\tutorial-r-to-revoscaler\image11.jpeg,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-diagnostics-troubleshooting\noaccess.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\media\configure-evaluate-capacity\admin-capacity-parameters.png,2,Skipped - No tranformation required
+microsoft-r\r\how-to-revoscaler-models.md,1,Successful
+microsoft-r\python-reference\revoscalepy\RxHdfsFileSystem.md,1,Successful
+microsoft-r\deployr\media\deployr-repository-manager-testing-debugging-scripts\testpagepanes.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\media\how-to-build-api-clients-from-swagger-for-app-integration\app-dev-autorest.png,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-admin-console-about.md,1,Successful
+microsoft-r\install\r-server-install-teradata-server.md,1,Successful
+microsoft-r\python-reference\microsoftml\featurize-text.md,1,Successful
+microsoft-r\operationalize\python\media\quickstart-application-integration-with-swagger\5-language-choice-in-swagger-editor.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\rx-hadoop-copy-from-local.md,1,Successful
+microsoft-r\r-reference\olapr\query.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-decision-tree\image20.png,2,Skipped - No tranformation required
+microsoft-r\r\how-to-execute-code-remotely.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\serviceTypes.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\015.jpg,2,Skipped - No tranformation required
+microsoft-r\install\r-server-install-windows-vm-803-provisioning.md,1,Successful
+microsoft-r\deployr\media\deployr-repository-manager-testing-debugging-scripts\inputs.png,2,Skipped - No tranformation required
+microsoft-r\install\machine-learning-server-windows-packages.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-hadoop-command.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\run_button.jpg,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-api-explorer-tool.md,1,Successful
+microsoft-r\what-is-operationalization.md,1,Successful
+microsoft-r\r-reference\revopemar\pemabaseclass.md,1,Successful
+microsoft-r\install\media\machine-learning-server-install\install-topology-scaleout.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\microsoftml\rxoneclasssvm.md,1,Successful
+microsoft-r\python-reference\microsoftml\microsoftml-package.md,1,Successful
+microsoft-r\r-reference\sqlrutils\outputparameter.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxlocatefile.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\publishservice.md,1,Successful
+microsoft-r\r-reference\microsoftml\fastlinear.md,1,Successful
+microsoft-r\r\concept-what-is-revoscaler.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-dtree.md,1,Successful
+microsoft-r\operationalize\media\configure-authentication\aad-settings-perms-add-api-3.png,2,Skipped - No tranformation required
+microsoft-r\r\tutorial-revoscaler-data-model-analysis.md,1,Successful
+microsoft-r\install\machine-learning-server-azure-vm-on-linux.md,1,Successful
+microsoft-r\r-reference\microsoftml\rxfastlinear.md,1,Successful
+microsoft-r\deployr\deployr-application-developer-getting-started.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-getting-started\image8.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxpairwisecrosstab.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxhdfsconnect.md,1,Successful
+microsoft-r\r-reference\revoutils\totalsystemmemory.md,1,Successful
+microsoft-r\r-reference\revoscaler\kyphosis.md,1,Successful
+microsoft-r\r\media\tutorial-revoscaler-data-import-transform\image2.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxgetjobinfo.md,1,Successful
+microsoft-r\python-reference\revoscalepy\RxInSqlServer.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\options_dialog_2.jpg,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-data-scientist-getting-started\copyfile.png,2,Skipped - No tranformation required
+microsoft-r\r\media\tutorial-revoscaler-large-data-airline\dayofweek_plot_2.png,2,Skipped - No tranformation required
+microsoft-r\r\media\how-to-revoscaler-covcor\image23.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-api-reference\deployr-api-asynch-jobs.png,2,Skipped - No tranformation required
+microsoft-r\media\rserver-servicing-support\rserver-servicing-support805.png,2,Skipped - No tranformation required
+LICENSE-CODE,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-faq.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-hadoop-copy-to-local.md,1,Successful
+LICENSE,2,Skipped - No tranformation required
+microsoft-r\what-is-r-server-interoperability.md,1,Successful
+microsoft-r\deployr\deployr-security-passwords.md,1,Successful
+microsoft-r\install\machine-learning-server-linux-offline.md,1,Successful
+microsoft-r\python-reference\microsoftml\mkl-math.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-getting-started\image6.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\rx-exec-by.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxgetfuzzykeys.md,1,Successful
+microsoft-r\install\machine-learning-server-linux-install.md,1,Successful
+microsoft-r\operationalize\media\configure-authentication\webapp2.png,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-tools-and-samples.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-visualize-huge-data-sets\image27.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxxdfdata.md,1,Successful
+microsoft-r\r\rpe\revorpe-getting-started.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxfiledata-class.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxtextdata-class.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-install-in-cloud\azure-source-port-range.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\configure-find-admin-configuration-file.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\listremotefiles.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxtweedie.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\remoteexecute.md,1,Successful
+microsoft-r\python-reference\revoscalepy\RxDataSource.md,1,Successful
+microsoft-r\install\r-server-install-cloudera.md,1,Successful
+microsoft-r\r\how-to-revoscaler-data-import.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxtexttoxdf.md,1,Successful
+microsoft-r\deployr\deployr-admin-scale-and-throughput.md,1,Successful
+microsoft-r\r-reference\revoscaler\revoscaler-sql-server-functions.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-scale-and-throughput\tuneprojects.png,2,Skipped - No tranformation required
+microsoft-r\install\machine-learning-server-install.md,1,Successful
+microsoft-r\deployr\media\deployr-data-scientist-write-portable-r-code\upload.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\microsoftml\kernel.md,1,Successful
+microsoft-r\python-reference\microsoftml\rx-fast-forest.md,1,Successful
+microsoft-r\r-reference\revoscaler\media\revoscaler-hadoop-functions\award.png,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-installing-configuring.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-visualize-huge-data-sets\image29.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\mrsdeploy\remotescript.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-predict-rx-dforest.md,1,Successful
+microsoft-r\operationalize\media\configure-authentication\aad-settings-restricted.png,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-admin-hadoop-impersonation.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-console-user-accounts\userexport.png,2,Skipped - No tranformation required
+microsoft-r\r\media\how-to-revoscaler-visualize-huge-data-sets\image32.png,2,Skipped - No tranformation required
+image-sources\o16n-image-source-data-science-labels.snagproj,2,Skipped - No tranformation required
+microsoft-r\operationalize\media\how-to-connect-log-in-with-mrsdeploy\mrsdeploy-connect-remote-session.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revopemar\pemabygroup.md,1,Successful
+microsoft-r\deployr\media\deployr-data-scientist-write-portable-r-code\login1.png,2,Skipped - No tranformation required
+microsoft-r\r\media\tutorial-revoscaler-data-import-transform\arrdelay_histogram_1.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxcube.md,1,Successful
+microsoft-r\r-reference\revoscaler\media\revoscaler\viz copy.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\sqlrutils\getinputparameters.md,1,Successful
+microsoft-r\deployr\deployr-common-administration-tasks.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\004-createagentconfig.jpg,2,Skipped - No tranformation required
+microsoft-r\python-reference\microsoftml\custom.md,1,Successful
+microsoft-r\deployr\deployr-security-project-access.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxoptions.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\options_dialog.jpg,2,Skipped - No tranformation required
+microsoft-r\python-reference\microsoftml\concat.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\019.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\microsoftml\rxfasttrees.md,1,Successful
+microsoft-r\deployr\deployr-admin-console-database.md,1,Successful
+microsoft-r\install\media\mlserver-setup-log-files.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxfactors.md,1,Successful
+microsoft-r\install\r-server-install-linux-manage-install.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-scale-and-throughput\tuneasync.png,2,Skipped - No tranformation required
+microsoft-r\r\concept-what-is-the-microsoftml-package.md,1,Successful
+microsoft-r\r-reference\microsoftml\categorical.md,1,Successful
+microsoft-r\r-client\media\what-is-microsoft-r-client\Step1.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\rx-get-job-info.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\003-createagentgroup2.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxdatastep.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\close_button.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\microsoftml\loadimage.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxmarginals.md,1,Successful
+microsoft-r\r-reference\microsoftml\oneclasssvm.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxxdffilename.md,1,Successful
+microsoft-r\r\how-to-revoscaler-spark.md,1,Successful
+microsoft-r\deployr\media\deployr-application-developer-getting-started\fraud-score-example.png,2,Skipped - No tranformation required
+microsoft-r\r\how-to-revoscaler-distributed-computing-parallel-foreach.md,1,Successful
+microsoft-r\install\media\r-server-install-cloudera-deploy-activate\cloudera-manager-parcel-list.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\RxSqlServerData.md,1,Successful
+microsoft-r\media\resources-servicing-support\rserver-servicing-support.png,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-admin-console-permissions-with-roles.md,1,Successful
+microsoft-r\deployr\media\deployr-data-scientist-getting-started\testpage.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\RxRemoteComputeContext.md,1,Successful
+microsoft-r\deployr\media\deployr-install-on-windows\sqlserver-login-dialog.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxdatasource.md,1,Successful
+microsoft-r\operationalize\configure-authentication.md,1,Successful
+microsoft-r\r\tutorial-revoscaler-large-data-airline.md,1,Successful
+microsoft-r\python-reference\revoscalepy\index.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxgetjoboutput.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxquantile.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxgetjobs.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxcompressxdf.md,1,Successful
+microsoft-r\python-reference\revoscalepy\RxTextData.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxgetinfoxdf.md,1,Successful
+microsoft-r\r-reference\revoscaler\revoscaler-defunct.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-sql-server\image2.png,2,Skipped - No tranformation required
+microsoft-r\r\media\tutorial-r-to-revoscaler\image12.jpeg,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxteradatasql.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\mrsdeploy-package.md,1,Successful
+microsoft-r\operationalize\media\how-to-connect-log-in-with-mrsdeploy\mrsdeploy-connect-local-session.png,2,Skipped - No tranformation required
+microsoft-r\r\media\tutorial-r-to-revoscaler\image14.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxnew.md,1,Successful
+microsoft-r\install\media\operationalize-r-server-enterprise-config\configure-enterprise.png,2,Skipped - No tranformation required
+microsoft-r\r\rpe\media\revorpe-getting-started\image12.png,2,Skipped - No tranformation required
+image-sources\o16n-image-source-deployr-architecture2.pptx,2,Skipped - No tranformation required
+microsoft-r\install\media\r-server-install-cloudera-deploy-activate\cloudera-manager-activate-button.png,2,Skipped - No tranformation required
+microsoft-r\r\media\tutorial-r-to-revoscaler\image8.jpeg,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoutils\readnews.md,1,Successful
+microsoft-r\operationalize\configure-machine-learning-server-one-box-9-2.md,1,Successful
+microsoft-r\operationalize\media\configure-authentication\aad-settings-perms-add-api-1.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-data-scientist-getting-started\newdir2contents.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-managing-r-boundaries\03000019.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-managing-the-grid\03000021_576x285.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxsasdata.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\putlocalworkspace.md,1,Successful
+microsoft-r\r\how-to-revoscaler-data-odbc.md,1,Successful
+microsoft-r\install\r-server-install-cloudera-901.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxGetVarInfo.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-partition.md,1,Successful
+microsoft-r\r-reference\revoscaler\prune.rxDTree.md,1,Successful
+microsoft-r\r-reference\revoscaler\media\revoscaler\award.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\media\configure-machine-learning-server-enterprise\configure-enterprise.png,2,Skipped - No tranformation required
+microsoft-r\install\machine-learning-server-linux-packages.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-getting-started\image4.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxteradata-class.md,1,Successful
+microsoft-r\r\media\tutorial-r-to-revoscaler\image5.jpeg,2,Skipped - No tranformation required
+microsoft-r\operationalize\media\configure-authentication\aad-create-native-app-type.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\python\how-to-consume-web-services.md,1,Successful
+microsoft-r\python-reference\revoscalepy\RxMissingValues.md,1,Successful
+microsoft-r\python\media\vs-python-env-interactive.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\introducing-r-server-r-package-reference.md,1,Successful
+microsoft-r\r-reference\microsoftml\featurizeimage.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxdistributedhpa-class.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxelemarg.md,1,Successful
+microsoft-r\python\media\vs-python-env-soltn-xplr.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxlocalparallel-class.md,1,Successful
+microsoft-r\r\sample-microsoftml.md,1,Successful
+microsoft-r\install\r-server-install-supported-platforms.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\remotelogout.md,1,Successful
+microsoft-r\media\what-is-operationalization\about-traditional-challenge.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\016.jpg,2,Skipped - No tranformation required
+microsoft-r\resources-servicing-support.md,1,Successful
+microsoft-r\r-reference\sqlrutils\inputparameter.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-create-col-info.md,1,Successful
+microsoft-r\install\r-server-install-hadoop.md,1,Successful
+microsoft-r\media\scaler-getting-started-3-analyze-large-data\dayofweek_plot.png,2,Skipped - No tranformation required
+microsoft-r\resources-opting-out.md,1,Successful
+microsoft-r\r-reference\microsoftml\dropColumns.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\object_browser_button.jpg,2,Skipped - No tranformation required
+microsoft-r\operationalize\configure-admin-cli-launch.md,1,Successful
+microsoft-r\r\media\how-to-execute-code-remotely\mrsdeploy-connect-switch-context.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\media\configure-authentication\aad-create-web-app-done.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxlorenz.md,1,Successful
+microsoft-r\r-reference\revoscaler\as.xtabs.md,1,Successful
+microsoft-r\deployr\media\deployr-api-reference\deployr-architecture.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\microsoftml\hinge-loss.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-linear-model\image9.jpeg,2,Skipped - No tranformation required
+microsoft-r\r\tutorial-revoscaler-data-import-transform.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\difflocalremote.md,1,Successful
+microsoft-r\python-reference\revoscalepy\RxFileSystem.md,1,Successful
+microsoft-r\install\media\microsoftml-install-pretrained-models\msr-config-install-ml-model.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\media\configure-roles\p2.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxexec.md,1,Successful
+microsoft-r\deployr\media\deployr-data-scientist-getting-started\login1.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-managing-server-policies\03000022_624x429.png,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-admin-java-version.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-predict-default.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxcomputecontext-class.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\code_snippet.jpg,2,Skipped - No tranformation required
+microsoft-r\r\media\how-to-revoscaler-generalized-linear-model\image17.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\python\how-to-authenticate-in-python.md,1,Successful
+microsoft-r\python-reference\microsoftml\index.md,1,Successful
+microsoft-r\operationalize\media\configure-machine-learning-server-one-box\setup-onebox.png,2,Skipped - No tranformation required
+microsoft-r\r\rpe\media\revorpe-getting-started\image14.png,2,Skipped - No tranformation required
+microsoft-r\install\media\r-server-install-cloudera-deploy-activate\cloudera-manager-mrs-parcel-detail.png,2,Skipped - No tranformation required
+microsoft-r\python\quickstart-python-tools.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxlaunchclustertaskmanager.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxdatasource-class.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxdtreebestcp.md,1,Successful
+microsoft-r\r\how-to-developer-pemar.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-data-summaries\image4.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxnativefilesystem.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-managing-access-with-ip-filters\0300001C_544x270.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\RxOrcData.md,1,Successful
+microsoft-r\whats-new-in-machine-learning-server.md,1,Successful
+microsoft-r\what-is-r-client-r-server.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-generalized-linear-model\image19.png,2,Skipped - No tranformation required
+microsoft-r\install\r-server-install-linux-offline.md,1,Successful
+microsoft-r\r-reference\microsoftml\featurizetext.md,1,Successful
+microsoft-r\install\r-server-install-cloudera-rollback.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxprivacycontrol.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-hadoop-list-files.md,1,Successful
+microsoft-r\operationalize\python\media\quickstart-application-integration-with-swagger\1-create-mlserver-with-arm-template.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revopemar\pemabygroup-class.md,1,Successful
+microsoft-r\deployr\deployr-welcome.md,1,Successful
+microsoft-r\media\what-is-operationalization\data-scientist-easy-deploy.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\media\revoscaler\analytics.png,2,Skipped - No tranformation required
+microsoft-r\r-client\media\what-is-microsoft-r-client\Step3.png,2,Skipped - No tranformation required
+microsoft-r\r\media\how-to-revoscaler-logistic-regression\image16.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revopemar\pemacompute.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\011.jpg,2,Skipped - No tranformation required
+microsoft-r\r\how-to-revoscaler-decision-forest.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\object_browser.jpg,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\RxOptions.md,1,Successful
+microsoft-r\r-reference\revoscaler\media\revoscaler-teradata-functions\award.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\azureml-model-management-sdk\batch.md,1,Successful
+microsoft-r\operationalize\configure-cors.md,1,Successful
+microsoft-r\r\media\tutorial-revoscaler-data-import-transform\dayofweek_histogram.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\microsoftml\optimizer.md,1,Successful
+microsoft-r\install\r-server-install-cloudera-deploy-activate.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxmergexdf.md,1,Successful
+microsoft-r\operationalize\media\configure-authentication\aad-settings-perms-add-api.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxglm.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-console-about\03000007_295x117.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revopemar\pemabaseclass-class.md,1,Successful
+microsoft-r\r\media\tutorial-r-to-revoscaler\image16.png,2,Skipped - No tranformation required
+microsoft-r\r\rpe\media\revorpe-users-guide\options_dialog_4.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxPartition.md,1,Successful
+microsoft-r\r\media\tutorial-revoscaler-data-import-transform\crsdeptime_histogram.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\rx-import.md,1,Successful
+microsoft-r\media\what-is-operationalization\about-4.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\microsoftml\resize-image.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxdtree.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-getting-started\image10.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\microsoftml\rxensemble.md,1,Successful
+microsoft-r\operationalize\python\quickstart-deploy-python-web-service.md,1,Successful
+microsoft-r\operationalize\media\configure-evaluate-capacity\admin-capacity-results-cl.png,2,Skipped - No tranformation required
+microsoft-r\r\how-to-revoscaler-data-split.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-linear-model\image6.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\media\how-to-consume-web-service-asynchronously-batch\data-scientist-batch.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxgetenablethreadpool.md,1,Successful
+microsoft-r\operationalize\media\how-to-consume-web-service-interact-in-r\returns90.png,2,Skipped - No tranformation required
+microsoft-r\r\media\how-to-revoscaler-linear-model\image12.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\how-to-consume-web-service-asynchronously-batch.md,1,Successful
+.openpublishing.publish.config.json,1,Successful
+.openpublishing.build.ps1,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\RxSparkData.md,1,Successful
+microsoft-r\operationalize\python\how-to-create-manage-session-pools.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxgetavailablenodes.md,1,Successful
+microsoft-r\r\media\tutorial-r-to-revoscaler\image10.jpeg,2,Skipped - No tranformation required
+microsoft-r\r-reference\microsoftml\ensembleControl.md,1,Successful
+microsoft-r\install\r-server-install-hadoop-manual-package.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-managing-r-boundaries\03000015_557x247.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\microsoftml\ngram.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\getValidatedServiceType.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxforeachdopar.md,1,Successful
+microsoft-r\r\concept-what-is-xdf.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxsetfilesystem.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxhadoopcommand.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-scale-and-throughput\tuneasync-example.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\media\revoscaler\data-science-labels.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxoauthparameters.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\remoteloginaad.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-set-compute-context.md,1,Successful
+microsoft-r\r\how-to-revoscaler-generalized-linear-model.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxdforest.md,1,Successful
+microsoft-r\install\r-server-install-linux-server-901.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-get-var-info.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-spark-disconnect.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxinstalledpackages.md,1,Successful
+microsoft-r\r-reference\revoscaler\as.lm.md,1,Successful
+microsoft-r\install\r-server-install-windows.md,1,Successful
+microsoft-r\install\media\r-server-install-cloudera-generate-parcel\parcelgeneratoroutput.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\media\configure-authentication\aad-icon.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\007.jpg,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-installation.md,1,Successful
+microsoft-r\operationalize\media\configure-authentication\aad-new-app-registration.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoutils\revoinfo.md,1,Successful
+microsoft-r\python-reference\azureml-model-management-sdk\service-definition.md,1,Successful
+microsoft-r\install\r-server-install-teradata-client.md,1,Successful
+microsoft-r\deployr\media\deployr-api-explorer-tool\deployr-api-explorer-tool-4.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\RxRemoteJob.md,1,Successful
+microsoft-r\r\how-to-revoscaler-visualize-huge-data-sets.md,1,Successful
+microsoft-r\r\media\tutorial-revoscaler-large-data-census\age_graph.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\001-createagent.jpg,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-diagnostics-troubleshooting\ie11.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\RxHiveData.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxPredict.rxNaiveBayes.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-scale-and-throughput\throughput1.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\rLogo.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\microsoftml\rx-fast-trees.md,1,Successful
+microsoft-r\r\media\tutorial-large-data-tips\image13.jpeg,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\rx-spark-list-data.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-console-managing-r-scripts\03000014_576x267.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\mrsdeploy\resume.md,1,Successful
+microsoft-r\operationalize\media\configure-authentication\aad-settings-keys.png,2,Skipped - No tranformation required
+microsoft-r\r\quickstart-run-r-code.md,1,Successful
+microsoft-r\deployr\deployr-security-rserve-execution-context.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxsummary.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-distributed-computing-background-jobs\object_browser_1.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-console-user-accounts\usernew.png,2,Skipped - No tranformation required
+microsoft-r\r\rpe\media\revorpe-users-guide\conditioning_plot.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\as.glm.md,1,Successful
+microsoft-r\r-reference\microsoftml\categoricalhash.md,1,Successful
+microsoft-r\operationalize\media\concept-operationalize-deploy-consume\data-scientist-easy-deploy.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\020.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\media\revoscaler\import copy.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxcovcor.md,1,Successful
+microsoft-r\r\media\how-to-execute-code-remotely\remote-execution.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\revoscaler-hadoop-functions.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxspssdata-class.md,1,Successful
+microsoft-r\operationalize\configure-run-diagnostics.md,1,Successful
+microsoft-r\deployr\media\deployr-api-explorer-tool\deployr-api-explorer-tool-2.png,2,Skipped - No tranformation required
+microsoft-r\r\concept-what-is-compute-context.md,1,Successful
+microsoft-r\deployr\media\deployr-application-developer-getting-started\cli.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\008.jpg,2,Skipped - No tranformation required
+microsoft-r\r\how-to-developer-write-chunking-algorithms.md,1,Successful
+microsoft-r\r-reference\revoscaler\media\revoscaler\viz.png,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-security-account-locking.md,1,Successful
+microsoft-r\install\r-server-install-uninstall-upgrade.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-covcor\math2.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxremotehadoopmrcall.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxlinmod.md,1,Successful
+microsoft-r\r\media\tutorial-r-to-revoscaler\image7.jpeg,2,Skipped - No tranformation required
+microsoft-r\operationalize\configure-remote-database-to-operationalize.md,1,Successful
+microsoft-r\r\rpe\revorpe-users-guide.md,1,Successful
+microsoft-r\deployr\deployr-install-on-windows.md,1,Successful
+microsoft-r\operationalize\media\configure-authentication\aad-create-web-app-name.png,2,Skipped - No tranformation required
+microsoft-r\install\machine-learning-server-hadoop-install.md,1,Successful
+microsoft-r\r\media\tutorial-revoscaler-large-data-census\wage_income_age_graph.png,2,Skipped - No tranformation required
+microsoft-r\r\how-to-revoscaler-teradata.md,1,Successful
+.openpublishing.redirection.json,1,Successful
+microsoft-r\operationalize\configure-https.md,1,Successful
+microsoft-r\deployr\deployr-admin-console-user-accounts.md,1,Successful
+microsoft-r\python-reference\microsoftml\adadelta-optimizer.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\object_browser_3.jpg,2,Skipped - No tranformation required
+microsoft-r\python-reference\microsoftml\predefined.md,1,Successful
+microsoft-r\deployr\deployr-repository-manager-directories.md,1,Successful
+microsoft-r\r-reference\microsoftml\rxneuralnet.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxlocalparallel.md,1,Successful
+microsoft-r\deployr\media\deployr-data-scientist-getting-started\collaborate.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxfindpackage.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxforeachdopar-class.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-hadoop-remove-dir.md,1,Successful
+microsoft-r\r-reference\microsoftml\logisticregression.md,1,Successful
+microsoft-r\deployr\deployr-repository-manager-files.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-logistic-regression\image14.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\media\configure-authentication\portal-aad-app-registration.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\rx-delete-object.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxriskratio.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxteradata.md,1,Successful
+microsoft-r\install\r-server-install-hadoop-offline.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-console-permisssions-with-roles\0300000E_624x207.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rximport.md,1,Successful
+microsoft-r\r\r-samples.md,1,Successful
+microsoft-r\r-reference\revoscaler\mortdefaultsmall.md,1,Successful
+microsoft-r\operationalize\how-to-deploy-web-service-publish-manage-in-r.md,1,Successful
+microsoft-r\r-reference\revoscaler\as.kmeans.md,1,Successful
+microsoft-r\r\how-to-developer-write-custom-analysis.md,1,Successful
+microsoft-r\r-reference\revoscaler\media\revoscaler\import.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\mrsdeploy\putlocalfile.md,1,Successful
+microsoft-r\media\what-is-operationalization\about-2.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\how-to-consume-web-service-interact-in-r.md,1,Successful
+microsoft-r\operationalize\media\configure-roles\p4.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\media\configure-authentication\aad-settings-keys-2.png,2,Skipped - No tranformation required
+microsoft-r\r\how-to-revoscaler-distributed-computing-parallel-jobs.md,1,Successful
+microsoft-r\deployr\media\deployr-data-scientist-write-portable-r-code\rcode.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\revoscaler.md,1,Successful
+microsoft-r\python-reference\revoscalepy\revoscalepy-package.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-set-var-info.md,1,Successful
+microsoft-r\install\r-server-install-linux-hadoop-packages.md,1,Successful
+microsoft-r\deployr\media\deployr-api-explorer-tool\deployr-api-explorer-tool-6.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxinstallpackages.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-console-about\03000006_590x360.png,2,Skipped - No tranformation required
+microsoft-r\r\how-to-revoscaler-data-source.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-exec.md,1,Successful
+microsoft-r\install\media\mlserver-install-older-versions.png,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-admin-monitoring-events.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-hadoop-move.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-dforest.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxinsqlserver.md,1,Successful
+microsoft-r\operationalize\configure-admin-cli-local-password.md,1,Successful
+microsoft-r\r-reference\microsoftml\loss.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxxdftotext.md,1,Successful
+microsoft-r\r-reference\olapr\olapconnection.md,1,Successful
+microsoft-r\resources-known-issues.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\summary.snapshotDetails.md,1,Successful
+microsoft-r\r-reference\revoscaler\censusus5pct2000.md,1,Successful
+microsoft-r\deployr\deployr-admin-managing-r-boundaries.md,1,Successful
+microsoft-r\r\how-to-revoscaler-linear-model.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxlocalseq-class.md,1,Successful
+microsoft-r\deployr\media\deployr-about\deployrworkflowstory.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-console-managing-r-scripts\03000012_624x367.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxstepcontrol.md,1,Successful
+microsoft-r\deployr\media\deployr-about\deployrworkflow.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\mrsdeploy\getremoteworkspace.md,1,Successful
+microsoft-r\r-reference\sqlrutils\setinputparametervalue.md,1,Successful
+microsoft-r\r\tutorial-sparklyr-revoscaler.md,1,Successful
+microsoft-r\operationalize\media\configure-authentication\aad-create-native-app-name.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-scale-and-throughput\tuneprojects-example.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-configure-ca-sso\012.jpg,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-security-https.md,1,Successful
+microsoft-r\operationalize\python\quickstart-application-integration-with-swagger.md,1,Successful
+microsoft-r\r-reference\revoscaler\as.gbm.md,1,Successful
+microsoft-r\r-reference\sqlrutils\storedprocedure.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-sql-server\image1.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\mrsdeploy\listsnapshots.md,1,Successful
+microsoft-r\deployr\deployr-repository-manager-about.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\listservices.md,1,Successful
+microsoft-r\operationalize\media\configure-roles\role-hierarchy.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxmultitest.md,1,Successful
+microsoft-r\r-reference\revoscaler\media\revoscaler\scaler-rconsole-obj.png,2,Skipped - No tranformation required
+microsoft-r\install\machine-learning-server-in-the-cloud.md,1,Successful
+microsoft-r\r\media\tutorial-r-to-revoscaler\image9.jpeg,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxlogit.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxexecutesqlddl.md,1,Successful
+microsoft-r\r-reference\revoscaler\claims.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxPredict.rxDTree.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-managing-the-grid\0300001F_537x272.png,2,Skipped - No tranformation required
+microsoft-r\r\media\how-to-revoscaler-covcor\image24.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\microsoftml\categorical-hash.md,1,Successful
+microsoft-r\install\r-server-install-hadoop-yarnqueueusage.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-getting-started\image9.png,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-data-scientist-getting-started.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\ConfigureServicePool.md,1,Successful
+microsoft-r\r\how-to-revoscaler-distributed-computing.md,1,Successful
+microsoft-r\operationalize\how-to-connect-log-in-with-mrsdeploy.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\createsnapshot.md,1,Successful
+microsoft-r\r\how-to-revoscaler-data-sql.md,1,Successful
+microsoft-r\python-reference\microsoftml\gpu-math.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-managing-r-boundaries\03000016.png,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-install-on-linux.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-getting-started\image3.png,2,Skipped - No tranformation required
+microsoft-r\install\r-server-install-hadoop-command-line.md,1,Successful
+microsoft-r\python-reference\microsoftml\rx-logistic-regression.md,1,Successful
+microsoft-r\install\media\machine-learning-server-install\install-topology-client-server.png,2,Skipped - No tranformation required
+microsoft-r\install\r-server-install-hadoop-901.md,1,Successful
+microsoft-r\python-reference\microsoftml\sgd-optimizer.md,1,Successful
+microsoft-r\r\concept-what-is-data-transformations.md,1,Successful
+microsoft-r\deployr\deployr-data-scientist-write-portable-r-code.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxodbcdata.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-wait-for-job.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-hadoop-make-dir.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\stand_tb.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxkmeans.md,1,Successful
+microsoft-r\deployr\media\deployr-installing-configuring\mongodb-3.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxlineplot.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\loadsnapshot.md,1,Successful
+microsoft-r\deployr\media\deployr-data-scientist-getting-started\newdir2.png,2,Skipped - No tranformation required
+microsoft-r\r\media\how-to-revoscaler-covcor\math4.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revopemar\pemar.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\r_console_window.jpg,2,Skipped - No tranformation required
+microsoft-r\r\rpe\media\revorpe-users-guide\cluster_of_arrows.jpg,2,Skipped - No tranformation required
+microsoft-r\operationalize\media\configure-https\security-http-addgroup.png,2,Skipped - No tranformation required
+microsoft-r\r-client\install-on-linux.md,1,Successful
+microsoft-r\r\how-to-revoscaler-cluster.md,1,Successful
+microsoft-r\r\media\tutorial-large-data-tips\image11.jpeg,2,Skipped - No tranformation required
+microsoft-r\r-reference\olapr\olapr.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxsparkdata.md,1,Successful
+microsoft-r\operationalize\configure-roles.md,1,Successful
+microsoft-r\operationalize\media\configure-roles\security-auth-2.png,2,Skipped - No tranformation required
+microsoft-r\r\media\how-to-revoscaler-crosstabs\image5.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxspark.md,1,Successful
+microsoft-r\python\samples-microsoftml-python.md,1,Successful
+microsoft-r\r\media\tutorial-revoscaler-large-data-census\weeks_worked_age_graph.png,2,Skipped - No tranformation required
+microsoft-r\r\rpe\media\revorpe-users-guide\search_r_help_dialog.jpg,2,Skipped - No tranformation required
+microsoft-r\r\rpe\media\revorpe-users-guide\stop_recording_button.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxremotegetid.md,1,Successful
+microsoft-r\r-reference\revoioq.md,1,Successful
+microsoft-r\r\how-to-developer-manage-threads.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\step_over_button.jpg,2,Skipped - No tranformation required
+microsoft-r\python-reference\microsoftml\featurize-image.md,1,Successful
+microsoft-r\resources-glossary.md,1,Successful
+microsoft-r\deployr\deployr-client-library.md,1,Successful
+microsoft-r\operationalize\media\configure-roles\da-persona.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\microsoftml\rxfastforest.md,1,Successful
+microsoft-r\r-reference\revoscaler\as.rpart.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-hadoop-file-exists.md,1,Successful
+image-sources\o16n-image-source-admin-HA.pptx,2,Skipped - No tranformation required
+microsoft-r\install\media\machine-learning-server-windows-install\cli-onebox.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-console-user-accounts\userdetails.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxcanceljob.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\remotelogin.md,1,Successful
+microsoft-r\operationalize\media\configure-start-for-administrators\security.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\RxNativeFileSystem.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-decision-tree\image21.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxtlcbridge.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-console-user-accounts\0300000C_624x252.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-diagnostics-troubleshooting\ie11connections.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\microsoftml\selectColumns.md,1,Successful
+microsoft-r\python-reference\microsoftml\extract-pixels.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxinteradata-class.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxinteradata.md,1,Successful
+microsoft-r\install\r-server-install-linux-server.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-console-user-accounts\03000008.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\microsoftml\n-gram-hash.md,1,Successful
+microsoft-r\what-is-machine-learning-server.md,1,Successful
+microsoft-r\operationalize\concept-api.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxserializemodel.md,1,Successful
+microsoft-r\r-reference\microsoftml\concat.md,1,Successful
+microsoft-r\r\how-to-revoscaler-covcor.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-write-object.md,1,Successful
+microsoft-r\r-reference\microsoftml\mincount.md,1,Successful
+microsoft-r\python-reference\azureml-model-management-sdk\operationalization-definition.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxsparkdataops.md,1,Successful
+microsoft-r\install\media\r-server-install-cloudera-deploy-activate\cloudera-manager-add-service.png,2,Skipped - No tranformation required
+microsoft-r\deployr\deployr-security-authentication.md,1,Successful
+microsoft-r\python-reference\revoscalepy\RxSpark.md,1,Successful
+microsoft-r\python-reference\microsoftml\rx-predict.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-console-permisssions-with-roles\03000011_624x288.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-console-permisssions-with-roles\0300000D_624x290.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-install-on-windows\sqlserver-new-login.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\microsoftml\mlmodel.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxgetsparklyrconnection.md,1,Successful
+microsoft-r\r\how-to-revoscaler-logistic-regression.md,1,Successful
+microsoft-r\r-reference\olapr\explore.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxhdfsfilesystem.md,1,Successful
+microsoft-r\python\quickstart-revoscalepy-linear-regression-model.md,1,Successful
+image-sources\o16n-image-source-mrsdeploy-connect-switch-context2.snagproj,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxpackage.md,1,Successful
+microsoft-r\r-reference\revoscaler\revoscaler-teradata-functions.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\deleteremotefile.md,1,Successful
+microsoft-r\python\how-to-revoscalepy.md,1,Successful
+microsoft-r\r\media\tutorial-r-to-revoscaler\image13.jpeg,2,Skipped - No tranformation required
+microsoft-r\r\how-to-revoscaler-distributed-computing-compute-context.md,1,Successful
+.gitattributes,2,Skipped - No tranformation required
+microsoft-r\r-reference\sqlrutils\sqlrutils.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\run_line_selection_button.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\olapr\executemd.md,1,Successful
+microsoft-r\python-reference\microsoftml\avx-math.md,1,Successful
+microsoft-r\operationalize\media\configure-authentication\aad-settings-keys-copy.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxcleanup.md,1,Successful
+image-sources\about-o16n.pptx,2,Skipped - No tranformation required
+microsoft-r\operationalize\media\how-to-build-api-clients-from-swagger-for-app-integration\swaggerIO-mainPage.png,2,Skipped - No tranformation required
+microsoft-r\install\machine-learning-server-windows-install.md,1,Successful
+microsoft-r\install\media\machine-learning-server-windows-install\search-downloads.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxwaitforjob.md,1,Successful
+microsoft-r\r\how-to-revoscaler-data-hdfs.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxroc.md,1,Successful
+.acrolinx-config.edn,2,Skipped - No tranformation required
+microsoft-r\r-reference\mrsdeploy\summary.serviceDetails.md,1,Successful
+microsoft-r\r\how-to-revoscaler-data-sort.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-sql-server\image3.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\microsoftml\get-sentiment.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-install-in-cloud\azure-public-ip.png,2,Skipped - No tranformation required
+microsoft-r\r\rpe\media\revorpe-users-guide\search_r_help_dialog_results.jpg,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxcomputecontext.md,1,Successful
+microsoft-r\r-reference\microsoftml\fastforest.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxsasdata-class.md,1,Successful
+microsoft-r\r\how-to-revoscaler-distributed-computing-foreach.md,1,Successful
+microsoft-r\operationalize\media\configure-authentication\webapp1.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxsqlserverdata-class.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-getting-started\image13.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\mrsdeploy\request.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxhadoopmr-class.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-linear-model\image7.png,2,Skipped - No tranformation required
+microsoft-r\install\media\machine-learning-server-install-azure-vm\gh-readme-page-2.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\python\media\quickstart-application-integration-with-swagger\2-custom-deployment.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\revoscalepy\rx-hadoop-remove.md,1,Successful
+microsoft-r\install\r-server-install-windows-command-line.md,1,Successful
+microsoft-r\deployr\deployr-rbroker-framework.md,1,Successful
+microsoft-r\deployr\media\deployr-data-scientist-getting-started\rstudio-test.png,2,Skipped - No tranformation required
+microsoft-r\r\rpe\media\revorpe-getting-started\image5.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxnaivebayes.md,1,Successful
+microsoft-r\install\r-server-install-hadoop-troubleshoot.md,1,Successful
+microsoft-r\r-reference\revopemar\pemamean-class.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-managing-access-with-ip-filters\0300001A_623x182.png,2,Skipped - No tranformation required
+microsoft-r\r\rpe\media\revorpe-users-guide\scatterplot_matrix.jpg,2,Skipped - No tranformation required
+microsoft-r\r\rpe\media\revorpe-users-guide\text_edit_tb.jpg,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-r-package-management\packagemgr.png,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-installing-configuring\mongodb-1.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\olapr\execute2d.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-console-about\checkmark.jpeg,2,Skipped - No tranformation required
+microsoft-r\deployr\media\deployr-admin-console-database\db-restore.png,2,Skipped - No tranformation required
+microsoft-r\r\media\how-to-choose-microsoftml-algorithms-cheatsheet\microsoftml-package-algorithm-cheat-sheet.png,2,Skipped - No tranformation required
+microsoft-r\r\media\how-to-revoscaler-visualize-huge-data-sets\image26.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\microsoftml\sse-math.md,1,Successful
+microsoft-r\r-reference\revoscaler\rxgetpartitions.md,1,Successful
+microsoft-r\operationalize\how-to-manage-access-tokens.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-managing-access-with-ip-filters\0300001D_333x206.png,2,Skipped - No tranformation required
+microsoft-r\python-reference\microsoftml\rx-fast-linear.md,1,Successful
+microsoft-r\python-reference\microsoftml\clr-math.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-diagnostics-troubleshooting\inactivenode.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\mrsdeploy\remotecommandline.md,1,Successful
+microsoft-r\python-reference\revoscalepy\RxXdfData.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\DeleteServicePool.md,1,Successful
+microsoft-r\r-reference\mrsdeploy\downloadsnapshot.md,1,Successful
+microsoft-r\python-reference\microsoftml\drop-columns.md,1,Successful
+microsoft-r\install\r-server-install-windows-offline.md,1,Successful
+microsoft-r\r\rpe\media\revorpe-users-guide\visual_debugger_step_into.jpg,2,Skipped - No tranformation required
+microsoft-r\operationalize\how-to-create-manage-session-pools.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-console-permisssions-with-roles\0300000F.png,2,Skipped - No tranformation required
+microsoft-r\r-client\install-on-windows.md,1,Successful
+microsoft-r\install\media\operationalize-r-server-one-box-config\setup-onebox.png,2,Skipped - No tranformation required
+microsoft-r\r-reference\revoscaler\rxsqlserverdroptable.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-visualize-huge-data-sets\image28.png,2,Skipped - No tranformation required
+microsoft-r\install\machine-learning-server-linux-uninstall.md,1,Successful
+microsoft-r\deployr\media\deployr-admin-managing-r-boundaries\03000018_569x258.png,2,Skipped - No tranformation required
+microsoft-r\operationalize\configure-machine-learning-server-enterprise.md,1,Successful
+microsoft-r\deployr\deployr-admin-r-package-management.md,1,Successful
+microsoft-r\python\tutorial-revoscalepy-pyspark.md,1,Successful
+microsoft-r\r-reference\microsoftml\getsentiment.md,1,Successful
+microsoft-r\r\media\how-to-revoscaler-visualize-huge-data-sets\image31.png,2,Skipped - No tranformation required
+microsoft-r\r\how-to-developer-pmml.md,1,Successful
+microsoft-r\r\how-to-revoscaler-data-summaries.md,1,Successful
+microsoft-r\python-reference\microsoftml\learners-object.md,1,Successful
+microsoft-r\python-reference\revoscalepy\rx-summary.md,1,Successful
+microsoft-r\r\sample-built-in-data.md,1,Successful
