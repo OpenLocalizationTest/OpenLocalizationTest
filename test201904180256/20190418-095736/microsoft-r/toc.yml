@@ -1,0 +1,1287 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="toc.yml" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-d1654b2" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">8ea8c771-7844-49cc-84f5-71599942a18cc3c03ccb303f111b58cfb3a5681e2f56a70cee46.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">c3c03ccb303f111b58cfb3a5681e2f56a70cee46</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">8ea8c771-7844-49cc-84f5-71599942a18c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">04/18/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\toc.yml</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve">
+          <source>Machine Learning Server Documentation</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve">
+          <source>Overview</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>About Machine Learning Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>What's new</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>R Server's new name</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Install &amp; configure</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Supported platforms</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Windows</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Install on Windows</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Offline install</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Command line install</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Uninstall from Windows</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Install R/Python packages</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Linux</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Install on Linux</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Offline install</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Uninstall from Linux</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Install R/Python packages</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Hadoop</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Install on Cloudera</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Install on Hadoop</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Uninstall from Hadoop</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Configure to operationalize</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Get started: admins</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Configure: One-box</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>9.2.1</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>9.0/9.1</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Configure: Enterprise</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>9.2.1</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>9.0/9.1</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Launch admin CLI</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>LDAP/AAD authentication</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>SSL/TLS connection security</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Diagnostics &amp; troubleshooting</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Roles &amp; permissions</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Change databases</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Stop &amp; start nodes</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Declare compute nodes</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Encrypt credentials</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Set local password</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Update port numbers</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Evaluate capacity</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Enable CORS</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>R execution security</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>R package management</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Default file paths</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Azure cloud</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Overview</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Data Science VM</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Azure VMs</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Client-side</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Microsoft R Client</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Install on Windows</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Install on Linux</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Server compatibility</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Install Python client</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Link Python to tools</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Configure multi-user Jupyter Notebooks</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Older R Server releases</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>Prior feature announcements</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>On Windows</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>9.1 - Install</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>9.1 - Offline</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>9.1 - Command line</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>On Linux</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>9.1 - Install</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>9.1 - Offline</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>9.1 - Uninstall</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>9.0.1 - Install</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>8.0.5 - Install</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>Manage your R installation</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>On Hadoop</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>9.1 - Install</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>9.1 - Commandline</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>9.1 - Offline</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>9.1 - Cloudera</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>9.1 - Uninstall</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>9.0.1 - Install</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>9.0.1 - Cloudera</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>8.0.5 - Install</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>R Package dependency list</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>Manual R package install</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>Hadoop configuration</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>Troubleshoot R installation</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>On Teradata</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>Install R Server 9.x on a Teradata Server</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>Install R Server 8.x on a Teradata Server</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>Install R Server on a Teradata Client</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>Get started RevoScaleR on Teradata</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>Quickstarts</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>Python</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>Deploy model as service</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>Integrate real-time service into app with Swagger</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>Run binary classifications</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>Create a linear regression model</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>R</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>Run R code with new functions</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>Deploy model as service</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>Tutorials</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>Python</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>PySpark and revoscalepy interoperability</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>R</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>Explore R-to-RevoScaleR</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>Import &amp; transform data</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>Visualize &amp; analyze data</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>Work with larger datasets</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>Flight delays data analysis</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>Loan data analysis</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>Census data analysis</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>Tips on big data computing</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>Samples &amp; solutions</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>Python</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>Python samples for MicrosoftML</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>R</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>Sample data in RevoScaleR</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>RevoScaleR rxExecBy parallel processing example</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>R Server with Sparklyr example</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>R samples for MicrosoftML</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>Solution templates</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>Concepts</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>Compute context</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>Distributed computing</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>Web services</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>Pre-trained models</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>MicrosoftML</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>RevoScaleR</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>How-to guides</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source>Data &amp; models</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source>Python</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source>Use revoscalepy on Spark</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source>R</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source>Set a compute context</source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source>Data access and manipulation</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source>Data transformations</source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source>XDF files</source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve">
+          <source>Import text data</source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve">
+          <source>Import SQL Server data</source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve">
+          <source>Import ODBC data</source>
+        </trans-unit><trans-unit id="239" translate="yes" xml:space="preserve">
+          <source>Import HDFS files</source>
+        </trans-unit><trans-unit id="240" translate="yes" xml:space="preserve">
+          <source>Use data source objects</source>
+        </trans-unit><trans-unit id="241" translate="yes" xml:space="preserve">
+          <source>Transform &amp; subset data</source>
+        </trans-unit><trans-unit id="242" translate="yes" xml:space="preserve">
+          <source>Sort data</source>
+        </trans-unit><trans-unit id="243" translate="yes" xml:space="preserve">
+          <source>Split data</source>
+        </trans-unit><trans-unit id="244" translate="yes" xml:space="preserve">
+          <source>Merge data</source>
+        </trans-unit><trans-unit id="245" translate="yes" xml:space="preserve">
+          <source>Summarization</source>
+        </trans-unit><trans-unit id="246" translate="yes" xml:space="preserve">
+          <source>Statistical summaries</source>
+        </trans-unit><trans-unit id="247" translate="yes" xml:space="preserve">
+          <source>Crosstabs</source>
+        </trans-unit><trans-unit id="248" translate="yes" xml:space="preserve">
+          <source>Visualization</source>
+        </trans-unit><trans-unit id="249" translate="yes" xml:space="preserve">
+          <source>Data modeling</source>
+        </trans-unit><trans-unit id="250" translate="yes" xml:space="preserve">
+          <source>Linear regression</source>
+        </trans-unit><trans-unit id="251" translate="yes" xml:space="preserve">
+          <source>Logistic regression</source>
+        </trans-unit><trans-unit id="252" translate="yes" xml:space="preserve">
+          <source>Generalized linear</source>
+        </trans-unit><trans-unit id="253" translate="yes" xml:space="preserve">
+          <source>Decision tree</source>
+        </trans-unit><trans-unit id="254" translate="yes" xml:space="preserve">
+          <source>Decision forest</source>
+        </trans-unit><trans-unit id="255" translate="yes" xml:space="preserve">
+          <source>Estimating with stochastic gradient boosting</source>
+        </trans-unit><trans-unit id="256" translate="yes" xml:space="preserve">
+          <source>Naive Bayes Classification</source>
+        </trans-unit><trans-unit id="257" translate="yes" xml:space="preserve">
+          <source>Clustering Classification</source>
+        </trans-unit><trans-unit id="258" translate="yes" xml:space="preserve">
+          <source>Correlate data</source>
+        </trans-unit><trans-unit id="259" translate="yes" xml:space="preserve">
+          <source>Use RevoScaleR on Hadoop</source>
+        </trans-unit><trans-unit id="260" translate="yes" xml:space="preserve">
+          <source>Spark</source>
+        </trans-unit><trans-unit id="261" translate="yes" xml:space="preserve">
+          <source>MapReduce</source>
+        </trans-unit><trans-unit id="262" translate="yes" xml:space="preserve">
+          <source>RevoScaleR functions for distributed analysis</source>
+        </trans-unit><trans-unit id="263" translate="yes" xml:space="preserve">
+          <source>Background jobs</source>
+        </trans-unit><trans-unit id="264" translate="yes" xml:space="preserve">
+          <source>Parallel jobs using rxExec</source>
+        </trans-unit><trans-unit id="265" translate="yes" xml:space="preserve">
+          <source>Enforce a YARN queue assignment</source>
+        </trans-unit><trans-unit id="266" translate="yes" xml:space="preserve">
+          <source>Choose a MicrosoftML algorithm</source>
+        </trans-unit><trans-unit id="267" translate="yes" xml:space="preserve">
+          <source>Operationalize models &amp; code</source>
+        </trans-unit><trans-unit id="268" translate="yes" xml:space="preserve">
+          <source>Python</source>
+        </trans-unit><trans-unit id="269" translate="yes" xml:space="preserve">
+          <source>Authenticate in Python</source>
+        </trans-unit><trans-unit id="270" translate="yes" xml:space="preserve">
+          <source>Deploy &amp; manage web services</source>
+        </trans-unit><trans-unit id="271" translate="yes" xml:space="preserve">
+          <source>Consume services synchronously</source>
+        </trans-unit><trans-unit id="272" translate="yes" xml:space="preserve">
+          <source>Consume services asynchronously</source>
+        </trans-unit><trans-unit id="273" translate="yes" xml:space="preserve">
+          <source>Create and manage session pools</source>
+        </trans-unit><trans-unit id="274" translate="yes" xml:space="preserve">
+          <source>R</source>
+        </trans-unit><trans-unit id="275" translate="yes" xml:space="preserve">
+          <source>Deploy &amp; manage web services</source>
+        </trans-unit><trans-unit id="276" translate="yes" xml:space="preserve">
+          <source>Consume services synchronously</source>
+        </trans-unit><trans-unit id="277" translate="yes" xml:space="preserve">
+          <source>Consume services asynchronously</source>
+        </trans-unit><trans-unit id="278" translate="yes" xml:space="preserve">
+          <source>Create and manage session pools</source>
+        </trans-unit><trans-unit id="279" translate="yes" xml:space="preserve">
+          <source>DeployR 8.x [Archive]</source>
+        </trans-unit><trans-unit id="280" translate="yes" xml:space="preserve">
+          <source>How to install DeployR</source>
+        </trans-unit><trans-unit id="281" translate="yes" xml:space="preserve">
+          <source>Install DeployR for R Server for Windows</source>
+        </trans-unit><trans-unit id="282" translate="yes" xml:space="preserve">
+          <source>Install DeployR for Microsoft R Server 8.0.5 on Linux</source>
+        </trans-unit><trans-unit id="283" translate="yes" xml:space="preserve">
+          <source>Install DeployR 8.0.0</source>
+        </trans-unit><trans-unit id="284" translate="yes" xml:space="preserve">
+          <source>Getting Started with DeployR</source>
+        </trans-unit><trans-unit id="285" translate="yes" xml:space="preserve">
+          <source>About DeployR 8.x</source>
+        </trans-unit><trans-unit id="286" translate="yes" xml:space="preserve">
+          <source>Getting Started for Application Developers</source>
+        </trans-unit><trans-unit id="287" translate="yes" xml:space="preserve">
+          <source>Getting Started for Administrators</source>
+        </trans-unit><trans-unit id="288" translate="yes" xml:space="preserve">
+          <source>Getting Started for Data Scientists</source>
+        </trans-unit><trans-unit id="289" translate="yes" xml:space="preserve">
+          <source>Administration &amp; Configuration</source>
+        </trans-unit><trans-unit id="290" translate="yes" xml:space="preserve">
+          <source>Administration Console Help</source>
+        </trans-unit><trans-unit id="291" translate="yes" xml:space="preserve">
+          <source>About DeployR Administration Console</source>
+        </trans-unit><trans-unit id="292" translate="yes" xml:space="preserve">
+          <source>Creating &amp; Managing User Accounts</source>
+        </trans-unit><trans-unit id="293" translate="yes" xml:space="preserve">
+          <source>Managing Permissions with Roles</source>
+        </trans-unit><trans-unit id="294" translate="yes" xml:space="preserve">
+          <source>Managing R Scripts</source>
+        </trans-unit><trans-unit id="295" translate="yes" xml:space="preserve">
+          <source>Managing R Boundaries</source>
+        </trans-unit><trans-unit id="296" translate="yes" xml:space="preserve">
+          <source>Managing Access with IP Filters</source>
+        </trans-unit><trans-unit id="297" translate="yes" xml:space="preserve">
+          <source>Managing the Grid</source>
+        </trans-unit><trans-unit id="298" translate="yes" xml:space="preserve">
+          <source>Managing Server Policies</source>
+        </trans-unit><trans-unit id="299" translate="yes" xml:space="preserve">
+          <source>Restoring &amp; Backing Up the Database</source>
+        </trans-unit><trans-unit id="300" translate="yes" xml:space="preserve">
+          <source>Monitoring Events</source>
+        </trans-unit><trans-unit id="301" translate="yes" xml:space="preserve">
+          <source>Common Administrative Tasks</source>
+        </trans-unit><trans-unit id="302" translate="yes" xml:space="preserve">
+          <source>Troubleshooting &amp; Diagnostics</source>
+        </trans-unit><trans-unit id="303" translate="yes" xml:space="preserve">
+          <source>Scale &amp; Throughput</source>
+        </trans-unit><trans-unit id="304" translate="yes" xml:space="preserve">
+          <source>DeployR in the Cloud</source>
+        </trans-unit><trans-unit id="305" translate="yes" xml:space="preserve">
+          <source>Server &amp; Grid High Availability</source>
+        </trans-unit><trans-unit id="306" translate="yes" xml:space="preserve">
+          <source>Managing Big Data</source>
+        </trans-unit><trans-unit id="307" translate="yes" xml:space="preserve">
+          <source>Using Hadoop Impersonation &amp; DeployR</source>
+        </trans-unit><trans-unit id="308" translate="yes" xml:space="preserve">
+          <source>R Package Management</source>
+        </trans-unit><trans-unit id="309" translate="yes" xml:space="preserve">
+          <source>Updating DeployR after Java Update</source>
+        </trans-unit><trans-unit id="310" translate="yes" xml:space="preserve">
+          <source>Reinstalling or Upgrading the R Dependency</source>
+        </trans-unit><trans-unit id="311" translate="yes" xml:space="preserve">
+          <source>Security on DeployR</source>
+        </trans-unit><trans-unit id="312" translate="yes" xml:space="preserve">
+          <source>Introduction</source>
+        </trans-unit><trans-unit id="313" translate="yes" xml:space="preserve">
+          <source>Authentication &amp; Authorization</source>
+        </trans-unit><trans-unit id="314" translate="yes" xml:space="preserve">
+          <source>HTTPS &amp; SSL/TLS Support</source>
+        </trans-unit><trans-unit id="315" translate="yes" xml:space="preserve">
+          <source>Server Access Policies</source>
+        </trans-unit><trans-unit id="316" translate="yes" xml:space="preserve">
+          <source>Project &amp; Repository File Access Controls</source>
+        </trans-unit><trans-unit id="317" translate="yes" xml:space="preserve">
+          <source>Password Policies</source>
+        </trans-unit><trans-unit id="318" translate="yes" xml:space="preserve">
+          <source>Account Locking Policies</source>
+        </trans-unit><trans-unit id="319" translate="yes" xml:space="preserve">
+          <source>RServe Execution Context</source>
+        </trans-unit><trans-unit id="320" translate="yes" xml:space="preserve">
+          <source>APIs &amp; Client Libraries</source>
+        </trans-unit><trans-unit id="321" translate="yes" xml:space="preserve">
+          <source>Developer Docs &amp; Downloads</source>
+        </trans-unit><trans-unit id="322" translate="yes" xml:space="preserve">
+          <source>API Overview</source>
+        </trans-unit><trans-unit id="323" translate="yes" xml:space="preserve">
+          <source>Client Library Tutorial</source>
+        </trans-unit><trans-unit id="324" translate="yes" xml:space="preserve">
+          <source>RBroker Framework Tutorial</source>
+        </trans-unit><trans-unit id="325" translate="yes" xml:space="preserve">
+          <source>API Explorer Tool</source>
+        </trans-unit><trans-unit id="326" translate="yes" xml:space="preserve">
+          <source>Writing Portable R Code</source>
+        </trans-unit><trans-unit id="327" translate="yes" xml:space="preserve">
+          <source>Repository Manager Help</source>
+        </trans-unit><trans-unit id="328" translate="yes" xml:space="preserve">
+          <source>About Repository Manager</source>
+        </trans-unit><trans-unit id="329" translate="yes" xml:space="preserve">
+          <source>Working with Directories</source>
+        </trans-unit><trans-unit id="330" translate="yes" xml:space="preserve">
+          <source>Working with Files</source>
+        </trans-unit><trans-unit id="331" translate="yes" xml:space="preserve">
+          <source>Testing &amp; Debugging Scripts</source>
+        </trans-unit><trans-unit id="332" translate="yes" xml:space="preserve">
+          <source>APIs</source>
+        </trans-unit><trans-unit id="333" translate="yes" xml:space="preserve">
+          <source>About the REST APIs</source>
+        </trans-unit><trans-unit id="334" translate="yes" xml:space="preserve">
+          <source>Integrate services into apps</source>
+        </trans-unit><trans-unit id="335" translate="yes" xml:space="preserve">
+          <source>Manage access tokens</source>
+        </trans-unit><trans-unit id="336" translate="yes" xml:space="preserve">
+          <source>Run R code remotely</source>
+        </trans-unit><trans-unit id="337" translate="yes" xml:space="preserve">
+          <source>Connect to remote server</source>
+        </trans-unit><trans-unit id="338" translate="yes" xml:space="preserve">
+          <source>Execute code remotely</source>
+        </trans-unit><trans-unit id="339" translate="yes" xml:space="preserve">
+          <source>Advanced R development</source>
+        </trans-unit><trans-unit id="340" translate="yes" xml:space="preserve">
+          <source>Write custom chunking algorithms</source>
+        </trans-unit><trans-unit id="341" translate="yes" xml:space="preserve">
+          <source>Write custom analyses for large data sets</source>
+        </trans-unit><trans-unit id="342" translate="yes" xml:space="preserve">
+          <source>Convert model objects for use with PMML</source>
+        </trans-unit><trans-unit id="343" translate="yes" xml:space="preserve">
+          <source>Manage threads</source>
+        </trans-unit><trans-unit id="344" translate="yes" xml:space="preserve">
+          <source>Parallel loops using foreach</source>
+        </trans-unit><trans-unit id="345" translate="yes" xml:space="preserve">
+          <source>Parallel execution using doRSR</source>
+        </trans-unit><trans-unit id="346" translate="yes" xml:space="preserve">
+          <source>Parallel algorithms with PemaR</source>
+        </trans-unit><trans-unit id="347" translate="yes" xml:space="preserve">
+          <source>Reference</source>
+        </trans-unit><trans-unit id="348" translate="yes" xml:space="preserve">
+          <source>Python packages</source>
+        </trans-unit><trans-unit id="349" translate="yes" xml:space="preserve">
+          <source>azureml-model-management-sdk</source>
+        </trans-unit><trans-unit id="350" translate="yes" xml:space="preserve">
+          <source>DeployClient</source>
+        </trans-unit><trans-unit id="351" translate="yes" xml:space="preserve">
+          <source>MLServer</source>
+        </trans-unit><trans-unit id="352" translate="yes" xml:space="preserve">
+          <source>Operationalization</source>
+        </trans-unit><trans-unit id="353" translate="yes" xml:space="preserve">
+          <source>OperationalizationDefinition</source>
+        </trans-unit><trans-unit id="354" translate="yes" xml:space="preserve">
+          <source>ServiceDefinition</source>
+        </trans-unit><trans-unit id="355" translate="yes" xml:space="preserve">
+          <source>RealtimeDefinition</source>
+        </trans-unit><trans-unit id="356" translate="yes" xml:space="preserve">
+          <source>Service</source>
+        </trans-unit><trans-unit id="357" translate="yes" xml:space="preserve">
+          <source>ServiceResponse</source>
+        </trans-unit><trans-unit id="358" translate="yes" xml:space="preserve">
+          <source>Batch</source>
+        </trans-unit><trans-unit id="359" translate="yes" xml:space="preserve">
+          <source>BatchResponse</source>
+        </trans-unit><trans-unit id="360" translate="yes" xml:space="preserve">
+          <source>microsoftml</source>
+        </trans-unit><trans-unit id="361" translate="yes" xml:space="preserve">
+          <source>categorical</source>
+        </trans-unit><trans-unit id="362" translate="yes" xml:space="preserve">
+          <source>categorical_hash</source>
+        </trans-unit><trans-unit id="363" translate="yes" xml:space="preserve">
+          <source>concat</source>
+        </trans-unit><trans-unit id="364" translate="yes" xml:space="preserve">
+          <source>count_select</source>
+        </trans-unit><trans-unit id="365" translate="yes" xml:space="preserve">
+          <source>drop_columns</source>
+        </trans-unit><trans-unit id="366" translate="yes" xml:space="preserve">
+          <source>extract_pixels</source>
+        </trans-unit><trans-unit id="367" translate="yes" xml:space="preserve">
+          <source>featurize_image</source>
+        </trans-unit><trans-unit id="368" translate="yes" xml:space="preserve">
+          <source>featurize_text</source>
+        </trans-unit><trans-unit id="369" translate="yes" xml:space="preserve">
+          <source>get_sentiment</source>
+        </trans-unit><trans-unit id="370" translate="yes" xml:space="preserve">
+          <source>load_image</source>
+        </trans-unit><trans-unit id="371" translate="yes" xml:space="preserve">
+          <source>mutualinformation_select</source>
+        </trans-unit><trans-unit id="372" translate="yes" xml:space="preserve">
+          <source>resize_image</source>
+        </trans-unit><trans-unit id="373" translate="yes" xml:space="preserve">
+          <source>rx_ensemble</source>
+        </trans-unit><trans-unit id="374" translate="yes" xml:space="preserve">
+          <source>rx_fast_forest</source>
+        </trans-unit><trans-unit id="375" translate="yes" xml:space="preserve">
+          <source>rx_fast_linear</source>
+        </trans-unit><trans-unit id="376" translate="yes" xml:space="preserve">
+          <source>rx_fast_trees</source>
+        </trans-unit><trans-unit id="377" translate="yes" xml:space="preserve">
+          <source>rx_featurize</source>
+        </trans-unit><trans-unit id="378" translate="yes" xml:space="preserve">
+          <source>rx_logistic_regression</source>
+        </trans-unit><trans-unit id="379" translate="yes" xml:space="preserve">
+          <source>rx_neural_network</source>
+        </trans-unit><trans-unit id="380" translate="yes" xml:space="preserve">
+          <source>rx_oneclass_svm</source>
+        </trans-unit><trans-unit id="381" translate="yes" xml:space="preserve">
+          <source>rx_predict</source>
+        </trans-unit><trans-unit id="382" translate="yes" xml:space="preserve">
+          <source>select_columns</source>
+        </trans-unit><trans-unit id="383" translate="yes" xml:space="preserve">
+          <source>revoscalepy</source>
+        </trans-unit><trans-unit id="384" translate="yes" xml:space="preserve">
+          <source>rx_btrees</source>
+        </trans-unit><trans-unit id="385" translate="yes" xml:space="preserve">
+          <source>rx_cancel_job</source>
+        </trans-unit><trans-unit id="386" translate="yes" xml:space="preserve">
+          <source>rx_cleanup_jobs</source>
+        </trans-unit><trans-unit id="387" translate="yes" xml:space="preserve">
+          <source>RxDataSource</source>
+        </trans-unit><trans-unit id="388" translate="yes" xml:space="preserve">
+          <source>rx_data_step</source>
+        </trans-unit><trans-unit id="389" translate="yes" xml:space="preserve">
+          <source>rx_delete_object</source>
+        </trans-unit><trans-unit id="390" translate="yes" xml:space="preserve">
+          <source>rx_dforest</source>
+        </trans-unit><trans-unit id="391" translate="yes" xml:space="preserve">
+          <source>rx_dtree</source>
+        </trans-unit><trans-unit id="392" translate="yes" xml:space="preserve">
+          <source>rx_exec</source>
+        </trans-unit><trans-unit id="393" translate="yes" xml:space="preserve">
+          <source>rx_exec_by</source>
+        </trans-unit><trans-unit id="394" translate="yes" xml:space="preserve">
+          <source>rx_get_compute_context</source>
+        </trans-unit><trans-unit id="395" translate="yes" xml:space="preserve">
+          <source>rx_get_info</source>
+        </trans-unit><trans-unit id="396" translate="yes" xml:space="preserve">
+          <source>rx_get_job_info</source>
+        </trans-unit><trans-unit id="397" translate="yes" xml:space="preserve">
+          <source>rx_get_job_output</source>
+        </trans-unit><trans-unit id="398" translate="yes" xml:space="preserve">
+          <source>rx_get_job_results</source>
+        </trans-unit><trans-unit id="399" translate="yes" xml:space="preserve">
+          <source>rx_get_jobs</source>
+        </trans-unit><trans-unit id="400" translate="yes" xml:space="preserve">
+          <source>rx_get_job_status</source>
+        </trans-unit><trans-unit id="401" translate="yes" xml:space="preserve">
+          <source>rx_get_partitions</source>
+        </trans-unit><trans-unit id="402" translate="yes" xml:space="preserve">
+          <source>rx_get_pyspark_connection</source>
+        </trans-unit><trans-unit id="403" translate="yes" xml:space="preserve">
+          <source>rx_get_var_info</source>
+        </trans-unit><trans-unit id="404" translate="yes" xml:space="preserve">
+          <source>rx_get_var_names</source>
+        </trans-unit><trans-unit id="405" translate="yes" xml:space="preserve">
+          <source>rx_import</source>
+        </trans-unit><trans-unit id="406" translate="yes" xml:space="preserve">
+          <source>RxInSqlServer</source>
+        </trans-unit><trans-unit id="407" translate="yes" xml:space="preserve">
+          <source>rx_hadoop_command</source>
+        </trans-unit><trans-unit id="408" translate="yes" xml:space="preserve">
+          <source>rx_hadoop_copy_from_local</source>
+        </trans-unit><trans-unit id="409" translate="yes" xml:space="preserve">
+          <source>rx_hadoop_copy_to_local</source>
+        </trans-unit><trans-unit id="410" translate="yes" xml:space="preserve">
+          <source>rx_hadoop_copy</source>
+        </trans-unit><trans-unit id="411" translate="yes" xml:space="preserve">
+          <source>rx_hadoop_file_exists</source>
+        </trans-unit><trans-unit id="412" translate="yes" xml:space="preserve">
+          <source>rx_hadoop_list_files</source>
+        </trans-unit><trans-unit id="413" translate="yes" xml:space="preserve">
+          <source>rx_hadoop_make_dir</source>
+        </trans-unit><trans-unit id="414" translate="yes" xml:space="preserve">
+          <source>rx_hadoop_move</source>
+        </trans-unit><trans-unit id="415" translate="yes" xml:space="preserve">
+          <source>rx_hadoop_remove_dir</source>
+        </trans-unit><trans-unit id="416" translate="yes" xml:space="preserve">
+          <source>rx_hadoop_remove</source>
+        </trans-unit><trans-unit id="417" translate="yes" xml:space="preserve">
+          <source>RxHdfsFileSystem</source>
+        </trans-unit><trans-unit id="418" translate="yes" xml:space="preserve">
+          <source>RxHiveData</source>
+        </trans-unit><trans-unit id="419" translate="yes" xml:space="preserve">
+          <source>rx_lin_mod</source>
+        </trans-unit><trans-unit id="420" translate="yes" xml:space="preserve">
+          <source>rx_list_keys</source>
+        </trans-unit><trans-unit id="421" translate="yes" xml:space="preserve">
+          <source>RxLocalSeq</source>
+        </trans-unit><trans-unit id="422" translate="yes" xml:space="preserve">
+          <source>rx_logit</source>
+        </trans-unit><trans-unit id="423" translate="yes" xml:space="preserve">
+          <source>RxMissingValues</source>
+        </trans-unit><trans-unit id="424" translate="yes" xml:space="preserve">
+          <source>RxNativeFileSystem</source>
+        </trans-unit><trans-unit id="425" translate="yes" xml:space="preserve">
+          <source>RxOdbcData</source>
+        </trans-unit><trans-unit id="426" translate="yes" xml:space="preserve">
+          <source>RxOptions</source>
+        </trans-unit><trans-unit id="427" translate="yes" xml:space="preserve">
+          <source>RxOrcData</source>
+        </trans-unit><trans-unit id="428" translate="yes" xml:space="preserve">
+          <source>RxParquetData</source>
+        </trans-unit><trans-unit id="429" translate="yes" xml:space="preserve">
+          <source>rx_partition</source>
+        </trans-unit><trans-unit id="430" translate="yes" xml:space="preserve">
+          <source>rx_predict</source>
+        </trans-unit><trans-unit id="431" translate="yes" xml:space="preserve">
+          <source>rx_predict_default</source>
+        </trans-unit><trans-unit id="432" translate="yes" xml:space="preserve">
+          <source>rx_predict_rx_dtree</source>
+        </trans-unit><trans-unit id="433" translate="yes" xml:space="preserve">
+          <source>rx_predict_rx_dforest</source>
+        </trans-unit><trans-unit id="434" translate="yes" xml:space="preserve">
+          <source>rx_privacy_control</source>
+        </trans-unit><trans-unit id="435" translate="yes" xml:space="preserve">
+          <source>rx_read_object</source>
+        </trans-unit><trans-unit id="436" translate="yes" xml:space="preserve">
+          <source>rx_read_xdf</source>
+        </trans-unit><trans-unit id="437" translate="yes" xml:space="preserve">
+          <source>RxRemoteJob</source>
+        </trans-unit><trans-unit id="438" translate="yes" xml:space="preserve">
+          <source>RxRemoteJobStatus</source>
+        </trans-unit><trans-unit id="439" translate="yes" xml:space="preserve">
+          <source>rx_set_compute_context</source>
+        </trans-unit><trans-unit id="440" translate="yes" xml:space="preserve">
+          <source>rx_set_var_info</source>
+        </trans-unit><trans-unit id="441" translate="yes" xml:space="preserve">
+          <source>rx_serialize_model</source>
+        </trans-unit><trans-unit id="442" translate="yes" xml:space="preserve">
+          <source>RxSpark</source>
+        </trans-unit><trans-unit id="443" translate="yes" xml:space="preserve">
+          <source>RxSparkData</source>
+        </trans-unit><trans-unit id="444" translate="yes" xml:space="preserve">
+          <source>RxSparkDataFrame</source>
+        </trans-unit><trans-unit id="445" translate="yes" xml:space="preserve">
+          <source>rx_spark_cache_data</source>
+        </trans-unit><trans-unit id="446" translate="yes" xml:space="preserve">
+          <source>rx_spark_connect</source>
+        </trans-unit><trans-unit id="447" translate="yes" xml:space="preserve">
+          <source>rx_spark_disconnect</source>
+        </trans-unit><trans-unit id="448" translate="yes" xml:space="preserve">
+          <source>rx_spark_list_data</source>
+        </trans-unit><trans-unit id="449" translate="yes" xml:space="preserve">
+          <source>rx_spark_remove_data</source>
+        </trans-unit><trans-unit id="450" translate="yes" xml:space="preserve">
+          <source>RxSqlServerData</source>
+        </trans-unit><trans-unit id="451" translate="yes" xml:space="preserve">
+          <source>rx_summary</source>
+        </trans-unit><trans-unit id="452" translate="yes" xml:space="preserve">
+          <source>RxTextData</source>
+        </trans-unit><trans-unit id="453" translate="yes" xml:space="preserve">
+          <source>rx_wait_for_job</source>
+        </trans-unit><trans-unit id="454" translate="yes" xml:space="preserve">
+          <source>rx_write_object</source>
+        </trans-unit><trans-unit id="455" translate="yes" xml:space="preserve">
+          <source>RxXdfData</source>
+        </trans-unit><trans-unit id="456" translate="yes" xml:space="preserve">
+          <source>R packages</source>
+        </trans-unit><trans-unit id="457" translate="yes" xml:space="preserve">
+          <source>MicrosoftML</source>
+        </trans-unit><trans-unit id="458" translate="yes" xml:space="preserve">
+          <source>categorical</source>
+        </trans-unit><trans-unit id="459" translate="yes" xml:space="preserve">
+          <source>categoricalHash</source>
+        </trans-unit><trans-unit id="460" translate="yes" xml:space="preserve">
+          <source>concat</source>
+        </trans-unit><trans-unit id="461" translate="yes" xml:space="preserve">
+          <source>extractPixels</source>
+        </trans-unit><trans-unit id="462" translate="yes" xml:space="preserve">
+          <source>fastForest</source>
+        </trans-unit><trans-unit id="463" translate="yes" xml:space="preserve">
+          <source>fastLinear</source>
+        </trans-unit><trans-unit id="464" translate="yes" xml:space="preserve">
+          <source>fastTrees</source>
+        </trans-unit><trans-unit id="465" translate="yes" xml:space="preserve">
+          <source>featurizeImage</source>
+        </trans-unit><trans-unit id="466" translate="yes" xml:space="preserve">
+          <source>featurizeText</source>
+        </trans-unit><trans-unit id="467" translate="yes" xml:space="preserve">
+          <source>getSentiment</source>
+        </trans-unit><trans-unit id="468" translate="yes" xml:space="preserve">
+          <source>loadImage</source>
+        </trans-unit><trans-unit id="469" translate="yes" xml:space="preserve">
+          <source>logisticRegression</source>
+        </trans-unit><trans-unit id="470" translate="yes" xml:space="preserve">
+          <source>loss</source>
+        </trans-unit><trans-unit id="471" translate="yes" xml:space="preserve">
+          <source>minCount</source>
+        </trans-unit><trans-unit id="472" translate="yes" xml:space="preserve">
+          <source>mlModel</source>
+        </trans-unit><trans-unit id="473" translate="yes" xml:space="preserve">
+          <source>mutualInformation</source>
+        </trans-unit><trans-unit id="474" translate="yes" xml:space="preserve">
+          <source>NeuralNet</source>
+        </trans-unit><trans-unit id="475" translate="yes" xml:space="preserve">
+          <source>ngram</source>
+        </trans-unit><trans-unit id="476" translate="yes" xml:space="preserve">
+          <source>OneClassSvm</source>
+        </trans-unit><trans-unit id="477" translate="yes" xml:space="preserve">
+          <source>optimizer</source>
+        </trans-unit><trans-unit id="478" translate="yes" xml:space="preserve">
+          <source>resizeImage</source>
+        </trans-unit><trans-unit id="479" translate="yes" xml:space="preserve">
+          <source>rxEnsemble</source>
+        </trans-unit><trans-unit id="480" translate="yes" xml:space="preserve">
+          <source>rxFastForest</source>
+        </trans-unit><trans-unit id="481" translate="yes" xml:space="preserve">
+          <source>rxFastLinear</source>
+        </trans-unit><trans-unit id="482" translate="yes" xml:space="preserve">
+          <source>rxFastTrees</source>
+        </trans-unit><trans-unit id="483" translate="yes" xml:space="preserve">
+          <source>rxFeaturize</source>
+        </trans-unit><trans-unit id="484" translate="yes" xml:space="preserve">
+          <source>rxHashEnv</source>
+        </trans-unit><trans-unit id="485" translate="yes" xml:space="preserve">
+          <source>rxLogisticRegression</source>
+        </trans-unit><trans-unit id="486" translate="yes" xml:space="preserve">
+          <source>rxNeuralNet</source>
+        </trans-unit><trans-unit id="487" translate="yes" xml:space="preserve">
+          <source>rxOneClassSvm</source>
+        </trans-unit><trans-unit id="488" translate="yes" xml:space="preserve">
+          <source>rxPredict</source>
+        </trans-unit><trans-unit id="489" translate="yes" xml:space="preserve">
+          <source>selectColumns</source>
+        </trans-unit><trans-unit id="490" translate="yes" xml:space="preserve">
+          <source>selectFeatures</source>
+        </trans-unit><trans-unit id="491" translate="yes" xml:space="preserve">
+          <source>mrsdeploy</source>
+        </trans-unit><trans-unit id="492" translate="yes" xml:space="preserve">
+          <source>configureServicePool</source>
+        </trans-unit><trans-unit id="493" translate="yes" xml:space="preserve">
+          <source>createSnapshot</source>
+        </trans-unit><trans-unit id="494" translate="yes" xml:space="preserve">
+          <source>deleteRemoteFile</source>
+        </trans-unit><trans-unit id="495" translate="yes" xml:space="preserve">
+          <source>deleteService</source>
+        </trans-unit><trans-unit id="496" translate="yes" xml:space="preserve">
+          <source>deleteServicePool</source>
+        </trans-unit><trans-unit id="497" translate="yes" xml:space="preserve">
+          <source>deleteSnapshot</source>
+        </trans-unit><trans-unit id="498" translate="yes" xml:space="preserve">
+          <source>diffLocalRemote</source>
+        </trans-unit><trans-unit id="499" translate="yes" xml:space="preserve">
+          <source>downloadSnapshot</source>
+        </trans-unit><trans-unit id="500" translate="yes" xml:space="preserve">
+          <source>getPoolStatus</source>
+        </trans-unit><trans-unit id="501" translate="yes" xml:space="preserve">
+          <source>getRemoteFile</source>
+        </trans-unit><trans-unit id="502" translate="yes" xml:space="preserve">
+          <source>getRemoteObject</source>
+        </trans-unit><trans-unit id="503" translate="yes" xml:space="preserve">
+          <source>getRemoteWorkspace</source>
+        </trans-unit><trans-unit id="504" translate="yes" xml:space="preserve">
+          <source>getService</source>
+        </trans-unit><trans-unit id="505" translate="yes" xml:space="preserve">
+          <source>listRemoteFiles</source>
+        </trans-unit><trans-unit id="506" translate="yes" xml:space="preserve">
+          <source>listServices</source>
+        </trans-unit><trans-unit id="507" translate="yes" xml:space="preserve">
+          <source>listSnapshots</source>
+        </trans-unit><trans-unit id="508" translate="yes" xml:space="preserve">
+          <source>loadSnapshot</source>
+        </trans-unit><trans-unit id="509" translate="yes" xml:space="preserve">
+          <source>print.serviceDetails</source>
+        </trans-unit><trans-unit id="510" translate="yes" xml:space="preserve">
+          <source>print.snapshotDetails</source>
+        </trans-unit><trans-unit id="511" translate="yes" xml:space="preserve">
+          <source>publishService</source>
+        </trans-unit><trans-unit id="512" translate="yes" xml:space="preserve">
+          <source>putLocalFile</source>
+        </trans-unit><trans-unit id="513" translate="yes" xml:space="preserve">
+          <source>putLocalObject</source>
+        </trans-unit><trans-unit id="514" translate="yes" xml:space="preserve">
+          <source>putLocalWorkspace</source>
+        </trans-unit><trans-unit id="515" translate="yes" xml:space="preserve">
+          <source>remoteCommandLine</source>
+        </trans-unit><trans-unit id="516" translate="yes" xml:space="preserve">
+          <source>remoteExecute</source>
+        </trans-unit><trans-unit id="517" translate="yes" xml:space="preserve">
+          <source>remoteLogin</source>
+        </trans-unit><trans-unit id="518" translate="yes" xml:space="preserve">
+          <source>remoteLoginAAD</source>
+        </trans-unit><trans-unit id="519" translate="yes" xml:space="preserve">
+          <source>remoteLogout</source>
+        </trans-unit><trans-unit id="520" translate="yes" xml:space="preserve">
+          <source>remoteScript</source>
+        </trans-unit><trans-unit id="521" translate="yes" xml:space="preserve">
+          <source>request</source>
+        </trans-unit><trans-unit id="522" translate="yes" xml:space="preserve">
+          <source>resume</source>
+        </trans-unit><trans-unit id="523" translate="yes" xml:space="preserve">
+          <source>serviceOption</source>
+        </trans-unit><trans-unit id="524" translate="yes" xml:space="preserve">
+          <source>serviceTypes</source>
+        </trans-unit><trans-unit id="525" translate="yes" xml:space="preserve">
+          <source>summary.serviceDetails</source>
+        </trans-unit><trans-unit id="526" translate="yes" xml:space="preserve">
+          <source>summary.snapshotDetails</source>
+        </trans-unit><trans-unit id="527" translate="yes" xml:space="preserve">
+          <source>updateService</source>
+        </trans-unit><trans-unit id="528" translate="yes" xml:space="preserve">
+          <source>olapR</source>
+        </trans-unit><trans-unit id="529" translate="yes" xml:space="preserve">
+          <source>Execute2D</source>
+        </trans-unit><trans-unit id="530" translate="yes" xml:space="preserve">
+          <source>ExecuteMD</source>
+        </trans-unit><trans-unit id="531" translate="yes" xml:space="preserve">
+          <source>Explore</source>
+        </trans-unit><trans-unit id="532" translate="yes" xml:space="preserve">
+          <source>OlapConnection</source>
+        </trans-unit><trans-unit id="533" translate="yes" xml:space="preserve">
+          <source>Query</source>
+        </trans-unit><trans-unit id="534" translate="yes" xml:space="preserve">
+          <source>RevoIOQ</source>
+        </trans-unit><trans-unit id="535" translate="yes" xml:space="preserve">
+          <source>RevoPemaR</source>
+        </trans-unit><trans-unit id="536" translate="yes" xml:space="preserve">
+          <source>PemaBaseClass-class</source>
+        </trans-unit><trans-unit id="537" translate="yes" xml:space="preserve">
+          <source>PemaBaseClass</source>
+        </trans-unit><trans-unit id="538" translate="yes" xml:space="preserve">
+          <source>PemaByGroup-class</source>
+        </trans-unit><trans-unit id="539" translate="yes" xml:space="preserve">
+          <source>PemaByGroup</source>
+        </trans-unit><trans-unit id="540" translate="yes" xml:space="preserve">
+          <source>pemaCompute</source>
+        </trans-unit><trans-unit id="541" translate="yes" xml:space="preserve">
+          <source>PemaMean-class</source>
+        </trans-unit><trans-unit id="542" translate="yes" xml:space="preserve">
+          <source>PemaMean</source>
+        </trans-unit><trans-unit id="543" translate="yes" xml:space="preserve">
+          <source>setPemaClass</source>
+        </trans-unit><trans-unit id="544" translate="yes" xml:space="preserve">
+          <source>RevoScaleR</source>
+        </trans-unit><trans-unit id="545" translate="yes" xml:space="preserve">
+          <source>Data sets</source>
+        </trans-unit><trans-unit id="546" translate="yes" xml:space="preserve">
+          <source>AirlineData87to08</source>
+        </trans-unit><trans-unit id="547" translate="yes" xml:space="preserve">
+          <source>AirlineDemoSmall</source>
+        </trans-unit><trans-unit id="548" translate="yes" xml:space="preserve">
+          <source>AirOnTime87to12</source>
+        </trans-unit><trans-unit id="549" translate="yes" xml:space="preserve">
+          <source>CensusUS5Pct2000</source>
+        </trans-unit><trans-unit id="550" translate="yes" xml:space="preserve">
+          <source>CensusWorkers</source>
+        </trans-unit><trans-unit id="551" translate="yes" xml:space="preserve">
+          <source>claims</source>
+        </trans-unit><trans-unit id="552" translate="yes" xml:space="preserve">
+          <source>DJIAdaily</source>
+        </trans-unit><trans-unit id="553" translate="yes" xml:space="preserve">
+          <source>Kyphosis</source>
+        </trans-unit><trans-unit id="554" translate="yes" xml:space="preserve">
+          <source>mortDefaultSmall</source>
+        </trans-unit><trans-unit id="555" translate="yes" xml:space="preserve">
+          <source>Functions</source>
+        </trans-unit><trans-unit id="556" translate="yes" xml:space="preserve">
+          <source>as.gbm</source>
+        </trans-unit><trans-unit id="557" translate="yes" xml:space="preserve">
+          <source>as.glm</source>
+        </trans-unit><trans-unit id="558" translate="yes" xml:space="preserve">
+          <source>as.kmeans</source>
+        </trans-unit><trans-unit id="559" translate="yes" xml:space="preserve">
+          <source>as.lm</source>
+        </trans-unit><trans-unit id="560" translate="yes" xml:space="preserve">
+          <source>as.naiveBayes</source>
+        </trans-unit><trans-unit id="561" translate="yes" xml:space="preserve">
+          <source>as.randomForest</source>
+        </trans-unit><trans-unit id="562" translate="yes" xml:space="preserve">
+          <source>as.rpart</source>
+        </trans-unit><trans-unit id="563" translate="yes" xml:space="preserve">
+          <source>as.xtabs</source>
+        </trans-unit><trans-unit id="564" translate="yes" xml:space="preserve">
+          <source>prune.rxDTree</source>
+        </trans-unit><trans-unit id="565" translate="yes" xml:space="preserve">
+          <source>rxAddInheritance</source>
+        </trans-unit><trans-unit id="566" translate="yes" xml:space="preserve">
+          <source>rxBTrees</source>
+        </trans-unit><trans-unit id="567" translate="yes" xml:space="preserve">
+          <source>rxCancelJob</source>
+        </trans-unit><trans-unit id="568" translate="yes" xml:space="preserve">
+          <source>rxChiSquaredTest</source>
+        </trans-unit><trans-unit id="569" translate="yes" xml:space="preserve">
+          <source>rxCleanup</source>
+        </trans-unit><trans-unit id="570" translate="yes" xml:space="preserve">
+          <source>rxCompareContexts</source>
+        </trans-unit><trans-unit id="571" translate="yes" xml:space="preserve">
+          <source>rxCompressXdf</source>
+        </trans-unit><trans-unit id="572" translate="yes" xml:space="preserve">
+          <source>RxComputeContext-class</source>
+        </trans-unit><trans-unit id="573" translate="yes" xml:space="preserve">
+          <source>RxComputeContext</source>
+        </trans-unit><trans-unit id="574" translate="yes" xml:space="preserve">
+          <source>rxCovCor</source>
+        </trans-unit><trans-unit id="575" translate="yes" xml:space="preserve">
+          <source>rxCovRegression</source>
+        </trans-unit><trans-unit id="576" translate="yes" xml:space="preserve">
+          <source>rxCreateColInfo</source>
+        </trans-unit><trans-unit id="577" translate="yes" xml:space="preserve">
+          <source>rxCrossTabs</source>
+        </trans-unit><trans-unit id="578" translate="yes" xml:space="preserve">
+          <source>rxCube</source>
+        </trans-unit><trans-unit id="579" translate="yes" xml:space="preserve">
+          <source>RxDataSource-class</source>
+        </trans-unit><trans-unit id="580" translate="yes" xml:space="preserve">
+          <source>RxDataSource</source>
+        </trans-unit><trans-unit id="581" translate="yes" xml:space="preserve">
+          <source>rxDataStep</source>
+        </trans-unit><trans-unit id="582" translate="yes" xml:space="preserve">
+          <source>rxDForest</source>
+        </trans-unit><trans-unit id="583" translate="yes" xml:space="preserve">
+          <source>rxDForestUtils</source>
+        </trans-unit><trans-unit id="584" translate="yes" xml:space="preserve">
+          <source>RxDistributedHpa-class</source>
+        </trans-unit><trans-unit id="585" translate="yes" xml:space="preserve">
+          <source>rxDistributeJob</source>
+        </trans-unit><trans-unit id="586" translate="yes" xml:space="preserve">
+          <source>rxDTree</source>
+        </trans-unit><trans-unit id="587" translate="yes" xml:space="preserve">
+          <source>rxDTreeBestCp</source>
+        </trans-unit><trans-unit id="588" translate="yes" xml:space="preserve">
+          <source>rxElemArg</source>
+        </trans-unit><trans-unit id="589" translate="yes" xml:space="preserve">
+          <source>rxExec</source>
+        </trans-unit><trans-unit id="590" translate="yes" xml:space="preserve">
+          <source>rxExecBy</source>
+        </trans-unit><trans-unit id="591" translate="yes" xml:space="preserve">
+          <source>rxExecByPartition</source>
+        </trans-unit><trans-unit id="592" translate="yes" xml:space="preserve">
+          <source>rxExecuteSQLDDL</source>
+        </trans-unit><trans-unit id="593" translate="yes" xml:space="preserve">
+          <source>rxExpression</source>
+        </trans-unit><trans-unit id="594" translate="yes" xml:space="preserve">
+          <source>rxFactors</source>
+        </trans-unit><trans-unit id="595" translate="yes" xml:space="preserve">
+          <source>RxFileData-class</source>
+        </trans-unit><trans-unit id="596" translate="yes" xml:space="preserve">
+          <source>RxFileSystem</source>
+        </trans-unit><trans-unit id="597" translate="yes" xml:space="preserve">
+          <source>rxFindFileInPath</source>
+        </trans-unit><trans-unit id="598" translate="yes" xml:space="preserve">
+          <source>rxFindPackage</source>
+        </trans-unit><trans-unit id="599" translate="yes" xml:space="preserve">
+          <source>RxForeachDoPar-class</source>
+        </trans-unit><trans-unit id="600" translate="yes" xml:space="preserve">
+          <source>RxForeachDoPar</source>
+        </trans-unit><trans-unit id="601" translate="yes" xml:space="preserve">
+          <source>rxFormula</source>
+        </trans-unit><trans-unit id="602" translate="yes" xml:space="preserve">
+          <source>rxGetAvailableNodes</source>
+        </trans-unit><trans-unit id="603" translate="yes" xml:space="preserve">
+          <source>rxGetEnableThreadPool</source>
+        </trans-unit><trans-unit id="604" translate="yes" xml:space="preserve">
+          <source>rxGetFuzzyDist</source>
+        </trans-unit><trans-unit id="605" translate="yes" xml:space="preserve">
+          <source>rxGetFuzzyKeys</source>
+        </trans-unit><trans-unit id="606" translate="yes" xml:space="preserve">
+          <source>rxGetInfoXdf</source>
+        </trans-unit><trans-unit id="607" translate="yes" xml:space="preserve">
+          <source>rxGetJobInfo</source>
+        </trans-unit><trans-unit id="608" translate="yes" xml:space="preserve">
+          <source>rxGetJobOutput</source>
+        </trans-unit><trans-unit id="609" translate="yes" xml:space="preserve">
+          <source>rxGetJobResults</source>
+        </trans-unit><trans-unit id="610" translate="yes" xml:space="preserve">
+          <source>rxGetJobs</source>
+        </trans-unit><trans-unit id="611" translate="yes" xml:space="preserve">
+          <source>rxGetNodeInfo</source>
+        </trans-unit><trans-unit id="612" translate="yes" xml:space="preserve">
+          <source>rxGetPartitions</source>
+        </trans-unit><trans-unit id="613" translate="yes" xml:space="preserve">
+          <source>rxGetSparklyrConnection</source>
+        </trans-unit><trans-unit id="614" translate="yes" xml:space="preserve">
+          <source>rxGetVarInfo</source>
+        </trans-unit><trans-unit id="615" translate="yes" xml:space="preserve">
+          <source>rxGetVarNames</source>
+        </trans-unit><trans-unit id="616" translate="yes" xml:space="preserve">
+          <source>rxGLM</source>
+        </trans-unit><trans-unit id="617" translate="yes" xml:space="preserve">
+          <source>rxHadoopCommand</source>
+        </trans-unit><trans-unit id="618" translate="yes" xml:space="preserve">
+          <source>RxHadoopMR-class</source>
+        </trans-unit><trans-unit id="619" translate="yes" xml:space="preserve">
+          <source>RxHadoopMR</source>
+        </trans-unit><trans-unit id="620" translate="yes" xml:space="preserve">
+          <source>rxHdfsConnect</source>
+        </trans-unit><trans-unit id="621" translate="yes" xml:space="preserve">
+          <source>RxHdfsFileSystem</source>
+        </trans-unit><trans-unit id="622" translate="yes" xml:space="preserve">
+          <source>rxHistogram</source>
+        </trans-unit><trans-unit id="623" translate="yes" xml:space="preserve">
+          <source>RxHPCServer-class</source>
+        </trans-unit><trans-unit id="624" translate="yes" xml:space="preserve">
+          <source>rxImport</source>
+        </trans-unit><trans-unit id="625" translate="yes" xml:space="preserve">
+          <source>RxInSqlServer-class</source>
+        </trans-unit><trans-unit id="626" translate="yes" xml:space="preserve">
+          <source>RxInSqlServer</source>
+        </trans-unit><trans-unit id="627" translate="yes" xml:space="preserve">
+          <source>rxInstalledPackages</source>
+        </trans-unit><trans-unit id="628" translate="yes" xml:space="preserve">
+          <source>rxInstallPackages</source>
+        </trans-unit><trans-unit id="629" translate="yes" xml:space="preserve">
+          <source>rxKmeans</source>
+        </trans-unit><trans-unit id="630" translate="yes" xml:space="preserve">
+          <source>rxLaunchClusterTaskManager</source>
+        </trans-unit><trans-unit id="631" translate="yes" xml:space="preserve">
+          <source>rxLinePlot</source>
+        </trans-unit><trans-unit id="632" translate="yes" xml:space="preserve">
+          <source>rxLinMod</source>
+        </trans-unit><trans-unit id="633" translate="yes" xml:space="preserve">
+          <source>RxLocalParallel-class</source>
+        </trans-unit><trans-unit id="634" translate="yes" xml:space="preserve">
+          <source>RxLocalParallel</source>
+        </trans-unit><trans-unit id="635" translate="yes" xml:space="preserve">
+          <source>RxLocalSeq-class</source>
+        </trans-unit><trans-unit id="636" translate="yes" xml:space="preserve">
+          <source>RxLocalSeq</source>
+        </trans-unit><trans-unit id="637" translate="yes" xml:space="preserve">
+          <source>rxLocateFile</source>
+        </trans-unit><trans-unit id="638" translate="yes" xml:space="preserve">
+          <source>rxLogit</source>
+        </trans-unit><trans-unit id="639" translate="yes" xml:space="preserve">
+          <source>rxLorenz</source>
+        </trans-unit><trans-unit id="640" translate="yes" xml:space="preserve">
+          <source>rxMakeRNodeNames</source>
+        </trans-unit><trans-unit id="641" translate="yes" xml:space="preserve">
+          <source>rxMarginals</source>
+        </trans-unit><trans-unit id="642" translate="yes" xml:space="preserve">
+          <source>rxMergeXdf</source>
+        </trans-unit><trans-unit id="643" translate="yes" xml:space="preserve">
+          <source>rxMultiTest</source>
+        </trans-unit><trans-unit id="644" translate="yes" xml:space="preserve">
+          <source>rxNaiveBayes</source>
+        </trans-unit><trans-unit id="645" translate="yes" xml:space="preserve">
+          <source>RxNativeFileSystem</source>
+        </trans-unit><trans-unit id="646" translate="yes" xml:space="preserve">
+          <source>rxNew</source>
+        </trans-unit><trans-unit id="647" translate="yes" xml:space="preserve">
+          <source>rxOAuthParameters</source>
+        </trans-unit><trans-unit id="648" translate="yes" xml:space="preserve">
+          <source>RxOdbcData-class</source>
+        </trans-unit><trans-unit id="649" translate="yes" xml:space="preserve">
+          <source>RxOdbcData</source>
+        </trans-unit><trans-unit id="650" translate="yes" xml:space="preserve">
+          <source>rxOpen-methods</source>
+        </trans-unit><trans-unit id="651" translate="yes" xml:space="preserve">
+          <source>rxOptions</source>
+        </trans-unit><trans-unit id="652" translate="yes" xml:space="preserve">
+          <source>rxPackage</source>
+        </trans-unit><trans-unit id="653" translate="yes" xml:space="preserve">
+          <source>rxPairwiseCrosstab</source>
+        </trans-unit><trans-unit id="654" translate="yes" xml:space="preserve">
+          <source>rxPingNodes</source>
+        </trans-unit><trans-unit id="655" translate="yes" xml:space="preserve">
+          <source>rxPartition</source>
+        </trans-unit><trans-unit id="656" translate="yes" xml:space="preserve">
+          <source>rxPredict</source>
+        </trans-unit><trans-unit id="657" translate="yes" xml:space="preserve">
+          <source>rxPredict.rxDForest</source>
+        </trans-unit><trans-unit id="658" translate="yes" xml:space="preserve">
+          <source>rxPredict.rxDTree</source>
+        </trans-unit><trans-unit id="659" translate="yes" xml:space="preserve">
+          <source>rxPredict.rxNaiveBayes</source>
+        </trans-unit><trans-unit id="660" translate="yes" xml:space="preserve">
+          <source>rxPrivacyControl</source>
+        </trans-unit><trans-unit id="661" translate="yes" xml:space="preserve">
+          <source>rxQuantile</source>
+        </trans-unit><trans-unit id="662" translate="yes" xml:space="preserve">
+          <source>rxReadXdf (deprecated)</source>
+        </trans-unit><trans-unit id="663" translate="yes" xml:space="preserve">
+          <source>rxRealtimeScoring</source>
+        </trans-unit><trans-unit id="664" translate="yes" xml:space="preserve">
+          <source>rxRemoteCall</source>
+        </trans-unit><trans-unit id="665" translate="yes" xml:space="preserve">
+          <source>rxRemoteFilePath</source>
+        </trans-unit><trans-unit id="666" translate="yes" xml:space="preserve">
+          <source>rxRemoteGetId</source>
+        </trans-unit><trans-unit id="667" translate="yes" xml:space="preserve">
+          <source>rxRemoteHadoopMRCall</source>
+        </trans-unit><trans-unit id="668" translate="yes" xml:space="preserve">
+          <source>rxRemovePackages</source>
+        </trans-unit><trans-unit id="669" translate="yes" xml:space="preserve">
+          <source>rxResultsDF</source>
+        </trans-unit><trans-unit id="670" translate="yes" xml:space="preserve">
+          <source>rxRiskRatio</source>
+        </trans-unit><trans-unit id="671" translate="yes" xml:space="preserve">
+          <source>rxRng</source>
+        </trans-unit><trans-unit id="672" translate="yes" xml:space="preserve">
+          <source>rxRoc</source>
+        </trans-unit><trans-unit id="673" translate="yes" xml:space="preserve">
+          <source>RxSasData-class</source>
+        </trans-unit><trans-unit id="674" translate="yes" xml:space="preserve">
+          <source>RxSasData</source>
+        </trans-unit><trans-unit id="675" translate="yes" xml:space="preserve">
+          <source>rxSerializeModel</source>
+        </trans-unit><trans-unit id="676" translate="yes" xml:space="preserve">
+          <source>rxSetComputeContext</source>
+        </trans-unit><trans-unit id="677" translate="yes" xml:space="preserve">
+          <source>rxSetFileSystem</source>
+        </trans-unit><trans-unit id="678" translate="yes" xml:space="preserve">
+          <source>rxSetInfo</source>
+        </trans-unit><trans-unit id="679" translate="yes" xml:space="preserve">
+          <source>rxSetVarInfoXdf</source>
+        </trans-unit><trans-unit id="680" translate="yes" xml:space="preserve">
+          <source>rxSortXdf</source>
+        </trans-unit><trans-unit id="681" translate="yes" xml:space="preserve">
+          <source>RxSpark-class</source>
+        </trans-unit><trans-unit id="682" translate="yes" xml:space="preserve">
+          <source>RxSpark</source>
+        </trans-unit><trans-unit id="683" translate="yes" xml:space="preserve">
+          <source>rxSparkCacheData</source>
+        </trans-unit><trans-unit id="684" translate="yes" xml:space="preserve">
+          <source>RxSparkData</source>
+        </trans-unit><trans-unit id="685" translate="yes" xml:space="preserve">
+          <source>rxSparkDataOps</source>
+        </trans-unit><trans-unit id="686" translate="yes" xml:space="preserve">
+          <source>rxSplitXdf</source>
+        </trans-unit><trans-unit id="687" translate="yes" xml:space="preserve">
+          <source>RxSpssData-class</source>
+        </trans-unit><trans-unit id="688" translate="yes" xml:space="preserve">
+          <source>RxSpssData</source>
+        </trans-unit><trans-unit id="689" translate="yes" xml:space="preserve">
+          <source>rxSqlLibPaths</source>
+        </trans-unit><trans-unit id="690" translate="yes" xml:space="preserve">
+          <source>RxSqlServerData-class</source>
+        </trans-unit><trans-unit id="691" translate="yes" xml:space="preserve">
+          <source>RxSqlServerData</source>
+        </trans-unit><trans-unit id="692" translate="yes" xml:space="preserve">
+          <source>rxSqlServerDropTable</source>
+        </trans-unit><trans-unit id="693" translate="yes" xml:space="preserve">
+          <source>rxStepControl</source>
+        </trans-unit><trans-unit id="694" translate="yes" xml:space="preserve">
+          <source>rxStepPlot</source>
+        </trans-unit><trans-unit id="695" translate="yes" xml:space="preserve">
+          <source>rxStopEngine</source>
+        </trans-unit><trans-unit id="696" translate="yes" xml:space="preserve">
+          <source>rxSummary</source>
+        </trans-unit><trans-unit id="697" translate="yes" xml:space="preserve">
+          <source>rxSyncPackages</source>
+        </trans-unit><trans-unit id="698" translate="yes" xml:space="preserve">
+          <source>RxTeradata-class</source>
+        </trans-unit><trans-unit id="699" translate="yes" xml:space="preserve">
+          <source>RxTeradata</source>
+        </trans-unit><trans-unit id="700" translate="yes" xml:space="preserve">
+          <source>rxTeradataSql</source>
+        </trans-unit><trans-unit id="701" translate="yes" xml:space="preserve">
+          <source>RxTextData-class</source>
+        </trans-unit><trans-unit id="702" translate="yes" xml:space="preserve">
+          <source>RxTextData</source>
+        </trans-unit><trans-unit id="703" translate="yes" xml:space="preserve">
+          <source>rxTextToXdf</source>
+        </trans-unit><trans-unit id="704" translate="yes" xml:space="preserve">
+          <source>rxTlcBridge</source>
+        </trans-unit><trans-unit id="705" translate="yes" xml:space="preserve">
+          <source>rxTransform</source>
+        </trans-unit><trans-unit id="706" translate="yes" xml:space="preserve">
+          <source>rxTweedie</source>
+        </trans-unit><trans-unit id="707" translate="yes" xml:space="preserve">
+          <source>rxUnserializeModel</source>
+        </trans-unit><trans-unit id="708" translate="yes" xml:space="preserve">
+          <source>rxWaitForJob</source>
+        </trans-unit><trans-unit id="709" translate="yes" xml:space="preserve">
+          <source>rxWriteObject</source>
+        </trans-unit><trans-unit id="710" translate="yes" xml:space="preserve">
+          <source>RxXdfData-class</source>
+        </trans-unit><trans-unit id="711" translate="yes" xml:space="preserve">
+          <source>RxXdfData</source>
+        </trans-unit><trans-unit id="712" translate="yes" xml:space="preserve">
+          <source>rxXdfFileName</source>
+        </trans-unit><trans-unit id="713" translate="yes" xml:space="preserve">
+          <source>rxXdfToText</source>
+        </trans-unit><trans-unit id="714" translate="yes" xml:space="preserve">
+          <source>Base R-to-RevoScaleR comparison</source>
+        </trans-unit><trans-unit id="715" translate="yes" xml:space="preserve">
+          <source>Defunct functions</source>
+        </trans-unit><trans-unit id="716" translate="yes" xml:space="preserve">
+          <source>Deprecated functions</source>
+        </trans-unit><trans-unit id="717" translate="yes" xml:space="preserve">
+          <source>Hadoop functions</source>
+        </trans-unit><trans-unit id="718" translate="yes" xml:space="preserve">
+          <source>SQL Server functions</source>
+        </trans-unit><trans-unit id="719" translate="yes" xml:space="preserve">
+          <source>Teradata functions</source>
+        </trans-unit><trans-unit id="720" translate="yes" xml:space="preserve">
+          <source>RevoUtils</source>
+        </trans-unit><trans-unit id="721" translate="yes" xml:space="preserve">
+          <source>getRevoRepos</source>
+        </trans-unit><trans-unit id="722" translate="yes" xml:space="preserve">
+          <source>readNews</source>
+        </trans-unit><trans-unit id="723" translate="yes" xml:space="preserve">
+          <source>Revo.home</source>
+        </trans-unit><trans-unit id="724" translate="yes" xml:space="preserve">
+          <source>RevoInfo</source>
+        </trans-unit><trans-unit id="725" translate="yes" xml:space="preserve">
+          <source>totalSystemMemory</source>
+        </trans-unit><trans-unit id="726" translate="yes" xml:space="preserve">
+          <source>sqlrutils</source>
+        </trans-unit><trans-unit id="727" translate="yes" xml:space="preserve">
+          <source>executeStoredProcedure</source>
+        </trans-unit><trans-unit id="728" translate="yes" xml:space="preserve">
+          <source>getInputParameters</source>
+        </trans-unit><trans-unit id="729" translate="yes" xml:space="preserve">
+          <source>InputData</source>
+        </trans-unit><trans-unit id="730" translate="yes" xml:space="preserve">
+          <source>InputParameter</source>
+        </trans-unit><trans-unit id="731" translate="yes" xml:space="preserve">
+          <source>OutputData</source>
+        </trans-unit><trans-unit id="732" translate="yes" xml:space="preserve">
+          <source>OutputParameter</source>
+        </trans-unit><trans-unit id="733" translate="yes" xml:space="preserve">
+          <source>registerStoredProcedure</source>
+        </trans-unit><trans-unit id="734" translate="yes" xml:space="preserve">
+          <source>setInputDataQuery</source>
+        </trans-unit><trans-unit id="735" translate="yes" xml:space="preserve">
+          <source>setInputParameterValue</source>
+        </trans-unit><trans-unit id="736" translate="yes" xml:space="preserve">
+          <source>StoredProcedure</source>
+        </trans-unit><trans-unit id="737" translate="yes" xml:space="preserve">
+          <source>Resources</source>
+        </trans-unit><trans-unit id="738" translate="yes" xml:space="preserve">
+          <source>Product comparison</source>
+        </trans-unit><trans-unit id="739" translate="yes" xml:space="preserve">
+          <source>Servicing support policy</source>
+        </trans-unit><trans-unit id="740" translate="yes" xml:space="preserve">
+          <source>Known issues</source>
+        </trans-unit><trans-unit id="741" translate="yes" xml:space="preserve">
+          <source>Deprecated &amp; discontinued features</source>
+        </trans-unit><trans-unit id="742" translate="yes" xml:space="preserve">
+          <source>Opt out of usage data collection</source>
+        </trans-unit><trans-unit id="743" translate="yes" xml:space="preserve">
+          <source>Additional resources</source>
+        </trans-unit></group></body></file></xliff>

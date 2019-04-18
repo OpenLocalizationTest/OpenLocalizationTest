@@ -1,0 +1,345 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="r-server-install-hadoop-805.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-d1654b2" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">8ea8c771-7844-49cc-84f5-71599942a18c6f506dddb6ae52c78fdcf404ba2dfbd9e46ccaff.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">6f506dddb6ae52c78fdcf404ba2dfbd9e46ccaff</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">8ea8c771-7844-49cc-84f5-71599942a18c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">04/18/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\install\r-server-install-hadoop-805.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Install Microsoft R Server 2016 on Hadoop</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Installation and configuration Microsoft R Server 2016 (version 8.0.5) on Hadoop</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Install Microsoft R Server 2016 (8.0.5) on Hadoop</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Older versions of R Server for Hadoop are no longer available on the Microsoft download sites, but if you already have an older distribution, you can follow these instructions to deploy version 8.0.5.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>For the current release, see <bpt id="p1">[</bpt>Install R Server for Hadoop<ept id="p1">](r-server-install-hadoop-901.md)</ept>.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>About the R Server 2016 installer</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Microsoft R Server 2016 provides updated installers that allow you to deploy R Server in fewer steps, enabled in part by a slipstream installation of <bpt id="p1">**</bpt>Microsoft R Open for R Server 2016<ept id="p1">**</ept> that comes with most dependencies built into the package.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>In addition to the installers, several new features and enhancements are <bpt id="p1">[</bpt>new in this release<ept id="p1">](../whats-new-in-r-server.md)</ept>.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>If you have an older version of R and would like to upgrade, see <bpt id="p1">[</bpt>Uninstall Microsoft R Server to upgrade to a newer version<ept id="p1">](r-server-install-uninstall-upgrade.md)</ept> for instructions.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>A summary of setup tasks for R Server 2016 is as follows:</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Download the software</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Unzip to extract packages and an install script (install.sh)</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Run the install script with a -p parameter (for Hadoop)</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Verify the installation</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>The install script downloads and installs Microsoft R Open for R Server 2016 (microsoft-r-server-mro-8.0.rpm).</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>This distribution provides the following packages that are new in this version:</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>microsoft-r-server-intel-mkl-8.0.rpm</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>microsoft-r-server-packages-8.0.rpm</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>microsoft-r-server-hadoop-8.0.rpm</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>In contrast with previous releases, this version  comes with a requirement for <ph id="ph1">`root`</ph> installation.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Non-root installations are not supported in R Server 2016.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Recommendations for installation</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>We recommend installing R Server on all nodes of the cluster to avoid Hadoop queuing up jobs on nodes that don't actually have R. Although the task will eventually get reassigned to a node that has R, you will see errors from the worker node and experience unnecessary delay while waiting for the error to resolve.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Microsoft Azure offers virtual machines with Hadoop templates.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>If you don't have a Hadoop cluster, you can purchase and provision virtual machines on Azure using templates provided by several vendors.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Sign in to <bpt id="p1">[</bpt>Azure portal<ept id="p1">](https://ms.portal.azure.com)</ept>.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Click <bpt id="p1">**</bpt>New<ept id="p1">**</ept> in the top left side bar.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>In the search box, type the name of one of these vendors: Cloudera, HortonWorks, and MapR.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Several of these vendors offer sandbox deployments that make it easier to get started.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>System requirements</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>R Server must be installed on at least one master or client node which will serve as the submit node; it should be installed on as many workers as is practical to maximize the available compute resources.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Nodes must have the same version of R Server within the cluster.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Setup checks the operating system and detects the Hadoop cluster, but it doesn't check for specific distributions.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Microsoft R Server 2016 works with the following Hadoop distributions:</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Cloudera CDH 5.5-5.7</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>HortonWorks HDP 2.3-2.4</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>MapR 5.0-5.1</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Microsoft R Server requires Hadoop MapReduce, the Hadoop Distributed File System (HDFS), and Apache YARN.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Optionally, Spark version 1.5.0-1.6.1 is supported for Microsoft R Server 2016 (version 8.0.5).</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>In this version, the installer should provide most of the dependencies required by R Server, but if the installer reports a missing dependency, see <bpt id="p1">[</bpt>Package Dependencies for Microsoft R Server installations on Linux and Hadoop<ept id="p1">](r-server-install-linux-hadoop-packages.md)</ept> for a complete list of the dependencies required for installation.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Minimum system configuration requirements for Microsoft R Server are as follows:</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Processor:<ept id="p1">**</ept> 64-bit CPU with x86-compatible architecture (variously known as AMD64, Intel64, x86-64, IA-32e, EM64T, or x64 CPUs).</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Itanium-architecture CPUs (also known as IA-64) are not supported.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Multiple-core CPUs are recommended.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Operating System:<ept id="p1">**</ept> The Hadoop distribution must be installed on Red Hat Enterprise Linux (RHEL) 6.x and 7.x (or a fully compatible operating system like CentOS), or SUSE Linux Enterprise Server 11 (SLES11).</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>See <bpt id="p1">[</bpt>Supported platforms in Microsoft R Server<ept id="p1">](r-server-install-supported-platforms.md)</ept> for more information.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Memory:<ept id="p1">**</ept> A minimum of 8 GB of RAM is required for Microsoft R Server; 16 GB or more are recommended.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Hadoop itself has substantial memory requirements; see your Hadoop distribution’s documentation for specific recommendations.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Disk Space:<ept id="p1">**</ept> A minimum of 500 MB of disk space is required on each node for R Server.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Hadoop itself has substantial disk space requirements; see your Hadoop distribution’s documentation for specific recommendations.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Unpack the distribution</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Unpack the software to a writable directory, such as <bpt id="p1">**</bpt>/tmp<ept id="p1">**</ept>, and then run the installation script.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>The distribution includes one installer for Microsoft R Server.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>For a gzipped TAR file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as <bpt id="p1">**</bpt>/tmp<ept id="p1">**</ept>):</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Log in as root or a user with sudo privileges.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Switch to the <bpt id="p1">**</bpt>/tmp<ept id="p1">**</ept> directory (assuming it's the download location)</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Unpack the file:      <ph id="ph1">`[tmp] $ tar zxvf en_microsoft_r_server_for_hadoop_x64_8944644.tar.gz`</ph></source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Unpacking an ISO file<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Volume licensing makes the download available as an ISO file.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>To unpack this file, create a mount point, and then mount the ISO file to that mount point:</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>The download file is <bpt id="p1">**</bpt>sw_dvd5_r_server_2016_english_-2_for_HadoopRdHt_mlf_x20-98709.iso<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Run the install script</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Microsoft R Server 2016 for Hadoop is deployed by running the install script with the <bpt id="p1">**</bpt>-p<ept id="p1">**</ept> parameter, which you can install at the root, or as super user via <ph id="ph1">`sudo`</ph>.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>Log in as root or a user with sudo privileges.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>The following instructions assume user privileges with the sudo override.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Verify system repositories are up-to-date:      [username] $ sudo yum clean all</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Change to the directory to which you mounted or unpacked the installer (for example, /mnt/mrsimage for an .img file, or /tmp/MRS80HADOOP if you unpacked the tar.gz file):      [username] $ cd /tmp      [username tmp] $ cd /MRS80HADOOP</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Run the script with the <bpt id="p1">**</bpt>-p<ept id="p1">**</ept> parameter, specifying the Hadoop component:      [username tmp MRS80HADOOP] $ sudo bash install.sh -p</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>When prompted to accept the license terms for Microsoft R open, click Enter to read the EULA, click <bpt id="p1">**</bpt>q<ept id="p1">**</ept> when you are finished reading, and then click <bpt id="p2">**</bpt>y<ept id="p2">**</ept> to accept the terms.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Installer output shows the packages and location of the log file.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>Check the version of Microsoft R Open using <ph id="ph1">`rpm -qi`</ph>:      [username tmp MRS80HADOOP] $ rpm -qi microsoft-r-server-mro-8.0</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>Optionally, you can also use <ph id="ph1">`rpm -qi`</ph> to check the version of microsoft-r-server-intel-mkl-8.0, microsoft-r-server-packages-8.0, and microsoft-r-server-hadoop-8.0.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>Check the output to verify version 8.0.5.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Partial output appears as follows:</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>Verify install</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>As a verification step, check folders and permissions.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>Following that, you should run the Revo64 program, a sample Hadoop job, and if applicable, a sample Spark job.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Check folders and permissions<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>Each user should ensure that the appropriate user directories exist, and if necessary, create them with the following shell commands:</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>The HDFS directory can also be created in a user’s R session (provided the top-level /user/RevoShare has the appropriate permissions) using the following RevoScaleR commands (substitute your actual user name for "username").</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>Run the RevoScaleR commands in a Revo64 session.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>Output for each command should be <ph id="ph1">`[1] TRUE`</ph>.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>As part of this process, make sure the base directories /user and /user/RevoShare have <ph id="ph1">`uog+rwx`</ph> permissions as well.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Run programs and sample jobs using sample data<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>The next procedure loads sample data and runs the Revo64 program to further verify the installation.</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>Send sample data to HDFS.</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>Start Revo64.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>Run a simple local computation.</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>This step uses the proprietary Microsoft libraries.</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>Partial output is as follows (showing the first 4 lines).</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>Run a sample local job.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>This step uses the sample dataset and downloads data from HDFS, confirming that your local session can access HDFS.</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>Paste the following code into your Revo64 session.</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>Partial output is as follows (showing the last 8 lines).</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>Run a sample Hadoop job.</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>This step uses the sample dataset to run a Hadoop job.</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>Paste the following code into your Revo64 session.</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>This snippet differs from the previous snippet by the first line.</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>Partial output is as follows (showing the first 10 lines).</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>Run a sample Spark job.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>To quit the program, type <ph id="ph1">`q()`</ph> at the command line with no arguments.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>Manual Installation</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>An alternative to running the install.sh script is manual installation of each package and component, or building a custom script that satisfies your technical or operational requirements.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>Assuming that the packages for Microsoft R Open for R Server and Microsoft R Server 2016 are already installed, a manual or custom installation must create the appropriate folders and set permissions.</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>RPM or DEB Installers<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`/var/RevoShare/`</ph> and <ph id="ph2">`hdfs://user/RevoShare`</ph> must exist and have folders for each user running Microsoft R Server in Hadoop or Spark.</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`/var/RevoShare/&lt;user&gt;`</ph> and <ph id="ph2">`hdfs://user/RevoShare/&lt;user&gt;`</ph> must have full permissions (all read, write, and executive permissions for all users).</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Cloudera Parcel Installers<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>Create <ph id="ph1">`/var/RevoShare/`</ph> and <ph id="ph2">`hdfs://user/RevoShare`</ph>.</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>Parcels cannot create them for you.</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>Give <ph id="ph1">`/var/RevoShare/&lt;user&gt;`</ph> and <ph id="ph2">`hdfs://user/RevoShare/&lt;user&gt;`</ph> for each user.</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>Grant full permissions to both <ph id="ph1">`/var/RevoShare/&lt;user&gt;`</ph> and <ph id="ph2">`hdfs://user/RevoShare/&lt;user&gt;`</ph>.</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>Distributed Installation</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>If you have multiple nodes, you can automate the installation across nodes using any distributed shell.</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>(You can, of course, automate installation with a non-distributed shell such as bash using a for-loop over a list of hosts, but distributed shells usually provide the ability to run commands over multiple hosts simultaneously.) Examples include <bpt id="p1">[</bpt>dsh ("Dancer’s shell")<ept id="p1">](http://www.netfort.gr.jp/~dancer/software/dsh.html.en)</ept>, <bpt id="p2">[</bpt>pdsh (Parallel Distributed Shell)<ept id="p2">](http://sourceforge.net/projects/pdsh/)</ept>, <bpt id="p3">[</bpt>PyDSH (the Python Distributed Shell)<ept id="p3">](http://pydsh.sourceforge.net/)</ept>, and <bpt id="p4">[</bpt>fabric<ept id="p4">](http://www.fabfile.org/)</ept>.</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>Each distributed shell has its own methods for specifying hosts, authentication, and so on, but ultimately all that is required is the ability to run a shell command on multiple hosts.</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>(It is convenient if there is a top-level copy command, such as the pdcp command that is part of pdsh, but not necessary—the “cp” command can always be run from the shell.)</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>Download Microsoft R Open rpm and the Microsoft R Server installer tar.gz file and copy all to /tmp.</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>Mount the IMG file.</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>The following commands create a mount point and mount the file to that mount point:</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>For RHEL/CENTOS systems;      tar zxvf MRS80RHEL.tar.gz</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>For SLES systems;      tar zxvf MRS80SLES.tar.gz</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>Copy the installer gzipped tar file to a writable directory, such as /tmp:</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>From the mounted img file:      cp /mnt/mrsimage/Microsoft-R-Server-<ph id="ph1">`*`</ph>.tar.gz /tmp</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>From the unpacked tar file:      cp /tmp/MRS80<ph id="ph1">&lt;em&gt;</ph>/Microsoft-R-Server-<ph id="ph2">`&lt;/em&gt;`</ph>.tar.gz /tmp</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>The following commands use pdsh and pdcp to distribute and install Microsoft R Server (ensure that each command is run on a single logical line, even if it spans two lines below due to space constraints; lines beginning with “<ph id="ph1">&amp;gt;</ph>” indicate commands typed into an interactive pdsh session):</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>Multi-node installation using Cloudera Manager</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source>The following steps walk you through a multi-node installation using Cloudera Manager to create a Cloudera Manager parcel for a Microsoft R Server 2016 installation.</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source>In contrast with an 8.0.0 installation, you can skip the steps for creating a Revolution Customer Service Descriptor.</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source>Two parcels are required:</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Microsoft R Open<ept id="p1">*</ept> parcel installs open-source R and additional open-source components on the nodes of your Cloudera cluster.</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Microsoft R Server<ept id="p1">*</ept> parcel installs proprietary components on the nodes of your Cloudera cluster.</source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source>Install the Cloudera Manager parcels as follows:</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Download the Microsoft R Open for Microsoft R Server Cloudera Manager parcel.<ept id="p1">](https://go.microsoft.com/fwlink/?LinkId=699383&amp;clcid=0x409)</ept>.</source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source>Note that the parcel consists of two files, the parcel itself and its associated .sha file.</source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve">
+          <source>They may be packaged as a single .tar.gz file for convenience in downloading, but that must be unpacked and the two files copied to the parcel-repo for Cloudera Manager to recognize them as a parcel.</source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve">
+          <source>Download and unpack the Microsoft R Server 2016 distribution, which will either be a DVD img file (if you obtained Microsoft R Server via Microsoft Volume Licensing) or a gzipped tar file (if you obtained Microsoft R Server via MSDN or Dev Essentials).</source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve">
+          <source>The distribution file includes the required Cloudera Parcel files.</source>
+        </trans-unit><trans-unit id="239" translate="yes" xml:space="preserve">
+          <source>If you have an img file, you must first mount the file.</source>
+        </trans-unit><trans-unit id="240" translate="yes" xml:space="preserve">
+          <source>The following commands create a mount point and mount the file to that mount point:</source>
+        </trans-unit><trans-unit id="241" translate="yes" xml:space="preserve">
+          <source>If you have a gzipped tar file, you should unpack the file as follows (be sure you have downloaded the file to a writable directory, such as /tmp):</source>
+        </trans-unit><trans-unit id="242" translate="yes" xml:space="preserve">
+          <source>Copy the parcel files to your local parcel-repo, typically /opt/cloudera/parcel-repo:</source>
+        </trans-unit><trans-unit id="243" translate="yes" xml:space="preserve">
+          <source>From the mounted img file:      cp /mnt/mrsimage/MRS-8.0.5-* /opt/cloudera/parcel-repo</source>
+        </trans-unit><trans-unit id="244" translate="yes" xml:space="preserve">
+          <source>From the unpacked tar file:      cp /tmp/MRS80HADOOP/MRS-8.0.5-* /opt/cloudera/parcel-repo</source>
+        </trans-unit><trans-unit id="245" translate="yes" xml:space="preserve">
+          <source>You should have the following files in your parcel repo:</source>
+        </trans-unit><trans-unit id="246" translate="yes" xml:space="preserve">
+          <source>Be sure all the files are owned by root and have 644 permissions (read, write, permission for root, and read permission for groups and others).</source>
+        </trans-unit><trans-unit id="247" translate="yes" xml:space="preserve">
+          <source>In your browser, open Cloudera Manager.</source>
+        </trans-unit><trans-unit id="248" translate="yes" xml:space="preserve">
+          <source>Click <bpt id="p1">**</bpt>Hosts<ept id="p1">**</ept> in the upper navigation bar to bring up the All Hosts page.</source>
+        </trans-unit><trans-unit id="249" translate="yes" xml:space="preserve">
+          <source>Click <bpt id="p1">**</bpt>Parcels<ept id="p1">**</ept> to bring up the Parcels page.</source>
+        </trans-unit><trans-unit id="250" translate="yes" xml:space="preserve">
+          <source>Click <bpt id="p1">**</bpt>Check for New Parcels<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="251" translate="yes" xml:space="preserve">
+          <source>MRO 8.0.5 and MRS 8.0.5 should each appear with a <bpt id="p1">**</bpt>Distribute<ept id="p1">**</ept> button.</source>
+        </trans-unit><trans-unit id="252" translate="yes" xml:space="preserve">
+          <source>After clicking Check for New Parcels you may need to click on “All Clusters” under the “Location” section on the left to see the new parcels.</source>
+        </trans-unit><trans-unit id="253" translate="yes" xml:space="preserve">
+          <source>Click the MRO 8.0.5 <bpt id="p1">**</bpt>Distribute<ept id="p1">**</ept> button.</source>
+        </trans-unit><trans-unit id="254" translate="yes" xml:space="preserve">
+          <source>Microsoft R Open will be distributed to all the nodes of your cluster.</source>
+        </trans-unit><trans-unit id="255" translate="yes" xml:space="preserve">
+          <source>When the distribution is complete, the <bpt id="p1">**</bpt>Distribute<ept id="p1">**</ept> button is replaced with an <bpt id="p2">**</bpt>Activate<ept id="p2">**</ept> button.</source>
+        </trans-unit><trans-unit id="256" translate="yes" xml:space="preserve">
+          <source>Click <bpt id="p1">**</bpt>Activate<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="257" translate="yes" xml:space="preserve">
+          <source>Activation prepares Microsoft R Open to be used by the cluster.</source>
+        </trans-unit><trans-unit id="258" translate="yes" xml:space="preserve">
+          <source>Click the MRS 8.0.5 <bpt id="p1">**</bpt>Distribute<ept id="p1">**</ept> button.</source>
+        </trans-unit><trans-unit id="259" translate="yes" xml:space="preserve">
+          <source>Microsoft R Server will be distributed to all the nodes of your cluster.</source>
+        </trans-unit><trans-unit id="260" translate="yes" xml:space="preserve">
+          <source>When the distribution is complete, the <bpt id="p1">**</bpt>Distribute<ept id="p1">**</ept> button is replaced with an <bpt id="p2">**</bpt>Activate<ept id="p2">**</ept> button.</source>
+        </trans-unit><trans-unit id="261" translate="yes" xml:space="preserve">
+          <source>Troubleshoot installation problems</source>
+        </trans-unit><trans-unit id="262" translate="yes" xml:space="preserve">
+          <source>See <bpt id="p1">[</bpt>Troubleshoot Microsoft R installation problems on Hadoop<ept id="p1">](r-server-install-hadoop-troubleshoot.md)</ept> for tips.</source>
+        </trans-unit><trans-unit id="263" translate="yes" xml:space="preserve">
+          <source>If you want to start over, see <bpt id="p1">[</bpt>Uninstall Microsoft R Server<ept id="p1">](r-server-install-uninstall-upgrade.md)</ept> for instructions.</source>
+        </trans-unit><trans-unit id="264" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="265" translate="yes" xml:space="preserve">
+          <source>Developers might want to install DeployR, an optional component that provides a server-based framework for running R code in real time.</source>
+        </trans-unit><trans-unit id="266" translate="yes" xml:space="preserve">
+          <source>See <bpt id="p1">[</bpt>DeployR Installation<ept id="p1">](../deployr/deployr-installation.md)</ept> for setup instructions.</source>
+        </trans-unit><trans-unit id="267" translate="yes" xml:space="preserve">
+          <source>To get started, we recommend the <bpt id="p1">[</bpt>ScaleR Getting Started Guide for Hadoop<ept id="p1">](../r/how-to-revoscaler-hadoop.md)</ept>.</source>
+        </trans-unit><trans-unit id="268" translate="yes" xml:space="preserve">
+          <source>See Also</source>
+        </trans-unit><trans-unit id="269" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Install R on Hadoop overview<ept id="p1">](r-server-install-hadoop.md)</ept></source>
+        </trans-unit><trans-unit id="270" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Install Microsoft R Server on Linux<ept id="p1">](r-server-install-linux-server.md)</ept></source>
+        </trans-unit><trans-unit id="271" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Uninstall Microsoft R Server to upgrade to a newer version<ept id="p1">](r-server-install-uninstall-upgrade.md)</ept></source>
+        </trans-unit><trans-unit id="272" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Troubleshoot R Server installation problems on Hadoop<ept id="p1">](r-server-install-hadoop-troubleshoot.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

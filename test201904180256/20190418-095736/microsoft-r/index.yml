@@ -1,0 +1,87 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="index.yml" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-d1654b2" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">8ea8c771-7844-49cc-84f5-71599942a18c1308a2ef54a8996359c47d12c52555b625b279be.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1308a2ef54a8996359c47d12c52555b625b279be</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">8ea8c771-7844-49cc-84f5-71599942a18c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">04/18/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\index.yml</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve">
+          <source>Machine Learning Server Documentation</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve">
+          <source>Welcome to the Machine Learning Server Documentation Center</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Learn how to use Machine Learning Server to analyze data at scale, build intelligent apps, and discover valuable insights across your business.</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Microsoft R Server is now <bpt id="p1">&lt;b&gt;</bpt>Microsoft Machine Learning Server<ept id="p1">&lt;/b&gt;</ept>, renamed to reflect Python language support.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="rebranding-microsoft-r-server"&gt;</bpt>(more)<ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="what-is-machine-learning-server"&gt;</bpt>Machine Learning Server<ept id="p1">&lt;/a&gt;</ept> is your flexible choice for analyzing data at scale, building intelligent apps, and discovering valuable insights across your business.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>It includes a collection of <bpt id="p1">&lt;a href="r-reference/introducing-r-server-r-package-reference"&gt;</bpt>R packages<ept id="p1">&lt;/a&gt;</ept>, <bpt id="p2">&lt;a href="python-reference/introducing-python-package-reference"&gt;</bpt>Python packages<ept id="p2">&lt;/a&gt;</ept>, interpreters, and infrastructure for developing and  <bpt id="p3">&lt;a href="what-is-operationalization"&gt;</bpt>deploying<ept id="p3">&lt;/a&gt;</ept> distributed R and Python-based machine learning and data science solutions on a <bpt id="p4">&lt;a href="install/r-server-install-supported-platforms"&gt;</bpt>range of platforms<ept id="p4">&lt;/a&gt;</ept>  across on-premises and cloud configurations.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>5-Minute Quickstarts</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Get started with Machine Learning Server using R or Python:</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Run<ph id="ph1">&amp;nbsp;</ph>R<ph id="ph2">&amp;nbsp;</ph>code<ph id="ph3">&amp;nbsp;</ph>in<ph id="ph4">&amp;nbsp;</ph>Machine<ph id="ph5">&amp;nbsp;</ph>Learning<ph id="ph6">&amp;nbsp;</ph>Server<ph id="ph7">&amp;nbsp;</ph><ph id="ph8">/</ph><ph id="ph9">&amp;nbsp;</ph>R<ph id="ph10">&amp;nbsp;</ph>Client</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Create a Python model with revoscalepy</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Run a binary classification using microsoftml</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Deploy a model as a web service</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Step-by-Step Tutorials</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Learn how to discover insights faster and transform your business using Machine Learning Server.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">&amp;nbsp;</ph><bpt id="p1">&lt;big&gt;</bpt><ph id="ph2">&amp;nbsp;</ph><ph id="ph3">&amp;nbsp;</ph>R Tutorials<ept id="p1">&lt;/big&gt;</ept></source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="r/tutorial-r-to-revoscaler"&gt;</bpt>Explore R-to-RevoScaleR<ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="r/tutorial-revoscaler-data-import-transform"&gt;</bpt>Import and transform data<ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="r/tutorial-revoscaler-data-model-analysis"&gt;</bpt>Visualize and analyze data<ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">&amp;nbsp;</ph><bpt id="p1">&lt;big&gt;</bpt><ph id="ph2">&amp;nbsp;</ph><ph id="ph3">&amp;nbsp;</ph>Python Tutorials<ept id="p1">&lt;/big&gt;</ept></source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="python/tutorial-revoscalepy-pyspark"&gt;</bpt>Use PySpark and revoscalepy together<ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Samples</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Find scripts and solutions to manage common tasks.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="r/r-samples.md"&gt;</bpt>R samples<ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="python/python-samples.md"&gt;</bpt>Python samples <ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="r/sample-solutions"&gt;</bpt>Solution templates<ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Tools</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Use these tools to begin developing your analytics locally and then pushing the compute to the server:</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="r-client/what-is-microsoft-r-client"&gt;</bpt>Microsoft R Client<ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="install/python-libraries-interpreter"&gt;</bpt>Python interpreter and library setup <ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Reference</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>R Packages</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="r-reference/microsoftml/microsoftml-package"&gt;</bpt>MicrosoftML<ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="r-reference/mrsdeploy/mrsdeploy-package"&gt;</bpt>mrsdeploy<ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="r-reference/revoscaler/revoscaler"&gt;</bpt>RevoScaleR<ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="r-reference/introducing-r-server-r-package-reference"&gt;</bpt>more...<ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Python Packages</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="python-reference/azureml-model-management-sdk/azureml-model-management-sdk"&gt;</bpt>azureml-model-management-sdk<ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="python-reference/microsoftml/microsoftml-package"&gt;</bpt>microsoftml<ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="python-reference/revoscalepy/revoscalepy-package"&gt;</bpt>revoscalepy<ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="python-reference/introducing-python-package-reference"&gt;</bpt>more...<ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>APIs</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="https://microsoft.github.io/deployr-api-docs/"&gt;</bpt>REST API Reference<ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit></group></body></file></xliff>

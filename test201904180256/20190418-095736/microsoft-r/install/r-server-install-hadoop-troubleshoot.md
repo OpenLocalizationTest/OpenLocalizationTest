@@ -1,0 +1,85 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="r-server-install-hadoop-troubleshoot.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-d1654b2" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">8ea8c771-7844-49cc-84f5-71599942a18cd06c296f4213e12480b35ccebf9722f4549d6763.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">d06c296f4213e12480b35ccebf9722f4549d6763</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">8ea8c771-7844-49cc-84f5-71599942a18c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">04/18/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\install\r-server-install-hadoop-troubleshoot.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Troubleshoot Microsoft R installation problems on Hadoop</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Troubleshoot Microsoft R installation on a Hadoop cluster.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Troubleshoot Microsoft R installation problems on Hadoop</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>No two Hadoop installations are exactly alike, but most are quite similar.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This article brings together a number of common errors seen in attempting to run Microsoft R Server commands on Hadoop clusters, and the most likely causes of such errors from our experience.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Missing dependencies</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Linux and Hadoop servers that are locked down prevent the installation script from downloading any required dependencies that are missing on your system.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>For a list of all dependencies required by Microsoft R, see <bpt id="p1">[</bpt>Package Dependencies for Microsoft R Server installations on Linux and Hadoop<ept id="p1">](r-server-install-linux-hadoop-packages.md)</ept>.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>No Valid Credentials</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>If you see a message such as “No valid credentials provided”, this means you do not have a valid Kerberos ticket.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Quit Microsoft R Server, obtain a Kerberos ticket using kinit, and then restart Microsoft R Server.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Unable to Load Class RevoScaleR</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>If you see a message about being unable to find or load main class RevoScaleR, this means that the jar file scaleR-hadoop-0.1-SNAPSHOT.jar could not be found.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>This jar file must be in a location where it can be found by the getHadoopEnvVars.py script, or its location must be explicitly added to the CLASSPATH.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Classpath Errors</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>If you see other errors related to Java classes, these are likely related to the settings of the following environment variables:</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>PATH</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>CLASSPATH</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>JAVA<ph id="ph1">\_</ph>LIBRARY<ph id="ph2">\_</ph>PATH</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Of these, the most commonly misconfigured is the CLASSPATH.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Unable to Load Shared Library</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>If you see a message about being unable to load libhdfs.so, you may need to create a symbolic link from your installed version of libhdfs.so to the system library, such as the following command:</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Or, update your LD<ph id="ph1">\_</ph>LIBRARY<ph id="ph2">\_</ph>PATH environment variable to include the path to the libjvm shared object:</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>(This step is normally performed automatically during the RRE install.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>If you continue to see errors about libhdfs.so, you may need to both create the preceding symbolic link and set LD_LIBRARY_PATH.)</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Similarly, if you see a message about being unable to load libjvm.so, you may need to create a symbolic link from your installed version of libjvm.so to the system library, such as the following command:</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Or, update your LD<ph id="ph1">\_</ph>LIBRARY<ph id="ph2">\_</ph>PATH environment variable to include the path to the libjvm shared object:</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>export LD<ph id="ph1">\_</ph>LIBRARY<ph id="ph2">\_</ph>PATH=$LD<ph id="ph3">\_</ph>LIBRARY<ph id="ph4">\_</ph>PATH:/path/to/libjvm.so</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Hive ODBC Connection Problems on Edge Nodes</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>An ODBC connection to Hive from an edge node can be useful for both importing the results of Hive queries, and directly streaming results into ScaleR algorithms for analysis.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Prior to using <ph id="ph1">`RxOdbcData`</ph> against Hive, we recommend that you begin by installing and configuring the ODBC drivers provided by your Hadoop vendor for your installed distro.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Next, work with your Hadoop vendor to debug the ODBC setup until you are able to successfully run Hive queries using a Hive command-line tool such as ‘beeline’.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Lastly, take one of those queries that you ran from the command line and try running it from within R Server on the edge node via <ph id="ph1">`RxOdbcData`</ph>.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Check Hadoop cluster health</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Hadoop includes example programs that help verify the health of your cluster.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>One exmaple is the jar file hadoop-mapreduce-examples.jar.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>The following command should display a list of the available examples:</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>On MapR, the quick installation installs the Hadoop files to /opt/mapr by default; the path to the examples jar file is <bpt id="p1">*</bpt>/opt/mapr/hadoop/hadoop-0.20.2/hadoop-0.20.2-dev-examples.jar<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>On Cloudera Manager parcel installs, the default path to the examples is <bpt id="p1">*</bpt>/opt/cloudera/parcels/CDH/lib/hadoop-mapreduce-examples.jar<ept id="p1">*</ept>.)</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>The following command runs the pi example, which uses Monte Carlo sampling to estimate pi.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>The 5 tells Hadoop to use 5 mappers, the 300 says to use 300 samples per map:</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>If you can successfully run one or more of the Hadoop examples, your Hadoop installation was successful and you are ready to install Microsoft R Server.</source>
+        </trans-unit></group></body></file></xliff>
