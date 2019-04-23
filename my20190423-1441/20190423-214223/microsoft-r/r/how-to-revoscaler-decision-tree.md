@@ -1,0 +1,253 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="how-to-revoscaler-decision-tree.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-1931010" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">a507aa1d-ad98-40e9-8c2d-f550e7c4ca86620f7826fa0ec00610868286a68d045557c03feb.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">620f7826fa0ec00610868286a68d045557c03feb</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">a507aa1d-ad98-40e9-8c2d-f550e7c4ca86</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">04/23/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\r\how-to-revoscaler-decision-tree.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Estimate Decision Tree Models using RevoScaleR (Machine Learning Server)</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Decision Trees with RevoScaleR in Machine Learning Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Estimating Decision Tree Models</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">*</bpt>rxDTree<ept id="p1">*</ept> function in RevoScaleR fits tree-based models using a binning-based recursive partitioning algorithm.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>The resulting model is similar to that produced by the recommended R package <bpt id="p1">*</bpt>rpart<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Both classification-type trees and regression-type trees are supported; as with <bpt id="p1">*</bpt>rpart<ept id="p1">*</ept>, the difference is determined by the nature of the response variable: a factor response generates a classification tree; a numeric response generates a regression tree.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>The rxDTree Algorithm</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Decision trees are effective algorithms widely used for classification and regression.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Building a decision tree generally requires that all continuous variables be sorted in order to decide where to split the data.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>This sorting step becomes time and memory prohibitive when dealing with large data.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Various techniques have been proposed to overcome the sorting obstacle, which can be roughly classified into two groups: performing data pre-sorting or using approximate summary statistic of the data.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>While pre-sorting techniques follow standard decision tree algorithms more closely, they cannot accommodate very large data sets.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>These big data decision trees are normally parallelized in various ways to enable large scale learning: data parallelism partitions the data either horizontally or vertically so that different processors see different observations or variables and task parallelism builds different tree nodes on different processors.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">*</bpt>rxDTree<ept id="p1">*</ept> algorithm is an approximate decision tree algorithm with horizontal data parallelism, especially designed for handling very large data sets.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>It uses histograms as the approximate compact representation of the data and builds the decision tree in a breadth-first fashion.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>The algorithm can be executed in parallel settings such as a multicore machine or a distributed environment with a master-worker architecture.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Each worker gets only a subset of the observations of the data, but has a view of the complete tree built so far.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>It builds a histogram from the observations it sees, which essentially compresses the data to a fixed amount of memory.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>This approximate description of the data is then sent to a master with constant low communication complexity independent of the size of the data set.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>The master integrates the information received from each of the workers and determines which terminal tree nodes to split and how.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Since the histogram is built in parallel, it can be quickly constructed even for extremely large data sets.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>With <bpt id="p1">*</bpt>rxDTree<ept id="p1">*</ept>, you can control the balance between time complexity and prediction accuracy by specifying the maximum number of bins for the histogram.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>The algorithm builds the histogram with roughly equal number of observations in each bin and takes the boundaries of the bins as the candidate splits for the terminal tree nodes.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Since only a limited number of split locations are examined, it is possible that a suboptimal split point is chosen causing the entire tree to be different from the one constructed by a standard algorithm.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>However, it has been shown analytically that the error rate of the parallel tree approaches the error rate of the serial tree, even though the trees are not identical.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>You can set the number of bins in the histograms to control the tradeoff between accuracy and speed: a large number of bins allows a more accurate description of the data and thus more accurate results, whereas a small number of bins reduces time complexity and memory usage.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>When integer predictors for which the number of bins equals or exceeds the number of observations, the rxDTree algorithm produces the same results as the standard sorting algorithms.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>A Simple Classification Tree</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>In a <bpt id="p1">[</bpt>previous article<ept id="p1">](how-to-revoscaler-logistic-regression.md)</ept>, we fit a simple logistic regression model to rpart’s kyphosis data.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>That model is easily recast as a classification tree using <bpt id="p1">*</bpt>rxDTree<ept id="p1">*</ept> as follows:</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Recall our conclusions from fitting this model earlier with rxCube: the probability of the post-operative complication Kyphosis seems to be greater if the Start is a cervical vertebra and as more vertebrae are involved in the surgery.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Similarly, it appears that the dependence on age is non-linear: it first increases with age, peaks in the range 5-9, and then decreases again.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>The rxDTree model seems to confirm these earlier conclusions—for Start <ph id="ph1">\&lt;</ph> 8.5, 11 of 19 observed subjects developed Kyphosis, while none of the 29 subjects with Start <ph id="ph2">\&gt;</ph>= 14.5 did.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>For the remaining 33 subjects, Age was the primary splitting factor, and as we observed earlier, ages 5 to 9 had the highest probability of developing Kyphosis.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>The returned object <bpt id="p1">*</bpt>kyphTree<ept id="p1">*</ept> is an object of class <bpt id="p2">*</bpt>rxDTree<ept id="p2">*</ept>.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">*</bpt>rxDTree<ept id="p1">*</ept> class is modeled closely on the <bpt id="p2">*</bpt>rpart<ept id="p2">*</ept> class, so that objects of class <bpt id="p3">*</bpt>rxDTree<ept id="p3">*</ept> have most essential components of an <bpt id="p4">*</bpt>rpart<ept id="p4">*</ept> object: frame, cptable, splits, etc. By default, however, <bpt id="p5">*</bpt>rxDTree<ept id="p5">*</ept> objects do not inherit from class <bpt id="p6">*</bpt>rpart<ept id="p6">*</ept>.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>You can, however, use the <bpt id="p1">*</bpt>rxAddInheritance<ept id="p1">*</ept> function to add <bpt id="p2">*</bpt>rpart<ept id="p2">*</ept> inheritance to <bpt id="p3">*</bpt>rxDTree<ept id="p3">*</ept> objects.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>A Simple Regression Tree</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>As a simple example of a regression tree, consider the <bpt id="p1">*</bpt>mtcars<ept id="p1">*</ept> data set and let’s fit gas mileage (<bpt id="p2">*</bpt>mpg<ept id="p2">*</ept>) using displacement (<bpt id="p3">*</bpt>disp<ept id="p3">*</ept>) as a predictor:</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>There’s a clear split between larger cars (those with engine displacement greater than 163.5 cubic inches) and smaller cars.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>A Larger Regression Tree Model</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>As a more complex example, we return to the censusWorkers data.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>We create a regression tree predicting wage income from age, sex, and weeks worked, using the perwt variable as probability weights:</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>The primary split here (not surprising given our analysis of this data set in the <bpt id="p1">[</bpt>Tutorial: Analyzing US census data with RevoScaleR<ept id="p1">](tutorial-revoscaler-large-data-census.md)</ept>) is sex; women on average earn substantially less than men.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>The additional splits are also not surprising; older workers earn more than younger workers, and those who work more hours tend to earn more than those who work fewer hours.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Controlling the Model Fit</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">*</bpt>rxDTree<ept id="p1">*</ept> function has a number of options for controlling the model fit.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Most of these control parameters are familiar to <bpt id="p1">*</bpt>rpart<ept id="p1">*</ept> users, but the defaults have been modified in some cases to better support large data tree models.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>A full listing of these options can be found in the <bpt id="p1">*</bpt>rxDTree<ept id="p1">*</ept> help file, but the following have been found in our testing to be the most useful at controlling the time required to fit a model with <bpt id="p2">*</bpt>rxDTree<ept id="p2">*</ept>:</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>xVal<ept id="p1">*</ept>: controls the number of folds used to perform cross-validation.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>The default of 2 allows for some pruning; once you have closed in a model you may want to increase the value for final fitting and pruning.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>maxDepth<ept id="p1">*</ept>: sets the maximum depth of any node of the tree.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Computations grow rapidly more expensive as the depth increases, so we recommend a maxDepth of 10 to 15.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>maxCompete<ept id="p1">*</ept>: specifies the number of “competitor splits” retained in the output.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>By default, <bpt id="p1">*</bpt>rxDTree<ept id="p1">*</ept> sets this to 0, but a setting of 3 or 4 can be useful for diagnostic purposes in determining why a particular split was chosen.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>maxSurrogate<ept id="p1">*</ept>: specifies the number of surrogate splits retained in the output.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Again, by default <bpt id="p1">*</bpt>rxDTree<ept id="p1">*</ept> sets this to 0.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Surrogate splits are used to assign an observation when the primary split variable is missing for that observation.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>maxNumBins<ept id="p1">*</ept>: controls the maximum number of bins used for each variable.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>Managing the number of bins is important in controlling memory usage.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>The default is to use the larger of 101 and the square root of the number of observations for small to moderate size data sets (up to about one million observations), but for larger sets to use 1001 bins. For small data sets with continuous predictors, you may find that you need to increase the <bpt id="p1">*</bpt>maxNumBins<ept id="p1">*</ept> to obtain models that resemble those from rpart.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>For large data sets (100000 or more observations), you may need to adjust the following parameters to obtain meaningful models:</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>cp<ept id="p1">*</ept>: a complexity parameter and sets the bar for how much a split must reduce the complexity before being accepted.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>We have set the default to 0 and recommend using <bpt id="p1">*</bpt>maxDepth<ept id="p1">*</ept> and <bpt id="p2">*</bpt>minBucket<ept id="p2">*</ept> to control your tree sizes.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>If you want to specify a <bpt id="p1">*</bpt>cp<ept id="p1">*</ept> value, start with a conservative value, such as rpart’s 0.01; if you don’t see an adequate number of splits, decrease the <bpt id="p2">*</bpt>cp<ept id="p2">*</ept> by powers of 10 until you do.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>For our large airline data, we have found interesting models begin with a <bpt id="p1">*</bpt>cp<ept id="p1">*</ept> of about 1e-4.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>minSplit<ept id="p1">*</ept>, <bpt id="p2">*</bpt>minBucket<ept id="p2">*</ept>: determine how many observations must be in a node before a split is attempted (<bpt id="p3">*</bpt>minSplit<ept id="p3">*</ept>) and how many must remain in a terminal node (<bpt id="p4">*</bpt>minBucket<ept id="p4">*</ept>).</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Large Data Tree Models</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Scaling decision trees to very large data sets is possible with <bpt id="p1">*</bpt>rxDTree<ept id="p1">*</ept> but should be done with caution—the wrong choice of model parameters can easily lead to models that take hours or longer to estimate, even in a distributed computing environment.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>For example, in the <bpt id="p1">[</bpt>Tutorial: Load and analyze a large airline data set with RevoScaleR<ept id="p1">](tutorial-revoscaler-large-data-airline.md)</ept>, we estimated linear models using the large airline data and used the variable <bpt id="p2">*</bpt>Origin<ept id="p2">*</ept> as a predictor in several models.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">*</bpt>Origin<ept id="p1">*</ept> variable is a factor variable with 373 levels with no obvious ordering.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>Incorporating this variable into an <bpt id="p1">*</bpt>rxDTree<ept id="p1">*</ept> model that is performing more than two level classification can easily consume hours of computation time.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>To prevent such unintended consequences, <bpt id="p1">*</bpt>rxDTree<ept id="p1">*</ept> has a parameter <bpt id="p2">*</bpt>maxUnorderedLevels<ept id="p2">*</ept>, which defaults to 32; in the case of <bpt id="p3">*</bpt>Origin<ept id="p3">*</ept>, this parameter would flag an error.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>However, a factor variable of “Region” which groups the airports of <bpt id="p1">*</bpt>Origin<ept id="p1">*</ept> by location may well be a useful proxy, and can be constructed to have only a limited number of levels.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>Numeric and ordered factor predictors are much more easily incorporated into the model.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>As an example of a large data classification tree, consider the following simple model using the 7% subsample of the full airline data (uses the variable <bpt id="p1">*</bpt>ArrDel15<ept id="p1">*</ept> indicating flights with an arrival delay of 15 minutes or more):</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`blocksPerRead`</ph> argument is ignored if run locally using R Client.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Learn more...</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>The default cp of 0 produces a very large number of splits; specifying <bpt id="p1">*</bpt>cp<ept id="p1">*</ept> = 1e-5 produces a more manageable set of splits in this model:</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>Looking at the fitted objects cptable component, we can look at whether we have overfitted the model:</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>We see a steady decrease in cross-validation error (xerror) as the number of splits increase, but note that at about nsplit=11 the rate of change slows dramatically.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>The optimal model is probably very near here.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>(The total number of passes through the data is equal to a base of <bpt id="p1">*</bpt>maxDepth<ept id="p1">*</ept> + 3, plus <bpt id="p2">*</bpt>xVal<ept id="p2">*</ept> times (<bpt id="p3">*</bpt>maxDepth<ept id="p3">*</ept> + 2), where <bpt id="p4">*</bpt>xVal<ept id="p4">*</ept> is the number of folds for cross-validation and <bpt id="p5">*</bpt>maxDepth<ept id="p5">*</ept> is the maximum tree depth.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>Thus a depth 10 tree with 4-fold cross-validation requires 13 + 48, or 61, passes through the data.)</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>To prune the tree back, use the <bpt id="p1">*</bpt>prune.rxDTree<ept id="p1">*</ept> function:</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>If rpart is installed, <bpt id="p1">*</bpt>prune.rxDTree<ept id="p1">*</ept> acts as a method for the <bpt id="p2">*</bpt>prune<ept id="p2">*</ept> function, so you can call it more simply:</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>For models fit with 2-fold or greater cross-validation, it is useful to use the cross-validation standard error (part of the cptable component) as a guide to pruning.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>The rpart function plotcp can be useful for this:</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>This yields the following plot:</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>From this plot, it appears we can prune even further, to perhaps seven or eight splits.</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>Looking again at the cptable, a cp of 2.5e-4 seems a reasonable pruning choice:</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>Handling Missing Values</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">*</bpt>removeMissings<ept id="p1">*</ept> argument to <bpt id="p2">*</bpt>rxDTree<ept id="p2">*</ept>, as in most RevoScaleR analysis functions, controls how the function deals with missing data in the model fit.</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>If <bpt id="p1">*</bpt>TRUE<ept id="p1">*</ept>, all rows containing missing values for the response or any predictor variable are removed before model fitting.</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>If <bpt id="p1">*</bpt>FALSE<ept id="p1">*</ept> (the default), only those rows for which the value of the response or all values of the predictor variables are missing are removed.</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>Using <bpt id="p1">*</bpt>removeMissings=TRUE<ept id="p1">*</ept> is roughly equivalent to the effect of the <bpt id="p2">*</bpt>na.omit<ept id="p2">*</ept> function for <bpt id="p3">*</bpt>rpart<ept id="p3">*</ept>, in that if the file is written out, all rows containing NAs are removed.</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>There is no equivalent for <bpt id="p1">*</bpt>rxDTree<ept id="p1">*</ept> to the <bpt id="p2">*</bpt>na.exclude<ept id="p2">*</ept> function, which pads the output with NAs for observations that cannot be predicted.</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>Using <bpt id="p1">*</bpt>removeMissings=FALSE<ept id="p1">*</ept> is the equivalent of using the <bpt id="p2">*</bpt>na.rpart<ept id="p2">*</ept> or <bpt id="p3">*</bpt>na.pass<ept id="p3">*</ept> functions; the data is passed through unchanged, but rows that have no data for either all predictors or the response are excluded from the model.</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>Prediction</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>As with other RevoScaleR analysis functions, prediction is performed using the <bpt id="p1">*</bpt>rxPredict<ept id="p1">*</ept> function, to which you supply a fitted model object and a set of new data (which may be the original data set, but in any event must contain the variables used in the original model).</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>The adult data set is a widely used machine learning data set, similar to the censusWorkers data we have already analyzed.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>The data set is available from the machine learning data repository at UC Irvine (<ph id="ph1">&lt;http://archive.ics.uci.edu/ml/datasets/Adult&gt;</ph>) (and comes in two pieces: a training data set (adult.data) and a test data set (adult.test).</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>This makes it ready-made for use in prediction.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>To run the following examples, download this data and add a .txt extension, so that you have adult.data.txt and adult.test.txt.</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>(A third file, adult.names, gives a description of the variables; we use this in the code below as a source for the variable names, which are not part of the data files):</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>The result shows that the fitted model accurately classifies about 77% of the test data.</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>When using <bpt id="p1">*</bpt>rxPredict<ept id="p1">*</ept> with <bpt id="p2">*</bpt>rxDTree<ept id="p2">*</ept> objects, you should keep in mind how it differs from <bpt id="p3">*</bpt>predict<ept id="p3">*</ept> with <bpt id="p4">*</bpt>rpart<ept id="p4">*</ept> objects.</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>First, a <bpt id="p1">*</bpt>data<ept id="p1">*</ept> argument is always required—this can be either the original data or new data; there is no <bpt id="p2">*</bpt>newData<ept id="p2">*</ept> argument as in <bpt id="p3">*</bpt>rpart<ept id="p3">*</ept>.</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>Prediction with the original data provides fitted values, not predictions, but the predicted variable name still defaults to <bpt id="p1">*</bpt>varname<ph id="ph1">\_</ph>Pred<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>Visualizing Trees</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>The RevoTreeView package can be used to plot decision trees from <bpt id="p1">*</bpt>rxDTree<ept id="p1">*</ept> or <bpt id="p2">*</bpt>rpart<ept id="p2">*</ept> in an HTML page.</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>Both classification and regression trees are supported.</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>By plotting the tree objects returned by RevoTreeView’s <bpt id="p1">*</bpt>createTreeView<ept id="p1">*</ept> function in a browser, you can interact with your decision tree.</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>The resulting tree’s HTML page can also be shared with other people or displayed on different machines using the package’s <bpt id="p1">*</bpt>zipTreeView<ept id="p1">*</ept> function.</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>As an example, consider a classification tree built from the <bpt id="p1">*</bpt>kyphosis<ept id="p1">*</ept> data that is included in the <bpt id="p2">*</bpt>rpart<ept id="p2">*</ept> package.</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>It produces the following text output:</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>Now, you can display an HTML version of the tree output by plotting the object produced by the <bpt id="p1">*</bpt>createTreeView<ept id="p1">*</ept> function.</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>  After running the preceding R code, run the following to load the <bpt id="p1">*</bpt>RevoTreeView<ept id="p1">*</ept> package and display an interactive decision tree in your browser:</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>In this interactive tree, click on the circular split nodes to expand or collapse the tree branch.</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>Clicking a node will expand and collapse the node to the last view of that branch.</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>If you use a <bpt id="p1">*</bpt>CTRL + Click<ept id="p1">*</ept>, the tree displays only the children of the selected node.</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>If you click <bpt id="p1">*</bpt>ALT + Click<ept id="p1">*</ept>, the tree displays all levels below the selected node.</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>The square-shaped nodes, called leaf, or terminal nodes, cannot be expanded.</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>To get additional information, hover over the node to expose the node details such as its name, the next split variable, its value, the <bpt id="p1">*</bpt>n<ept id="p1">*</ept>, the predicted value, and other details such as loss or deviance.</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>You can also use the rpart <bpt id="p1">*</bpt>plot<ept id="p1">*</ept> and <bpt id="p2">*</bpt>text<ept id="p2">*</ept> methods with <bpt id="p3">*</bpt>rxDTree<ept id="p3">*</ept> objects, provided you use the <bpt id="p4">*</bpt>rxAddInheritance<ept id="p4">*</ept> function to provide rpart inheritance:</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>Provides the following plot:</source>
+        </trans-unit></group></body></file></xliff>

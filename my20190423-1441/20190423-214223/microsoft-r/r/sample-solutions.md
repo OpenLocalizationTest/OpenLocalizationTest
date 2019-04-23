@@ -1,0 +1,117 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="sample-solutions.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-1931010" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">a507aa1d-ad98-40e9-8c2d-f550e7c4ca86657f39263e1efbd6c7767be7b77de896f32ed1e8.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">657f39263e1efbd6c7767be7b77de896f32ed1e8</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">a507aa1d-ad98-40e9-8c2d-f550e7c4ca86</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">04/23/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\r\sample-solutions.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Solution templates for Machine Learning Server and R Server | Machine Learning Server</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve">
+          <source>Solution templates for Machine Learning Server and Microsoft R Server 9.1/9.2</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Several solution templates exist to help you accelerate time to value when using Machine Learning Server or Microsoft R Server 9.1/9.2.</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>We offer solutions tailored to specific industries and problem sets: <bpt id="p1">[</bpt>marketing<ept id="p1">](#marketing)</ept>, <bpt id="p2">[</bpt>healthcare<ept id="p2">](#healthcare)</ept>, <bpt id="p3">[</bpt>financial and retail<ept id="p3">](#financial)</ept>.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>&amp;#9658; Marketing solutions</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Campaign optimization</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>When a business launches a marketing campaign to interest customers in new or existing product(s), they often use a set of business rules to select leads for their campaign to target.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Machine learning can be used to help increase the response rate from these leads.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>This solution demonstrates how to use a model to predict actions that are expected to maximize the purchase rate of leads targeted by the campaign.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>These predictions serve as the basis for recommendations to be used by a renewed campaign on how to contact (for example, e-mail, SMS, or cold call) and when to contact (day of week and time of day) the targeted leads.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Learn more:<ept id="p1">**</ept><ph id="ph1">&amp;nbsp;</ph><ph id="ph2">&amp;nbsp;</ph><ph id="ph3">&amp;nbsp;</ph><ph id="ph4">&amp;nbsp;</ph><ph id="ph5">&amp;nbsp;</ph><ph id="ph6">&amp;nbsp;</ph><ph id="ph7">&amp;nbsp;</ph><ph id="ph8">&amp;nbsp;</ph><ph id="ph9">&amp;nbsp;</ph><ph id="ph10">&amp;nbsp;</ph><ph id="ph11">&amp;nbsp;</ph></source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>Home<ept id="p1">](https://microsoft.github.io/r-server-campaign-optimization)</ept></source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>Code<ept id="p1">](https://github.com/Microsoft/r-server-campaign-optimization)</ept></source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Deploy on:</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>SQL Server<ept id="p1">](https://aka.ms/campaignoptimization)</ept></source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>HDInsight Spark Cluster<ept id="p1">](https://aka.ms/campaign-hdi)</ept></source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>&amp;#9658; Healthcare solutions</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Predicting hospital length of stay</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>This solution enables a predictive model for Length of Stay for in-hospital admissions.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Length of Stay (LOS) is defined in number of days from the initial admit date to the date that the patient is discharged from any given hospital facility.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>There can be significant variation of LOS across various facilities and across disease conditions and specialties even within the same healthcare system.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Advanced LOS prediction at the time of admission can greatly enhance the quality of care as well as operational workload efficiency and help with accurate planning for discharges resulting in lowering of various other quality measures such as readmissions.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Learn more:<ept id="p1">**</ept><ph id="ph1">&amp;nbsp;</ph><ph id="ph2">&amp;nbsp;</ph><ph id="ph3">&amp;nbsp;</ph><ph id="ph4">&amp;nbsp;</ph><ph id="ph5">&amp;nbsp;</ph><ph id="ph6">&amp;nbsp;</ph><ph id="ph7">&amp;nbsp;</ph><ph id="ph8">&amp;nbsp;</ph><ph id="ph9">&amp;nbsp;</ph><ph id="ph10">&amp;nbsp;</ph><ph id="ph11">&amp;nbsp;</ph></source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>Home<ept id="p1">](https://microsoft.github.io/r-server-hospital-length-of-stay)</ept></source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>Code<ept id="p1">](https://github.com/Microsoft/r-server-hospital-length-of-stay)</ept></source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Deploy on:</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>SQL Server<ept id="p1">](https://aka.ms/hospital-los)</ept></source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>&amp;#9658; Financial and retail solutions</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Loan credit risk</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>If we had a crystal ball, we would only loan money to someone if we knew they would pay us back.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>A lending institution can make use of predictive analytics to reduce the number of loans it offers to those borrowers most likely to default, increasing the profitability of its loan portfolio.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>This solution is based on simulated data for a small personal loan financial institution, containing the borrower’s financial history as well as information about the requested loan.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>It uses predictive analytics to help decide whether or not to grant a loan for each borrower.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Learn more:<ept id="p1">**</ept><ph id="ph1">&amp;nbsp;</ph><ph id="ph2">&amp;nbsp;</ph><ph id="ph3">&amp;nbsp;</ph><ph id="ph4">&amp;nbsp;</ph><ph id="ph5">&amp;nbsp;</ph><ph id="ph6">&amp;nbsp;</ph><ph id="ph7">&amp;nbsp;</ph><ph id="ph8">&amp;nbsp;</ph><ph id="ph9">&amp;nbsp;</ph><ph id="ph10">&amp;nbsp;</ph><ph id="ph11">&amp;nbsp;</ph></source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>Home<ept id="p1">](https://microsoft.github.io/r-server-loan-credit-risk/)</ept></source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>Code<ept id="p1">](https://github.com/Microsoft/r-server-loan-credit-risk)</ept></source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Deploy on:</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>SQL Server<ept id="p1">](https://aka.ms/loan-credit-risk)</ept></source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>HDInsight Spark Cluster<ept id="p1">](https://aka.ms/loan-credit-risk-hdi)</ept></source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Loan charge-off</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>A charged off loan is a loan that is declared by a creditor (usually a lending institution) that an amount of debt is unlikely to be collected, usually when the loan repayment is severely delinquent by the debtor.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Given that high chargeoff has negative impact on lending institutions’ year end financials, lending institutions often monitor loan chargeoff risk closely to prevent loans from getting charged-off.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Using Azure HDInsight R Server, a lending institution can leverage machine learning predictive analytics to predict the likelihood of loans getting charged off and run a report on the analytics result stored in HDFS and hive tables.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Learn more:<ept id="p1">**</ept><ph id="ph1">&amp;nbsp;</ph><ph id="ph2">&amp;nbsp;</ph><ph id="ph3">&amp;nbsp;</ph><ph id="ph4">&amp;nbsp;</ph><ph id="ph5">&amp;nbsp;</ph><ph id="ph6">&amp;nbsp;</ph><ph id="ph7">&amp;nbsp;</ph><ph id="ph8">&amp;nbsp;</ph><ph id="ph9">&amp;nbsp;</ph><ph id="ph10">&amp;nbsp;</ph><ph id="ph11">&amp;nbsp;</ph></source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>Home<ept id="p1">](https://microsoft.github.io/r-server-loan-chargeoff)</ept></source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>Code<ept id="p1">](https://github.com/Microsoft/r-server-loan-chargeoff/)</ept></source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Deploy on:</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>SQL Server<ept id="p1">](https://aka.ms/loanchargeoffsql)</ept></source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>HDInsight Spark Cluster<ept id="p1">](https://aka.ms/loanchargeoffhdi)</ept></source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Fraud detection</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Fraud detection is one of the earliest industrial applications of data mining and machine learning.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>This solution shows how to build and deploy a machine learning model for online retailers to detect fraudulent purchase transactions.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Learn more:<ept id="p1">**</ept><ph id="ph1">&amp;nbsp;</ph><ph id="ph2">&amp;nbsp;</ph><ph id="ph3">&amp;nbsp;</ph><ph id="ph4">&amp;nbsp;</ph><ph id="ph5">&amp;nbsp;</ph><ph id="ph6">&amp;nbsp;</ph><ph id="ph7">&amp;nbsp;</ph><ph id="ph8">&amp;nbsp;</ph><ph id="ph9">&amp;nbsp;</ph><ph id="ph10">&amp;nbsp;</ph><ph id="ph11">&amp;nbsp;</ph></source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>Home<ept id="p1">](https://microsoft.github.io/r-server-fraud-detection/)</ept></source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>Code<ept id="p1">](https://github.com/Microsoft/r-server-fraud-detection)</ept></source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Deploy on:</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>SQL Server<ept id="p1">](https://aka.ms/fraud-detection)</ept></source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">- </ph><bpt id="p1">[</bpt>HDInsight Spark Cluster<ept id="p1">](https://aka.ms/fraud-detectinon-hdi)</ept></source>
+        </trans-unit></group></body></file></xliff>

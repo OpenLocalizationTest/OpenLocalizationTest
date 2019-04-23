@@ -1,0 +1,127 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="how-to-consume-web-services.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-1931010" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">a507aa1d-ad98-40e9-8c2d-f550e7c4ca86f2f5e2ed980b15dc162f7c1ed5b603b8980e4638.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">f2f5e2ed980b15dc162f7c1ed5b603b8980e4638</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">a507aa1d-ad98-40e9-8c2d-f550e7c4ca86</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">04/23/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\operationalize\python\how-to-consume-web-services.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Consume web services in Python - Machine Learning Server</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Publish and consume Python web services with Machine Learning Server</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>List, get, and consume web services in Python</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Applies to:  Machine Learning Server</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This article is for data scientists who wants to learn how to find, examine, and consume the <bpt id="p1">[</bpt>analytic web services<ept id="p1">](../concept-what-are-web-services.md)</ept> hosted in Machine Learning Server using Python.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Web services offer fast execution and scoring of arbitrary Python or R code and models.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Learn more about web services<ept id="p1">](../concept-what-are-web-services.md)</ept>.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>This article assumes that you are proficient in Python.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>After a web service has been published, any authenticated user can list, examine, and consume that web service.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>You can do so directly in Python using the functions in the <bpt id="p1">[</bpt>azureml-model-management-sdk package<ept id="p1">](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)</ept>.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>The azureml-model-management-sdk package is installed with Machine Learning Server.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>To list, examine, or consume the web service <bpt id="p1">_</bpt>outside<ept id="p1">_</ept> of Python, use the <bpt id="p2">[</bpt>RESTful APIs<ept id="p2">](../concept-api.md)</ept> that provide direct programmatic access to a service's lifecycle or in a <bpt id="p3">[</bpt>preferred language via Swagger<ept id="p3">](../how-to-build-api-clients-from-swagger-for-app-integration.md)</ept>.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>By default, web service operations are available to authenticated users.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>However, your administrator can also assign <bpt id="p1">[</bpt>roles<ept id="p1">](../configure-roles.md)</ept>  (RBAC) to further control the permissions around web services.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Web service definition:<ept id="p1">**</ept> In Machine Learning Server, your R and Python code and models can be deployed as web services.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Exposed as web services hosted in Machine Learning Server, these models and code can be accessed and consumed in R, Python, programmatically using REST APIs, or using Swagger generated client libraries.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Web services can be deployed from one platform and consumed on another.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Learn more...</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Requirements</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Before you can use the web service management functions in the <bpt id="p1">[</bpt>azureml-model-management-sdk<ept id="p1">](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)</ept> Python package, you must:</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Have access to a Python-enabled instance of Machine Learning Server that was  <bpt id="p1">[</bpt>properly configured<ept id="p1">](../../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)</ept> to host web services.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Authenticate with Machine Learning Server in Python as described in "<bpt id="p1">[</bpt>Connecting to Machine Learning Server in Python<ept id="p1">](how-to-authenticate-in-python.md)</ept>."</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Find and list web services</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Any authenticated user can retrieve a list of web services using the <ph id="ph1">`list_services`</ph> function on the DeployClient object.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>You can use arguments to return a specific web service or all labeled versions of a given web service.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Once you find the service you want, use the <bpt id="p1">[</bpt>get_service<ept id="p1">](#get_service)</ept>  function to retrieve the service object for consumption.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Retrieve and examine service objects</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Authenticated users can retrieve the <bpt id="p1">[</bpt>web service object<ept id="p1">](../../python-reference/azureml-model-management-sdk/service.md)</ept> in order to get the client stub for consuming that service.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Use the <ph id="ph1">`get_service`</ph> function from the azureml-model-management-sdk package to retrieve the object.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>After the object is returned, you can use a help function to explore the published service, such as <ph id="ph1">`print(help(myServiceObject))`</ph>.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>You can call the help function on any azureml-model-management-sdk functions, even those that are dynamically generated to learn more about them.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>You can also print the capabilities that define the service holdings to see what the service can do and how it should be consumed.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Service holdings include the service name, version, descriptions, inputs, outputs, and the name of the function to be consumed.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Learn more about capabilities...</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>You can use <bpt id="p1">[</bpt>supported public functions to interact with service object<ept id="p1">](../../python-reference/azureml-model-management-sdk/service.md)</ept>.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Example code:</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>You can only see the code stored within a web service if you have published the web service or are assigned to the "Owner" role.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>To learn more <bpt id="p1">[</bpt>about roles<ept id="p1">](../configure-roles.md)</ept> in your organization, contact your Machine Learning Server administrator.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Consume web services</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Web services are published to facilitate the consumption and integration of the operationalized models and code into systems and applications.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Whenever the web service is deployed or updated, a Swagger-based JSON file, which defines the service, is automatically generated.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>When you publish a service, you can let people know that it is ready for consumption by sharing its name and version with them.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Web services are <bpt id="p1">[</bpt>consumed by data scientists, quality engineers, and application developer<ept id="p1">](../concept-what-are-web-services.md#consume)</ept>.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>They can be consumed in Python, R, or via the API.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Users can consume the service directly using a single consumption call, which is referred to as a "Request Response" approach.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Learn about the various approaches to consuming web services<ept id="p1">](../concept-what-are-web-services.md#consume)</ept>.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Consuming in Python</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>After authenticating with Machine Learning Server<ept id="p1">](how-to-authenticate-in-python.md)</ept>, users can also interact with and consume services using other functions in the <bpt id="p2">[</bpt>azureml-model-management-sdk<ept id="p2">](../../python-reference/azureml-model-management-sdk/azureml-model-management-sdk.md)</ept> Python package.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>For a full example of a request-response consume, see this Jupyter notebook</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Sharing the Swagger with application developers</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Application developers can call and integrate a web service into their applications using the service-specific Swagger-based JSON file and by providing any required inputs to that service.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>The Swagger-based JSON file is used to generate client libraries for integration.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Read "<bpt id="p1">[</bpt>How to integrate web services and authentication into your application<ept id="p1">](../how-to-build-api-clients-from-swagger-for-app-integration.md)</ept>" for more details.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>The easiest way to share the Swagger file with an application developer is to use the code shown <bpt id="p1">[</bpt>in this Jupyter notebook<ept id="p1">](https://github.com/Microsoft/ML-Server-Python-Samples/blob/master/operationalize/Explore_Consume_Python_Web_Services.ipynb)</ept>.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Alternately, the application developer can request the file as an authenticated user with an <bpt id="p1">[</bpt>active bearer token<ept id="p1">](../how-to-build-api-clients-from-swagger-for-app-integration.md#authentication)</ept> in the request header using this API:</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>What are web services?</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Jupyter notebook: how explore and consume a web service</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Package overview: azureml-model-management-sdk</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>Quickstart: Deploying an Python model as a web service</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>How to authenticate with Machine Learning Server in Python<ept id="p1">](how-to-authenticate-in-python.md)</ept>.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>How to publish and manage web services in Python</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>How to integrate web services and authentication into your application</source>
+        </trans-unit></group></body></file></xliff>

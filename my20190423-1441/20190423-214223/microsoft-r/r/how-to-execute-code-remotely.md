@@ -1,0 +1,281 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="how-to-execute-code-remotely.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-1931010" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">a507aa1d-ad98-40e9-8c2d-f550e7c4ca86aeacbbb5ef534082b925358e7f2af6d84476d7d1.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">aeacbbb5ef534082b925358e7f2af6d84476d7d1</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">a507aa1d-ad98-40e9-8c2d-f550e7c4ca86</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">04/23/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\r\how-to-execute-code-remotely.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Remote Execution with mrsdeploy - Machine Learning Server</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Execute on a remote server using the mrsdeploy package on Machine Learning Server</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Execute on a remote server using the mrsdeploy package</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Applies to:  Machine Learning Server, Microsoft R Server 9.x, Microsoft R Client 3.x</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Remote execution is the ability to issue R commands from either Machine Learning Server (or R Server) or R Client to a remote session running on another Machine Learning Server instance.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>You can use remote execution to offload heavy processing on server and test your work.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>It is especially useful while developing and testing your analytics.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Remote execution is supported in several ways:</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>From the command line in console applications</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>In R scripts that call <bpt id="p1">[</bpt>functions from the mrsdeploy package<ept id="p1">](../r-reference/mrsdeploy/mrsdeploy-package.md)</ept></source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>From code that calls the APIs.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>You can enter 'R' code just as you would in a local R console.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>R code entered at the remote command line executes on the remote server.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>With remote execution, you can:</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Log in and out of Machine Learning Server</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Generate diff reports of the local and remote environments<ept id="p1">](#diff)</ept> and reconcile any differences</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Execute R scripts and code remotely</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Work with R objects/files remotely</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Create and manage snapshots of the remote environment for reuse</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Run local r code remotely on machine learning server with mrsdeploy</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Supported configurations and mrsdeploy usage</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>The R functions used for remote execution are provided in the mrsdeploy package, which is  installed with Machine Learning Server on almost every platform.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Your administrator must <bpt id="p1">[</bpt>configure the server for the deployment and consumption of analytics<ept id="p1">](../operationalize/configure-start-for-administrators.md#configure-server-for-operationalization)</ept>** before you can use the functions in the package.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Read the article <bpt id="p1">[</bpt>"<ph id="ph1">`mrsdeploy`</ph> functions"<ept id="p1">](../r-reference/mrsdeploy/mrsdeploy-package.md)</ept> for the list of <bpt id="p2">[</bpt>remote execution functions<ept id="p2">](../r-reference/mrsdeploy/mrsdeploy-package.md#remote-functions)</ept> in that package.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>How to create a remote session</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>To create a remote session, you must first authenticate with Machine Learning Server using one of the mrsdeploy login functions:  remoteLogin() and remoteLoginAAD().</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>With these functions, you can authenticate, set the arguments to create a remote R session on the Machine Learning Server (<ph id="ph1">`session = TRUE`</ph>) and even place yourself in the remote command line upon login <ph id="ph2">`commandline = TRUE`</ph>.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Read the article <bpt id="p1">[</bpt>"Connecting to Machine Learning Server with mrsdeploy"<ept id="p1">](../operationalize/how-to-connect-log-in-with-mrsdeploy.md)</ept> for more on authentication with <ph id="ph1">`mrsdeploy`</ph> and syntax.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>How to switch between sessions or logout</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>After you <bpt id="p1">[</bpt>log in to the remote R server<ept id="p1">](../operationalize/how-to-connect-log-in-with-mrsdeploy.md)</ept>  with the argument <ph id="ph1">`session = TRUE`</ph>, a remote R session is created.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>You can switch between the remote R session and the local R session directly from the command line.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>The remote command line allows you to directly interact with an R Server 9.x instance on another machine.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>When the <ph id="ph1">`REMOTE&gt;`</ph> command line is displayed in the R console, any R commands entered are executed on the remote R session.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Switch from local to remote R sessions with Machine Learning Server</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Switching between the local command line and the remote command line is done using these functions: pause() and resume().</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>To switch back to the local R session, type 'pause()'.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>If you have switched to the local R session, you can go back to the remote R session by typing 'resume()'.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>To terminate the remote R session, type 'exit' at the <ph id="ph1">`REMOTE&gt;`</ph> prompt.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Also, to terminate the remote session from the local R session, type 'remoteLogout()'.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Convenience Functions</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>pause()</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>When executed from the remote R session, returns the user to the local <ph id="ph1">`&gt; `</ph> command prompt.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>resume()</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>When executed from the local R session, returns the user to the <ph id="ph1">`REMOTE&gt;`</ph> command prompt, and sets a remote execution context.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Create a diff report</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>A <ph id="ph1">`diff`</ph> report is available so you can see and manage differences between the local and remote R environments.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>The diff report contains details on:</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>The R versions running on the server and locally</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>The R packages installed locally, but not on the remote session</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>The differences between R package versions.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>This report appears whenever you log in, and you can also get the report using the diffLocalRemote() function.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Execute an R script remotely</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>If you have R scripts on your local machine, you can execute them remotely by using the function remoteScript().</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>This function takes a path to an R script to be executed remotely.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>You also have options to save or display any plots that might have been generated during script execution.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>The function returns a list containing the status of the execution (success/failure), the console output generated, and a list of files created.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>If you need more granular control of a remote execution scenario, use the remoteExecute() function.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Package dependencies</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>If your R script has R package dependencies, those packages must be installed on the Microsoft R Server.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Your administrator can install them globally on the server or you can install them yourself for the duration of your remote session using the install.packages() function.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Leave the <ph id="ph1">`lib`</ph> parameter empty.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Limitations in a remote context</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>Certain functions are masked from execution, such as 'help', 'browser', 'q' and 'quit'.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>In a remote context, you cannot display vignettes or get help at your command-line prompt.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>In most cases, “system” commands work.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>However, system commands that write to stdout/stderr may not display their output nor wait until the entire system command has completed before displaying output.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>is the only exception for which we explicitly handle stdout and stderr in a remote context.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Asynchronous remote execution</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>To continue working in your development environment during the remote script execution, you can execute your R script asynchronously.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>Asynchronous script execution is useful when you are running scripts that have long execution times.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>To execute an R script asynchronously, set the async parameter for remoteScript() to TRUE.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>When remoteScript() is executed, the script is run asynchronously in a new remote R console window.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>All R console output and any plots from that execution are returned to the same window.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>R Server 9.0 users!</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>When loading a library for the REMOTE session, set lib.loc=getwd() as such:</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>Example</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Work with R objects and files remotely</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>After you have executed an R code remotely, you may want to retrieve certain R objects and load them into your local R session.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>For example, if you have an R script that creates a linear model <ph id="ph1">`m&lt;-lm(x~y)`</ph>, use the function getRemoteObject() to retrieve the object <ph id="ph2">`m`</ph> in your local R session.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>Conversely, if you have a local R object that you want to make available to your remote R session, you can use the function putLocalObject().</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>If you want to sync your local and remote workspaces, the functions putLocalWorkspace() and getRemoteWorkspace() can be used.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>Similar capabilities are available for files that need to be moved between the local and remote R sessions.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>The following functions are available for working with files:  putLocalFile(), getRemoteFile(), listRemoteFiles() and deleteRemoteFile().</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>A word on plots</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>When you plot remotely, the default plot size is 400 x 400 pixels.</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>If you desire higher-resolution output, you must tell the remote session the size of plot to create.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>On a local session, you might change the width and height as follows:</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>When working on the REMOTE command line, you need to combine these three statements together:</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>As an alternative, you can use the remoteScript() function as follows:</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>R session snapshots</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>Session snapshot functions are useful for remote execution scenarios.</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>It can save the whole workspace and working directory so that you can pick up from exactly where you left last time.</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>Think of it as similar to saving and loading a game.</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>What's in a session snapshot</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>If you need a prepared environment for remote script execution that includes R packages, R objects, or  data files, consider creating a <bpt id="p1">**</bpt>snapshot<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>A snapshot is an image of a remote R session saved to Microsoft R Server, which includes:</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>The session's workspace along with the installed R packages</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>Any files and artifacts in the working directory</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>A session snapshot can be loaded into any subsequent remote R session for the user who created it.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>For example, suppose you want to execute a script that needs three R packages, a reference data file, and a model object.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>Instead of loading the data file and object each time you want to execute the script, create a session snapshot of an R session containing them.</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>Then, you can save time later by retrieving this snapshot using its ID to get the session contents exactly as they were at the time the snapshot was created.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>However, any necessary packages must be reloaded as described in the next section.</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>Snapshots are only accessible to the user who creates them and cannot be shared across users.</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>The following functions are available for working with snapshots:</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>listSnapshots(), createSnapshot(), loadSnapshot(), downloadSnapshot(), and deleteSnapshot().</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>Snapshot guidance and warnings</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>Take note of the following tips and recommendations around using session snapshots:</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>One caveat is that while the workspace is saved inside the session snapshot, it does not save loaded packages.</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>If your code depends on certain R packages, use the require() function to include those packages directly in the R code that is part of the web service.</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>The require() function loads packages from within other functions.</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>For example, you can write the following code to load the RevoScaleR package:</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>While you can use snapshots when publishing a web service for environment dependencies, it can have an impact on performance at consumption time.</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>For optimal performance, consider the size of the snapshot carefully especially when publishing a service.</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>Before creating a snapshot, ensure that you keep only those workspace objects you need and purge the rest.</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>And, if you only need a single object, consider passing that object alone itself instead of using a snapshot.</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>R Server 9.0 users<ept id="p1">**</ept> When loading a library for the REMOTE session, set lib.loc=getwd() as such:</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>Example of snapshot usage</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>Publishing web services in a remote session</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>After you understand the mechanics of remote execution, consider incorporating web service capabilities.</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>You can publish an R web service composed of arbitrary R code block that runs on the remote R Server.</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>For more information on publishing services, begin with the <bpt id="p1">[</bpt>Working with web services in R<ept id="p1">](../operationalize/how-to-deploy-web-service-publish-manage-in-r.md#publishService)</ept>  guide.</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>To publish a web service after you create a remote session (argument <ph id="ph1">`session = TRUE`</ph> with remoteLogin() or remoteLoginAAD()), you have two approaches:</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>Publish from your local session:  At the <ph id="ph1">`REMOTE&gt;`</ph> prompt, use pause() to return the R command line in your local session.</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>Then, publish your service.</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>Use resume() from your local prompt to return to the command line in the remote R session.</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source>Authenticate again from within the remote session to enable connections from that remote session to the web node API.</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source>At the <ph id="ph1">`REMOTE&gt;`</ph> prompt, authenticate with remoteLogin() or remoteLoginAAD().</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source>However, explicitly set the argument <ph id="ph1">`session = FALSE`</ph> this time so that a second remote session is NOT created <bpt id="p1">**</bpt>and<ept id="p1">**</ept> provide your username and password directly in the function.</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source>When attempting to log in from a remote session, you are not prompted for user credentials.</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source>Instead, pass valid values for <ph id="ph1">`username`</ph> and <ph id="ph2">`password`</ph> to this function.</source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source>Then, you are authenticated and able to publish from the <ph id="ph1">`REMOTE&gt;`</ph> prompt.</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source>If you try to publish a web service from the remote R session without authenticating from that session, you get a message such as <ph id="ph1">`Error in curl::curl_fetch_memory(uri, handle = h) : URL using bad/illegal format or missing URL`</ph>.</source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source>Learn more about authenticating with remoteLogin() or remoteLoginAAD() in this article "<bpt id="p1">[</bpt>Logging in to R Server with mrsdeploy<ept id="p1">](../operationalize/how-to-connect-log-in-with-mrsdeploy.md)</ept>."</source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve">
+          <source>mrsdeploy function overview</source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve">
+          <source>Connecting to R Server from mrsdeploy</source>
+        </trans-unit><trans-unit id="239" translate="yes" xml:space="preserve">
+          <source>Get started guide for Data scientists</source>
+        </trans-unit><trans-unit id="240" translate="yes" xml:space="preserve">
+          <source>Working with web services in R</source>
+        </trans-unit></group></body></file></xliff>
