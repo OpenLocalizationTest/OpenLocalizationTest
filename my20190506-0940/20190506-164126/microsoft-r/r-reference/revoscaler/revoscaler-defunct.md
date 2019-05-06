@@ -1,0 +1,71 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="revoscaler-defunct.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-1931010" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">149aa3b7-0352-480d-93b4-88f339cc77506259528470749e2fd69b05cd63a64b92e1ea3050.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">6259528470749e2fd69b05cd63a64b92e1ea3050</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">149aa3b7-0352-480d-93b4-88f339cc7750</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">05/06/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\r-reference\revoscaler\revoscaler-defunct.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>RevoScaleR-defunct function (RevoScaleR)</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>The functions or variables listed here are no longer part of RevoScaleR as they are no longer needed.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>(RevoScaleR), RevoScaleR-defunct, rxGetVarInfoXdf, rxGetInfoXdf</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>RevoScaleR-defunct: Defunct functions in RevoScaleR</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>The functions or variables listed here are no longer part of RevoScaleR as they are no longer needed.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Usage</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Arguments</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>either an RxXdfData object or a character string specifying the .xdf file.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>If a local compute context is being used, this argument may also be a list of data sources,  in which case the output will be returned in a named list.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>See the details section for more information.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>logical value.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`TRUE`</ph>, value labels (including factor  levels) are included in the output if present.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>logical value.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`TRUE`</ph>, variable information is returned.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>logical value.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`TRUE`</ph>, block sizes are returned in the output for an .xdf file, and when printed the first 10 block sizes are shown.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>character vector of variable names for which information is returned.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`NULL`</ph>, argument is ignored.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Cannot be used with <ph id="ph1">`varsToDrop`</ph>.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>character vector of variable names for which information is not returned.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`NULL`</ph>, argument is ignored.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Cannot be used with <ph id="ph1">`varsToKeep`</ph>.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>starting row for retrieval of data if a data frame or .xdf file.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>number of rows of data to retrieve if a data frame or .xdf file.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>logical value.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`TRUE`</ph>,  variable information  (e.g., high/low values) for non-xdf data sources will be computed  by reading through the data set.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>integer value.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`0`</ph>, no additional output is printed.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`1`</ph>, additional summary information is printed for an .xdf file.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Details</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxGetVarInfo<ept id="p1">](rxGetVarInfoXdf.md)</ept> should be used instead of <ph id="ph1">`rxgetvarinfo`</ph>.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxGetInfo<ept id="p1">](rxGetInfoXdf.md)</ept> should be used instead of <ph id="ph1">`rxGetInfoXdf`</ph>.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>See Also</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxGetVarInfo<ept id="p1">](rxgetvarinfo.md)</ept>, <bpt id="p2">[</bpt>rxGetInfo<ept id="p2">](rxGetInfoXdf.md)</ept>, <bpt id="p3">[</bpt>RevoScaleR-deprecated<ept id="p3">](RevoScaleR-deprecated.md)</ept>.</source>
+        </trans-unit></group></body></file></xliff>

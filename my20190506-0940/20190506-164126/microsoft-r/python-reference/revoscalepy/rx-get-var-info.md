@@ -1,0 +1,81 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="rx-get-var-info.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-1931010" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">149aa3b7-0352-480d-93b4-88f339cc7750846005fdcb5ea86f0d630675ca80d38b7674646e.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">846005fdcb5ea86f0d630675ca80d38b7674646e</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">149aa3b7-0352-480d-93b4-88f339cc7750</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">05/06/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\python-reference\revoscalepy\rx-get-var-info.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>rx_get_var_info: Get variable information for a data source (revoscalepy)</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Get variable information for a revoscalepy data source or data frame, including variable names, descriptions, and value labels</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>info</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>rx_get_var_info</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Usage</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Get variable information for a revoscalepy data source or data frame, including variable names, descriptions, and value labels</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Arguments</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>data</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>a data frame, a character string specifying an “.xdf”, or an RxDataSource object.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>If a local compute context is being used, this argument may also be a list of data sources, in which case the output will be returned in a named list.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>See the details section for more information.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>If a Spark compute context is being used, this argument may also be an RxHiveData, RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object from pyspark.sql.DataFrame.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>get_value_labels</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>bool value.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>If True and get_var_info is True or None, factor value labels are included in the output.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>vars_to_keep</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>list of strings of variable names for which information is returned.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>If None or get_var_info is False, argument is ignored.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Cannot be used with vars_to_drop.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>vars_to_drop</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>list of strings of variable names for which information is not returned.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>If None or get_var_info is False, argument is ignored.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Cannot be used with vars_to_keep.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>compute_info</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>bool value.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>If True, variable information (e.g., high/low values) for non-xdf data sources will be computed by reading through the data set.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>all_nodes</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>bool value.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Ignored if the active RxComputeContext compute context is local or RxForeachDoPar.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Otherwise, if True, a list containing the information for the data set on each node in the active compute context will be returned.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>If False, only information on the data set on the master node will be returned.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Note that the determination of the master node is not controlled by the end user.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Returns</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>list with named elements corresponding to the variables in the data set.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Each list element is also a list with following possible elements:</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><ph id="ph1">`rx_data_step`</ph><ept id="p1">](rx-data-step.md)</ept>, <bpt id="p2">[</bpt><ph id="ph2">`rx_get_info`</ph><ept id="p2">](rx-get-info.md)</ept>.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Example</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit></group></body></file></xliff>
