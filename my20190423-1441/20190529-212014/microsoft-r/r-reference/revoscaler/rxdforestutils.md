@@ -1,0 +1,73 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="rxdforestutils.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-8ab897d" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">85d1c4fe-cf61-4439-ac27-8f1db11b25b36787aecda92cde604b4aab716333067a3b8f4390.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">6787aecda92cde604b4aab716333067a3b8f4390</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">85d1c4fe-cf61-4439-ac27-8f1db11b25b3</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">05/29/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\r-reference\revoscaler\rxdforestutils.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>rxDForestUtils function (revoAnalytics) | Microsoft Docs</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>(revoAnalytics), rxDForestUtils, rxVarImpPlot, rxLeafSize, rxTreeDepth, rxTreeSize, rxVarUsed, rxGetTree, models, tree, classif, regression, classification</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>rxDForestUtils: Utility Functions for rxDForest</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Utility Functions for rxDForest.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Usage</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Arguments</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>an object of class <bpt id="p1">[</bpt>rxDForest<ept id="p1">](rxDForest.md)</ept> or <bpt id="p2">[</bpt>rxDTree<ept id="p2">](rxDTree.md)</ept>.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>logical value.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`TRUE`</ph>, the variables will be sorted in decreasing importance.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>an integer specifying the number of variables to show when <ph id="ph1">`sort=FALSE`</ph>.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>a character string specifying the main title for the plot.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>other arguments to be passed on to dotchart.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>logical value.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`TRUE`</ph>, the leaf size is measured by the total weight of its observations  instead of the total number of its observations.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>logical value.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`TRUE`</ph>, only the terminal nodes will be counted.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>logical value.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`TRUE`</ph>, the list of variables used will be broken down by trees.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>logical value.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`TRUE`</ph>, the frequencies that variables appear in trees will be returned.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>an integer specifying the index of the tree to be extracted.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Value</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>-  plots a dotchart of the variable importance as measured by the decision forest.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>-  returns the size of the terminal nodes in the decision forest.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>-  returns the depth of trees in the decision forest.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>-  returns the size of trees in terms of the number of nodes in the decision forest.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>-  finds out the variables actually used in the decision forest.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>-  extracts a single tree from the decision forest.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Author(s)</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Microsoft Corporation <bpt id="p1">[</bpt><ph id="ph1">`Microsoft Technical Support`</ph><ept id="p1">](https://go.microsoft.com/fwlink/?LinkID=698556&amp;clcid=0x409)</ept></source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>References</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><ph id="ph1">`randomForest`</ph><ept id="p1">](https://cran.r-project.org/web/packages/randomForest/index.html)</ept> .</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>See Also</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxDForest<ept id="p1">](rxDForest.md)</ept>, <bpt id="p2">[</bpt>rxDTree<ept id="p2">](rxDTree.md)</ept>, <bpt id="p3">[</bpt>rxBTrees<ept id="p3">](rxBTrees.md)</ept>.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Examples</source>
+        </trans-unit></group></body></file></xliff>

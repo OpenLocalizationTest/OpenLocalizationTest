@@ -1,0 +1,275 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="configure-evaluate-capacity.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-8ab897d" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">85d1c4fe-cf61-4439-ac27-8f1db11b25b3157c283b83f20a8cb256bb8495dea28e7465f8c2.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">157c283b83f20a8cb256bb8495dea28e7465f8c2</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">85d1c4fe-cf61-4439-ac27-8f1db11b25b3</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">05/29/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\operationalize\configure-evaluate-capacity.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Evaluate the load balancing of your configuration - Machine Learning Server</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Load Balancing Capacity and simulation tests for latency and thread counts</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Evaluate the load-balancing capacity of your configuration</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Applies to: Machine Learning Server, Microsoft R Server 9.x</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>The Evaluate Capacity tool allows you to test your own R and Python code deployed as a web service in your own setup.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>The tool outputs an accurate evaluation of the latency/thread count for the simulation parameters you define and a break-down graph.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>You can define the parameters for the traffic simulation for a given configuration or for a given web service.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>You can test for maximum latency or maximum thread count.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Maximum Latency:<ept id="p1">**</ept> Define the maximum number of milliseconds for a web node request, the initial thread count, and the thread increments for the test.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>The test increases the number of threads by the defined increment until the defined time limit is reached.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Maximum Thread Count:<ept id="p1">**</ept> Define the number of threads against which you want to run, such as 10, 15, or 40.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>The test increases the number of parallel requests by the specified increment until the maximum number of threads is reached.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Web nodes are stateless, and therefore, session persistence ("stickiness") is not required.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>For proper access token signing and verification across your configuration, ensure that the JWT certificate settings are exactly the same for every web node.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>These JWT settings are defined on each web node in the configuration file, appsetting.json.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Learn more...</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Configure Test Parameters</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Machine Learning Server 9.3</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>In Machine Learning Server 9.3, you can use <ph id="ph1">`admin`</ph> extension of the Azure Command Line Interface (<bpt id="p1">[</bpt>Azure CLI<ept id="p1">](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)</ept>) to evaluate your configuration's capacity.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>You must first <bpt id="p1">[</bpt>set up your nodes<ept id="p1">](configure-machine-learning-server-one-box.md)</ept> before doing anything else with the <ph id="ph1">`admin`</ph> extension of the CLI.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>You do not need an Azure subscription to use this CLI.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>It is installed as part of Machine Learning Server and runs locally.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>On the machine hosting the node, launch a command-line window or terminal  with administrator (Windows) or root/sudo (Linux) privileges.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Define and run the capacity evaluation.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>For help, run</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>CLI<ph id="ph1">&amp;nbsp;</ph>options<ph id="ph2">&amp;nbsp;</ph>for 'capacity<ph id="ph3">&amp;nbsp;</ph>run'</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Definition</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Default</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>--strategy</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Use <ph id="ph1">`latency`</ph> to increase the number of threads by the defined increment until the defined time limit is reached.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Use <ph id="ph1">`thread`</ph> to increase the number of parallel requests by the specified increment until the maximum number of threads is reached.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>n/a</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>--latency</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Used for the strategy <ph id="ph1">`latency`</ph>, the maximum latency in milliseconds after which the test stops.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>250</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>--max-thread</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Used for the strategy <ph id="ph1">`thread`</ph>, the maximum thread count after which the test stops running.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>50</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>--min-thread</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>The minimum thread count at which the test starts.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>10</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>--increment</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>The increment by which the number of threads increases for each iteration until the maximum latency is reached.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>10</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>--service</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>The name of the web service to test.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>n/a</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>--version</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>The version of the web service to test.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>n/a</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>--args</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Enter the required input parameters for the service in a JSON format.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>For example, for a vector/matrix, follow the JSON format such as '[1,2,3]' for vector, '[[…]]' for matrix.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>A data.frame is a map where each key is a column name, and each value is represented by a vector of the column values.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>n/a</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Review the results onscreen.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Paste the URL printed onto the screen into your browser for a visual representation of the results (see below).</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Earlier versions: 9.0 - 9.2</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Evaluate capacity for Machine Learning Server 9.2 and R Server 9.x.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>On the web node, <bpt id="p1">[</bpt>launch the administration utility<ept id="p1">](configure-admin-cli-launch.md)</ept> with administrator privileges (Windows) or root/sudo privileges (Linux).</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>From the main menu, choose the option to <bpt id="p1">**</bpt>Evaluate Capacity<ept id="p1">**</ept> and review the current test parameters.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Test Parameters</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>To choose a different web service:</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>From the submenu, choose the option for <bpt id="p1">**</bpt>Change the service for simulation<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Specify the new service:</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>To use an existing service, enter 'Yes' and provide the service's name and version as '<ph id="ph1">\&lt;</ph>name&gt;/<ph id="ph2">\&lt;</ph>version&gt;'.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>For example, <ph id="ph1">`my-service/1.1`</ph>.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>To use the generated [default service], enter 'No'.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>When prompted, enter the required input parameters for the service in a JSON format.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>For example, for a vector/matrix, follow the JSON format such as '[1,2,3]' for vector, '[[…]]' for matrix.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>A data.frame is a map where each key is a column name, and each value is represented by a vector of the column values.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>To test for the maximum latency:</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>From the submenu, choose the option for <bpt id="p1">**</bpt>Change thread/latency limits<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>When prompted, enter 'Time' to define the number of threads against which you want to test.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>Specify the maximum latency in milliseconds after which the test stops.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Specify the minimum thread count at which the test starts.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>Specify the increment by which the number of threads increases for each iteration until the maximum latency is reached.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>To test for the maximum number of parallel requests that can be supported:</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>From the submenu, choose the option for <bpt id="p1">**</bpt>Change thread/latency limits<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>When prompted, enter 'Threads' to define the maximal threshold for the duration of a web node request.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>Specify the maximum thread count after which the test stops running.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>Specify the minimum thread count at which the test starts.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>Specify the increment by which the number of threads increases for each iteration.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>From the main menu, choose the option to <bpt id="p1">**</bpt>Evaluate Capacity<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>The current test parameters appear.</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>From the sub menu, choose the option to <bpt id="p1">**</bpt>Run capacity simulation<ept id="p1">**</ept> to start the simulation.</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>Review the results onscreen.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>Paste the URL printed onto the screen into your browser for a visual representation of the results (see below).</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>Understanding the Results</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>It is important to understand the results of these simulations to determine whether any configuration changes are warranted, such as adding more web or compute nodes, increasing the pool size, and so on.</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>Console Results</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>After the tool is run, the results are printed to the console.</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>Onscreen results</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>Chart Report</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>The test results are divided into request processing stages to enable you to see if any configuration changes are warranted, such as adding more web or compute nodes, increase the pool size, and so on.</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>Stage</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>Time Measured</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>Web Node Request</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>Time for the request from the web node's controller to go all the way to <bpt id="p1">[</bpt>deployr-rserve<ept id="p1">](https://github.com/Microsoft/deployr-rserve)</ept>/JupyterKernel and back.</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>Create Shell</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>Time to create a session or take it from the pool</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>Initialize Shell</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>Time to load the data (model or snapshot) into the session prior to execution</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>Web Node to Compute Node</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>Time for a request from the web node to reach the compute node</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>Compute Node Request</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>Time for a request from the compute node to reach deployr-rserve/JupyterKernel and return to the node</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>You can also explore the results visually in a break-down graph using the URL that is returned to the console.</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>URL results</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>Session Pools</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>When using Machine Learning Server for operationalization, code is executed in a session or as a service on a compute node.</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>In order to optimize load-balancing performance, Machine Learning Server is capable of establishing and maintaining a pool of R and Python sessions for code execution.</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>There is a cost to creating a session both in time and memory.</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>So having a pool of existing sessions awaiting code execution requests means no time is lost on session creation at runtime thereby shortening the processing time.</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>Instead, the time needed to create sessions for the pool occurs whenever the compute node is restarted.</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>For this reason, the larger the defined initial pool size (InitialSize), the longer it takes to start up the compute node.</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>New sessions are added to the pool as needed to execute in parallel.</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>However, after a request is handled and the session is idle, the session is closed if the number of shells exceeds the maximum pool size (MaxSize).</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>However, during simulation test, the test continues until the test threshold is met (maximum threads or latency).</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>If the number of shells needed to run the test exceeds the number of sessions in the pool, a new session is created on-demand when the request is made and the time it takes to execute the code is longer since time is spent creating the session itself.</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>The size of this pool can be adjusted in the external configuration file, appsettings.json, found on each compute node.</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>Since each compute node has its own thread pool for sessions, configuring multiple compute nodes means that more pooled sessions are available to your users.</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>If Machine Learning Server is configured for Python only, then only a pool of Python sessions is created.</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>If the server is configured only for R, then only a pool of R sessions is created.</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>And if it configured for both R and Python, then two separate pools are created, each with the same initial size and maximum size.</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>To update the thread pool:</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>On each compute nodes, open the configuration file, <ph id="ph1">\&lt;</ph>compute-node-install-path&gt;/appsettings.json.</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source>(Find the <bpt id="p1">[</bpt>install path<ept id="p1">](../operationalize/configure-find-admin-configuration-file.md)</ept> for your version.)</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source>Search for the section starting with</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source>Set the InitialSize.</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source>This value is the number of R and/or Python sessions that are pre-created for your users each time the compute node is restarted.</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source>Set the MaxSize.</source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source>This is the maximum number of R and/or Python sessions that can be pre-created and held in memory for processing code execution requests.</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source>Save the file.</source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Restart<ept id="p1">](configure-admin-cli-stop-start.md)</ept> the compute node services.</source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve">
+          <source>Repeat these changes on every compute node.</source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve">
+          <source>Each compute node should have the same appsettings.json properties.</source>
+        </trans-unit></group></body></file></xliff>
