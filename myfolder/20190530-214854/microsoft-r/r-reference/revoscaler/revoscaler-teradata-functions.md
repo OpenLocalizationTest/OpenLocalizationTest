@@ -1,0 +1,253 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="revoscaler-teradata-functions.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-8ab897d" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">eba123f9-b3cc-43c5-aa3c-78bd865c7f3e74c738165166c4ed47e6dde9111adbb42380b432.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">74c738165166c4ed47e6dde9111adbb42380b432</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">eba123f9-b3cc-43c5-aa3c-78bd865c7f3e</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">05/30/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\r-reference\revoscaler\revoscaler-teradata-functions.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Teradata RevoScaleR Functions (Machine Learning Server and Microsoft R)</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>RevoScaleR Functions for a Teradata compute context</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>RevoScaleR Functions for Teradata</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Microsoft R Server 9.1 was the last release to include the RxInTeradata and RxInTeradata-class functions for creating a remote compute context on a Teradata appliance.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This release is fully supported as described in the <bpt id="p1">[</bpt>service support policy<ept id="p1">](../../resources-servicing-support.md)</ept>, but the Teradata compute context is not available in Machine Learning Server 9.2.1 and later.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Data import using the RxTeradata data source object remains unchanged.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>If you have existing data in a Teradata appliance, you can create an <bpt id="p1">[</bpt>RxTeradata object<ept id="p1">](rxteradata.md)</ept> to import your data into Machine Learning Server.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>For backwards compatibility purposes, this page presents a curated list of functions specific to the Teradata DB compute contexts, as well as those that may not be fully supported.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>These functions can be called directly from the command line.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>For guidance on using these functions, see the <bpt id="p1">[</bpt><bpt id="p2">*</bpt>RevoScaleR Teradata DB Getting Started Guide<ept id="p2">*</ept><ept id="p1">](../../r/how-to-revoscaler-teradata.md)</ept>.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Data Analysis Functions</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Import and Export Functions</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Function Name</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Help</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Transform and subset data.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output data) from an .xdf file or a data frame.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Creates an efficient XDF data source object.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Creates a comma delimited text data source object.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Retrieves summary information from a data source or data frame.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Retrieves variable information from a data source or data frame.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Retrieves variable names from a data source or data frame.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Manipulation, Cleansing, and Transformation Functions</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Function Name</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Help</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Transform and subset data.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Creates an .xdf file, a comma-delimited text file, or data frame in memory (assuming you have sufficient memory to hold the output) from an .xdf file or a data frame.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Create or recode factor variables in a composite XDF file in HDFS.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>A new file must be written out.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Analysis Functions for Descriptive Statistics and Cross-Tabulations</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Function Name</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Help</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Computes approximate quantiles for .xdf files and data frames without sorting.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Basic summary statistics of data, including computations by group.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Writing by group computations to .xdf file not supported.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Formula-based cross-tabulation of data.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Alternative formula-based cross-tabulation designed for efficient representation returning ‘cube’ results.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Writing output to .xdf file not supported.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Analysis, Learning, and Prediction Functions for Statistical Modeling</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Function Name</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Help</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Fits a linear model to data.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Fits a logistic regression model to data.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Fits a generalized linear model to data.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Calculate the covariance, correlation, or sum of squares / cross-product matrix for a set of variables.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Fits a classification or regression tree to data.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Fits a classification or regression decision forest to data using a stochastic gradient boosting algorithm.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Fits a classification or regression decision forest to data.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>Calculates predictions for fitted models.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>Output must be an XDF data source.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Performs k-means clustering.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Compute Context Functions</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>Function Name</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>Help</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>Creates a Teradata data source object.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>Creates an in-database compute context for Teradata.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>Sets a compute context.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>Gets the current compute context.</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>Returns the list of installed packages for a compute context.</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>Returns the path to one or more packages for a compute context.</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>Data Source Functions</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>Of course, not all data source types are available on all compute contexts.</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>Function Name</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>Help</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>Check for the existence of a database table or object.</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>Drop a table.</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>Creates an efficient XDF data source object.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>Creates a comma delimited text data source object.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>High Performance Computing and Distributed Computing Functions</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>The Teradata compute context has a number of helpful functions used for high performance computing and distributed computing.</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>Learn more about the entire set of functions in the <bpt id="p1">[</bpt>Distributed Computing guide<ept id="p1">](../../r/how-to-revoscaler-distributed-computing.md)</ept>.</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>Function Name</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>Help</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>Run an arbitrary R function on nodes or cores of a cluster.</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>Get the status of a non-waiting distributed computing job.</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a href="rxgetjobresults.md" data-raw-source="[**View**](rxgetjobresults.md)"&gt;</bpt><bpt id="p2">&lt;strong&gt;</bpt>View<ept id="p2">&lt;/strong&gt;</ept><ept id="p1">&lt;/a&gt;</ept>)</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>Get the return object(s) of a non-waiting distributed computing job.</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>Get the console output from a non-waiting distributed computing job.</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>Get the available distributed computing job information objects.</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>Get all the available nodes on a distributed compute context.</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>Get information on nodes specified for a distributed compute context.</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>Test round trip from user through computation node(s) in a cluster or cloud.</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>View</source>
+        </trans-unit></group></body></file></xliff>

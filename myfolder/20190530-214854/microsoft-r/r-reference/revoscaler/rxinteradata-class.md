@@ -1,0 +1,119 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="rxinteradata-class.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-8ab897d" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">eba123f9-b3cc-43c5-aa3c-78bd865c7f3ed8b6f0a7578359c9f6c900b5f275e6892b51e2ea.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">d8b6f0a7578359c9f6c900b5f275e6892b51e2ea</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">eba123f9-b3cc-43c5-aa3c-78bd865c7f3e</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">05/30/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\r-reference\revoscaler\rxinteradata-class.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Class RxInTeradata</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Creates a compute context for running Microsoft R Server analyses inside a Teradata database cluster.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>, RxInTeradata-class, doPreJobValidation,RxInTeradata-method, initialize,RxInTeradata-method, show,RxInTeradata-method, classes</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>RxInTeradata-class: Class RxInTeradata</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>DEPRECATED: Creates a compute context for running Microsoft R Server analyses inside a Teradata database cluster.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Objects from the Class</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Objects can be created by calls of the form .</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Slots</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`remoteShareDir`</ph>:</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"character"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`connectionString`</ph>:</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"character"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`shareDir`</ph>:</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"character"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`revoPath`</ph>:</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"characterORNULL"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`wait`</ph>:</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"logical"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`consoleOutput`</ph>:</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"logical"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`autoCleanup`</ph>:</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"logical"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`configFile`</ph>:</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"characterORNULL"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`workingDir`</ph>:</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"characterORNULL"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`dataPath`</ph>:</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"characterORNULL"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`minElems`</ph>:</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"numeric"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`maxElems`</ph>:</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"numeric"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`exclusive`</ph>:</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"logical"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`nodes`</ph>:</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"characterORNULL"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`dataDistType`</ph>:</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"character"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`packagesToLoad`</ph>:</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"characterORNULL"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`email`</ph>:</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"characterORNULL"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`resultsTimeout`</ph>:</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"numeric"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`description`</ph>:</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"character"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`version`</ph>:</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Object of class <ph id="ph1">`"character"`</ph><ph id="ph2"> ~~</ph></source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Extends</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Class RxDistributedHpa, directly.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Class RxComputeContext, by class "RxDistributedHpa", distance 2.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Methods</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>: ...</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>: ...</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>: ...</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>See Also</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxInTeradata<ept id="p1">](RxInTeradata.md)</ept>, <bpt id="p2">[</bpt>RxTeradata<ept id="p2">](RxTeradata.md)</ept></source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Examples</source>
+        </trans-unit></group></body></file></xliff>

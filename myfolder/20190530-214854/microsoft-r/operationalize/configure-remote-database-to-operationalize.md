@@ -1,0 +1,85 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="configure-remote-database-to-operationalize.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-8ab897d" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">eba123f9-b3cc-43c5-aa3c-78bd865c7f3e1a803335ef000b9b07989b500ebe90cbaf070862.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1a803335ef000b9b07989b500ebe90cbaf070862</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">eba123f9-b3cc-43c5-aa3c-78bd865c7f3e</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">05/30/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\operationalize\configure-remote-database-to-operationalize.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Configure a database for operationalization - Machine Learning Server</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Configure a SQL Server or PostgreSQL Database database for Machine Learning Server</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Configuring an SQL Server or PostgreSQL database for Machine Learning Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Applies to: Machine Learning Server, Microsoft R Server 9.x</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>The operationalization feature for Machine Learning Server (and R Server) installs and uses a local SQLite database by default to store internal information.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Later, you can update the configuration to use another database locally or remotely.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>This is useful when you want to use a remote database or when you have multiple web nodes.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>The database provides internal storage for the sessions, web services, snapshots, and other entities created as a result of operationalization.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>When a request comes in to a web node (for example, to consume a service), the web node connects to the databases, retrieves parameters for the service, and then sends the information to a compute node for execution.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Consider the size of the machine hosting this database carefully to ensure that database performance does not degrade overall performance and throughput.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>This feature uses a SQLite 3.7+ database by default, but can be configured to use:</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>SQL Server (Windows) Professional, Standard, or Express Version 2008 or greater</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>SQL Server (Linux)</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Azure SQL DB</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Azure Database for PostgreSQL</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>PostgreSQL 9.2 or greater (Linux)</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Any data that was saved in the default local SQLite database will not be migrated to a different DB,  if you configure one.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>To use a different local or remote database, do the following:</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>These steps assume that you have already set up SQL Server or PostgreSQL as described for that product.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Create this database and register it in the configuration file below BEFORE the service for the control node is started.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>On each web node, <bpt id="p1">[</bpt>stop the service<ept id="p1">](configure-admin-cli-stop-start.md)</ept>.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Update the database properties to point to the new database as follows:</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Open the configuration file, <bpt id="p1">[</bpt><ph id="ph1">\&lt;</ph>web-node-install-path&gt;<ept id="p1">](../operationalize/configure-find-admin-configuration-file.md)</ept>/appsettings.json.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Locate the <ph id="ph1">`ConnectionStrings`</ph> property block.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Within that property block, locate the type of database you want to set up.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>For SQL Server or Azure SQL DB, look for <ph id="ph1">`"sqlserver": {`</ph>.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>For PostgreSQL or Azure Database for PostgreSQL, look for <ph id="ph1">`"postgresql": {`</ph>.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>In the appropriate database section, enable that database type by adding the property <ph id="ph1">`"Enabled": true,`</ph>.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>You can only have one database enabled at a time.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>For example:</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Add the connection string.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>For SQL Server Database (<bpt id="p1">**</bpt>Integrated Security<ept id="p1">**</ept>), use your string properties that are similar to:</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>For SQL Server Database (<bpt id="p1">**</bpt>SQL authentication<ept id="p1">**</ept>), use your string properties similar to:</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>For PostgreSQL Database, use your string properties:</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a name="encrypt"&gt;</bpt><ept id="p1">&lt;/a&gt;</ept>For better security, we recommend you encrypt the connection string for this database before adding the information to appsettings.json.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Encrypt the connection string<ept id="p1">](configure-admin-cli-encrypt-credentials.md)</ept>.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Copy the encrypted string returned by the administration utility into <ph id="ph1">`"ConnectionStrings": {`</ph> property block and set <ph id="ph2">`"Encrypted":`</ph> to <ph id="ph3">`true`</ph>.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>For example:</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Save the changes you've made to appsettings.json.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Open the database port on the remote machine to the public IP of each web node as described in these articles: <bpt id="p1">[</bpt>SQL Server<ept id="p1">](https://technet.microsoft.com/en-us/library/ms175043(v=sql.130).aspx)</ept><ph id="ph1"> | </ph><bpt id="p2">[</bpt>PostgreSQL<ept id="p2">](https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html)</ept></source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Start the web node<ept id="p1">](configure-admin-cli-stop-start.md)</ept> and the database is created upon restart.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Run the diagnostic tests<ept id="p1">](configure-run-diagnostics.md)</ept> to ensure the connection can be made to your new database.</source>
+        </trans-unit></group></body></file></xliff>
