@@ -1,0 +1,4 @@
+spy.md,Succeeded,Successful
+mytest01.txt,Skipped,Skipped - No tranformation required
+mytext.txt,Skipped,Skipped - No tranformation required
+README.md,Succeeded,Successful
