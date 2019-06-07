@@ -1,0 +1,375 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="how-to-connect-log-in-with-mrsdeploy.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-4e81c41" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">482448f7-1a28-4b2f-b7c2-911be7144b02907d42c850fbc20bdf117798b888d84dccbd3aee.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">907d42c850fbc20bdf117798b888d84dccbd3aee</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">482448f7-1a28-4b2f-b7c2-911be7144b02</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">06/07/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\operationalize\how-to-connect-log-in-with-mrsdeploy.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Connect remotely using mrsdeploy - Machine Learning Server</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Logging into Machine Learning Server and connecting with mrsdeploy</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Machine Learning Server, remote login to r server, connect to r server, mrsdeploy connection, log into r server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Log in to Machine Learning Server or R Server with mrsdeploy and open a remote session</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Applies to:  Machine Learning Server, Microsoft R Server 9.x</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>The mrsdeploy package, delivered with Microsoft R Client and Machine Learning Server (formerly known as R Server), provides functions for:</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Establishing a remote session in an R console application for the purposes of executing code on that server</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Publishing and managing an R web service that is backed by the R code block or script you provided.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Each feature can be used independently, but the greatest value is achieved when you use both.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>This article explains the authentication functions, the arguments they accept, and how to switch between remote and local sessions.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Authentication</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>This section describes how to authenticate to Machine Learning Server on-premises or in the cloud using the functions in <ph id="ph1">`mrsdeploy`</ph>.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>In Machine Learning Server, every API call between the Web server and client must be authenticated.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>The mrsdeploy functions, which place API calls on your behalf, are no different.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Authentication of user identity is handled via Active Directory.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Machine Learning Server never stores or manages usernames and passwords.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>By default, all <ph id="ph1">`mrsdeploy`</ph> operations are available to authenticated users.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Destructive tasks, such as deleting a web service from a remote execution command line, are available only to the user who initially created the service.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>However, your administrator can also <bpt id="p1">[</bpt>assign role-based authorization<ept id="p1">](configure-roles.md)</ept> to further control the permissions around web services.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>provides two functions for authentication against Machine Learning Server: <bpt id="p1">[</bpt>remoteLogin()<ept id="p1">](../r-reference/mrsdeploy/remotelogin.md)</ept> and <bpt id="p2">[</bpt>remoteLoginAAD()<ept id="p2">](../r-reference/mrsdeploy/remoteloginaad.md)</ept>.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>These functions support not just authentication, but creation of a remote R session on the Machine Learning Server.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>By default, the remoteLogin() and remoteLoginAAD() functions log you in, create a remote R session on the Machine Learning Server instance, and open a remote command prompt.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>The function you use depends on the <bpt id="p1">[</bpt>type of authentication and deployment in your organization<ept id="p1">](configure-authentication.md)</ept>.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>On premises authentication</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Use the remoteLogin function in these scenarios:</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>you are authenticating using Active Directory server on your network</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>you are using the <bpt id="p1">[</bpt>default administrator account<ept id="p1">](configure-authentication.md#local)</ept> for an on-premises instance of Machine Learning Server</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>This function calls <ph id="ph1">`/user/login`</ph> API, which requires a username and password.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>For example:</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>For example, here is an AD authentication that creates a remote R session, but prompts for a username and password.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>That username can be the Active DIrectory/LDAP username and password, or the local admin account and its password.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>In another example, we authenticate using the local 'admin' account and password and create a remote R session.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Then, upon login, we are placed at the remote session's command prompt.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>A report of the differences between local and remote environments is returned.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Unless you specify otherwise using the arguments below, this function not only logs you in, but also creates a remote R session the server instance and put you on the remote command line.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>If you don't want to be in a remote session, either set session = FALSE or <bpt id="p1">[</bpt>switch back to the local session<ept id="p1">](#switch)</ept> after login and logout.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Argument</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>endpoint</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>The Machine Learning Server HTTP/HTTPS endpoint, including the port number.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>You can find this on the first screen when you <bpt id="p1">[</bpt>launch the administration utility<ept id="p1">](configure-admin-cli-launch.md)</ept>.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>session</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>If TRUE, create a remote session.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>If omitted, creates a remote session.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>diff</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>If TRUE, creates a 'diff' report showing differences between the local and remote sessions.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Parameter is only valid if session parameter is TRUE.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>commandline</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>If TRUE, creates a "REMOTE' command line in the R console.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Parameter is only valid if session parameter is TRUE.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>If omitted, it is the same as <ph id="ph1">`= TRUE`</ph>.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>prompt</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>The command prompt to be used for the remote session.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>By default, <ph id="ph1">`REMOTE&gt;`</ph> is used.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>username</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>If NULL, user is prompted to enter your AD or <bpt id="p1">[</bpt>local Machine Learning Server<ept id="p1">](configure-authentication.md#local)</ept> username.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>password</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>If NULL, user is prompted to enter password.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>If you do not specify a username and password as arguments to the login function, you are prompted for your AD or <bpt id="p1">[</bpt>local Machine Learning Server<ept id="p1">](configure-authentication.md#local)</ept> username and password when you run this command.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>Cloud authentication</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>To authenticate with Azure Active Directory, use the <ph id="ph1">`remoteLoginAAD`</ph> function.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>This function takes several arguments as follows:</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Unless you specify otherwise, this function:</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>Logs the user in</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Creates a remote R session on the server instance</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Puts the user on the remote command line in that remote session</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>If you do not want to be in a remote session, either set session = FALSE or <bpt id="p1">[</bpt>switch back to the local session<ept id="p1">](#switch)</ept> after login and logout.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>For example, here is another AAD authentication that <bpt id="p1">**</bpt>does not create a remote R session<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>It also prompts for a username and password at runtime.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>If you do not specify the username and password as arguments to the login function, you are prompted for your AAD username and password at runtime.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>Whenever you omit the username or password, you are prompted for your credentials at runtime.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>If you have issues with the AAD login pop-up, you may need to include the username and password as command arguments directly.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>remoteLoginAAD argument</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>endpoint</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>The Machine Learning Server HTTP/HTTPS endpoint, including the port number.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>This endpoint is the SIGN-ON URL value from the web application</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>authuri</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>The URI of the authentication service for Azure Active Directory.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>tenantid</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>The tenant ID of the Azure Active Directory account being used to authenticate is the domain of AAD account.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>clientid</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>The numeric CLIENT ID of the AAD "native" application for the Azure Active Directory account.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>resource</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>The numeric CLIENT ID from the AAD "Web" application for the Azure Active Directory account, also known by the <ph id="ph1">`Audience`</ph> in the configuration file.</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>session</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>If TRUE, create a remote session.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>If omitted, creates a remote session.</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>diff</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>If TRUE, creates a 'diff' report showing differences between the local and remote sessions.</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>Parameter is only valid if session parameter is TRUE.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>commandline</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>If TRUE, creates a "REMOTE' command line in the R console.</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>Parameter is only valid if session parameter is TRUE.</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>prompt</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>The command prompt to be used for the remote session.</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>By default, <ph id="ph1">`REMOTE&gt;`</ph> is used.</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>If omitted, it is the same as <ph id="ph1">`= TRUE`</ph>.</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>username</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>If NULL, user is prompted to enter username <ph id="ph1">`&lt;username&gt;@&lt;AAD-account-domain&gt;`</ph>.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>If you have issues with the AAD login pop-up, try including the username and password as command arguments directly.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>password</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>If NULL, user is prompted to enter password.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>If you do not know your <ph id="ph1">`tenantid`</ph>, <ph id="ph2">`clientid`</ph>, or other details, contact your administrator.</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>Or, if you have access to the Azure portal for the relevant Azure subscription, you can find <bpt id="p1">[</bpt>these authentication details<ept id="p1">](configure-authentication.md#azure-active-directory)</ept>.</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>Arguments for remote execution</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>If you plan to use <ph id="ph1">`mrsdeploy`</ph> to start a remote session on the server and execute code remotely, there are two key parts to the command:</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>Create that remote session</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>Indicate whether you'd like to open a local or remote command prompt upon login.</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>Take special note of the arguments <ph id="ph1">`session`</ph> and <ph id="ph2">`commandline`</ph> as these influence the state of your command line.</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>Argument</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>If TRUE, create a remote session in the server.</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>If omitted, it still creates a remote session.</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>If FALSE, does not create any remote R sessions.</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>If TRUE, creates a REMOTE command line in the R console so you can interact with the remote R session.</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>After the authenticated connection is made, the user is executing R commands remotely until they switch back to the local command line or logout.</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>Parameter is only valid if session parameter is TRUE.</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>For more information on remote execution, see <bpt id="p1">[</bpt>this article<ept id="p1">](../r/how-to-execute-code-remotely.md)</ept>.</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>In the case where you are working with a <bpt id="p1">[</bpt>remote R session<ept id="p1">](../r/how-to-execute-code-remotely.md#publish-remote-session)</ept>, there are several approaches to session management when publishing.</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>Access tokens</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>After you authenticate with Active Directory or Azure Active Directory, an <bpt id="p1">[</bpt>access token<ept id="p1">](how-to-manage-access-tokens.md)</ept> is returned.</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>This access token is then passed in the request header of every subsequent <ph id="ph1">`mrsdeploy`</ph> request.</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>Keep in mind that each API call and every <ph id="ph1">`mrsdeploy`</ph> function requires authentication with Machine Learning Server.</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>If the user does not provide a valid login, an <ph id="ph1">`Unauthorized`</ph> HTTP <ph id="ph2">`401`</ph> status code is returned.</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>Remote connection states</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>Depending on how you configure the <ph id="ph1">`session`</ph> and <ph id="ph2">`commandline`</ph> login parameters are subtle, your execution context can switch between local and remote contexts.</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source>Create remote R session and go to remote command line (1)</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source>In this state, we authenticate using one of the two aforementioned login functions with the default argument <ph id="ph1">`session = TRUE`</ph> to create a remote R session, and the default argument <ph id="ph2">`commandline = TRUE`</ph> to transition to the remote R command line.</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source>Unless you specify <ph id="ph1">`session = FALSE`</ph>, this function not only logs you in, but also creates a remote R session on the Machine Learning Server instance.</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source>And, unless you specify <ph id="ph1">`commandline = FALSE`</ph>, you are on the remote command line upon login.</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source>If you don't want to be in a remote session, either set session = FALSE or <bpt id="p1">[</bpt>switch back to the local session<ept id="p1">](#switch)</ept> after login and logout.</source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source>Command</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source>State</source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source>state 1</source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve">
+          <source>When you see the default prompt <ph id="ph1">`REMOTE&gt;`</ph> in the command pane, you know that you are now interacting with your remote R session and are no longer in your local R environment:</source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve">
+          <source>In this example, we define an interactive authentication workflow that spans both our local and remote environments.</source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve">
+          <source>You can only manage web services from your local session.</source>
+        </trans-unit><trans-unit id="239" translate="yes" xml:space="preserve">
+          <source>Attempting to use the service APIs during a remote interaction results in an error.</source>
+        </trans-unit><trans-unit id="240" translate="yes" xml:space="preserve">
+          <source>Create remote R session and remain with local command line (2)</source>
+        </trans-unit><trans-unit id="241" translate="yes" xml:space="preserve">
+          <source>In this state, you can authenticate using <ph id="ph1">`remoteLogin`</ph>, which is one of the two aforementioned login functions with the argument <ph id="ph2">`session = TRUE`</ph> to create a remote R session, and the argument <ph id="ph3">`commandline = FALSE`</ph> to remain in your local R environment and command line.</source>
+        </trans-unit><trans-unit id="242" translate="yes" xml:space="preserve">
+          <source>Command</source>
+        </trans-unit><trans-unit id="243" translate="yes" xml:space="preserve">
+          <source>State</source>
+        </trans-unit><trans-unit id="244" translate="yes" xml:space="preserve">
+          <source>state 2</source>
+        </trans-unit><trans-unit id="245" translate="yes" xml:space="preserve">
+          <source>In this example, we define an interactive authentication workflow that spans both our local and remote environments (just like state 1), but starts out in the local R session, and only then moves to the remote R session.</source>
+        </trans-unit><trans-unit id="246" translate="yes" xml:space="preserve">
+          <source>Remain local without creating a remote R session (3)</source>
+        </trans-unit><trans-unit id="247" translate="yes" xml:space="preserve">
+          <source>In this state, you can authenticate with <bpt id="p1">[</bpt>remoteLogin()<ept id="p1">](../r-reference/mrsdeploy/remotelogin.md)</ept> and its argument <ph id="ph1">`session = FALSE`</ph> so that no remote R session is started.</source>
+        </trans-unit><trans-unit id="248" translate="yes" xml:space="preserve">
+          <source>Without a remote R session, you only have the local R environment and command line.</source>
+        </trans-unit><trans-unit id="249" translate="yes" xml:space="preserve">
+          <source>Command</source>
+        </trans-unit><trans-unit id="250" translate="yes" xml:space="preserve">
+          <source>State</source>
+        </trans-unit><trans-unit id="251" translate="yes" xml:space="preserve">
+          <source>state 3</source>
+        </trans-unit><trans-unit id="252" translate="yes" xml:space="preserve">
+          <source>In this example, we define an interactive authentication workflow without a remote R session (<ph id="ph1">`session = FALSE`</ph>).</source>
+        </trans-unit><trans-unit id="253" translate="yes" xml:space="preserve">
+          <source>This is useful when working only with the web service functionality of the mrsdeploy package.</source>
+        </trans-unit><trans-unit id="254" translate="yes" xml:space="preserve">
+          <source>After authentication, we remain confined within the local R session in order to publish and consume a service.</source>
+        </trans-unit><trans-unit id="255" translate="yes" xml:space="preserve">
+          <source>You can only manage web services from your local session.</source>
+        </trans-unit><trans-unit id="256" translate="yes" xml:space="preserve">
+          <source>Attempting to use the service APIs during a remote interaction results in an error.</source>
+        </trans-unit><trans-unit id="257" translate="yes" xml:space="preserve">
+          <source>Switch between remote and local sessions</source>
+        </trans-unit><trans-unit id="258" translate="yes" xml:space="preserve">
+          <source>After you <bpt id="p1">[</bpt>log in to the remote Machine Learning Server<ept id="p1">](how-to-connect-log-in-with-mrsdeploy.md)</ept>  with the argument <ph id="ph1">`session = TRUE`</ph>, a remote R session is created.</source>
+        </trans-unit><trans-unit id="259" translate="yes" xml:space="preserve">
+          <source>You can switch between the remote R session and the local R session directly from the command line.</source>
+        </trans-unit><trans-unit id="260" translate="yes" xml:space="preserve">
+          <source>The remote command line allows you to directly interact with a Machine Learning Server 9.x instance on another machine.</source>
+        </trans-unit><trans-unit id="261" translate="yes" xml:space="preserve">
+          <source>When the <ph id="ph1">`REMOTE&gt;`</ph> command line is displayed in the R console, any R commands entered are executed on the remote R session.</source>
+        </trans-unit><trans-unit id="262" translate="yes" xml:space="preserve">
+          <source>Switch</source>
+        </trans-unit><trans-unit id="263" translate="yes" xml:space="preserve">
+          <source>Switching between the local command line and the remote command line is done using these functions: pause() and resume().</source>
+        </trans-unit><trans-unit id="264" translate="yes" xml:space="preserve">
+          <source>To switch back to the local R session, type 'pause()'.</source>
+        </trans-unit><trans-unit id="265" translate="yes" xml:space="preserve">
+          <source>If you have switched to the local R session, you can go back to the remote R session by typing 'resume()'.</source>
+        </trans-unit><trans-unit id="266" translate="yes" xml:space="preserve">
+          <source>To terminate the remote R session, type 'exit' at the REMOTE&gt; prompt.</source>
+        </trans-unit><trans-unit id="267" translate="yes" xml:space="preserve">
+          <source>Also, to terminate the remote session from the local R session, type 'remoteLogout()'.</source>
+        </trans-unit><trans-unit id="268" translate="yes" xml:space="preserve">
+          <source>Convenience Functions</source>
+        </trans-unit><trans-unit id="269" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="270" translate="yes" xml:space="preserve">
+          <source>pause()</source>
+        </trans-unit><trans-unit id="271" translate="yes" xml:space="preserve">
+          <source>When executed from the remote R session, returns the user to the local '&gt;' command prompt.</source>
+        </trans-unit><trans-unit id="272" translate="yes" xml:space="preserve">
+          <source>resume()</source>
+        </trans-unit><trans-unit id="273" translate="yes" xml:space="preserve">
+          <source>When executed from the local R session, returns the user to the 'REMOTE&gt;' command prompt, and sets a remote execution context.</source>
+        </trans-unit><trans-unit id="274" translate="yes" xml:space="preserve">
+          <source>exit</source>
+        </trans-unit><trans-unit id="275" translate="yes" xml:space="preserve">
+          <source>Logs you out of the session.</source>
+        </trans-unit><trans-unit id="276" translate="yes" xml:space="preserve">
+          <source>Example</source>
+        </trans-unit><trans-unit id="277" translate="yes" xml:space="preserve">
+          <source>Logout of a remote session</source>
+        </trans-unit><trans-unit id="278" translate="yes" xml:space="preserve">
+          <source>To terminate the remote R session while you are on the remote command line, type 'exit' at the REMOTE&gt; prompt.</source>
+        </trans-unit><trans-unit id="279" translate="yes" xml:space="preserve">
+          <source>To terminate the remote session from the local R session, type <bpt id="p1">[</bpt>'remoteLogout()'<ept id="p1">](../r-reference/mrsdeploy/remotelogout.md)</ept>.</source>
+        </trans-unit><trans-unit id="280" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="281" translate="yes" xml:space="preserve">
+          <source>What is operationalization?</source>
+        </trans-unit><trans-unit id="282" translate="yes" xml:space="preserve">
+          <source>What are web services?</source>
+        </trans-unit><trans-unit id="283" translate="yes" xml:space="preserve">
+          <source>mrsdeploy function overview</source>
+        </trans-unit><trans-unit id="284" translate="yes" xml:space="preserve">
+          <source>Working with web services in R</source>
+        </trans-unit><trans-unit id="285" translate="yes" xml:space="preserve">
+          <source>Asynchronous batch execution of web services in R</source>
+        </trans-unit><trans-unit id="286" translate="yes" xml:space="preserve">
+          <source>Execute on a remote Machine Learning Server</source>
+        </trans-unit><trans-unit id="287" translate="yes" xml:space="preserve">
+          <source>How to integrate web services and authentication into your application</source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="deployr-admin-monitoring-events.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-4e81c41" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">482448f7-1a28-4b2f-b7c2-911be7144b0248d985f2b530ca9cdb726124b248c1d5e3515197.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">48d985f2b530ca9cdb726124b248c1d5e3515197</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">482448f7-1a28-4b2f-b7c2-911be7144b02</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">06/07/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\deployr\deployr-admin-monitoring-events.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>DeployR Administration Console Help - DeployR 8.x</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Monitoring Events in the DeployR Administration Console</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Monitoring Events</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>When you are logged in as admin, you can monitor the runtime grid and security events on the management event stream from the <bpt id="p1">**</bpt>Home<ept id="p1">**</ept> page.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>The management event stream allows you to see runtime grid activity events, grid warning events, and security access events.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>By default this stream is accessible to admin only; however, access can be changed in the <bpt id="p1">**</bpt>Server Policies<ept id="p1">**</ept> tab.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Figure: Home tab after login</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Grid activity events that include the starting and stopping of grid operations, such as stateless, temporary, persistent projects and/or jobs</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Grid warning events that occur when the grid runs up against the limits that were defined in the <bpt id="p1">**</bpt>Concurrent Operation Policies<ept id="p1">**</ept> in the <bpt id="p2">[</bpt>Server Policies<ept id="p2">](deployr-admin-managing-server-policies.md#concurrent-operation-policies)</ept> tab</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Grid heartbeat events that are pushed regularly and provide a detailed summary of slot activity across all nodes on the grid</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Security events that are pushed when a user attempts to log in (<ph id="ph1">`securityLoginEvent event`</ph>) or log out (<ph id="ph2">`securityLogoutEvent event`</ph>)</source>
+        </trans-unit></group></body></file></xliff>
