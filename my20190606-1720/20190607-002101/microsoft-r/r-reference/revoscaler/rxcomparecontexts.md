@@ -1,0 +1,43 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="rxcomparecontexts.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-4e81c41" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">5a1af0c1-a46b-4161-9fcd-2c6c2f004c3711ef69990f1c41cc45fe2502dc50d53e86fb60f4.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">11ef69990f1c41cc45fe2502dc50d53e86fb60f4</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">5a1af0c1-a46b-4161-9fcd-2c6c2f004c37</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">06/07/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\r-reference\revoscaler\rxcomparecontexts.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>rxCompareContexts function (revoAnalytics) | Microsoft Docs</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Determines if two compute contexts are equivalent.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>(revoAnalytics), rxCompareContexts, IO</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>rxCompareContexts:  Compare Two Compute Context Objects</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Determines if two compute contexts are equivalent.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Usage</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Arguments</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>The first compute context to be compared.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>The second compute context to be compared.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Determines if compute contexts are matched simply by the location specified for the compute context, or by all fields in the full compute context.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>The location is specified by the <ph id="ph1">`headNode`</ph> (if available) and <ph id="ph2">`shareDir`</ph> parameters.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>See Details for more information.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Details</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`exactMatch=FALSE`</ph>, only the shared directory <ph id="ph2">`shareDir`</ph> and the cluster head name <ph id="ph3">`headNode`</ph> (if available) are compared.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Otherwise, all slots are compared.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>However, if the <ph id="ph1">`nodes`</ph> slot in either compute context is <ph id="ph2">`NULL`</ph>, that slot is also omitted from the comparison.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Note also that case is ignored for node name comparisons, and for LSF node lists, near matching of node names and partial domain information will be used when comparing node names.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Author(s)</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Microsoft Corporation <bpt id="p1">[</bpt><ph id="ph1">`Microsoft Technical Support`</ph><ept id="p1">](https://go.microsoft.com/fwlink/?LinkID=698556&amp;clcid=0x409)</ept></source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Examples</source>
+        </trans-unit></group></body></file></xliff>

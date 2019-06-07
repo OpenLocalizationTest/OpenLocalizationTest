@@ -1,0 +1,99 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="categorical-hash.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-4e81c41" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">5a1af0c1-a46b-4161-9fcd-2c6c2f004c37e14a7eb47f61df34d651b462d8f0aa0046dba80a.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">e14a7eb47f61df34d651b462d8f0aa0046dba80a</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">5a1af0c1-a46b-4161-9fcd-2c6c2f004c37</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">06/07/2019</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">microsoft-r\python-reference\microsoftml\categorical-hash.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>categorical_hash: Machine Learning Categorical HashData Transform</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Categorical hash transform that can be performed on data before training a model.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>transform, catagory, hash</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>microsoftml.categorical_hash<ept id="p1">*</ept>: Hashes and converts a text column into categories</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Usage</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Categorical hash transform that can be performed on data before training a model.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Details</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>converts a categorical value into an indicator array by hashing the value and using the hash as an index in the bag.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>If the input column is a vector, a single indicator bag is returned for it.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>does not currently support handling factor data.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Arguments</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>cols</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>A character string or list of variable names to transform.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`dict`</ph>, the keys represent the names of new variables to be created.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>hash_bits</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>An integer specifying the number of bits to hash into.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Must be between 1 and 30, inclusive.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>The default value is 16.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>seed</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>An integer specifying the hashing seed.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>The default value is</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>ordered</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>to include the position of each term in the hash.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Otherwise, <ph id="ph1">`False`</ph>.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>The default value is <ph id="ph1">`True`</ph>.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>invert_hash</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>An integer specifying the limit on the number of keys that can be used to generate the slot name.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>means no invert hashing; <ph id="ph1">`-1`</ph> means no limit.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>While a zero value gives better performance, a non-zero value is needed to get meaningful coefficient names.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>The default value is <ph id="ph1">`0`</ph>.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>output_kind</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>A character string that specifies the kind of output kind.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>: Outputs a multi-set vector.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>If the input column is a vector of categories, the output contains one vector, where the value in each slot is the number of occurrences of the category in the input vector.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>If the input column contains a single category, the indicator vector and the bag vector are equivalent</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>: Outputs an indicator vector.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>The input column is a vector of categories, and the output contains one indicator vector per slot in the input column.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>: Outputs an index.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>The output is an integer ID (between 1 and the number of categories in the dictionary) of the category.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>: Outputs a vector which is the binary representation of the category.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>The default value is <ph id="ph1">`"Bag"`</ph>.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>kargs</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Additional arguments sent to the compute engine.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Returns</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>an object defining the transform.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Example</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Output:</source>
+        </trans-unit></group></body></file></xliff>
