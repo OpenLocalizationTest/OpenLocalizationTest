@@ -1,0 +1,94 @@
+---
+title: 'rx_get_partitions: Get partitions of a partitioned XDF data source (revoscalepy)'
+description: Get partitions enumeration of a partitioned .xdf file data source.
+keywords: 'partition, execby, '
+author: HeidiSteen
+manager: cgronlun
+ms.date: 01/26/2018
+ms.topic: reference
+ms.prod: mlserver
+ms.service: ''
+ms.assetid: ''
+ROBOTS: ''
+audience: ''
+ms.devlang: Python
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.custom: ''
+ms.openlocfilehash: 6bbba5c4449e3c6ee890f2000c6f9a30b81b0ed4
+ms.sourcegitcommit: 5a1af0c1-a46b-4161-9fcd-2c6c2f004c37
+ms.translationtype: HT
+ms.contentlocale: en-US
+ms.lasthandoff: 06/07/2019
+---
+# <a name="rxgetpartitions"></a>rx_get_partitions
+
+
+ 
+
+
+## <a name="usage"></a>Usage
+
+
+
+```
+revoscalepy.rx_get_partitions(input_data: revoscalepy.datasource.RxXdfData.RxXdfData = None,
+    **kwargs)
+```
+
+
+
+
+
+## <a name="description"></a>Description
+
+Get partitions enumeration of a partitioned .xdf file data source.
+
+
+## <a name="arguments"></a>Arguments
+
+
+### <a name="inputdata"></a>input_data
+
+An existing partitioned data source object which was created by RxXdfData with create_partition_set = True and constructed by rx_partition.
+
+
+## <a name="returns"></a>Returns
+
+A Pandas data frame with (n+1) columns, the first n columns are partitioning columns specified by vars_to_partition in rx_partition and the (n+1)th column is a data source column where each row contains an Xdf data source object of one partition.
+
+
+## <a name="see-also"></a>See also
+
+[`rx_exec_by`](rx-exec-by.md).
+[`RxXdfData`](RxXdfData.md).
+[`rx_partition`](rx-partition.md).
+
+
+## <a name="example"></a>Example
+
+
+
+```
+import os, tempfile
+from revoscalepy import RxOptions, RxXdfData, rx_partition, rx_get_partitions
+data_path = RxOptions.get_option("sampleDataDir")
+
+# input xdf data source
+xdf_file = os.path.join(data_path, "claims.xdf")
+xdf_ds = RxXdfData(xdf_file)
+
+# create a partitioned xdf data source object
+out_xdf_file = os.path.join(tempfile._get_default_tempdir(), "outPartitions")
+out_xdf = RxXdfData(out_xdf_file, create_partition_set = True)
+
+# do partitioning for input data set
+partitions = rx_partition(input_data = xdf_ds, output_data = out_xdf, vars_to_partition = ["car.age","type"], append = "none", overwrite = True)
+
+# use rx_get_partitions to load an existing partitioned xdf
+out_xdf_1 = RxXdfData(out_xdf_file)
+partitions_1 = rx_get_partitions(out_xdf_1)
+print(partitions_1)
+```
+

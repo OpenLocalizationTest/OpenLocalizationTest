@@ -1,0 +1,198 @@
+---
+title: 'rx_lin_mod: Fits a linear model (revoscalepy)'
+description: Fit linear models on small or large data sets.
+keywords: linear
+author: HeidiSteen
+manager: cgronlun
+ms.date: 01/26/2018
+ms.topic: reference
+ms.prod: mlserver
+ms.service: ''
+ms.assetid: ''
+ROBOTS: ''
+audience: ''
+ms.devlang: Python
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.custom: ''
+ms.openlocfilehash: 5f4e7dc70f25f809a55f470fd0231685f5a4695c
+ms.sourcegitcommit: 5a1af0c1-a46b-4161-9fcd-2c6c2f004c37
+ms.translationtype: HT
+ms.contentlocale: en-US
+ms.lasthandoff: 06/07/2019
+---
+# <a name="rxlinmod"></a>rx_lin_mod
+
+
+ 
+
+
+## <a name="usage"></a>Usage
+
+
+
+```
+revoscalepy.rx_lin_mod(formula, data, pweights=None, fweights=None,
+    cube: bool = False, cube_predictions: bool = False,
+    row_selection: str = None, transforms: dict = None,
+    transform_objects: dict = None,
+    transform_function: typing.Union[str, <built-
+    in function callable>] = None,
+    transform_variables: list = None,
+    transform_packages: list = None, drop_first: bool = False,
+    drop_main: bool = True, cov_coef: bool = False,
+    cov_data: bool = False, blocks_per_read: int = 1,
+    report_progress: int = None, verbose: int = 0,
+    compute_context=None, **kwargs)
+```
+
+
+
+
+
+## <a name="description"></a>Description
+
+Fit linear models on small or large data sets.
+
+
+## <a name="arguments"></a>Arguments
+
+
+### <a name="formula"></a>formula
+
+Statistical model using symbolic formulas.
+
+
+### <a name="data"></a>data
+
+Either a data source object, a character string specifying a .xdf file, or a data frame object.
+If a Spark compute context is being used, this argument may also be an RxHiveData, RxOrcData, RxParquetData or RxSparkDataFrame object or a Spark data frame object from pyspark.sql.DataFrame.
+
+
+### <a name="pweights"></a>pweights
+
+Character string specifying the variable to use as probability weights for the observations.
+
+
+### <a name="fweights"></a>fweights
+
+Character string specifying the variable to use as frequency weights for the observations.
+
+
+### <a name="cube"></a>cube
+
+Bool flag. If True and the first term of the predictor variables is categorical (a factor or an interaction of factors), the regression is performed by applying the Frisch-Waugh-Lovell Theorem, which uses a partitioned inverse to save on computation time and memory.
+
+
+### <a name="cubepredictions"></a>cube_predictions
+
+Bool flag. If True and cube is True the predicted values are computed and included in the countDF component of the returned value. This may be memory intensive.
+
+
+### <a name="rowselection"></a>row_selection
+
+None. Not currently supported, reserved for future use.
+
+
+### <a name="transforms"></a>transforms
+
+None. Not currently supported, reserved for future use.
+
+
+### <a name="transformobjects"></a>transform_objects
+
+A dictionary of variables besides the data that are used in the transform function.
+See rx_data_step for examples.
+
+
+### <a name="transformfunction"></a>transform_function
+
+Name of the function that will be used to modify the data before the model is built.
+The variables used in the transform function must be specified in transform_objects.
+See rx_data_step for examples.
+
+
+### <a name="transformvariables"></a>transform_variables
+
+List of strings of the column names needed for the transform function.
+
+
+### <a name="transformpackages"></a>transform_packages
+
+None. Not currently supported, reserved for future use.
+
+
+### <a name="dropfirst"></a>drop_first
+
+Bool flag. If False, the last level is dropped in all sets of factor levels in a model. If that level has no observations (in any of the sets), or if the model as formed is otherwise determined to be singular, then an attempt is made to estimate the model by dropping the first level in all sets of factor levels. If True, the starting position is to drop the first level. Note that for cube regressions, the first set of factors is excluded from these rules and the intercept is dropped.
+
+
+### <a name="dropmain"></a>drop_main
+
+Bool value. If True, main-effect terms are dropped before their interactions.
+
+
+### <a name="covcoef"></a>cov_coef
+
+Bool flag. If True and if cube is False, the variance-covariance matrix of the regression coefficients is returned.
+
+
+### <a name="covdata"></a>cov_data
+
+Bool flag. If True and if cube is False and if constant term is included in the formula, then the variance-covariance matrix of the data is returned.
+
+
+### <a name="blocksperread"></a>blocks_per_read
+
+Number of blocks to read for each chunk of data read from the data source.
+
+
+### <a name="reportprogress"></a>report_progress
+
+Integer value with options: 0: No progress is reported.
+1: The number of processed rows is printed and updated.
+2: Rows processed and timings are reported.
+3: Rows processed and all timings are reported.
+
+
+### <a name="verbose"></a>verbose
+
+Integer value. If 0, no additional output is printed. If 1, additional summary information is printed.
+
+
+### <a name="computecontext"></a>compute_context
+
+A RxComputeContext object for prediction.
+
+
+### <a name="kwargs"></a>kwargs
+
+Additional parameters
+
+
+## <a name="returns"></a>Returns
+
+A RxLinModResults object of linear model.
+
+
+## <a name="see-also"></a>See also
+
+[`rx_logit`](rx-logit.md).
+
+
+## <a name="example"></a>Example
+
+
+
+```
+import os
+import tempfile
+from revoscalepy import RxOptions, RxXdfData, rx_lin_mod
+
+sample_data_path = RxOptions.get_option("sampleDataDir")
+in_mort_ds = RxXdfData(os.path.join(sample_data_path, "mortDefaultSmall.xdf"))
+
+lin_mod = rx_lin_mod("creditScore ~ yearsEmploy", in_mort_ds)
+```
+

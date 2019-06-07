@@ -1,0 +1,145 @@
+---
+title: rxInstalledPackages function (revoAnalytics) | Microsoft Docs
+description: " Find (or retrieve) details of installed packages for a compute context. "
+keywords: (revoAnalytics), rxInstalledPackages, packages, sql, install, uninstall, remove, use
+author: heidisteen
+manager: cgronlun
+ms.date: 01/24/2018
+ms.topic: reference
+ms.prod: mlserver
+ms.service: ''
+ms.assetid: ''
+ROBOTS: ''
+audience: ''
+ms.devlang: ''
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.custom: ''
+ms.openlocfilehash: 89cfc3e2492405df24b5e8ccffaf6b6b96a431e6
+ms.sourcegitcommit: 5a1af0c1-a46b-4161-9fcd-2c6c2f004c37
+ms.translationtype: HT
+ms.contentlocale: en-US
+ms.lasthandoff: 06/07/2019
+---
+ # <a name="rxinstalledpackages-installed-packages-for-compute-context"></a>rxInstalledPackages: Installed Packages for Compute Context 
+ ## <a name="description"></a>Description
+
+Find (or retrieve) details of installed packages for a compute context.
+
+
+ ## <a name="usage"></a>Usage
+
+```   
+
+  rxInstalledPackages(computeContext = NULL, allNodes = FALSE, lib.loc = NULL,
+                      priority = NULL, noCache = FALSE, fields = "Package",
+                      subarch = NULL)
+
+```
+
+ ## <a name="arguments"></a>Arguments
+
+
+
+
+ ### `computeContext`
+ an [RxComputeContext](RxComputeContext.md) or equivalent character string or `NULL`.   If set to the default of `NULL`, the currently active compute context is used. Supported compute contexts are [RxInSqlServer](RxInSqlServer.md) and [RxLocalSeq](RxLocalSeq.md). 
+
+
+
+ ### `allNodes`
+ logical. 
+
+
+
+ ### `lib.loc`
+ a character vector describing the location of R library  trees to search through, or `NULL`.  The default value of `NULL` corresponds to checking the loaded namespace,  then all libraries currently known in  `.libPaths()`. In [RxInSqlServer](RxInSqlServer.md) only `NULL` is supported. 
+
+
+
+ ### `priority`
+ character vector or `NULL` (default). If non-null, used to select packages;  `"high"` is equivalent to `c("base", "recommended")`.  To select all packages without an assigned priority use priority = `"NA"`. 
+
+
+
+ ### `noCache`
+ logical.  If `TRUE`, do not use cached information, nor cache it. 
+
+
+
+ ### `fields`
+ a character vector giving the fields to extract from each package's DESCRIPTION file,  or `NULL`. If `NULL`, the following fields are used: `"Package"`, `"LibPath"`, `"Version"`, `"Priority"`, `"Depends"`,  `"Imports"`, `"LinkingTo"`, `"Suggests"`, `"Enhances"`,  `"License"`, `"License_is_FOSS"`, `"License_restricts_use"`,  `"OS_type"`, `"MD5sum"`, `"NeedsCompilation"`, and `"Built"`. Unavailable fields result in `NA` values. 
+
+
+
+ ### `subarch`
+ character string or `NULL`. If non-null and non-empty, used to select packages  which are installed for that sub-architecture.  
+
+
+
+
+ ## <a name="details"></a>Details
+
+This is a wrapper for installed.packages. See the help file for additional details.
+Note that `rxInstalledPackages` treats the `field` argument differently, only returning the `fields` specified in the argument.
+
+
+
+ ## <a name="value"></a>Value
+
+By default, a character vector of installed packages is returned.  If `fields` is not set to `"Package"`, a matrix with one row per package is returned. The row names are the package names and the possible column names are `"Package"`, `"LibPath"`, `"Version"`, `"Priority"`, `"Depends"`, `"Imports"`, `"LinkingTo"`, `"Suggests"`, `"Enhances"`, `"License"`, `"License_is_FOSS"`, `"License_restricts_use"`, `"OS_type"`, `"MD5sum"`, `"NeedsCompilation"`, and `"Built"` (the R version the package was built under). Additional columns can be specified using the fields argument. If using a distributed compute context with the `allNodes` set to `TRUE`, a list of matrices from each node will be returned.
+In [RxInSqlServer](RxInSqlServer.md) compute context multiple rows for a package will be returned if different versions of the same package is installed in different `"system"`, `"shared"` and `"private"` scopes.
+
+
+ ## <a name="authors"></a>Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+
+ ## <a name="see-also"></a>See Also
+
+[rxPackage](rxPackage.md), installed.packages, [rxFindPackage](rxFindPackage.md), [rxInstallPackages](rxInstallPackages.md),   
+[rxRemovePackages](rxRemovePackages.md), [rxSyncPackages](rxSyncPackages.md), [rxSqlLibPaths](rxSqlLibPaths.md),   
+require
+
+ ## <a name="examples"></a>Examples
+
+ ```
+
+  #
+  # Find the packages installed for the current compute context
+  #
+  myPackages <- rxInstalledPackages()
+  myPackages
+
+  #
+  # Get full information about all the packages installed for the current compute context
+  #
+  myPackageInfo <- rxInstalledPackages(fields = NULL)
+  myPackageInfo
+
+  #
+  # Get specific information about the installed packages
+  #
+  myPackageInfo <- rxInstalledPackages(fields = c("Package", "Version", "Built"))
+  myPackageInfo
+
+  ## Not run:
+
+#
+# Find the packages installed on a SQL Server compute context
+#
+sqlServerCompute <- RxInSqlServer(connectionString = 
+    "Driver=SQL Server;Server=myServer;Database=TestDB;Trusted_Connection=True;")
+sqlPackages <- rxInstalledPackages(computeContext = sqlServerCompute)
+sqlPackages
+ ## End(Not run) 
+```
+
+
+
+
+
+
+
+

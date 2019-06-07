@@ -1,0 +1,95 @@
+---
+title: 'neuralNet function (MicrosoftML) '
+description: " Creates a list containing the function name and arguments to train a  NeuralNet model with [rxEnsemble](rxEnsemble.md). "
+keywords: (MicrosoftML), neuralNet
+author: heidisteen
+manager: cgronlun
+ms.date: 01/16/2019
+ms.topic: reference
+ms.prod: mlserver
+ms.service: ''
+ms.assetid: ''
+ROBOTS: ''
+audience: ''
+ms.devlang: ''
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.custom: ''
+ms.openlocfilehash: 638e4fdd3487283232160b460c26098992417eea
+ms.sourcegitcommit: 5a1af0c1-a46b-4161-9fcd-2c6c2f004c37
+ms.translationtype: HT
+ms.contentlocale: en-US
+ms.lasthandoff: 06/07/2019
+---
+ # <a name="neuralnet-neuralnet"></a>neuralNet: neuralNet 
+ ## <a name="description"></a>Description
+ 
+Creates a list containing the function name and arguments to train a NeuralNet model with [rxEnsemble](rxEnsemble.md).
+ 
+ 
+ ## <a name="usage"></a>Usage
+
+```   
+  neuralNet(numHiddenNodes = 100, numIterations = 100, optimizer = sgd(),
+    netDefinition = NULL, initWtsDiameter = 0.1, maxNorm = 0,
+    acceleration = c("sse", "gpu"), miniBatchSize = 1, ...)
+ 
+```
+ 
+ ## <a name="arguments"></a>Arguments
+
+   
+  
+ ### `numHiddenNodes`
+ The default number of hidden nodes in the neural net. The default value is 100. 
+  
+  
+  
+ ### `numIterations`
+ The number of iterations on the full training set. The default value is 100. 
+  
+  
+  
+ ### `optimizer`
+ A list specifying either the `sgd` or `adaptive` optimization algorithm. This list can be created using [sgd](optimizer.md) or [adaDeltaSgd](optimizer.md). The default value is `sgd`. 
+  
+  
+  
+ ### `netDefinition`
+ The Net# definition of the structure of the neural network. For more information about the Net# language, see   [`Reference Guide`](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-azure-ml-netsharp-reference-guide/)  
+  
+  
+  
+ ### `initWtsDiameter`
+ Sets the initial weights diameter that specifies  the range from which values are drawn for the initial learning weights.    The weights are initialized randomly from within this range. The default value is 0.1. 
+  
+  
+  
+ ### `maxNorm`
+ Specifies an upper bound to constrain the norm of the incoming  weight vector at each hidden unit. This can be very important in maxout  neural networks as well as in cases where training produces unbounded weights. 
+  
+  
+  
+ ### `acceleration`
+ Specifies the type of hardware acceleration to use.  Possible values are "sse" and "gpu".  For GPU acceleration, it is recommended to use a miniBatchSize greater than one.  If you want to use the GPU acceleration, there are additional manual setup steps are required:    
+*  Download and install NVidia CUDA Toolkit 6.5  ([`CUDA Toolkit`](https://developer.nvidia.com/cuda-toolkit-65) ).  
+*  Download and install NVidia cuDNN v2 Library  ([`cudnn Library`](https://developer.nvidia.com/rdp/cudnn-archive) ).  
+*  Find the libs directory of the MicrosoftRML package by calling `system.file("mxLibs/x64", package = "MicrosoftML")`.  
+*  Copy cublas64_65.dll, cudart64_65.dll and cusparse64_65.dll from the CUDA Toolkit 6.5 into the libs directory of the MicrosoftML package. 
+*  Copy cudnn64_65.dll from the cuDNN v2 Library into the libs directory of the MicrosoftML package. 
+ 
+  
+  
+  
+ ### `miniBatchSize`
+ Sets the mini-batch size. Recommended values are between  1 and 256. This parameter is only used when the acceleration is GPU. Setting  this parameter to a higher value improves the speed of training, but it might negatively affect the accuracy. The default value is 1. 
+  
+  
+  
+ ### ` ...`
+ Additional arguments. 
+  
+ 
+ 
+ 
