@@ -1,0 +1,122 @@
+---
+title: 'rx_get_jobs: Get Distributed Computing Jobs (revoscalepy)'
+description: Returns a list of job objects associated with the given compute context and matching the specified parameters.
+keywords: get, job
+author: HeidiSteen
+manager: cgronlun
+ms.date: 01/26/2018
+ms.topic: reference
+ms.prod: mlserver
+ms.service: ''
+ms.assetid: ''
+ROBOTS: ''
+audience: ''
+ms.devlang: Python
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.custom: ''
+ms.openlocfilehash: c7dd663c37fda3881c09f398cfb2c9af8df52a11
+ms.sourcegitcommit: 482448f7-1a28-4b2f-b7c2-911be7144b02
+ms.translationtype: HT
+ms.contentlocale: en-US
+ms.lasthandoff: 06/07/2019
+---
+# <a name="rxgetjobs"></a>rx_get_jobs
+
+
+ 
+
+
+## <a name="usage"></a>Usage
+
+
+
+```
+revoscalepy.rx_get_jobs(compute_context: revoscalepy.computecontext.RxRemoteComputeContext.RxRemoteComputeContext,
+    exact_match: bool = False,
+    start_time: <module 'datetime' from 'C:\\swarm\\workspace\\bigAnalytics-9.3.0\\runtime\\Python\\lib\\datetime.py'> = None,
+    end_time: <module 'datetime' from 'C:\\swarm\\workspace\\bigAnalytics-9.3.0\\runtime\\Python\\lib\\datetime.py'> = None,
+    states: list = None, verbose: bool = True) -> list
+```
+
+
+
+
+
+## <a name="description"></a>Description
+
+Returns a list of job objects associated with the given compute context and matching the specified parameters.
+
+
+## <a name="arguments"></a>Arguments
+
+
+### <a name="computecontext"></a>compute_context
+
+A compute context object.
+
+
+### <a name="exactmatch"></a>exact_match
+
+Determines if jobs are matched using the full compute context, or a simpler subset. If True, only jobs which use the same context object are returned. If False, all jobs which have the same headNode (if available) and ShareDir are returned.
+
+
+### <a name="starttime"></a>start_time
+
+A time, specified as a POSIXct object. If specified, only jobs created at or after start_time are returned.
+
+
+### <a name="endtime"></a>end_time
+
+A time, specified as a POSIXct object. If specified, only jobs created at or before end_time are returned.
+
+
+### <a name="states"></a>states
+
+If specified (as a list of strings of states that can include “none”, “finished”, “failed”, “canceled”, “undetermined” “queued”or “running”), only jobs in those states are returned. Otherwise, no filtering is performed on job state.
+
+
+### <a name="verbose"></a>verbose
+
+If True (the default), a brief summary of each job is printed as it is found. This includes the current job status as returned by rx_get_job_status, the modification time of the job, and the current job ID (this is used as the component name in the returned list of job information objects). If no job status is returned, the job status shows none.
+
+
+## <a name="returns"></a>Returns
+
+Returns a list of job information objects based on the compute context.
+
+
+## <a name="see-also"></a>See also
+
+
+## <a name="example"></a>Example
+
+
+
+```
+from revoscalepy import RxInSqlServer
+from revoscalepy import rx_exec
+from revoscalepy import rx_get_jobs
+
+connection_string = 'Driver=SQL Server;Server=.;Database=RevoTestDb;Trusted_Connection=True;'
+
+# Setting wait to False allows the job to be run asynchronously
+# Setting console_output to True allows us to get the console output of the distributed computing job
+compute_context = RxInSqlServer(connection_string=connection_string,
+                                num_tasks=1,
+                                console_output=True,
+                                wait=False)
+
+def hello_from_sql():
+    import time
+    print('Hello from SQL server')
+    time.sleep(3)
+    return 'We just ran Python code asynchronously on a SQL server!'
+
+job = rx_exec(function=hello_from_sql, compute_context=compute_context)
+
+job_list = rx_get_jobs(compute_context)
+print(job_list)
+```
+

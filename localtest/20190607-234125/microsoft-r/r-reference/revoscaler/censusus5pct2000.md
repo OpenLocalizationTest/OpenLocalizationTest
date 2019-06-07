@@ -1,0 +1,73 @@
+---
+title: CensusUS5Pct2000 data (revoAnalytics) | Microsoft Docs
+description: " The IPUMS 5% sample of the 2000 U.S. Census data in .xdf format. "
+keywords: (revoAnalytics), CensusUS5Pct2000, CensusUS5Pct2000.xdf, datasets
+author: heidisteen
+manager: cgronlun
+ms.date: 01/24/2018
+ms.topic: reference
+ms.prod: mlserver
+ms.service: ''
+ms.assetid: ''
+ROBOTS: ''
+audience: ''
+ms.devlang: ''
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.custom: ''
+ms.openlocfilehash: ba027c19898aadb010268e7940d3bc2475b578da
+ms.sourcegitcommit: 482448f7-1a28-4b2f-b7c2-911be7144b02
+ms.translationtype: HT
+ms.contentlocale: en-US
+ms.lasthandoff: 06/07/2019
+---
+ # <a name="censusus5pct2000-ipums-2000-us-census-data"></a>CensusUS5Pct2000: IPUMS 2000 U.S. Census Data 
+ ## <a name="description"></a>Description
+
+The IPUMS 5% sample of the 2000 U.S. Census data in .xdf format.
+
+
+ ## <a name="format"></a>Format
+
+An .xdf file with 14,058,983 observations on 264 variables. For a complete description of the variables, see [`http://usa.ipums.org/usa-action/variables/group`](http://usa.ipums.org/usa-action/variables/group)
+.
+
+
+ ## <a name="details"></a>Details
+
+The data in CensusUS5Pct2000 comes from the *Integrated Public Use Microdata Series* (IPUMS) 5% 2000 U.S. Census sample, produced and maintained by the Minnesota Population Center at the University of Minnesota. The full data set at the time of initial conversion contained 14,583,731 rows with 265 variables. This data was converted to the .xdf format in 2006, using the SPSS dictionary provided on the IPUMS web site to obtain variable labels, value labels, and value codes. Variable names in the .xdf file are all lower case but are upper case in the IPUMS dictionary. In this version of the sample, observations with probability weights (`perwt`) equal to 0 have been removed. The `"q"` variables such as `qage` that take the values of 0 and 4 in the original data have been converted to logicals for more efficient storage. It was compressed and updated to a current .xdf file format in 2013.
+
+This data set is available for download, but is not included in the standard **RevoScaleR** distribution. It is, however, used in several documentation examples and demo scripts. You are free to use this file (and subsamples of it) subject to the restrictions imposed by IPUMS, but do so at your own risk.
+
+
+ ## <a name="source"></a>Source
+
+Minnesota Population Center, University of Minnesota. *Integration Public Use Microdata Series*. [`http://www.ipums.org`](http://www.ipums.org) .
+
+
+ ## <a name="authors"></a>Author(s)
+ Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+
+ ## <a name="see-also"></a>See Also
+
+[CensusWorkers](CensusWorkers.md)
+
+ ## <a name="examples"></a>Examples
+
+ ```
+
+  ## Not run:
+
+dataPath = "C:/Microsoft/Data"
+bigCensusData <- file.path(dataPath, "CensusUS5Pct2000.xdf") 
+censusEarly20s <-  file.path(dataPath, "CensusEarly20s.xdf")
+rxDataStep(inData = bigCensusData, outFile = censusEarly20s,
+              rowSelection = age >= 20 & age <= 25,
+              varsToKeep = c("age", "incwage", "perwt", "sex", "wkswork1")) 
+rxGetInfo(censusEarly20s, getVarInfo = TRUE) 
+ ## End(Not run) 
+```
+
+

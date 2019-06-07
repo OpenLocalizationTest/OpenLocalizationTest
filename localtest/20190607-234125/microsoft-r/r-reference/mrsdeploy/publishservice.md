@@ -1,0 +1,194 @@
+---
+title: publishService function (mrsdeploy) | Microsoft Docs
+description: " Publishes an R code block or a real-time model as a new web service running on R Server."
+keywords: (mrsdeploy), publishService
+author: heidisteen
+manager: cgronlun
+ms.date: 01/18/2019
+ms.topic: reference
+ms.prod: microsoft-r
+ms.service: ''
+ms.assetid: ''
+ROBOTS: ''
+audience: ''
+ms.devlang: ''
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.technology: r-server
+ms.custom: ''
+ms.openlocfilehash: dd521126967d43aa3b2d7398f18c49dc57862b2d
+ms.sourcegitcommit: 482448f7-1a28-4b2f-b7c2-911be7144b02
+ms.translationtype: HT
+ms.contentlocale: en-US
+ms.lasthandoff: 06/07/2019
+---
+ # <a name="publishservice-publishes-a-r-code-block-or-a-realtime-model-as-a-new-web-service"></a>publishService: Publishes a R code block or a Realtime model as a new web service.
+
+ Applies to version 1.1.3 of package mrsdeploy.
+ 
+ ##<a name="description"></a>Description
+ 
+Publishes a R code block or a Realtime model as a new web service running on R Server.
+
+
+ ## <a name="usage"></a>Usage
+
+```   
+  publishService(name, code, model = NULL, snapshot = NULL, inputs = list(),
+    outputs = list(), artifacts = c(), v = character(0), alias = NULL,
+    destination = NULL, descr = NULL, serviceType = c("Script", "Realtime"))
+
+```
+
+ ## <a name="arguments"></a>Arguments
+
+
+
+ ### `name`
+ A string representing the web service name. Use quotes such as  "MyService". We recommend a name that is easily understood and remembered. 
+
+
+
+ ### `code`
+ Required for standard web services. The R code to publish.  If you use a path, the base path is your local current working directory. `code` can take the form of:  
+*   A function handle such as  `code = function(hp, wt) {` `newdata <- data.frame(hp = hp, wt = wt)` `predict(model, newdata, type = "response")` `}` 
+*   A block of arbitrary R code as a character string such as`code = "result <- x + y"` 
+*   A filepath to a local `.R` file containing R code such as `code = "/path/to/R/script.R"` If serviceType is 'Realtime', code has to be NULL. 
+
+
+
+ ### `model`
+ (optional) For standard web services, an `object` or a filepath to an external representation of R objects to be loaded and used  with `code`. The specified file can be: 
+*   Filepath to a local `.RData` file holding R objects to be loaded. For example,  `model = "/path/to/glm-model.RData"` 
+*   Filepath to a local `.R` file that is evaluated into an environment and loaded. For example,  `model = "/path/to/glm-model.R"` 
+*   An object. For example,  `model = "model = am.glm"` For real-time web services (serviceType = 'Realtime'), only an R model  object is accepted. For example, `model = "model = am.glm"` 
+
+
+
+ ### `snapshot`
+ (optional) Identifier of the session snapshot to load. Can replace the model argument or be merged with it. If serviceType is 'Realtime', snapshot has to be NULL. 
+
+
+
+ ### `inputs`
+ (optional) Defines the web service input schema. If empty, the service will not accept inputs. `inputs` are defined as a named list  `list(x = "logical")` which describes the input parameter  names and their corresponding **data types**:  
+*   `numeric` 
+*   `integer` 
+*   `logical` 
+*   `character` 
+*   `vector` 
+*   `matrix` 
+*   `data.frame` If serviceType is 'Realtime', inputs has to be NULL. Once published,  service inputs automatically default to  list(inputData = 'data.frame'). 
+
+
+
+ ### `outputs`
+ (optional) Defines the web service output schema. If empty, the service will not return a response value. `outputs` are defined as a  named list `list(x = "logical")` that describes the output parameter  names and their corresponding **data types**:  
+*   `numeric` 
+*   `integer` 
+*   `logical` 
+*   `character` 
+*   `vector` 
+*   `matrix` 
+*   `data.frame` Note: If `code` is defined as a `function`, then only one output value can be claimed. If serviceType is 'Realtime', outputs has to be NULL. Once published,  service outputs automatically default to  list(inputData = 'data.frame'). 
+
+
+
+ ### `artifacts`
+ (optional) A character vector of filenames defining which file artifacts should be returned during service consumption. File content is encoded as a `Base64 String`. 
+
+
+
+ ### `v`
+ (optional) Defines a unique alphanumeric web service version.  If the version is left blank, a unique `guid` is generated in its place. Useful during service development before the author is ready to officially publish a semantic version to share. 
+
+
+
+ ### `alias`
+ (optional) An alias name of the prediction remote procedure call (RPC) function used to consume the service. If code is a function,  then it will use that function name by default. 
+
+
+
+ ### `destination`
+ (optional) The codegen output directory location. 
+
+
+
+ ### `descr`
+ (optional) The description of the web service. 
+
+
+
+ ### `serviceType`
+ (optional) The type of the web service. Valid values are  'Script' and 'Realtime'. Defaults to 'Script', which is for a standard web  service, contains arbitrary R code, R scripts and/or models. 'Realtime' contains only a supported model object (see 'model' argument above). 
+
+
+
+ ## <a name="details"></a>Details
+
+Complete documentation: [`https://go.microsoft.com/fwlink/?linkid=836352`](https://go.microsoft.com/fwlink/?linkid=836352)
+
+
+
+ ## <a name="see-also"></a>See Also
+
+Other service methods: [deleteService](deleteService.md), [getService](getService.md), [listServices](listServices.md), [print.serviceDetails](print.serviceDetails.md), [serviceOption](serviceOption.md), [summary.serviceDetails](summary.serviceDetails.md), [updateService](updateService.md)
+
+ ## <a name="examples"></a>Examples
+
+ ```
+
+  ## Not run:
+
+
+# --- Publish service using `code` by function handle
+add <- function(x, y) {
+  x + y
+}
+
+publishService(
+   "add-service",
+    code = add,
+    inputs = list(x = "numeric", y = "numeric"),
+    outputs = list(result = "numeric")
+)
+
+publishService(
+   "add-service",
+    code = add,
+    inputs = list(x = "numeric", y = "numeric"),
+    outputs = list(result = "numeric"),
+    serviceType = 'Script'
+)
+
+# --- Publish service using `code` by represented string values
+publishService(
+   "add-service",
+    code = "result <- x + y",
+    inputs = list(x = "numeric", y = "numeric"),
+    outputs = list(result = "numeric")
+)
+
+# --- Publish service using `code` by file-path
+publishService(
+   "add-service",
+    code = "/path/to/add.R", 
+    inputs = list(x = "numeric", y = "numeric"),
+    outputs = list(result = "numeric")
+)
+
+# --- Publish service using real-time model
+publishService(
+  "kyphosisLogRegModel",
+  code = NULL,
+  # --- `model` is required for web service with serviceType `Realtime` --- #
+  model = rxLogit(Kyphosis ~ Age, data=kyphosis),
+  v = "v1.0.0",
+  alias = "predictKyphosisModel",
+  # --- `serviceType` is required for this web service --- #
+  serviceType = "Realtime"
+)
+ ## End(Not run) 
+```
+

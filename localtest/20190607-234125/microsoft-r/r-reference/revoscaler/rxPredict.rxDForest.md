@@ -1,0 +1,230 @@
+---
+title: rxPredict.rxDForest function (revoAnalytics) | Microsoft Docs
+description: "     Calculate predicted or fitted values for a data set from an object inheriting from class rxDForest. "
+keywords: (revoAnalytics), rxPredict.rxDForest, rxPredict.rxBTrees, models, tree, classif, regression, classification
+author: heidisteen
+manager: cgronlun
+ms.date: 01/24/2018
+ms.topic: reference
+ms.prod: mlserver
+ms.service: ''
+ms.assetid: ''
+ROBOTS: ''
+audience: ''
+ms.devlang: ''
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.custom: ''
+ms.openlocfilehash: 95293eba1576cc68f14dda6ffc5d814fea595e9e
+ms.sourcegitcommit: 482448f7-1a28-4b2f-b7c2-911be7144b02
+ms.translationtype: HT
+ms.contentlocale: en-US
+ms.lasthandoff: 06/07/2019
+---
+ # <a name="rxpredictrxdforest-prediction-for-large-data-classification-and-regression-forests"></a>rxPredict.rxDForest: Prediction for Large Data Classification and Regression Forests 
+
+ ## <a name="description"></a>Description
+
+Calculate predicted or fitted values for a data set from an object inheriting from class `rxDForest`.
+
+
+ ## <a name="usage"></a>Usage
+
+```   
+
+ ## S3 method for class `rxDForest':
+rxPredict  (modelObject, data = NULL,
+      outData = NULL, predVarNames = NULL, writeModelVars = FALSE, extraVarsToWrite = NULL, 
+      append = c("none", "rows"), overwrite = FALSE,
+      type = c("response", "prob", "vote"), cutoff = NULL, removeMissings = FALSE,
+      computeResiduals = FALSE, residType = c("usual", "pearson", "deviance"), residVarNames = NULL,
+
+      blocksPerRead = rxGetOption("blocksPerRead"), reportProgress = rxGetOption("reportProgress"),
+      verbose = 0, xdfCompressionLevel = rxGetOption("xdfCompressionLevel"),
+        ...  )
+
+
+```
+
+ ## <a name="arguments"></a>Arguments
+
+
+
+ ### `modelObject`
+  object inheriting from class `rxDForest`. 
+
+
+ ### `data`
+  either a data source object, a character string  specifying a .xdf file, or a data frame object. 
+
+
+ ### `outData`
+  file or existing data frame to store predictions;  can be same as the input file or `NULL`.  If not `NULL`, must be an .xdf file if `data` is an .xdf file  or a data frame if `data` is a data frame. 
+
+
+ ### `predVarNames`
+  character vector specifying name(s) to give to the prediction results. 
+
+
+
+ ### `writeModelVars`
+  logical value. If `TRUE`, and the output file is different from the input file,  variables in the model will be written to the output file in addition to the predictions.  If variables from the input data set are transformed in the model,  the transformed variables will also be written out. 
+
+
+ ### `extraVarsToWrite`
+  `NULL` or character vector of additional variables names from the input data or transforms to include in the `outData`.  If `writeModelVars` is `TRUE`, model variables will be included as well. 
+
+
+
+ ### `append`
+  either `"none"` to create a new files or `"rows"` to append rows to an existing file.  If `outData` exists and `append` is `"none"`, the `overwrite` argument must be set to `TRUE`.  You can append only to [RxTeradata](RxTeradata.md) data source. Ignored for data frames.    
+
+
+
+ ### `overwrite`
+  logical value. If `TRUE`, an existing `outData` will be overwritten.  `overwrite` is ignored if appending rows. Ignored for data frames.  
+
+
+
+ ### `type`
+  character string specifying the type of predicted values to be returned. Supported choices for an object of class `rxDForest` are "response", "prob", and "vote".  
+* `"response"` -  a vector of predicted values for a regression forest and  predicted classes (with majority vote) for a classification forest.   
+* `"prob"` -  (Classification only) a matrix of predicted class probabilities whose columns are the probability of the first, second, etc. class. It ensentially sums up the probability predictions for each class over all the trees and  thus may give different class predictions from those obtained with "response" or "vote".   
+* `"vote"` -  (Classification only) a matrix of predicted vote counts whose columns are the vote counts of the first, second, etc. class.   
+ "class" is also allowed but automatically converted to "response". Supported choices for an object of class `rxBTrees` are "response" and "link".  
+* `"response"` -  the predictions are on the scale of the response variable.   
+* `"link"` -  the predictions are on the scale of the linear predictors.    
+
+
+
+ ### `cutoff`
+  (Classification only) a vector of length equal to the number of classes specifying the dividing factors for the class votes. The default is the one used when the decision forest is built.  
+
+
+ ### `removeMissings`
+  logical value.  If `TRUE`, rows with missing values are removed and  will not be included in the output data. 
+
+
+ ### `computeResiduals`
+  logical value. If `TRUE`, residuals are computed. 
+
+
+ ### `residType`
+  see residuals.rpart for details. 
+
+
+ ### `residVarNames`
+  character vector specifying name(s) to give to the residual results. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ### `blocksPerRead`
+  number of blocks to read for each chunk of data  read from the data source. 
+
+
+ ### `reportProgress`
+  integer value with options:  
+   *   `0`: no progress is reported. 
+   *   `1`: the number of processed rows is printed and updated. 
+   *   `2`: rows processed and timings are reported. 
+   *   `3`: rows processed and all timings are reported. 
+
+
+
+ ### `verbose`
+  integer value.  If `0`, no verbose output is printed during calculations.  Integer values from `1` to `4` provide increasing amounts of information are provided. 
+
+
+ ### `xdfCompressionLevel`
+ integer in the range of -1 to 9 indicating the compression level for the output data if written to an `.xdf` file.  The higher the value, the greater the amount of compression - resulting in smaller files but a longer time to create them. If `xdfCompressionLevel` is set to 0, there will be no compression and files will be compatible with the 6.0 release of Revolution R Enterprise.  If set to -1, a default level of compression will be used. 
+
+
+
+ ### ` ...`
+  additional arguments to be passed directly to the Microsoft R Services Compute Engine.    
+
+
+
+ ## <a name="details"></a>Details
+
+Prediction for large data models requires both a fitted model object and a data set, either the original data (to obtain fitted values and residuals) or a new data set containing the same set of variables as the original fitted model. Notice that this is different from the behavior of `predict`, which can usually work on the original data simply by referencing the fitted model.
+
+
+
+
+ ## <a name="value"></a>Value
+
+Depending on the form of `data`, this function variously returns a data frame or a data source representing a .xdf file.
+
+ ## <a name="authors"></a>Author(s)
+
+Microsoft Corporation [`Microsoft Technical Support`](https://go.microsoft.com/fwlink/?LinkID=698556&clcid=0x409)
+
+
+
+ ## <a name="references"></a>References
+
+Breiman, L. (2001) Random Forests.
+*Machine Learning* **45(1)**, 5--32.
+
+Breiman, L., Friedman, J. H., Olshen, R. A. and Stone, C. J. (1984) *Classification and Regression Trees*.
+Wadsworth.
+
+Therneau, T. M. and Atkinson, E. J. (2011) *An Introduction to Recursive Partitioning Using the RPART Routines*.
+[`http://r.789695.n4.nabble.com/attachment/3209029/0/zed.pdf`](http://r.789695.n4.nabble.com/attachment/3209029/0/zed.pdf)
+.
+
+Yael Ben-Haim and Elad Tom-Tov (2010) A streaming parallel decision tree algorithm.
+*Journal of Machine Learning Research* **11**, 849--872. 
+
+
+ ## <a name="see-also"></a>See Also
+
+rpart, [rxDForest](rxDForest.md), [rxBTrees](rxBTrees.md).
+
+ ## <a name="examples"></a>Examples
+
+ ```
+
+  set.seed(1234)
+
+  # classification
+  iris.sub <- c(sample(1:50, 25), sample(51:100, 25), sample(101:150, 25))
+  iris.dforest <- rxDForest(Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, 
+      data = iris[iris.sub, ], cp = 0.01)
+  iris.dforest
+
+  table(rxPredict(iris.dforest, iris[-iris.sub, ], type = "class")[[1]], 
+      iris[-iris.sub, "Species"])
+
+  # regression
+  infert.nrow <- nrow(infert)
+  infert.sub <- sample(infert.nrow, infert.nrow / 2)
+  infert.dforest <- rxDForest(case ~ age + parity + education + spontaneous + induced, 
+      data = infert[infert.sub, ], cp = 0.01)
+  infert.dforest
+
+  hist(rxPredict(infert.dforest, infert[-infert.sub, ])[[1]] - 
+      infert[-infert.sub, "case"])
+```
+
+
+
+
+
+
