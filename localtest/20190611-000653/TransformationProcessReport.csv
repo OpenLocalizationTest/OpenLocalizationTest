@@ -1,0 +1,5 @@
+localtest\20190611-000304\TransformationProcessReport.csv,Skipped,Skipped - No tranformation required
+localtest\20190611-000304\learn-test-pr\docfx.json.xlf,Succeeded,Successful
+localtest\20190611-000304\learn-test-pr\achievements.yml.xlf,Succeeded,Successful
+localtest\20190611-000304\.openpublishing.publish.config.json.xlf,Succeeded,Successful
+localtest\20190611-000304\README.md.xlf,Succeeded,Successful
