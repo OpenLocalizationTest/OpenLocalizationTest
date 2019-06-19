@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><xliff xmlns:mda="urn:oasis:names:tc:xliff:metadata:2.0" srcLang="en-US" trgLang="en-US" version="2.0" xml:space="preserve" xmlns="urn:oasis:names:tc:xliff:document:2.0">
+	<file id="1">
+		<mda:metadata>
+			<mda:metaGroup>
+				<mda:meta type="tool-id">mdxliff</mda:meta>
+				<mda:meta type="tool-name">mdxliff</mda:meta>
+				<mda:meta type="tool-version">1.0-d0fd20f</mda:meta>
+				<mda:meta type="tool-company">Microsoft</mda:meta>
+			</mda:metaGroup>
+		<mda:metaGroup><mda:meta type="skl_file_name">929a72a9-31df-4433-af35-2ef369524a6995abe750396dcda5bb19d0abde660daf934c02cf.skl</mda:meta><mda:meta type="version">2.0</mda:meta><mda:meta type="ms.openlocfilehash">95abe750396dcda5bb19d0abde660daf934c02cf</mda:meta><mda:meta type="ms.sourcegitcommit">929a72a9-31df-4433-af35-2ef369524a69</mda:meta><mda:meta type="ms.lasthandoff">06/19/2019</mda:meta><mda:meta type="moniker_ids"></mda:meta><mda:meta type="ms.openlocfilepath">md\ja-jp\certification-adaptive-content-update.md</mda:meta></mda:metaGroup></mda:metadata>
+		<group id="content">
+			<unit id="101" translate="yes">
+				<segment state="initial">
+					<source>ACUP</source>
+				</segment>
+			</unit>
+			<unit id="102" translate="yes">
+				<segment state="initial">
+					<source>ACUP</source>
+				</segment>
+			</unit>
+			<unit id="103" translate="yes">
+				<segment state="initial">
+					<source>Updated January 8th, 2019</source>
+				</segment>
+			</unit>
+		</group>
+	</file>
+</xliff>
