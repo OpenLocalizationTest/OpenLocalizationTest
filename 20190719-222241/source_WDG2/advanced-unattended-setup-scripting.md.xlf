@@ -1,0 +1,1174 @@
+<?xml version="1.0" encoding="utf-8"?><xliff xmlns:mda="urn:oasis:names:tc:xliff:metadata:2.0" srcLang="en-US" trgLang="en-US" version="2.0" xml:space="preserve" xmlns="urn:oasis:names:tc:xliff:document:2.0">
+	<file id="1">
+		<mda:metadata>
+			<mda:metaGroup>
+				<mda:meta type="tool-id">mdxliff</mda:meta>
+				<mda:meta type="tool-name">mdxliff</mda:meta>
+				<mda:meta type="tool-version">1.0-cfa948e</mda:meta>
+				<mda:meta type="tool-company">Microsoft</mda:meta>
+			</mda:metaGroup>
+		<mda:metaGroup><mda:meta type="skl_file_name">95d4bb97-bf53-4fba-9aad-75a4d61bf7562701d0d9af8427baa5c93524e9faaa2aaa5d75c4.skl</mda:meta><mda:meta type="version">2.0</mda:meta><mda:meta type="ms.openlocfilehash">2701d0d9af8427baa5c93524e9faaa2aaa5d75c4</mda:meta><mda:meta type="ms.sourcegitcommit">95d4bb97-bf53-4fba-9aad-75a4d61bf756</mda:meta><mda:meta type="ms.lasthandoff">07/19/2019</mda:meta><mda:meta type="moniker_ids"></mda:meta><mda:meta type="ms.openlocfilepath">source_WDG2\advanced-unattended-setup-scripting.md</mda:meta></mda:metaGroup></mda:metadata>
+		<group id="content">
+			<unit id="101" translate="yes">
+				<segment state="initial">
+					<source>Advanced Unattended Setup Scripting</source>
+				</segment>
+			</unit>
+			<unit id="102" translate="yes">
+				<segment state="initial">
+					<source>Unattended setup scripting is a lightweight yet powerful automation technology that was introduced with the March 2017 XDK.</source>
+				</segment>
+			</unit>
+			<unit id="103" translate="yes">
+				<segment state="initial">
+					<source>This white paper provides several advanced scripting techniques to automate the settings and configuration for your devkits.</source>
+				</segment>
+			</unit>
+			<unit id="104" translate="yes">
+				<segment state="initial">
+					<source>Advanced Unattended Setup Scripting</source>
+				</segment>
+			</unit>
+			<unit id="105" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">Advanced Technology Group (ATG) and Xbox Platform Engineering</pc></source>
+				</segment>
+			</unit>
+			<unit id="106" translate="yes">
+				<originalData>
+					<data id="id1">*</data>
+					<data id="id2">*</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">Published October 2nd, 2017</pc></source>
+				</segment>
+			</unit>
+			<unit id="107" translate="yes">
+				<segment state="initial">
+					<source>In this topic</source>
+				</segment>
+			</unit>
+			<unit id="108" translate="yes">
+				<originalData>
+					<data id="id1">[</data>
+					<data id="id2">](#introduction)</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">Introduction</pc></source>
+				</segment>
+			</unit>
+			<unit id="109" translate="yes">
+				<originalData>
+					<data id="id1">[</data>
+					<data id="id2">](#dovetailing-with-other-scripts-and-executables)</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">Dovetailing with other scripts and executables</pc></source>
+				</segment>
+			</unit>
+			<unit id="110" translate="yes">
+				<originalData>
+					<data id="id1">[</data>
+					<data id="id2">](#deploying-a-script-to-multiple-consoles)</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">Deploying a script to multiple consoles</pc></source>
+				</segment>
+			</unit>
+			<unit id="111" translate="yes">
+				<originalData>
+					<data id="id1">[</data>
+					<data id="id2">](#unique-host-names)</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">Unique host names</pc></source>
+				</segment>
+			</unit>
+			<unit id="112" translate="yes">
+				<originalData>
+					<data id="id1">[</data>
+					<data id="id2">](#unique-test-accounts)</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">Unique test accounts</pc></source>
+				</segment>
+			</unit>
+			<unit id="113" translate="yes">
+				<originalData>
+					<data id="id1">[</data>
+					<data id="id2">](#recovery-deployment)</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">Recovery deployment</pc></source>
+				</segment>
+			</unit>
+			<unit id="114" translate="yes">
+				<originalData>
+					<data id="id1">[</data>
+					<data id="id2">](#summary)</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">Summary</pc></source>
+				</segment>
+			</unit>
+			<unit id="115" translate="yes">
+				<originalData>
+					<data id="id1">[</data>
+					<data id="id2">](#references)</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">References</pc></source>
+				</segment>
+			</unit>
+			<unit id="116" translate="yes">
+				<segment state="initial">
+					<source>Introduction</source>
+				</segment>
+			</unit>
+			<unit id="117" translate="yes">
+				<segment state="initial">
+					<source>Simple scripts are easy to author, but more complex automation problems require advanced techniques to solve.</source>
+				</segment>
+			</unit>
+			<unit id="118" translate="yes">
+				<segment state="initial">
+					<source>This white paper covers advanced unattended setup scripting techniques, and applies them to solutions to several real-world automation tasks.</source>
+				</segment>
+			</unit>
+			<unit id="119" translate="yes">
+				<segment state="initial">
+					<source>You should already be familiar with the basics of authoring unattended setup scripts.</source>
+				</segment>
+			</unit>
+			<unit id="120" translate="yes">
+				<originalData>
+					<data id="id1">[</data>
+					<data id="id2">](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/unattended-setup-script)</data>
+				</originalData>
+				<segment state="initial">
+					<source>For an introduction to unattended setup scripting and reference material, search the index of the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">XDK Documentation</pc> for “Configuring Your Dev Kit with an Unattended Setup Script” and the topics beneath it.</source>
+				</segment>
+			</unit>
+			<unit id="121" translate="yes">
+				<segment state="initial">
+					<source>Dovetailing with other scripts and executables</source>
+				</segment>
+			</unit>
+			<unit id="122" translate="yes">
+				<segment state="initial">
+					<source>If you’re already familiar with the basics of unattended setup script authoring, you’ve probably used the in-browser script authoring tool to create scripts by combining multiple scripting actions.</source>
+				</segment>
+			</unit>
+			<unit id="123" translate="yes">
+				<segment state="initial">
+					<source>(Going forward, this paper will often refer to the unattended setup script authoring tool as the “in-browser” editor).</source>
+				</segment>
+			</unit>
+			<unit id="124" translate="yes">
+				<segment state="initial">
+					<source>However, the in-browser editor doesn’t provide the full flexibility that you’d get by simply authoring scripts in a standard text editor.</source>
+				</segment>
+			</unit>
+			<unit id="125" translate="yes">
+				<segment state="initial">
+					<source>If you’re already proficient at writing batch files, this section will show you how to leverage your scripting skills to extend the capabilities of a script originally created in the unattended setup script editor.</source>
+				</segment>
+			</unit>
+			<unit id="126" translate="yes">
+				<segment state="initial">
+					<source>If you export a script from the in-browser editor and then open it in a standard text editor, you’ll see that it’s really just an ordinary batch file; it just adds a few commenting conventions to enable reordering actions in the in-browser editor.</source>
+				</segment>
+			</unit>
+			<unit id="127" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>For example, this excerpt shows the actual batch-file code generated for the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">Set the host name for the console</pc> action.</source>
+				</segment>
+			</unit>
+			<unit id="128" translate="yes">
+				<segment state="initial">
+					<source>Notice that the script block is delimited with specific comments: “REM SCRIPTSTEP START HOSTNAME V1” and “REM SCRIPTSTEP STOP”.</source>
+				</segment>
+			</unit>
+			<unit id="129" translate="yes">
+				<segment state="initial">
+					<source>There are also a few other conventions that you’ll have to preserve for the script to be valid in the in-browser editor.</source>
+				</segment>
+			</unit>
+			<unit id="130" translate="yes">
+				<segment state="initial">
+					<source>If you don’t follow these conventions, you may encounter errors when you try to import the script into the in-browser editor.</source>
+				</segment>
+			</unit>
+			<unit id="131" translate="yes">
+				<segment state="initial">
+					<source>For this reason, we strongly recommend that you don’t hand-edit your scripts extensively.</source>
+				</segment>
+			</unit>
+			<unit id="132" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>Here’s an example of a <pc dataRefEnd="id2" dataRefStart="id1" id="p1">Do custom action</pc> script block.</source>
+				</segment>
+			</unit>
+			<unit id="133" translate="yes">
+				<originalData>
+					<data id="id1">@echo</data>
+				</originalData>
+				<segment state="initial">
+					<source>The line: “<ph dataRef="id1" id="ph1" /> this is a test” is the text entered into the browser, whereas the rest was automatically generated by the editor.</source>
+				</segment>
+			</unit>
+			<unit id="134" translate="yes">
+				<segment state="initial">
+					<source>You can replace this line with your own batch file commands and the results should still be valid for importing into the in-browser editor.</source>
+				</segment>
+			</unit>
+			<unit id="135" translate="yes">
+				<segment state="initial">
+					<source>Note that the in-browser editor also lets you type several lines of input.</source>
+				</segment>
+			</unit>
+			<unit id="136" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">Run another script</pc> is the most flexible way to apply your batch scripting skills.</source>
+				</segment>
+			</unit>
+			<unit id="137" translate="yes">
+				<segment state="initial">
+					<source>You can simply put your custom batch file code into your own file and then call into it.</source>
+				</segment>
+			</unit>
+			<unit id="138" translate="yes">
+				<segment state="initial">
+					<source>For example, if you have a script called “SetupLogFiles.cmd” and you want to pass in arguments “Player.log” and “AI.log”, you’d fill in the details as shown.</source>
+				</segment>
+			</unit>
+			<unit id="139" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">Figure 1. Details for “Run another script” action.</pc></source>
+				</segment>
+			</unit>
+			<unit id="140" translate="yes">
+				<segment state="initial">
+					<source>The dialog provides a hint about how you might deploy the auxiliary script (that is, by using a USB drive).</source>
+				</segment>
+			</unit>
+			<unit id="141" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>But the deployment method you choose deserves some further explanation because it will affect the details for the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">Run another script</pc> action.</source>
+				</segment>
+			</unit>
+			<unit id="142" translate="yes">
+				<segment state="initial">
+					<source>Possible options for deploying the auxiliary script are as follows:</source>
+				</segment>
+			</unit>
+			<unit id="143" translate="yes">
+				<segment state="initial">
+					<source>Copy the auxiliary script to a network share.</source>
+				</segment>
+			</unit>
+			<unit id="144" translate="yes">
+				<segment state="initial">
+					<source>This is the most powerful configuration, because it lets you leverage the auxiliary script on multiple consoles.</source>
+				</segment>
+			</unit>
+			<unit id="145" translate="yes">
+				<segment state="initial">
+					<source>This way, you can put the bulk of your custom scripting into auxiliary batch files on a network share and then call those scripts from your other unattended setup scripts.</source>
+				</segment>
+			</unit>
+			<unit id="146" translate="yes">
+				<segment state="initial">
+					<source>When you place your script on a network share, you need to refer to it using a UNC path:</source>
+				</segment>
+			</unit>
+			<unit id="147" translate="yes">
+				<segment state="initial">
+					<source>Place the auxiliary script on the same external drive as your unattended setup script.</source>
+				</segment>
+			</unit>
+			<unit id="148" translate="yes">
+				<segment state="initial">
+					<source>In this scenario, you are attaching an external drive before commencing the OOBE, or factory reset, on the devkit.</source>
+				</segment>
+			</unit>
+			<unit id="149" translate="yes">
+				<segment state="initial">
+					<source>After the setup is complete, the system will run the unattended setup script on the external storage device (as described previously).</source>
+				</segment>
+			</unit>
+			<unit id="150" translate="yes">
+				<segment state="initial">
+					<source>When the system runs a script from an external drive, it passes the drive root as a command-line parameter to the script.</source>
+				</segment>
+			</unit>
+			<unit id="151" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>Within the script, a variable called <pc dataRefEnd="id2" dataRefStart="id1" id="p1">%UsbRoot%</pc> is defined by means of the same value.</source>
+				</segment>
+			</unit>
+			<unit id="152" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>Further, the drive root is also added to the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">%PATH%</pc> variable and you’ll be able to reference your script by using a path relative to the root of the external drive.</source>
+				</segment>
+			</unit>
+			<unit id="153" translate="yes">
+				<segment state="initial">
+					<source>Copy the script to a known location on the devkit.</source>
+				</segment>
+			</unit>
+			<unit id="154" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>The system will add a folder, d:\boot, to the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">%PATH%</pc> variable before running the script.</source>
+				</segment>
+			</unit>
+			<unit id="155" translate="yes">
+				<segment state="initial">
+					<source>This means that you can place your scripts in d:\boot and then simply reference them by name.</source>
+				</segment>
+			</unit>
+			<unit id="156" translate="yes">
+				<segment state="initial">
+					<source>Alternatively, if they’re anywhere on the d: drive, you can specify a path relative to d:\boot.</source>
+				</segment>
+			</unit>
+			<unit id="157" translate="yes">
+				<segment state="initial">
+					<source>Another option is simply to use a fully qualified path, such as d:\boot\MyScript.cmd.</source>
+				</segment>
+			</unit>
+			<unit id="158" translate="yes">
+				<segment state="initial">
+					<source>Traditionally, batch files are often used as the glue to combine together multiple tools that are implemented as stand-alone executables.</source>
+				</segment>
+			</unit>
+			<unit id="159" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>Since unattended setup scripts are actually just batch files, we provided the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">Run an executable</pc> action.</source>
+				</segment>
+			</unit>
+			<unit id="160" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>To use the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">Run an executable</pc> action, provide an executable name and zero or more optional arguments.</source>
+				</segment>
+			</unit>
+			<unit id="161" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>The executable name is subject to the same guidelines as the path to the auxiliary script when you use <pc dataRefEnd="id2" dataRefStart="id1" id="p1">Run another script</pc>.</source>
+				</segment>
+			</unit>
+			<unit id="162" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>To illustrate how to use <pc dataRefEnd="id2" dataRefStart="id1" id="p1">Run an executable</pc>, here’s a concrete example that uses a tool named wduser.exe, which conveniently is already included in the %PATH% on the devkit.</source>
+				</segment>
+			</unit>
+			<unit id="163" translate="yes">
+				<segment state="initial">
+					<source>Because wduser.exe is already in the path, you simply provide the executable file name to use the tool.</source>
+				</segment>
+			</unit>
+			<unit id="164" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">Figure 2. Details for “Run an executable” action.</pc></source>
+				</segment>
+			</unit>
+			<unit id="165" translate="yes">
+				<segment state="initial">
+					<source>The example shows how to get the help information from wduser.exe by providing ‘/?’</source>
+				</segment>
+			</unit>
+			<unit id="166" translate="yes">
+				<segment state="initial">
+					<source>as the argument.</source>
+				</segment>
+			</unit>
+			<unit id="167" translate="yes">
+				<segment state="initial">
+					<source>When you test this, you’ll see the command line help information in the output window of the in-browser editor:</source>
+				</segment>
+			</unit>
+			<unit id="168" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>This works because wduser.exe can be reached by way of the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">%PATH%</pc> variable.</source>
+				</segment>
+			</unit>
+			<unit id="169" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+					<data id="id3">**</data>
+					<data id="id4">**</data>
+					<data id="id5">@echo</data>
+				</originalData>
+				<segment state="initial">
+					<source>(If you want to know the search path, simply add a <pc dataRefEnd="id2" dataRefStart="id1" id="p1">Do custom action</pc> action and provide <pc dataRefEnd="id4" dataRefStart="id3" id="p2"><ph dataRef="id5" id="ph1" /> %PATH%</pc>)</source>
+				</segment>
+			</unit>
+			<unit id="170" translate="yes">
+				<segment state="initial">
+					<source>The following figure shows a complete example of a script that would sign in a gold member user account and then add a guest account using wduser addsponsored.</source>
+				</segment>
+			</unit>
+			<unit id="171" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">Figure 3. Example of a “Run an executable” action</pc></source>
+				</segment>
+			</unit>
+			<unit id="172" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>Here are the specific details for the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">Run an executable</pc> action.</source>
+				</segment>
+			</unit>
+			<unit id="173" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">Figure 3. Action details.</pc></source>
+				</segment>
+			</unit>
+			<unit id="174" translate="yes">
+				<segment state="initial">
+					<source>Deploying a script to multiple consoles</source>
+				</segment>
+			</unit>
+			<unit id="175" translate="yes">
+				<segment state="initial">
+					<source>In a lab setting, it quickly becomes onerous to deploy the same script to every devkit.</source>
+				</segment>
+			</unit>
+			<unit id="176" translate="yes">
+				<segment state="initial">
+					<source>This section discusses some strategies that you can use to automate script deployment.</source>
+				</segment>
+			</unit>
+			<unit id="177" translate="yes">
+				<segment state="initial">
+					<source>We’ll consider two types of script:</source>
+				</segment>
+			</unit>
+			<unit id="178" translate="yes">
+				<segment state="initial">
+					<source>A script intended to run immediately following the out-of-box experience (OOBE) or factory reset.</source>
+				</segment>
+			</unit>
+			<unit id="179" translate="yes">
+				<segment state="initial">
+					<source>—or—</source>
+				</segment>
+			</unit>
+			<unit id="180" translate="yes">
+				<segment state="initial">
+					<source>Other script types such as a startup/boot script or a quick-action script.</source>
+				</segment>
+			</unit>
+			<unit id="181" translate="yes">
+				<segment state="initial">
+					<source>Unattended setup script for OOBE or factory reset</source>
+				</segment>
+			</unit>
+			<unit id="182" translate="yes">
+				<segment state="initial">
+					<source>The out-of-box experience (OOBE) is that first thing that runs on a new devkit when you power it on after taking it out of the packaging.</source>
+				</segment>
+			</unit>
+			<unit id="183" translate="yes">
+				<segment state="initial">
+					<source>On a console that has already been set up previously, you can force a factory reset to run the same OOBE experience again.</source>
+				</segment>
+			</unit>
+			<unit id="184" translate="yes">
+				<segment state="initial">
+					<source>Regardless of how you invoke OOBE, after it finishes, the file system on the devkit is completely clean and there’s no reasonable way to have a custom script on the internal HDD.</source>
+				</segment>
+			</unit>
+			<unit id="185" translate="yes">
+				<segment state="initial">
+					<source>So for the OOBE or factory reset scenario, you are limited to using an external storage device.</source>
+				</segment>
+			</unit>
+			<unit id="186" translate="yes">
+				<segment state="initial">
+					<source>During OOBE, the system downloads the recovery from the cloud.</source>
+				</segment>
+			</unit>
+			<unit id="187" translate="yes">
+				<segment state="initial">
+					<source>However, there’s also a method for performing an “offline system update”.</source>
+				</segment>
+			</unit>
+			<unit id="188" translate="yes">
+				<segment state="initial">
+					<source>To do this, on the USB drive, you must create a $systemupdate folder that contains the update files.</source>
+				</segment>
+			</unit>
+			<unit id="189" translate="yes">
+				<originalData>
+					<data id="id1">[</data>
+					<data id="id2">](https://support.xbox.com/en-US/xbox-one/console/system-updates-solution)</data>
+				</originalData>
+				<segment state="initial">
+					<source>Instructions can be found at <pc dataRefEnd="id2" dataRefStart="id1" id="p1">Xbox One Offline System Update</pc>.</source>
+				</segment>
+			</unit>
+			<unit id="190" translate="yes">
+				<segment state="initial">
+					<source>Regardless of whether you’re using an offline system update or a just relying on the OOBE behavior to get the update online, you can still provide a script to run after the update finishes, by deploying that script to the external storage device.</source>
+				</segment>
+			</unit>
+			<unit id="191" translate="yes">
+				<segment state="initial">
+					<source>Export the script from the in-browser editor, name it “oobe.cmd”, and then copy it to the root of the USB drive.</source>
+				</segment>
+			</unit>
+			<unit id="192" translate="yes">
+				<segment state="initial">
+					<source>Boot script or quick-action script</source>
+				</segment>
+			</unit>
+			<unit id="193" translate="yes">
+				<segment state="initial">
+					<source>Boot scripts and quick-action scripts typically reside on the internal hard drive of the devkit.</source>
+				</segment>
+			</unit>
+			<unit id="194" translate="yes">
+				<segment state="initial">
+					<source>(A boot script can also reside on an external storage device.) When developing a script, you can simply use the in-browser editor to deploy the script to a single console.</source>
+				</segment>
+			</unit>
+			<unit id="195" translate="yes">
+				<segment state="initial">
+					<source>If you want to deploy the same script to several devkits, you’ll likely want an automated approach.</source>
+				</segment>
+			</unit>
+			<unit id="196" translate="yes">
+				<segment state="initial">
+					<source>One solution is to write a batch file like this to deploy and run the script on all of the devkits.</source>
+				</segment>
+			</unit>
+			<unit id="197" translate="yes">
+				<segment state="initial">
+					<source>To make this work, you must provide:</source>
+				</segment>
+			</unit>
+			<unit id="198" translate="yes">
+				<segment state="initial">
+					<source>An unattended setup script called:</source>
+				</segment>
+			</unit>
+			<unit id="199" translate="yes">
+				<segment state="initial">
+					<source>A file containing a list of the devkits that you want to update.</source>
+				</segment>
+			</unit>
+			<unit id="200" translate="yes">
+				<segment state="initial">
+					<source>The file must be named:</source>
+				</segment>
+			</unit>
+			<unit id="201" translate="yes">
+				<segment state="initial">
+					<source>Each line of the file will have either a host name or IP address for a devkit in the group.</source>
+				</segment>
+			</unit>
+			<unit id="202" translate="yes">
+				<segment state="initial">
+					<source>Then run the batch-file from the Xbox One command prompt.</source>
+				</segment>
+			</unit>
+			<unit id="203" translate="yes">
+				<segment state="initial">
+					<source>Here’s a concrete example:</source>
+				</segment>
+			</unit>
+			<unit id="204" translate="yes">
+				<segment state="initial">
+					<source>The example assumes that the batch file is named DeployAndReboot.cmd and works on a hypothetical group called “PlayTestLab”.</source>
+				</segment>
+			</unit>
+			<unit id="205" translate="yes">
+				<segment state="initial">
+					<source>As described above, you’d need two files:</source>
+				</segment>
+			</unit>
+			<unit id="206" translate="yes">
+				<segment state="initial">
+					<source>consoles.PlayTestLab.txt</source>
+				</segment>
+			</unit>
+			<unit id="207" translate="yes">
+				<segment state="initial">
+					<source>SetupDevkit.PlayTestLab.xboxunattend</source>
+				</segment>
+			</unit>
+			<unit id="208" translate="yes">
+				<segment state="initial">
+					<source>Discovering consoles</source>
+				</segment>
+			</unit>
+			<unit id="209" translate="yes">
+				<segment state="initial">
+					<source>The DeployAndReboot.cmd batch file is a convenient way to deploy your boot script to a group of consoles, but only after you have created the list of host names or IPs.</source>
+				</segment>
+			</unit>
+			<unit id="210" translate="yes">
+				<segment state="initial">
+					<source>Creating the list in the first place could be a daunting task if you have a lab or studio filled with devkits that may not all be set up consistently.</source>
+				</segment>
+			</unit>
+			<unit id="211" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>The xbConnect.exe utility supports a /<pc dataRefEnd="id2" dataRefStart="id1" id="p1">discover</pc> option that allows you to list the running devkits on your local network.</source>
+				</segment>
+			</unit>
+			<unit id="212" translate="yes">
+				<segment state="initial">
+					<source>Here’s a batch file that runs xbConnect to enumerate your devkits.</source>
+				</segment>
+			</unit>
+			<unit id="213" translate="yes">
+				<segment state="initial">
+					<source>The batch file is benign—it merely gathers information, and this is a deliberate design choice.</source>
+				</segment>
+			</unit>
+			<unit id="214" translate="yes">
+				<segment state="initial">
+					<source>Be sure to review the list of devkits that you obtain before performing a destructive change on all those consoles.</source>
+				</segment>
+			</unit>
+			<unit id="215" translate="yes">
+				<segment state="initial">
+					<source>Otherwise, you could end up causing a lot of disruption in your studio.</source>
+				</segment>
+			</unit>
+			<unit id="216" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>As a best practice, use extreme caution when using the results of xbConnect /<pc dataRefEnd="id2" dataRefStart="id1" id="p1">discover</pc> in a script.</source>
+				</segment>
+			</unit>
+			<unit id="217" translate="yes">
+				<segment state="initial">
+					<source>It’s always a best practice to set an access key on your devkit.</source>
+				</segment>
+			</unit>
+			<unit id="218" translate="yes">
+				<segment state="initial">
+					<source>This prevents people who may have access to your network from also accessing your devkit.</source>
+				</segment>
+			</unit>
+			<unit id="219" translate="yes">
+				<segment state="initial">
+					<source>You can set the same access key for all the devkits that you want to manage as a group.</source>
+				</segment>
+			</unit>
+			<unit id="220" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>You can find the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">Access Key</pc> setting in Dev Home.</source>
+				</segment>
+			</unit>
+			<unit id="221" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>Alternatively, you can use xbConfig.exe to change the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">Access Key</pc> setting.</source>
+				</segment>
+			</unit>
+			<unit id="222" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">Figure 4. Access Key Setting in Dev Home.</pc></source>
+				</segment>
+			</unit>
+			<unit id="223" translate="yes">
+				<segment state="initial">
+					<source>The access key restricts access by tools from the Xbox One command prompt, but doesn’t restrict access when connecting via Xbox Device Portal.</source>
+				</segment>
+			</unit>
+			<unit id="224" translate="yes">
+				<segment state="initial">
+					<source>To restrict access for Xbox Device Portal, configure the Remote Access settings in Dev Home.</source>
+				</segment>
+			</unit>
+			<unit id="225" translate="yes">
+				<originalData>
+					<data id="id1">[</data>
+					<data id="id2">](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/windows-device-portal-on-xbox)</data>
+				</originalData>
+				<segment state="initial">
+					<source>For more information, search the index of the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">XDK Documentation</pc> for “Xbox Device Portal”.</source>
+				</segment>
+			</unit>
+			<unit id="226" translate="yes">
+				<segment state="initial">
+					<source>How to avoid deploying</source>
+				</segment>
+			</unit>
+			<unit id="227" translate="yes">
+				<segment state="initial">
+					<source>The best way to deploy the same script to several devkits is not to do it at all.</source>
+				</segment>
+			</unit>
+			<unit id="228" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>You can deploy a simple boot script just once to all your devkits, and that script then uses the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">Run another script</pc> action to call a script that resides on a network share.</source>
+				</segment>
+			</unit>
+			<unit id="229" translate="yes">
+				<segment state="initial">
+					<source>After that, you can concentrate most of your scripting actions in the remote script on the network share.</source>
+				</segment>
+			</unit>
+			<unit id="230" translate="yes">
+				<segment state="initial">
+					<source>Whenever you make changes to the remote script, those changes are automatically picked up when the boot script on any of your devkits runs the remote script.</source>
+				</segment>
+			</unit>
+			<unit id="231" translate="yes">
+				<segment state="initial">
+					<source>Unique host names</source>
+				</segment>
+			</unit>
+			<unit id="232" translate="yes">
+				<segment state="initial">
+					<source>Setting the host name on a group of devkits programmatically presents a challenge because you must use a different host name for each devkit.</source>
+				</segment>
+			</unit>
+			<unit id="233" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>The default <pc dataRefEnd="id2" dataRefStart="id1" id="p1">Set the host name for the console</pc> action uses a simple mechanism to accomplish this.</source>
+				</segment>
+			</unit>
+			<unit id="234" translate="yes">
+				<segment state="initial">
+					<source>Each time an unattended script runs, the following parameters are passed in.</source>
+				</segment>
+			</unit>
+			<unit id="235" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+					<data id="id3">**</data>
+					<data id="id4">**</data>
+					<data id="id5">-</data>
+					<data id="id6">\&lt;</data>
+				</originalData>
+				<segment state="initial">
+					<source>Recall that the unattended action named <pc dataRefEnd="id2" dataRefStart="id1" id="p1">Set the host name for the console</pc> has an optional check box that lets you automatically generate the host name in the form <pc dataRefEnd="id4" dataRefStart="id3" id="p2">XB</pc><ph dataRef="id5" id="ph1" /><ph dataRef="id6" id="ph2" />console serial number&gt; (for example, XB-001234567890).</source>
+				</segment>
+			</unit>
+			<unit id="236" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>The standard script block for the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">Set the host name</pc>…</source>
+				</segment>
+			</unit>
+			<unit id="237" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>action composes <pc dataRefEnd="id2" dataRefStart="id1" id="p1">%SerialNumber%</pc> with a string fragment to create the host name.</source>
+				</segment>
+			</unit>
+			<unit id="238" translate="yes">
+				<segment state="initial">
+					<source>The default host-name scheme does indeed give you unique host names, but the names are not user friendly.</source>
+				</segment>
+			</unit>
+			<unit id="239" translate="yes">
+				<segment state="initial">
+					<source>Here’s a script that takes a different approach.</source>
+				</segment>
+			</unit>
+			<unit id="240" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>Rather than use the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">%SerialNumber%</pc> to generate the host name, this script just uses some logic to “look up” a friendlier host name that is associated with each serial number.</source>
+				</segment>
+			</unit>
+			<unit id="241" translate="yes">
+				<segment state="initial">
+					<source>You can use this script on multiple consoles, provided that you include the serial numbers for each within the script.</source>
+				</segment>
+			</unit>
+			<unit id="242" translate="yes">
+				<segment state="initial">
+					<source>Unique test accounts</source>
+				</segment>
+			</unit>
+			<unit id="243" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>The trick in the unique host name example is to use the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">%SerialNumber%</pc> as a key to look up a value (for example, the host name) that is associated with that serial number.</source>
+				</segment>
+			</unit>
+			<unit id="244" translate="yes">
+				<segment state="initial">
+					<source>A test account is analogous to a host name, in that you want a unique test account signed in on each individual devkit.</source>
+				</segment>
+			</unit>
+			<unit id="245" translate="yes">
+				<segment state="initial">
+					<source>You can use the same technique as with host names to sign in unique test accounts on several consoles.</source>
+				</segment>
+			</unit>
+			<unit id="246" translate="yes">
+				<segment state="initial">
+					<source>To do this, you add a custom action that looks like this.</source>
+				</segment>
+			</unit>
+			<unit id="247" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>Notice that the script uses <pc dataRefEnd="id2" dataRefStart="id1" id="p1">!XblEmailAddress!</pc></source>
+				</segment>
+			</unit>
+			<unit id="248" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>instead of <pc dataRefEnd="id2" dataRefStart="id1" id="p1">%XblEmailAddress%</pc>.</source>
+				</segment>
+			</unit>
+			<unit id="249" translate="yes">
+				<segment state="initial">
+					<source>The ‘!’</source>
+				</segment>
+			</unit>
+			<unit id="250" translate="yes">
+				<segment state="initial">
+					<source>variable delimiter is valid only when you have “delayed expansion” enabled for batch files.</source>
+				</segment>
+			</unit>
+			<unit id="251" translate="yes">
+				<segment state="initial">
+					<source>To enable delayed expansion, add “SETLOCAL EnableDelayedExpansion” somewhere near the beginning of your script.</source>
+				</segment>
+			</unit>
+			<unit id="252" translate="yes">
+				<segment state="initial">
+					<source>Scripts that you create with the unattended setup script editor will always enable delayed expansion.</source>
+				</segment>
+			</unit>
+			<unit id="253" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>In this example, each of the test accounts has the same password, which is why the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">XblPassword</pc> value is the same in all cases.</source>
+				</segment>
+			</unit>
+			<unit id="254" translate="yes">
+				<segment state="initial">
+					<source>Also, the password is base64 encoded.</source>
+				</segment>
+			</unit>
+			<unit id="255" translate="yes">
+				<segment state="initial">
+					<source>Base64 encoding is used to support special characters in the password.</source>
+				</segment>
+			</unit>
+			<unit id="256" translate="yes">
+				<segment state="initial">
+					<source>The base64 encoding is used only as a convenient way to encode special characters and is not a secure way to store passwords.</source>
+				</segment>
+			</unit>
+			<unit id="257" translate="yes">
+				<segment state="initial">
+					<source>To get a base64-encoded password value, you can use the script editor.</source>
+				</segment>
+			</unit>
+			<unit id="258" translate="yes">
+				<segment state="initial">
+					<source>First, supply user credentials as shown.</source>
+				</segment>
+			</unit>
+			<unit id="259" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">Figure 5. Sign-in details.</pc></source>
+				</segment>
+			</unit>
+			<unit id="260" translate="yes">
+				<segment state="initial">
+					<source>Next, export the script and open the resulting file in your favorite editor.</source>
+				</segment>
+			</unit>
+			<unit id="261" translate="yes">
+				<segment state="initial">
+					<source>Then look for the encoded password (search for “XblPassword”), which you can now substitute into your own custom script.</source>
+				</segment>
+			</unit>
+			<unit id="262" translate="yes">
+				<segment state="initial">
+					<source>Recovery deployment</source>
+				</segment>
+			</unit>
+			<unit id="263" translate="yes">
+				<segment state="initial">
+					<source>Follow these steps to stage and deploy a new Xbox One recovery update to a group of consoles:</source>
+				</segment>
+			</unit>
+			<unit id="264" translate="yes">
+				<originalData>
+					<data id="id1">https://developer.microsoft.com/en-us/games/xbox/partner/development-downloads-xdk-archives</data>
+				</originalData>
+				<segment state="initial">
+					<source>Download and unpack the .zip file for the Xbox One recovery update of your choice from <ph dataRef="id1" id="ph1" /></source>
+				</segment>
+			</unit>
+			<unit id="265" translate="yes">
+				<segment state="initial">
+					<source>Place the unpacked payload on a network share.</source>
+				</segment>
+			</unit>
+			<unit id="266" translate="yes">
+				<originalData>
+					<data id="id1">[</data>
+					<data id="id2">](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/pc-deployment)</data>
+				</originalData>
+				<segment state="initial">
+					<source>(For a brief example of how to set up a network share, search the index of the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">XDK Documentation</pc> for “Run from PC Deployment”.)</source>
+				</segment>
+			</unit>
+			<unit id="267" translate="yes">
+				<segment state="initial">
+					<source>Create an unattended script with at least the following two script actions:</source>
+				</segment>
+			</unit>
+			<unit id="268" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">Add network credentials</pc></source>
+				</segment>
+			</unit>
+			<unit id="269" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source><pc dataRefEnd="id2" dataRefStart="id1" id="p1">Update console OS recovery</pc></source>
+				</segment>
+			</unit>
+			<unit id="270" translate="yes">
+				<segment state="initial">
+					<source>Deploy and run the unattended script on each console that you want to update with the new Xbox One recovery update.</source>
+				</segment>
+			</unit>
+			<unit id="271" translate="yes">
+				<originalData>
+					<data id="id1">[</data>
+					<data id="id2">](#how-to-avoid-deploying)</data>
+				</originalData>
+				<segment state="initial">
+					<source>In step 4, you can use the strategy described in <pc dataRefEnd="id2" dataRefStart="id1" id="p1">How to avoid deploying</pc> if you need to run the recovery update on a group of consoles.</source>
+				</segment>
+			</unit>
+			<unit id="272" translate="yes">
+				<originalData>
+					<data id="id1">**</data>
+					<data id="id2">**</data>
+				</originalData>
+				<segment state="initial">
+					<source>Also, the script action <pc dataRefEnd="id2" dataRefStart="id1" id="p1">Update console OS recovery</pc> does nothing at all in the case when the specified recovery is the same version as the recovery already installed on the devkit.</source>
+				</segment>
+			</unit>
+			<unit id="273" translate="yes">
+				<segment state="initial">
+					<source>This makes it easy to add the script action to a boot script, because you know that it will update the recovery only when you have a newer one posted to your network share.</source>
+				</segment>
+			</unit>
+			<unit id="274" translate="yes">
+				<segment state="initial">
+					<source>Summary</source>
+				</segment>
+			</unit>
+			<unit id="275" translate="yes">
+				<segment state="initial">
+					<source>Unattended setup scripting is at first glance a very basic automation feature that you can extend by using your batch file programming prowess.</source>
+				</segment>
+			</unit>
+			<unit id="276" translate="yes">
+				<segment state="initial">
+					<source>You can inject small pieces of functionality into your unattended script by using custom actions, or build up a sophisticated scripting infrastructure by calling out to your custom batch files.</source>
+				</segment>
+			</unit>
+			<unit id="277" translate="yes">
+				<segment state="initial">
+					<source>Many studios need to manage a large number of devkits.</source>
+				</segment>
+			</unit>
+			<unit id="278" translate="yes">
+				<segment state="initial">
+					<source>We’ve seen how to construct a system for deploying scripts to multiple consoles.</source>
+				</segment>
+			</unit>
+			<unit id="279" translate="yes">
+				<segment state="initial">
+					<source>We’ve also discussed a scripting strategy that minimizes the need to deploy scripts frequently.</source>
+				</segment>
+			</unit>
+			<unit id="280" translate="yes">
+				<segment state="initial">
+					<source>References</source>
+				</segment>
+			</unit>
+			<unit id="281" translate="yes">
+				<originalData>
+					<data id="id1">[</data>
+					<data id="id2">](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/index)</data>
+				</originalData>
+				<segment state="initial">
+					<source>For more information about topics mentioned in this white paper, search the index of the <pc dataRefEnd="id2" dataRefStart="id1" id="p1">XDK Documentation</pc> for:</source>
+				</segment>
+			</unit>
+			<unit id="282" translate="yes">
+				<segment state="initial">
+					<source>onfiguring Your Dev Kit with an Unattended Setup Script</source>
+				</segment>
+			</unit>
+			<unit id="283" translate="yes">
+				<segment state="initial">
+					<source>Unattended Setup Scripting Quick Start Guide</source>
+				</segment>
+			</unit>
+			<unit id="284" translate="yes">
+				<segment state="initial">
+					<source>Script Authoring Tool</source>
+				</segment>
+			</unit>
+			<unit id="285" translate="yes">
+				<segment state="initial">
+					<source>Unattended Setup Script Reference</source>
+				</segment>
+			</unit>
+			<unit id="286" translate="yes">
+				<segment state="initial">
+					<source>Xbox Device Portal</source>
+				</segment>
+			</unit>
+			<unit id="287" translate="yes">
+				<segment state="initial">
+					<source>Run from PC Deployment</source>
+				</segment>
+			</unit>
+		</group>
+	</file>
+</xliff>
