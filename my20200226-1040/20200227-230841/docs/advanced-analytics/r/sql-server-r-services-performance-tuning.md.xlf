@@ -1,0 +1,135 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="sql-server-r-services-performance-tuning.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c4d7b6b91ac3aeaa45c5e6c3e05c12176f5f60b28.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">4d7b6b91ac3aeaa45c5e6c3e05c12176f5f60b28</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\sql-server-r-services-performance-tuning.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Performance tuning for R</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>This article describes performance optimization for R Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Performance tuning for R in SQL Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article is the first in a series of four articles that describe performance optimization for R Services, based on two case studies:</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Performance tests conducted by the product development team to validate the performance profile of R solutions</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Performance optimization by the Microsoft data science team for a specific machine learning scenario often requested by customers.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>The goal of this series is to provide guidance about the types of performance tuning techniques that are most useful for running R jobs in SQL Server.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>This (first) topic provides an overview of the architecture and some common problems when optimizing for data science tasks.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>The second article covers specific hardware and SQL Server optimizations.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>The third article covers optimizations in R code and resources for operationalization.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>The fourth article describes test methods in detail, and reports findings and conclusions.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to:<ept id="p1">**</ept> SQL Server 2016 R Services, SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Performance goals and targeted scenarios</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>The R Services feature was introduced in SQL Server 2016 to support execution of R scripts by SQL Server.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>When you use this feature, the R runtime operates in a separate process from the database engine, but exchanges data securely with the database engine, using server resources and services that interact with SQL Server, such as the Trusted Launchpad.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>In SQL Server 2017, support was announced for running Python scripts using the same architecture, with additional language to follow in future.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>As the number of supported versions and language grows, it is important that the database administrator and database architect are aware of the potential for resource contention due to machine learning jobs, and that they are able to configure the server to support the new workloads.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Although keeping analytics close to the data eliminates insecure data movements, it also moves analytical workloads off the laptop of the data scientist and back onto the server hosting the data.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Performance optimization for machine learning is clearly not a one-size-fits-all proposition.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>The following common tasks might have very different performance profiles:</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Training tasks: creating and training a regression model vs. training a neural network</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Feature engineering using R vs. feature extraction using T-SQL</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Scoring on single rows or small batches, vs. bulk scoring using tabular inputs</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Running scoring in R vs. deploying models to production on SQL Server in stored procedures</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Modifying R code to minimize data transfer or remove costly data transformations</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Enable automated testing and retraining of models</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Because the choice of optimization techniques depends on which task is critical for your application or use case, the case studies cover both general performance tips, and guidance on how to optimize for a specific scenario, optimization for batch scoring.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Individual optimization options in SQL Server<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>In the first performance case study, multiple tests were run on a single dataset using a single type of model.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>The rxLinMod algorithm in RevoscaleR was used to build a model and create scores from it, but the code as well as the underlying data tables were systematically altered to test the impact of each change.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>For example, in one test run, the R code was altered so that a comparison could be made between feature engineering using a transformation function vs. pre-computing the features and then loading features from a table.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>In another test run, model training performance was compared between using a standard indexed table vs. data in a table with various types of compression or new index types.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Optimization for a specific high-volume scoring scenario<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>The machine learning task in the second case study involves processing many resumes submitted for multiple positions, and finding the best candidate for each job position.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>The machine learning model itself is formulated as a binary classification problem: it takes a resume and job description as input, and generates the probability for each resume-job pair.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Because the goal is to find the best match, a user-defined probability threshold is used to further filter and get just the good matches.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>For this solution, the main objective was to achieve low latency during scoring.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>However, this task is computationally expensive even during the scoring process, because each new job must be matched against millions of resumes within a reasonable time frame.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Moreover, the feature engineering step produces over 2000 features per resume or job, and is a significant performance bottleneck.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>We suggest that you review all results from the first case study to determine which techniques are applicable to your solution, and weigh their potential impact.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Then, review the results of the scoring optimization case study to see how the author applied different techniques and optimized the server to support a particular workload.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Performance optimization process</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Configuration and tuning for performance requires creating a solid base, on which to layer optimizations designed for specific workloads:</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Choose an appropriate server to host analytics.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Typically, a reporting secondary, data warehouse or other server that is already used for other reporting or analytics is preferred.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>However, in a hybrid transactional-analytical processing (HTAP) solution, operational data can be used as the input to R for fast scoring.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Configure the SQL Server instance to balance database engine operations and R or Python script execution at appropriate levels.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>This can include changing SQL Server defaults for memory and CPU usage, NUMA and processor affinity settings, and creation of resource groups.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Optimize the server computer to support efficient use of external scripts.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>This can include increasing the number of accounts used for external script execution, enabling package management, and assigning users to related security roles.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Applying optimizations specific to data storage and transfer in SQL Server, including indexing and statistics strategies, query design and query optimization, and the design of tables that are used for machine learning.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>You might also analyze data sources and data transport methods, or modify ETL processes to optimize feature extraction.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Tune the analytical model to avoid inefficiencies.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>The scope of the optimizations that are possible depend on the complexity of your R code and the packages and data you are using.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Key tasks include eliminating costly data transformations or offloading data preparation or feature engineering tasks from R or Python to ETL processes or SQL.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>You might also refactor scripts, eliminate in-line package installs, divide R code into separate procedures for training, scoring, and evaluation, or simplify code to work more efficiently as a stored procedure.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Articles in this series</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Performance tuning for R in SQL Server - hardware<ept id="p1">](../r/sql-server-configuration-r-services.md)</ept></source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Provides guidance for configuring the hardware that <ph id="ph1">[!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)]</ph> is installed on, and for configuring the SQL Server instance to better support external scripts.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>It is particularly useful for <bpt id="p1">**</bpt>database administrators<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Performance tuning for R in SQL Server - code and data optimization<ept id="p1">](../r/r-and-data-optimization-r-services.md)</ept></source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Provides specific tips on how to optimize the external script to avoid known problems.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>It is most useful to <bpt id="p1">**</bpt>data scientists<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>While much of the information in this section applies to R in general, some information is specific to RevoScaleR analytic functions.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Detailed performance guidance is not available for <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> and other supported Python libraries.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Performance tuning for R in SQL Server - methods and results<ept id="p1">](../r/performance-case-study-r-services.md)</ept></source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Summarizes what data was used the two case studies, how performance was tested, and how the optimizations affected results.</source>
+        </trans-unit></group></body></file></xliff>

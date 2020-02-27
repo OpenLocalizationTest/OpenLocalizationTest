@@ -1,0 +1,163 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="quickstart-python-create-script.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c8c1347d58f0b8a4014a51a220b6ecded5a343082.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">8c1347d58f0b8a4014a51a220b6ecded5a343082</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\quickstart-python-create-script.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Quickstart: Run Python scripts</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Run a set of simple Python scripts using SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Learn how to use the stored procedure sp_execute_external_script to execute the script in a SQL Server instance.</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Quickstart: Run simple Python scripts with SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In this quickstart, you'll run a set of simple Python scripts using <bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../what-is-sql-server-machine-learning.md)</ept>.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>You'll learn how to use the stored procedure <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md)</ept> to execute the script in a SQL Server instance.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>This quickstart requires access to an instance of SQL Server with <bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../install/sql-machine-learning-services-windows-install.md)</ept> with the Python language installed.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>You also need a tool for running SQL queries that contain Python scripts.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>You can run these scripts using any database management or query tool, as long as it can connect to a SQL Server instance, and run a T-SQL query or stored procedure.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>This quickstart uses <bpt id="p1">[</bpt>SQL Server Management Studio (SSMS)<ept id="p1">](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms)</ept>.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Run a simple script</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>To run a Python script, you'll pass it as an argument to the system stored procedure, <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md)</ept>.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>This system stored procedure starts the Python runtime in the context of SQL Server, passes data to Python, manages Python user sessions securely, and returns any results to the client.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>In the following steps, you'll run this example Python script in your SQL Server instance:</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Open a new query window in <bpt id="p1">**</bpt>SQL Server Management Studio<ept id="p1">**</ept> connected to your SQL Server instance.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Pass the complete Python script to the <ph id="ph1">`sp_execute_external_script`</ph> stored procedure.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>The script is passed through the <ph id="ph1">`@script`</ph> argument.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Everything inside the <ph id="ph1">`@script`</ph> argument must be valid Python code.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>The correct result is calculated and the Python <ph id="ph1">`print`</ph> function returns the result to the <bpt id="p1">**</bpt>Messages<ept id="p1">**</ept> window.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>It should look something like this.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Run a Hello World script</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>A typical example script is one that just outputs the string "Hello World".</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Run the following command.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Inputs to the <ph id="ph1">`sp_execute_external_script`</ph> stored procedure include:</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>defines the language extension to call, in this case Python</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>defines the commands passed to the Python runtime</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Your entire Python script must be enclosed in this argument, as Unicode text.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>You could also add the text to a variable of type <bpt id="p1">**</bpt>nvarchar<ept id="p1">**</ept> and then call the variable</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>data returned by the query, passed to the Python runtime, which returns the data to SQL Server as a data frame</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>WITH RESULT SETS</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>clause defines the schema of the returned data table for SQL Server, in this case adding "Hello World" as the column name and <bpt id="p1">**</bpt>int<ept id="p1">**</ept> for the data type</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>The command outputs the following text:</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Hello World</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Use inputs and outputs</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>By default, <ph id="ph1">`sp_execute_external_script`</ph> accepts a single dataset as input, which typically you supply in the form of a valid SQL query.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>It then returns a single Python data frame as output.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>For now, let's use the default input and output variables of <ph id="ph1">`sp_execute_external_script`</ph>: <bpt id="p1">**</bpt>InputDataSet<ept id="p1">**</ept> and <bpt id="p2">**</bpt>OutputDataSet<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Create a small table of test data.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Use the <ph id="ph1">`SELECT`</ph> statement to query the table.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Contents of the PythonTestData table</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Run the following Python script.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>It retrieves the data from the table using the <ph id="ph1">`SELECT`</ph> statement, passes it through the Python runtime, and returns the data as a data frame.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`WITH RESULT SETS`</ph> clause defines the schema of the returned data table for SQL, adding the column name <bpt id="p1">*</bpt>NewColName<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Output from Python script that returns data from a table</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Now change the names of the input and output variables.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>The default input and output variable names are <bpt id="p1">**</bpt>InputDataSet<ept id="p1">**</ept> and <bpt id="p2">**</bpt>OutputDataSet<ept id="p2">**</ept>, the following script changes the names to <bpt id="p3">**</bpt>SQL_in<ept id="p3">**</ept> and <bpt id="p4">**</bpt>SQL_out<ept id="p4">**</ept>:</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Note that Python is case-sensitive.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>The input and output variables used in the Python script (<bpt id="p1">**</bpt>SQL_out<ept id="p1">**</ept>, <bpt id="p2">**</bpt>SQL_in<ept id="p2">**</ept>) need to match the names defined with <ph id="ph1">`@input_data_1_name`</ph> and <ph id="ph2">`@output_data_1_name`</ph>, including case.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Only one input dataset can be passed as a parameter, and you can return only one dataset.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>However, you can call other datasets from inside your Python code and you can return outputs of other types in addition to the dataset.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>You can also add the OUTPUT keyword to any parameter to have it returned with the results.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>You can also generate values just using the Python script with no input data (<ph id="ph1">`@input_data_1`</ph> is set to blank).</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>The following script outputs the text "hello" and "world".</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>Query results using <ph id="ph1">@script</ph> as input</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Python uses leading spaces to group statements.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>So when the imbedded Python script spans multiple lines, as in the preceding script, don't try to indent the Python commands to be in line with the SQL commands.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>For example, this script will produce an error:</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>Check Python version</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>If you would like to see which version of Python is installed in your SQL Server instance, run the following script.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>The Python <ph id="ph1">`print`</ph> function returns the version to the <bpt id="p1">**</bpt>Messages<ept id="p1">**</ept> window.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>In the example output below, you can see that in this case, Python version 3.5.2 is installed.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>List Python packages</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Microsoft provides a number of Python packages pre-installed with SQL Server Machine Learning Services in your SQL Server instance.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>To see a list of which Python packages are installed, including version, run the following script.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>The list is from <ph id="ph1">`pkg_resources.working_set`</ph> in Python and returned to SQL as a data frame.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">:::image type="content" source="media/python-package-list.png" alt-text="</bpt>List of installed Python packages<ept id="p1">":::</ept></source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>To learn how to use data structures when using Python in SQL Server Machine Learning Services, follow this quickstart:</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Quickstart: Data structures and objects using Python in SQL Server Machine Learning Services<ept id="p1">](quickstart-python-data-structures.md)</ept></source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>For more information on using Python in SQL Server Machine Learning Services, see the following articles:</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Write advanced Python functions with SQL Server Machine Learning Services<ept id="p1">](quickstart-python-functions.md)</ept></source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Create and score a predictive model in Python with SQL Server Machine Learning Services<ept id="p1">](quickstart-python-train-score-model.md)</ept></source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>What is SQL Server Machine Learning Services (Python and R)?<ept id="p1">](../what-is-sql-server-machine-learning.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

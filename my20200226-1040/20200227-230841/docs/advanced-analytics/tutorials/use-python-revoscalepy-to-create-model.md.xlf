@@ -1,0 +1,165 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="use-python-revoscalepy-to-create-model.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c5faa8688f3036f80b947ccc5d99c09c4612f26fb.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">5faa8688f3036f80b947ccc5d99c09c4612f26fb</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\use-python-revoscalepy-to-create-model.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Create Python model - revoscalepy</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Write Python script using revoscalepy functions to create data science models that run remotely in SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Use Python with revoscalepy to create a model that runs remotely on SQL Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">[</bpt>revoscalepy<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/revoscalepy-package)</ept> Python library from Microsoft provides data science algorithms for data exploration, visualization, transformations, and analysis.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This library has strategic importance in Python integration scenarios in SQL Server.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>On a multi-core server, <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> functions can run in parallel.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>In a distributed architecture with a central server and client workstations (separate physical computers, all having the same <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> library), you can write Python code that starts locally, but then shifts execution to a remote SQL Server instance where data resides.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>You can find <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> in the following Microsoft products and distributions:</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server Machine Learning Services (in-database)<ept id="p1">](../install/sql-machine-learning-services-windows-install.md)</ept></source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Microsoft Machine Learning Server (non-SQL, standalone server)<ept id="p1">](https://docs.microsoft.com/machine-learning-server/index)</ept></source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Client-side Python libraries (for development workstations)<ept id="p1">](https://docs.microsoft.com/machine-learning-server/install/python-libraries-interpreter)</ept></source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>This exercise demonstrates how to create a linear regression model based on <bpt id="p1">[</bpt>rx_lin_mod<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-lin-mod)</ept>, one of the algorithms in <bpt id="p2">**</bpt>revoscalepy<ept id="p2">**</ept> that accepts compute context as an input.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>The code you'll run in this exercise shifts code execution from a local to remote computing environment, enabled by <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> functions that enable a remote compute context.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>By completing this tutorial, you will learn how to:</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Use <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> to create a linear model</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Shift operations from local to remote compute context</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Sample data used in this exercise is the <bpt id="p1">[</bpt><bpt id="p2">**</bpt>flightdata<ept id="p2">**</ept><ept id="p1">](demo-data-airlinedemo-in-sql.md)</ept> database.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>You need an IDE to run the sample code in this article, and the IDE must be linked to the Python executable.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>To practice a compute context shift, you need a <bpt id="p1">[</bpt>local workstation<ept id="p1">](../python/setup-python-client-tools-sql.md)</ept> and a SQL Server database engine instance with <bpt id="p2">[</bpt>Machine Learning Services<ept id="p2">](../install/sql-machine-learning-services-windows-install.md)</ept> and Python enabled.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>If you don't have two computers, you can simulate a remote compute context on one physical computer by installing relevant applications.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>First, an installation of <bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../install/sql-machine-learning-services-windows-install.md)</ept> operates as the "remote" instance.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Second, an installation of the <bpt id="p1">[</bpt>Python client libraries operates<ept id="p1">](../python/setup-python-client-tools-sql.md)</ept> as the client.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>You will have two copies of the same Python distribution and Microsoft Python libraries on the same machine.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>You will have to keep track of file paths and which copy of the Python.exe you are using to complete the exercise successfully.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Remote compute contexts and revoscalepy</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>This sample demonstrates the process of creating a Python model in a remote compute context, which lets you work from a client, but choose a remote environment, such as SQL Server, Spark, or Machine Learning Server, where the operations are actually performed.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>The objective of remote compute context is to bring computation to where the data resides.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>To execute Python code in SQL Server requires the <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> package.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>This is a special Python package provided by Microsoft, similar to the <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> package for the R language.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> package supports the creation of compute contexts, and provides the infrastructure for passing data and models between a local workstation and a remote server.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> function that supports in-database code execution is <bpt id="p2">[</bpt>RxInSqlServer<ept id="p2">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rxinsqlserver)</ept>.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>In this lesson, you use data in SQL Server to train a linear model based on <bpt id="p1">[</bpt>rx_lin_mod<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-lin-mod)</ept>, a function in <bpt id="p2">**</bpt>revoscalepy<ept id="p2">**</ept> that supports regression over very large datasets.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>This lesson also demonstrates the basics of how to set up and then use a <bpt id="p1">**</bpt>SQL Server compute context<ept id="p1">**</ept> in Python.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>For a discussion of how compute contexts work with other platforms, and which compute contexts are supported, see <bpt id="p1">[</bpt>Compute context for script execution in Machine Learning Server<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r/concept-what-is-compute-context)</ept>.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Run the sample code</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>After you have prepared the database and have the data for training stored in a table, open a Python development environment and run the code sample.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>The code performs the following steps:</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Imports the required libraries and functions.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Creates a connection to SQL Server.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Creates <bpt id="p1">**</bpt>data source<ept id="p1">**</ept> objects for working with the data.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Modifies the data using <bpt id="p1">**</bpt>transformations<ept id="p1">**</ept> so that it can be used by the logistic regression algorithm.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Calls <ph id="ph1">`rx_lin_mod`</ph> and defines the formula used to fit the model.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Generates a set of predictions based on the original data.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Creates a summary based on the predicted values.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>All operations are performed using an instance of SQL Server as the compute context.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>For a demonstration of this sample running from the command line, see this video: <bpt id="p1">[</bpt>SQL Server 2017 Advanced Analytics with Python<ept id="p1">](https://www.youtube.com/watch?v=FcoY795jTcc)</ept></source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Sample code</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Defining a data source vs. defining a compute context</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>A data source is different from a compute context.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">*</bpt>data source<ept id="p1">*</ept> defines the data used in your code.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>The compute context defines where the code will be executed.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>However, they use some of the same information:</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Python variables, such as <ph id="ph1">`sql_query`</ph> and <ph id="ph2">`sql_connection_string`</ph>, define the source of the data.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Pass these variables to the <bpt id="p1">[</bpt>RxSqlServerData<ept id="p1">](https://docs.microsoft.com/r-server/python-reference/revoscalepy/rxsqlserverdata)</ept> constructor to implement the <bpt id="p2">**</bpt>data source object<ept id="p2">**</ept> named <ph id="ph1">`data_source`</ph>.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>You create a <bpt id="p1">**</bpt>compute context object<ept id="p1">**</ept> by using the <bpt id="p2">[</bpt>RxInSqlServer<ept id="p2">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rxinsqlserver)</ept> constructor.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>The resulting <bpt id="p1">**</bpt>compute context object<ept id="p1">**</ept> is named <ph id="ph1">`sql_cc`</ph>.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>This example re-uses the same connection string that you used in the data source, on the assumption that the data is on the same SQL Server instance that you will be using as the compute context.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>However, the data source and the compute context could be on different servers.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>Changing compute contexts</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>After you define a compute context, you must set the <bpt id="p1">**</bpt>active compute context<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>By default, most operations are run locally, which means that if you don't specify a different compute context, the data will be fetched from the data source, and the code will run in your current Python environment.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>There are two ways to set the active compute context:</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>As an argument of a method or function</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>By calling <ph id="ph1">`rx_set_computecontext`</ph></source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Set compute context as an argument of a method or function</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>In this example, you set the compute context by using an argument of the individual <bpt id="p1">**</bpt>rx<ept id="p1">**</ept> function.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>This compute context is reused in the call to <bpt id="p1">[</bpt>rxsummary<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-summary)</ept>:</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Set a compute context explicitly using rx_set_compute_context</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>The function <bpt id="p1">[</bpt>rx_set_compute_context<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-set-compute-context)</ept> lets you toggle between compute contexts that have already been defined.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>After you have set the active compute context, it remains active until you change it.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>Using parallel processing and streaming</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>When you define the compute context, you can also set parameters that control how the data is handled by the compute context.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>These parameters differ depending on the data source type.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>For SQL Server compute contexts, you can set the batch size, or provide hints about the degree of parallelism to use in running tasks.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>The sample was run on a computer with four processors, so the <ph id="ph1">`num_tasks`</ph> parameter is set to 4 to allow maximum use of resources.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>If you set this value to 0, SQL Server uses the default, which is to run as many tasks in parallel as possible, under the current MAXDOP settings for the server.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>However, the exact number of tasks that might be allocated depends on many other factors, such as server settings, and other jobs that are running.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>These additional Python samples and tutorials demonstrate end-to-end scenarios using more complex data sources, as well as the use of remote compute contexts.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>In-Database Python for SQL developers<ept id="p1">](sqldev-in-database-python-for-sql-developers.md)</ept></source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Build a predictive model using Python and SQL Server<ept id="p1">](https://microsoft.github.io/sql-ml-tutorials/python/rentalprediction/)</ept></source>
+        </trans-unit></group></body></file></xliff>

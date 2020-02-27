@@ -1,0 +1,129 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="sql-native-scoring.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c766adecbc91f88ed0796e4214b7e4074fc564f01.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">766adecbc91f88ed0796e4214b7e4074fc564f01</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\sql-native-scoring.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Native scoring using T-SQL PREDICT</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Generate predictions using the PREDICT T-SQL function, scoring dta inputs against a pre-trained model written in R or Python on SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Native scoring using the PREDICT T-SQL function</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Native scoring uses <bpt id="p1">[</bpt>PREDICT T-SQL function<ept id="p1">](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql)</ept> and the native C++ extension capabilities in SQL Server 2017 to generate prediction values or <bpt id="p2">*</bpt>scores<ept id="p2">*</ept> for new data inputs in near-real-time.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This methodology offers the fastest possible processing speed of forecasting and prediction workloads, but comes with platform and library requirements: only functions from RevoScaleR and revoscalepy have C++ implementations.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Native scoring requires that you have an already trained model.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>In SQL Server 2017 Windows or Linux, or in Azure SQL Database, you can call the PREDICT function in Transact-SQL to invoke native scoring against new data that you provide as an input parameter.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>The PREDICT function returns scores over data inputs you provide.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>How native scoring works</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Native scoring uses native C++ libraries from Microsoft that can read an already trained model, previously stored in a special binary format or saved to disk as raw byte stream, and generate scores for new data inputs that you provide.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Because the model is trained, published, and stored, it can be used for scoring without having to call the R or Python interpreter.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>As such, the overhead of multiple process interactions is reduced, resulting in much faster prediction performance in enterprise production scenarios.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>To use native scoring, call the PREDICT T-SQL function and pass the following required inputs:</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>A compatible model based on a supported algorithm.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Input data, typically defined as a SQL query.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>The function returns predictions for the input data, together with any columns of source data that you want to pass through.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>PREDICT is available on all editions of SQL Server 2017 database engine and enabled by default, including SQL Server Machine Learning Services on Windows, SQL Server 2017 (Windows), SQL Server 2017 (Linux), or Azure SQL Database.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>You do not need to install R, Python, or enable additional features.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>The model must be trained in advance using one of the supported <bpt id="p1">**</bpt>rx<ept id="p1">**</ept> algorithms listed below.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Serialize the model using <bpt id="p1">[</bpt>rxSerialize<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxserializemodel)</ept> for R, and <bpt id="p2">[</bpt>rx_serialize_model<ept id="p2">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-serialize-model)</ept> for Python.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>These serialization functions have been optimized to support fast scoring.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Supported algorithms</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>revoscalepy models</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_lin_mod<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-lin-mod)</ept></source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_logit<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-logit)</ept></source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_btrees<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-btrees)</ept></source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_dtree<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-dtree)</ept></source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_dforest<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-dforest)</ept></source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>RevoScaleR models</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxLinMod<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxlinmod)</ept></source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxLogit<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxlogit)</ept></source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxBTrees<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxbtrees)</ept></source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxDtree<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxdtree)</ept></source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxDForest<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxdforest)</ept></source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>If you need to use models from MicrosoftML or microsoftml, use <bpt id="p1">[</bpt>real-time scoring with sp_rxPredict<ept id="p1">](real-time-scoring.md)</ept>.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Unsupported model types include the following types:</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Models containing other transformations</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Models using the <ph id="ph1">`rxGlm`</ph> or <ph id="ph2">`rxNaiveBayes`</ph> algorithms in RevoScaleR or revoscalepy equivalents</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>PMML models</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Models created using other open-source or third-party libraries</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Example: PREDICT (T-SQL)</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>In this example, you create a model, and then call the real-time prediction function from T-SQL.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Step 1.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Prepare and save the model</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Run the following code to create the sample database and required tables.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Use the following statement to populate the data table with data from the <bpt id="p1">**</bpt>iris<ept id="p1">**</ept> dataset.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Now, create a table for storing models.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>The following code creates a model based on the <bpt id="p1">**</bpt>iris<ept id="p1">**</ept> dataset and saves it to the table named <bpt id="p2">**</bpt>models<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Be sure to use the <bpt id="p1">[</bpt>rxSerializeModel<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxserializemodel)</ept> function from RevoScaleR to save the model.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>The standard R <ph id="ph1">`serialize`</ph> function cannot generate the required format.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>You can run a statement such as the following to view the stored model in binary format:</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Step 2.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Run PREDICT on the model</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>The following simple PREDICT statement gets a classification from the decision tree model using the <bpt id="p1">**</bpt>native scoring<ept id="p1">**</ept> function.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>It predicts the iris species based on attributes you provide, petal length and width.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>If you get the error, "Error occurred during execution of the function PREDICT.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Model is corrupt or invalid", it usually means that your query didn't return a model.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Check whether you typed the model name correctly, or if the models table is empty.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>Because the columns and values returned by <bpt id="p1">**</bpt>PREDICT<ept id="p1">**</ept> can vary by model type, you must define the schema of the returned data by using a <bpt id="p2">**</bpt>WITH<ept id="p2">**</ept> clause.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>For a complete solution that includes native scoring, see these samples from the SQL Server development team:</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Deploy your ML script: <bpt id="p1">[</bpt>Using a Python model<ept id="p1">](https://microsoft.github.io/sql-ml-tutorials/python/rentalprediction/step/3.html)</ept></source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>Deploy your ML script: <bpt id="p1">[</bpt>Using an R model<ept id="p1">](https://microsoft.github.io/sql-ml-tutorials/R/rentalprediction/step/3.html)</ept></source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,111 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="walkthrough-deploy-and-use-the-model.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c0117ff1ccbd90a18c1198c9a46fa60c27d28107d.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">0117ff1ccbd90a18c1198c9a46fa60c27d28107d</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\walkthrough-deploy-and-use-the-model.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>R tutorial: Deploy model</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Tutorial showing how to deploy an R model on SQL Server for in-database analytics.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Deploy the R model and use it in SQL Server (walkthrough)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>In this lesson, learn how to deploy R models in a production environment by calling a trained model from a stored procedure.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>You can invoke the stored procedure from R or any application programming language that supports <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> (such as C#, Java, Python, and so forth) and use the model to make predictions on new observations.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>This article demonstrates the two most common ways to use a model in scoring:</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Batch scoring mode<ept id="p1">**</ept> generates multiple predictions</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Individual scoring mode<ept id="p1">**</ept> generates predictions one at a time</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Batch scoring</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Create a stored procedure, <bpt id="p1">*</bpt>PredictTipBatchMode<ept id="p1">*</ept>, that generates multiple predictions, passing a SQL query or table as input.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>A table of results is returned, which you might insert directly into a table or write to a file.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Gets a set of input data as a SQL query</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Calls the trained logistic regression model that you saved in the previous lesson</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Predicts the probability that the driver gets any non-zero tip</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>In Management Studio, open a new query window and run the following T-SQL script to create the PredictTipBatchMode stored procedure.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>You use a SELECT statement to call the stored model from a SQL table.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>The model is retrieved from the table as <bpt id="p1">**</bpt>varbinary(max)<ept id="p1">**</ept> data, stored in the SQL variable <bpt id="p2">_</bpt><ph id="ph1">\@</ph>lmodel2<ept id="p2">_</ept>, and passed as the parameter <bpt id="p3">*</bpt>mod<ept id="p3">*</ept> to the system stored procedure <bpt id="p4">[</bpt>sp_execute_external_script<ept id="p4">](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md)</ept>.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>The data used as inputs for scoring is defined as a SQL query and stored as a string in the SQL variable <bpt id="p1">_</bpt><ph id="ph1">\@</ph>input<ept id="p1">_</ept>.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>As data is retrieved from the database, it is stored in a data frame called <bpt id="p1">*</bpt>InputDataSet<ept id="p1">*</ept>, which is just the default name for input data to the <bpt id="p2">[</bpt>sp_execute_external_script<ept id="p2">](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md)</ept> procedure; you can define another variable name if needed by using the parameter <bpt id="p3">_</bpt><ph id="ph1">\@</ph>input_data_1_name<ept id="p3">_</ept>.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>To generate the scores, the stored procedure calls the rxPredict function from the <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> library.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>The return value, <bpt id="p1">*</bpt>Score<ept id="p1">*</ept>, is the probability, given the model, that driver gets a tip.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Optionally, you could easily apply some kind of filter to the returned values to categorize the return values into "tip" and "no tip" groups.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>For example, a probability of less than 0.5 would mean a tip is unlikely.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>To call the stored procedure in batch mode, you define the query required as input to the stored procedure.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Below is the SQL query, which you can run in SSMS to verify that it works.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Use this R code to create the input string from the SQL query:</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>To run the stored procedure from R, call the <bpt id="p1">**</bpt>sqlQuery<ept id="p1">**</ept> method of the <bpt id="p2">**</bpt>RODBC<ept id="p2">**</ept> package and use the SQL connection <ph id="ph1">`conn`</ph> that you defined earlier:</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>If you get an ODBC error, check for syntax errors and whether you have the right number of quotation marks.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>If you get a permissions error, make sure the login has the ability to execute the stored procedure.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Single row scoring</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Individual scoring mode generates predictions one at a time, passing a set of individual values to the stored procedure as input.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>The values correspond to features in the model, which the model uses to create a prediction, or generate another result such as a probability value.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>You can then return that value to the application, or user.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>When calling the model for prediction on a row-by-row basis, you pass a set of values that represent features for each individual case.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>The stored procedure then returns a single prediction or probability.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>The stored procedure <bpt id="p1">*</bpt>PredictTipSingleMode<ept id="p1">*</ept> demonstrates this approach.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>It takes as input multiple parameters representing feature values (for example, passenger count and trip distance), scores these features using the stored R model, and outputs the tip probability.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Run the following Transact-SQL statement to create the stored procedure.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>In SQL Server Management Studio, you can use the <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> <bpt id="p1">**</bpt>EXEC<ept id="p1">**</ept> procedure (or <bpt id="p2">**</bpt>EXECUTE<ept id="p2">**</ept>) to call the stored procedure, and pass it the required inputs.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>For example, try running this statement in Management Studio:</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>The values passed in here are, respectively, for the variables <bpt id="p1">_</bpt>passenger<ph id="ph1">\_</ph>count<ept id="p1">_</ept>, <bpt id="p2">_</bpt>trip_distance<ept id="p2">_</ept>, <bpt id="p3">_</bpt>trip<ph id="ph2">\_</ph>time<ph id="ph3">\_</ph>in<ph id="ph4">\_</ph>secs<ept id="p3">_</ept>, <bpt id="p4">_</bpt>pickup<ph id="ph5">\_</ph>latitude<ept id="p4">_</ept>, <bpt id="p5">_</bpt>pickup<ph id="ph6">\_</ph>longitude<ept id="p5">_</ept>, <bpt id="p6">_</bpt>dropoff<ph id="ph7">\_</ph>latitude<ept id="p6">_</ept>, and <bpt id="p7">_</bpt>dropoff<ph id="ph8">\_</ph>longitude<ept id="p7">_</ept>.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>To run this same call from R code, you simply define an R variable that contains the entire stored procedure call, like this one:</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>The values passed in here are, respectively, for the variables <bpt id="p1">_</bpt>passenger<ph id="ph1">\_</ph>count<ept id="p1">_</ept>, <bpt id="p2">_</bpt>trip<ph id="ph2">\_</ph>distance<ept id="p2">_</ept>, <bpt id="p3">_</bpt>trip<ph id="ph3">\_</ph>time<ph id="ph4">\_</ph>in<ph id="ph5">\_</ph>secs<ept id="p3">_</ept>, <bpt id="p4">_</bpt>pickup<ph id="ph6">\_</ph>latitude<ept id="p4">_</ept>, <bpt id="p5">_</bpt>pickup<ph id="ph7">\_</ph>longitude<ept id="p5">_</ept>, <bpt id="p6">_</bpt>dropoff<ph id="ph8">\_</ph>latitude<ept id="p6">_</ept>, and <bpt id="p7">_</bpt>dropoff<ph id="ph9">\_</ph>longitude<ept id="p7">_</ept>.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Call <ph id="ph1">`sqlQuery`</ph> (from the <bpt id="p1">**</bpt>RODBC<ept id="p1">**</ept> package) and pass the connection string, together with the string variable containing the stored procedure call.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>R Tools for Visual Studio (RTVS) provides great integration with both SQL Server and R. See this article for more examples of using RODBC with a SQL Server connection: <bpt id="p1">[</bpt>Working with SQL Server and R<ept id="p1">](https://docs.microsoft.com/visualstudio/rtvs/sql-server)</ept></source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Now that you have learned how to work with <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> data and persist trained R models to <ph id="ph2">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph>, it should be relatively easy for you to create new models based on this data set.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>For example, you might try creating these additional models:</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>A regression model that predicts the tip amount</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>A multiclass classification model that predicts whether the tip is big, medium, or small</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>You might also want to explore these additional samples and resources:</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Data science scenarios and solution templates<ept id="p1">](data-science-scenarios-and-solution-templates.md)</ept></source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>In-database advanced analytics<ept id="p1">](sqldev-in-database-r-for-sql-developers.md)</ept></source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Machine Learning Server How-to guides<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r/how-to-introduction)</ept></source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Machine Learning Server Additional Resources<ept id="p1">](https://docs.microsoft.com//machine-learning-server/resources-more)</ept></source>
+        </trans-unit></group></body></file></xliff>

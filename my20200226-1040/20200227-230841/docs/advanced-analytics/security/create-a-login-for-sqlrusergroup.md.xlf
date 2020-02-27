@@ -1,0 +1,89 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="create-a-login-for-sqlrusergroup.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13ca5194f251b7ea47e0d9485446b8957e96037ded0.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">a5194f251b7ea47e0d9485446b8957e96037ded0</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\security\create-a-login-for-sqlrusergroup.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Create a login for SQLRUserGroup</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>For loopback connections using implied authentication, create a login in SQL Server for SQLRUserGroup, so that a worker account can log in to the server, for identity conversion back to the calling user.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Create a login for SQLRUserGroup</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Create a <bpt id="p1">[</bpt>login in SQL Server<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/create-a-login)</ept> for <bpt id="p2">[</bpt>SQLRUserGroup<ept id="p2">](../concepts/security.md#sqlrusergroup)</ept> when a <bpt id="p3">[</bpt>loop back connection<ept id="p3">](../../advanced-analytics/concepts/security.md#implied-authentication)</ept> in your script specifies a <bpt id="p4">*</bpt>trusted connection<ept id="p4">*</ept>, and the identity used to execute an object contains your code is a Windows user account.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Trusted connections are those having <ph id="ph1">`Trusted_Connection=True`</ph> in the connection string.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>When SQL Server receives a request specifying a trusted connection, it checks whether the identity of the current Windows user has a login.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>For external processes executing as a worker account (such as MSSQLSERVER01 from <bpt id="p1">**</bpt>SQLRUserGroup<ept id="p1">**</ept>), the request fails because those accounts do not have a login by default.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>You can work around the connection error by creating a login for  <bpt id="p1">**</bpt>SQLServerRUserGroup<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>For more information about identities and external processes, see <bpt id="p1">[</bpt>Security overview for the extensibility framework<ept id="p1">](../concepts/security.md)</ept>.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Make sure that <bpt id="p1">**</bpt>SQLRUserGroup<ept id="p1">**</ept> has "Allow Log on locally" permissions.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>By default, this right is given to all new local users, but some organizations stricter group policies might disable this right.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Create a login</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>In <ph id="ph1">[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]</ph>, in Object Explorer, expand <bpt id="p1">**</bpt>Security<ept id="p1">**</ept>, right-click <bpt id="p2">**</bpt>Logins<ept id="p2">**</ept>, and select <bpt id="p3">**</bpt>New Login<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>In the <bpt id="p1">**</bpt>Login - New<ept id="p1">**</ept> dialog box, select <bpt id="p2">**</bpt>Search<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>(Don't type anything in the box yet.)</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>Click search to add new login for machine learning<ept id="p1">](media/implied-auth-login1.png "|::ref1::|")</ept></source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>In the <bpt id="p1">**</bpt>Select User or Group<ept id="p1">**</ept> box, click the <bpt id="p2">**</bpt>Object Types<ept id="p2">**</ept> button.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>Search object types to add new login for machine learning<ept id="p1">](media/implied-auth-login2.png "|::ref2::|")</ept></source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>In the <bpt id="p1">**</bpt>Object Types<ept id="p1">**</ept> dialog box, select <bpt id="p2">**</bpt>Groups<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Clear all other check boxes.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>Select Groups in Object Types dialog box<ept id="p1">](media/implied-auth-login3.png "|::ref3::|")</ept></source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Click <bpt id="p1">**</bpt>Advanced<ept id="p1">**</ept>, verify that the location to search is the current computer, and then click <bpt id="p2">**</bpt>Find Now<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>Click Find Now to get list of groups<ept id="p1">](media/implied-auth-login4.png "|::ref4::|")</ept></source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Scroll through the list of group accounts on the server until you find one beginning with <ph id="ph1">`SQLRUserGroup`</ph>.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>The name of the group that's associated with the Launchpad service for the <bpt id="p1">_</bpt>default instance<ept id="p1">_</ept> is always <bpt id="p2">**</bpt>SQLRUserGroup<ept id="p2">**</ept>, regardless of whether you installed R or Python or both.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Select this account for the default instance only.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>If you are using a <bpt id="p1">_</bpt>named instance<ept id="p1">_</ept>, the instance name is appended to the name of the default worker group name, <ph id="ph1">`SQLRUserGroup`</ph>.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>For example, if your instance is named "MLTEST", the default user group name for this instance would be <bpt id="p1">**</bpt>SQLRUserGroupMLTest<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>Example of groups on server<ept id="p1">](media/implied-auth-login5.png "|::ref5::|")</ept></source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Click <bpt id="p1">**</bpt>OK<ept id="p1">**</ept> to close the advanced search dialog box.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Be sure you've selected the correct account for the instance.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Each instance can use only its own Launchpad service and the group created for that service.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Instances cannot share a Launchpad service or worker accounts.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Click <bpt id="p1">**</bpt>OK<ept id="p1">**</ept> once more to close the <bpt id="p2">**</bpt>Select User or Group<ept id="p2">**</ept> dialog box.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>In the <bpt id="p1">**</bpt>Login - New<ept id="p1">**</ept> dialog box, click <bpt id="p2">**</bpt>OK<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>By default, the login is assigned to the <bpt id="p1">**</bpt>public<ept id="p1">**</ept> role and has permission to connect to the database engine.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Security overview<ept id="p1">](../concepts/security.md)</ept></source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Extensibility framework<ept id="p1">](../concepts/extensibility-framework.md)</ept></source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve" extradata="ref1">
+          <source>Click search to add new login for machine learning</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve" extradata="ref2">
+          <source>Search object types to add new login for machine learning</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve" extradata="ref3">
+          <source>Select Groups in Object Types dialog box</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve" extradata="ref4">
+          <source>Click Find Now to get list of groups</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve" extradata="ref5">
+          <source>Example of groups on server</source>
+        </trans-unit></group></body></file></xliff>

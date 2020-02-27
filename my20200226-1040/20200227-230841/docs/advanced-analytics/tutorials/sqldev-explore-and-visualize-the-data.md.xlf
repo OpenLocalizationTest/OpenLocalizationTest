@@ -1,0 +1,223 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="sqldev-explore-and-visualize-the-data.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c213db5ee9b88f7af34e3d000fc0f3b241d8e5791.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">213db5ee9b88f7af34e3d000fc0f3b241d8e5791</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\sqldev-explore-and-visualize-the-data.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>R + T-SQL tutorial: Explore data</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Tutorial showing how to explore and visualize SQL Server data using R functions.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Lesson 1: Explore and visualize the data</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article is part of a tutorial for SQL developers on how to use R in SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In this step, you'll review the sample data, and then generate some plots using <bpt id="p1">[</bpt>rxHistogram<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxhistogram)</ept> from <bpt id="p2">[</bpt>RevoScaleR<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept> and the generic <bpt id="p3">[</bpt>Hist<ept id="p3">](https://www.rdocumentation.org/packages/graphics/versions/3.5.0/topics/hist)</ept> function in base R. These R functions are already included in <ph id="ph1">[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>A key objective of this lesson is showing how to call R functions from <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> in stored procedures and save the results in application file formats:</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Create a stored procedure using <bpt id="p1">**</bpt>RxHistogram<ept id="p1">**</ept> to generate an R plot as varbinary data.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Use <bpt id="p1">**</bpt>bcp<ept id="p1">**</ept> to export the binary stream to an image file.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Create a stored procedure using <bpt id="p1">**</bpt>Hist<ept id="p1">**</ept> to generate a plot, saving results as JPG and PDF output.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Because visualization is such a powerful tool for understanding data shape and distribution, R provides a range of functions and packages for generating histograms, scatter plots, box plots, and other data exploration graphs.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>R typically creates images using an R device for graphical output, which you can capture and store as a <bpt id="p1">**</bpt>varbinary<ept id="p1">**</ept> data type for rendering in application.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>You can also save the images to any of the support file formats (.JPG, .PDF, etc.).</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Review the data</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Developing a data science solution usually includes intensive data exploration and data visualization.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>So first take a minute to review the sample data, if you haven't already.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>In the original public dataset, the taxi identifiers and trip records were provided in separate files.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>However, to make the sample data easier to use, the two original datasets have been joined on the columns <bpt id="p1">_</bpt>medallion<ept id="p1">_</ept>, <bpt id="p2">_</bpt>hack<ph id="ph1">\_</ph>license<ept id="p2">_</ept>, and <bpt id="p3">_</bpt>pickup<ph id="ph2">\_</ph>datetime<ept id="p3">_</ept>.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>The records were also sampled to get just 1% of the original number of records.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>The resulting down-sampled dataset has 1,703,957 rows and 23 columns.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Taxi identifiers<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">_</bpt>medallion<ept id="p1">_</ept> column represents the taxi's unique id number.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">_</bpt>hack<ph id="ph1">\_</ph>license<ept id="p1">_</ept> column contains the taxi driver's license number (anonymized).</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Trip and fare records<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Each trip record includes the pickup and drop-off location and time, and the trip distance.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Each fare record includes payment information such as the payment type, total amount of payment, and the tip amount.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>The last three columns can be used for various machine learning tasks.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">_</bpt>tip<ph id="ph1">\_</ph>amount<ept id="p1">_</ept> column contains continuous numeric values and can be used as the <bpt id="p2">**</bpt>label<ept id="p2">**</ept> column for regression analysis.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">_</bpt>tipped<ept id="p1">_</ept> column has only yes/no values and is used for binary classification.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">_</bpt>tip<ph id="ph1">\_</ph>class<ept id="p1">_</ept> column has multiple <bpt id="p2">**</bpt>class labels<ept id="p2">**</ept> and therefore can be used as the label for multi-class classification tasks.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>This walkthrough demonstrates only the binary classification task; you are welcome to try building models for the other two machine learning tasks, regression and multiclass classification.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>The values used for the label columns are all based on the <bpt id="p1">_</bpt>tip<ph id="ph1">\_</ph>amount<ept id="p1">_</ept> column, using these business rules:</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Derived column name</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Rule</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>tipped</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>If tip_amount &gt; 0, tipped = 1, otherwise tipped = 0</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>tip_class</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Class 0: tip_amount = $0</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Class 1: tip_amount &gt; $0 and tip_amount &lt;= $5</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Class 2: tip_amount &gt; $5 and tip_amount &lt;= $10</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Class 3: tip_amount &gt; $10 and tip_amount &lt;= $20</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Class 4: tip_amount &gt; $20</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Create a stored procedure using rxHistogram to plot the data</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>To create the plot, use <bpt id="p1">[</bpt>rxHistogram<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxhistogram)</ept>, one of the enhanced R functions provided in <bpt id="p2">[</bpt>RevoScaleR<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept>.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>This step plots a histogram based on data from a <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> query.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>You can wrap this function in a stored procedure, <bpt id="p1">**</bpt>PlotRxHistogram<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>In <ph id="ph1">[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]</ph>, in Object Explorer, right-click the <bpt id="p1">**</bpt>NYCTaxi_Sample<ept id="p1">**</ept> database and select <bpt id="p2">**</bpt>New Query<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Paste in the following script to create a stored procedure that plots the histogram.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>This example is named *<bpt id="p1">*</bpt>RPlotRxHistogram<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Key points to understand in this script include the following:</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>The variable <ph id="ph1">`@query`</ph> defines the query text (<ph id="ph2">`'SELECT tipped FROM nyctaxi_sample'`</ph>), which is passed to the R script as the argument to the script input variable, <ph id="ph3">`@input_data_1`</ph>.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>For R scripts that run as external processes, you should have a one-to-one mapping between inputs to your script, and inputs to the <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql)</ept> system stored procedure that starts the R session on SQL Server.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Within the R script, a variable (<ph id="ph1">`image_file`</ph>) is defined to store the image.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>rxHistogram<ept id="p1">**</ept> function from the RevoScaleR library is called to generate the plot.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>The R device is set to <bpt id="p1">**</bpt>off<ept id="p1">**</ept> because you are running this command as an external script in SQL Server.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Typically in R, when you issue a high-level plotting command, R opens a graphics window, called a <bpt id="p1">*</bpt>device<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>You can turn the device off if you are writing to a file or handling the output some other way.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>The R graphics object is serialized to an R data.frame for output.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Execute the stored procedure and use bcp to export binary data to an image file</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>The stored procedure returns the image as a stream of varbinary data, which obviously you cannot view directly.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>However, you can use the <bpt id="p1">**</bpt>bcp<ept id="p1">**</ept> utility to get the varbinary data and save it as an image file on a client computer.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>In <ph id="ph1">[!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]</ph>, run the following statement:</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>plot<ept id="p1">*</ept> <bpt id="p2">*</bpt>0xFFD8FFE000104A4649...<ept id="p2">*</ept></source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>Open a PowerShell command prompt and run the following command, providing the appropriate instance name, database name, username, and credentials as arguments.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>For those using Windows identities, you can replace <bpt id="p1">**</bpt>-U<ept id="p1">**</ept> and <bpt id="p2">**</bpt>-P<ept id="p2">**</ept> with <bpt id="p3">**</bpt>-T<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Command switches for bcp are case-sensitive.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>If the connection is successful, you will be prompted to enter more information about the graphic file format.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Press ENTER at each prompt to accept the defaults, except for these changes:</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>For <bpt id="p1">**</bpt>prefix-length of field plot<ept id="p1">**</ept>, type 0</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Type <bpt id="p1">**</bpt>Y<ept id="p1">**</ept> if you want to save the output parameters for later reuse.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>If you save the format information to file (bcp.fmt), the <bpt id="p1">**</bpt>bcp<ept id="p1">**</ept> utility generates a format definition that you can apply to similar commands in future without being prompted for graphic file format options.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>To use the format file, add <ph id="ph1">`-f bcp.fmt`</ph> to the end of any command line, after the password argument.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>The output file will be created in the same directory where you ran the PowerShell command.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>To view the plot, just open the file plot.jpg.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>taxi trips with and without tips<ept id="p1">](media/rsql-devtut-tippedornot.jpg "|::ref1::|")</ept></source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>Create a stored procedure using Hist and multiple output formats</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Typically, data scientists generate multiple data visualizations to get insights into the data from different perspectives.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>In this example, you will create a stored procedure called <bpt id="p1">**</bpt>RPlotHist<ept id="p1">**</ept> to write histograms, scatterplots, and other R graphics to .JPG and .PDF format.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>This stored procedure uses the <bpt id="p1">**</bpt>Hist<ept id="p1">**</ept> function to create the histogram, exporting the binary data to popular formats such as .JPG, .PDF, and .PNG.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>In <ph id="ph1">[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]</ph>, in Object Explorer, right-click the <bpt id="p1">**</bpt>NYCTaxi_Sample<ept id="p1">**</ept> database and select <bpt id="p2">**</bpt>New Query<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>Paste in the following script to create a stored procedure that plots the histogram.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>This example is named <bpt id="p1">**</bpt>RPlotHist<ept id="p1">**</ept> .</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>The output of the SELECT query within the stored procedure is stored in the default R data frame, <ph id="ph1">`InputDataSet`</ph>.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>Various R plotting functions can then be called to generate the actual graphics files.</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>Most of the embedded R script represents options for these graphics functions,  such as <ph id="ph1">`plot`</ph> or <ph id="ph2">`hist`</ph>.</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>All files are saved to the local folder C:\temp\Plots.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>The destination folder is defined by the arguments provided to the R script as part of the stored procedure.</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>You can change the destination folder by changing the value of the variable, <ph id="ph1">`mainDir`</ph>.</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>To output the files to a different folder, change the value of the <ph id="ph1">`mainDir`</ph> variable in the R script embedded in the stored procedure.</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>You can also modify the script to output different formats, more files, and so on.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>Execute the stored procedure</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>Run the following statement to export binary plot data to JPEG and PDF file formats.</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>The numbers in the file names are randomly generated to ensure that you don't get an error when trying to write to an existing file.</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>View output</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>To view the plot, open the destination folder and review the files that were created by the R code in the stored procedure.</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>Go the folder indicated in the STDOUT message (in the example, this is C:\temp\plots<ph id="ph1">\)</ph></source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>Open <ph id="ph1">`rHistogram_Tipped.jpg`</ph> to show the number of trips that got a tip vs. the trips that got no tip.</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>(This histogram is much like the one you generated in the previous step.)</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>Open <ph id="ph1">`rHistograms_Tip_and_Fare_Amount.pdf`</ph> to view distribution of tip amounts, plotted against the fare amounts.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>histogram showing tip_amount and fare_amount<ept id="p1">](media/rsql-devtut-tipamtfareamt.PNG "|::ref2::|")</ept></source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>Open <ph id="ph1">`rXYPlots_Tip_vs_Fare_Amount.pdf`</ph> to view a scatterplot with the fare amount on the x-axis and the tip amount on the y-axis.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>tip amount plotted over fare amount<ept id="p1">](media/rsql-devtut-tipamtbyfareamt.PNG "|::ref3::|")</ept></source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>Next lesson</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Lesson 2: Create data features using T-SQL<ept id="p1">](sqldev-create-data-features-using-t-sql.md)</ept></source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>Previous lesson</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Set up NYC Taxi demo data<ept id="p1">](demo-data-nyctaxi-in-sql.md)</ept></source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve" extradata="ref1">
+          <source>taxi trips with and without tips</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve" extradata="ref2">
+          <source>histogram showing tip_amount and fare_amount</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve" extradata="ref3">
+          <source>tip amount plotted over fare amount</source>
+        </trans-unit></group></body></file></xliff>

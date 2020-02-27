@@ -1,0 +1,641 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="upgrade-r-and-python.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cabc14f78a969abd4adbbb2dcf12b4ee316614d23.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">abc14f78a969abd4adbbb2dcf12b4ee316614d23</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\install\upgrade-r-and-python.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Upgrade R and Python components</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Upgrade R and Python in SQL Server Machine Learning Services or SQL Server R Services using sqlbindr.exe to bind to Machine Learning Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Upgrade machine learning (R and Python) components in SQL Server instances</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>R and Python integration in SQL Server includes open-source and Microsoft-proprietary packages.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Under standard SQL Server servicing, packages are updated according to the SQL Server release cycle, with bug fixes to existing packages at the current version, but no major version upgrades.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>However, many data scientists are accustomed to working with newer packages as they become available.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>For both SQL Server Machine Learning Services (In-Database) and SQL Server R Services (In-Database), you can get <bpt id="p1">[</bpt>newer versions of R and Python<ept id="p1">](#version-map)</ept> by <bpt id="p2">*</bpt>binding<ept id="p2">*</ept> to <bpt id="p3">**</bpt>Microsoft Machine Learning Server<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>What is binding?</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Binding is an installation process that swaps out the contents of your R_SERVICES and PYTHON_SERVICES folders with newer executables, libraries, and tools from <bpt id="p1">[</bpt>Microsoft Machine Learning Server<ept id="p1">](https://docs.microsoft.com/machine-learning-server/index)</ept>.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Along with updated components comes a switch in servicing models.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Instead of the <bpt id="p1">[</bpt>SQL Server product lifecycle<ept id="p1">](https://support.microsoft.com/lifecycle/search?alpha=SQL%20Server%202017)</ept>, with <bpt id="p2">[</bpt>SQL Server cumulative updates<ept id="p2">](https://support.microsoft.com/help/4047329/sql-server-2017-build-versions)</ept>, your service updates now conform to the <bpt id="p3">[</bpt>support Timeline for Microsoft R Server &amp; Machine Learning Server<ept id="p3">](https://docs.microsoft.com/machine-learning-server/resources-servicing-support)</ept> on the <bpt id="p4">[</bpt>Modern Lifecycle<ept id="p4">](https://support.microsoft.com/help/30881/modern-lifecycle-policy)</ept>.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Except for component versions and service updates, binding does not change the fundamentals of your installation: R and Python integration is still part of a database engine instance, licensing is unchanged (no additional costs associated with binding), and SQL Server support policies still hold for the database engine.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>The rest of this article explains the binding mechanism and how it works for each version of SQL Server.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Binding applies to (In-Database) instances only that are bound to SQL Server instances.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Binding is not relevant for a (Standalone) installation.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">**</bpt>SQL Server 2017 binding considerations<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>For SQL Server Machine Learning Services, you would consider binding only when Microsoft Machine Learning Server begins to offer additional packages or newer versions over what you already have.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">**</bpt>SQL Server 2016 binding considerations<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>For SQL Server 2016 R Services customers, binding provides updated R packages, new packages not part of the original installation (<bpt id="p1">[</bpt>MicrosoftML<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/microsoftml-package)</ept>), and <bpt id="p2">[</bpt>pretrained models<ept id="p2">](https://docs.microsoft.com/machine-learning-server/install/microsoftml-install-pretrained-models)</ept>, all of which can further be refreshed at each new major and minor release of <bpt id="p3">[</bpt>Microsoft Machine Learning Server<ept id="p3">](https://docs.microsoft.com/machine-learning-server/index)</ept>.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>Binding does not give you Python support, which is a SQL Server 2017 feature.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Version map</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>The following table is a version map, showing package versions across release vehicles so that you can ascertain potential upgrade paths when you bind to Microsoft Machine Learning Server (previously known as R Server, before the addition of Python support starting in MLS 9.2.1).</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Notice that binding does not guarantee the very latest version of R or Anaconda.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>When you bind to Microsoft Machine Learning Server (MLS), you get the R or Python version installed through Setup, which may not be the latest version available on the web.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>SQL Server 2016 R Services<ept id="p2">**</ept><ept id="p1">](../install/sql-r-services-windows-install.md)</ept></source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>Component</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>Initial Release</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>R Server 9.0.1<ept id="p1">](https://docs.microsoft.com/machine-learning-server/install/r-server-install-windows)</ept></source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>R Server 9.1<ept id="p1">](https://docs.microsoft.com/machine-learning-server/install/r-server-install-windows)</ept></source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>MLS 9.2.1<ept id="p1">](https://docs.microsoft.com/machine-learning-server/install/machine-learning-server-windows-install)</ept></source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>MLS 9.3<ept id="p1">](https://docs.microsoft.com/machine-learning-server/install/machine-learning-server-windows-install)</ept></source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>Microsoft R Open (MRO) over R</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>R 3.2.2</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>R 3.3.2</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>R 3.3.3</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>R 3.4.1</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>R 3.4.3</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>RevoScaleR<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept></source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>8.0.3</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>9.0.1</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>9.1</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>9.2.1</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>9.3</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>MicrosoftML<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/microsoftml-package)</ept></source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>n.a.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>9.0.1</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>9.1</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>9.2.1</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>9.3</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>pretrained models<ept id="p1">](https://docs.microsoft.com/machine-learning-server/install/microsoftml-install-pretrained-models)</ept></source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>n.a.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>9.0.1</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>9.1</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>9.2.1</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>9.3</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>sqlrutils<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/sqlrutils/sqlrutils)</ept></source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>n.a.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>1.0</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>1.0</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>1.0</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>1.0</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>olapR<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/olapr/olapr)</ept></source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>n.a.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>1.0</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>1.0</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>1.0</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>1.0</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>SQL Server Machine Learning Services<ept id="p2">**</ept><ept id="p1">](../install/sql-machine-learning-services-windows-install.md)</ept></source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Component</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Initial Release</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>MLS 9.3</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Microsoft R Open (MRO) over R</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>R 3.3.3</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>R 3.4.3</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>RevoScaleR<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept></source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>9.2</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>9.3</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>MicrosoftML<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/microsoftml-package)</ept></source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>9.2</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>9.3</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>sqlrutils<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/sqlrutils/sqlrutils)</ept></source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>1.0</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>1.0</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>olapR<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/olapr/olapr)</ept></source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>1.0</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>1.0</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Anaconda 4.2 over Python 3.5</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>4.2/3.5.2</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>4.2/3.5.2</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>revoscalepy<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/revoscalepy-package)</ept></source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>9.2</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>9.3</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>microsoftml<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/microsoftml-package)</ept></source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>9.2</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>9.3</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>pretrained models<ept id="p1">](https://docs.microsoft.com/machine-learning-server/install/microsoftml-install-pretrained-models)</ept></source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>9.2</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>9.3</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>How component upgrade works</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>R and Python libraries and executables are upgraded when you bind an existing installation of R and Python to Machine Learning Server.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>Binding is executed by the <bpt id="p1">[</bpt>Microsoft Machine Learning Server installer<ept id="p1">](https://docs.microsoft.com/machine-learning-server/install/machine-learning-server-windows-install)</ept> when you run Setup on an existing SQL Server database engine instance having R or Python integration.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>Setup detects the existing features and prompts you to rebind to Machine Learning Server.</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>During binding, the contents of <ph id="ph1">`C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\R_SERVICES`</ph> and <ph id="ph2">`\PYTHON_SERVICES`</ph> is overwritten with the newer executables and libraries of <ph id="ph3">`C:\Program Files\Microsoft\ML Server\R_SERVER`</ph> and <ph id="ph4">`\PYTHON_SERVER`</ph>.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>At the same time, the servicing model is also flipped from SQL Server Update mechanisms, to the more frequent major and minor release cycle of Microsoft Machine Learning Server.</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>Switching support policies is an attractive option for data science teams who require newer generation R and Python modules for their solutions.</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>Without binding, R and Python packages are patched for bug fixes when you install a SQL Server service pack or cumulative update (CU).</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>With binding, newer package versions can be applied to your instance, independently of the CU release schedule, under the <bpt id="p1">[</bpt>Modern Lifecycle Policy<ept id="p1">](https://support.microsoft.com/help/30881/modern-lifecycle-policy)</ept> and releases of Microsoft Machine Learning Server.</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>The Modern Lifecycle support policy offers more frequent updates over a shorter, one-year lifespan.</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>Post-binding, you would continue to use the MLS installer for future updates of R and Python as they become available on Microsoft download sites.</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>Binding applies to R and Python features only.</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>Namely, open-source packages for R and Python features (Microsoft R Open, Anaconda), and the proprietary packages RevoScaleR, revoscalepy, and so forth.</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>Binding does not change the support model for the database engine instance and doesn't change the version of SQL Server.</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>Binding is reversible.</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>You can revert to SQL Server servicing by <bpt id="p1">[</bpt>unbinding the instance<ept id="p1">](#bkmk_Unbind)</ept> and reparing your SQL Server database engine instance.</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>Summed up, steps for binding are as follows:</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>Start with an existing, configured installation of SQL Server R Services or SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>Determine which version of Microsoft Machine Learning Server has the upgraded components you want to use.</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>Download and run Setup for that version.</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>Setup detects the existing instance, adds a binding option, and returns a list of compatible instances.</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>Choose the instance you want to bind and then finish setup to execute the binding.</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>In terms of user experience, the technology and how you work with it is unchanged.</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>The only difference is the presence of newer-versioned packages and possibly additional packages not originally available through SQL Server.</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a name="bkmk_BindWizard"&gt;</bpt><ept id="p1">&lt;/a&gt;</ept>Bind to MLS using Setup</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>Microsoft Machine Learning Setup detects the existing features and SQL Server version and invokes a utility called SqlBindR.exe to change the binding.</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>Internally, SqlBindR is chained to Setup and used indirectly.</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>Later, you can call SqlBindR directly from the command line to exercise specific options.</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>In SSMS, run <ph id="ph1">`SELECT @@version`</ph> to verify the server meets minimum build requirements.</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source>For SQL Server 2016 R Services, the minimum is <bpt id="p1">[</bpt>Service Pack 1<ept id="p1">](https://www.microsoft.com/download/details.aspx?id=54276)</ept> and <bpt id="p2">[</bpt>CU3<ept id="p2">](https://support.microsoft.com/help/4019916/cumulative-update-3-for-sql-server-2016-sp1)</ept>.</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source>Check the version of R base and RevoScaleR packages to confirm the existing versions are lower than what you plan to replace them with.</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source>Close down SSMS and any other tools having an open connection to SQL Server.</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source>Binding overwrites program files.</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source>If SQL Server has open sessions, binding will fail with bind error code 6.</source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source>Download Microsoft Machine Learning Server onto the computer that has the instance you want to upgrade.</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source>We recommend the <bpt id="p1">[</bpt>latest version<ept id="p1">](https://docs.microsoft.com/machine-learning-server/install/machine-learning-server-windows-install#download-machine-learning-server-installer)</ept>.</source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source>Unzip the folder and start ServerSetup.exe, located under MLSWIN93.</source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve">
+          <source>Microsoft Machine Learning Server setup wizard</source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve">
+          <source>On <bpt id="p1">**</bpt>Configure the installation<ept id="p1">**</ept>, confirm the components to upgrade, and review the list of compatible instances.</source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve">
+          <source>This step is very important.</source>
+        </trans-unit><trans-unit id="239" translate="yes" xml:space="preserve">
+          <source>On the left, choose every feature that you want to keep or upgrade.</source>
+        </trans-unit><trans-unit id="240" translate="yes" xml:space="preserve">
+          <source>You cannot upgrade some features and not others.</source>
+        </trans-unit><trans-unit id="241" translate="yes" xml:space="preserve">
+          <source>An empty checkbox removes that feature, assuming it is currently installed.</source>
+        </trans-unit><trans-unit id="242" translate="yes" xml:space="preserve">
+          <source>In the screenshot, given an instance of SQL Server 2016 R Services (MSSQL13), R and the R version of the pre-trained models are selected.</source>
+        </trans-unit><trans-unit id="243" translate="yes" xml:space="preserve">
+          <source>This configuration is valid because SQL Server 2016 supports R but not Python.</source>
+        </trans-unit><trans-unit id="244" translate="yes" xml:space="preserve">
+          <source>If you are upgrading components on SQL Server 2016 R Services, do not select the Python feature.</source>
+        </trans-unit><trans-unit id="245" translate="yes" xml:space="preserve">
+          <source>You cannot add Python to SQL Server 2016 R Services.</source>
+        </trans-unit><trans-unit id="246" translate="yes" xml:space="preserve">
+          <source>On the right, select the checkbox next to the instance name.</source>
+        </trans-unit><trans-unit id="247" translate="yes" xml:space="preserve">
+          <source>If no instances are listed, you have an incompatible combination.</source>
+        </trans-unit><trans-unit id="248" translate="yes" xml:space="preserve">
+          <source>If you do not select an instance, a new standalone installation of Machine Learning Server is created, and the SQL Server libraries are unchanged.</source>
+        </trans-unit><trans-unit id="249" translate="yes" xml:space="preserve">
+          <source>If you can't select an instance, it might not be at <bpt id="p1">[</bpt>SP1 CU3<ept id="p1">](https://support.microsoft.com/help/4019916/cumulative-update-3-for-sql-server-2016-sp1)</ept>.</source>
+        </trans-unit><trans-unit id="250" translate="yes" xml:space="preserve">
+          <source>Configure installation step</source>
+        </trans-unit><trans-unit id="251" translate="yes" xml:space="preserve">
+          <source>On the <bpt id="p1">**</bpt>License agreement<ept id="p1">**</ept> page, select <bpt id="p2">**</bpt>I accept these terms<ept id="p2">**</ept> to accept the licensing terms for Machine Learning Server.</source>
+        </trans-unit><trans-unit id="252" translate="yes" xml:space="preserve">
+          <source>On successive pages, provide consent to additional licensing conditions for any open-source components you selected, such as Microsoft R Open or the Python Anaconda distribution.</source>
+        </trans-unit><trans-unit id="253" translate="yes" xml:space="preserve">
+          <source>On the <bpt id="p1">**</bpt>Almost there<ept id="p1">**</ept> page, make a note of the installation folder.</source>
+        </trans-unit><trans-unit id="254" translate="yes" xml:space="preserve">
+          <source>The default folder is \Program Files\Microsoft\ML Server.</source>
+        </trans-unit><trans-unit id="255" translate="yes" xml:space="preserve">
+          <source>If you want to change the installation folder, click <bpt id="p1">**</bpt>Advanced<ept id="p1">**</ept> to return to the first page of the wizard.</source>
+        </trans-unit><trans-unit id="256" translate="yes" xml:space="preserve">
+          <source>However, you must repeat all previous selections.</source>
+        </trans-unit><trans-unit id="257" translate="yes" xml:space="preserve">
+          <source>During the installation process, any R or Python libraries used by SQL Server are replaced and Launchpad is updated to use the newer components.</source>
+        </trans-unit><trans-unit id="258" translate="yes" xml:space="preserve">
+          <source>As a result, if the instance previously used libraries in the default R_SERVICES folder, after upgrade these libraries are removed and the properties for the Launchpad service are changed to use the libraries in the new location.</source>
+        </trans-unit><trans-unit id="259" translate="yes" xml:space="preserve">
+          <source>Binding affects the contents of these folders: C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\library is replaced with the contents of C:\Program Files\Microsoft\ML Server\R_SERVER.</source>
+        </trans-unit><trans-unit id="260" translate="yes" xml:space="preserve">
+          <source>The second folder and its contents are created by Microsoft Machine Learning Server Setup.</source>
+        </trans-unit><trans-unit id="261" translate="yes" xml:space="preserve">
+          <source>If upgrade fails, check <bpt id="p1">[</bpt>SqlBindR error codes<ept id="p1">](#sqlbindr-error-codes)</ept> for more information.</source>
+        </trans-unit><trans-unit id="262" translate="yes" xml:space="preserve">
+          <source>Confirm binding</source>
+        </trans-unit><trans-unit id="263" translate="yes" xml:space="preserve">
+          <source>Recheck the version of R and RevoScaleR to confirm you have newer versions.</source>
+        </trans-unit><trans-unit id="264" translate="yes" xml:space="preserve">
+          <source>Use the R console distributed with the R packages in your database engine instance to get package information:</source>
+        </trans-unit><trans-unit id="265" translate="yes" xml:space="preserve">
+          <source>For SQL Server 2016 R Services bound to Machine Learning Server 9.3, R Base package should be 3.4.3, RevoScaleR should be  9.3, and you should also have MicrosoftML 9.3.</source>
+        </trans-unit><trans-unit id="266" translate="yes" xml:space="preserve">
+          <source>If you added the pre-trained models, the models are embedded in the MicrosoftML library and you can call them through MicrosoftML functions.</source>
+        </trans-unit><trans-unit id="267" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>R samples for MicrosoftML<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r/sample-microsoftml)</ept>.</source>
+        </trans-unit><trans-unit id="268" translate="yes" xml:space="preserve">
+          <source>Offline binding (no internet access)</source>
+        </trans-unit><trans-unit id="269" translate="yes" xml:space="preserve">
+          <source>For systems with no internet connectivity, you can download the installer and .cab files to an internet-connected machine, and then transfer files to the isolated server.</source>
+        </trans-unit><trans-unit id="270" translate="yes" xml:space="preserve">
+          <source>The installer (ServerSetup.exe) includes the Microsoft packages (RevoScaleR, MicrosoftML, olapR, sqlRUtils).</source>
+        </trans-unit><trans-unit id="271" translate="yes" xml:space="preserve">
+          <source>The .cab files provide other core components.</source>
+        </trans-unit><trans-unit id="272" translate="yes" xml:space="preserve">
+          <source>For example, the "SRO" cab provides R Open, Microsoft's distribution of open-source R.</source>
+        </trans-unit><trans-unit id="273" translate="yes" xml:space="preserve">
+          <source>The following instructions explain how to place the files for an offline installation.</source>
+        </trans-unit><trans-unit id="274" translate="yes" xml:space="preserve">
+          <source>Download the MLS Installer.</source>
+        </trans-unit><trans-unit id="275" translate="yes" xml:space="preserve">
+          <source>It downloads as a single zipped file.</source>
+        </trans-unit><trans-unit id="276" translate="yes" xml:space="preserve">
+          <source>We recommend the <bpt id="p1">[</bpt>latest version<ept id="p1">](https://docs.microsoft.com/machine-learning-server/install/machine-learning-server-windows-install#download-machine-learning-server-installer)</ept>, but you can also install <bpt id="p2">[</bpt>earlier versions<ept id="p2">](https://docs.microsoft.com/machine-learning-server/install/r-server-install-windows-offline#download-required-components)</ept>.</source>
+        </trans-unit><trans-unit id="277" translate="yes" xml:space="preserve">
+          <source>Download .cab files.</source>
+        </trans-unit><trans-unit id="278" translate="yes" xml:space="preserve">
+          <source>The following links are for the 9.3 release.</source>
+        </trans-unit><trans-unit id="279" translate="yes" xml:space="preserve">
+          <source>If you require earlier versions, additional links can be found in <bpt id="p1">[</bpt>R Server 9.1<ept id="p1">](https://docs.microsoft.com/machine-learning-server/install/r-server-install-windows-offline#download-required-components)</ept>.</source>
+        </trans-unit><trans-unit id="280" translate="yes" xml:space="preserve">
+          <source>Recall that Python/Anaconda can only be added to a SQL Server Machine Learning Services instance.</source>
+        </trans-unit><trans-unit id="281" translate="yes" xml:space="preserve">
+          <source>Pre-trained models exist for both R and Python; the .cab provides models in the languages you are using.</source>
+        </trans-unit><trans-unit id="282" translate="yes" xml:space="preserve">
+          <source>Feature</source>
+        </trans-unit><trans-unit id="283" translate="yes" xml:space="preserve">
+          <source>Download</source>
+        </trans-unit><trans-unit id="284" translate="yes" xml:space="preserve">
+          <source>R</source>
+        </trans-unit><trans-unit id="285" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SRO_3.4.3.0_1033.cab<ept id="p1">](https://go.microsoft.com/fwlink/?LinkId=867186&amp;clcid=1033)</ept></source>
+        </trans-unit><trans-unit id="286" translate="yes" xml:space="preserve">
+          <source>Python</source>
+        </trans-unit><trans-unit id="287" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SPO_9.3.0.0_1033.cab<ept id="p1">](https://go.microsoft.com/fwlink/?LinkId=859054)</ept></source>
+        </trans-unit><trans-unit id="288" translate="yes" xml:space="preserve">
+          <source>Pre-trained models</source>
+        </trans-unit><trans-unit id="289" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>MLM_9.3.0.0_1033.cab<ept id="p1">](https://go.microsoft.com/fwlink/?LinkId=859053)</ept></source>
+        </trans-unit><trans-unit id="290" translate="yes" xml:space="preserve">
+          <source>Transfer .zip and .cab files to the target server.</source>
+        </trans-unit><trans-unit id="291" translate="yes" xml:space="preserve">
+          <source>On the server, type <ph id="ph1">`%temp%`</ph> in the Run command to get the physical location of the temp directory.</source>
+        </trans-unit><trans-unit id="292" translate="yes" xml:space="preserve">
+          <source>The physical path varies by machine, but it is usually <ph id="ph1">`C:\Users\&lt;your-user-name&gt;\AppData\Local\Temp`</ph>.</source>
+        </trans-unit><trans-unit id="293" translate="yes" xml:space="preserve">
+          <source>Place the .cab files in the %temp% folder.</source>
+        </trans-unit><trans-unit id="294" translate="yes" xml:space="preserve">
+          <source>Unzip the Installer.</source>
+        </trans-unit><trans-unit id="295" translate="yes" xml:space="preserve">
+          <source>Run ServerSetup.exe and follow the on-screen prompts to complete the installation.</source>
+        </trans-unit><trans-unit id="296" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a name="bkmk_BindCmd"&gt;</bpt><ept id="p1">&lt;/a&gt;</ept>Command line operations</source>
+        </trans-unit><trans-unit id="297" translate="yes" xml:space="preserve">
+          <source>After you run Microsoft Machine Learning Server, a command-line utility called SqlBindR.exe becomes available that you can use for further binding operations.</source>
+        </trans-unit><trans-unit id="298" translate="yes" xml:space="preserve">
+          <source>For example, should you decide to reverse a binding, you could either rerun Setup or use the command-line utility.</source>
+        </trans-unit><trans-unit id="299" translate="yes" xml:space="preserve">
+          <source>Additionally, you can use this tool to check for instance compatibility and availability.</source>
+        </trans-unit><trans-unit id="300" translate="yes" xml:space="preserve">
+          <source>Can't find SqlBindR?</source>
+        </trans-unit><trans-unit id="301" translate="yes" xml:space="preserve">
+          <source>You probably have not run Setup.</source>
+        </trans-unit><trans-unit id="302" translate="yes" xml:space="preserve">
+          <source>SqlBindR is available only after running Machine Learning Server Setup.</source>
+        </trans-unit><trans-unit id="303" translate="yes" xml:space="preserve">
+          <source>Open a command prompt as administrator and navigate to the folder containing sqlbindr.exe.</source>
+        </trans-unit><trans-unit id="304" translate="yes" xml:space="preserve">
+          <source>The default location is C:\Program Files\Microsoft\MLServer\Setup</source>
+        </trans-unit><trans-unit id="305" translate="yes" xml:space="preserve">
+          <source>Type the following command to view a list of available instances: <ph id="ph1">`SqlBindR.exe /list`</ph></source>
+        </trans-unit><trans-unit id="306" translate="yes" xml:space="preserve">
+          <source>Make a note of the full instance name as listed.</source>
+        </trans-unit><trans-unit id="307" translate="yes" xml:space="preserve">
+          <source>For example, the instance name might be MSSQL14.MSSQLSERVER for a default instance, or something like SERVERNAME.MYNAMEDINSTANCE.</source>
+        </trans-unit><trans-unit id="308" translate="yes" xml:space="preserve">
+          <source>Run the <bpt id="p1">**</bpt>SqlBindR.exe<ept id="p1">**</ept> command with the <bpt id="p2">*</bpt>/bind<ept id="p2">*</ept> argument, and specify the name of the instance to upgrade, using the instance name that was returned in the previous step.</source>
+        </trans-unit><trans-unit id="309" translate="yes" xml:space="preserve">
+          <source>For example, to upgrade the default instance, type:  <ph id="ph1">`SqlBindR.exe /bind MSSQL14.MSSQLSERVER`</ph></source>
+        </trans-unit><trans-unit id="310" translate="yes" xml:space="preserve">
+          <source>When the upgrade has completed, restart the Launchpad service associated with any instance that has been modified.</source>
+        </trans-unit><trans-unit id="311" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a name="bkmk_Unbind"&gt;</bpt><ept id="p1">&lt;/a&gt;</ept>Revert or unbind an instance</source>
+        </trans-unit><trans-unit id="312" translate="yes" xml:space="preserve">
+          <source>You can restore a bound instance to an initial installation of the R and Python components, established by SQL Server Setup.</source>
+        </trans-unit><trans-unit id="313" translate="yes" xml:space="preserve">
+          <source>There are three parts to reverting back to the SQL Server servicing.</source>
+        </trans-unit><trans-unit id="314" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Step 1: Unbind from Microsoft Machine Learning Server<ept id="p1">](#step-1-unbind)</ept></source>
+        </trans-unit><trans-unit id="315" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Step 2: Restore the instance to original status<ept id="p1">](#step-2-restore)</ept></source>
+        </trans-unit><trans-unit id="316" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Step 3: Reinstall any packages you added to the installation<ept id="p1">](#step-3-reinstall-packages)</ept></source>
+        </trans-unit><trans-unit id="317" translate="yes" xml:space="preserve">
+          <source>Step 1: Unbind</source>
+        </trans-unit><trans-unit id="318" translate="yes" xml:space="preserve">
+          <source>You have two options for rolling back the binding: re-rerun setup or use SqlBindR command line utility.</source>
+        </trans-unit><trans-unit id="319" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a name="bkmk_wizunbind"&gt;</bpt><ept id="p1">&lt;/a&gt;</ept> Unbind using Setup</source>
+        </trans-unit><trans-unit id="320" translate="yes" xml:space="preserve">
+          <source>Locate the installer for Machine Learning Server.</source>
+        </trans-unit><trans-unit id="321" translate="yes" xml:space="preserve">
+          <source>If you have removed the installer, you might need to download it again, or copy it from another computer.</source>
+        </trans-unit><trans-unit id="322" translate="yes" xml:space="preserve">
+          <source>Be sure to run the installer on the computer that has the instance you want to unbind.</source>
+        </trans-unit><trans-unit id="323" translate="yes" xml:space="preserve">
+          <source>The installer identifies local instances that are candidates for unbinding.</source>
+        </trans-unit><trans-unit id="324" translate="yes" xml:space="preserve">
+          <source>Deselect the check box next to the instance that you want to revert to the original configuration.</source>
+        </trans-unit><trans-unit id="325" translate="yes" xml:space="preserve">
+          <source>Accept the licensing agreement.</source>
+        </trans-unit><trans-unit id="326" translate="yes" xml:space="preserve">
+          <source>You must indicate your acceptance of licensing terms even when installing.</source>
+        </trans-unit><trans-unit id="327" translate="yes" xml:space="preserve">
+          <source>Click <bpt id="p1">**</bpt>Finish<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="328" translate="yes" xml:space="preserve">
+          <source>The process takes a while.</source>
+        </trans-unit><trans-unit id="329" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a name="bkmk_cmdunbind"&gt;</bpt><ept id="p1">&lt;/a&gt;</ept> Unbind using the command line</source>
+        </trans-unit><trans-unit id="330" translate="yes" xml:space="preserve">
+          <source>Open a command prompt and navigate to the folder that contains <bpt id="p1">**</bpt>sqlbindr.exe<ept id="p1">**</ept>, as described in the previous section.</source>
+        </trans-unit><trans-unit id="331" translate="yes" xml:space="preserve">
+          <source>Run the <bpt id="p1">**</bpt>SqlBindR.exe<ept id="p1">**</ept> command with the <bpt id="p2">*</bpt>/unbind<ept id="p2">*</ept> argument, and specify the instance.</source>
+        </trans-unit><trans-unit id="332" translate="yes" xml:space="preserve">
+          <source>For example, the following command reverts the default instance:</source>
+        </trans-unit><trans-unit id="333" translate="yes" xml:space="preserve">
+          <source>Step 2: Repair the SQL Server instance</source>
+        </trans-unit><trans-unit id="334" translate="yes" xml:space="preserve">
+          <source>Run SQL Server Setup to repair the database engine instance having the R and Python features.</source>
+        </trans-unit><trans-unit id="335" translate="yes" xml:space="preserve">
+          <source>Existing updates are preserved, but if you missed any SQL Server servicing updates to R and Python packages, this step applies those patches.</source>
+        </trans-unit><trans-unit id="336" translate="yes" xml:space="preserve">
+          <source>Alternatively, this is more work, but you could also fully uninstall and reinstall the database engine instance, and then apply all service updates.</source>
+        </trans-unit><trans-unit id="337" translate="yes" xml:space="preserve">
+          <source>Step 3: Add any third-party packages</source>
+        </trans-unit><trans-unit id="338" translate="yes" xml:space="preserve">
+          <source>You might have added other open-source or third-party packages to your package library.</source>
+        </trans-unit><trans-unit id="339" translate="yes" xml:space="preserve">
+          <source>Since reversing the binding switches the location of the default package library, you must reinstall the packages to the library that R and Python are now using.</source>
+        </trans-unit><trans-unit id="340" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>R package information<ept id="p1">](../package-management/r-package-information.md)</ept> and <bpt id="p2">[</bpt>installation<ept id="p2">](../package-management/install-additional-r-packages-on-sql-server.md)</ept>, and <bpt id="p3">[</bpt>Python package information<ept id="p3">](../package-management/python-package-information.md)</ept> and <bpt id="p4">[</bpt>installation<ept id="p4">](../package-management/install-additional-python-packages-on-sql-server.md)</ept>.</source>
+        </trans-unit><trans-unit id="341" translate="yes" xml:space="preserve">
+          <source>SqlBindR.exe command syntax</source>
+        </trans-unit><trans-unit id="342" translate="yes" xml:space="preserve">
+          <source>Usage</source>
+        </trans-unit><trans-unit id="343" translate="yes" xml:space="preserve">
+          <source>Parameters</source>
+        </trans-unit><trans-unit id="344" translate="yes" xml:space="preserve">
+          <source>Name</source>
+        </trans-unit><trans-unit id="345" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="346" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>list<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="347" translate="yes" xml:space="preserve">
+          <source>Displays a list of all SQL database instance IDs on the current computer</source>
+        </trans-unit><trans-unit id="348" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>bind<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="349" translate="yes" xml:space="preserve">
+          <source>Upgrades the specified SQL database instance to the latest version of R Server and ensures the instance automatically gets future upgrades of R Server</source>
+        </trans-unit><trans-unit id="350" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>unbind<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="351" translate="yes" xml:space="preserve">
+          <source>Uninstalls the latest version of R Server from the specified SQL database instance and prevents future R Server upgrades from affecting the instance</source>
+        </trans-unit><trans-unit id="352" translate="yes" xml:space="preserve">
+          <source>Binding errors</source>
+        </trans-unit><trans-unit id="353" translate="yes" xml:space="preserve">
+          <source>MLS Installer and SqlBindR both return the following error codes and messages.</source>
+        </trans-unit><trans-unit id="354" translate="yes" xml:space="preserve">
+          <source>Error code</source>
+        </trans-unit><trans-unit id="355" translate="yes" xml:space="preserve">
+          <source>Message</source>
+        </trans-unit><trans-unit id="356" translate="yes" xml:space="preserve">
+          <source>Details</source>
+        </trans-unit><trans-unit id="357" translate="yes" xml:space="preserve">
+          <source>Bind error 0</source>
+        </trans-unit><trans-unit id="358" translate="yes" xml:space="preserve">
+          <source>Ok (success)</source>
+        </trans-unit><trans-unit id="359" translate="yes" xml:space="preserve">
+          <source>Binding passed with no errors.</source>
+        </trans-unit><trans-unit id="360" translate="yes" xml:space="preserve">
+          <source>Bind error 1</source>
+        </trans-unit><trans-unit id="361" translate="yes" xml:space="preserve">
+          <source>Invalid arguments</source>
+        </trans-unit><trans-unit id="362" translate="yes" xml:space="preserve">
+          <source>Syntax error.</source>
+        </trans-unit><trans-unit id="363" translate="yes" xml:space="preserve">
+          <source>Bind error 2</source>
+        </trans-unit><trans-unit id="364" translate="yes" xml:space="preserve">
+          <source>Invalid action</source>
+        </trans-unit><trans-unit id="365" translate="yes" xml:space="preserve">
+          <source>Syntax error.</source>
+        </trans-unit><trans-unit id="366" translate="yes" xml:space="preserve">
+          <source>Bind error 3</source>
+        </trans-unit><trans-unit id="367" translate="yes" xml:space="preserve">
+          <source>Invalid instance</source>
+        </trans-unit><trans-unit id="368" translate="yes" xml:space="preserve">
+          <source>An instance exists, but is not valid for binding.</source>
+        </trans-unit><trans-unit id="369" translate="yes" xml:space="preserve">
+          <source>Bind error 4</source>
+        </trans-unit><trans-unit id="370" translate="yes" xml:space="preserve">
+          <source>Not bindable</source>
+        </trans-unit><trans-unit id="371" translate="yes" xml:space="preserve">
+          <source>Bind error 5</source>
+        </trans-unit><trans-unit id="372" translate="yes" xml:space="preserve">
+          <source>Already bound</source>
+        </trans-unit><trans-unit id="373" translate="yes" xml:space="preserve">
+          <source>You ran the <bpt id="p1">*</bpt>bind<ept id="p1">*</ept> command, but the specified instance is already bound.</source>
+        </trans-unit><trans-unit id="374" translate="yes" xml:space="preserve">
+          <source>Bind error 6</source>
+        </trans-unit><trans-unit id="375" translate="yes" xml:space="preserve">
+          <source>Bind failed</source>
+        </trans-unit><trans-unit id="376" translate="yes" xml:space="preserve">
+          <source>An error occurred while unbinding the instance.</source>
+        </trans-unit><trans-unit id="377" translate="yes" xml:space="preserve">
+          <source>This error can occur if you run the MLS installer without selecting any features.</source>
+        </trans-unit><trans-unit id="378" translate="yes" xml:space="preserve">
+          <source>Binding requires that you select both an MSSQL instance and R and Python, assuming the instance is SQL Server 2017.</source>
+        </trans-unit><trans-unit id="379" translate="yes" xml:space="preserve">
+          <source>This error also occurs if SqlBindR could not write to the Program Files folder.</source>
+        </trans-unit><trans-unit id="380" translate="yes" xml:space="preserve">
+          <source>Open sessions or handles to SQL Server will cause this error to occur.</source>
+        </trans-unit><trans-unit id="381" translate="yes" xml:space="preserve">
+          <source>If you get this error, reboot the computer and redo the binding steps before starting any new sessions.</source>
+        </trans-unit><trans-unit id="382" translate="yes" xml:space="preserve">
+          <source>Bind error 7</source>
+        </trans-unit><trans-unit id="383" translate="yes" xml:space="preserve">
+          <source>Not bound</source>
+        </trans-unit><trans-unit id="384" translate="yes" xml:space="preserve">
+          <source>The database engine instance has R Services or SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="385" translate="yes" xml:space="preserve">
+          <source>The instance is not bound to Microsoft Machine Learning Server.</source>
+        </trans-unit><trans-unit id="386" translate="yes" xml:space="preserve">
+          <source>Bind error 8</source>
+        </trans-unit><trans-unit id="387" translate="yes" xml:space="preserve">
+          <source>Unbind failed</source>
+        </trans-unit><trans-unit id="388" translate="yes" xml:space="preserve">
+          <source>An error occurred while unbinding the instance.</source>
+        </trans-unit><trans-unit id="389" translate="yes" xml:space="preserve">
+          <source>Bind error 9</source>
+        </trans-unit><trans-unit id="390" translate="yes" xml:space="preserve">
+          <source>No instances found</source>
+        </trans-unit><trans-unit id="391" translate="yes" xml:space="preserve">
+          <source>No database engine instances were found on this computer.</source>
+        </trans-unit><trans-unit id="392" translate="yes" xml:space="preserve">
+          <source>Known issues</source>
+        </trans-unit><trans-unit id="393" translate="yes" xml:space="preserve">
+          <source>This section lists known issues specific to use of the SqlBindR.exe utility, or to upgrades of Machine Learning Server that might affect SQL Server instances.</source>
+        </trans-unit><trans-unit id="394" translate="yes" xml:space="preserve">
+          <source>Restoring packages that were previously installed</source>
+        </trans-unit><trans-unit id="395" translate="yes" xml:space="preserve">
+          <source>If you upgraded to Microsoft R Server 9.0.1, the version of SqlBindR.exe for that version failed to restore the original packages or R components completely, requiring that the user run SQL Server repair on the instance, apply all service releases, and then restart the instance.</source>
+        </trans-unit><trans-unit id="396" translate="yes" xml:space="preserve">
+          <source>Later version of SqlBindR automatically restore the original R features, eliminating the need for reinstallation of R components or re-patch the server.</source>
+        </trans-unit><trans-unit id="397" translate="yes" xml:space="preserve">
+          <source>However, you must install any R package updates that might have been added after the initial installation.</source>
+        </trans-unit><trans-unit id="398" translate="yes" xml:space="preserve">
+          <source>If you have used the package management roles to install and share package, this task is much easier: you can use R commands to synchronize installed packages to the file system using records in the database, and vice versa.</source>
+        </trans-unit><trans-unit id="399" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>R package management for SQL Server<ept id="p1">](../r/install-additional-r-packages-on-sql-server.md)</ept>.</source>
+        </trans-unit><trans-unit id="400" translate="yes" xml:space="preserve">
+          <source>Problems with multiple upgrades from SQL Server</source>
+        </trans-unit><trans-unit id="401" translate="yes" xml:space="preserve">
+          <source>If you have previously upgraded an instance of SQL Server 2016 R Services to 9.0.1, when you run the new installer for Microsoft R Server 9.1.0, it displays a list of all valid instances, and then by default selects previously bound instances.</source>
+        </trans-unit><trans-unit id="402" translate="yes" xml:space="preserve">
+          <source>If you continue, the previously bound instances are unbound.</source>
+        </trans-unit><trans-unit id="403" translate="yes" xml:space="preserve">
+          <source>As a result, the earlier 9.0.1 installation is removed, including any related packages, but the new version of Microsoft R Server (9.1.0) is not installed.</source>
+        </trans-unit><trans-unit id="404" translate="yes" xml:space="preserve">
+          <source>As a workaround, you can modify the existing R Server installation as follows:</source>
+        </trans-unit><trans-unit id="405" translate="yes" xml:space="preserve">
+          <source>In Control Panel, open <bpt id="p1">**</bpt>Add or Remove Programs<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="406" translate="yes" xml:space="preserve">
+          <source>Locate Microsoft R Server, and click <bpt id="p1">**</bpt>Change/Modify<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="407" translate="yes" xml:space="preserve">
+          <source>When the installer starts, select the instances you want to bind to 9.1.0.</source>
+        </trans-unit><trans-unit id="408" translate="yes" xml:space="preserve">
+          <source>Microsoft Machine Learning Server 9.2.1 and 9.3 do not have this issue.</source>
+        </trans-unit><trans-unit id="409" translate="yes" xml:space="preserve">
+          <source>Binding or unbinding leaves multiple temporary folders</source>
+        </trans-unit><trans-unit id="410" translate="yes" xml:space="preserve">
+          <source>Sometimes the binding and unbinding operations fail to clean up temporary folders.</source>
+        </trans-unit><trans-unit id="411" translate="yes" xml:space="preserve">
+          <source>If you find folders with a name like this, you can remove it after installation is complete: R_SERVICES_<ph id="ph1">&lt;guid&gt;</ph></source>
+        </trans-unit><trans-unit id="412" translate="yes" xml:space="preserve">
+          <source>Be sure to wait until installation is complete.</source>
+        </trans-unit><trans-unit id="413" translate="yes" xml:space="preserve">
+          <source>It can take a long time to remove R libraries associated with one version and then add the new R libraries.</source>
+        </trans-unit><trans-unit id="414" translate="yes" xml:space="preserve">
+          <source>When the operation completes, temporary folders are removed.</source>
+        </trans-unit><trans-unit id="415" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="416" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Install Machine Learning Server for Windows (Internet connected)<ept id="p1">](https://docs.microsoft.com/machine-learning-server/install/machine-learning-server-windows-install)</ept></source>
+        </trans-unit><trans-unit id="417" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Install Machine Learning Server for Windows (offline)<ept id="p1">](https://docs.microsoft.com/machine-learning-server/install/machine-learning-server-windows-offline)</ept></source>
+        </trans-unit><trans-unit id="418" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Known issues in Machine Learning Server<ept id="p1">](https://docs.microsoft.com/machine-learning-server/resources-known-issues)</ept></source>
+        </trans-unit><trans-unit id="419" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Feature announcements from previous release of R Server<ept id="p1">](https://docs.microsoft.com/r-server/whats-new-in-r-server)</ept></source>
+        </trans-unit><trans-unit id="420" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Deprecated, discontinued or changed features<ept id="p1">](https://docs.microsoft.com/machine-learning-server/resources-deprecated-features)</ept></source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,241 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="upgrade-and-installation-faq-sql-server-r-services.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c6357f98627842ab790b494cf1b4a1f9b2110ec9c.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">6357f98627842ab790b494cf1b4a1f9b2110ec9c</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\upgrade-and-installation-faq-sql-server-r-services.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Upgrade and installation FAQ</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Answers to some common questions about installation of machine learning features in SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Upgrade and installation FAQ for SQL Server Machine Learning or R Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This topic provides answers to some common questions about installation of machine learning features in SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>It also covers common questions about upgrades.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Some problems occur only with upgrades from pre-release versions.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Therefore, we recommend that you identify your version and edition first before reading these notes.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>To get version information, run <ph id="ph1">`@@VERSION`</ph> in a query from SQL Server Management Studio.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Upgrade to the most current release or service release as soon as possible to resolve any issues that were fixed in recent releases.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to:<ept id="p1">**</ept> SQL Server 2016 R Services, SQL Server Machine Learning Services (In-Database)</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Requirements and restrictions on older versions of SQL Server 2016</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Depending on the build of SQL Server that you are installing, some of the following limitations might apply:</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>In early versions of SQL Server 2016 R Services, 8dot3 notation was required on the drive that contains the working directory.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>If you installed a pre-release version, upgrading to SQL Server 2016 Service Pack 1 should fix this issue.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>This requirement does not apply to releases after SP1.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>You cannot install <ph id="ph1">[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)]</ph> on a failover cluster in SQL Server 2016.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>However, SQL Server 2019 does provide failover support.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>What's New<ept id="p1">](../what-s-new-in-sql-server-machine-learning-services.md)</ept>.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>On an Azure VM, some additional configuration might be necessary.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>For example, you might need to create a firewall exception to support remote access.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Side-by-side installation with another version of R, or with other releases from Revolution Analytics, is not supported.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Disable virus scanning before beginning setup.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>After setup is completed, we recommend suspending virus scanning on the folders used by <ph id="ph1">[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Preferably, suspend scanning on the entire <ph id="ph1">[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]</ph> tree.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Installing Microsoft R Server on an instance of SQL Server installed on Windows Core.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>In the RTM version of SQL Server 2016, there was a known issue when adding Microsoft R Server to an instance on Windows Server Core edition.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>This has been fixed.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>If you encounter this issue, you can apply the fix described in <bpt id="p1">[</bpt>KB3164398<ept id="p1">](https://support.microsoft.com/kb/3164398)</ept> to add the R feature to the existing instance on Windows Server Core.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Can't install Microsoft R Server Standalone on a Windows Server Core operating system<ept id="p1">](https://support.microsoft.com/kb/3168691)</ept>.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Offline installation of machine learning components for a localized version of SQL Server 2016</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Early-release versions of SQL Server 2016 failed to install locale-specific .cab files during offline setup without an internet connection.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>This issue was fixed in later releases, but if the installer returns a message stating it cannot install the correct language, you can edit the filename to allow setup to continue.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Manually edit the installer file to ensure that the correct language is installed.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>For example, to install the Japanese version of SQL Server, you would change the name of the file from SRS_8.0.3.0_<bpt id="p1">**</bpt>1033<ept id="p1">**</ept>.cab to SRS_8.0.3.0_<bpt id="p2">**</bpt>1041<ept id="p2">**</ept>.cab.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>The language identifier used for the machine learning components must be the same as the SQL Server setup language, or you cannot complete setup.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Pre-release versions: support policies, upgrade, and known issues</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>New installations of any pre-release version of <ph id="ph1">[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)]</ph> is no longer supported.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>If you are using a pre-release version, upgrade as soon as possible.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>This section contains detailed instructions for specific upgrade scenarios.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>How to upgrade SQL Server</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>You can upgrade your version of SQL Server by re-running the setup wizard.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Upgrade SQL Server<ept id="p1">](../../database-engine/install-windows/upgrade-sql-server.md)</ept></source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Upgrade SQL Server Using the Installation Wizard<ept id="p1">](../../database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup.md)</ept></source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>You can upgrade just the machine learning components by using a process called binding:</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Use SqlBindR to upgrade machine learning components<ept id="p1">](../install/upgrade-r-and-python.md)</ept></source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>End of support for in-place upgrades from prerelease versions</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Upgrades from pre-release versions of SQL Server 2016 are no longer supported.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>This includes SQL Server 2016 CTP3, CTP3.1, CTP3.2, RC0, or RC1.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>The following versions were installed with pre-release versions of SQL Server 2016.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Version</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Build</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>CTP 3.0</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>13.0.xxx</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>CTP 3.1</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>13.0.801.12</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>CTP 3.2</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>13.0.900.73</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>CTP 3.3</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>13.0.1000.281</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>RC1</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>13.0.1200.242</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>RC2</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>13.0.1300.275</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>RC3</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>13.0.1400.361</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>If you have any doubt about which version you are using, run <ph id="ph1">`@@VERSION`</ph> in a query from SQL Server Management Studio.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>In general, the process for upgrade is as follows:</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Back up scripts and data.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Uninstall the pre-release version.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Install a release version.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>Uninstalling a pre-release version of the SQL Server machine learning components can be complex and could require running a special script.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>Contact technical support for assistance.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a name="bkmk_Uninstall"&gt;</bpt><ept id="p1">&lt;/a&gt;</ept> Uninstall prior to upgrading from an older version of Microsoft R Server</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>If you installed a pre-release version of Microsoft R Server, you must uninstall it before you can upgrade to a newer version.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>In <bpt id="p1">**</bpt>Control Panel<ept id="p1">**</ept>, click <bpt id="p2">**</bpt>Add/Remove Programs<ept id="p2">**</ept>, and select <ph id="ph1">`Microsoft SQL Server 2016 &lt;version number&gt;`</ph>.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>In the dialog box with options to <bpt id="p1">**</bpt>Add<ept id="p1">**</ept>, <bpt id="p2">**</bpt>Repair<ept id="p2">**</ept>, or <bpt id="p3">**</bpt>Remove<ept id="p3">**</ept> components, select <bpt id="p4">**</bpt>Remove<ept id="p4">**</ept>.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>On the <bpt id="p1">**</bpt>Select Features<ept id="p1">**</ept> page, under <bpt id="p2">**</bpt>Shared Features<ept id="p2">**</ept>, select <bpt id="p3">**</bpt>R Server (Standalone)<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Click <bpt id="p1">**</bpt>Next<ept id="p1">**</ept>, and then click <bpt id="p2">**</bpt>Finish<ept id="p2">**</ept> to uninstall just the selected components.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>R Services and R Server (Standalone) side-by-side errors</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>In earlier versions of SQL Server 2016, installing both R Server (Standalone) and R Services (In-Database) at the same time sometimes caused setup to fail with an "access denied" message.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>This issue was fixed in Service Pack 1 for SQL Server 2016.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>If you encountered this error, and need to upgrade these features, perform a slipstream installation of SQL Server 2016 with SP1.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>There are two ways to resolve the issue, both of which require uninstalling and reinstalling.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>Uninstall R Services (In-Database), and make sure the user accounts for SQLRUserGroup are removed.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>Restart the server, and then reinstall R Server (Standalone).</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>Run SQL Server setup once more, and this time select <bpt id="p1">**</bpt>Add Features to Existing SQL Server<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>Choose the instance, and then select the <bpt id="p1">**</bpt>R Services (In-Database)<ept id="p1">**</ept> option to add.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>If this procedure fails to resolve the problem, try the following workaround:</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>Uninstall R Services (In-Database) and R Server (Standalone) at the same time.</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>Remove the local user accounts (SQLRUserGroup).</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>Restart the server.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>Run SQL Server setup, and add the R Services (In-Database) feature only.</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>Do not select <bpt id="p1">**</bpt>R Server (Standalone)<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>Generally, we recommend that you do not install both R Services (In-Database) and R Server (Standalone) on the same computer.</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>However, assuming the server has sufficient capacity, you might find R Server Standalone might be useful as a development tool.</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>Another possible scenario is that you need to use the operationalization features of R Server, but also want to access SQL Server data without data movement.</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>Incompatible version of R Client and R Server</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>If you install Microsoft R Client and use it to run R in a remote SQL Server compute context, you might get an  error like this:</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>You are running version 9.0.0 of Microsoft R client on your computer, which is incompatible with the Microsoft R Server version 8.0.3. Download and install a compatible version.<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>In SQL Server 2016, it was required that the version of R that was running in SQL Server R Services be exactly the same as the libraries in Microsoft R Client.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>That requirement has been removed in later versions.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>However, we recommend that you always get the latest versions of the machine learning components, and install all service packs.</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>If you have an earlier version of Microsoft R Server and need to ensure compatibility with Microsoft R Client 9.0.0, install the updates that are described in this <bpt id="p1">[</bpt>support article<ept id="p1">](https://support.microsoft.com/kb/3210262)</ept>.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>Installation fails with error "Only one Revolution Enterprise product can be installed at a time."</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>You might encounter this error if you have an older installation of the Revolution Analytics products, or a pre-release version of SQL Server R Services.</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>You must uninstall any previous versions before you can install a newer version of Microsoft R Server.</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>Side-by-side installation with other versions of the Revolution Enterprise tools is not supported.</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>However, side-by-side installs are supported when using R Server Standalone with <ph id="ph1">[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)]</ph> or SQL Server 2016.</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>Registry cleanup to uninstall older components</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>If you have problems removing an older version, you might need to edit the registry to remove related keys.</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>This issue applies only if you installed a pre-release version of Microsoft R Server or a CTP version of SQL Server 2016 R Services.</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>Open the Windows Registry, and locate this key: <ph id="ph1">`HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall`</ph>.</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>Delete any of the following entries if present, and if the key contains only the value <ph id="ph1">`sEstimatedSize2`</ph>:</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>E0B2C29E-B8FC-490B-A043-2CAE75634972        (for 8.0.2)</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>46695879-954E-4072-9D32-1CC84D4158F4        (for 8.0.1)</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>2DF16DF8-A2DB-4EC6-808B-CB5A302DA91B        (for 8.0.0)</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>5A2A1571-B8CD-4AAF-9303-8DF463DABE5A        (for 7.5.0)</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server Machine Learning Services (In-Database)<ept id="p1">](../r/sql-server-r-services.md)</ept></source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server Machine Learning Server (Standalone)<ept id="p1">](../r/r-server-standalone.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

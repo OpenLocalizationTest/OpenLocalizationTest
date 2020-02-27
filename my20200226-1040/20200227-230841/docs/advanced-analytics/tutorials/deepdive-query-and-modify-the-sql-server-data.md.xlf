@@ -1,0 +1,71 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="deepdive-query-and-modify-the-sql-server-data.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c48802f815515948c957c718e4bf666b0d7133670.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">48802f815515948c957c718e4bf666b0d7133670</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\deepdive-query-and-modify-the-sql-server-data.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Modify SQL data using RevoScaleR</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>RevoScaleR tutorial 3: How to query and modify data using the R language on SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Query and modify the SQL Server data (SQL Server and RevoScaleR tutorial)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This is tutorial 3 of the <bpt id="p1">[</bpt>RevoScaleR tutorial series<ept id="p1">](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)</ept> on how to use <bpt id="p2">[</bpt>RevoScaleR functions<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept> with SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In the previous tutorial, you loaded the data into <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>In this tutorial, you can explore and modify data using <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept>:</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Return basic information about the variables</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Create categorical data from raw data</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Categorical data, or <bpt id="p1">*</bpt>factor variables<ept id="p1">*</ept>, are useful for exploratory data visualizations.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>You can use them as inputs to histograms to get an idea of what variable data looks like.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Query for columns and types</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Use an R IDE or RGui.exe to run R script.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>First, get a list of the columns and their data types.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>You can use the function <bpt id="p1">[</bpt>rxGetVarInfo<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxgetvarinfoxdf)</ept> and specify the data source you want to analyze.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Depending on your version of <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept>, you could also use <bpt id="p2">[</bpt>rxGetVarNames<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxgetvarnames)</ept>.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Create categorical data</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>All the variables are stored as integers, but some variables represent categorical data, called <bpt id="p1">*</bpt>factor variables<ept id="p1">*</ept> in R. For example, the column <bpt id="p2">*</bpt>state<ept id="p2">*</ept> contains numbers used as identifiers for the 50 states plus the District of Columbia.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>To make it easier to understand the data, you replace the numbers with a list of state abbreviations.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>In this step, you create a string vector containing the abbreviations, and then map these categorical values to the original integer identifiers.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Then you use the new variable in the <bpt id="p1">*</bpt>colInfo<ept id="p1">*</ept> argument, to specify that this column be handled as a factor.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Whenever you analyze the data or move it, the abbreviations are used and the column is handled as a factor.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Mapping the column to abbreviations before using it as a factor actually improves performance as well.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>R and data optimization<ept id="p1">](../r/r-and-data-optimization-r-services.md)</ept>.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Begin by creating an R variable, <bpt id="p1">*</bpt>stateAbb<ept id="p1">*</ept>, and defining the vector of strings to add to it, as follows.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Next, create a column information object, named <bpt id="p1">*</bpt>ccColInfo<ept id="p1">*</ept>, that specifies the mapping of the existing integer values to the categorical levels (the abbreviations for states).</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>This statement also creates factor variables for gender and cardholder.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>To create the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> data source that uses the updated data, call the <bpt id="p1">**</bpt>RxSqlServerData<ept id="p1">**</ept> function as before, but add the <bpt id="p2">*</bpt>colInfo<ept id="p2">*</ept> argument.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>For the <bpt id="p1">*</bpt>table<ept id="p1">*</ept> parameter, pass in the variable <bpt id="p2">*</bpt>sqlFraudTable<ept id="p2">*</ept>, which contains the data source you created earlier.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>For the <bpt id="p1">*</bpt>colInfo<ept id="p1">*</ept> parameter, pass in the <bpt id="p2">*</bpt>ccColInfo<ept id="p2">*</ept> variable, which contains the column data types and factor levels.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>You can now use the function <bpt id="p1">**</bpt>rxGetVarInfo<ept id="p1">**</ept> to view the variables in the new data source.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Now the three variables you specified (<bpt id="p1">*</bpt>gender<ept id="p1">*</ept>, <bpt id="p2">*</bpt>state<ept id="p2">*</ept>, and <bpt id="p3">*</bpt>cardholder<ept id="p3">*</ept>) are  treated as factors.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Define and use compute contexts<ept id="p1">](../../advanced-analytics/tutorials/deepdive-define-and-use-compute-contexts.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

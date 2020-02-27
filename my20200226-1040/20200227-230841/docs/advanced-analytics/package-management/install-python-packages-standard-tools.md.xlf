@@ -1,0 +1,121 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="install-python-packages-standard-tools.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c4e55f9ba41036a5bd0ee806b8b45ee1fde8dc49f.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">4e55f9ba41036a5bd0ee806b8b45ee1fde8dc49f</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\package-management\install-python-packages-standard-tools.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Install packages with Python tools</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Learn how to use standard Python tools to install new Python packages to an instance of SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Install packages with Python tools on SQL Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article describes how to use standard Python tools to install new Python packages on an instance of SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In general, the process for installing new packages is similar to that in a standard Python environment.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>However, some additional steps are required if the server does not have an Internet connection.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>For more information about package location and installation paths, see <bpt id="p1">[</bpt>Get Python package information<ept id="p1">](python-package-information.md)</ept>.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>You must have <bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../install/sql-machine-learning-services-windows-install.md)</ept> installed with the Python language option.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Other considerations</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Packages must be Python 3.5-compliant and run on Windows.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>The Python package library is located in the Program Files folder of your SQL Server instance and, by default, installing in this folder requires administrator permissions.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Package library location<ept id="p1">](../package-management/python-package-information.md#default-python-library-location)</ept>.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Package installation is per instance.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>If you have multiple instances of Machine Learning Services, you must add the package to each one.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Database servers are frequently locked down.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>In many cases, Internet access is blocked entirely.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>For packages with a long list of dependencies, you will need to identify these dependencies in advance and be ready to install each one manually.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Before adding a package, consider whether the package is a good fit for the SQL Server environment.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>We recommend that you use Python in-database for tasks that benefit from tight integration with the database engine, such as machine learning, rather than tasks that simply query the database.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>If you add packages that put too much computational pressure on the server, performance will suffer.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>On a hardened SQL Server environment, you might want to avoid the following:</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Packages that require network access</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Packages that require elevated file system access</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Packages used for web development or other tasks that don't benefit by running inside SQL Server</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Add a Python package on SQL Server</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>To install a new Python package that can be used in a script on SQL Server, you install the package in the instance of Machine Learning Services.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>If you have multiple instances of Machine Learning Services, you must add the package to each one.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>The package installed in the following examples is <bpt id="p1">[</bpt>CNTK<ept id="p1">](https://docs.microsoft.com/cognitive-toolkit/)</ept>, a framework for deep learning from Microsoft that supports customization, training, and sharing of different types of neural networks.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>For offline install, download the Python package</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>If you are installing Python packages on a server with no Internet access, you must download the WHL file from a computer with Internet access and then copy the file to the server.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>For example, on an Internet-connected computer you can download the file <ph id="ph1">`cntk-2.1-cp35-cp35m-win_amd64.whl`</ph> from the site <bpt id="p1">[</bpt><ph id="ph2">https://cntk.ai/PythonWheel/CPU-Only</ph><ept id="p1">](https://cntk.ai/PythonWheel/CPU-Only/cntk-2.1-cp35-cp35m-win_amd64.whl)</ept>, and then copy the file to a local folder on the SQL Server computer.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Make sure that you get the Windows version of the package.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>If the file ends in .gz, it's probably not the right version.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>For more information about downloads of the CNTK framework for multiple platforms and for multiple versions of Python, see <bpt id="p1">[</bpt>Setup CNTK on your machine<ept id="p1">](https://docs.microsoft.com/cognitive-toolkit/Setup-CNTK-on-your-machine)</ept>.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Locate the Python library</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Locate the default Python library location used by SQL Server.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>If you have installed multiple instances, locate the <ph id="ph1">`PYTHON_SERVICES`</ph> folder for the instance where you want to add the package.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>For example, if Machine Learning Services was installed using defaults, and machine learning was enabled on the default instance, the path is:</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>For future debugging and testing, you might want to set up a Python environment specific to the instance library.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Install the package using pip</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Use the <bpt id="p1">**</bpt>pip<ept id="p1">**</ept> installer to install new packages.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>You can find <ph id="ph1">`pip.exe`</ph> in the <ph id="ph2">`Scripts`</ph> subfolder of the <ph id="ph3">`PYTHON_SERVICES`</ph> folder.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>SQL Server Setup does not add the <ph id="ph1">`Scripts`</ph> subfolder to the system path, so you must specify the full path, or you can add the Scripts folder to the PATH variable in Windows.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>If you're using Visual Studio 2017, or Visual Studio 2015 with the Python extensions, you can run <ph id="ph1">`pip install`</ph> from the <bpt id="p1">**</bpt>Python Environments<ept id="p1">**</ept> window.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Click <bpt id="p1">**</bpt>Packages<ept id="p1">**</ept>, and in the text box, provide the name or location of the package to install.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>You don't need to type <ph id="ph1">`pip install`</ph>; it is filled in for you automatically.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>If the computer has Internet access, provide the name of the package:</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>You can also specify the URL of a specific package and version, for example:</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>If the computer does not have Internet access, specify the WHL file you downloaded earlier.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>For example:</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>You might be prompted to elevate permissions to complete the install.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>As the installation progresses, you can see status messages in the command prompt window.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Load the package or its functions as part of your script</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>When installation is complete, you can immediately begin using the package in Python scripts in SQL Server.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>To use functions from the package in your script, insert the standard <ph id="ph1">`import &lt;package_name&gt;`</ph> statement in the initial lines of the script:</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Get Python package information<ept id="p1">](python-package-information.md)</ept></source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Python tutorials for SQL Server Machine Learning Services<ept id="p1">](../tutorials/sql-server-python-tutorials.md)</ept></source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Python API for CNTK<ept id="p1">](https://cntk.ai/pythondocs/tutorials.html)</ept>.</source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,147 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="r-tutorial-create-models-per-partition.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cee5d6cbf9b1d5430e431cf04fb3b86ae7fb5743b.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">ee5d6cbf9b1d5430e431cf04fb3b86ae7fb5743b</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\r-tutorial-create-models-per-partition.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Create partition-based models in R</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Learn how to model, train, and use partitioned data that is created dynamically when using the partition-based modeling capabilites of SQL Server machine learning.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Tutorial: Create partition-based models in R on SQL Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>In SQL Server 2019, partition-based modeling is the ability to create and train models over partitioned data.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>For stratified data that naturally segments into a given classification scheme - such as geographic regions, date and time, age or gender - you can execute script over the entire data set, with the ability to model, train, and score over partitions that remain intact over all these operations.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Partition-based modeling is enabled through two new parameters on <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql)</ept>:</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>input_data_1_partition_by_columns<ept id="p1">**</ept>, which specifies a column to partition by.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>input_data_1_order_by_columns<ept id="p1">**</ept> specifies which columns to order by.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>In this tutorial, learn partition-based modeling using the classic NYC taxi sample data and R script.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>The partition column is the payment method.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Partitions are based on payment types (5).</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Create and train models on each partition and store the objects in the database.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Predict the probability of tip outcomes over each partition model, using sample data reserved for that purpose.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>To complete this tutorial, you must have the following:</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Sufficient system resources.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>The data set is large and training operations are resource-intensive.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>If possible, use a system having at least 8 GB RAM.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Alternatively, you can use smaller data sets to work around resource constraints.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Instructions for reducing the data set are inline.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>A tool for T-SQL query execution, such as <bpt id="p1">[</bpt>SQL Server Management Studio<ept id="p1">](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)</ept>.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>NYCTaxi_Sample.bak<ept id="p1">](https://sqlmldoccontent.blob.core.windows.net/sqlml/NYCTaxi_Sample.bak)</ept>, which you can <bpt id="p2">[</bpt>download and restore<ept id="p2">](demo-data-nyctaxi-in-sql.md)</ept> to your local database engine instance.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>File size is approximately 90 MB.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>SQL Server 2019 database engine instance, with Machine Learning Services and R integration.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Check version by executing <bpt id="p1">**</bpt><ph id="ph1">`SELECT @@Version`</ph><ept id="p1">**</ept> as a T-SQL query in a query tool.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Check availability of R packages by returning a well-formatted list of all R packages currently installed with your database engine instance:</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Connect to the database</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Start Management Studio and connect to the database engine instance.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>In Object Explorer, verify the <bpt id="p1">[</bpt>NYCTaxi_Sample database<ept id="p1">](demo-data-nyctaxi-in-sql.md)</ept> exists.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Create CalculateDistance</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>The demo database comes with a scalar function for calculating distance, but our stored procedure works better with a table-valued function.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Run the following script to create the <bpt id="p1">**</bpt>CalculateDistance<ept id="p1">**</ept> function used in the <bpt id="p2">[</bpt>training step<ept id="p2">](#training-step)</ept> later on.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>To confirm the function was created, check the \Programmability\Functions\Table-valued Functions under the <bpt id="p1">**</bpt>NYCTaxi_Sample<ept id="p1">**</ept> database in Object Explorer.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Define a procedure for creating and training per-partition models</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>This tutorial wraps R script in a stored procedure.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>In this step, you create a stored procedure that uses R to create an input dataset, build a classification model for predicting tip outcomes, and then stores the model in the database.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Among the parameter inputs used by this script, you'll see <bpt id="p1">**</bpt>input_data_1_partition_by_columns<ept id="p1">**</ept> and <bpt id="p2">**</bpt>input_data_1_order_by_columns<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Recall that these parameters are the mechanism by which partitioned modeling occurs.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>The parameters are passed as inputs to <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql)</ept> to process partitions with the external script executing once for every partition.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>For this stored procedure, <bpt id="p1">[</bpt>use parallelism<ept id="p1">](#parallel)</ept> for faster time to completion.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>After you run this script, you should see <bpt id="p1">**</bpt>train_rxLogIt_per_partition<ept id="p1">**</ept> in \Programmability\Stored Procedures under the <bpt id="p2">**</bpt>NYCTaxi_Sample<ept id="p2">**</ept> database in Object Explorer.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>You should also see a new table used for storing models: <bpt id="p1">**</bpt>dbo.nyctaxi_models<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Parallel execution</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Notice that the <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql)</ept> inputs include <ph id="ph1">`@parallel=1`</ph>, used to enable parallel processing.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>In contrast with previous releases, in SQL Server 2019, setting <ph id="ph1">`@parallel=1`</ph> delivers a stronger hint to the query optimizer, making parallel execution a much more likely outcome.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>By default, the query optimizer tends to operate under <ph id="ph1">`@parallel=1`</ph> on tables having more than 256 rows, but if you can handle this explicitly by setting <ph id="ph2">`@parallel=1`</ph> as shown in this script.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>For training workoads, you can use <ph id="ph1">`@parallel`</ph> with any arbitrary training script, even those using non-Microsoft-rx algorithms.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Typically, only RevoScaleR algorithms (with the rx prefix) offer parallelism in training scenarios in SQL Server.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>But with the new parameter, you can parallelize a script that calls functions, including open-source R functions, not specifically engineered with that capability.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>This works because partitions have affinity to specific threads, so all operations called in a script execute on a per-partition basis, on the give<ph id="ph1">`thread.`</ph><bpt id="p1">&lt;a name="training-step"&gt;</bpt><ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Run the procedure and train the model</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>In this section, the script trains the model that you created and saved in the previous step.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>The examples below demonstrate two approaches for training your model: using an entire data set, or a partial data.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Expect this step to take awhile.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Training is computationally intensive, taking many minutes to complete.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>If system resources, especially memory, are insufficient for the load, use a subset of the data.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>The second example provides the syntax.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>If you are running other workloads, you can append <ph id="ph1">`OPTION(MAXDOP 2)`</ph> to the SELECT statement if you want to limit query processing to just 2 cores.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Check results</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>The result in the models table should be five different models, based on five partitions segmented by the five payment types.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Models are in the <bpt id="p1">**</bpt>ml_models<ept id="p1">**</ept> data source.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Define a procedure for predicting outcomes</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>You can use the same parameters for scoring.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>The following sample contains an R script that will score using the correct model for the partition it is currently processing.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>As before, create a stored procedure to wrap your R code.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Create a table to store predictions</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Run the procedure and save predictions</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>View predictions</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Because the predictions are stored, you can run a simple query to return a result set.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>In this tutorial, you used <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql)</ept> to iterate operations over partitioned data.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>For a closer look at calling external scripts in stored procedures and using RevoScaleR functions, continue with the following tutorial.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>walkthrough for R and SQL Server<ept id="p1">](walkthrough-data-science-end-to-end-walkthrough.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,807 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="performance-case-study-r-services.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c068b7aa3c068b10b787b99bba26c12a2b680bcd3.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">068b7aa3c068b10b787b99bba26c12a2b680bcd3</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\performance-case-study-r-services.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Performance tuning for results</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>This article summarizes the methods, findings, and conclusions of two case studies that tested various optimization methods.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Performance for R Services: results and resources</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article is the fourth and final in a series that describes performance optimization for R Services.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This article summarizes the methods, findings, and conclusions of two case studies that tested various optimization methods.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>The two case studies had different goals:</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>The first case study, by the R Services development team, sought to measure the impact of specific optimization techniques</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>The second case study, by a data scientist team, experimented with multiple methods to determine the best optimizations for a specific high-volume scoring scenario.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>This topic lists the detailed results of the first case study.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>For the second case study, a summary describes the overall findings.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>At the end of this topic are links to all scripts and sample data, and resources used by the original authors.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Performance case study: Airline dataset</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>This case study by the SQL Server R Services development team tested the effects of various optimizations.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>A single rxLogit model was created and scoring performed on the Airline data set.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Optimizations were applied during the training and scoring processes to assess individual impacts.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>GitHub: <bpt id="p1">[</bpt>Sample data and scripts<ept id="p1">](https://github.com/Microsoft/SQL-Server-R-Services-Samples/tree/master/PerfTuning)</ept> for SQL Server optimizations study</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Test methods</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>The Airline dataset consists a single table of 10M rows.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>It was downloaded and bulk loaded into SQL Server.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Six copies of the table were made.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Various modifications were applied to the copies of the table, to test SQL Server features such as page compression, row compression, indexing, columnar data store, etc.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Performance was measured before and after each optimization was applied.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Table name</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>airline<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Data converted from original xdf file using <ph id="ph1">`rxDataStep`</ph></source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>airlineWithIntCol<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>DayOfWeek<ept id="p1">*</ept> converted to an integer rather than a string.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Also adds a <bpt id="p1">*</bpt>rowNum<ept id="p1">*</ept> column.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>airlineWithIndex<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>The same data as the <bpt id="p1">*</bpt>airlineWithIntCol<ept id="p1">*</ept> table, but with a single clustered index using the <bpt id="p2">*</bpt>rowNum<ept id="p2">*</ept> column.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>airlineWithPageComp<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>The same data as the <bpt id="p1">*</bpt>airlineWithIndex<ept id="p1">*</ept> table, but with page compression enabled.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Also adds two columns, <bpt id="p1">*</bpt>CRSDepHour<ept id="p1">*</ept> and <bpt id="p2">*</bpt>Late<ept id="p2">*</ept>, which are computed from <bpt id="p3">*</bpt>CRSDepTime<ept id="p3">*</ept> and <bpt id="p4">*</bpt>ArrDelay<ept id="p4">*</ept>.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>airlineWithRowComp<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>The same data as the <bpt id="p1">*</bpt>airlineWithIndex<ept id="p1">*</ept> table, but with row compression enabled.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Also adds two columns, <bpt id="p1">*</bpt>CRSDepHour<ept id="p1">*</ept> and <bpt id="p2">*</bpt>Late<ept id="p2">*</ept>, which are computed from <bpt id="p3">*</bpt>CRSDepTime<ept id="p3">*</ept> and <bpt id="p4">*</bpt>ArrDelay<ept id="p4">*</ept>.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>airlineColumnar<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>A columnar store with a single clustered index.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>This table is populated with data from a cleaned up csv file.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Each test consisted of these steps:</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>R garbage collection was induced before each test.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>A logistic regression model was created based on the table data.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>The value of <bpt id="p1">*</bpt>rowsPerRead<ept id="p1">*</ept> for each test was set to 500000.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Scores were generated using the trained model</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Each test was run six times.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>The time of the first run (the "cold run") was dropped.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>To allow for the occasional outlier, the <bpt id="p1">**</bpt>maximum<ept id="p1">**</ept> time among the remaining five runs was also dropped.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>The average of the four remaining runs was taken to compute the average elapsed runtime of each test.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>The tests were run using the <bpt id="p1">*</bpt>reportProgress<ept id="p1">*</ept> parameter with the value 3 (= report timings and progress).</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Each output file contains information regarding the time spent in IO, transition time, and compute time.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>These times are useful for troubleshooting and diagnosis.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>The console output was also directed to a file in the output directory.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>The test scripts processed the times in these files to compute the average time over runs.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>For example, the following results are the times from a single test.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>The main timings of interest are <bpt id="p1">**</bpt>Total read time<ept id="p1">**</ept> (IO time) and <bpt id="p2">**</bpt>Transition time<ept id="p2">**</ept> (overhead in setting up processes for computation).</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Sample timings<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>We recommend that you download and modify the test scripts to help you troubleshoot issues with R Services or with RevoScaleR functions.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Test results (all)</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>This section compares before and after results for each of the tests.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Data size with compression and a columnar table store</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>The first test compared the use of compression and a columnar table to reduce the size of the data.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Table name</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>Rows</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Reserved</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Data</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>index_size</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Unused</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>% Saving (reserved)</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>airlineWithIndex<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>10000000</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>2978816 KB</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>2972160 KB</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>6128 KB</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>528 KB</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>airlineWithPageComp<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>10000000</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>625784 KB</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>623744 KB</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>1352 KB</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>688 KB</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>79%</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>airlineWithRowComp<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>10000000</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>1262520 KB</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>1258880 KB</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>2552 KB</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>1088 KB</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>58%</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>airlineColumnar<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>9999999</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>201992 KB</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>201624 KB</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>n/a</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>368 KB</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>93%</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Conclusions<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>The greatest reduction in data size was achieved by applying a columnstore index, followed by page compression.</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>Effects of compression</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>This test compared the benefits of row compression, page compression, and no compression.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>A model was trained using <ph id="ph1">`rxLinMod`</ph> on data from three different data tables.</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>The same formula and query was used for all tables.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>Table name</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>Test name</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>numTasks</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>Average time</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>airlineWithIndex<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>NoCompression</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>5.6775</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>NoCompression - parallel</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>4</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>5.1775</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>airlineWithPageComp<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>PageCompression</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>6.7875</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>PageCompression - parallel</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>4</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>5.3225</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>airlineWithRowComp<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>RowCompression</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>6.1325</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>RowCompression - parallel</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>4</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source>5.2375</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Conclusions<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source>Compression alone does not seem to help.</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source>In this example, the increase in CPU to handle compression compensates for the decrease in IO time.</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source>However, when the test is run in parallel by setting <bpt id="p1">*</bpt>numTasks<ept id="p1">*</ept> to 4, the average time decreases.</source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source>For larger data sets, the effect of compression may be more noticeable.</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source>Compression depends on the data set and values, so experimentation may be needed to determine the effect compression has on your data set.</source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source>Effect of Windows power plan options</source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve">
+          <source>In this experiment, <ph id="ph1">`rxLinMod`</ph> was used with the <bpt id="p1">*</bpt>airlineWithIntCol<ept id="p1">*</ept> table.</source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve">
+          <source>The Windows Power Plan was set to either <bpt id="p1">**</bpt>Balanced<ept id="p1">**</ept> or <bpt id="p2">**</bpt>High performance<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve">
+          <source>For all tests, <bpt id="p1">*</bpt>numTasks<ept id="p1">*</ept> was set to 1.</source>
+        </trans-unit><trans-unit id="239" translate="yes" xml:space="preserve">
+          <source>The test was run six times, and was performed twice under both power options to investigate the variability of results.</source>
+        </trans-unit><trans-unit id="240" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>High performance<ept id="p1">**</ept> power option:</source>
+        </trans-unit><trans-unit id="241" translate="yes" xml:space="preserve">
+          <source>Test name</source>
+        </trans-unit><trans-unit id="242" translate="yes" xml:space="preserve">
+          <source>Run <ph id="ph1">\#</ph></source>
+        </trans-unit><trans-unit id="243" translate="yes" xml:space="preserve">
+          <source>Elapsed time</source>
+        </trans-unit><trans-unit id="244" translate="yes" xml:space="preserve">
+          <source>Average time</source>
+        </trans-unit><trans-unit id="245" translate="yes" xml:space="preserve">
+          <source>IntCol</source>
+        </trans-unit><trans-unit id="246" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="247" translate="yes" xml:space="preserve">
+          <source>3.57 seconds</source>
+        </trans-unit><trans-unit id="248" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="249" translate="yes" xml:space="preserve">
+          <source>3.45 seconds</source>
+        </trans-unit><trans-unit id="250" translate="yes" xml:space="preserve">
+          <source>3</source>
+        </trans-unit><trans-unit id="251" translate="yes" xml:space="preserve">
+          <source>3.45 seconds</source>
+        </trans-unit><trans-unit id="252" translate="yes" xml:space="preserve">
+          <source>4</source>
+        </trans-unit><trans-unit id="253" translate="yes" xml:space="preserve">
+          <source>3.55 seconds</source>
+        </trans-unit><trans-unit id="254" translate="yes" xml:space="preserve">
+          <source>5</source>
+        </trans-unit><trans-unit id="255" translate="yes" xml:space="preserve">
+          <source>3.55 seconds</source>
+        </trans-unit><trans-unit id="256" translate="yes" xml:space="preserve">
+          <source>6</source>
+        </trans-unit><trans-unit id="257" translate="yes" xml:space="preserve">
+          <source>3.45 seconds</source>
+        </trans-unit><trans-unit id="258" translate="yes" xml:space="preserve">
+          <source>3.475</source>
+        </trans-unit><trans-unit id="259" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="260" translate="yes" xml:space="preserve">
+          <source>3.45 seconds</source>
+        </trans-unit><trans-unit id="261" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="262" translate="yes" xml:space="preserve">
+          <source>3.53 seconds</source>
+        </trans-unit><trans-unit id="263" translate="yes" xml:space="preserve">
+          <source>3</source>
+        </trans-unit><trans-unit id="264" translate="yes" xml:space="preserve">
+          <source>3.63 seconds</source>
+        </trans-unit><trans-unit id="265" translate="yes" xml:space="preserve">
+          <source>4</source>
+        </trans-unit><trans-unit id="266" translate="yes" xml:space="preserve">
+          <source>3.49 seconds</source>
+        </trans-unit><trans-unit id="267" translate="yes" xml:space="preserve">
+          <source>5</source>
+        </trans-unit><trans-unit id="268" translate="yes" xml:space="preserve">
+          <source>3.54 seconds</source>
+        </trans-unit><trans-unit id="269" translate="yes" xml:space="preserve">
+          <source>6</source>
+        </trans-unit><trans-unit id="270" translate="yes" xml:space="preserve">
+          <source>3.47 seconds</source>
+        </trans-unit><trans-unit id="271" translate="yes" xml:space="preserve">
+          <source>3.5075</source>
+        </trans-unit><trans-unit id="272" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Balanced<ept id="p1">**</ept> power option:</source>
+        </trans-unit><trans-unit id="273" translate="yes" xml:space="preserve">
+          <source>Test name</source>
+        </trans-unit><trans-unit id="274" translate="yes" xml:space="preserve">
+          <source>Run <ph id="ph1">\#</ph></source>
+        </trans-unit><trans-unit id="275" translate="yes" xml:space="preserve">
+          <source>Elapsed time</source>
+        </trans-unit><trans-unit id="276" translate="yes" xml:space="preserve">
+          <source>Average time</source>
+        </trans-unit><trans-unit id="277" translate="yes" xml:space="preserve">
+          <source>IntCol</source>
+        </trans-unit><trans-unit id="278" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="279" translate="yes" xml:space="preserve">
+          <source>3.89 seconds</source>
+        </trans-unit><trans-unit id="280" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="281" translate="yes" xml:space="preserve">
+          <source>4.15 seconds</source>
+        </trans-unit><trans-unit id="282" translate="yes" xml:space="preserve">
+          <source>3</source>
+        </trans-unit><trans-unit id="283" translate="yes" xml:space="preserve">
+          <source>3.77 seconds</source>
+        </trans-unit><trans-unit id="284" translate="yes" xml:space="preserve">
+          <source>4</source>
+        </trans-unit><trans-unit id="285" translate="yes" xml:space="preserve">
+          <source>5 seconds</source>
+        </trans-unit><trans-unit id="286" translate="yes" xml:space="preserve">
+          <source>5</source>
+        </trans-unit><trans-unit id="287" translate="yes" xml:space="preserve">
+          <source>3.92 seconds</source>
+        </trans-unit><trans-unit id="288" translate="yes" xml:space="preserve">
+          <source>6</source>
+        </trans-unit><trans-unit id="289" translate="yes" xml:space="preserve">
+          <source>3.8 seconds</source>
+        </trans-unit><trans-unit id="290" translate="yes" xml:space="preserve">
+          <source>3.91</source>
+        </trans-unit><trans-unit id="291" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="292" translate="yes" xml:space="preserve">
+          <source>3.82 seconds</source>
+        </trans-unit><trans-unit id="293" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="294" translate="yes" xml:space="preserve">
+          <source>3.84 seconds</source>
+        </trans-unit><trans-unit id="295" translate="yes" xml:space="preserve">
+          <source>3</source>
+        </trans-unit><trans-unit id="296" translate="yes" xml:space="preserve">
+          <source>3.86 seconds</source>
+        </trans-unit><trans-unit id="297" translate="yes" xml:space="preserve">
+          <source>4</source>
+        </trans-unit><trans-unit id="298" translate="yes" xml:space="preserve">
+          <source>4.07 seconds</source>
+        </trans-unit><trans-unit id="299" translate="yes" xml:space="preserve">
+          <source>5</source>
+        </trans-unit><trans-unit id="300" translate="yes" xml:space="preserve">
+          <source>4.86 seconds</source>
+        </trans-unit><trans-unit id="301" translate="yes" xml:space="preserve">
+          <source>6</source>
+        </trans-unit><trans-unit id="302" translate="yes" xml:space="preserve">
+          <source>3.75 seconds</source>
+        </trans-unit><trans-unit id="303" translate="yes" xml:space="preserve">
+          <source>3.88</source>
+        </trans-unit><trans-unit id="304" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Conclusions<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="305" translate="yes" xml:space="preserve">
+          <source>The execution time is more consistent and faster when using the Windows <bpt id="p1">**</bpt>High performance<ept id="p1">**</ept> power plan.</source>
+        </trans-unit><trans-unit id="306" translate="yes" xml:space="preserve">
+          <source>Using integer vs. strings in formulas</source>
+        </trans-unit><trans-unit id="307" translate="yes" xml:space="preserve">
+          <source>This test assessed the impact of modifying the R code to avoid a common problem with string factors.</source>
+        </trans-unit><trans-unit id="308" translate="yes" xml:space="preserve">
+          <source>Specifically, a model was trained using <ph id="ph1">`rxLinMod`</ph> using two tables: in the first, factors are stored as strings; in the second table, factors are stored as integers.</source>
+        </trans-unit><trans-unit id="309" translate="yes" xml:space="preserve">
+          <source>For the <bpt id="p1">*</bpt>airline<ept id="p1">*</ept> table, the [DayOfWeek] column contains strings.</source>
+        </trans-unit><trans-unit id="310" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">_</bpt>colInfo<ept id="p1">_</ept> parameter was used to specify the factor levels (Monday, Tuesday, ...)</source>
+        </trans-unit><trans-unit id="311" translate="yes" xml:space="preserve">
+          <source>For the <bpt id="p1">*</bpt>airlineWithIndex<ept id="p1">*</ept> table, [DayOfWeek] is an integer.</source>
+        </trans-unit><trans-unit id="312" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">_</bpt>colInfo<ept id="p1">_</ept> parameter was not specified.</source>
+        </trans-unit><trans-unit id="313" translate="yes" xml:space="preserve">
+          <source>In both cases, the same formula was used: <ph id="ph1">`ArrDelay ~ CRSDepTime + DayOfWeek`</ph>.</source>
+        </trans-unit><trans-unit id="314" translate="yes" xml:space="preserve">
+          <source>Table name</source>
+        </trans-unit><trans-unit id="315" translate="yes" xml:space="preserve">
+          <source>Test name</source>
+        </trans-unit><trans-unit id="316" translate="yes" xml:space="preserve">
+          <source>Average time</source>
+        </trans-unit><trans-unit id="317" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Airline<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="318" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>FactorCol<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="319" translate="yes" xml:space="preserve">
+          <source>10.72</source>
+        </trans-unit><trans-unit id="320" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>airlineWithIntCol<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="321" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>IntCol<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="322" translate="yes" xml:space="preserve">
+          <source>3.4475</source>
+        </trans-unit><trans-unit id="323" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Conclusions<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="324" translate="yes" xml:space="preserve">
+          <source>There is a clear benefit when using integers rather than strings for factors.</source>
+        </trans-unit><trans-unit id="325" translate="yes" xml:space="preserve">
+          <source>Avoiding transformation functions</source>
+        </trans-unit><trans-unit id="326" translate="yes" xml:space="preserve">
+          <source>In this test, a model was trained using <ph id="ph1">`rxLinMod`</ph>, but the code was changed between the two runs:</source>
+        </trans-unit><trans-unit id="327" translate="yes" xml:space="preserve">
+          <source>In the first run, a transformation function was applied as part of model building.</source>
+        </trans-unit><trans-unit id="328" translate="yes" xml:space="preserve">
+          <source>In the second run, the feature values were precomputed and available, so that no transformation function was required.</source>
+        </trans-unit><trans-unit id="329" translate="yes" xml:space="preserve">
+          <source>Test name</source>
+        </trans-unit><trans-unit id="330" translate="yes" xml:space="preserve">
+          <source>Average time</source>
+        </trans-unit><trans-unit id="331" translate="yes" xml:space="preserve">
+          <source>WithTransformation</source>
+        </trans-unit><trans-unit id="332" translate="yes" xml:space="preserve">
+          <source>5.1675</source>
+        </trans-unit><trans-unit id="333" translate="yes" xml:space="preserve">
+          <source>WithoutTransformation</source>
+        </trans-unit><trans-unit id="334" translate="yes" xml:space="preserve">
+          <source>4.7</source>
+        </trans-unit><trans-unit id="335" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Conclusions<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="336" translate="yes" xml:space="preserve">
+          <source>Training time was shorter when <bpt id="p1">**</bpt>not<ept id="p1">**</ept> using a transformation function.</source>
+        </trans-unit><trans-unit id="337" translate="yes" xml:space="preserve">
+          <source>In other words, the model was trained faster when using columns that are pre-computed and persisted in the table.</source>
+        </trans-unit><trans-unit id="338" translate="yes" xml:space="preserve">
+          <source>The savings is expected to be greater if there were many more transformations and the data set were larger (<ph id="ph1">\&gt;</ph> 100M).</source>
+        </trans-unit><trans-unit id="339" translate="yes" xml:space="preserve">
+          <source>Using columnar store</source>
+        </trans-unit><trans-unit id="340" translate="yes" xml:space="preserve">
+          <source>This test assessed the performance benefits of using a columnar data store and index.</source>
+        </trans-unit><trans-unit id="341" translate="yes" xml:space="preserve">
+          <source>The same model was trained using <ph id="ph1">`rxLinMod`</ph> and no data transformations.</source>
+        </trans-unit><trans-unit id="342" translate="yes" xml:space="preserve">
+          <source>In the first run, the data table used a standard row store.</source>
+        </trans-unit><trans-unit id="343" translate="yes" xml:space="preserve">
+          <source>In the second run, a column store was used.</source>
+        </trans-unit><trans-unit id="344" translate="yes" xml:space="preserve">
+          <source>Table name</source>
+        </trans-unit><trans-unit id="345" translate="yes" xml:space="preserve">
+          <source>Test name</source>
+        </trans-unit><trans-unit id="346" translate="yes" xml:space="preserve">
+          <source>Average time</source>
+        </trans-unit><trans-unit id="347" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>airlineWithIndex<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="348" translate="yes" xml:space="preserve">
+          <source>RowStore</source>
+        </trans-unit><trans-unit id="349" translate="yes" xml:space="preserve">
+          <source>4.67</source>
+        </trans-unit><trans-unit id="350" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>airlineColumnar<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="351" translate="yes" xml:space="preserve">
+          <source>ColStore</source>
+        </trans-unit><trans-unit id="352" translate="yes" xml:space="preserve">
+          <source>4.555</source>
+        </trans-unit><trans-unit id="353" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Conclusions<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="354" translate="yes" xml:space="preserve">
+          <source>Performance is better with the columnar store than with the standard row store.</source>
+        </trans-unit><trans-unit id="355" translate="yes" xml:space="preserve">
+          <source>A significant difference in performance can be expected on larger data sets (<ph id="ph1">\&gt;</ph> 100 M).</source>
+        </trans-unit><trans-unit id="356" translate="yes" xml:space="preserve">
+          <source>Effect of using the cube parameter</source>
+        </trans-unit><trans-unit id="357" translate="yes" xml:space="preserve">
+          <source>The purpose of this test was to determine whether the option in RevoScaleR for using the precomputed <bpt id="p1">**</bpt>cube<ept id="p1">**</ept> parameter can improve performance.</source>
+        </trans-unit><trans-unit id="358" translate="yes" xml:space="preserve">
+          <source>A model was trained using <ph id="ph1">`rxLinMod`</ph>, using this formula:</source>
+        </trans-unit><trans-unit id="359" translate="yes" xml:space="preserve">
+          <source>In the table, the factors <bpt id="p1">*</bpt>DayOfWeek<ept id="p1">*</ept> is stored as a string.</source>
+        </trans-unit><trans-unit id="360" translate="yes" xml:space="preserve">
+          <source>Test name</source>
+        </trans-unit><trans-unit id="361" translate="yes" xml:space="preserve">
+          <source>Cube parameter</source>
+        </trans-unit><trans-unit id="362" translate="yes" xml:space="preserve">
+          <source>numTasks</source>
+        </trans-unit><trans-unit id="363" translate="yes" xml:space="preserve">
+          <source>Average time</source>
+        </trans-unit><trans-unit id="364" translate="yes" xml:space="preserve">
+          <source>Single-row predict (ArrDelay_Pred)</source>
+        </trans-unit><trans-unit id="365" translate="yes" xml:space="preserve">
+          <source>CubeArgEffect</source>
+        </trans-unit><trans-unit id="366" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="367" translate="yes" xml:space="preserve">
+          <source>91.0725</source>
+        </trans-unit><trans-unit id="368" translate="yes" xml:space="preserve">
+          <source>9.959204</source>
+        </trans-unit><trans-unit id="369" translate="yes" xml:space="preserve">
+          <source>4</source>
+        </trans-unit><trans-unit id="370" translate="yes" xml:space="preserve">
+          <source>44.09</source>
+        </trans-unit><trans-unit id="371" translate="yes" xml:space="preserve">
+          <source>9.959204</source>
+        </trans-unit><trans-unit id="372" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="373" translate="yes" xml:space="preserve">
+          <source>21.1125</source>
+        </trans-unit><trans-unit id="374" translate="yes" xml:space="preserve">
+          <source>9.959204</source>
+        </trans-unit><trans-unit id="375" translate="yes" xml:space="preserve">
+          <source>4</source>
+        </trans-unit><trans-unit id="376" translate="yes" xml:space="preserve">
+          <source>8.08</source>
+        </trans-unit><trans-unit id="377" translate="yes" xml:space="preserve">
+          <source>9.959204</source>
+        </trans-unit><trans-unit id="378" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Conclusions<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="379" translate="yes" xml:space="preserve">
+          <source>The use of the cube parameter argument clearly improves performance.</source>
+        </trans-unit><trans-unit id="380" translate="yes" xml:space="preserve">
+          <source>Effect of changing maxDepth for rxDTree models</source>
+        </trans-unit><trans-unit id="381" translate="yes" xml:space="preserve">
+          <source>In this experiment, the <ph id="ph1">`rxDTree`</ph> algorithm was used to create a model on the <bpt id="p1">*</bpt>airlineColumnar<ept id="p1">*</ept> table.</source>
+        </trans-unit><trans-unit id="382" translate="yes" xml:space="preserve">
+          <source>For this test <bpt id="p1">*</bpt>numTasks<ept id="p1">*</ept> was set to 4.</source>
+        </trans-unit><trans-unit id="383" translate="yes" xml:space="preserve">
+          <source>Several different values for <bpt id="p1">*</bpt>maxDepth<ept id="p1">*</ept> were used to demonstrate how altering tree depth affects run time.</source>
+        </trans-unit><trans-unit id="384" translate="yes" xml:space="preserve">
+          <source>Test name</source>
+        </trans-unit><trans-unit id="385" translate="yes" xml:space="preserve">
+          <source>maxDepth</source>
+        </trans-unit><trans-unit id="386" translate="yes" xml:space="preserve">
+          <source>Average time</source>
+        </trans-unit><trans-unit id="387" translate="yes" xml:space="preserve">
+          <source>TreeDepthEffect</source>
+        </trans-unit><trans-unit id="388" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="389" translate="yes" xml:space="preserve">
+          <source>10.1975</source>
+        </trans-unit><trans-unit id="390" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="391" translate="yes" xml:space="preserve">
+          <source>13.2575</source>
+        </trans-unit><trans-unit id="392" translate="yes" xml:space="preserve">
+          <source>4</source>
+        </trans-unit><trans-unit id="393" translate="yes" xml:space="preserve">
+          <source>19.27</source>
+        </trans-unit><trans-unit id="394" translate="yes" xml:space="preserve">
+          <source>8</source>
+        </trans-unit><trans-unit id="395" translate="yes" xml:space="preserve">
+          <source>45.5775</source>
+        </trans-unit><trans-unit id="396" translate="yes" xml:space="preserve">
+          <source>16</source>
+        </trans-unit><trans-unit id="397" translate="yes" xml:space="preserve">
+          <source>339.54</source>
+        </trans-unit><trans-unit id="398" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Conclusions<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="399" translate="yes" xml:space="preserve">
+          <source>As the depth of the tree increases, the total number of nodes increases exponentially.</source>
+        </trans-unit><trans-unit id="400" translate="yes" xml:space="preserve">
+          <source>The elapsed time for creating the model also increased significantly.</source>
+        </trans-unit><trans-unit id="401" translate="yes" xml:space="preserve">
+          <source>Prediction on a stored model</source>
+        </trans-unit><trans-unit id="402" translate="yes" xml:space="preserve">
+          <source>The purpose of this test was to determine the performance impacts on scoring when the trained model is saved to a SQL Server table rather than generated as part of the currently executing code.</source>
+        </trans-unit><trans-unit id="403" translate="yes" xml:space="preserve">
+          <source>For scoring, the stored model is loaded from the database and predictions are created using a one-row data frame in memory (local compute context).</source>
+        </trans-unit><trans-unit id="404" translate="yes" xml:space="preserve">
+          <source>The test results show the time to save the model, and the time taken to load the model and predict.</source>
+        </trans-unit><trans-unit id="405" translate="yes" xml:space="preserve">
+          <source>Table name</source>
+        </trans-unit><trans-unit id="406" translate="yes" xml:space="preserve">
+          <source>Test name</source>
+        </trans-unit><trans-unit id="407" translate="yes" xml:space="preserve">
+          <source>Average time (to train model)</source>
+        </trans-unit><trans-unit id="408" translate="yes" xml:space="preserve">
+          <source>Time to save/load model</source>
+        </trans-unit><trans-unit id="409" translate="yes" xml:space="preserve">
+          <source>airline</source>
+        </trans-unit><trans-unit id="410" translate="yes" xml:space="preserve">
+          <source>SaveModel</source>
+        </trans-unit><trans-unit id="411" translate="yes" xml:space="preserve">
+          <source>21.59</source>
+        </trans-unit><trans-unit id="412" translate="yes" xml:space="preserve">
+          <source>2.08</source>
+        </trans-unit><trans-unit id="413" translate="yes" xml:space="preserve">
+          <source>airline</source>
+        </trans-unit><trans-unit id="414" translate="yes" xml:space="preserve">
+          <source>LoadModelAndPredict</source>
+        </trans-unit><trans-unit id="415" translate="yes" xml:space="preserve">
+          <source>2.09 (includes time to predict)</source>
+        </trans-unit><trans-unit id="416" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Conclusions<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="417" translate="yes" xml:space="preserve">
+          <source>Loading a trained model from a table is clearly a faster way to do prediction.</source>
+        </trans-unit><trans-unit id="418" translate="yes" xml:space="preserve">
+          <source>We recommend that you avoid creating the model and performing scoring all in the same script.</source>
+        </trans-unit><trans-unit id="419" translate="yes" xml:space="preserve">
+          <source>Case study: Optimization for the resume-matching task</source>
+        </trans-unit><trans-unit id="420" translate="yes" xml:space="preserve">
+          <source>The resume-matching model was developed by Microsoft data scientist Ke Huang to test the performance of R code in SQL Server, and by doing so help data scientists create scalable, enterprise-level solutions.</source>
+        </trans-unit><trans-unit id="421" translate="yes" xml:space="preserve">
+          <source>Methods</source>
+        </trans-unit><trans-unit id="422" translate="yes" xml:space="preserve">
+          <source>Both the RevoScaleR and MicrosoftML packages were used to train a predictive model in a complex R solution involving large datasets.</source>
+        </trans-unit><trans-unit id="423" translate="yes" xml:space="preserve">
+          <source>SQL queries and R code were identical in all tests.</source>
+        </trans-unit><trans-unit id="424" translate="yes" xml:space="preserve">
+          <source>Tests were conducted on a single Azure VM with SQL Server installed.</source>
+        </trans-unit><trans-unit id="425" translate="yes" xml:space="preserve">
+          <source>The author then compared scoring times with and without the following optimizations provided by SQL Server:</source>
+        </trans-unit><trans-unit id="426" translate="yes" xml:space="preserve">
+          <source>In-memory tables</source>
+        </trans-unit><trans-unit id="427" translate="yes" xml:space="preserve">
+          <source>Soft-NUMA</source>
+        </trans-unit><trans-unit id="428" translate="yes" xml:space="preserve">
+          <source>Resource Governor</source>
+        </trans-unit><trans-unit id="429" translate="yes" xml:space="preserve">
+          <source>To assess the effect of soft-NUMA on R script execution, the data science team tested the solution on an Azure virtual machine with 20 physical cores.</source>
+        </trans-unit><trans-unit id="430" translate="yes" xml:space="preserve">
+          <source>On these physical cores, four soft-NUMA nodes were created automatically, such that each node contained five cores.</source>
+        </trans-unit><trans-unit id="431" translate="yes" xml:space="preserve">
+          <source>CPU affinitization was enforced in the resume-matching scenario, to assess the impact on R jobs.</source>
+        </trans-unit><trans-unit id="432" translate="yes" xml:space="preserve">
+          <source>Four <bpt id="p1">**</bpt>SQL resource pools<ept id="p1">**</ept> and four <bpt id="p2">**</bpt>external resource pools<ept id="p2">**</ept> were created, and CPU affinity was specified to ensure that the same set of CPUs would be used in each node.</source>
+        </trans-unit><trans-unit id="433" translate="yes" xml:space="preserve">
+          <source>Each of the resource pools was assigned to a different workload group, to optimize hardware utilization.</source>
+        </trans-unit><trans-unit id="434" translate="yes" xml:space="preserve">
+          <source>The reason is that Soft-NUMA and CPU affinity cannot divide physical memory in the physical NUMA nodes; therefore, by definition all soft NUMA nodes that are based on the same physical NUMA node must use memory in the same OS memory block.</source>
+        </trans-unit><trans-unit id="435" translate="yes" xml:space="preserve">
+          <source>In other words, there is no memory-to-processor affinity.</source>
+        </trans-unit><trans-unit id="436" translate="yes" xml:space="preserve">
+          <source>The following process was used to create this configuration:</source>
+        </trans-unit><trans-unit id="437" translate="yes" xml:space="preserve">
+          <source>Reduce the amount of memory allocated by default to SQL Server.</source>
+        </trans-unit><trans-unit id="438" translate="yes" xml:space="preserve">
+          <source>Create four new pools for running the R jobs in parallel.</source>
+        </trans-unit><trans-unit id="439" translate="yes" xml:space="preserve">
+          <source>Create four workload groups such that each workload group is associated with a resource pool.</source>
+        </trans-unit><trans-unit id="440" translate="yes" xml:space="preserve">
+          <source>Restart Resource Governor with the new workload groups and assignments.</source>
+        </trans-unit><trans-unit id="441" translate="yes" xml:space="preserve">
+          <source>Create a user-defined classifier function (UDF) to assign different tasks on different workload groups.</source>
+        </trans-unit><trans-unit id="442" translate="yes" xml:space="preserve">
+          <source>Update the Resource Governor configuration to use the function for appropriate workload groups.</source>
+        </trans-unit><trans-unit id="443" translate="yes" xml:space="preserve">
+          <source>Results</source>
+        </trans-unit><trans-unit id="444" translate="yes" xml:space="preserve">
+          <source>The configuration that had the best performance in the resume-matching study was as follows:</source>
+        </trans-unit><trans-unit id="445" translate="yes" xml:space="preserve">
+          <source>Four internal resource pools (for SQL Server)</source>
+        </trans-unit><trans-unit id="446" translate="yes" xml:space="preserve">
+          <source>Four external resource pools (for external script jobs)</source>
+        </trans-unit><trans-unit id="447" translate="yes" xml:space="preserve">
+          <source>Each resource pool is associated with a specific workload group</source>
+        </trans-unit><trans-unit id="448" translate="yes" xml:space="preserve">
+          <source>Each resource pool is assigned to different CPUs</source>
+        </trans-unit><trans-unit id="449" translate="yes" xml:space="preserve">
+          <source>Maximum internal memory usage (for SQL Server) = 30%</source>
+        </trans-unit><trans-unit id="450" translate="yes" xml:space="preserve">
+          <source>Maximum memory for use by R sessions = 70%</source>
+        </trans-unit><trans-unit id="451" translate="yes" xml:space="preserve">
+          <source>For the resume-matching model, external script use was heavy and there were no other database engine services running.</source>
+        </trans-unit><trans-unit id="452" translate="yes" xml:space="preserve">
+          <source>Therefore, the resources allocated to external scripts were increased to 70%, which proved the best configuration for script performance.</source>
+        </trans-unit><trans-unit id="453" translate="yes" xml:space="preserve">
+          <source>This configuration was arrived at by experimenting with different values.</source>
+        </trans-unit><trans-unit id="454" translate="yes" xml:space="preserve">
+          <source>If you use different hardware or a different solution, the optimum configuration might be different.</source>
+        </trans-unit><trans-unit id="455" translate="yes" xml:space="preserve">
+          <source>Always experiment to find the best configuration for your case!</source>
+        </trans-unit><trans-unit id="456" translate="yes" xml:space="preserve">
+          <source>In the optimized solution, 1.1 million rows of data (with 100 features) were scored in under 8.5 seconds on a 20-core computer.</source>
+        </trans-unit><trans-unit id="457" translate="yes" xml:space="preserve">
+          <source>Optimizations significantly improved the performance in terms of scoring time.</source>
+        </trans-unit><trans-unit id="458" translate="yes" xml:space="preserve">
+          <source>The results also suggested that the <bpt id="p1">**</bpt>number of features<ept id="p1">**</ept> had a significant impact on the scoring time.</source>
+        </trans-unit><trans-unit id="459" translate="yes" xml:space="preserve">
+          <source>The improvement was even more prominent when more features were used in the prediction model.</source>
+        </trans-unit><trans-unit id="460" translate="yes" xml:space="preserve">
+          <source>We recommend that you read this blog article and the accompanying tutorial for a detailed discussion.</source>
+        </trans-unit><trans-unit id="461" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Optimization tips and tricks for machine learning in SQL Server<ept id="p1">](https://azure.microsoft.com/blog/optimization-tips-and-tricks-on-azure-sql-server-for-machine-learning-services/)</ept></source>
+        </trans-unit><trans-unit id="462" translate="yes" xml:space="preserve">
+          <source>Many users have noted that there is a small pause as the R (or Python) runtime is loaded for the first time.</source>
+        </trans-unit><trans-unit id="463" translate="yes" xml:space="preserve">
+          <source>For this reason, as described in these tests, the time for the first run is often measured but later discarded.</source>
+        </trans-unit><trans-unit id="464" translate="yes" xml:space="preserve">
+          <source>Subsequent caching might result in notable performance differences between the first and second runs.</source>
+        </trans-unit><trans-unit id="465" translate="yes" xml:space="preserve">
+          <source>There is also some overhead when data is moved between SQL Server and the external runtime, particularly if data is passed over the network rather than being loaded directly from SQL Server.</source>
+        </trans-unit><trans-unit id="466" translate="yes" xml:space="preserve">
+          <source>For all these reasons, there is no single solution for mitigating this initial loading time, as the performance impact varies significantly depending on the task.</source>
+        </trans-unit><trans-unit id="467" translate="yes" xml:space="preserve">
+          <source>For example, caching is performed for single-row scoring in batches; hence, successive scoring operations are much faster and neither the model nor the R runtime is reloaded.</source>
+        </trans-unit><trans-unit id="468" translate="yes" xml:space="preserve">
+          <source>You can also use <bpt id="p1">[</bpt>native scoring<ept id="p1">](../sql-native-scoring.md)</ept> to avoid loading the R runtime entirely.</source>
+        </trans-unit><trans-unit id="469" translate="yes" xml:space="preserve">
+          <source>For training large models, or scoring in large batches, the overhead might be minimal in comparison to the gains from avoiding data movement or from streaming and parallel processing.</source>
+        </trans-unit><trans-unit id="470" translate="yes" xml:space="preserve">
+          <source>See this blog post for additional performance guidance:</source>
+        </trans-unit><trans-unit id="471" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Using R to detect fraud at 1 million transactions per second<ept id="p1">](https://blog.revolutionanalytics.com/2016/09/fraud-detection.html/)</ept></source>
+        </trans-unit><trans-unit id="472" translate="yes" xml:space="preserve">
+          <source>Resources</source>
+        </trans-unit><trans-unit id="473" translate="yes" xml:space="preserve">
+          <source>The following are links to information, tools, and scripts used in the development of these tests.</source>
+        </trans-unit><trans-unit id="474" translate="yes" xml:space="preserve">
+          <source>Performance testing scripts and links to the data: <bpt id="p1">[</bpt>Sample data and scripts for SQL Server optimizations study<ept id="p1">](https://github.com/Microsoft/SQL-Server-R-Services-Samples/tree/master/PerfTuning)</ept></source>
+        </trans-unit><trans-unit id="475" translate="yes" xml:space="preserve">
+          <source>Article describing the resume-matching solution: <bpt id="p1">[</bpt>Optimization tip and tricks for SQL Server R Services<ept id="p1">](https://azure.microsoft.com/blog/optimization-tips-and-tricks-on-azure-sql-server-for-machine-learning-services/)</ept></source>
+        </trans-unit><trans-unit id="476" translate="yes" xml:space="preserve">
+          <source>Scripts used in SQL optimization for resume-matching solution: <bpt id="p1">[</bpt>GitHub repository<ept id="p1">](https://github.com/Microsoft/SQL-Server-R-Services-Samples/tree/master/SQLOptimizationTips)</ept></source>
+        </trans-unit><trans-unit id="477" translate="yes" xml:space="preserve">
+          <source>Learn about Windows server management</source>
+        </trans-unit><trans-unit id="478" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>How to determine the appropriate page file size for 64-bit versions of Windows<ept id="p1">](https://support.microsoft.com/kb/2860880)</ept></source>
+        </trans-unit><trans-unit id="479" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Understanding NUMA<ept id="p1">](https://technet.microsoft.com/library/ms178144.aspx)</ept></source>
+        </trans-unit><trans-unit id="480" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>How SQL Server supports NUMA<ept id="p1">](https://technet.microsoft.com/library/ms180954.aspx)</ept></source>
+        </trans-unit><trans-unit id="481" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Soft NUMA<ept id="p1">](https://docs.microsoft.com/sql/database-engine/configure-windows/soft-numa-sql-server)</ept></source>
+        </trans-unit><trans-unit id="482" translate="yes" xml:space="preserve">
+          <source>Learn about SQL Server optimizations</source>
+        </trans-unit><trans-unit id="483" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Reorganize and Rebuild Indexes<ept id="p1">](../../relational-databases/indexes/reorganize-and-rebuild-indexes.md)</ept></source>
+        </trans-unit><trans-unit id="484" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Introduction to memory-optimized tables<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/in-memory-oltp/introduction-to-memory-optimized-tables)</ept></source>
+        </trans-unit><trans-unit id="485" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Demonstration: Performance improvement of in-memory OLTP<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/in-memory-oltp/demonstration-performance-improvement-of-in-memory-oltp)</ept></source>
+        </trans-unit><trans-unit id="486" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Data compression<ept id="p1">](../../relational-databases/data-compression/data-compression.md)</ept></source>
+        </trans-unit><trans-unit id="487" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Enable Compression on a Table or Index<ept id="p1">](../../relational-databases/data-compression/enable-compression-on-a-table-or-index.md)</ept></source>
+        </trans-unit><trans-unit id="488" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Disable Compression on a Table or Index<ept id="p1">](../../relational-databases/data-compression/disable-compression-on-a-table-or-index.md)</ept></source>
+        </trans-unit><trans-unit id="489" translate="yes" xml:space="preserve">
+          <source>Learn about managing SQL Server</source>
+        </trans-unit><trans-unit id="490" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Monitor and Tune for Performance<ept id="p1">](../../relational-databases/performance/monitor-and-tune-for-performance.md)</ept></source>
+        </trans-unit><trans-unit id="491" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Resource Governor<ept id="p1">](../../relational-databases/resource-governor/resource-governor.md)</ept></source>
+        </trans-unit><trans-unit id="492" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Introducing Resource Governor<ept id="p1">](https://technet.microsoft.com/library/bb895232.aspx)</ept></source>
+        </trans-unit><trans-unit id="493" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Resource Governance for R Services<ept id="p1">](resource-governance-for-r-services.md)</ept></source>
+        </trans-unit><trans-unit id="494" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>How to Create a resource pool for R<ept id="p1">](how-to-create-a-resource-pool-for-r.md)</ept></source>
+        </trans-unit><trans-unit id="495" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>An example of configuring Resource Governor<ept id="p1">](https://blog.sqlauthority.com/2012/06/04/sql-server-simple-example-to-configure-resource-governor-introduction-to-resource-governor/)</ept></source>
+        </trans-unit><trans-unit id="496" translate="yes" xml:space="preserve">
+          <source>Tools</source>
+        </trans-unit><trans-unit id="497" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>DISKSPD storage load generator/performance test tool<ept id="p1">](https://github.com/microsoft/diskspd)</ept></source>
+        </trans-unit><trans-unit id="498" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>FSUtil utility reference<ept id="p1">](https://technet.microsoft.com/library/cc753059.aspx)</ept></source>
+        </trans-unit><trans-unit id="499" translate="yes" xml:space="preserve">
+          <source>Other articles in this series</source>
+        </trans-unit><trans-unit id="500" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Performance tuning for R - introduction<ept id="p1">](sql-server-r-services-performance-tuning.md)</ept></source>
+        </trans-unit><trans-unit id="501" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Performance tuning for R - SQL Server configuration<ept id="p1">](sql-server-configuration-r-services.md)</ept></source>
+        </trans-unit><trans-unit id="502" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Performance tuning for R - R code and data optimization<ept id="p1">](r-and-data-optimization-r-services.md)</ept></source>
+        </trans-unit><trans-unit id="503" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Performance Tuning - case study results<ept id="p1">](performance-case-study-r-services.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

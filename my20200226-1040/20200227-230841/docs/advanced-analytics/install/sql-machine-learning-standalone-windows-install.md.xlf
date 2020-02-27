@@ -1,0 +1,293 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="sql-machine-learning-standalone-windows-install.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c319ae61fbdca64bc6f27143bdd4a42aec635d129.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">319ae61fbdca64bc6f27143bdd4a42aec635d129</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\install\sql-machine-learning-standalone-windows-install.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Install Machine Learning Server (Standalone)</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Setup a standalone machine learning server for Python and R. A standalone server as installed by SQL Server Setup is functionally equivalent to the non-SQL-branded versions of Microsoft Machine Learning Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Install Machine Learning Server (Standalone) or R Server (Standalone) using SQL Server Setup</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>SQL Server Setup includes a <bpt id="p1">**</bpt>shared feature<ept id="p1">**</ept> option for installing a standalone machine learning server that runs outside of SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>It's called <bpt id="p1">**</bpt>Machine Learning Server (Standalone)<ept id="p1">**</ept> and includes Python and R.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>SQL Server Setup includes a <bpt id="p1">**</bpt>shared feature<ept id="p1">**</ept> option for installing a standalone machine learning server that runs outside of SQL Server.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>In SQL Server 2016, this feature is called <bpt id="p1">**</bpt>R Server (Standalone)<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>A standalone server as installed by SQL Server Setup is functionally equivalent to the non-SQL-branded versions of <bpt id="p1">[</bpt>Microsoft Machine Learning Server<ept id="p1">](https://docs.microsoft.com/machine-learning-server/what-is-machine-learning-server)</ept>, supporting the same use cases and scenarios, including:</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Remote execution, switching between local and remote sessions in the same console</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Operationalization with web nodes and compute nodes</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Web service deployment: the ability to package R and Python script into web services</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Complete collection of R and Python function libraries</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>As an independent server decoupled from SQL Server, the R and Python environment is configured, secured, and accessed using the underlying operating system and tools provided in the standalone server, not SQL Server.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>As an adjunct to SQL Server, a standalone server is useful if you need to develop high-performance machine learning solutions that can use remote compute contexts to the full range of supported data platforms.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>You can shift execution from the local server to a remote Machine Learning Server on a Spark cluster or on another SQL Server instance.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a name="bkmk_prereqs"&gt;</bpt> <ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Pre-install checklist</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>If you installed a previous version, such as SQL Server 2016 R Server (Standalone) or Microsoft R Server, uninstall the existing installation before continuing.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>As a general rule, we recommend that you treat standalone server and database engine instance-aware installations as mutually exclusive to avoid resource contention, but if you have sufficient resources, there is no prohibition against installing them both on the same physical computer.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>You can only have one standalone server on the computer: either SQL Server Machine Learning Server (Standalone) or SQL Server R Server (Standalone).</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Be sure to uninstall one version before adding a new one.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>Install patch requirement</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>For SQL Server 2016 only: Microsoft has identified a problem with the specific version of Microsoft VC++ 2013 Runtime binaries that are installed as a prerequisite by SQL Server.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>If this update to the VC runtime binaries is not installed, SQL Server may experience stability issues in certain scenarios.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>Before you install SQL Server follow the instructions at <bpt id="p1">[</bpt>SQL Server Release Notes<ept id="p1">](../../sql-server/sql-server-2016-release-notes.md#bkmk_ga_instalpatch)</ept> to see if your computer requires a patch for the VC runtime binaries.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Get the installation media</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Run Setup</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>For local installations, you must run Setup as an administrator.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>If you install <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> from a remote share, you must use a domain account that has read and execute permissions on the remote share.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Start the installation wizard.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Click the <bpt id="p1">**</bpt>Installation<ept id="p1">**</ept> tab, and select <bpt id="p2">**</bpt>New Machine Learning Server (Standalone) installation<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">![</bpt>Install Machine Learning Server Standalone<ept id="p1">](media/2017setup-installation-page-mlsvr.png "|::ref1::|")</ept></source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source><bpt id="p1">![</bpt>Install Machine Learning Server Standalone<ept id="p1">](media/2019setup-installation-page-mlsvr.png "|::ref2::|")</ept></source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>After the rules check is complete, accept SQL Server licensing terms, and select a new installation.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>On the <bpt id="p1">**</bpt>Feature Selection<ept id="p1">**</ept> page, the following options should already be selected:</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">**</bpt>Microsoft Machine Learning Server (Standalone)<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">**</bpt>R<ept id="p1">**</ept> and <bpt id="p2">**</bpt>Python<ept id="p2">**</ept> are both selected by default.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>You can deselect either language, but we recommend that you install at least one of the supported languages.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">![</bpt>Choose R or Python features<ept id="p1">](media/2017setup-features-page-mlsvr-rpy.png "|::ref3::|")</ept></source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source><bpt id="p1">![</bpt>Choose R or Python features<ept id="p1">](media/2019setup-features-page-mlsvr-rpy.png "|::ref4::|")</ept></source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>All other options should be ignored.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Avoid installing the <bpt id="p1">**</bpt>Shared Features<ept id="p1">**</ept> if the computer already has Machine Learning Services installed for SQL Server in-database analytics.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>This creates duplicate libraries.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Also, whereas R or Python scripts running in SQL Server are managed by SQL Server so as not to conflict with memory used by other database engine services, the standalone machine learning server has no such constraints, and can interfere with other database operations.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Finally, remote access via RDP session, which is often used for operationalization, is typically blocked by database administrators.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>For these reasons, we generally recommend that you install Machine Learning Server (Standalone) on a separate computer from SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Accept the license terms for downloading and installing base language distributions.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>When the <bpt id="p1">**</bpt>Accept<ept id="p1">**</ept> button becomes unavailable, you can click <bpt id="p2">**</bpt>Next<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>On the <bpt id="p1">**</bpt>Ready to Install<ept id="p1">**</ept> page, verify your selections, and click <bpt id="p2">**</bpt>Install<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>When installation is finished, see <bpt id="p1">[</bpt>Custom reports for SQL Server R Services<ept id="p1">](../r/monitor-r-services-using-custom-reports-in-management-studio.md)</ept> For help with any errors or warnings, see <bpt id="p2">[</bpt>Upgrade and installation FAQ - Machine Learning Services<ept id="p2">](../r/upgrade-and-installation-faq-sql-server-r-services.md)</ept>.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>Run Setup</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>For local installations, you must run Setup as an administrator.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>If you install <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> from a remote share, you must use a domain account that has read and execute permissions on the remote share.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>Start the installation wizard.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>On the <bpt id="p1">**</bpt>Installation<ept id="p1">**</ept> tab, click <bpt id="p2">**</bpt>New R Server (Standalone) installation<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source><bpt id="p1">![</bpt>Start setup of R Server Standalone<ept id="p1">](media/2016-setup-installation-rsvr.png "|::ref5::|")</ept></source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>After the rules check is complete, accept SQL Server licensing terms, and select a new installation.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>On the <bpt id="p1">**</bpt>Feature Selection<ept id="p1">**</ept> page, the following option should be already selected:</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source><bpt id="p1">**</bpt>R Server (Standalone)<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source><bpt id="p1">![</bpt>Feature selections for R Server Standalone<ept id="p1">](media/2016setup-rserver-features.png "|::ref6::|")</ept></source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>All other options can be ignored.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>Avoid installing the <bpt id="p1">**</bpt>Shared Features<ept id="p1">**</ept> if you are running setup on a computer where R Services has already been installed for SQL Server in-database analytics.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>This creates duplicate libraries.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>Whereas R scripts running in SQL Server are managed by SQL Server so as not to conflict with memory used by other database engine services, the standalone R Server has no such constraints, and can interfere with other database operations.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>We generally recommend that you install R Server (Standalone) on a separate computer from SQL Server R Services (In-Database).</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>Accept the license terms for downloading and installing base language distributions.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>When the <bpt id="p1">**</bpt>Accept<ept id="p1">**</ept> button becomes unavailable, you can click <bpt id="p2">**</bpt>Next<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>On the <bpt id="p1">**</bpt>Ready to Install<ept id="p1">**</ept> page, verify your selections, and click <bpt id="p2">**</bpt>Install<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016">
+          <source>When installation is finished, see <bpt id="p1">[</bpt>Custom reports for SQL Server R Services<ept id="p1">](../r/monitor-r-services-using-custom-reports-in-management-studio.md)</ept> For help with any errors or warnings, see <bpt id="p2">[</bpt>Upgrade and installation FAQ - Machine Learning Services<ept id="p2">](../r/upgrade-and-installation-faq-sql-server-r-services.md)</ept>.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Set environment variables</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>For R feature integration only, you should set the <bpt id="p1">**</bpt>MKL_CBWR<ept id="p1">**</ept> environment variable to <bpt id="p2">[</bpt>ensure consistent output<ept id="p2">](https://software.intel.com/articles/introduction-to-the-conditional-numerical-reproducibility-cnr)</ept> from Intel Math Kernel Library (MKL) calculations.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>In Control Panel, click <bpt id="p1">**</bpt>System and Security<ept id="p1">**</ept><ph id="ph1"> &gt; </ph><bpt id="p2">**</bpt>System<ept id="p2">**</ept><ph id="ph2"> &gt; </ph><bpt id="p3">**</bpt>Advanced System Settings<ept id="p3">**</ept><ph id="ph3"> &gt; </ph><bpt id="p4">**</bpt>Environment Variables<ept id="p4">**</ept>.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>Create a new User or System variable.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Set variable name to <ph id="ph1">`MKL_CBWR`</ph></source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>Set the variable value to <ph id="ph1">`AUTO`</ph></source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Restart the server.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>Default installation folders</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>For R and Python development, it's common to have multiple versions on the same computer.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>As installed by SQL Server setup, the base distribution is installed in a folder associated with the SQL Server version that you used for setup.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>The following table lists the paths for R and Python distributions created by Microsoft installers.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>For completeness, the table includes paths generated by SQL Server setup as well as the standalone installer for Microsoft Machine Learning Server.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>Version</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>Installation method</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>Default folder</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>SQL Server 2019 Machine Learning Server (Standalone)</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>SQL Server 2019 setup wizard</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>SQL Server 2017 Machine Learning Server (Standalone)</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>SQL Server 2017 setup wizard</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>Microsoft Machine Learning Server (Standalone)</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>Windows standalone installer</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>SQL Server Machine Learning Services (In-Database)</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>SQL Server 2019 setup wizard, with R language option</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>SQL Server Machine Learning Services (In-Database)</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>SQL Server 2017 setup wizard, with R language option</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>SQL Server 2016 R Server (Standalone)</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>SQL Server 2016 setup wizard</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>SQL Server 2016 R Services (In-Database)</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>SQL Server 2016 setup wizard</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>Apply updates</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>We recommend that you apply the latest cumulative update to both the database engine and machine learning components.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>Cumulative updates are installed through the Setup program.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>On internet-connected devices, you can download a self-extracting executable.</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>Applying an update for the database engine automatically pulls in cumulative updates for existing R and Python features.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>On disconnected servers, extra steps are required.</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>You must obtain the cumulative update for the database engine as well as the CAB files for machine learning features.</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>All files must be transferred to the isolated server and applied manually.</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>Start with a baseline instance.</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>You can only apply cumulative updates to existing installations:</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>Machine Learning Server (Standalone) from SQL Server 2019 initial release</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>Machine Learning Server (Standalone) from SQL Server 2017 initial release</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>R Server (Standalone) from SQL Server 2016 initial release, SQL Server 2016 SP 1, or SQL Server 2016 SP 2</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>Close any open R or Python sessions and stop any processes still running on the system.</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>If you enabled operationalization to run as web nodes and compute nodes for web service deployments, back up the <bpt id="p1">**</bpt>AppSettings.json<ept id="p1">**</ept> file as a precaution.</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>Applying SQL Server 2017 CU13 or later revises this file, so you might want a backup copy to preserve the original version.</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>On an internet connected machine, download the latest cumulative update for your version from the <bpt id="p1">[</bpt>Latest updates for Microsoft SQL Server<ept id="p1">](https://docs.microsoft.com/sql/database-engine/install-windows/latest-updates-for-microsoft-sql-server)</ept>.</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>Download the latest cumulative update.</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>It is an executable file.</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>On an internet-connected device, double-click the .exe to run Setup and step through the wizard to accept licensing terms, review affected features, and monitor progress until completion.</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>On a server with no internet connectivity:</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>Get corresponding CAB files for R and Python.</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>For download links, see <bpt id="p1">[</bpt>CAB downloads for cumulative updates on SQL Server in-database analytics instances<ept id="p1">](sql-ml-cab-downloads.md)</ept>.</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>Transfer all files, the main executable and CAB files, to a folder on the offline computer.</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>Double-click the .exe to run Setup.</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>When installing a cumulate update on a server with no internet connectivity, you are prompted to select the location of the .cab files for R and Python.</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>Post-install, on a server for which you have enabled deployment with web nodes and compute nodes, edit <bpt id="p1">**</bpt>AppSettings.json<ept id="p1">**</ept>, adding an "MMLResourcePath" entry, directly under "MMLNativePath".</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>For example:</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Run the admin CLI utility<ept id="p1">](https://docs.microsoft.com/machine-learning-server/operationalize/configure-admin-cli-launch)</ept> to restart the web and compute nodes.</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source>For steps and syntax, see <bpt id="p1">[</bpt>Monitor, start, and stop web and compute nodes<ept id="p1">](https://docs.microsoft.com/machine-learning-server/operationalize/configure-admin-cli-stop-start)</ept>.</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source>Development tools</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source>A development IDE is not installed as part of setup.</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source>For more information about configuring a development environment, see <bpt id="p1">[</bpt>Set up R tools<ept id="p1">](../r/set-up-a-data-science-client.md)</ept> and <bpt id="p2">[</bpt>Set up Python tools<ept id="p2">](../python/setup-python-client-tools-sql.md)</ept>.</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source>R developers can get started with some simple examples, and learn the basics of how R works with SQL Server.</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source>For your next step, see the following links:</source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Tutorial: Run R in T-SQL<ept id="p1">](../tutorials/quickstart-r-create-script.md)</ept></source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Tutorial: In-database analytics for R developers<ept id="p1">](../tutorials/sqldev-in-database-r-for-sql-developers.md)</ept></source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Python developers can learn how to use Python with SQL Server by following these tutorials:</source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>Tutorial: Run Python in T-SQL<ept id="p1">](../tutorials/run-python-using-t-sql.md)</ept></source>
+        </trans-unit><trans-unit id="239" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>Tutorial: In-database analytics for Python developers<ept id="p1">](../tutorials/sqldev-in-database-python-for-sql-developers.md)</ept></source>
+        </trans-unit><trans-unit id="240" translate="yes" xml:space="preserve">
+          <source>To view examples of machine learning that are based on real-world scenarios, see <bpt id="p1">[</bpt>Machine learning tutorials<ept id="p1">](../tutorials/machine-learning-services-tutorials.md)</ept>.</source>
+        </trans-unit><trans-unit id="241" translate="yes" xml:space="preserve" extradata="ref1">
+          <source>Start installation of Machine Learning Server Standalone</source>
+        </trans-unit><trans-unit id="242" translate="yes" xml:space="preserve" extradata="ref2">
+          <source>Start installation of Machine Learning Server Standalone</source>
+        </trans-unit><trans-unit id="243" translate="yes" xml:space="preserve" extradata="ref3">
+          <source>Start installation of Machine Learning Server Standalone</source>
+        </trans-unit><trans-unit id="244" translate="yes" xml:space="preserve" extradata="ref4">
+          <source>Start installation of Machine Learning Server Standalone</source>
+        </trans-unit><trans-unit id="245" translate="yes" xml:space="preserve" extradata="ref5">
+          <source>Start setup of R Server Standalone</source>
+        </trans-unit><trans-unit id="246" translate="yes" xml:space="preserve" extradata="ref6">
+          <source>Feature selections for R Server Standalone</source>
+        </trans-unit></group></body></file></xliff>

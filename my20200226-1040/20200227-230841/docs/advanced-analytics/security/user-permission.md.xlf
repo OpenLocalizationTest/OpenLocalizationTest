@@ -1,0 +1,47 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="user-permission.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c9b8d3ea5c52c5c18f09097322fdc1e1b2321494e.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9b8d3ea5c52c5c18f09097322fdc1e1b2321494e</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\security\user-permission.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Grant permissions for scripts</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>How to grant database user permissions for R and Python script execution on SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Give users permission to SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article describes how you can give users permission to run external scripts in SQL Server Machine Learning Services and give read, write, or data definition language (DDL) permissions to databases.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>For more information, see the permissions section in <bpt id="p1">[</bpt>Security overview for the extensibility framework<ept id="p1">](../../advanced-analytics/concepts/security.md#permissions)</ept>.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Permission to run scripts</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>If you installed <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> yourself, and you are running R or Python scripts in your own instance, you typically execute scripts as an administrator.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Thus, you have implicit permission over various operations and all data in the database.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Most users, however, do not have such elevated permissions.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>For example, users in an organization who use SQL logins to access the database generally do not have elevated permissions.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Therefore, for each user who is using R or Python, you must grant users of Machine Learning Services the permission to run external scripts in each database where the language is used.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Here's how:</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Permissions are not specific to the supported script language.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>In other words, there are not separate permission levels for R script versus Python script.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>If you need to maintain separate permissions for these languages, install R and Python on separate instances.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Grant databases permissions</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>While a user is running scripts, the user might need to read data from other databases.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>The user might also need to create new tables to store results, and write data into tables.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>For each Windows user account or SQL login that is running R or Python scripts, ensure that it has the appropriate permissions on the specific database:  <ph id="ph1">`db_datareader`</ph> to read data, <ph id="ph2">`db_datawriter`</ph> to save objects to the database, or <ph id="ph3">`db_ddladmin`</ph> to create objects such as stored procedures or tables containing trained and serialized data.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>For example, the following <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> statement gives the SQL login <bpt id="p1">*</bpt>MySQLLogin<ept id="p1">*</ept> the rights to run T-SQL queries in the <bpt id="p2">*</bpt>ML_Samples<ept id="p2">*</ept> database.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>To run this statement, the SQL login must already exist in the security context of the server.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>For more information about the permissions included in each role, see <bpt id="p1">[</bpt>Database-level roles<ept id="p1">](../../relational-databases/security/authentication-access/database-level-roles.md)</ept>.</source>
+        </trans-unit></group></body></file></xliff>

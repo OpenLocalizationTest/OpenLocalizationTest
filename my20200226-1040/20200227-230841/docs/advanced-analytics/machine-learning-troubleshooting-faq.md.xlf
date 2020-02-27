@@ -1,0 +1,51 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="machine-learning-troubleshooting-faq.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cc9be3a8dff314f6645029fb54803ad30dc04db27.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">c9be3a8dff314f6645029fb54803ad30dc04db27</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\machine-learning-troubleshooting-faq.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Troubleshooting</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Provides a starting point for working through known issues.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Troubleshoot machine learning in SQL Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Use this article as a starting point for working through known issues.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Known issues</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>The following articles describe known issues with the current and previous releases:</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Known issues for R Services<ept id="p1">](../advanced-analytics/known-issues-for-sql-server-machine-learning-services.md)</ept></source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server 2016 release notes<ept id="p1">](../sql-server/sql-server-2016-release-notes.md)</ept></source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server 2017 release notes<ept id="p1">](../sql-server/sql-server-2017-release-notes.md)</ept></source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>How to gather system information</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>If you have encountered an error, or need to understand an issue in your environment, it is important that you collect related information systematically.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>The following article provides a list of information that facilitates self-help troubleshooting, or a request for technical support.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Data collection for machine learning troubleshooting<ept id="p1">](data-collection-ml-troubleshooting-process.md)</ept></source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Setup and configuration guides</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Start here if you have not set up machine learning with SQL Server, or if you want to add the feature:</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Install SQL Server Machine Learning Services (In-Database)<ept id="p1">](install/sql-machine-learning-services-windows-install.md)</ept></source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Install SQL Server Machine Learning Server (Standalone)<ept id="p1">](install/sql-machine-learning-standalone-windows-install.md)</ept></source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Command prompt setup<ept id="p1">](install/sql-ml-component-commandline-install.md)</ept></source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Offline setup (no internet)<ept id="p1">](install/sql-ml-component-install-without-internet-access.md)</ept></source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Configuration</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>The following articles contain information about defaults, and how to customize the configuration for machine learning on an instance:</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Scale concurrent execution of external scripts in SQL Server Machine Learning Services<ept id="p1">](administration/modify-user-account-pool.md)</ept></source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Configure and manage advanced analytics extensions<ept id="p1">](r/configure-and-manage-advanced-analytics-extensions.md)</ept></source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>How to create a resource pool<ept id="p1">](r/how-to-create-a-resource-pool-for-r.md)</ept></source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Optimization for R workloads<ept id="p1">](r/operationalizing-your-r-code.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,65 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="sql-machine-learning-azure-virtual-machine.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cd81237f67c82fd7cc8b9259fcd7a0202ffb7fd4b.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">d81237f67c82fd7cc8b9259fcd7a0202ffb7fd4b</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\install\sql-machine-learning-azure-virtual-machine.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Install on an Azure virtual machine</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Run Python and R data science and machine learning solutions with SQL Server Machine Learning Services on a virtual machine in the Azure cloud.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Install SQL Server Machine Learning Services with Python and R on an Azure virtual machine</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Learn how to install Python and R with SQL Server Machine Learning Services on a virtual machine in Azure.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This eliminates the installation and configuration tasks for Machine Learning Services.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Follow these steps:</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Provision SQL Server virtual machine in Azure</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Unblock the firewall</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Enable ODBC callbacks for remote clients</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Add network protocols</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Provision SQL Server virtual machine in Azure</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>For step by step instructions, see <bpt id="p1">[</bpt>How to provision a Windows SQL Server virtual machine in the Azure portal<ept id="p1">](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision)</ept>.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">[</bpt>Configure SQL server settings<ept id="p1">](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision#3-configure-sql-server-settings)</ept> step is where you add Machine Learning Services to your instance.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Unblock the firewall</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>By default, the firewall on the Azure virtual machine includes a rule that blocks network access for local user accounts.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>You must disable this rule to ensure that you can access the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> instance from a remote data science client.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Otherwise, your machine learning code cannot execute in compute contexts that use the virtual machine's workspace.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>To enable access from remote data science clients:</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>On the virtual machine, open Windows Firewall with Advanced Security.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Select <bpt id="p1">**</bpt>Outbound Rules<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Disable the following rule:</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Enable ODBC callbacks for remote clients</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>If you expect that clients calling the server will need to issue ODBC queries as part of their machine learning solutions, you must ensure that the Launchpad can make ODBC calls on behalf of the remote client.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>To do this, you must allow the SQL worker accounts that are used by Launchpad to log into the instance.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Add SQLRUserGroup as a database user<ept id="p1">](../security/create-a-login-for-sqlrusergroup.md)</ept>.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Add network protocols</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Enable Named Pipes</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)]</ph> uses the Named Pipes protocol for connections between the client and server computers, and for some internal connections.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>If Named Pipes is not enabled, you must install and enable it on both the Azure virtual machine, and on any data science clients that connect to the server.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Enable TCP/IP</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>TCP/IP is required for loopback connections.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>If you get the error "DBNETLIB; SQL Server does not exist or access denied", enable TCP/IP on the virtual machine that supports the instance.</source>
+        </trans-unit></group></body></file></xliff>

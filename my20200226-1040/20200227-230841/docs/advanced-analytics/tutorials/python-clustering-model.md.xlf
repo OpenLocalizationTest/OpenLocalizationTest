@@ -1,0 +1,89 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="python-clustering-model.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cf5d1254c6b5c478c7bcad63da0902f21f4db70a9.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">f5d1254c6b5c478c7bcad63da0902f21f4db70a9</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\python-clustering-model.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Python tutorial: Categorize users</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>In this four-part tutorial series, you'll  cluster customers, using K-Means, in a SQL database using Python with SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Tutorial: Categorizing customers using k-means clustering with SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>In this four-part tutorial series, you'll use Python to develop and deploy a K-Means clustering model in <bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../what-is-sql-server-machine-learning.md)</ept> to cluster customer data.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In part one of this series, you'll set up the prerequisites for the tutorial and then restore a sample dataset to a SQL database.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Later in this series, you'll use this data to train and deploy a clustering model in Python with SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>In parts two and three of this series, you'll develop some Python scripts in an Azure Data Studio notebook to analyze and prepare your data and train a machine learning model.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Then, in part four, you'll run those Python scripts inside a SQL database using stored procedures.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Clustering<ept id="p1">*</ept> can be explained as organizing data into groups where members of a group are similar in some way.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>For this tutorial series, imagine you own a retail business.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>You'll use the <bpt id="p1">**</bpt>K-Means<ept id="p1">**</ept> algorithm to perform the clustering of customers in a dataset of product purchases and returns.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>By clustering customers, you can focus your marketing efforts more effectively by targeting specific groups.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>K-Means clustering is an <bpt id="p1">*</bpt>unsupervised learning<ept id="p1">*</ept> algorithm that looks for patterns in data based on similarities.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>In this article, you'll learn how to:</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Restore a sample database into a SQL Server instance</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>In <bpt id="p1">[</bpt>part two<ept id="p1">](python-clustering-model-prepare-data.md)</ept>, you'll learn how to prepare the data from a SQL database to perform clustering.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>In <bpt id="p1">[</bpt>part three<ept id="p1">](python-clustering-model-build.md)</ept>, you'll learn how to create and train a K-Means clustering model in Python.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>In <bpt id="p1">[</bpt>part four<ept id="p1">](python-clustering-model-deploy.md)</ept>, you'll learn how to create a stored procedure in a SQL database that can perform clustering in Python based on new data.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../what-is-sql-server-machine-learning.md)</ept> with the Python language option - Follow the installation instructions in the <bpt id="p2">[</bpt>Windows installation guide<ept id="p2">](../install/sql-machine-learning-services-windows-install.md)</ept> or the <bpt id="p3">[</bpt>Linux installation guide<ept id="p3">](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-machine-learning?toc=%2fsql%2fadvanced-analytics%2ftoc.json&amp;view=sql-server-linux-ver15)</ept>.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Azure Data Studio<ept id="p1">](../../azure-data-studio/what-is.md)</ept>.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>You'll use a notebook in Azure Data Studio for both Python and SQL.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>For more information about notebooks, see <bpt id="p1">[</bpt>How to use notebooks in Azure Data Studio<ept id="p1">](../../azure-data-studio/sql-notebooks.md)</ept>.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Python - You can also use your own Python IDE, such as a Jupyter notebook or <bpt id="p1">[</bpt>Visual Studio Code<ept id="p1">](https://code.visualstudio.com/docs)</ept> with the <bpt id="p2">[</bpt>Python extension<ept id="p2">](https://marketplace.visualstudio.com/items?itemName=ms-python.python)</ept> and the <bpt id="p3">[</bpt>mssql extension<ept id="p3">](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql)</ept>.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>SQL - You can also use <bpt id="p1">[</bpt>SQL Server Management Studio<ept id="p1">](../../ssms/sql-server-management-studio-ssms.md)</ept> (SSMS).</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Additional Python packages - The examples in this tutorial series use Python packages that you may or may not have installed.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Open a <bpt id="p1">**</bpt>Command Prompt<ept id="p1">**</ept> and change to the installation path for the version of Python you use in Azure Data Studio.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>For example, <ph id="ph1">`cd %LocalAppData%\Programs\Python\Python37-32`</ph>.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Then run the following commands to install any of these packages that are not already installed.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Restore the sample database</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>The sample dataset used in this tutorial has been saved to a <bpt id="p1">**</bpt>.bak<ept id="p1">**</ept> database backup file for you to download and use.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>This dataset is derived from the <bpt id="p1">[</bpt>tpcx-bb<ept id="p1">](http://www.tpc.org/tpcx-bb/default.asp)</ept> dataset provided by the <bpt id="p2">[</bpt>Transaction Processing Performance Council (TPC)<ept id="p2">](http://www.tpc.org/default.asp)</ept>.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Download the file <bpt id="p1">[</bpt>tpcxbb_1gb.bak<ept id="p1">](https://sqlchoice.blob.core.windows.net/sqlchoice/static/tpcxbb_1gb.bak)</ept>.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Follow the directions in <bpt id="p1">[</bpt>Restore a database from a backup file<ept id="p1">](../../azure-data-studio/tutorial-backup-restore-sql-server.md#restore-a-database-from-a-backup-file)</ept> in Azure Data Studio, using these details:</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Import from the <bpt id="p1">**</bpt>tpcxbb_1gb.bak<ept id="p1">**</ept> file you downloaded</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Name the target database "tpcxbb_1gb"</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>You can verify that the dataset exists after you have restored the database by querying the <bpt id="p1">**</bpt>dbo.customer<ept id="p1">**</ept> table:</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Clean up resources</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>If you're not going to continue with this tutorial, delete the tpcxbb_1gb database from SQL Server.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>In part one of this tutorial series, you completed these steps:</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Restore a sample database into a SQL Server instance</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>To prepare the data for the machine learning model, follow part two of this tutorial series:</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Tutorial: Prepare data to perform clustering in Python with SQL Server Machine Learning Services<ept id="p1">](python-clustering-model-prepare-data.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

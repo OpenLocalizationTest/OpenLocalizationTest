@@ -1,0 +1,83 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="deepdive-move-data-between-sql-server-and-xdf-file.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cd55bdf59eef4c8e7baa0553487a92a06e76326a9.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">d55bdf59eef4c8e7baa0553487a92a06e76326a9</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\deepdive-move-data-between-sql-server-and-xdf-file.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Move data with XDF file</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>RevoScaleR tutorial 13: How to move data using XDF and the R language on SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Move data between SQL Server and XDF file (SQL Server and RevoScaleR tutorial)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This is tutorial 13 of the <bpt id="p1">[</bpt>RevoScaleR tutorial series<ept id="p1">](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)</ept> on how to use <bpt id="p2">[</bpt>RevoScaleR functions<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept> with SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In this tutorial, you'll learn how to use an XDF file to transfer data between remote and local compute contexts.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Storing the data in an XDF file allows you to perform transformations on the data.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>When you're done, you use the data in the file to create a new <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> table.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>The function <bpt id="p1">[</bpt>rxDataStep<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxdatastep)</ept> can apply transformations to the data and performs the conversion between data frames and .xdf files.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Create a SQL Server table from an XDF file</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>For this exercise, you use the credit card fraud data again.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>In this scenario, you've been asked to do some extra analysis on users in the states of California, Oregon, and Washington.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>To be more efficient, you've decided to store data for only these states on your local computer, and work with only the variables gender, cardholder, state, and balance.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Re-use the <ph id="ph1">`stateAbb`</ph> variable you created earlier to identify the levels to include, and write them to a new variable, <ph id="ph2">`statesToKeep`</ph>.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>CA</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>OR</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>WA</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>5</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>38</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>48</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Define the data you want to bring over from SQL Server, using a <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> query.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Later you use this variable as the <bpt id="p1">*</bpt>inData<ept id="p1">*</ept> argument for <bpt id="p2">**</bpt>rxImport<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Make sure there are no hidden characters such as line feeds or tabs in the query.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Next, define the columns to use when working with the data in R. For example, in the smaller data set, you need only three factor levels, because the query returns data for only three states.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Apply the <ph id="ph1">`statesToKeep`</ph> variable to identify the correct levels to include.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Set the compute context to <bpt id="p1">**</bpt>local<ept id="p1">**</ept>, because you want all the data available on your local computer.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">[</bpt>rxImport<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxsqlserverdata)</ept> function can import data from any supported data source to a local XDF file.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Using a local copy of the data is convenient when you want to do many different analyses on the data, but want to avoid running the same query over and over.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Create the data source object by passing the variables previously defined as arguments to <bpt id="p1">**</bpt>RxSqlServerData<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Call <bpt id="p1">**</bpt>rxImport<ept id="p1">**</ept> to write the data to a file named <ph id="ph1">`ccFraudSub.xdf`</ph>, in the current working directory.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`localDs`</ph> object returned by the <bpt id="p1">**</bpt>rxImport<ept id="p1">**</ept> function is a light-weight <bpt id="p2">**</bpt>RxXdfData<ept id="p2">**</ept> data source object that represents the <ph id="ph2">`ccFraud.xdf`</ph> data file stored locally on disk.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Call <bpt id="p1">[</bpt>rxGetVarInfo<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxgetvarinfoxdf)</ept> on the XDF file to verify that the data schema is the same.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>You can now call various R functions to analyze the <bpt id="p1">**</bpt>localDs<ept id="p1">**</ept> object, just as you would with the source data on SQL Server.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>For example, you might summarize by gender:</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>This tutorial concludes the multi-part tutorial series on <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> and SQL Server.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>It introduced you to numerous data-related and computational concepts, giving you a foundation for moving forward with your own data and project requirements.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>To deepen your knowledge of <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept>, you can return to the R tutorials list to step through any exercises you might have missed.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Alternatively, review the How-to articles in the table of contents for information about general tasks.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>R Tutorials for SQL Server<ept id="p1">](sql-server-r-tutorials.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

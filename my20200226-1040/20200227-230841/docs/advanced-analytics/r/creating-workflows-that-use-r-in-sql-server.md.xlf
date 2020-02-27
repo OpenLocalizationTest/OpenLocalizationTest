@@ -1,0 +1,155 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="creating-workflows-that-use-r-in-sql-server.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c2b8d55e95991437e4d76911fd26afb5b1bc9c550.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">2b8d55e95991437e4d76911fd26afb5b1bc9c550</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\creating-workflows-that-use-r-in-sql-server.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Create SSIS and SSRS workflows with R</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Integration scenarios combining SQL Server Machine Learning Services and R Services, Reporting Services (SSRS) and SQL Server Integration Services (SSIS).</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Create SSIS and SSRS workflows with R on SQL Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article explains how to use embedded R and Python script using the language and data science capabilities of SQL Server Machine Learning Services with two important SQL Server features: SQL Server Integration Services (SSIS) and SQL Server Reporting Services SSRS.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>R and Python libraries in SQL Server provide statistical and predictive functions.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>SSIS and SSRS provide coordinated ETL transformation and visualizations, respectively.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>This article explains how to put all of these features together in this workflow pattern:</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Create a stored procedure that contains executable R or Python</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Execute the stored procedure from SSIS or SSRS</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>The examples in this article are mostly about R and SSIS, but the concepts and steps apply equally to Python.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>The second section provides guidance and links for SSRS visualizations.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Use SSIS for automation</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Data science workflows are highly iterative and involve much transformation of data, including scaling, aggregations, computation of probabilities, and renaming and merging of attributes.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Data scientists are accustomed to doing many of these tasks in R, Python, or another language; however, executing such workflows on enterprise data requires seamless integration with ETL tools and processes.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Because <ph id="ph1">[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)]</ph> enables you to run complex operations in R via Transact-SQL and stored procedures, you can integrate data science tasks with existing ETL processes.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Rather than perform a chain of memory-intensive tasks, data preparation can be optimized using the most efficient tools, including <ph id="ph1">[!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)]</ph> and <ph id="ph2">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Here are some ideas for how you can automate your data processing and modeling pipelines using <ph id="ph1">[!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)]</ph>:</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Extract data from on premises or cloud sources to build training data</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Build and run R or Python models as part of a data integration workflow</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Retrain models on a regular (scheduled) basis</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Load results from R or Python script to other destinations such as Excel, Power BI, Oracle, and Teradata, to name a few</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Use SSIS tasks to create data features in the SQL database</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Use conditional branching to switch compute context for R and Python jobs</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>SSIS example</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>The following example originates from a now-retired MSDN blog post authored by Jimmy Wong at this URL: <ph id="ph1">`https://blogs.msdn.microsoft.com/ssis/2016/01/11/operationalize-your-machine-learning-project-using-sql-server-2016-ssis-and-r-services/`</ph></source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>This example shows you how to automate tasks using SSIS.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>You create stored procedures with embedded R using SQL Server Management Studio, and then execute those stored procedures from <bpt id="p1">[</bpt>Execute T-SQL tasks<ept id="p1">](https://docs.microsoft.com/sql/integration-services/control-flow/execute-t-sql-statement-task)</ept> in an SSIS package.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>To step through this example, you should be familiar with Management Studio, SSIS, SSIS Designer, package design, and T-SQL.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>The SSIS package uses three <bpt id="p1">[</bpt>Execute T-SQL tasks<ept id="p1">](https://docs.microsoft.com/sql/integration-services/control-flow/execute-t-sql-statement-task)</ept> that insert training data into a table, model the data, and score the data to get prediction output.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Load training data</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Run the following script in SQL Server Management Studio to create a table for storing the data.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>You should create and use a test database for this exercise.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Create a stored procedure that loads training data into data frame.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>This example is using the built-in Iris data set.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>In SSIS Designer, create an <bpt id="p1">[</bpt>Execute SQL task<ept id="p1">](https://docs.microsoft.com/sql/integration-services/control-flow/execute-sql-task)</ept> that executes the stored procedure you just defined.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>The script for <bpt id="p1">**</bpt>SQLStatement<ept id="p1">**</ept> removes existing data, specifies which data to insert, and then calls the stored procedure to provide the data.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>Insert data<ept id="p1">](../media/create-workflows-using-r-in-sql-server/ssis-exec-sql-insert-data.png "|::ref1::|")</ept></source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Generate a model</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Run the following script in SQL Server Management Studio to create a table that stores a model.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Create a stored procedure that generates a linear model using <bpt id="p1">[</bpt>rxLinMod<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxlinmod)</ept>.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>RevoScaleR and revoscalepy libraries are automatically available in R and Python sessions on SQL Server so there is no need to import the library.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>In SSIS Designer, create an <bpt id="p1">[</bpt>Execute SQL task<ept id="p1">](https://docs.microsoft.com/sql/integration-services/control-flow/execute-sql-task)</ept> to execute the <bpt id="p2">**</bpt>generate_iris_rx_model<ept id="p2">**</ept> stored procedure.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>The model is serialized and saved to the ssis_iris_models table.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>The script for <bpt id="p1">**</bpt>SQLStatement<ept id="p1">**</ept> is as follows:</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>Generates a linear model<ept id="p1">](../media/create-workflows-using-r-in-sql-server/ssis-exec-rxlinmod.png "|::ref2::|")</ept></source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>As a checkpoint, after this task completes, you can query the ssis_iris_models to see that it contains one binary model.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Predict (score) outcomes using the "trained" model</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Now that you have code that loads training data and generates a model, the only step left is using the model to generate predictions.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>To do this, put the R script in the SQL query to trigger the <bpt id="p1">[</bpt>rxPredict<ept id="p1">](https://docs.microsoft.com//machine-learning-server/r-reference/revoscaler/rxpredict)</ept> built-in R function on ssis_iris_model.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>A stored procedure called <bpt id="p1">**</bpt>predict_species_length<ept id="p1">**</ept> accomplishes this task.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>In SSIS Designer, create an <bpt id="p1">[</bpt>Execute SQL task<ept id="p1">](https://docs.microsoft.com/sql/integration-services/control-flow/execute-sql-task)</ept> that executes the <bpt id="p2">**</bpt>predict_species_length<ept id="p2">**</ept> stored procedure to generate predicted petal length.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>Generate predictions<ept id="p1">](../media/create-workflows-using-r-in-sql-server/ssis-exec-predictions.png "|::ref3::|")</ept></source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Run the solution</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>In SSIS Designer, press F5 to execute the package.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>You should see an outcome similar to the following screenshot.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>F5 to run in debug mode<ept id="p1">](../media/create-workflows-using-r-in-sql-server/ssis-exec-F5-run.png "|::ref4::|")</ept></source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Use SSRS for visualizations</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Although R can create charts and interesting visualizations, it is not well-integrated with external data sources, meaning that each chart or graph has to be individually produced.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Sharing also can be difficult.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>By using <ph id="ph1">[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)]</ph>, you can run complex operations in R via <ph id="ph2">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> stored procedures, which can easily be consumed by a variety of enterprise reporting tools, including <ph id="ph3">[!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]</ph> and Power BI.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>SSRS example</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>R Graphics Device for Microsoft Reporting Services (SSRS)<ept id="p1">](https://rgraphicsdevice.codeplex.com/)</ept></source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>This CodePlex project provides the code to help you create a custom report item that renders the graphics output of R as an image that can be used in <ph id="ph1">[!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]</ph> reports.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>By using the custom report item, you can:</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Publish charts and plots created using the R Graphics Device to <ph id="ph1">[!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]</ph> dashboards</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Pass <ph id="ph1">[!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]</ph> parameters to R plots</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>For this sample, the code that supports the R Graphics Device for Reporting Services must be installed on the Reporting Services server, as well as in Visual Studio.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Manual compilation and configuration is also required.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>The SSIS and SSRS examples in this article illustrate two cases of executing stored procedures that contain embedded R or Python script.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>A key takeaway is that you can make R or Python script available to any application or tool that can send an execution request on a stored procedure.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>An additional takeaway for SSIS is that you can create packages that automate and schedule wide range of operations, such as data acquisition, cleansing, manipulation, and so forth, with R or Python data science functionality included in the chain of operations.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>For more information and ideas, see <bpt id="p1">[</bpt>Operationalize R code using stored procedures in SQL Server Machine Learning Services<ept id="p1">](operationalizing-your-r-code.md)</ept>.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve" extradata="ref1">
+          <source>Insert data</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve" extradata="ref2">
+          <source>Generates a linear model</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve" extradata="ref3">
+          <source>Generate predictions</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve" extradata="ref4">
+          <source>F5 to run in debug mode</source>
+        </trans-unit></group></body></file></xliff>

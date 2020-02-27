@@ -1,0 +1,59 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="python-ski-rental-linear-regression-train-model.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cc564ac26c5706e67d9a633a05f81cb48d00fb771.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">c564ac26c5706e67d9a633a05f81cb48d00fb771</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\python-ski-rental-linear-regression-train-model.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Python tutorial: Train model</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>In part three of this four-part tutorial series, you'll train a linear regression model in Python to predict ski rentals in SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Python Tutorial: Train a linear regression model in SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>In part three of this four-part tutorial series, you'll train a linear regression model in Python.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In the next part of this series, you'll deploy this model in a SQL Server database with Machine Learning Services.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>In this article, you'll learn how to:</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Train a linear regression model</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Make predictions using the linear regression model</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>In <bpt id="p1">[</bpt>part one<ept id="p1">](python-ski-rental-linear-regression.md)</ept>, you learned how to restore the sample database.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>In <bpt id="p1">[</bpt>part two<ept id="p1">](python-ski-rental-linear-regression-prepare-data.md)</ept>, you learned how to load the data from SQL Server into a Python data frame, and prepare the data in Python.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>In <bpt id="p1">[</bpt>part four<ept id="p1">](python-ski-rental-linear-regression-deploy-model.md)</ept>, you'll learn how to store the model to SQL Server, and then create stored procedures from the Python scripts you developed in parts two and three.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>The stored procedures will run in SQL Server to make predictions based on new data.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Part three of this tutorial assumes you have completed <bpt id="p1">[</bpt>part one<ept id="p1">](python-ski-rental-linear-regression.md)</ept> and its prerequisites.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Train the model</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>In order to predict, you have to find a function (model) that best describes the dependency between the variables in our dataset.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>This called training the model.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>The training dataset will be a subset of the entire dataset from the pandas data frame <bpt id="p1">**</bpt>df<ept id="p1">**</ept> that you created in part two of this series.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>You will train model <bpt id="p1">**</bpt>lin_model<ept id="p1">**</ept> using a linear regression algorithm.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>You should see results similar to the following.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Make predictions</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Use a predict function to predict the rental counts using the model <bpt id="p1">**</bpt>lin_model<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>You should see results similar to the following.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>In part three of this tutorial series, you completed these steps:</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Train a linear regression model</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Make predictions using the linear regression model</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>To deploy the machine learning model you've created, follow part four of this tutorial series:</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Python Tutorial: Deploy a machine learning model<ept id="p1">](python-ski-rental-linear-regression-deploy-model.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

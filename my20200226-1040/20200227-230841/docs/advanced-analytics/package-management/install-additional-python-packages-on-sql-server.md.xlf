@@ -1,0 +1,133 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="install-additional-python-packages-on-sql-server.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c83635ac9cb5b35aba25ace6947bc1281d468cb65.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">83635ac9cb5b35aba25ace6947bc1281d468cb65</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\package-management\install-additional-python-packages-on-sql-server.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Install Python packages with sqlmlutils</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Learn how to use Python pip to install new Python packages on an instance of SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Install Python packages with sqlmlutils</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article describes how to use functions in the <bpt id="p1">[</bpt><bpt id="p2">**</bpt>sqlmlutils<ept id="p2">**</ept><ept id="p1">](https://github.com/Microsoft/sqlmlutils)</ept> package to install new Python packages to an instance of SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>The packages you install can be used in Python scripts running in-database using the <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql)</ept> T-SQL statement.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>For more information about package location and installation paths, see <bpt id="p1">[</bpt>Get Python package information<ept id="p1">](../package-management/python-package-information.md)</ept>.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>The standard Python <ph id="ph1">`pip install`</ph> command is not recommended for adding Python packages on SQL Server 2019.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Instead, use <bpt id="p1">**</bpt>sqlmlutils<ept id="p1">**</ept> as described in this article.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>You must have <bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../install/sql-machine-learning-services-windows-install.md)</ept> installed with the Python language option.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Install <bpt id="p1">[</bpt>python<ept id="p1">](https://www.python.org/)</ept> on the client computer you use to connect to SQL Server.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>You also may want a Python development environment such as <bpt id="p1">[</bpt>Visual Studio Code<ept id="p1">](https://code.visualstudio.com/download)</ept> with the <bpt id="p2">[</bpt>Python Extension<ept id="p2">](https://marketplace.visualstudio.com/items?itemName=ms-python.python)</ept>.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Install <bpt id="p1">[</bpt>Azure Data Studio<ept id="p1">](https://docs.microsoft.com/sql/azure-data-studio/what-is)</ept> or <bpt id="p2">[</bpt>SQL Server Management Studio<ept id="p2">](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms)</ept> (SSMS) on the client computer you use to connect to SQL Server.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>You can use other database management or query tools, but this article assumes Azure Data Studio or SSMS.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Other considerations</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Packages must be compliant with the version of Python you have.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>For more information on which version of Python is included with each SQL Server version, see the <bpt id="p1">[</bpt>Python and R versions in What is SQL Server Machine Learning Services (Python and R)?<ept id="p1">](../what-is-sql-server-machine-learning.md#versions)</ept></source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>The Python package library is located in the Program Files folder of your SQL Server instance and, by default, installing in this folder requires administrator permissions.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Package library location<ept id="p1">](../package-management/python-package-information.md#default-python-library-location)</ept>.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Package installation is per instance.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>If you have multiple instances of Machine Learning Services, you must add the package to each one.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Before adding a package, consider whether the package is a good fit for the SQL Server environment.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>We recommend that you use Python in-database for tasks that benefit from tight integration with the database engine, such as machine learning, rather than tasks that simply query the database.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>If you add packages that put too much computational pressure on the server, performance will suffer.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>On a hardened SQL Server environment, you might want to avoid the following:</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Packages that require network access</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Packages that require elevated file system access</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Packages used for web development or other tasks that don't benefit by running inside SQL Server</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Install sqlmlutils on the client computer</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>To use <bpt id="p1">**</bpt>sqlmlutils<ept id="p1">**</ept>, you first need to install it on the client computer that you use to connect to SQL Server.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Make sure you have <ph id="ph1">`pip`</ph> installed, see <bpt id="p1">[</bpt>pip installation<ept id="p1">](https://pip.pypa.io/en/stable/installing/)</ept> for more information.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Download the latest <bpt id="p1">**</bpt>sqlmlutils<ept id="p1">**</ept> zip file from <ph id="ph1">https://github.com/Microsoft/sqlmlutils/tree/master/Python/dist</ph> to the client computer.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Don't unzip the file.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Open a <bpt id="p1">**</bpt>Command Prompt<ept id="p1">**</ept> and run the following commands to install the <bpt id="p2">**</bpt>sqlmlutils<ept id="p2">**</ept> package.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Substitute the full path to the <bpt id="p1">**</bpt>sqlmlutils<ept id="p1">**</ept> zip file you downloaded - this example assumes the downloaded file is <ph id="ph1">`c:\temp\sqlmlutils_0.7.2.zip`</ph>.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Add a Python package on SQL Server</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>In the following example, you'll add the <bpt id="p1">[</bpt>text-tools<ept id="p1">](https://pypi.org/project/text-tools/)</ept> package to SQL Server.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Add the package online</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>If the client computer you use to connect to SQL Server has Internet access, you can use <bpt id="p1">**</bpt>sqlmlutils<ept id="p1">**</ept> to find the <bpt id="p2">**</bpt>text-tools<ept id="p2">**</ept> package and any dependencies over the Internet, and then install the package to a SQL Server instance remotely.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>On the client computer, open <bpt id="p1">**</bpt>Python<ept id="p1">**</ept> or a Python environment.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Use the following commands to install the <bpt id="p1">**</bpt>text-tools<ept id="p1">**</ept> package.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Substitute your own SQL Server database connection information.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Add the package offline</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>If the client computer you use to connect to SQL Server doesn't have an Internet connection, you can use <bpt id="p1">**</bpt>pip<ept id="p1">**</ept> on a computer with Internet access to download the package and any dependent packages to a local folder.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>You then copy the folder to the client computer where you can install the package offline.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>On a computer with Internet access</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Open a <bpt id="p1">**</bpt>Command Prompt<ept id="p1">**</ept> and run the following command to create a local folder that contains the <bpt id="p2">**</bpt>text-tools<ept id="p2">**</ept> package.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>This example creates the folder <ph id="ph1">`c:\temp\text-tools`</ph>.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Copy the <ph id="ph1">`text-tools`</ph> folder to the client computer.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>The following example assumes you copied it to <ph id="ph1">`c:\temp\packages\text-tools`</ph>.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>On the client computer</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Use <bpt id="p1">**</bpt>sqlmlutils<ept id="p1">**</ept> to install each package (WHL file) you find in the local folder that <bpt id="p2">**</bpt>pip<ept id="p2">**</ept> created.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>It doesn't matter in what order you install the packages.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>In this example, <bpt id="p1">**</bpt>text-tools<ept id="p1">**</ept> has no dependencies, so there is only one file from the <ph id="ph1">`text-tools`</ph> folder for you to install.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>In contrast, a package such as <bpt id="p1">**</bpt>scikit-plot<ept id="p1">**</ept> has 11 dependencies, so you would find 12 files in the folder (the <bpt id="p2">**</bpt>scikit-plot<ept id="p2">**</ept> package and the 11 dependent packages), and you would install each of them.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Run the following Python script.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Substitute the actual file path and name of the package, and your own SQL Server database connection information (if you don't use Windows Authentication, add <ph id="ph1">`uid`</ph> and <ph id="ph2">`pwd`</ph> parameters).</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Repeat the <ph id="ph1">`sqlmlutils.SQLPackageManager`</ph> statement for each package file in the folder.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Use the package in SQL Server</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>You can now use the package in a Python script in SQL Server.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>For example:</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Remove the package from SQL Server</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>If you would like to remove the <bpt id="p1">**</bpt>text-tools<ept id="p1">**</ept> package, use the following Python command on the client computer, using the same connection variable you defined earlier.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>To view information about Python packages installed in SQL Server Machine Learning Services, see <bpt id="p1">[</bpt>Get Python package information<ept id="p1">](../package-management/python-package-information.md)</ept>.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>For information about installing R packages in SQL Server Machine Learning Services, see <bpt id="p1">[</bpt>Install new R packages on SQL Server<ept id="p1">](../r/install-additional-r-packages-on-sql-server.md)</ept>.</source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,73 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="creating-multiple-models-using-rxexecby.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cdbba63ae69997c9c5dbdccf49ec590b3f4eba652.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">dbba63ae69997c9c5dbdccf49ec590b3f4eba652</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\creating-multiple-models-using-rxexecby.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Create multiple models with rxExecBy</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Use the rxExecBy function from RevoScaleR library to build multiple mini models over machine data stored in SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Creating multiple models using rxExecBy</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>rxExecBy<ept id="p1">**</ept> function in RevoScaleR supports parallel processing of multiple related models.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Rather than train one large model based on data from multiple similar entities, a data scientist can quickly create many related models, each using data specific to a single entity.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>For example, suppose you are monitoring device failures, capturing data for many different types of equipment.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>By using rxExecBy, you can provide a single large dataset as input, specify a column on which to stratify the dataset, such as device type, and then create multiple models for individual devices.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>This use case has been termed <bpt id="p1">[</bpt>"pleasingly parallel"<ept id="p1">](https://en.wikipedia.org/wiki/Embarrassingly_parallel)</ept> because it breaks a large complicated problem into component parts for concurrent processing.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Typical applications of this approach include forecasting for individual household smart meters, creating revenue projections for separate product lines, or creating models for loan approvals that are tailored to individual bank branches.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>How rxExec Works</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>The rxExecBy function in RevoScaleR is designed for high-volume parallel processing over a large number of small data sets.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>You call the rxExecBy function as part of your R code, and pass a dataset of unordered data.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Specify the partition by which the data should be grouped and sorted.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Define a transformation or modeling function that should be applied to each data partition</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>When the function executes, the data queries are processed in parallel if your environment supports it.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Moreover, the modeling or transformation tasks are distributed among individual cores and executed in parallel.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Supported compute context for thee operations include RxSpark and RxInSQLServer.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Multiple results are returned.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>rxExecBy Syntax and Examples</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>rxExecBy<ept id="p1">**</ept> takes four inputs, one of the inputs being a dataset or data source object that can be partitioned on a specified <bpt id="p2">**</bpt>key<ept id="p2">**</ept> column.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>The function returns an output for each partition.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>The form of the output depends on the function that is passed as an argument.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>For example, if you pass a modeling function such as rxLinMod, you could return a separate trained model for each partition of the dataset.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Supported functions</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Modeling: <ph id="ph1">`rxLinMod`</ph>, <ph id="ph2">`rxLogit`</ph>, <ph id="ph3">`rxGlm`</ph>, <ph id="ph4">`rxDtree`</ph></source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Scoring: <ph id="ph1">`rxPredict`</ph>,</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Transformation or analysis: <ph id="ph1">`rxCovCor`</ph></source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Example</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>The following example demonstrates how to create multiple models using the Airline dataset, which is partitioned on the [DayOfWeek] column.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>The user-defined function, <ph id="ph1">`delayFunc`</ph>, is applied to each of the partitions by calling rxExecBy.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>The function creates separate models for Mondays, Tuesdays, and so forth.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>If you get the error, <ph id="ph1">`varsToPartition is invalid`</ph>, check whether the name of the key column or columns is typed correctly.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>The R language is case-sensitive.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>This particular example is not optimized for SQL Server, and you could in many cases achieve better performance by using SQL to group the data.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>However, using rxExecBy, you can create parallel jobs from R.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>The following example illustrates the process in R, using SQL Server as the compute context:</source>
+        </trans-unit></group></body></file></xliff>

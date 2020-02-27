@@ -1,0 +1,107 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="walkthrough-data-science-end-to-end-walkthrough.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c9844746d6887c14e5524ed54c39e2de7e0375eb1.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9844746d6887c14e5524ed54c39e2de7e0375eb1</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\walkthrough-data-science-end-to-end-walkthrough.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>R tutorial: Develop model in SQL</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Tutorial showing how to create an end-to-end R solution for in-database analytics.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Tutorial: SQL development for R data scientists</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>In this tutorial for data scientists, learn how to build end-to-end solution for predictive modeling based on R feature support in either SQL Server 2016 or SQL Server 2017.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This tutorial uses a <bpt id="p1">[</bpt>NYCTaxi_sample<ept id="p1">](demo-data-nyctaxi-in-sql.md)</ept> database on SQL Server.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>You use a combination of R code, <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> data, and custom SQL functions to build a classification model that indicates the probability that the driver might get a tip on a particular taxi trip.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>You also deploy your R model to <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> and use server data to generate scores based on the model.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>This example can be extended to all kinds of real-life problems, such as predicting customer responses to sales campaigns, or predicting spending or attendance at events.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Because the model can be invoked from a stored procedure, you can easily embed it in an application.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Because the walkthrough is designed to introduce R developers to <ph id="ph1">[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)]</ph>, R is used wherever possible.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>However, this does not mean that R is necessarily the best tool for each task.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>In many cases, <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> might provide better performance, particularly for tasks such as data aggregation and feature engineering.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Such tasks can particularly benefit from new features in <ph id="ph1">[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]</ph>, such as memory optimized columnstore indexes.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>We try to point out possible optimizations along the way.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server Machine Learning Services with R integration<ept id="p1">](../install/sql-machine-learning-services-windows-install.md#verify-installation)</ept> or <bpt id="p2">[</bpt>SQL Server 2016 R Services<ept id="p2">](../install/sql-r-services-windows-install.md)</ept></source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Database permissions<ept id="p1">](../security/user-permission.md)</ept> and a SQL Server database user login</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server Management Studio<ept id="p1">](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)</ept></source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>NYC Taxi demo database<ept id="p1">](demo-data-nyctaxi-in-sql.md)</ept></source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>An R IDE such as RStudio or the built-in RGUI tool included with R</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>We recommend that you do this walkthrough on a client workstation.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>You must be able to connect, on the same network, to a <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> computer with SQL Server and the R language enabled.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>For instructions on workstation configuration, see <bpt id="p1">[</bpt>Set up a data science client for R development<ept id="p1">](../r/set-up-a-data-science-client.md)</ept>.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Alternatively, you can run the walkthrough on a computer that has both <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> and an R development environment, but we don't recommend this configuration for a production environment.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>If you need to put client and server on the same computer, be sure to install a second set of Microsoft R libraries for sending R script from a "remote" client.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Do not use the R libraries that are installed in the program files of the SQL Server instance.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Specifically, if you are using one computer, you need the RevoScaleR library in both of these locations to support client and server operations.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>C:\Program Files\Microsoft\R Client\R_SERVER\library\RevoScaleR</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\R_SERVICES\library\RevoScaleR</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>If you are using <bpt id="p1">[</bpt>Machine Learning Server<ept id="p1">](https://docs.microsoft.com/machine-learning-server/)</ept> or the <bpt id="p2">[</bpt>Data Science Virtual Machine<ept id="p2">](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/)</ept>, instead of R Client, the path to RevoScaleR is C:\Program Files\Microsoft\ML Server\R_SERVER\library\RevoScaleR</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Additional R packages</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>This walkthrough requires several R libraries that are not installed by default as part of <ph id="ph1">[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>You must install the packages both on the client where you develop the solution, and on the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> computer where you deploy the solution.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>On a client workstation</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>In your R environment, copy the following lines and execute the code in a Console window (Rgui or an IDE).</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Some packages also install required packages.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>In all, about 32 packages are installed.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>You must have an internet connection to complete this step.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>On the server</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>You have several options for installing packages on SQL Server.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>For example, SQL Server provides <bpt id="p1">[</bpt>R package management<ept id="p1">](../r/install-additional-r-packages-on-sql-server.md)</ept> feature that lets database administrators create a package repository and assign user the rights to install their own packages.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>However, if you are an administrator on the computer, you can install new packages using R, as long as you install to the correct library.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>On the server, <bpt id="p1">**</bpt>do not<ept id="p1">**</ept> install to a user library even if prompted.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>If you install to a user library, the SQL Server instance cannot find or run the packages.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Installing new R Packages on SQL Server<ept id="p1">](../r/install-additional-r-packages-on-sql-server.md)</ept>.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>On the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> computer, open RGui.exe <bpt id="p1">**</bpt>as an administrator<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>If you have installed SQL Server R Services using the defaults, Rgui.exe can be found in C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\bin\x64).</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>At an R prompt, run the following R commands:</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>This example uses the R grep function to search the vector of available paths and find the path that includes "Program Files".</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt><ph id="ph1">https://www.rdocumentation.org/packages/base/functions/grep</ph><ept id="p1">](https://www.rdocumentation.org/packages/base/functions/grep)</ept>.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>If you think the packages are already installed, check the list of installed packages by running <ph id="ph1">`installed.packages()`</ph>.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Explore and summarize the data<ept id="p1">](walkthrough-view-and-summarize-data-using-r.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,119 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="quickstart-python-data-structures.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c0f04e021664a92241c8c029d296a298b10c142d2.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">0f04e021664a92241c8c029d296a298b10c142d2</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\quickstart-python-data-structures.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Quickstart: Python data structures</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>In this quickstart, learn how to work with data structures and data objects in Python and SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Quickstart: Data structures and objects using Python in SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>In this quickstart, you'll learn how to use data structures when using Python in SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>SQL Server relies on the Python <bpt id="p1">**</bpt>pandas<ept id="p1">**</ept> package, which is great for working with tabular data.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>However, you cannot pass a scalar from Python to SQL Server and expect it to "just work".</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>In this quickstart, you'll review some basic data structure definitions, to prepare you for additional issues that you might run across when passing tabular data between Python and SQL Server.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Concepts to know up front include:</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>A data frame is a table with <bpt id="p1">_</bpt>multiple<ept id="p1">_</ept> columns.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>A single column of a data frame is a list-like object called a series.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>A single value of a data frame is called a cell and is accessed by index.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>How would you expose the single result of a calculation as a data frame, if a data.frame requires a tabular structure?</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>One answer is to represent the single scalar value as a series, which is easily converted to a data frame.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>When returning dates, Python in SQL uses DATETIME which has a restricted date range of 1753-01-01(-53690) through 9999-12-31(2958463).</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>This quickstart requires access to an instance of SQL Server with <bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../install/sql-machine-learning-services-windows-install.md)</ept> with the Python language installed.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>You also need a tool for running SQL queries that contain Python scripts.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>You can run these scripts using any database management or query tool, as long as it can connect to a SQL Server instance, and run a T-SQL query or stored procedure.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>This quickstart uses <bpt id="p1">[</bpt>SQL Server Management Studio (SSMS)<ept id="p1">](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms)</ept>.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Scalar value as a series</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>This example does some simple math and converts a scalar into a series.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>A series requires an index, which you can assign manually, as shown here, or programmatically.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Because the series hasn't been converted to a data.frame, the values are returned in the Messages window, but you can see that the results are in a more tabular format.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>To increase the length of the series, you can add new values, using an array.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>If you do not specify an index, an index is generated that has values starting with 0 and ending with the length of the array.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>If you increase the number of <bpt id="p1">**</bpt>index<ept id="p1">**</ept> values, but don't add new <bpt id="p2">**</bpt>data<ept id="p2">**</ept> values, the data values are repeated to fill the series.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Convert series to data frame</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Having converted the scalar math results to a tabular structure, you still need to convert them to a format that SQL Server can handle.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>To convert a series to a data.frame, call the pandas <bpt id="p1">[</bpt>DataFrame<ept id="p1">](https://pandas.pydata.org/pandas-docs/stable/dsintro.html#dataframe)</ept> method.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>The result is shown below.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Even if you use the index to get specific values from the data.frame, the index values aren't part of the output.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>ResultValue</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>0.5</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Output values into data.frame</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Now you'll output specific values from two series of math results in a data.frame.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>The first has an index of sequential values generated by Python.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>The second uses an arbitrary index of string values.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>The following example gets a value from the series using an integer index.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>ResultValue</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>2.0</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Remember that the auto-generated index starts at 0.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Try using an out of range index value and see what happens.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Now get a single value from the other data frame using a string index.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>ResultValue</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>0.5</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>If you try to use a numeric index to get a value from this series, you get an error.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>To learn about writing advanced Python functions in SQL Server, follow this quickstart:</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Write advanced Python functions with SQL Server Machine Learning Services<ept id="p1">](quickstart-python-functions.md)</ept></source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>For more information on using Python in SQL Server Machine Learning Services, see the following articles:</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Create and score a predictive model in Python<ept id="p1">](quickstart-python-train-score-model.md)</ept></source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>What is SQL Server Machine Learning Services (Python and R)?<ept id="p1">](../what-is-sql-server-machine-learning.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

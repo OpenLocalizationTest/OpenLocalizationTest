@@ -1,0 +1,121 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="deepdive-custom-r-functions-using-rxexec.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c15e8eb433ac10c5f187b7483f55ccf47ae74220a.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">15e8eb433ac10c5f187b7483f55ccf47ae74220a</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\deepdive-custom-r-functions-using-rxexec.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Custom R functions using rxExec</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>RevoScaleR tutorial 14: How to run custom R scripts on SQL Server using RevoScaleR functions.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Run custom R functions on SQL Server using rxExec (SQL Server and RevoScaleR tutorial)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This is tutorial 14 of the <bpt id="p1">[</bpt>RevoScaleR tutorial series<ept id="p1">](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)</ept> on how to use <bpt id="p2">[</bpt>RevoScaleR functions<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept> with SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In this tutorial, you'll use simulated data to demonstrate execution of a custom R function that runs on a remote server.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>You can run custom R functions in the context of SQL Server by passing your function via <bpt id="p1">[</bpt>rxExec<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxexec)</ept>, assuming that any libraries your script requires are also installed on the server and those libraries are compatible with the base distribution of R.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>rxExec<ept id="p1">**</ept> function in <bpt id="p2">**</bpt>RevoScaleR<ept id="p2">**</ept> provides a mechanism for running any R script you require.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Additionally,  <bpt id="p1">**</bpt>rxExec<ept id="p1">**</ept> is able to explicitly distribute work across multiple cores in a single server, adding scale to scripts that are otherwise limited to the resource constraints of the native R engine.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server Machine Learning Services (with R)<ept id="p1">](../install/sql-machine-learning-services-windows-install.md)</ept> or <bpt id="p2">[</bpt>SQL Server 2016 R Services (in-Database)<ept id="p2">](../install/sql-r-services-windows-install.md)</ept></source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Database permissions<ept id="p1">](../security/user-permission.md)</ept> and a SQL Server database user login</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>A development workstation with the RevoScaleR libraries<ept id="p1">](../r/set-up-a-data-science-client.md)</ept></source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>The R distribution on the client workstation provides a built-in <bpt id="p1">**</bpt>Rgui<ept id="p1">**</ept> tool that you can use to run the R script in this tutorial.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>You can also use an IDE such as RStudio or R Tools for Visual Studio.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Create the remote compute context</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Run the following R commands on a client workstation.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>For example, you are using <bpt id="p1">**</bpt>Rgui<ept id="p1">**</ept>, start it from this location: C:\Program Files\Microsoft\R Client\R_SERVER\bin\x64<ph id="ph1">\.</ph></source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Specify the connection string for the SQL Server instance where computations are performed.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>The server must be configured for R integration.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>The database name is not used in this exercise, but the connection string requires one.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>If you have a test or sample database, you can use that.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Using a SQL login<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Using Windows authentication<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Create a remote compute context to the SQL Server instance referenced in the connection string.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Activate the compute context and then return the object definition as a confirmation step.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>You should see the properties of the compute context object.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Create the custom function</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>In this exercise, you will create a custom R function that simulates a common casino consisting of rolling a pair of dice.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Rules of the game determine a win or loss outcome:</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Roll a 7 or 11 on your initial roll, you win.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Roll 2, 3, or 12, you lose.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Roll a 4, 5, 6, 8, 9, or 10, that number becomes your point, and you continue rolling until you either roll your point again (in which case you win) or roll a 7, in which case you lose.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>The game is easily simulated in R, by creating a custom function, and then running it many times.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Create the custom function using the following R code:</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Simulate a single game of dice by running the function.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Did you win or lose?</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Now that you have an operational script, let's see how you can use <bpt id="p1">**</bpt>rxExec<ept id="p1">**</ept> to run the function multiple times to create a simulation that helps determine the probability of a win.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Pass rollDice() in rxExec</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>To run an arbitrary function in the context of a remote SQL Server, call the <bpt id="p1">**</bpt>rxExec<ept id="p1">**</ept> function.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Call the custom function as an argument to <bpt id="p1">**</bpt>rxExec<ept id="p1">**</ept>, together with other parameters that modify the simulation.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Use the <bpt id="p1">*</bpt>timesToRun<ept id="p1">*</ept> argument to indicate how many times the function should be executed.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>In this case, you roll the dice 20 times.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>The arguments <bpt id="p1">*</bpt>RNGseed<ept id="p1">*</ept> and <bpt id="p2">*</bpt>RNGkind<ept id="p2">*</ept> can be used to control random number generation.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>When <bpt id="p1">*</bpt>RNGseed<ept id="p1">*</ept> is set to <bpt id="p2">**</bpt>auto<ept id="p2">**</ept>, a parallel random number stream is initialized on each worker.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>rxExec<ept id="p1">**</ept> function creates a list with one element for each run; however, you won't see much happening until the list is complete.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>When all the iterations are complete, the line starting with <bpt id="p1">**</bpt>length<ept id="p1">**</ept> will return a value.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>You can then go to the next step to get a summary of your win-loss record.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Convert the returned list to a vector using R's <bpt id="p1">**</bpt>unlist<ept id="p1">**</ept> function, and summarize the results using the <bpt id="p2">**</bpt>table<ept id="p2">**</ept> function.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Your results should look something like this:</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Loss  Win<ept id="p1">*</ept> <bpt id="p2">*</bpt>12  8<ept id="p2">*</ept></source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Conclusion</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Although this exercise is simplistic, it demonstrates an important mechanism for integrating arbitrary R functions in R script running on SQL Server.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>To summarize the key points that make this technique possible:</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>SQL Server must be configured for machine learning and R integration: <bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../install/sql-machine-learning-services-windows-install.md)</ept> with the R feature, or <bpt id="p2">[</bpt>SQL Server 2016 R Services (in-Database)<ept id="p2">](../install/sql-r-services-windows-install.md)</ept>.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Open-source or third-party libraries used in your function, including any dependencies, must be installed on SQL Server.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Install new R packages<ept id="p1">](../r/install-additional-r-packages-on-sql-server.md)</ept>.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Moving script from a development environment to a hardened production environment can introduce firewall and network restrictions.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Test carefully to make sure your script is able to perform as expected.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>For a more complex example of using <bpt id="p1">**</bpt>rxExec<ept id="p1">**</ept>, see this article: <bpt id="p2">[</bpt>Coarse grain parallelism with foreach and rxExec<ept id="p2">](https://blog.revolutionanalytics.com/2015/04/coarse-grain-parallelism-with-foreach-and-rxexec.html)</ept></source>
+        </trans-unit></group></body></file></xliff>

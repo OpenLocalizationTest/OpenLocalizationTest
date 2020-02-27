@@ -1,0 +1,367 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="sql-server-configuration-r-services.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c7d18661fadb12167fd0a443758cced1188401750.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">7d18661fadb12167fd0a443758cced1188401750</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\sql-server-configuration-r-services.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Configuration for use with R</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>This article provides guidance about the hardware and network configuration of the computer used to run SQL Server R Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>SQL Server configuration for use with R</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article is the second in a series that describes performance optimization for R Services based on two case studies.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This article provides guidance about the hardware and network configuration of the computer that is used to run SQL Server R Services.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>It also contains information about ways to configure the SQL Server instance, database, or tables used in a solution.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Because use of NUMA in SQL Server blurs the line between hardware and database optimizations, a third section discusses CPU affinitization and resource governance in detail.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>If you are new to SQL Server, we highly recommend that you also review the SQL Server performance tuning guide: <bpt id="p1">[</bpt>Monitor and tune for performance<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/performance/monitor-and-tune-for-performance)</ept>.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Hardware optimization</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Optimization of the server computer is important for making sure that you have the resources to run external scripts.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>When resources are limited, you might see symptoms such as these:</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Job execution is deferred or canceled to prioritize other database operations</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Error "quota exceeded" causing R script to terminate without completion</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Data loaded into R memory truncated, for incomplete results</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Memory</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>The amount of memory available on the computer can have a large impact on the performance of advanced analytic algorithms.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Insufficient memory might affect the degree of parallelism when using the SQL compute context.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>It can also affect the chunk size (rows per read operation) that can be processed, and the number of simultaneous sessions that can be supported.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>A minimum of 32 GB is highly recommended.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>If you have more than 32 GB available, you can configure the SQL data source to use more rows in every read operation to improve performance.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>You can also manage memory used by the instance.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>By default, SQL Server is prioritized over external script processes when memory is allocated.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>In a default installation of R Services, only 20% of available memory is allocated to R.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Typically this is not enough for data science tasks, but neither do you want to starve SQL server of memory.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>You should experiment and fine-tune memory allocation between the database engine, related services, and external scripts, with the understanding that the optimum configuration varies case by case.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>For the resume-matching model, external script use was heavy and there were no other database engine services running; therefore, resources allocated to external scripts were increased to 70%, which was the best configuration for script performance.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Power options</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>On the Windows operating system, the <bpt id="p1">**</bpt>High performance<ept id="p1">**</ept> power option should be used.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Using a different power setting results in decreased or inconsistent performance when using SQL Server.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Disk IO</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Training and prediction jobs using R Services are inherently IO bound, and depend on the speed of the disk(s) that the database is stored on.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Faster drives, such as solid-state drives (SSD) may help.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Disk IO is also affected by other applications accessing the disk: for example, read operations against a database by other clients.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Disk IO performance can also be affected by settings on the file system in use, such as the block size used by the file system.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>If multiple drives are available, store the databases on a different drive than SQL Server so that requests for the database engine are not hitting the same disk as requests for data stored in the database.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Disk IO can also greatly impact performance when running RevoScaleR analytic functions that use multiple iterations during training.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>For example, <ph id="ph1">`rxLogit`</ph>, <ph id="ph2">`rxDTree`</ph>, <ph id="ph3">`rxDForest`</ph>, and <ph id="ph4">`rxBTrees`</ph> all use multiple iterations.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>When the data source is SQL Server, these algorithms use temporary files that are optimized to capture the data.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>These files are automatically cleaned up after the session completes.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Having a high-performance disk for read/write operations can significantly improve the overall elapsed time for these algorithms.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Early versions of R Services required 8.3 filename support on Windows operating systems.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>This restriction was lifted after Service Pack 1.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>However, you can use fsutil.exe to determine whether a drive supports 8.3 filenames, or to enable support if it does not.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Paging file</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>The Windows operating system uses a paging file to manage crash dumps and for storing virtual memory pages.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>If you notice excessive paging, consider increasing the physical memory on the machine.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Although having more physical memory does not eliminate paging, it does reduce the need for paging.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>The speed of the disk that the page file is stored on can also affect performance.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Storing the page file on an SSD, or using multiple page files across multiple SSDs, can improve performance.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>For information on sizing the page file, see <bpt id="p1">[</bpt>How to determine the appropriate page file size for 64-bit versions of Windows<ept id="p1">](https://support.microsoft.com/kb/2860880)</ept>.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Optimizations at instance or database level</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Optimization of the SQL Server instance is the key to efficient execution of external scripts.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>The optimal settings differ depending on the size and type of your data, the number of columns you are using for scoring or training a model.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>You can review the results of specific optimizations in the final article: <bpt id="p1">[</bpt>Performance Tuning - case study results<ept id="p1">](../../advanced-analytics/r/performance-case-study-r-services.md)</ept></source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>For sample scripts, see the separate <bpt id="p1">[</bpt>GitHub repository<ept id="p1">](https://github.com/Microsoft/SQL-Server-R-Services-Samples/tree/master/PerfTuning)</ept>.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Table compression</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>IO performance can often be improved by using either compression or a columnar data store.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Generally, data is often repeated in several columns within a table, so using a columnstore takes advantage of these repetitions when compressing the data.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>A columnstore might not be as efficient if there are numerous insertions into the table, but is a good choice if the data is static or only changes infrequently.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>If a columnar store is not appropriate, enabling compression on a row major table can be used to improve IO.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>For more information, see the following documents:</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Data compression<ept id="p1">](../../relational-databases/data-compression/data-compression.md)</ept></source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Enable compression on a table or index<ept id="p1">](../../relational-databases/data-compression/enable-compression-on-a-table-or-index.md)</ept></source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Columnstore indexes guide<ept id="p1">](../../relational-databases/indexes/columnstore-indexes-overview.md)</ept></source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Memory-optimized tables</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Nowadays, memory is no longer a problem for modern computers.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>As hardware specifications continue to improve, it is relatively easy to get RAM at good values.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>However, at the same time, data is being produced more quickly than ever before, and the data must be processed with low latency.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Memory-optimized tables represent one solution, in that they leverage the large memory available in advanced computers to tackle the problem of big data.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Memory-optimized tables mainly reside in memory, so that data is read from and written to memory.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>For durability, a second copy of the table is maintained on disk and data is only read from disk during database recovery.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>If you need to read from and write to tables frequently, memory-optimized tables can help with high scalability and low latency.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>In the resume-matching scenario, use of memory-optimized tables allowed us to read all the resume features from the database and store them in main memory, to match with new job openings.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>This significantly reduced disk IO.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>Additional performance gains were achieved by using memory-optimized table in the process of writing predictions back to the database from multiple concurrent batches.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>The use of memory-optimized tables on SQL Server enabled low latency on table reads and writes.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>The experience was also seamless during development.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Durable memory-optimized tables were created at the same time that the database was created.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>Therefore, development used the same workflow regardless of where the data was stored.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>Processor</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>SQL Server can perform tasks in parallel by using the available cores on the machine; the more cores that are available, the better the performance.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>While increasing the number of cores might not help for IO bound operations, CPU bound algorithms benefit from faster CPUs with many cores.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>Because the server is normally used by multiple users simultaneously, the database administrator must determine the ideal number of cores that are needed to support peak workload computations.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>Resource governance</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>In editions that support Resource Governor, you can use resource pools to specify that certain workloads are allocated some number of CPUs.</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>You can also manage the amount of memory allocated to specific workloads.</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>Resource governance in SQL Server lets you centralize monitoring and control of the various resources used by SQL Server and by R. For example, you might allocate half the available memory for the database engine, to ensure that core services can always run in spite of transient heavier workloads.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>The default value for memory consumption by external scripts is limited to 20% of the total memory available for SQL Server itself.</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>This limit is applied by default to ensure that all tasks that rely on the database server are not severely affected by long running R jobs.</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>However, these limits can be changed by the database administrator.</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>In many cases, the 20% limit is not adequate to support serious machine learning workloads.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>The configuration options supported are <bpt id="p1">**</bpt>MAX_CPU_PERCENT<ept id="p1">**</ept>, <bpt id="p2">**</bpt>MAX_MEMORY_PERCENT<ept id="p2">**</ept>, and <bpt id="p3">**</bpt>MAX_PROCESSES<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>To view the current settings, use this statement: <ph id="ph1">`SELECT * FROM sys.resource_governor_external_resource_pools`</ph></source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>If the server is primarily used for R Services, it might be helpful to increase MAX_CPU_PERCENT to 40% or 60%.</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>If many R sessions must use the same server at the same time, all three settings should be increased.</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>To change the allocated resource values, use T-SQL statements.</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>This statement sets the memory usage to 40%: <ph id="ph1">`ALTER EXTERNAL RESOURCE POOL [default] WITH (MAX_MEMORY_PERCENT = 40)`</ph></source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>This statement sets all three configurable values: <ph id="ph1">`ALTER EXTERNAL RESOURCE POOL [default] WITH (MAX_CPU_PERCENT = 40, MAX_MEMORY_PERCENT = 50, MAX_PROCESSES = 20)`</ph></source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>If you change a memory, CPU, or max process setting, and then want to apply the settings immediately, run this statement: <ph id="ph1">`ALTER RESOURCE GOVERNOR RECONFIGURE`</ph></source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>Soft-NUMA, hardware NUMA, and CPU affinity</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>When using SQL Server as the compute context, you can sometimes achieve better performance by tuning settings related to NUMA and processor affinity.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>Systems with <bpt id="p1">_</bpt>hardware NUMA<ept id="p1">_</ept> have more than one system bus, each serving a small set of processors.</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>Each CPU can access memory associated with other groups in a coherent way.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>Each group is called a NUMA node.</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>If you have hardware NUMA, it may be configured to use interleaved memory instead of NUMA.</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>In that case, Windows and therefore SQL Server will not recognize it as NUMA.</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>You can run the following query to find the number of memory nodes available to SQL Server:</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>If the query returns a single memory node (node 0), either you do not have hardware NUMA, or the hardware is configured as interleaved (non-NUMA).</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>SQL Server also ignores hardware NUMA when there four or fewer CPUs, or if at least one node has only one CPU.</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>If your computer has multiple processors but does not have hardware-NUMA, you can also use <bpt id="p1">[</bpt>Soft-NUMA<ept id="p1">](https://docs.microsoft.com/sql/database-engine/configure-windows/soft-numa-sql-server)</ept> to subdivide CPUs into smaller groups.</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>In both SQL Server 2016 and SQL Server 2017, the Soft-NUMA feature is automatically enabled when starting the SQL Server service.</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>When Soft-NUMA is enabled, SQL Server automatically manages the nodes for you; however, to optimize for specific workloads, you can disable <bpt id="p1">_</bpt>soft affinity<ept id="p1">_</ept> and manually configure CPU affinity for the soft NUMA nodes.</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>This can give you more control over which workloads are assigned to which nodes, particularly if you are using an edition of SQL Server that supports resource governance.</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>By specifying CPU affinity and aligning resource pools with groups of CPUs, you can reduce latency, and ensure that related processes are performed within the same NUMA node.</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>The overall process for configuring soft-NUMA and CPU affinity to support R workloads is as follows:</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>Enable soft-NUMA, if available</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>Define processor affinity</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>Create resource pools for external processes, using <bpt id="p1">[</bpt>Resource Governor<ept id="p1">](../r/resource-governance-for-r-services.md)</ept></source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>Assign the <bpt id="p1">[</bpt>workload groups<ept id="p1">](../../relational-databases/resource-governor/resource-governor-workload-group.md)</ept> to specific affinity groups</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>For details, including sample code, see this tutorial: <bpt id="p1">[</bpt>SQL Optimization Tips and Tricks (Ke Huang)<ept id="p1">](https://gallery.cortanaintelligence.com/Tutorial/SQL-Server-Optimization-Tips-and-Tricks-for-Analytics-Services)</ept></source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Other resources:<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Soft-NUMA in SQL Server<ept id="p1">](https://docs.microsoft.com/sql/database-engine/configure-windows/soft-numa-sql-server)</ept></source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>How to map soft-NUMA nodes to CPUs</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>Task-specific optimizations</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>This section summarizes methods adopted in these case studies, and in other tests, for optimizing specific machine learning workloads.</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>Common workloads include model training, feature extraction and feature engineering, and various scenarios for scoring: single-row, small batch, and large batch.</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>Feature engineering</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source>One pain point with R is that it is usually processed on a single CPU.</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source>This is a major performance bottleneck for many tasks, especially feature engineering.</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source>In the resume-matching solution, the feature engineering task alone created 2,500 cross-product features that had to be combined with the original 100 features.</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source>This task would take a significant amount of time if everything was done on a single CPU.</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source>There are multiple ways to improve the performance of feature engineering.</source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source>You can either optimize your R code and keep feature extraction inside the modeling process, or move the feature engineering process into SQL.</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source>Using R. You define a function and then pass it as the argument to <bpt id="p1">[</bpt>rxTransform<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxtransform)</ept> during training.</source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source>If the model supports parallel processing, the feature engineering task can be processed using multiple CPUs.</source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve">
+          <source>Using this approach, the data science team observed a 16% performance improvement in terms of scoring time.</source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve">
+          <source>However, this approach requires a model that supports parallelization and a query that can be executed using a parallel plan.</source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve">
+          <source>Use R with a SQL compute context.</source>
+        </trans-unit><trans-unit id="239" translate="yes" xml:space="preserve">
+          <source>In a multiprocessor environment with isolated resources available for execution of separate batches, you can achieve greater efficiency by isolating the SQL queries used for each batch, to extract data from tables and constrain the data on the same workload group.</source>
+        </trans-unit><trans-unit id="240" translate="yes" xml:space="preserve">
+          <source>Methods used to isolate the batches include partitioning, and use of PowerShell to execute separate queries in parallel.</source>
+        </trans-unit><trans-unit id="241" translate="yes" xml:space="preserve">
+          <source>Ad hoc parallel execution: In a SQL Server compute context, you can rely on the SQL database engine to enforce parallel execution if possible and if that option is found to be more efficient.</source>
+        </trans-unit><trans-unit id="242" translate="yes" xml:space="preserve">
+          <source>Use T-SQL in a separate featurization process.</source>
+        </trans-unit><trans-unit id="243" translate="yes" xml:space="preserve">
+          <source>Precomputing the feature data using SQL is generally faster.</source>
+        </trans-unit><trans-unit id="244" translate="yes" xml:space="preserve">
+          <source>Prediction (scoring) in parallel</source>
+        </trans-unit><trans-unit id="245" translate="yes" xml:space="preserve">
+          <source>One of the benefits of SQL Server is its ability to handle a large volume of rows in parallel.</source>
+        </trans-unit><trans-unit id="246" translate="yes" xml:space="preserve">
+          <source>Nowhere is this advantage so marked as in scoring.</source>
+        </trans-unit><trans-unit id="247" translate="yes" xml:space="preserve">
+          <source>Generally the model does not need access to all the data for scoring, so you can partition the input data, with each workload group processing one task.</source>
+        </trans-unit><trans-unit id="248" translate="yes" xml:space="preserve">
+          <source>You can also send the input data as a single query, and SQL Server then analyzes the query.</source>
+        </trans-unit><trans-unit id="249" translate="yes" xml:space="preserve">
+          <source>If a parallel query plan can be created for the input data, it automatically partitions data assigned to the nodes and performs required joins and aggregations in parallel as well.</source>
+        </trans-unit><trans-unit id="250" translate="yes" xml:space="preserve">
+          <source>If you are interested in the details of how to define a stored procedure for use in scoring, see the sample project on <bpt id="p1">[</bpt>GitHub<ept id="p1">](https://github.com/Microsoft/SQL-Server-R-Services-Samples/tree/master/SQLOptimizationTips/SQLR)</ept> and look for the file "step5_score_for_matching.sql".</source>
+        </trans-unit><trans-unit id="251" translate="yes" xml:space="preserve">
+          <source>The sample script also tracks query start and end times and writes the time to the SQL console so that you can assess performance.</source>
+        </trans-unit><trans-unit id="252" translate="yes" xml:space="preserve">
+          <source>Concurrent scoring using resource groups</source>
+        </trans-unit><trans-unit id="253" translate="yes" xml:space="preserve">
+          <source>To scale up the scoring problem, a good practice is to adopt the map-reduce approach in which millions of items are divided into multiple batches.</source>
+        </trans-unit><trans-unit id="254" translate="yes" xml:space="preserve">
+          <source>Then, multiple scoring jobs are executed concurrently.</source>
+        </trans-unit><trans-unit id="255" translate="yes" xml:space="preserve">
+          <source>In this framework, the batches are processed on different CPU sets, and the results are collected and written back to the database.</source>
+        </trans-unit><trans-unit id="256" translate="yes" xml:space="preserve">
+          <source>This is the approach used in the resume-matching scenario; however, resource governance in SQL Server is essential for implementing this approach.</source>
+        </trans-unit><trans-unit id="257" translate="yes" xml:space="preserve">
+          <source>By setting up workload groups for external script jobs, you can route R scoring jobs to different processor groups and achieve faster throughput.</source>
+        </trans-unit><trans-unit id="258" translate="yes" xml:space="preserve">
+          <source>Resource governance can also help allocate divide the available resources on the server (CPU and memory) to minimize workload competition.</source>
+        </trans-unit><trans-unit id="259" translate="yes" xml:space="preserve">
+          <source>You can set up classifier functions to distinguish between different types of R jobs: for example, you might decide that scoring called from an application always takes priority, while retraining jobs have low priority.</source>
+        </trans-unit><trans-unit id="260" translate="yes" xml:space="preserve">
+          <source>This resource isolation can potentially improve execution time and provide more predictable performance.</source>
+        </trans-unit><trans-unit id="261" translate="yes" xml:space="preserve">
+          <source>Concurrent scoring using PowerShell</source>
+        </trans-unit><trans-unit id="262" translate="yes" xml:space="preserve">
+          <source>If you decide to partition the data yourself, you can use PowerShell scripts to execute multiple concurrent scoring tasks.</source>
+        </trans-unit><trans-unit id="263" translate="yes" xml:space="preserve">
+          <source>To do this, use the Invoke-SqlCmd cmdlet, and initiate the scoring tasks in parallel.</source>
+        </trans-unit><trans-unit id="264" translate="yes" xml:space="preserve">
+          <source>In the resume-matching scenario, concurrency was designed as follows:</source>
+        </trans-unit><trans-unit id="265" translate="yes" xml:space="preserve">
+          <source>20 processors divided into four groups of five CPUs each.</source>
+        </trans-unit><trans-unit id="266" translate="yes" xml:space="preserve">
+          <source>Each group of CPUs is located on the same NUMA node.</source>
+        </trans-unit><trans-unit id="267" translate="yes" xml:space="preserve">
+          <source>Maximum number of concurrent batches was set to eight.</source>
+        </trans-unit><trans-unit id="268" translate="yes" xml:space="preserve">
+          <source>Each workload group must handle two scoring tasks.</source>
+        </trans-unit><trans-unit id="269" translate="yes" xml:space="preserve">
+          <source>As soon as one task finished reading data and starts scoring, the other task can start reading data from the database.</source>
+        </trans-unit><trans-unit id="270" translate="yes" xml:space="preserve">
+          <source>To see the PowerShell scripts for this scenario, open the file experiment.ps1 in the <bpt id="p1">[</bpt>Github project<ept id="p1">](https://github.com/Microsoft/SQL-Server-R-Services-Samples/tree/master/SQLOptimizationTips)</ept>.</source>
+        </trans-unit><trans-unit id="271" translate="yes" xml:space="preserve">
+          <source>Storing models for prediction</source>
+        </trans-unit><trans-unit id="272" translate="yes" xml:space="preserve">
+          <source>When training and evaluation finishes and you have selected a best model, we recommend storing the model in the database so that it is available for predictions.</source>
+        </trans-unit><trans-unit id="273" translate="yes" xml:space="preserve">
+          <source>Loading the pre-computed model from the database for the prediction is efficient, because SQL Server machine learning uses special serialization algorithms to store and load models when moving between R and the database.</source>
+        </trans-unit><trans-unit id="274" translate="yes" xml:space="preserve">
+          <source>In SQL Server 2017, you can use the PREDICT function to perform scoring even if R is not installed on the server.</source>
+        </trans-unit><trans-unit id="275" translate="yes" xml:space="preserve">
+          <source>Limited models types are supported, from the RevoScaleR package.</source>
+        </trans-unit><trans-unit id="276" translate="yes" xml:space="preserve">
+          <source>However, depending on the algorithm you use, some models can be quite large, especially when trained on a large data set.</source>
+        </trans-unit><trans-unit id="277" translate="yes" xml:space="preserve">
+          <source>For example, algorithms such as <bpt id="p1">**</bpt>lm<ept id="p1">**</ept> or <bpt id="p2">**</bpt>glm<ept id="p2">**</ept> generate a lot of summary data along with rules.</source>
+        </trans-unit><trans-unit id="278" translate="yes" xml:space="preserve">
+          <source>Because there are limits on the size of a model that can be stored in a varbinary column, we recommend that you eliminate unnecessary artifacts from the model before storing the model in the database for production.</source>
+        </trans-unit><trans-unit id="279" translate="yes" xml:space="preserve">
+          <source>Articles in this series</source>
+        </trans-unit><trans-unit id="280" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Performance tuning for R - introduction<ept id="p1">](../r/sql-server-r-services-performance-tuning.md)</ept></source>
+        </trans-unit><trans-unit id="281" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Performance tuning for R - SQL Server configuration<ept id="p1">](../r/sql-server-configuration-r-services.md)</ept></source>
+        </trans-unit><trans-unit id="282" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Performance tuning for R - R code and data optimization<ept id="p1">](../r/r-and-data-optimization-r-services.md)</ept></source>
+        </trans-unit><trans-unit id="283" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Performance Tuning - case study results<ept id="p1">](../r/performance-case-study-r-services.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

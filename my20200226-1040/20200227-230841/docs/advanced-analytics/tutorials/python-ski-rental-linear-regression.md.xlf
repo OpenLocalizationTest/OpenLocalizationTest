@@ -1,0 +1,93 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="python-ski-rental-linear-regression.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cfe8a0c9af06d39ce183677adb86f30d9fc197d67.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">fe8a0c9af06d39ce183677adb86f30d9fc197d67</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\python-ski-rental-linear-regression.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Python tutorial: Ski rentals</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>In part three of this four-part tutorial series, you'll build a linear regression model in Python to predict ski rentals in SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Python tutorial: Predict ski rental with linear regression in SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>In this four-part tutorial series, you will use Python and linear regression in <bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../what-is-sql-server-machine-learning.md)</ept> to predict the number of ski rentals.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>The tutorial use a <bpt id="p1">[</bpt>Python notebook in Azure Data Studio<ept id="p1">](../../azure-data-studio/sql-notebooks.md)</ept>, but you can also use your own Python integrated development environment (IDE).</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Imagine you own a ski rental business and you want to predict the number of rentals that you'll have on a future date.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>This information will help you get your stock, staff, and facilities ready.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>In the first part of this series, you'll get set up with the prerequisites.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>In parts two and three, you'll develop some Python scripts in a Jupyter notebook to prepare your data and train a machine learning model.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Then, in part three, you'll run those Python scripts inside SQL Server using T-SQL stored procedures.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>In this article, you'll learn how to:</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Import a sample database into SQL Server</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>In <bpt id="p1">[</bpt>part two<ept id="p1">](python-ski-rental-linear-regression-prepare-data.md)</ept>, you'll learn how to load the data from SQL Server into a Python data frame, and prepare the data in Python.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>In <bpt id="p1">[</bpt>part three<ept id="p1">](python-ski-rental-linear-regression-train-model.md)</ept>, you'll learn how to train a linear regression model in Python.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>In <bpt id="p1">[</bpt>part four<ept id="p1">](python-ski-rental-linear-regression-deploy-model.md)</ept>, you'll learn how to store the model to SQL Server, and then create stored procedures from the Python scripts you developed in parts two and three.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>The stored procedures will run in SQL Server to make predictions based on new data.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>SQL Server Machine Learning Services - For how to install Machine Learning Services, see the <bpt id="p1">[</bpt>Windows installation guide<ept id="p1">](../install/sql-machine-learning-services-windows-install.md)</ept> or the <bpt id="p2">[</bpt>Linux installation guide<ept id="p2">](../../linux/sql-server-linux-setup-machine-learning.md?toc=%2Fsql%2Fadvanced-analytics%2Ftoc.json)</ept>.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Python IDE - This tutorial uses a Python notebook in <bpt id="p1">[</bpt>Azure Data Studio<ept id="p1">](../../azure-data-studio/what-is.md)</ept>.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>How to use notebooks in Azure Data Studio<ept id="p1">](../../azure-data-studio/sql-notebooks.md)</ept>.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>You can also use your own Python IDE, such as a Jupyter notebook or <bpt id="p1">[</bpt>Visual Studio Code<ept id="p1">](https://code.visualstudio.com/docs)</ept> with the <bpt id="p2">[</bpt>Python extension<ept id="p2">](https://marketplace.visualstudio.com/items?itemName=ms-python.python)</ept> and the <bpt id="p3">[</bpt>mssql extension<ept id="p3">](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql)</ept>.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>SQL query tool - This tutorial assumes you're using <bpt id="p1">[</bpt>Azure Data Studio<ept id="p1">](../../azure-data-studio/what-is.md)</ept>.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>You can also use <bpt id="p1">[</bpt>SQL Server Management Studio<ept id="p1">](../../ssms/sql-server-management-studio-ssms.md)</ept> (SSMS).</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Additional Python packages - The examples in this tutorial series use the following Python packages that may not be installed by default:</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>pandas</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>pyodbc</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>sklearn</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>To install these packages:</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>In Azure Data Studio, select <bpt id="p1">**</bpt>Manage Packages<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>In the <bpt id="p1">**</bpt>Manage Packages<ept id="p1">**</ept> pane, select the <bpt id="p2">**</bpt>Add new<ept id="p2">**</ept> tab.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>For each of the following packages, enter the package name, click <bpt id="p1">**</bpt>Search<ept id="p1">**</ept>, then click <bpt id="p2">**</bpt>Install<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>As an alternative, you can open a <bpt id="p1">**</bpt>Command Prompt<ept id="p1">**</ept>, change to the installation path for the version of Python you use in Azure Data Studio (for example, <ph id="ph1">`cd %LocalAppData%\Programs\Python\Python37-32`</ph>), then run <ph id="ph2">`pip install`</ph> for each package.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Restore the sample database</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>The sample database used in this tutorial has been saved to a <bpt id="p1">**</bpt>.bak<ept id="p1">**</ept> database backup file for you to download and use.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Download the file <bpt id="p1">[</bpt>TutorialDB.bak<ept id="p1">](https://sqlchoice.blob.core.windows.net/sqlchoice/static/TutorialDB.bak)</ept>.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Follow the directions in <bpt id="p1">[</bpt>Restore a database from a backup file<ept id="p1">](../../azure-data-studio/tutorial-backup-restore-sql-server.md#restore-a-database-from-a-backup-file)</ept> in Azure Data Studio, using these details:</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Import from the <bpt id="p1">**</bpt>TutorialDB.bak<ept id="p1">**</ept> file you downloaded</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Name the target database "TutorialDB"</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>You can verify that the restored database exists by querying the <bpt id="p1">**</bpt>dbo.rental_data<ept id="p1">**</ept> table:</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Enable external scripts by running the following SQL commands:</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>In part one of this tutorial series, you completed these steps:</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Installed the prerequisites</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Import a sample database into an SQL Server</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>To prepare the data from the TutorialDB database, follow part two of this tutorial series:</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Python Tutorial: Prepare data to train a linear regression model<ept id="p1">](python-ski-rental-linear-regression-prepare-data.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,155 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="walkthrough-create-data-features.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c67d2c0bf73e24bc3f70e94cd6cf7ce94d13e5297.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">67d2c0bf73e24bc3f70e94cd6cf7ce94d13e5297</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\walkthrough-create-data-features.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>R tutorial: Feature engineering</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Tutorial showing how to create data features using SQL Server functions for in-database analytics.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Create data features using R and SQL Server (walkthrough)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Data engineering is an important part of machine learning.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Data often requires transformation before you can use it for predictive modeling.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>If the data does not have the features you need, you can engineer them from existing values.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>For this modeling task, rather than using the raw latitude and longitude values of the pickup and drop-off location, you'd like to have the distance in miles between the two locations.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>To create this feature, you compute the direct linear distance between two points, by using the <bpt id="p1">[</bpt>haversine formula<ept id="p1">](https://en.wikipedia.org/wiki/Haversine_formula)</ept>.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>In this step, learn two different methods for creating a feature from data:</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Using a custom R function</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Using a custom T-SQL function in <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph></source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>The goal is to create a new <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> set of data that includes the original columns plus the new numeric feature, <bpt id="p1">*</bpt>direct_distance<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>This step assumes an ongoing R session based on previous steps in this walkthrough.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>It uses the connection strings and data source objects created in those steps.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>The following tools and packages are used to run the script.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Rgui.exe to run R commands</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Management Studio to run T-SQL</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Featurization using R</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>The R language is well-known for its rich and varied statistical libraries, but you still might need to create custom data transformations.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>First, let's do it the way R users are accustomed to: get the data onto your laptop, and then run a custom R function, <bpt id="p1">*</bpt>ComputeDist<ept id="p1">*</ept>, which calculates the linear distance between two points specified by latitude and longitude values.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Remember that the data source object you created earlier gets only the top 1000 rows.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>So let's define a query that gets all the data.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Create a new data source object using the query.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxSqlServerData<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxsqlserverdata)</ept> can take either a query consisting of a valid SELECT query, provided as the argument to the <bpt id="p2">_</bpt>sqlQuery<ept id="p2">_</ept> parameter, or the name of a table object, provided as the <bpt id="p3">_</bpt>table<ept id="p3">_</ept> parameter.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>If you want to sample data from a table, you must use the <bpt id="p1">_</bpt>sqlQuery<ept id="p1">_</ept> parameter, define sampling parameters using the T-SQL TABLESAMPLE clause, and set the <bpt id="p2">_</bpt>rowBuffering<ept id="p2">_</ept> argument to FALSE.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Run the following code to create the custom R function.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>ComputeDist takes in two pairs of latitude and longitude values, and calculates the linear distance between them, returning the distance in miles.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>The first line defines a new environment.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>In R, an environment can be used to encapsulate name spaces in packages and such.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>You can use the <ph id="ph1">`search()`</ph> function to view the environments in your workspace.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>To view the objects in a specific environment, type <ph id="ph1">`ls(&lt;envname&gt;)`</ph>.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>The lines beginning with <ph id="ph1">`$env.ComputeDist`</ph> contain the code that defines the haversine formula, which calculates the <bpt id="p1">*</bpt>great-circle distance<ept id="p1">*</ept> between two points on a sphere.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Having defined the function, you apply it to the data to create a new feature column, <bpt id="p1">*</bpt>direct_distance<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>but before you run the transformation, change the compute context to local.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Call the <bpt id="p1">[</bpt>rxDataStep<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxdatastep)</ept> function to get the feature engineering data, and apply the <ph id="ph1">`env$ComputeDist`</ph> function to the data in memory.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>The rxDataStep function supports various methods for modifying data in place.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>For more information, see this article:  <bpt id="p1">[</bpt>How to transform and subset data in Microsft R<ept id="p1">](https://docs.microsoft.com/r-server/r/how-to-revoscaler-data-transform)</ept></source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>However, a couple of points worth noting regarding rxDataStep:</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>In other data sources, you can use the arguments <bpt id="p1">*</bpt>varsToKeep<ept id="p1">*</ept> and <bpt id="p2">*</bpt>varsToDrop<ept id="p2">*</ept>, but these are not supported for SQL Server data sources.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Therefore, in this example, we've used the <bpt id="p1">_</bpt>transforms<ept id="p1">_</ept> argument to specify both the pass-through columns and the transformed columns.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Also, when running in a SQL Server compute context, the <bpt id="p1">_</bpt>inData<ept id="p1">_</ept> argument can only take a SQL Server data source.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>The preceding code can also produce a warning message when run on larger data sets.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>When the number of rows times the number of columns being created exceeds a set value (the default is 3,000,000), rxDataStep returns a warning, and the number of rows in the returned data frame will be truncated.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>To remove the warning, you can modify the <bpt id="p1">_</bpt>maxRowsByCols<ept id="p1">_</ept> argument in the rxDataStep function.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>However, if  <bpt id="p1">_</bpt>maxRowsByCols<ept id="p1">_</ept> is too large, you might experience problems when loading the data frame into memory.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Optionally, you can call <bpt id="p1">[</bpt>rxGetVarInfo<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxgetvarinfo)</ept> to inspect the schema of the transformed data source.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Featurization using Transact-SQL</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>In this exercise, learn how to accomplish the same task using SQL functions instead of custom R functions.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Switch to <bpt id="p1">[</bpt>SQL Server Management Studio<ept id="p1">](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)</ept> or another query editor to run the T-SQL script.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Use a SQL function, named <bpt id="p1">*</bpt>fnCalculateDistance<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>The function should already exist in the NYCTaxi_Sample database.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>In Object Explorer, verify the function exists by navigating this path: Databases &gt; NYCTaxi_Sample &gt; Programmability &gt; Functions &gt; Scalar-valued Functions &gt;  dbo.fnCalculateDistance.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>If the function does not exist, use SQL Server Management Studio to generate the function in the NYCTaxi_Sample database.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>In Management Studio, in a new query window, run the following <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> statement from any application that supports <ph id="ph2">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> to see how the function works.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>To insert values directly into a new table (you have to create it first), you can add an <bpt id="p1">**</bpt>INTO<ept id="p1">**</ept> clause specifying the table name.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>You can also call the SQL function from R code.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Switch back to Rgui and store the SQL featurization query in an R variable.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>This query has been modified to get a smaller sample of data, to make this walkthrough faster.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>You can remove the TABLESAMPLE clause if you want to get all the data; however, depending on your environment, it might not be possible to load the full datset into R, resulting in an error.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Use the following lines of code to call the <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> function from your R environment and apply it to the data defined in <bpt id="p1">*</bpt>featureEngineeringQuery<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Now that the new feature is created, call <bpt id="p1">**</bpt>rxGetVarsInfo<ept id="p1">**</ept> to create a summary of the data in the feature table.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>In some cases, you might get an error like this one: <bpt id="p1">*</bpt>The EXECUTE permission was denied on the object 'fnCalculateDistance'<ept id="p1">*</ept> If so, make sure that the login you are using has permissions to run scripts and create objects on the database, not just on the instance.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Check the schema for the object, fnCalculateDistance.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>If the object was created by the database owner, and your login belongs to the role db_datareader, you need to give the login explicit permissions to run the script.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Comparing R functions and SQL functions</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Remember this piece of code used to time the R code?</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>You can try using this with the SQL custom function example to see how long the data transformation takes when calling a SQL function.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Also, try switching compute contexts with rxSetComputeContext and compare the timings.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>Your times might vary significantly, depending on your network speed, and your hardware configuration.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>In the configurations we tested, the <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> function approach was faster than using a custom R function.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>Therefore, we've use the <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> function for these calculations in subsequent steps.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Very often, feature engineering using <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> will be faster than R. For example, T-SQL includes fast windowing and ranking functions that can be applied to common data science calculations such as rolling moving averages and <bpt id="p1">*</bpt>n<ept id="p1">*</ept>-tiles.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>Choose the most efficient method based on your data and task.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Build an R model and save to SQL<ept id="p1">](walkthrough-build-and-save-the-model.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

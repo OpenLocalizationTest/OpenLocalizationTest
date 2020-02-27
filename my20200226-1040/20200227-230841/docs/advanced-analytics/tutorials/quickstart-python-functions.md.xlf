@@ -1,0 +1,69 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="quickstart-python-functions.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cd939e04c4a82575cf8210f2c11e734b9912c0fe5.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">d939e04c4a82575cf8210f2c11e734b9912c0fe5</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\quickstart-python-functions.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Quickstart: Python functions</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>In this quickstart, you'll learn how to use Python mathematical and utility functions with SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Quickstart: Python functions with SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>In this quickstart, you'll learn how to use Python mathematical and utility functions with SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Statistical functions are often complicated to implement in T-SQL, but can be done in Python with only a few lines of code.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>This quickstart requires access to an instance of SQL Server with <bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../install/sql-machine-learning-services-windows-install.md)</ept> with the Python language installed.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Your SQL Server instance can be in an Azure virtual machine or on-premises.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Just be aware that the external scripting feature is disabled by default, so you might need to <bpt id="p1">[</bpt>enable external scripting<ept id="p1">](../install/sql-machine-learning-services-windows-install.md#bkmk_enableFeature)</ept> and verify that <bpt id="p2">**</bpt>SQL Server Launchpad service<ept id="p2">**</ept> is running before you start.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>You also need a tool for running SQL queries that contain Python scripts.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>You can run these scripts using any database management or query tool, as long as it can connect to a SQL Server instance, and run a T-SQL query or stored procedure.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>This quickstart uses <bpt id="p1">[</bpt>SQL Server Management Studio (SSMS)<ept id="p1">](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms)</ept>.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Create a stored procedure to generate random numbers</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>For simplicity, let's use the Python <ph id="ph1">`numpy`</ph> package, that's installed and loaded by default in SQL Server Machine Learning Services with Python installed.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>The package contains hundreds of functions for common statistical tasks, among them the <ph id="ph1">`random.normal`</ph> function, which generates a specified number of random numbers using the normal distribution, given a standard deviation and mean.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>For example, the following Python code returns 100 numbers on a mean of 50, given a standard deviation of 3.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>To call this line of Python from T-SQL, add the Python function in the Python script parameter of <ph id="ph1">`sp_execute_external_script`</ph>.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>The output expects a data frame, so use <ph id="ph1">`pandas`</ph> to convert it.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>What if you'd like to make it easier to generate a different set of random numbers?</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>That's easy when combined with SQL Server.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>You define a stored procedure that gets the arguments from the user, then pass those arguments into the Python script as variables.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>The first line defines each of the SQL input parameters that are required when the stored procedure is executed.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>The line beginning with <ph id="ph1">`@params`</ph> defines all variables used by the Python code, and the corresponding SQL data types.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>The lines that immediately follow map the SQL parameter names to the corresponding Python variable names.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Now that you've wrapped the Python function in a stored procedure, you can easily call the function and pass in different values, like this:</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Use Python utility functions for troubleshooting</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Python packages provide a variety of utility functions for investigating the current Python environment.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>These functions can be useful if you're finding discrepancies in the way your Python code performs in SQL Server and in outside environments.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>For example, you might use system timing functions in the <ph id="ph1">`time`</ph> package to measure the amount of time used by Python processes and analyze performance issues.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>To create a machine learning model using Python in SQL Server, follow this quickstart:</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Quickstart: Create and score a predictive model in Python with SQL Server Machine Learning Services<ept id="p1">](quickstart-python-train-score-model.md)</ept></source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>For more information on SQL Server Machine Learning Services, see:</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>What is SQL Server Machine Learning Services (Python and R)?<ept id="p1">](../what-is-sql-server-machine-learning.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

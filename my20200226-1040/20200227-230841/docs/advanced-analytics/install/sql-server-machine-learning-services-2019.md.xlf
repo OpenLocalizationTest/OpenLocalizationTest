@@ -1,0 +1,103 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="sql-server-machine-learning-services-2019.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c4fae460e78682263c604d8e1e86ca40b7b62df97.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">4fae460e78682263c604d8e1e86ca40b7b62df97</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\install\sql-server-machine-learning-services-2019.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Isolation changes for Windows</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>This article describes the changes to the isolation mechanism in Machine Learning Services in SQL Server 2019 on Windows.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>These changes affect SQLRUserGroup, firewall rules, file permission, and implied authentication.</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>SQL Server 2019 on Windows: Isolation changes for Machine Learning Services</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This article describes the changes to the isolation mechanism in Machine Learning Services in SQL Server 2019 on Windows.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>These changes affect <bpt id="p1">**</bpt>SQLRUserGroup<ept id="p1">**</ept>, firewall rules, file permission, and implied authentication.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>For more information, see how to install <bpt id="p1">[</bpt>SQL Server Machine Learning Services on Windows<ept id="p1">](sql-machine-learning-services-windows-install.md)</ept>.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Changes to isolation mechanism</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>On Windows, SQL Server 2019 Setup changes the isolation mechanism for external processes.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>This change replaces local worker accounts with <bpt id="p1">[</bpt>AppContainers<ept id="p1">](https://docs.microsoft.com/windows/desktop/secauthz/appcontainer-isolation)</ept>, an isolation technology for client applications running on Windows.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>There are no specific action items for the administrator as a result of the modification.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>On a new or upgraded server, all external scripts and code executed from <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md)</ept> follow the new isolation model automatically.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Summarized, the main differences in this release are:</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Local user accounts under <bpt id="p1">**</bpt>SQL Restricted User Group (SQLRUserGroup)<ept id="p1">**</ept> are no longer created or used to run external processes.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>AppContainers replace them.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>SQLRUserGroup<ept id="p1">**</ept> membership has changed.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Instead of multiple local user accounts, membership consists of just the SQL Server Launchpad service account.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>R and Python processes now execute under the Launchpad service identity, isolated through AppContainers.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Although the isolation model has changed, the Installation wizard and command line parameters remain the same in SQL Server 2019.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>For help with installation, see <bpt id="p1">[</bpt>Install SQL Server Machine Learning Services<ept id="p1">](sql-machine-learning-services-windows-install.md)</ept>.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>About AppContainer isolation</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>In previous releases, <bpt id="p1">**</bpt>SQLRUserGroup<ept id="p1">**</ept> contained a pool of local Windows user accounts (MSSQLSERVER00-MSSQLSERVER20) used for isolating and running external processes.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>When an external process was needed, SQL Server Launchpad service would take an available account and use it to run a process.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>In SQL Server 2019, Setup no longer creates local worker accounts.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Instead, isolation is achieved through <bpt id="p1">[</bpt>AppContainers<ept id="p1">](https://docs.microsoft.com/windows/desktop/secauthz/appcontainer-isolation)</ept>.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>At run time, when embedded script or code is detected in a stored procedure or query, SQL Server calls Launchpad with a request for an extension-specific launcher.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Launchpad invokes the appropriate runtime environment in a process under its identity, and instantiates an AppContainer to contain it.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>This change is beneficial because local account and password management is no longer required.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Also, on installations where local user accounts are prohibited, elimination of the local user account dependency means you can now use this feature.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>As implemented by SQL Server, AppContainers are an internal mechanism.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>While you won't see physical evidence of AppContainers in Process Monitor, you can find them in outbound firewall rules created by Setup to prevent processes from making network calls.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Firewall rules created by Setup</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>By default, SQL Server disables outbound connections by creating firewall rules.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>In the past, these rules were based on local user accounts, where Setup created one outbound rule for <bpt id="p1">**</bpt>SQLRUserGroup<ept id="p1">**</ept> that denied network access to its members (each worker account was listed as a local principle subject to the rule_.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>As part of the move to AppContainers, there are new firewall rules based on AppContainer SIDs: one for each of the 20 AppContainers created by SQL Server Setup.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Naming conventions for the firewall rule name are <bpt id="p1">**</bpt>Block network access for AppContainer-00 in SQL Server instance MSSQLSERVER<ept id="p1">**</ept>, where 00 is the number of the AppContainer (00-20 by default), and MSSQLSERVER is the name of the SQL Server instance.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>If network calls are required, you can disable the outbound rules in Windows Firewall.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Program file permissions</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>As with previous releases, the <bpt id="p1">**</bpt>SQLRUserGroup<ept id="p1">**</ept> continues to provide read and execute permissions on executables in the SQL Server <bpt id="p2">**</bpt>Binn<ept id="p2">**</ept>, <bpt id="p3">**</bpt>R_SERVICES<ept id="p3">**</ept>, and <bpt id="p4">**</bpt>PYTHON_SERVICES<ept id="p4">**</ept> directories.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>In this release, the only member of <bpt id="p1">**</bpt>SQLRUserGroup<ept id="p1">**</ept> is the SQL Server Launchpad service account.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>When Launchpad service starts an R or Python execution environment, the process runs as LaunchPad service.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Implied authentication</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>As before, additional configuration is still required for <bpt id="p1">*</bpt>implied authentication<ept id="p1">*</ept> in cases where script or code has to connect back to SQL Server using trusted authentication to retrieve data or resources.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>The additional configuration involves creating a database login for <bpt id="p1">**</bpt>SQLRUserGroup<ept id="p1">**</ept>, whose sole member is now the single SQL Server Launchpad service account instead of multiple worker accounts.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>For more information about this task, see <bpt id="p1">[</bpt>Add SQLRUserGroup as a database user<ept id="p1">](../security/create-a-login-for-sqlrusergroup.md)</ept>.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Symbolic link created by Setup</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>A symbolic link is created to the current default <bpt id="p1">**</bpt>R_SERVICES<ept id="p1">**</ept>  and <bpt id="p2">**</bpt>PYTHON_SERVICES<ept id="p2">**</ept> as part of SQL Server Setup.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>If you don't want to create this link, an alternative is to grant 'all application packages' read permission to the hierarchy leading up to the folder.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Install SQL Server Machine Learning Services on Windows<ept id="p1">](sql-machine-learning-services-windows-install.md)</ept></source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Install SQL Server Machine Learning Services on Linux<ept id="p1">](../../linux/sql-server-linux-setup-machine-learning.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

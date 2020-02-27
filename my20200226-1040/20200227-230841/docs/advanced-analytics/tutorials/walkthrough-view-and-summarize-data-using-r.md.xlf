@@ -1,0 +1,171 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="walkthrough-view-and-summarize-data-using-r.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cf279be39a9edc91dd9d8cd6b72183988a607ce31.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">f279be39a9edc91dd9d8cd6b72183988a607ce31</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\walkthrough-view-and-summarize-data-using-r.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>R tutorial: Explore data</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Tutorial showing how to visualize and generate statistical summaries using R functions for in-database analytics on SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>View and summarize SQL Server data using R (walkthrough)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This lesson introduces you to functions in the <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> package and steps you through the following tasks:</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Connect to SQL Server</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Define a query that has the data you need, or specify a table or view</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Define one or more compute contexts to use when running R code</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Optionally, define transformations that are applied to the data source while it is being read from the source</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Define a SQL Server compute context</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Run the following R statements in an R environment on the client workstation.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>This section assumes a <bpt id="p1">[</bpt>data science workstation with Microsoft R Client<ept id="p1">](../r/set-up-a-data-science-client.md)</ept>, because it includes all the RevoScaleR packages, as well as a basic, lightweight set of R tools.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>For example, you can use Rgui.exe to run the R script in this section.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>If the <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> package is  not already loaded, run this line of R code:</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>The quotation marks are optional, in this case, though recommended.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>If you get an error, make sure that your R development environment is using a library that includes the RevoScaleR package.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Use a command such as <ph id="ph1">`.libPaths()`</ph> to view the current library path.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Create the connection string for SQL Server and save it in an R variable, <bpt id="p1">*</bpt>connStr<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>You must change the placeholder "your_server_name" to a valid SQL Server instance name.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>For the server name, you might be able to use only the instance name, or you might need to fully qualify the name, depending on your network.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>For SQL Server authentication, the connection syntax is as follows:</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>For Windows authentication, the syntax is a bit different:</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Generally, we recommend that you use Windows authentication where possible, to avoid saving passwords in your R code.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Define variables to use in creating a new <bpt id="p1">*</bpt>compute context<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>After you create the compute context object, you can use it to run R code on the SQL Server instance.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>R uses a temporary directory when serializing R objects back and forth between your workstation and the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> computer.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>You can specify the local directory that is used as <bpt id="p1">*</bpt>sqlShareDir<ept id="p1">*</ept>, or accept the default.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Use <bpt id="p1">*</bpt>sqlWait<ept id="p1">*</ept> to indicate whether you want R to wait for results from the server.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>For a discussion of waiting versus non-waiting jobs, see <bpt id="p1">[</bpt>Distributed and parallel computing with RevoScaleR in Microsoft R<ept id="p1">](https://docs.microsoft.com/r-server/r/how-to-revoscaler-distributed-computing)</ept>.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Use the argument <bpt id="p1">*</bpt>sqlConsoleOutput<ept id="p1">*</ept> to indicate that you don't want to see output from the R console.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>You call the <bpt id="p1">[</bpt>RxInSqlServer<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxinsqlserver)</ept> constructor to create the compute context object with the variables and connection strings already defined, and save the new object in the R variable <bpt id="p2">*</bpt>sqlcc<ept id="p2">*</ept>.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>By default, the compute context is local, so you need to explicitly set the <bpt id="p1">*</bpt>active<ept id="p1">*</ept> compute context.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxSetComputeContext<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxsetcomputecontext)</ept> returns the previously active compute context invisibly so that you can use it</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxGetComputeContext<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxsetcomputecontext)</ept>  returns the active compute context</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Note that setting a compute context only affects operations that use functions in the <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> package; the compute context does not affect the way that open-source R operations are performed.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Create a data source using RxSqlServer</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>When using the Microsoft R libraries like RevoScaleR and MicrosoftML, a <bpt id="p1">*</bpt>data source<ept id="p1">*</ept> is an object you create using RevoScaleR functions.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>The data source object specifies some set of data that you want to use for a task, such as model training or feature extraction.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>You can get data from a variety of sources including SQL Server.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>For the list of currently supported sources, see <bpt id="p1">[</bpt>RxDataSource<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxdatasource)</ept>.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Earlier you defined a connection string, and saved that information in an R variable.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>You can re-use that connection information to specify the data you want to get.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Save a SQL query as a string variable.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>The query defines the data for training the model.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>We've used a TOP clause here to make things run faster, but the actual rows returned by the query can vary depending on order.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Hence, your summary results might also be different from those listed below.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Feel free to remove the TOP clause.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Pass the query definition as an argument to the <bpt id="p1">[</bpt>RxSqlServerData<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxsqlserverdata)</ept> function.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>The argument  <bpt id="p1">*</bpt>colClasses<ept id="p1">*</ept> specifies the column types to use when moving the data between <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> and R.  This is important because <ph id="ph2">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> uses different data types than R, and more data types.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>R Libraries and Data Types<ept id="p1">](../r/r-libraries-and-data-types.md)</ept>.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>The argument <bpt id="p1">*</bpt>rowsPerRead<ept id="p1">*</ept> is important for managing memory usage and efficient computations.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Most of the enhanced analytical functions in<ph id="ph1">[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)]</ph> process data in chunks and accumulate intermediate results, returning the final computations after all of the data has been read.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>By adding the <bpt id="p1">*</bpt>rowsPerRead<ept id="p1">*</ept> parameter, you can control how many rows of data are read into each chunk for processing.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>If the value of this parameter is too large, data access might be slow because you don't have enough memory to efficiently process such a large chunk of data.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>On some systems, setting <bpt id="p1">*</bpt>rowsPerRead<ept id="p1">*</ept> to an excessively small value can also provide slower performance.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>At this point, you've created the <bpt id="p1">*</bpt>inDataSource<ept id="p1">*</ept> object, but it doesn't contain any data.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>The data is not pulled from the SQL query into the local environment until you run a function such as <bpt id="p1">[</bpt>rxImport<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxdatastep)</ept> or <bpt id="p2">[</bpt>rxSummary<ept id="p2">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxsummary)</ept>.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>However, now that you've defined the data objects, you can use it as the argument to other functions.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Use the SQL Server data in R summaries</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>In this section, you'll try out several of the functions provided in <ph id="ph1">[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)]</ph> that support remote compute contexts.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>By applying R functions to the data source, you can explore, summarize, and chart the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> data.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Call the function <bpt id="p1">[</bpt>rxGetVarInfo<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxgetvarinfo)</ept> to get a list of the variables in the data source and their data types.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>rxGetVarInfo<ept id="p1">**</ept> is a handy function; you can call it on any data frame, or on a set of data in a remote data object, to get information such as the maximum and minimum values, the data type, and the number of levels in factor columns.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Consider running this function after any kind of  data input, feature transformation, or feature engineering.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>By doing so, you can ensure that all the features you want to use in your model are of the expected data type and avoid errors.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Now, call the RevoScaleR function <bpt id="p1">[</bpt>rxSummary<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxsummary)</ept> to get more detailed statistics about individual variables.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>rxSummary is based on the R <ph id="ph1">`summary`</ph> function, but has some additional features and advantages.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>rxSummary works in multiple compute contexts and supports chunking.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>You can also use rxSummary to transform values, or summarize based on factor levels.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>In this example, you summarize the fare amount based on the number of passengers.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>The first argument to rxSummary specifies the formula or term to summarize by.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>Here, the <ph id="ph1">`F()`</ph> function is used to convert the values in <bpt id="p1">_</bpt>passenger<ph id="ph2">\_</ph>count<ept id="p1">_</ept> into factors before summarizing.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>You also have to specify the minimum value (1) and maximum value (6) for the <bpt id="p1">_</bpt>passenger<ph id="ph1">\_</ph>count<ept id="p1">_</ept> factor variable.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>If you do not specify the statistics to output, by default rxSummary outputs Mean, StDev, Min, Max, and the number of valid and missing observations.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>This example also includes some code to track the time the function starts and completes, so that you can compare performance.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>If the rxSummary function runs successfully, you should see results like these, followed by a list of statistics by category.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Bonus exercise on big data</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>Try defining a new query string with all the rows.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>We recommend you set up a new data source object for this experiment.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>You might also try changing the <bpt id="p1">*</bpt>rowsToRead<ept id="p1">*</ept> parameter to see how it affects throughput.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>While this is running, you can use a tool like <bpt id="p1">[</bpt>Process Explorer<ept id="p1">](https://technet.microsoft.com/sysinternals/processexplorer.aspx)</ept> or SQL Profiler to see how the connection is made and the R code is run using SQL Server services.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>Another option is to monitor R jobs running on SQL Server using these <bpt id="p1">[</bpt>custom reports<ept id="p1">](../r/monitor-r-services-using-custom-reports-in-management-studio.md)</ept>.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Create graphs and plots using R<ept id="p1">](walkthrough-create-graphs-and-plots-using-r.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

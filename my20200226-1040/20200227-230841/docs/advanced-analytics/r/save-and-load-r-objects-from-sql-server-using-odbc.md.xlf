@@ -1,0 +1,81 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="save-and-load-r-objects-from-sql-server-using-odbc.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c98a14848db4854c0bcb19167e7fcf7d43eca5f2e.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">98a14848db4854c0bcb19167e7fcf7d43eca5f2e</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\save-and-load-r-objects-from-sql-server-using-odbc.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Save and load R objects using ODBC</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>The RevoScaleR package includes serialization and deserialization functions that greatly improve performance, and store the object more compactly.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Save and load R objects from SQL Server using ODBC</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>SQL Server R Services can store serialized R objects in a table and then load the object from the table as needed, without you having to re-run the R code or retrain the model.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This ability to save R objects in a database is critical for scenarios such as training and saving a model, and then using it later for scoring or analysis.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>To improve performance of this critical step, the <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> package now includes new serialization and deserialization functions that greatly improve performance, and store the object more compactly.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>This article describes these functions and how to use them.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Overview</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> package now includes new functions that make it easier to save R objects to SQL Server and then read the objects from the SQL Server table.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>In general, each function call uses a simple key value store, in which the key is the name of the object, and the value associated with the key is the varbinary R object to be moved in or out of a table.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>To save R objects to SQL Server directly from an R environment, you must:</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>established a connection to SQL Server using the <bpt id="p1">*</bpt>RxOdbcData<ept id="p1">*</ept> data source.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Call the new functions over the ODBC connection</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Optionally, you can specify that the object not be serialized.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Then, choose a new compression algorithm to use instead of the default compression algorithm.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>By default, any object that you call from R to move to SQL Server is serialized and compressed.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Conversely, when you load an object from a SQL Server table to use in your R code, the object is deserialized and decompressed.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>List of new functions</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`rxWriteObject`</ph> writes an R object into SQL Server using the ODBC data source.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`rxReadObject`</ph> reads an R object from a SQL Server database, using an ODBC data source</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`rxDeleteObject`</ph> deletes an R object from the SQL Server database specified in the ODBC data source.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>If there are multiple objects identified by the key/version combination, all are deleted.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`rxListKeys`</ph> lists as key-value pairs all the available objects.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>This helps you determine the names and versions of the R objects.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>For detailed help on the syntax of each function, use R help.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Details are also available in the <bpt id="p1">[</bpt>ScaleR reference<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/revoscaler)</ept>.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>How to store R objects in SQL Server using ODBC</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>This procedure demonstrates how you can use the new functions to create a model and save it to SQL Server.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Set up the connection string for the SQL Server.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Create an <bpt id="p1">*</bpt>rxOdbcData<ept id="p1">*</ept> data source object in R using the connection string.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Delete the table if it already exists, and you don't want to track old versions of the objects.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Define a table that can be used to store binary objects.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Open the ODBC connection to create the table, and when the DDL statement has completed, close the connection.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Generate the R objects that you want to store.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Use the <bpt id="p1">*</bpt>RxOdbcData<ept id="p1">*</ept> object created earlier to save the model to the database.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>How to read R objects from SQL Server using ODBC</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>This procedure demonstrates how you can use the new functions to load a model from SQL Server.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Set up the connection string for the SQL Server.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Create an <bpt id="p1">*</bpt>rxOdbcData<ept id="p1">*</ept> data source object in R, using the connection string.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Read the model from the table by specifying its R object name.</source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,179 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="install-r-packages-with-revoscaler.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c1d5d832d41f6bd087c6e9b334ebeac03728f97b1.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1d5d832d41f6bd087c6e9b334ebeac03728f97b1</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\package-management\install-r-packages-with-revoscaler.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Use RevoScaleR to install R packages</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Learn how to use RevoScaleR functions to install R packages on SQL Server with Machine Learning Services or R Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Use RevoScaleR to install R packages</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article describes how to use <bpt id="p1">[</bpt>RevoScaleR<ept id="p1">](../r/ref-r-revoscaler.md)</ept> (version 9.0.1 and later) functions to install R packages on SQL Server with Machine Learning Services or R Services.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>The RevoScaleR functions can be used by remote, non-administrators to install packages on SQL Server without direct access to the server.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>SQL Server R Services customers must do a <bpt id="p1">[</bpt>component upgrade<ept id="p1">](../install/upgrade-r-and-python.md)</ept> to get RevoScaleR package management functions.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>For instructions on how to retrieve package version and contents, see <bpt id="p1">[</bpt>Get R package information<ept id="p1">](../package-management/r-package-information.md)</ept>.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>RevoScaleR functions for package management</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>The following table describes the functions used for R package installation and management.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Function</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxSqlLibPaths<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxsqllibpaths)</ept></source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Determine the path of the instance library on the remote SQL Server.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxFindPackage<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxfindpackage)</ept></source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Gets the path for one or more packages on the remote SQL Server.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxInstallPackages<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxinstallpackages)</ept></source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Call this function from a remote R client to install packages in a SQL Server compute context, either from a specified repository, or by reading locally saved zipped packages.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>This function checks for dependencies and ensures that any related packages can be installed to SQL Server, just like R package installation in the local compute context.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>To use this option, you must have enabled package management on the server and database.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Both client and server environments must have the same version of RevoScaleR.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxInstalledPackages<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxinstalledpackages)</ept></source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Gets a list of packages installed in the specified compute context.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxSyncPackages<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxsyncpackages)</ept></source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Copy information about a package library between the file system and database, for the specified compute context.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxRemovePackages<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxremovepackages)</ept></source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Removes packages from a specified compute context.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>It also computes dependencies and ensures that packages that are no longer used by other packages on SQL Server are removed, to free up resources.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Remote management enabled on SQL Server.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Enable remote R package management on SQL Server<ept id="p1">](r-package-how-to-enable-or-disable.md)</ept>.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>RevoScaleR versions are the same on both client and server environments.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Get R package information<ept id="p1">](../package-management/r-package-information.md)</ept>.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>You have permission to connect to the server and a database, and to run R commands.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>You must be a member of a database role that allows you to install packages on the specified instance and database.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Packages in <bpt id="p1">**</bpt>shared scope<ept id="p1">**</ept> can be installed by users belonging to the <ph id="ph1">`rpkgs-shared`</ph> role in a specified database.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>All users in this role can uninstall shared packages.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Packages in <bpt id="p1">**</bpt>private scope<ept id="p1">**</ept> can be installed by any user belonging to the <ph id="ph1">`rpkgs-private`</ph> role in a database.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>However, users can see and uninstall only their own packages.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Database owners can work with shared or private packages.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Client connections</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>A client workstation can be <bpt id="p1">[</bpt>Microsoft R Client<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-client/install-on-windows)</ept> or a <bpt id="p2">[</bpt>Microsoft Machine Learning Server<ept id="p2">](https://docs.microsoft.com/machine-learning-server/install/machine-learning-server-windows-install)</ept> (data scientists often use the free developer edition) on the same network.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>When calling package management functions from a remote R client, you must create a compute context object first, using the <bpt id="p1">[</bpt>RxInSqlServer<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxinsqlserver)</ept> function.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Thereafter, for each package management function that you use, pass the compute context as an argument.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>User identity is typically specified when setting the compute context.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>If you don't specify a user name and password when you create the compute context, the identity of the user running the R code is used.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>From an R command line, define a connection string to the instance and database.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Use the <bpt id="p1">[</bpt>RxInSqlServer<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxinsqlserver)</ept> constructor to define a SQL Server compute context, using the connection string.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Create a list of the packages you want to install and save the list in a string variable.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Call <bpt id="p1">[</bpt>rxInstallPackages<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxinstallpackages)</ept> and pass the compute context and the string variable containing the package names.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>If dependent packages are required, they are also installed, assuming an internet connection is available on the client.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Packages are installed using the credentials of the user making the connection, in the default scope for that user.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Call package management functions in stored procedures</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>You can run package management functions inside <ph id="ph1">`sp_execute_external_script`</ph>.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>When you do so, the function is executed using the security context of the stored procedure caller.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Examples</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>This section provides examples of how to use these functions from a remote client when connecting to a SQL Server instance or database as the compute context.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>For all examples, you must provide either a connection string, or a compute context, which requires a connection string.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>This example provides one way to create a compute context for SQL Server:</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Depending on where the server is located, and the security model, you might need to provide a domain and subnet specification in the connection string, or use a SQL login.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>For example:</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Get package path on a remote SQL Server compute context</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>This example gets the path for the <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> package on the compute context, <ph id="ph1">`sqlcc`</ph>.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>"C:/Program Files/Microsoft SQL Server/MSSQL14.MSSQLSERVER/R_SERVICES/library/RevoScaleR"</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>If you have enabled the option to see SQL console output, you might get status messages from the function that precedes the <ph id="ph1">`print`</ph> statement.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>After you have finished testing your code, set <ph id="ph1">`consoleOutput`</ph> to FALSE in the compute context constructor to eliminate messages.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Get locations for multiple packages</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>The following example gets the paths for the <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> and <bpt id="p2">**</bpt>lattice<ept id="p2">**</ept> packages, on the compute context, <ph id="ph1">`sqlcc`</ph>.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>To get information about multiple packages, pass a string vector containing the package names.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Get package versions on a remote compute context</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>Run this command from an R console to get the build number and version numbers for packages installed on the compute context, <bpt id="p1">*</bpt>sqlServer<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>Install a package on SQL Server</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>This example installs the <bpt id="p1">**</bpt>forecast<ept id="p1">**</ept> package and its dependencies into the compute context.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Remove a package from SQL Server</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>This example removes the <bpt id="p1">**</bpt>forecast<ept id="p1">**</ept> package and its dependencies from the compute context.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Synchronize packages between database and file system</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>The following example checks the database <bpt id="p1">**</bpt>TestDB<ept id="p1">**</ept>, and determines whether all packages are installed in the file system.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>If some packages are missing, they are installed in the file system.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>Package synchronization works on a per database and per user basis.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>R package synchronization for SQL Server<ept id="p1">](package-install-uninstall-and-sync.md)</ept>.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>Use a stored procedure to list packages in SQL Server</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>Run this command from Management Studio or another tool that supports T-SQL, to get a list of installed packages on the current instance, using <ph id="ph1">`rxInstalledPackages`</ph> in a stored procedure.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`rxSqlLibPaths`</ph> function can be used to determine the active library used by SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>This script can return only the library path for the current server.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Enable remote R package management<ept id="p1">](r-package-how-to-enable-or-disable.md)</ept></source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Synchronize R packages<ept id="p1">](package-install-uninstall-and-sync.md)</ept></source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Tips for using R packages<ept id="p1">](tips-for-using-r-packages.md)</ept></source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Get R package information<ept id="p1">](../package-management/r-package-information.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

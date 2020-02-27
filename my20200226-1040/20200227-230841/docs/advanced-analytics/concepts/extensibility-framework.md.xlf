@@ -1,0 +1,239 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="extensibility-framework.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cfcdb92f92ffb8239a6cf20b0f39dfb8f546b521a.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">fcdb92f92ffb8239a6cf20b0f39dfb8f546b521a</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\concepts\extensibility-framework.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Extensibility architecture</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>This article describes the architecture of the extensibility framework for running an external script, such as R or Python, on SQL server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Extensibility architecture in SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>SQL Server has an extensibility framework for running an external script, such as R or Python, on the server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>The script executes in a language runtime environment as an extension to the core database engine.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Background</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>The extensibility framework was introduced in SQL Server 2016 to support the R runtime.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>SQL Server 2017 and later has support for Python.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>The purpose of the extensibility framework is to provide an interface between SQL Server and data science languages such as R and Python.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>The goal is to reduce friction when moving data science solutions into production, and protecting data exposed during the development process.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>By executing a trusted scripting language within a secure framework managed by SQL Server, database administrators can maintain security while allowing data scientists access to enterprise data.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>The following diagram visually describes opportunities and benefits of the extensible architecture.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>Goals of integration with SQL Server<ept id="p1">](../media/ml-service-value-add.png "|::ref1::|")</ept></source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>An external script can be run by calling a stored procedure, and the results are returned as tabular results directly to SQL Server.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>This makes it easy to generate or consume machine learning from any application that can send a SQL query and handle the results.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>External script execution is subject to SQL Server data security.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>A user running an external script can only access data that is equally available in a SQL query.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>If a query fails due to insufficient permission, a script run by the same user would also fail for the same reason.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>SQL Server security is enforced at the table, database, and instance level.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Database administrators can manage user access, resources used by external scripts, and external code libraries added to the server.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Scale and optimization opportunities have a dual basis: gains through the database platform (ColumnStore indexes, <bpt id="p1">[</bpt>resource governance<ept id="p1">](../../advanced-analytics/r/resource-governance-for-r-services.md)</ept>); and extension-specific gains, for example when Microsoft libraries for R and Python are used for data science models.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Whereas R is single-threaded, RevoScaleR functions are multi-threaded, capable of distributing a workload over multiple cores.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Deployment uses SQL Server methodologies.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>These can be stored procedures wrapping an external script, embedded SQL, or T-SQL queries calling functions like PREDICT to return results from forecasting models persisted on the server.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Developers with established skills in specific tools and IDEs can write code in those tools and then port the code to SQL Server.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Architecture diagram</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>The architecture is designed such that external scripts run in a separate process from SQL Server, but with components that internally manage the chain of requests for data and operations on SQL Server.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Depending on the version of SQL Server, supported language extensions include <bpt id="p1">[</bpt>R<ept id="p1">](extension-r.md)</ept>, <bpt id="p2">[</bpt>Python<ept id="p2">](extension-python.md)</ept>, and third-party languages such as Java and .NET.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">***</bpt>Component architecture in Windows:<ept id="p1">***</ept></source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>Windows component architecture<ept id="p1">](../media/generic-architecture-windows.png "|::ref2::|")</ept></source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">***</bpt>Component architecture in Linux:<ept id="p1">***</ept></source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>Linux component architecture<ept id="p1">](../media/generic-architecture-linux.png "|::ref3::|")</ept></source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Components include a <bpt id="p1">**</bpt>launchpad<ept id="p1">**</ept> service used to invoke external runtimes and library-specific logic for loading interpreters and libraries.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>The launcher loads a language runtime, plus any proprietary modules.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>For example, if your code includes RevoScaleR functions, a RevoScaleR interpreter is loaded.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>BxlServer<ept id="p1">**</ept> and <bpt id="p2">**</bpt>SQL Satellite<ept id="p2">**</ept> manage communication and data transfer with SQL Server.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>In Linux, SQL uses a <bpt id="p1">**</bpt>launchpadd<ept id="p1">**</ept> service to communicate with a separate launchpad process for each user.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Launchpad</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">[!INCLUDE[rsql_launchpad_md](../../includes/rsql-launchpad-md.md)]</ph> is a service that manages and executes external scripts, similar to the way that the full-text indexing and query service launches a separate host for processing full-text queries.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>The launchpad service can start only trusted launchers that are published by Microsoft, or that have been certified by Microsoft as meeting requirements for performance and resource management.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Trusted launchers</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Extension</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>SQL Server versions</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>RLauncher.dll for the R language for Windows</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>R extension<ept id="p1">](extension-r.md)</ept></source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>SQL Server 2016 and later</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Pythonlauncher.dll for Python 3.5 for Windows</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Python extension<ept id="p1">](extension-python.md)</ept></source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>SQL Server 2017 and later</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>RLauncher.so for the R language for Linux</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>R extension<ept id="p1">](extension-r.md)</ept></source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>SQL Server 2019 and later</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Pythonlauncher.so for Python 3.5 for Linux</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Python extension<ept id="p1">](extension-python.md)</ept></source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>SQL Server 2019 and later</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">[!INCLUDE[rsql_launchpad_md](../../includes/rsql-launchpad-md.md)]</ph> service runs under its own user account.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>If you change the account that runs launchpad, be sure to do so using SQL Server Configuration Manager, to ensure that changes are written to related files.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>In Windows, a separate <ph id="ph1">[!INCLUDE[rsql_launchpad_md](../../includes/rsql-launchpad-md.md)]</ph> service is created for each database engine instance to which you have added SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>There is one launchpad service for each database engine instance, so if you have multiple instances with external script support, you will have a launchpad service for each one.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>A database engine instance is bound to the launchpad service created for it.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>All invocations of external script in a stored procedure or T-SQL result in the SQL Server service calling the launchpad service created for the same instance.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>To execute tasks in a specific supported language, the launchpad gets a secured worker account from the pool, and starts a satellite process to manage the external runtime.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Each satellite process inherits the user account of the launchpad and uses that worker account for the duration of script execution.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>If script uses parallel processes, they are created under the same, single worker account.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>In Linux, only one database engine instance is supported and there is one launchpadd service bound to the instance.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>When a script is executed, the launchpadd service starts a separate launchpad process with the low-privileged user account <bpt id="p1">**</bpt>mssql_satellite<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Each satellite process inherits the mssql_satellite user account of launchpad and uses that for the duration of script execution.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>BxlServer and SQL Satellite</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>BxlServer<ept id="p1">**</ept> is an executable provided by Microsoft that manages communication between SQL Server and the language runtime.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>It creates the Windows job objects for Windows, or the namespaces for Linux, that are used to contain external script sessions.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>It also provisions secure working folders for each external script job and uses SQL Satellite to manage data transfer between the external runtime and SQL Server.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>If you run <bpt id="p1">[</bpt>Process Explorer<ept id="p1">](https://technet.microsoft.com/sysinternals/processexplorer.aspx)</ept> while a job is running, you might see one or multiple instances of BxlServer.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>In effect, BxlServer is a companion to a language runtime environment that works with SQL Server to transfer data and manage tasks.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>BXL stands for Binary Exchange language and refers to the data format used to move data efficiently between SQL Server and external processes.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>BxlServer is also an important part of related products such as Microsoft R Client and Microsoft R Server.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>SQL Satellite<ept id="p1">**</ept> is an extensibility API, included in the database engine, that supports external code or external runtimes implemented using C or C++.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>BxlServer uses SQL Satellite for these tasks:</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Reading input data</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>Writing output data</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>Getting input arguments</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>Writing output arguments</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>Error handling</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>Writing STDOUT and STDERR back to client</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>SQL Satellite uses a custom data format that is optimized for fast data transfer between SQL Server and external script languages.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>It performs type conversions and defines the schemas of the input and output datasets during communications between SQL Server and the external script runtime.</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>The SQL Satellite can be monitored by using windows extended events (xEvents).</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Extended Events for R<ept id="p1">](../../advanced-analytics/r/extended-events-for-sql-server-r-services.md)</ept> and <bpt id="p2">[</bpt>Extended Events for Python<ept id="p2">](../../advanced-analytics/python/extended-events-for-python.md)</ept>.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>Communication channels between components</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>Communication protocols among components and data platforms are described in this section.</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>TCP/IP<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>By default, internal communications between SQL Server and the SQL Satellite use TCP/IP.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Named Pipes<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>Internal data transport between the BxlServer and SQL Server through SQL Satellite uses a proprietary, compressed data format to enhance performance.</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>Data is exchanged between language run times and BxlServer in BXL format, using Named Pipes.</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>ODBC<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>Communications between external data science clients and a remote SQL Server instance use ODBC.</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>The account that sends the script jobs to SQL Server must have both permissions to connect to the instance and to run external scripts.</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>Additionally, depending on the task, the account might need these permissions:</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>Read data used by the job</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>Write data to tables: for example, when saving results to a table</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>Create database objects: for example, if saving external script as part of a new stored procedure.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>When SQL Server is used as the compute context for script executed from a remote client, and the executable must retrieve data from an external source, ODBC is used for writeback.</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>SQL Server maps the identity of the user issuing the remote command to the identity of the user on the current instance, and runs the ODBC command using that user's credentials.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>The connection string needed to perform this ODBC call is obtained from the client code.</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>RODBC (R only)<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>Additional ODBC calls can be made inside the script by using <bpt id="p1">**</bpt>RODBC<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>RODBC is a popular R package used to access data in relational databases; however, its performance is generally slower than comparable providers used by SQL Server.</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>Many R scripts use embedded calls to RODBC as a way of retrieving "secondary" datasets for use in analysis.</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>For example, the stored procedure that trains a model might define a SQL query to get the data for training a model, but use an embedded RODBC call to get additional factors, to perform lookups, or to get new data from external sources such as text files or Excel.</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>The following code illustrates an RODBC call embedded in an R script:</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Other protocols<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>Processes that might need to work in "chunks" or transfer data back to a remote client can also use the <bpt id="p1">[</bpt>XDF file format<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r/concept-what-is-xdf)</ept>.</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>Actual data transfer is via encoded blobs.</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>See Also</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>R extension in SQL Server<ept id="p1">](extension-r.md)</ept></source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Python extension in SQL Server<ept id="p1">](extension-python.md)</ept></source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve" extradata="ref1">
+          <source>Machine Learning Services Value Add</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve" extradata="ref2">
+          <source>Component architecture</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve" extradata="ref3">
+          <source>Component architecture</source>
+        </trans-unit></group></body></file></xliff>

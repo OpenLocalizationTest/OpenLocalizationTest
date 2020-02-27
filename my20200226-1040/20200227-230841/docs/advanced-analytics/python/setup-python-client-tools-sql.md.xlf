@@ -1,0 +1,307 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="setup-python-client-tools-sql.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cef03354afd3aa2318317ca4c946463a5b7355c12.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">ef03354afd3aa2318317ca4c946463a5b7355c12</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\python\setup-python-client-tools-sql.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Set up a Python data science client</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Set up a Python local environment (Jupyter Notebook or PyCharm) for remote connections to SQL Server Machine Learning Services with Python.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Set up a data science client for Python development on SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Python integration is available in SQL Server 2017 and later, when you include the Python option in a <bpt id="p1">[</bpt>Machine Learning Services (In-Database) installation<ept id="p1">](../install/sql-machine-learning-services-windows-install.md)</ept>.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>To develop and deploy Python solutions for SQL Server, install Microsoft's <bpt id="p1">[</bpt>revoscalepy<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/revoscalepy-package)</ept> and other Python libraries your development workstation.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>The revoscalepy library, which is also on the remote SQL Server instance, coordinates computing requests between both systems.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>In this article, learn how to configure a Python development workstation so that you can interact with a remote SQL Server enabled for machine learning and Python integration.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>After completing the steps in this article, you will have the same Python libraries as those on SQL Server.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>You will also know how to push computations from a local Python session to a remote Python session on SQL Server.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>Client-server components<ept id="p1">](media/sqlmls-python-client-revo.png "|::ref1::|")</ept></source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>To validate the installation, you can use built-in Jupyter Notebooks as described in this article, or <bpt id="p1">[</bpt>link the libraries<ept id="p1">](#install-ide)</ept> to PyCharm or any another IDE that you normally use.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>For a video demonstration of these exercises, see <bpt id="p1">[</bpt>Run R and Python remotely in SQL Server from Jupyter Notebooks<ept id="p1">](https://youtu.be/D5erljpJDjE)</ept>.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>An alternative to client library installation is using a <bpt id="p1">[</bpt>standalone server<ept id="p1">](../install/sql-machine-learning-standalone-windows-install.md)</ept> as a rich client, which some customers prefer for deeper scenario work.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>A standalone server is fully decoupled from SQL Server, but because it has the same Python libraries, you can use it as a client for SQL Server in-database analytics.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>You can also use it for non-SQL-related work, including the ability to import and model data from other data platforms.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>If you install a standalone server, you can find the Python executable at this location: <ph id="ph1">`C:\Program Files\Microsoft SQL Server\140\PYTHON_SERVER`</ph>.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>To validate your installation, <bpt id="p1">[</bpt>open a Jupyter notebook<ept id="p1">](#python-tools)</ept> to run commands using the Python.exe at that location.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Commonly used tools</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Whether you are a Python developer new to SQL, or a SQL developer new to Python and in-database analytics, you will need both a Python development tool and a T-SQL query editor such as <bpt id="p1">[</bpt>SQL Server Management Studio (SSMS)<ept id="p1">](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)</ept> to exercise all of the capabilities of in-database analytics.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>For Python development, you can use Jupyter Notebooks, which comes bundled in the Anaconda distribution installed by SQL Server.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>This article explains how to start Jupyter Notebooks so that you can run Python code locally and remotely on SQL Server.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>SSMS is a separate download, useful for creating and running stored procedures on SQL Server, including those containing Python code.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Almost any Python code that you write in Jupyter Notebooks can be embedded in a stored procedure.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>You can step through other quickstarts to learn about <bpt id="p1">[</bpt>SSMS and embedded Python<ept id="p1">](../tutorials/quickstart-python-create-script.md)</ept>.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>1 - Install Python packages</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Local workstations must have the same Python package versions as those on SQL Server, including the base Anaconda 4.2.0 with Python 3.5.2 distribution, and Microsoft-specific packages.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>An installation script adds three Microsoft-specific libraries to the Python client.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>The script installs <bpt id="p1">[</bpt>revoscalepy<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/revoscalepy-package)</ept>, used for defining data source objects and the compute context.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>It installs <bpt id="p1">[</bpt>microsoftml<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/microsoftml-package)</ept> providing machine learning algorithms.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">[</bpt>azureml<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/azureml-model-management-sdk/azureml-model-management-sdk)</ept> package is also installed, but it applies to operationalization tasks associated with a standalone (non-instance) Machine Learning Server context and might be of limited use for in-database analytics.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Download an installation script.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><ph id="ph1">https://aka.ms/mls-py</ph><ept id="p1">](https://aka.ms/mls-py)</ept> installs version 9.2.1 of the Microsoft Python packages.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>This version corresponds to a default SQL Server instance.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><ph id="ph1">https://aka.ms/mls93-py</ph><ept id="p1">](https://aka.ms/mls93-py)</ept> installs version 9.3 of the Microsoft Python packages.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>This version is a better choice if your remote SQL Server instance is <bpt id="p1">[</bpt>bound to Machine Learning Server 9.3<ept id="p1">](../install/upgrade-r-and-python.md)</ept>.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Open a PowerShell window with elevated administrator permissions (right-click <bpt id="p1">**</bpt>Run as administrator<ept id="p1">**</ept>).</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Go to the folder in which you downloaded the installer and run the script.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Add the <ph id="ph1">`-InstallFolder`</ph> command-line argument to specify a folder location for the libraries.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>For example:</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>If you omit the install folder, the default is C:\Program Files\Microsoft\PyForMLS.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Installation takes some time to complete.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>You can monitor progress in the PowerShell window.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>When setup is finished, you have a complete set of packages.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>We recommend the <bpt id="p1">[</bpt>Python for Windows FAQ<ept id="p1">](https://docs.python.org/3/faq/windows.html)</ept> for general purppose information on running Python programs on Windows.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>2 - Locate executables</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Still in PowerShell, list the contents of the installation folder to confirm that Python.exe, scripts, and other packages are installed.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Enter <ph id="ph1">`cd \`</ph> to go to the root drive, and then enter the path you specified for <ph id="ph2">`-InstallFolder`</ph> in the previous step.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>If you omitted this parameter during installation, the default is <ph id="ph1">`cd C:\Program Files\Microsoft\PyForMLS`</ph>.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Enter <ph id="ph1">`dir *.exe`</ph> to list the executables.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>You should see <bpt id="p1">**</bpt>python.exe<ept id="p1">**</ept>, <bpt id="p2">**</bpt>pythonw.exe<ept id="p2">**</ept>, and <bpt id="p3">**</bpt>uninstall-anaconda.exe<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>List of Python executables</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>On systems having multiple versions of Python, remember to use this particular Python.exe if you want to load <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> and other Microsoft packages.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>The installation script does not modify the PATH environment variable on your computer, which means that the new python interpreter and modules you just installed are not automatically available to other tools you might have.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>For help on linking the Python interpreter and libraries to tools, see <bpt id="p1">[</bpt>Install an IDE<ept id="p1">](#install-ide)</ept>.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>3 - Open Jupyter Notebooks</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Anaconda includes Jupyter Notebooks.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>As a next step, create a notebook and run some Python code containing the libraries you just installed.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>At the Powershell prompt, still in the C:\Program Files\Microsoft\PyForMLS directory, open Jupyter Notebooks from the Scripts folder:</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>A notebook should open in your default browser at <ph id="ph1">`https://localhost:8889/tree`</ph>.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>Another way to start is double-click <bpt id="p1">**</bpt>jupyter-notebook.exe<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Click <bpt id="p1">**</bpt>New<ept id="p1">**</ept> and then click <bpt id="p2">**</bpt>Python 3<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>jupyter notebook with New Python 3 selection</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Enter <ph id="ph1">`import revoscalepy`</ph> and run the command to load one of the Microsoft-specific libraries.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>Enter and run <ph id="ph1">`print(revoscalepy.__version__)`</ph> to return the version information.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>You should see 9.2.1 or 9.3.0.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>You can use either of these versions with <bpt id="p1">[</bpt>revoscalepy on the server<ept id="p1">](../package-management/r-package-information.md)</ept>.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Enter a more complex series of statements.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>This example generates summary statistics using <bpt id="p1">[</bpt>rx_summary<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-summary)</ept> over a local data set.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Other functions get the location of the sample data and create a data source object for a local .xdf file.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>The following screenshot shows the input and a portion of the output, trimmed for brevity.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>jupyter notebook showing revoscalepy inputs and output</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>4 - Get SQL permissions</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>To connect to an instance of SQL Server to run scripts and upload data, you must have a valid login on the database server.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>You can use either a SQL login or integrated Windows authentication.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>We generally recommend that you use Windows integrated authentication, but using the SQL login is simpler for some scenarios, particularly when your script contains connection strings to external data.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>At a minimum, the account used to run code must have permission to read from the databases you are working with, plus the special permission EXECUTE ANY EXTERNAL SCRIPT.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>Most developers also require permissions to create stored procedures, and to write data into tables containing training data or scored data.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Ask the database administrator to <bpt id="p1">[</bpt>configure the following permissions for your account<ept id="p1">](../security/user-permission.md)</ept>, in the database where you use Python:</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>EXECUTE ANY EXTERNAL SCRIPT<ept id="p1">**</ept> to run Python on the server.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>db_datareader<ept id="p1">**</ept> privileges to run the queries used for training the model.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>db_datawriter<ept id="p1">**</ept> to write training data or scored data.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>db_owner<ept id="p1">**</ept> to create objects such as stored procedures, tables, functions.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>You also need <bpt id="p1">**</bpt>db_owner<ept id="p1">**</ept> to create sample and test databases.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>If your code requires packages that are not installed by default with SQL Server, arrange with the database administrator to have the packages installed with the instance.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>SQL Server is a secured environment and there are restrictions on where packages can be installed.</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>Ad hoc installation of packages as part of your code is not recommended, even if you have rights.</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>Also, always carefully consider the security implications before installing new packages in the server library.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>5 - Create test data</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>If you have permissions to create a database on the remote server, you can run the following code to create the Iris demo database used for the remaining steps in this article.</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>1 - Create the irissql database remotely</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>2 - Import Iris sample from SkLearn</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>3 - Use Revoscalepy APIs to create a table and load the Iris data</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>6 - Test remote connection</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>Before trying this next step, make sure you have permissions on the SQL Server instance and a connection string to the <bpt id="p1">[</bpt>Iris sample database<ept id="p1">](../tutorials/demo-data-iris-in-sql.md)</ept>.</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>If the database doesn't exist and you have sufficient permissions, you can <bpt id="p1">[</bpt>create a database using these inline instructions<ept id="p1">](#create-iris-remotely)</ept>.</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>Replace the connection string with valid values.</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>The sample code uses <ph id="ph1">`"Driver=SQL Server;Server=localhost;Database=irissql;Trusted_Connection=Yes;"`</ph> but your code should specify a remote server, possibly with an instance name, and a credential option that maps to database user login.</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>Define a function</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>The following code defines a function that you will send to SQL Server in a later step.</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>When executed, it uses data and libraries (revoscalepy, pandas, matplotlib) on the remote server to create scatter plots of the iris data set.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>It returns the bytestream of the .png back to Jupyter Notebooks to render in the browser.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>Send the function to SQL Server</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>In this example, create the remote compute context and then send the execution of the function to SQL Server with <bpt id="p1">[</bpt>rx_exec<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-exec)</ept>.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>rx_exec<ept id="p1">**</ept> function is useful because it accepts a compute context as an argument.</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>Any function that you want to execute remotely must have a compute context argument.</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>Some functions, such as <bpt id="p1">[</bpt>rx_lin_mod<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-lin-mod)</ept> support this argument directly.</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>For operations that don't, you can use <bpt id="p1">**</bpt>rx_exec<ept id="p1">**</ept> to deliver your code in a remote compute context.</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>In this example, no raw data had to be transferred from SQL Server to the Jupyter Notebook.</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>All computations occur within the Iris database and only the image file is returned to the client.</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>The following screenshot shows the input and scatter plot output.</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>jupyter notebook showing scatter plot output</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>7 - Start Python from tools</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>Because developers frequently work with multiple versions of Python, setup does not add Python to your PATH.</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>To use the Python executable and libraries installed by setup, link your IDE to <bpt id="p1">**</bpt>Python.exe<ept id="p1">**</ept> at the path that also provides <bpt id="p2">**</bpt>revoscalepy<ept id="p2">**</ept> and <bpt id="p3">**</bpt>microsoftml<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>Command line</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>When you run <bpt id="p1">**</bpt>Python.exe<ept id="p1">**</ept> from C:\Program Files\Microsoft\PyForMLS (or whatever location you specified for the Python client library installation), you have access to the full Anaconda distribution plus the Microsoft Python modules, <bpt id="p2">**</bpt>revoscalepy<ept id="p2">**</ept> and <bpt id="p3">**</bpt>microsoftml<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>Go to C:\Program Files\Microsoft\PyForMLS and double-click <bpt id="p1">**</bpt>Python.exe<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>Open interactive help: <ph id="ph1">`help()`</ph></source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>Type the name of a module at the help prompt: <ph id="ph1">`help&gt; revoscalepy`</ph>.</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>Help returns the name, package contents, version, and file location.</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>Return version and package information at the <bpt id="p1">**</bpt>help&gt;<ept id="p1">**</ept> prompt: <ph id="ph1">`revoscalepy`</ph>.</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>Press Enter a few times to exit help.</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>Import a module: <ph id="ph1">`import revoscalepy`</ph></source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>Jupyter Notebooks</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>This article uses built-in Jupyter Notebooks to demonstrate function calls to <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>If you are new to this tool, the following screenshot illustrates how the pieces fit together and why it all "just works".</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>The parent folder C:\Program Files\Microsoft\PyForMLS contains Anaconda plus the Microsoft packages.</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source>Jupyter Notebooks is included in Anaconda, under the Scripts folder, and the Python executables are auto-registered with Jupyter Notebooks.</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source>Packages found under site-packages can be imported into a notebook, including the three Microsoft packages used for data science and machine learning.</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source>Executables and libraries</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source>If you are using another IDE, you will need to link the Python executables and function libraries to your tool.</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source>The following sections provide instructions for commonly used tools.</source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source>Visual Studio</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source>If you have <bpt id="p1">[</bpt>Python in Visual Studio<ept id="p1">](https://code.visualstudio.com/docs/languages/python)</ept>, use the following configuration options to create a Python environment that includes the Microsoft Python packages.</source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source>Configuration setting</source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve">
+          <source>value</source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Prefix path<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve">
+          <source>C:\Program Files\Microsoft\PyForMLS</source>
+        </trans-unit><trans-unit id="239" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Interpreter path<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="240" translate="yes" xml:space="preserve">
+          <source>C:\Program Files\Microsoft\PyForMLS\python.exe</source>
+        </trans-unit><trans-unit id="241" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Windowed interpreter<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="242" translate="yes" xml:space="preserve">
+          <source>C:\Program Files\Microsoft\PyForMLS\pythonw.exe</source>
+        </trans-unit><trans-unit id="243" translate="yes" xml:space="preserve">
+          <source>For help configuring a Python environment, see <bpt id="p1">[</bpt>Managing Python environments in Visual Studio<ept id="p1">](https://docs.microsoft.com/visualstudio/python/managing-python-environments-in-visual-studio)</ept>.</source>
+        </trans-unit><trans-unit id="244" translate="yes" xml:space="preserve">
+          <source>PyCharm</source>
+        </trans-unit><trans-unit id="245" translate="yes" xml:space="preserve">
+          <source>In PyCharm, set the interpreter to the Python executable installed by Machine Learning Server.</source>
+        </trans-unit><trans-unit id="246" translate="yes" xml:space="preserve">
+          <source>In a new project, in Settings, click <bpt id="p1">**</bpt>Add Local<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="247" translate="yes" xml:space="preserve">
+          <source>Enter <ph id="ph1">`C:\Program Files\Microsoft\PyForMLS\`</ph>.</source>
+        </trans-unit><trans-unit id="248" translate="yes" xml:space="preserve">
+          <source>You can now import <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept>, <bpt id="p2">**</bpt>microsoftml<ept id="p2">**</ept>, or <bpt id="p3">**</bpt>azureml<ept id="p3">**</ept> modules.</source>
+        </trans-unit><trans-unit id="249" translate="yes" xml:space="preserve">
+          <source>You can also choose <bpt id="p1">**</bpt>Tools<ept id="p1">**</ept><ph id="ph1"> &gt; </ph><bpt id="p2">**</bpt>Python Console<ept id="p2">**</ept> to open an interactive window.</source>
+        </trans-unit><trans-unit id="250" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="251" translate="yes" xml:space="preserve">
+          <source>Now that you have tools and a working connection to SQL Server, expand your skills by running through the Python quickstarts using <bpt id="p1">[</bpt>SQL Server Management Studio (SSMS)<ept id="p1">](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)</ept>.</source>
+        </trans-unit><trans-unit id="252" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Quickstart: Create and run simple Python scripts with SQL Server Machine Learning Services<ept id="p1">](../tutorials/quickstart-python-create-script.md)</ept></source>
+        </trans-unit><trans-unit id="253" translate="yes" xml:space="preserve" extradata="ref1">
+          <source>Local and remote Python sessions and libraries</source>
+        </trans-unit></group></body></file></xliff>

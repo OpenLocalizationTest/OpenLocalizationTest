@@ -1,0 +1,159 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="r-package-information.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c41e5f384878dfb284c31d6ba2886c9e223d03ca3.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">41e5f384878dfb284c31d6ba2886c9e223d03ca3</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\package-management\r-package-information.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Get R package information</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Learn how to get information about installed R packages on SQL Server Machine Learning Services and SQL Server R Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Get R package information</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article describes how to get information about installed R packages on SQL Server Machine Learning Services and SQL Server R Services.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Example R scripts show you how to list package information such as installation path and version.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Default R library location</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>When you install machine learning with SQL Server, a single package library is created at the instance level for each language that you install.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>On Windows, the instance library is a secured folder registered with SQL Server.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>All script that runs in-database on SQL Server must load functions from the instance library.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>SQL Server can't access packages installed to other libraries.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>This applies to remote clients as well: any R script running in the server compute context can only use packages installed in the instance library.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>To protect server assets, the default instance library can be modified only by a computer administrator.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>The default path of the binaries for R is:</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>The default path of the binaries for R is:</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve" moniker-range="&gt;sql-server-2017||=sqlallproducts-allversions">
+          <source>The default path of the binaries for R is:</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>This assumes the default SQL instance, MSSQLSERVER.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>If SQL Server is installed as a user-defined named instance, the given name is used instead.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Run the following statement to verify the default R package library for the current instance:</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>The following statement uses <bpt id="p1">[</bpt>rxSqlLibPaths<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxsqllibpaths)</ept> to return the path of the instance library and the version of RevoScaleR used by SQL Server:</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">[</bpt>rxSqlLibPaths<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxsqllibpaths)</ept> function can be executed only on the local computer.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>The function cannot return library paths for remote connections.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Default R packages</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>The following R packages are installed with SQL Server R Services.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>Packages</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>Version</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>Description</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>RevoScaleR<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/revoscaler)</ept></source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>8.0.3</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>Used for remote compute contexts, streaming, parallel execution of rx functions for data import and transformation, modeling, visualization, and analysis.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>sqlrutils<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/sqlrutils/sqlrutils)</ept></source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>1.0.0</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>Used for including R script in stored procedures.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>The following R packages are installed with SQL Server Machine Learning Services when you select the R feature during setup.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Packages</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Version</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Description</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>RevoScaleR<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/revoscaler)</ept></source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>9.2</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Used for remote compute contexts, streaming, parallel execution of rx functions for data import and transformation, modeling, visualization, and analysis.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>sqlrutils<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/sqlrutils/sqlrutils)</ept></source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>1.0.0</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Used for including R script in stored procedures.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>MicrosoftML<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/microsoftml/microsoftml-package)</ept></source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>1.4.0</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Adds machine learning algorithms in R.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>olapR<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/olapr/olapr)</ept></source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>1.0.0</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Used for writing MDX statements in R.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Component upgrades</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>By default, R packages are refreshed through service packs and cumulative updates.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Additional packages and full version upgrades of core R components are possible only through product upgrades or by binding R support to Microsoft Machine Learning Server.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>In addition, you can add MicrosoftML and olapR packages to a SQL Server instance through a component upgrade.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Upgrade R and Python components in SQL Server<ept id="p1">](../install/upgrade-r-and-python.md)</ept>.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Default open-source R packages</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>R support includes open-source R so that you can call base R functions and install additional open-source and third-party packages.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>R language support includes core functionality such as <bpt id="p1">**</bpt>base<ept id="p1">**</ept>, <bpt id="p2">**</bpt>stats<ept id="p2">**</ept>, <bpt id="p3">**</bpt>utils<ept id="p3">**</ept>, and others.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>A base installation of R also includes numerous sample datasets and standard R tools such as <bpt id="p1">**</bpt>RGui<ept id="p1">**</ept> (a lightweight interactive editor) and <bpt id="p2">**</bpt>RTerm<ept id="p2">**</ept> (an R command prompt).</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>The distribution of open-source R included in your installation is <bpt id="p1">[</bpt>Microsoft R Open (MRO)<ept id="p1">](https://mran.microsoft.com/open)</ept>.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>MRO adds value to base R by including additional open-source packages such as the <bpt id="p1">[</bpt>Intel Math Kernel Library<ept id="p1">](https://en.wikipedia.org/wiki/Math_Kernel_Library)</ept>.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>The version of R provided by MRO using SQL Server R Services Setup is 3.2.2.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>The version of R provided by MRO using SQL Server Machine Learning Services Setup is 3.3.3.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>You should never manually overwrite the version of R installed by SQL Server Setup with newer versions on the web.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Microsoft R packages are based on specific versions of R. Modifying your installation could destabilize it.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>List all installed R packages</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>The following example uses the R function <ph id="ph1">`installed.packages()`</ph> in a <ph id="ph2">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> stored procedure to display a list of R packages that have been installed in the R_SERVICES library for the current SQL instance.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>This script returns package name and version fields in the DESCRIPTION file.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>For more information about the optional and default fields for the R package DESCRIPTION field, see <bpt id="p1">[</bpt><ph id="ph1">https://cran.r-project.org</ph><ept id="p1">](https://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file)</ept>.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Find a single R package</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>If you've installed an R package and want to make sure that it's available to a particular SQL Server instance, you can execute a stored procedure to load the package and return messages.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>For example, the following statement looks for and loads the <bpt id="p1">[</bpt>glue<ept id="p1">](https://cran.r-project.org/web/packages/glue/)</ept> package, if available.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>If the package cannot be located or loaded, you get an error containing the text, "there is no package called 'glue'."</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>To see more information about the package, view the <ph id="ph1">`packageDescription`</ph>.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>The following statement returns information for the <bpt id="p1">**</bpt>glue<ept id="p1">**</ept> package.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve" moniker-range="&lt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>Install packages with R tools<ept id="p1">](install-r-packages-standard-tools.md)</ept></source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve" moniker-range="&gt;sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>Install new R packages with sqlmlutils<ept id="p1">](install-additional-r-packages-on-sql-server.md)</ept></source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Get Python package information<ept id="p1">](python-package-information.md)</ept></source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Install new Python packages<ept id="p1">](../python/install-additional-python-packages-on-sql-server.md)</ept></source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>R and Python tutorials<ept id="p1">](../tutorials/machine-learning-services-tutorials.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

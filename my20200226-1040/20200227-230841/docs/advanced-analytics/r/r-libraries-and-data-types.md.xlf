@@ -1,0 +1,277 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="r-libraries-and-data-types.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c11354683f94b5805255ddd5b2b5c73ec2c1aa5ba.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">11354683f94b5805255ddd5b2b5c73ec2c1aa5ba</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\r-libraries-and-data-types.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Convert R and SQL data types</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Review the implicit and explicit data type conversions between R and SQL Server in data science and machine learning solutions.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Data type mappings between R and SQL Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>For R solutions that run on the R integration feature in SQL Server Machine Learning Services, review the list of unsupported data types, and data type conversions that might be performed implicitly when data is passed between R libraries and SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Base R version</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>SQL Server 2016 R Services and SQL Server Machine Learning Services with R, are aligned with specific releases of Microsoft R Open.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>For example, the latest release, SQL Server Machine Learning Services, is built on Microsoft R Open 3.3.3.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>To view the R version associated with a particular instance of SQL Server, open <bpt id="p1">**</bpt>RGui<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>For the default instance, the path would be as follows: <ph id="ph1">`C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\R_SERVICES\bin\x64\`</ph></source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>The tool loads base R and other libraries.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Package version information is provided in a notification for each package that is loaded at session start up.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>R and SQL Data Types</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Whereas <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> supports several dozen data types, R has a limited number of scalar data types (numeric, integer, complex, logical, character, date/time and raw).</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>As a result, whenever you use data from  <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> in R scripts, data might be implicitly converted to a compatible data type.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>However, often an exact conversion cannot be performed automatically, and an error is returned, such as "Unhandled SQL data type".</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>This section lists the implicit conversions that are provided, and lists unsupported data types.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Some guidance is provided for mapping data types between R and SQL Server.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Implicit data type conversions between R and SQL Server</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>The following table shows the changes in data types and values when data from <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> is used in an R script and then returned to <ph id="ph2">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>SQL type</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>R class</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>RESULT SET type</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Comments</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>bigint<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>float<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>binary(n)<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>n &lt;= 8000</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>varbinary(max)<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Only allowed as input parameter and output</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>bit<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>bit<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>char(n)<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>n &lt;= 8000</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>varchar(max)<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>datetime<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>datetime<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Represented as GMT</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>date<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>datetime<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Represented as GMT</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>decimal(p,s)<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>float<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>float<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>float<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>int<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>int<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>money<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>float<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>numeric(p,s)<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>float<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>real<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>float<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>smalldatetime<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>datetime<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Represented as GMT</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>smallint<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>int<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>smallmoney<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>float<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>tinyint<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>int<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>uniqueidentifier<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>varchar(max)<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>varbinary(n)<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>n &lt;= 8000</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>varbinary(max)<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Only allowed as input parameter and output</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>varbinary(max)<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>varbinary(max)<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Only allowed as input parameter and output</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>varchar(n)<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>n &lt;= 8000</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>varchar(max)<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Data types not supported by R</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>Of the categories of data types supported by the <bpt id="p1">[</bpt>SQL Server type system<ept id="p1">](../../t-sql/data-types/data-types-transact-sql.md)</ept>, the following types are likely to pose problems when passed to R code:</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Data types listed in the <bpt id="p1">**</bpt>Other<ept id="p1">**</ept> section of the SQL type system article: <bpt id="p2">**</bpt>cursor<ept id="p2">**</ept>, <bpt id="p3">**</bpt>timestamp<ept id="p3">**</ept>, <bpt id="p4">**</bpt>hierarchyid<ept id="p4">**</ept>, <bpt id="p5">**</bpt>uniqueidentifier<ept id="p5">**</ept>, <bpt id="p6">**</bpt>sql_variant<ept id="p6">**</ept>, <bpt id="p7">**</bpt>xml<ept id="p7">**</ept>, <bpt id="p8">**</bpt>table<ept id="p8">**</ept></source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>All spatial types</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>image<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>Data types that might convert poorly</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>Most datetime types should work, except for <bpt id="p1">**</bpt>datetimeoffset<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>Most numeric data types are supported, but conversions might fail for <bpt id="p1">**</bpt>money<ept id="p1">**</ept> and <bpt id="p2">**</bpt>smallmoney<ept id="p2">**</ept></source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>varchar<ept id="p1">**</ept> is supported, but because SQL Server uses Unicode as a rule, use of <bpt id="p2">**</bpt>nvarchar<ept id="p2">**</ept> and other Unicode text data types is recommended where possible.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>Functions from the RevoScaleR library prefixed with rx can handle the SQL binary data types (<bpt id="p1">**</bpt>binary<ept id="p1">**</ept> and <bpt id="p2">**</bpt>varbinary<ept id="p2">**</ept>), but in most scenarios special handling will be required for these types.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>Most R code cannot work with binary columns.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>For more information about <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> data types, see <bpt id="p1">[</bpt>Data Types &amp;#40;Transact-SQL&amp;#41;<ept id="p1">](../../t-sql/data-types/data-types-transact-sql.md)</ept></source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>Changes in data types between SQL Server 2016 and earlier versions</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>Microsoft SQL Server 2016 and Microsoft Azure SQL Database include improvements in data type conversions and in several other operations.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>Most of these improvements offer increased precision when you deal with floating-point types, as well as minor changes to operations on classic <bpt id="p1">**</bpt>datetime<ept id="p1">**</ept> types.</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>These improvements are all available by default when you use a database compatibility level of 130 or later.</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>However, if you use a different compatibility level, or connect to a database using an older version, you might see differences in the precision of numbers or other results.</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>SQL Server 2016 improvements in handling some data types and uncommon operations<ept id="p1">](https://support.microsoft.com/help/4010261/sql-server-2016-improvements-in-handling-some-data-types-and-uncommon-)</ept>.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>Verify R and SQL data schemas in advance</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>In general, whenever you have any doubt about how a particular data type or data structure is being used in R, use the  <ph id="ph1">`str()`</ph> function to get the internal structure and type of the R object.</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>The result of the function is printed to the R console and is also available in the query results, in the <bpt id="p1">**</bpt>Messages<ept id="p1">**</ept> tab in <ph id="ph1">[!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>When retrieving data from a database for use in R code, you should always eliminate columns that cannot be used in R, as well as columns that are not useful for analysis, such as GUIDS (uniqueidentifier), timestamps and other columns used for auditing, or lineage information created by ETL processes.</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>Note that inclusion of unnecessary columns can greatly reduce the performance of R code, especially if high cardinality columns are used as factors.</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>Therefore, we recommend that you use SQL Server system stored procedures and information views to get the data types for a given table in advance, and eliminate or convert incompatible columns.</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Information Schema Views in Transact-SQL<ept id="p1">](../../relational-databases/system-information-schema-views/system-information-schema-views-transact-sql.md)</ept></source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>If a particular <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> data type is not supported by R, but you need to use the columns of data in the R script, we recommend that you use the <bpt id="p1">[</bpt>CAST and CONVERT &amp;#40;Transact-SQL&amp;#41;<ept id="p1">](../../t-sql/functions/cast-and-convert-transact-sql.md)</ept> functions to ensure that the data type conversions are performed as intended before using the data in your R script.</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>If you use the <bpt id="p1">**</bpt>rxDataStep<ept id="p1">**</ept> to drop incompatible columns while moving data, be aware that the arguments <bpt id="p2">_</bpt>varsToKeep<ept id="p2">_</ept> and <bpt id="p3">_</bpt>varsToDrop<ept id="p3">_</ept> are not supported for the <bpt id="p4">**</bpt>RxSqlServerData<ept id="p4">**</ept> data source type.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>Examples</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>Example 1: Implicit conversion</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>The following example demonstrates how data is transformed when making the round-trip between SQL Server and R.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>The query gets a series of values from a <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> table, and uses the stored procedure  <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md)</ept> to output the values using the R runtime.</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>C1</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>C2</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>C3</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>C4</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>Hello</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>6e225611-4b58-4995-a0a5-554d19012ef1</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>4</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>-11</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>world</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>6732ea46-2d5d-430b-8ao1-86e7f3351c3e</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>Note the use of the <ph id="ph1">`str`</ph> function in R to get the schema of the output data.</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>This function returns the following information:</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>From this, you can see that the following data type conversions were implicitly performed as part of this query:</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Column C1<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>The column is represented as <bpt id="p1">**</bpt>int<ept id="p1">**</ept> in <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph>, <ph id="ph2">`integer`</ph> in R, and <bpt id="p2">**</bpt>int<ept id="p2">**</ept> in the output result set.</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>No type conversion was performed.</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Column C2<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>The column is represented as <bpt id="p1">**</bpt>varchar(10)<ept id="p1">**</ept> in <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph>, <ph id="ph2">`factor`</ph> in R, and <bpt id="p2">**</bpt>varchar(max)<ept id="p2">**</ept> in the output.</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source>Note how the output changes; any string from R (either a factor or a regular string) will be represented as <bpt id="p1">**</bpt>varchar(max)<ept id="p1">**</ept>, no matter what the length of the strings is.</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Column C3<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source>The column is represented as <bpt id="p1">**</bpt>uniqueidentifier<ept id="p1">**</ept> in <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph>, <ph id="ph2">`character`</ph> in R, and <bpt id="p2">**</bpt>varchar(max)<ept id="p2">**</ept> in the output.</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source>Note the data type conversion that happens.</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> supports the <bpt id="p1">**</bpt>uniqueidentifier<ept id="p1">**</ept> but R does not; therefore, the identifiers are represented as strings.</source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Column C4<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source>The column contains values generated by the R script and not present in the original data.</source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source>Example 2: Dynamic column selection using R</source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve">
+          <source>The following example shows how you can use R code to check for invalid column types.</source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve">
+          <source>The gets the schema of a specified table using the SQL Server system views, and removes any columns that have a specified invalid type.</source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit></group></body></file></xliff>

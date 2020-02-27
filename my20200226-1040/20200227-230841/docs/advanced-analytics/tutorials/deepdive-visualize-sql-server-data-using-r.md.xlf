@@ -1,0 +1,107 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="deepdive-visualize-sql-server-data-using-r.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c887c5790a7de70cf111f004be65e3a41748b47bf.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">887c5790a7de70cf111f004be65e3a41748b47bf</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\deepdive-visualize-sql-server-data-using-r.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Visualize data using RevoScaleR</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>RevoScaleR tutorial 6: How to visualize data using the R language on SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Visualize SQL Server data using R (SQL Server and RevoScaleR tutorial)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This is tutorial 6 of the <bpt id="p1">[</bpt>RevoScaleR tutorial series<ept id="p1">](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)</ept> on how to use <bpt id="p2">[</bpt>RevoScaleR functions<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept> with SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In this tutorial, you'll use R functions to view the distribution of values in the <bpt id="p1">*</bpt>creditLine<ept id="p1">*</ept> column by gender.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Create min-max variables for histogram inputs</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Visualize data in a histogram using <bpt id="p1">**</bpt>rxHistogram<ept id="p1">**</ept> from <bpt id="p2">**</bpt>RevoScaleR<ept id="p2">**</ept></source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Visualize with scatter plots using <bpt id="p1">**</bpt>levelplot<ept id="p1">**</ept> from <bpt id="p2">**</bpt>lattice<ept id="p2">**</ept> included in the base R distribution</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>As this tutorial demonstrates, you can combine open-source and Microsoft-specific functions in the same script.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Add maximum and minimum values</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Based on the computed summary statistics from the previous tutorial, you've discovered some useful information about the data that you can insert into the data source for further computations.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>For example, the minimum and maximum values can be used to compute histograms.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>In this exercise, add the high and low values to the <bpt id="p1">**</bpt>RxSqlServerData<ept id="p1">**</ept> data source.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Start by setting up some temporary variables.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Use the variable <bpt id="p1">*</bpt>ccColInfo<ept id="p1">*</ept> that you created in the previous tutorial to define the columns in the data source.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Add new computed columns (<bpt id="p1">*</bpt>numTrans<ept id="p1">*</ept>, <bpt id="p2">*</bpt>numIntlTrans<ept id="p2">*</ept>, and <bpt id="p3">*</bpt>creditLine<ept id="p3">*</ept>) to the column collection that override the original definition.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>The script below adds factors based on minimum and maximum values, obtained from sumOut, which is storing the in-memory output from <bpt id="p1">**</bpt>rxSummary<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Having updated the column collection, apply the following statement to create an updated version of the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> data source that you defined earlier.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>The sqlFraudDS data source now includes the new columns added using <bpt id="p1">*</bpt>ccColInfo<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>At this point, the modifications affect only the data source object in R; no new data has been written to the database table yet.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>However, you can use the data captured in the sumOut variable to create visualizations and summaries.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>If you forget which compute context you're using, run <bpt id="p1">**</bpt>rxGetComputeContext()<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>A return value of "RxLocalSeq Compute Context" indicates that you are running in the local compute context.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Visualize data using rxHistogram</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Use the following R code to call the <bpt id="p1">[</bpt>rxHistogram<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxhistogram)</ept> function and pass a formula and data source.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>You can run this locally at first, to see the expected results, and how long it takes.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Internally, <bpt id="p1">**</bpt>rxHistogram<ept id="p1">**</ept> calls the <bpt id="p2">[</bpt>rxCube<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxcube)</ept> function, which is included in the <bpt id="p3">**</bpt>RevoScaleR<ept id="p3">**</ept> package.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>rxCube<ept id="p1">**</ept> outputs a single list (or data frame) containing one column for each variable specified in the formula, plus a counts column.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Now, set the compute context to the remote SQL Server computer and run <bpt id="p1">**</bpt>rxHistogram<ept id="p1">**</ept> again.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>The results are exactly the same because you're using the same data source, but in the second step, the computations are performed on the remote server.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>The results are then returned to your local workstation for plotting.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>histogram results<ept id="p1">](media/rsql-sue-histogramresults.jpg "|::ref1::|")</ept></source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Visualize with scatter plots</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Scatter plots are often used during data exploration to compare the relationship between two variables.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>You can use built-in R packages for this purpose, with inputs provided by <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> functions.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Call the <bpt id="p1">[</bpt>rxCube<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxcrosstabs)</ept> function to compute the mean of <bpt id="p2">*</bpt>fraudRisk<ept id="p2">*</ept> for every combination of <bpt id="p3">*</bpt>numTrans<ept id="p3">*</ept> and <bpt id="p4">*</bpt>numIntlTrans<ept id="p4">*</ept>:</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>To specify the groups used to compute group means, use the <ph id="ph1">`F()`</ph> notation.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>In this example, <ph id="ph1">`F(numTrans):F(numIntlTrans)`</ph> indicates that the integers in the variables <ph id="ph2">`numTrans`</ph> and <ph id="ph3">`numIntlTrans`</ph> should be treated as categorical variables, with a level for each integer value.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>The default return value of <bpt id="p1">**</bpt>rxCube<ept id="p1">**</ept> is an <bpt id="p2">*</bpt>rxCube object<ept id="p2">*</ept>, which represents a cross-tabulation.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Call <bpt id="p1">[</bpt>rxResultsDF<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxresultsdf)</ept> function to convert the results into a data frame that can easily be used in one of R's standard plotting functions.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>rxCube<ept id="p1">**</ept> function includes an optional argument, <bpt id="p2">*</bpt>returnDataFrame<ept id="p2">*</ept><ph id="ph1"> = </ph><bpt id="p3">**</bpt>TRUE<ept id="p3">**</ept>, that you could use to convert the results to a data frame directly.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>For example:</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>However, the output of <bpt id="p1">**</bpt>rxResultsDF<ept id="p1">**</ept> is cleaner and preserves the names of the source columns.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>You can run <ph id="ph1">`head(cube1)`</ph> followed by <ph id="ph2">`head(cubePlot)`</ph> to compare the output.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Create a heat map using the <bpt id="p1">**</bpt>levelplot<ept id="p1">**</ept> function from the <bpt id="p2">**</bpt>lattice<ept id="p2">**</ept> package, included with all R distributions.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>scatterplot results<ept id="p1">](media/rsql-sue-scatterplotresults.jpg "|::ref2::|")</ept></source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>From this quick analysis, you can see that the risk of fraud increases with both the number of transactions and the number of international transactions.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>For more information about the <bpt id="p1">**</bpt>rxCube<ept id="p1">**</ept> function and crosstabs in general, see <bpt id="p2">[</bpt>Data summaries using RevoScaleR<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r/how-to-revoscaler-data-summaries)</ept>.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Create R models using SQL Server data<ept id="p1">](../../advanced-analytics/tutorials/deepdive-create-models.md)</ept></source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve" extradata="ref1">
+          <source>histogram results</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve" extradata="ref2">
+          <source>scatterplot results</source>
+        </trans-unit></group></body></file></xliff>

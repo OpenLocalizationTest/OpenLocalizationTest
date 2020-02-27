@@ -1,0 +1,167 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="quickstart-python-train-score-model.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cc6c74d73a531a40e0f8e57e7104109de71e27ce3.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">c6c74d73a531a40e0f8e57e7104109de71e27ce3</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\quickstart-python-train-score-model.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Quickstart: Train a model in Python</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>In this quickstart, you'll create and train a predictive model using Python.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>You'll save the model to a table in your SQL Server instance, and then use the model to predict values from new data using SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Quickstart: Create and score a predictive model in Python with SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In this quickstart, you'll create and train a predictive model using Python.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>You'll save the model to a table in your SQL Server instance, and then use the model to predict values from new data using <bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../what-is-sql-server-machine-learning.md)</ept>.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>You'll create and execute two stored procedures running in SQL.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>The first one uses the classic Iris flower data set and generates a Naïve Bayes model to predict an Iris species based on flower characteristics.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>The second procedure is for scoring - it calls the model generated in the first procedure to output a set of predictions based on new data.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>By placing Python code in a SQL stored procedure, operations are contained in SQL, are reusable, and can be called by other stored procedures and client applications.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>By completing this quickstart, you'll learn:</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>How to embed Python code in a stored procedure</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>How to pass inputs to your code through inputs on the stored procedure</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>How stored procedures are used to operationalize models</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>This quickstart requires access to an instance of SQL Server with <bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../install/sql-machine-learning-services-windows-install.md)</ept> with the Python language installed.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>You also need a tool for running SQL queries that contain Python scripts.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>You can run these scripts using any database management or query tool, as long as it can connect to a SQL Server instance, and run a T-SQL query or stored procedure.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>This quickstart uses <bpt id="p1">[</bpt>SQL Server Management Studio (SSMS)<ept id="p1">](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms)</ept>.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>The sample data used in this exercise is the Iris sample data.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Follow the instructions in <bpt id="p1">[</bpt>Iris demo data<ept id="p1">](demo-data-iris-in-sql.md)</ept> to create the sample database <bpt id="p2">**</bpt>irissql<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Create a stored procedure that generates models</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>In this step, you'll create a stored procedure that generates a model for predicting outcomes.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Open SSMS, connect to your SQL Server instance, and open a new query window.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Connect to the irissql database.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Copy in the following code to create a new stored procedure.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>When executed, this procedure calls <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md)</ept> to start a Python session.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Inputs needed by your Python code are passed as input parameters on this stored procedure.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Output will be a trained model, based on the Python <bpt id="p1">**</bpt>scikit-learn<ept id="p1">**</ept> library for the machine learning algorithm.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>This code uses <bpt id="p1">[</bpt><bpt id="p2">**</bpt>pickle<ept id="p2">**</ept><ept id="p1">](https://docs.python.org/2/library/pickle.html)</ept> to serialize the model.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>The model will be trained using data from columns 0 through 4 from the <bpt id="p1">**</bpt>iris_data<ept id="p1">**</ept> table.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>The parameters you see in the second part of the procedure articulate data inputs and model outputs.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>As much as possible, you want the Python code running in a stored procedure to have clearly defined inputs and outputs that map to stored procedure inputs and outputs passed in at run time.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Verify the stored procedure exists.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>If the T-SQL script from the previous step ran without error, a new stored procedure called <bpt id="p1">**</bpt>generate_iris_model<ept id="p1">**</ept> is created and added to the <bpt id="p2">**</bpt>irissql<ept id="p2">**</ept> database.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>You can find stored procedures in the SSMS <bpt id="p1">**</bpt>Object Explorer<ept id="p1">**</ept>, under <bpt id="p2">**</bpt>Programmability<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Execute the procedure to create and train models</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>In this step, you execute the procedure to run the embedded code, creating a trained and serialized model as an output.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Models that are stored for reuse in SQL Server are serialized as a byte stream and stored in a VARBINARY(MAX) column in a database table.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Once the model is created, trained, serialized, and saved to a database, it can be called by other procedures or by the <bpt id="p1">[</bpt>PREDICT T-SQL<ept id="p1">](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql)</ept> function in scoring workloads.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Run the following script to execute the procedure.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>The specific statement for executing a stored procedure is <ph id="ph1">`EXECUTE`</ph> on the fourth line.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>This particular script deletes an existing model of the same name ("Naive Bayes") to make room for new ones created by rerunning the same procedure.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Without model deletion, an error occurs stating the object already exists.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>The model is stored in a table called <bpt id="p1">**</bpt>iris_models<ept id="p1">**</ept>, provisioned when you created the <bpt id="p2">**</bpt>irissql<ept id="p2">**</ept> database.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Verify that the model was inserted.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>model_name</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>model</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Naive Bayes</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>0x800363736B6C6561726E2E6E616976655F62617965730A...</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Create and execute a stored procedure for generating predictions</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Now that you have created, trained, and saved a model, move on to the next step: creating a stored procedure that generates predictions.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>You'll do this by calling <ph id="ph1">`sp_execute_external_script`</ph> to run a Python script that loads the serialized model and gives it new data inputs to score.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Run the following code to create the stored procedure that performs scoring.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>At run time, this procedure will load a binary model, use columns <ph id="ph1">`[1,2,3,4]`</ph> as inputs, and specify columns <ph id="ph2">`[0,5,6]`</ph> as output.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Execute the stored procedure, giving the model name "Naive Bayes" so that the procedure knows which model to use.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>When you run the stored procedure, it returns a Python data.frame.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>This line of T-SQL specifies the schema for the returned results: <ph id="ph1">`WITH RESULT SETS ( ("id" int, "SpeciesId" int, "SpeciesId.Predicted" int));`</ph>.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>You can insert the results into a new table, or return them to an application.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Result set from running stored procedure</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>The results are 150 predictions about species using floral characteristics as inputs.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>For the majority of the observations, the predicted species matches the actual species.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>This example has been made simple by using the Python iris dataset for both training and scoring.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>A more typical approach would involve running a SQL query to get the new data, and passing that into Python as <ph id="ph1">`InputDataSet`</ph>.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Conclusion</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>In this exercise, you learned how to create stored procedures dedicated to different tasks, where each stored procedure used the system stored procedure <ph id="ph1">`sp_execute_external_script`</ph> to start a Python process.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Inputs to the Python process are passed to <ph id="ph1">`sp_execute_external`</ph> as parameters.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Both the Python script itself and data variables in a SQL Server database are passed as inputs.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Generally, you should only plan on using SSMS with polished Python code, or simple Python code that returns row-based output.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>As a tool, SSMS supports query languages like T-SQL and returns flattened rowsets.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>If your code generates visual output like a scatterplot or histogram, you need a separate tool or end-user application that can render the image outside of the stored procedure.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>For some Python developers who are used to writing all-inclusive script handling a range of operations, organizing tasks into separate procedures might seem unnecessary.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>But training and scoring have different use cases.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>By separating them, you can put each task on a different schedule and scope permissions to each operation.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Likewise, you can also leverage resourcing features of SQL Server, such as parallel processing, resource governance, or by writing your script to use algorithms in <bpt id="p1">[</bpt>microsoftml<ept id="p1">](../python/ref-py-microsoftml.md)</ept> that supports streaming and parallel execution.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>By separating training and scoring, you can target optimizations for specific workloads.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>A final benefit is that the processes can be modified using parameters.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>In this exercise, Python code that created the model (named "Naive Bayes" in this example) was passed as an input to a second stored procedure calling the model in a scoring process.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>This exercise only uses one model, but you can imagine how parameterizing the model in a scoring task would make that script more useful.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>For more information on SQL Server Machine Learning Services, see:</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>What is SQL Server Machine Learning Services (Python and R)?<ept id="p1">](../what-is-sql-server-machine-learning.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

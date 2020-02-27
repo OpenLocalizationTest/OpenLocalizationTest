@@ -1,0 +1,183 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="how-to-create-mdx-queries-using-olapr.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c6934d3ae816df23d68843eb49d5eca8c95d83d57.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">6934d3ae816df23d68843eb49d5eca8c95d83d57</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\how-to-create-mdx-queries-using-olapr.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Create MDX queries in R using olapR</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Use the olapR package library in SQL Server to write MDX queries in R language script.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>How to create MDX queries in R using olapR</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">[</bpt>olapR<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/olapr/olapr)</ept> package supports MDX queries against cubes hosted in SQL Server Analysis Services.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>You can build a query against an existing cube, explore dimensions and other cube objects, and paste in existing MDX queries to retrieve data.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>This article describes the two main uses of the <bpt id="p1">**</bpt>olapR<ept id="p1">**</ept> package:</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Build an MDX query from R, using the constructors provided in the olapR package<ept id="p1">](#buildMDX)</ept></source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Execute an existing, valid MDX query using olapR and an OLAP provider<ept id="p1">](#executeMDX)</ept></source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>The following operations are not supported:</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>DAX queries against a tabular model</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Creation of new OLAP objects</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Writeback to partitions, including measures or sums</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a name="buildMDX"&gt;</bpt><ept id="p1">&lt;/a&gt;</ept> Build an MDX query from R</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Define a connection string that specifies the OLAP data source (SSAS instance), and the MSOLAP provider.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Use the function <ph id="ph1">`OlapConnection(connectionString)`</ph> to create a handle for the MDX query and pass the connection string.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Use the <ph id="ph1">`Query()`</ph> constructor to instantiate a query object.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Use the following helper functions to provide more details about the dimensions and measures to include in the MDX query:</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`cube()`</ph> Specify the name of the SSAS database.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>If connecting to a named instance, provide the machine name and instance name.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`columns()`</ph> Provide the names of the measures to use in the <bpt id="p1">**</bpt>ON COLUMNS<ept id="p1">**</ept> argument.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`rows()`</ph> Provide the names of the measures to use in the <bpt id="p1">**</bpt>ON ROWS<ept id="p1">**</ept> argument.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`slicers()`</ph> Specify a field or members to use as a slicer.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>A slicer is like a filter that is applied to all MDX query data.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`axis()`</ph> Specify the name of an additional axis to use in the query.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>An OLAP cube can contain up to 128 query axes.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Generally, the first four axes are referred to as <bpt id="p1">**</bpt>Columns<ept id="p1">**</ept>, <bpt id="p2">**</bpt>Rows<ept id="p2">**</ept>, <bpt id="p3">**</bpt>Pages<ept id="p3">**</ept>, and <bpt id="p4">**</bpt>Chapters<ept id="p4">**</ept>.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>If your query is relatively simple, you can use the functions <ph id="ph1">`columns`</ph>, <ph id="ph2">`rows`</ph>, etc. to build your query.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>However, you can also use the <ph id="ph1">`axis()`</ph> function with a non-zero index value to build an MDX query with many qualifiers, or to add extra dimensions as qualifiers.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Pass the handle, and the completed MDX query, into one of the following functions, depending on the shape of the results:</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`executeMD`</ph> Returns a multi-dimensional array</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`execute2D`</ph> Returns a two-dimensional (tabular) data frame</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a name="executeMDX"&gt;</bpt><ept id="p1">&lt;/a&gt;</ept> Execute a valid MDX query from R</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Define a connection string that specifies the OLAP data source (SSAS instance), and the MSOLAP provider.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Use the function <ph id="ph1">`OlapConnection(connectionString)`</ph> to create a handle for the MDX query and pass the connection string.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Define an R variable to store the text of the MDX query.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Pass the handle and the variable containing the MDX query into the functions <ph id="ph1">`executeMD`</ph> or <ph id="ph2">`execute2D`</ph>, depending on the shape of the results.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`executeMD`</ph> Returns a multi-dimensional array</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`execute2D`</ph> Returns a two-dimensional (tabular) data frame</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Examples</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>The following examples are based on the AdventureWorks data mart and cube project, because that project is widely available, in multiple versions, including backup files that can easily be restored to Analysis Services.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>If you don't have an existing cube, get a sample cube using either of these options:</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Create the cube that is used in these examples by following the Analysis Services tutorial up to Lesson 4: <bpt id="p1">[</bpt>Creating an OLAP cube<ept id="p1">](https://docs.microsoft.com/analysis-services/multidimensional-tutorial/multidimensional-modeling-adventure-works-tutorial)</ept></source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Download an existing cube as a backup, and restore it to an instance of Analysis Services.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>For example, this site provides a fully processed cube in zipped format: <bpt id="p1">[</bpt>Adventure Works Multidimensional Model SQL 2014<ept id="p1">](https://msftdbprodsamples.codeplex.com/downloads/get/882334)</ept>.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Extract the file, and then restore it to your SSAS instance.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Backup and restore<ept id="p1">](https://docs.microsoft.com/analysis-services/multidimensional-models/backup-and-restore-of-analysis-services-databases)</ept>, or <bpt id="p2">[</bpt>Restore-ASDatabase Cmdlet<ept id="p2">](/powershell/module/sqlserver/restore-asdatabase)</ept>.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>1. Basic MDX with slicer</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>This MDX query selects the <bpt id="p1">_</bpt>measures<ept id="p1">_</ept> for count and amount of Internet sales count and sales amount, and places them on the Column axis.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>It adds a member of the SalesTerritory dimension as a <bpt id="p1">*</bpt>slicer<ept id="p1">*</ept>, to filter the query so that only the sales from Australia are used in calculations.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>On columns, you can specify multiple measures as elements of a comma-separated string.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>The Row axis uses all possible values (all MEMBERS) of the "Product Line" dimension.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>This query would return a table with three columns, containing a <bpt id="p1">_</bpt>rollup<ept id="p1">_</ept> summary of Internet sales from all countries.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>The WHERE clause specifies the <bpt id="p1">_</bpt>slicer axis<ept id="p1">_</ept>.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>In this example, the slicer uses a member of the <bpt id="p1">**</bpt>SalesTerritory<ept id="p1">**</ept> dimension to filter the query so that only the sales from Australia are used in calculations.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>To build this query using the functions provided in olapR</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>For a named instance, be sure to escape any characters that could be considered control characters in R.  For example, the following connection string references an instance OLAP01, on a server named ContosoHQ:</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>To run this query as a predefined MDX string</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>If you define a query by using the MDX builder in SQL Server Management Studio and then save the MDX string, it will number the axes starting at 0, as shown here:</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>You can still run this query as a predefined MDX string.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>However, to build the same query using R using the <ph id="ph1">`axis()`</ph> function, you must renumber the axes starting at 1.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>2. Explore cubes and their fields on an SSAS instance</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>You can use the <ph id="ph1">`explore`</ph> function to return a list of cubes, dimensions, or members to use in constructing your query.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>This is handy if you don't have access to other OLAP browsing tools, or if you want to programmatically manipulate or construct the MDX query.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>To list the cubes available on the specified connection</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>To view all cubes or perspectives on the instance that you have permission to view, provide the handle as an argument to <ph id="ph1">`explore`</ph>.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>The final result is <bpt id="p1">**</bpt>not<ept id="p1">**</ept> a cube; TRUE merely indicates that the metadata operation was successful.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>An error is thrown if arguments are invalid.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Results</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">_</bpt>Analysis Services Tutorial<ept id="p1">_</ept></source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">_</bpt>Internet Sales<ept id="p1">_</ept></source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">_</bpt>Reseller Sales<ept id="p1">_</ept></source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">_</bpt>Sales Summary<ept id="p1">_</ept></source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">_</bpt>[1] TRUE<ept id="p1">_</ept></source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>To get a list of cube dimensions</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>To view all dimensions in the cube or perspective, specify the cube or perspective name.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Results</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">_</bpt>Customer<ept id="p1">_</ept></source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">_</bpt>Date<ept id="p1">_</ept></source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">_</bpt>Region<ept id="p1">_</ept></source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>To return all members of the specified dimension and hierarchy</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>After defining the source and creating the handle, specify the cube, dimension, and hierarchy to return.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>In the return results, items that are prefixed with <bpt id="p1">**</bpt><ph id="ph1">-&gt;</ph><ept id="p1">**</ept> represent children of the previous member.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>Results</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">_</bpt>Accessories<ept id="p1">_</ept></source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">_</bpt>Bikes<ept id="p1">_</ept></source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">_</bpt>Clothing<ept id="p1">_</ept></source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">_</bpt>Components<ept id="p1">_</ept></source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>-&gt; Assembly Components</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>-&gt; Assembly Components</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Using data from OLAP cubes in R<ept id="p1">](../../advanced-analytics/r/using-data-from-olap-cubes-in-r.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

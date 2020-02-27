@@ -1,0 +1,115 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="tips-for-using-r-packages.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c64799766b8b9d69a5577fd589c8f610be75ebb8f.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">64799766b8b9d69a5577fd589c8f610be75ebb8f</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\package-management\tips-for-using-r-packages.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Tips for using R packages</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Learn helpful tips on using R packages in SQL Server for those who are new to R or to SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Tips for using R packages</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article provides helpful tips on using R packages in SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>These tips are for DBAs who are unfamiliar with R, and experienced R developers who are unfamiliar with package access in a SQL Server instance.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>If you're new to R</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>As an administrator installing R packages for the first time, knowing a few basics about R package management can help you get started.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Package dependencies</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>R packages frequently depend on multiple other packages, some of which might not be available in the default R library used by the instance.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Sometimes a package requires a different version of a dependent package than what's already installed.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Package dependencies are noted in a DESCRIPTION file embedded in the package, but are sometimes incomplete.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>You can use a package called <bpt id="p1">[</bpt>iGraph<ept id="p1">](https://igraph.org/r/)</ept> to fully articulate the dependency graph.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>If you need to install multiple packages, or want to ensure that everyone in your organization gets the correct package type and version, we recommend that you use the <bpt id="p1">[</bpt>miniCRAN<ept id="p1">](https://mran.microsoft.com/package/miniCRAN)</ept> package to analyze the complete dependency chain.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>minicRAN creates a local repository that can be shared among multiple users or computers.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Create a local package repository using miniCRAN<ept id="p1">](create-a-local-package-repository-using-minicran.md)</ept>.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Package sources, versions, and formats</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>There are multiple sources for R packages, such as <bpt id="p1">[</bpt>CRAN<ept id="p1">](https://cran.r-project.org/)</ept> and <bpt id="p2">[</bpt>Bioconductor<ept id="p2">](https://www.bioconductor.org/)</ept>.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>The official site for the R language (<ph id="ph1">&lt;https://www.r-project.org/&gt;</ph>) lists many of these resources.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Microsoft offers <bpt id="p1">[</bpt>MRAN<ept id="p1">](https://mran.microsoft.com/)</ept> for its distribution of open-source R (<bpt id="p2">[</bpt>MRO<ept id="p2">](https://mran.microsoft.com/open)</ept>) and other packages.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Many packages are published to GitHub, where developers can obtain the source code.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>R packages run on multiple computing platforms.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Be sure that the versions you install are Windows binaries.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-linux-ver15||=sqlallproducts-allversions">
+          <source>R packages run on multiple computing platforms.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-linux-ver15||=sqlallproducts-allversions">
+          <source>Be sure that the versions you install are Linux binaries.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Know which library you're installing to and which packages are already installed</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>If you have previously modified the R environment on the computer, before installing anything ensure that the R environment variable <ph id="ph1">`.libPath`</ph> uses just one path.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>This path should point to the R_SERVICES folder for the instance.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>For more information, including how to determine which packages are already installed, see <bpt id="p1">[</bpt>Get R package information<ept id="p1">](../package-management/r-package-information.md)</ept>.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>If you're new to SQL Server</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>As an R developer working on code executing on SQL Server, the security policies protecting the server constrain your ability to control the R environment.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>The following tips describe typical situations and provide suggestions for working in this environment.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>R user libraries: not supported on SQL Server</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>R developers who need to install new R packages are accustomed to installing packages at will, using a private, user library whenever the default library is not available, or when the developer is not an administrator on the computer.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>For example, in a typical R development environment, the user would add the  location of the package to the R environment variable <ph id="ph1">`libPath`</ph>, or reference the full package path, like this:</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>This does not work when running R solutions in SQL Server, because R packages must be installed to a specific default library that is associated with the instance.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>When a package is not available in the default library, you get this error when you try to call the package:</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Error in library(xxx) : there is no package called 'package-name'<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>For information on how to install R packages in SQL Server, see <bpt id="p1">[</bpt>Install new R packages on SQL Server Machine Learning Services or SQL Server R Services<ept id="p1">](install-additional-r-packages-on-sql-server.md)</ept>.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>How to avoid "package not found" errors</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Using the following guidelines will help you avoid "package not found" errors.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Eliminate dependencies on user libraries.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>It's a bad development practice to install required R packages to a custom user library.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>This can lead to errors if a solution is run by another user who does not have access to the library location.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Also, if a package is installed in the default library, the R runtime loads the package from the default library, even if you specify a different version in the R code.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Make sure your code is able to run in a shared environment.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Avoid installing packages as part of a solution.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>If you don't have permissions to install packages, the code will fail.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Even if you do have permissions to install packages, you should do so separately from other code that you want to execute.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Check your code to make sure that there are no calls to uninstalled packages.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Update your code to remove direct references to the paths of R packages or R libraries.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Know which package library is associated with the instance.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Get R package information<ept id="p1">](../package-management/r-package-information.md)</ept>.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve" moniker-range="&lt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>Install packages with R tools<ept id="p1">](install-r-packages-standard-tools.md)</ept></source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve" moniker-range="&gt;sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>Install new R packages with sqlmlutils<ept id="p1">](install-additional-r-packages-on-sql-server.md)</ept></source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Install new Python packages<ept id="p1">](../python/install-additional-python-packages-on-sql-server.md)</ept></source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Tutorials, samples, solutions<ept id="p1">](../tutorials/machine-learning-services-tutorials.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

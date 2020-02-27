@@ -1,0 +1,127 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="package-install-uninstall-and-sync.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c71ff0b6232eb69af7e5e138d2681f8126a12d915.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">71ff0b6232eb69af7e5e138d2681f8126a12d915</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\package-management\package-install-uninstall-and-sync.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>R package synchronization from the file system</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Update R libraries on SQL Server with newer versions installed on the file system.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>R package synchronization for SQL Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>The version of RevoScaleR included in SQL Server 2017 includes the ability to synchronize collections of R packages between the file system and the instance and database where packages are used.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This feature was provided to make it easier to back up R package collections associated with SQL Server databases.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Using this feature, an administrator can restore not just the database, but any R packages that were used by data scientists working in that database.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>This article describes the package synchronization feature, and how to use the <bpt id="p1">[</bpt>rxSyncPackages<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxsyncpackages)</ept> function to perform the following tasks:</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Synchronize a list of packages for an entire SQL Server database</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Synchronize packages used by an individual user, or by a group of users</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>If a user moves to a different SQL Server, you can take a backup of the user's working database and restore it to the new server, and the packages for the user will be installed into the file system on the new server, as required by R.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>For example, you might use package synchronization in these scenarios:</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>The DBA has restored an instance of SQL Server to a new machine and asks users to connect from their R clients and run <ph id="ph1">`rxSyncPackages`</ph> to refresh and restore their packages.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>You think an R package on the file system is corrupted so you run <ph id="ph1">`rxSyncPackages`</ph> on the SQL Server.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Requirements</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Before you can use package synchronization, you must have the appropriate version of Microsoft R or Machine Learning Server.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>This feature is provided in Microsoft R version 9.1.0 or later.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>You must also enable the <bpt id="p1">[</bpt>package management feature<ept id="p1">](r-package-how-to-enable-or-disable.md)</ept> on the server.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Determine whether your server supports package management</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>This feature is available in SQL Server 2017 CTP 2 or later.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>You can add this feature to an instance of SQL Server 2016 by upgrading the instance to use the latest version of Microsoft R. For more information, see <bpt id="p1">[</bpt>Use SqlBindR.exe to upgrade SQL Server R Services<ept id="p1">](../install/upgrade-r-and-python.md)</ept>.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Enable the package management feature</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>To use package synchronization requires that the new package management feature be enabled on the SQL Server instance, and on individual databases.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Enable or disable package management for SQL Server<ept id="p1">](r-package-how-to-enable-or-disable.md)</ept>.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>The server administrator enables the feature for the SQL Server instance.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>For each database, the administrator grants individual users the ability to install or share R packages, using database roles.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>When this is done, you can use RevoScaleR functions, such as <bpt id="p1">[</bpt>rxInstallPackages<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxinstallpackages)</ept> to install packages into a database.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Information about users and the packages that they can use is stored in the SQL Server instance.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Whenever you add a new package using the package management functions, both the records in SQL Server and the file system are updated.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>This information can be used to restore package information for the entire database.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Permissions</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>The person who executes the package synchronization function must be a security principal on the SQL Server instance and database that has the packages.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>The caller of the function must be a member of one of these package management roles: <bpt id="p1">**</bpt>rpkgs-shared<ept id="p1">**</ept> or <bpt id="p2">**</bpt>rpkgs-private<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>To synchronize packages marked as <bpt id="p1">**</bpt>shared<ept id="p1">**</ept>, the person who is running the function must have membership in the <bpt id="p2">**</bpt>rpkgs-shared<ept id="p2">**</ept> role, and the packages that are being moved must have been installed to a shared scope library.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>To synchronize packages marked as <bpt id="p1">**</bpt>private<ept id="p1">**</ept>, either the owner of the package or the administrator must run the function, and the packages must be private.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>To synchronize packages on behalf of other users, the owner must be a member of the <bpt id="p1">**</bpt>db_owner<ept id="p1">**</ept> database role.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>How package synchronization works</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>To use package synchronization, call <bpt id="p1">[</bpt>rxSyncPackages<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxsyncpackages)</ept>, which is a new function in <bpt id="p2">[</bpt>RevoScaleR<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept>.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>For each call to <ph id="ph1">`rxSyncPackages`</ph>, you must specify a SQL Server instance and database.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Then, either list the packages to synchronize, or specify package scope.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Create the SQL Server compute context by using the <ph id="ph1">`RxInSqlServer`</ph> function.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>If you don't specify a compute context, the current compute context is used.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Provide the name of a database on the instance in the specified compute context.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Packages are synchronized per database.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Specify the packages to synchronize by using the scope argument.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>If you use <bpt id="p1">**</bpt>private<ept id="p1">**</ept> scope, only packages owned by the specified owner are synchronized.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>If you specify <bpt id="p1">**</bpt>shared<ept id="p1">**</ept> scope, all non-private packages in the database are synchronized.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>If you run the function without specifying either <bpt id="p1">**</bpt>private<ept id="p1">**</ept> or <bpt id="p2">**</bpt>shared<ept id="p2">**</ept> scope, all packages are synchronized.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>If the command is successful, existing packages in the file system are added to the database, with the specified scope and owner.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>If the file system is corrupted, the packages are restored based on the list maintained in the database.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>If the package management feature is not available on the target database, an error is raised: "The package management feature is either not enabled on the SQL Server or version is too old"</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Example 1.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Synchronize all package by database</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>This example gets any new packages from the local file system and installs the packages in the database [TestDB].</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Because no owner is specific, the list includes all packages that have been installed for private and shared scopes.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Example 2.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Restrict synchronized packages by scope</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>The following examples synchronize only the packages in the specified scope.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Example 3.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Restrict synchronized packages by owner</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>The following example demonstrates how to synchronize only the packages that were installed for a specific user.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>In this example, the user is identified by the SQL login name, <bpt id="p1">*</bpt>user1<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Related resources</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>R package management for SQL Server<ept id="p1">](install-additional-r-packages-on-sql-server.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

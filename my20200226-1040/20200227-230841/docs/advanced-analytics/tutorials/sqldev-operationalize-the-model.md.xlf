@@ -1,0 +1,103 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="sqldev-operationalize-the-model.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c4b8e516d2e96c1cc4812a36800fd22371729445d.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">4b8e516d2e96c1cc4812a36800fd22371729445d</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\sqldev-operationalize-the-model.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>R + T-SQL tutorial: Run predictions</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Tutorial showing how to operationalize embedded R script in SQL Server stored procedures with T-SQL functions</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Lesson 4: Run predictions using R embedded in a stored procedure</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article is part of a tutorial for SQL developers on how to use R in SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In this step, you learn to use the model against new observations to predict potential outcomes.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>The model is wrapped in a stored procedure which can be called directly by other applications.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>The walkthrough demonstrates several ways to perform scoring:</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Batch scoring mode<ept id="p1">**</ept>: Use a SELECT query as an input to the stored procedure.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>The stored procedure returns a table of observations corresponding to the input cases.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Individual scoring mode<ept id="p1">**</ept>: Pass a set of individual parameter values as input.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>The stored procedure returns a single row or value.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>First, let's see how scoring works in general.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Basic scoring</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>The stored procedure <bpt id="p1">**</bpt>RxPredict<ept id="p1">**</ept> illustrates the basic syntax for wrapping a RevoScaleR rxPredict call in a stored procedure.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>The SELECT statement gets the serialized model from the database, and stores the model in the R variable <ph id="ph1">`mod`</ph> for further processing using R.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>The new cases for scoring are obtained from the <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> query specified in <ph id="ph2">`@inquery`</ph>, the first parameter to the stored procedure.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>As the query data is read, the rows are saved in the default data frame, <ph id="ph1">`InputDataSet`</ph>.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>This data frame is passed to the <bpt id="p1">[</bpt>rxPredict<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxpredict)</ept> function in <bpt id="p2">[</bpt>RevoScaleR<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept>, which generates the scores.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Because a data.frame can contain a single row, you can use the same code for batch or single scoring.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>The value returned by the <ph id="ph1">`rxPredict`</ph> function is  a <bpt id="p1">**</bpt>float<ept id="p1">**</ept> that represents the probability that the driver gets a tip of any amount.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Batch scoring (a list of predictions)</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>A more common scenario is to generate predictions for multiple observations in batch mode.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>In this step, let's see how batch scoring works.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Start by getting a smaller set of input data to work with.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>This query creates a "top 10" list of trips with passenger count and other features needed to make a prediction.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Sample results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Create a stored procedure called <bpt id="p1">**</bpt>RxPredictBatchOutput<ept id="p1">**</ept> in <ph id="ph1">[!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Provide the query text in a variable and pass it as a parameter to the stored procedure:</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>The stored procedure returns a series of values representing the prediction for each of the top 10 trips.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>However, the top trips are also single-passenger trips with a relatively short trip distance, for which the driver is unlikely to get a tip.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Rather than returning just the "yes-tip" and "no-tip" results, you could also return the probability score for the prediction, and then apply a WHERE clause to the <bpt id="p1">_</bpt>Score<ept id="p1">_</ept> column values to categorize the score as "likely to tip" or "unlikely to tip", using a threshold value such as 0.5 or 0.7.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>This step is not included in the stored procedure but it would be easy to implement.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Single-row scoring of multiple inputs</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Sometimes you want to pass in multiple input values and get a single prediction based on those values.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>For example, you could set up an Excel worksheet, web application, or Reporting Services report to call the stored procedure and provide inputs typed or selected by users from those applications.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>In this section, you learn how to create single predictions using a stored procedure that takes multiple inputs, such as passenger count, trip distance, and so forth.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>The stored procedure creates a score based on the previously stored R model.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>If you call the stored procedure from an external application, make sure that the data matches the requirements of the R model.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>This might include ensuring that the input data can be cast or converted to an R data type, or validating data type and data length.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Create a stored procedure <bpt id="p1">**</bpt>RxPredictSingleRow<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Try it out, by providing the values manually.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Open a new <bpt id="p1">**</bpt>Query<ept id="p1">**</ept> window, and call the stored procedure, providing values for each of the parameters.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>The parameters represent feature columns used by the model and are required.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Or, use this shorter form supported for <bpt id="p1">[</bpt>parameters to a stored procedure<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/stored-procedures/specify-parameters)</ept>:</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>The results indicate that the probability of getting a tip is low (zero) on these top 10 trips, since all are single-passenger trips over a relatively short distance.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Conclusions</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>This concludes the tutorial.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Now that you have learned to embed R code in stored procedures, you can extend these practices to build models of your own.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>The integration with <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> makes it much easier to deploy R models for prediction and to incorporate model retraining as part of an enterprise data workflow.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Previous lesson</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Lesson 3: Train and save an R model using T-SQL<ept id="p1">](sqldev-train-and-save-a-model-using-t-sql.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

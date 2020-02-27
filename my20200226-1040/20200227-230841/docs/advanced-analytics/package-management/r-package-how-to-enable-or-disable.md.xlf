@@ -1,0 +1,81 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="r-package-how-to-enable-or-disable.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c250be5c8a4207a43d2e4194c78377bd87880a99c.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">250be5c8a4207a43d2e4194c78377bd87880a99c</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\package-management\r-package-how-to-enable-or-disable.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Enable or disable remote R package management</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Enable remote R package management on SQL Server 2016 R Services or SQL Server Machine Learning Services (In-Database)</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Enable or disable remote package management for SQL Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article describes how to enable remote management of R packages from a client workstation or a different Machine Learning Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>After the package management feature has been enabled on SQL Server, you can use RevoScaleR commands on a client to install packages on SQL Server.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>By default, the external package management feature for SQL Server is disabled.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>You must run a separate script to enable the feature as described in the next section.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Overview of process and tools</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>To enable or disable package management on SQL Server, use the command-line utility <bpt id="p1">**</bpt>RegisterRExt.exe<ept id="p1">**</ept>, which is included with the <bpt id="p2">**</bpt>RevoScaleR<ept id="p2">**</ept> package.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Enabling<ept id="p1">](#bkmk_enable)</ept> this feature is a two-step process, requiring a database administrator: you enable package management on the SQL Server instance (once per SQL Server instance), and then enable package management on the SQL database (once per SQL Server database).</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Disabling<ept id="p1">](#bkmk_disable)</ept> the package management feature also requires multipel steps: you remove database-level packages and permissions (once per database), and then remove the roles from the server (once per instance).</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a name="bkmk_enable"&gt;</bpt><ept id="p1">&lt;/a&gt;</ept> Enable package management</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>On SQL Server, open an elevated command prompt and navigate to the folder containing the utility, RegisterRExt.exe.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>The default location is <ph id="ph1">`&lt;SQLInstancePath&gt;\R_SERVICES\library\RevoScaleR\rxLibs\x64\RegisterRExe.exe`</ph>.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Run the following command, providing appropriate arguments for your environment:</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>This command creates instance-level objects on the SQL Server computer that are required for package management.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>It also restarts the Launchpad for the instance.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>If you do not specify an instance, the default instance is used.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>If you do not specify a user, the current security context is used.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>For example, the following command enables package management on the instance in the path of RegisterRExt.exe, using the credentials of the user who opened the command prompt:</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>To add package management to a specific database, run the following command from an elevated command prompt:</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>This command creates some database artifacts, including the following database roles that are used for controlling user permissions: <ph id="ph1">`rpkgs-users`</ph>, <ph id="ph2">`rpkgs-private`</ph>, and <ph id="ph3">`rpkgs-shared`</ph>.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>For example, the following command enables package management on the database, on the instance where RegisterRExt is run.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>If you do not specify a user, the current security context is used.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Repeat the command for each database where packages must be installed.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>To verify that the new roles have been successfully created, in SQL Server Management Studio, click the database, expand <bpt id="p1">**</bpt>Security<ept id="p1">**</ept>, and expand <bpt id="p2">**</bpt>Database Roles<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>You can also run a query on sys.database_principals such as the following:</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>After you have enabled this feature, you can use RevoScaleR function to install or uninstall packages from a remote R client.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a name="bkmk_disable"&gt;</bpt><ept id="p1">&lt;/a&gt;</ept> Disable package management</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>From an elevated command prompt, run the RegisterRExt utility again, and disable package management at the database level:</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>This command removes database objects related to package management from the specified database.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>It also removes all the packages that were installed from the secured file system location on the SQL Server computer.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Repeat this command on each database where package management was used.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>(Optional) After all databases have been cleared of packages using the preceding step, run the following command from an elevated command prompt:</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>This command removes the package management feature from the instance.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>You might need to manually restart the Launchpad service once more to see changes.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Use RevoScaleR to install R packages<ept id="p1">](install-r-packages-with-revoscaler.md)</ept></source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Get R package information<ept id="p1">](r-package-information.md)</ept></source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Tips for using R packages<ept id="p1">](tips-for-using-r-packages.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

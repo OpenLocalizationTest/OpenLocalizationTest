@@ -1,0 +1,69 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="install-r-packages-with-tsql.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cb19b2df1b39bcc88332d60f1389be12b32d7b921.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">b19b2df1b39bcc88332d60f1389be12b32d7b921</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\package-management\install-r-packages-with-tsql.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Use T-SQL (CREATE EXTERNAL LIBRARY) to install R packages</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Add new R packages to SQL Server 2016 R Services or SQL Server Machine Learning Services (In-Database).</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Use T-SQL (CREATE EXTERNAL LIBRARY) to install R packages on SQL Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article explains how to install new R packages on an instance of SQL Server where machine learning is enabled.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>There are multiple approaches to choose from.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Using T-SQL works best for server administrators who are unfamiliar with R.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to:<ept id="p1">**</ept>  <ph id="ph1">[!INCLUDE[sssql17-md](../../includes/sssql17-md.md)]</ph> <ph id="ph2">[!INCLUDE[rsql-productnamenew-md](../../includes/rsql-productnamenew-md.md)]</ph></source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">[</bpt>CREATE EXTERNAL LIBRARY<ept id="p1">](https://docs.microsoft.com/sql/t-sql/statements/create-external-library-transact-sql)</ept> statement makes it possible to add a package or set of packages to an instance or a specific database without running R or Python code directly.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>However, this method requires package preparation and additional database permissions.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>All packages must be available as a local zipped file, rather than downloaded on demand from the internet.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>All dependencies must be identified by name and version, and included in the zip file.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>The statement fails if required packages are not available, including downstream package dependencies.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>You must be <bpt id="p1">**</bpt>db_owner<ept id="p1">**</ept> or have CREATE EXTERNAL LIBRARY permission in a database role.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>For details, see <bpt id="p1">[</bpt>CREATE EXTERNAL LIBRARY<ept id="p1">](https://docs.microsoft.com/sql/t-sql/statements/create-external-library-transact-sql)</ept>.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Download packages in archive format</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>If you are installing a single package, download the package in zipped format.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>It's more common to install multiple packages due to package dependencies.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>When a package requires other packages, you must verify that all of them are accessible to each other during installation.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>We recommend <bpt id="p1">[</bpt>creating a local repository<ept id="p1">](create-a-local-package-repository-using-minicran.md)</ept> using <bpt id="p2">[</bpt>miniCRAN<ept id="p2">](https://andrie.github.io/miniCRAN/)</ept> to assemble a full collection of packages, as well as <bpt id="p3">[</bpt>igraph<ept id="p3">](https://igraph.org/r/)</ept> for analyzing packages dependencies.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Installing the wrong version of a package or omitting a package dependency can cause a CREATE EXTERNAL LIBRARY statement to fail.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Copy the file to a local folder</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Copy the zipped file containing all packages to a local folder on the server.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>If you do not have access to the file system on the server, you can also pass a complete package as a variable, using a binary format.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>CREATE EXTERNAL LIBRARY<ept id="p1">](../../t-sql/statements/create-external-library-transact-sql.md)</ept>.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Run the statement to upload packages</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Open a <bpt id="p1">**</bpt>Query<ept id="p1">**</ept> window, using an account with administrative privileges.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Run the T-SQL statement <ph id="ph1">`CREATE EXTERNAL LIBRARY`</ph> to upload the zipped package collection to the database.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>For example, the following statement names as the package source a miniCRAN repository containing the <bpt id="p1">**</bpt>randomForest<ept id="p1">**</ept> package, together with its dependencies.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>You cannot use an arbitrary name; the external library name must have the same name that you expect to use when loading or calling the package.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Verify package installation</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>If the library is successfully created, you can run the package in SQL Server, by calling it inside a stored procedure.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Get R package information<ept id="p1">](r-package-information.md)</ept></source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>R tutorials<ept id="p1">](../tutorials/sql-server-r-tutorials.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="demo-data-airlinedemo-in-sql.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c9bb8d26acb21ff38725c6e993c0b6080a35410f1.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9bb8d26acb21ff38725c6e993c0b6080a35410f1</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\demo-data-airlinedemo-in-sql.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Airline flight demo data for tutorials</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Create a database containing the Airline dataset from R and Python.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>This dataset is used in R and Python tutorials for SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Airline flight arrival demo data for SQL Server Python and R tutorials</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In this exercise, create a SQL Server database to store imported data from R or Python built-in Airline demo data sets.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>R and Python distributions provide equivalent data, which you can import to a SQL Server database using Management Studio.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>To complete this exercise, you should have <bpt id="p1">[</bpt>SQL Server Management Studio<ept id="p1">](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017)</ept> or another tool that can run T-SQL queries.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Tutorials and quickstarts using this data set include the following:</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Create a Python model using revoscalepy<ept id="p1">](use-python-revoscalepy-to-create-model.md)</ept></source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Create the database</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Start SQL Server Management Studio, connect to a database engine instance that has R or Python integration.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>In Object Explorer, right-click <bpt id="p1">**</bpt>Databases<ept id="p1">**</ept> and create a new database called <bpt id="p2">**</bpt>flightdata<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Right-click <bpt id="p1">**</bpt>flightdata<ept id="p1">**</ept>, click <bpt id="p2">**</bpt>Tasks<ept id="p2">**</ept>, click <bpt id="p3">**</bpt>Import Flat File<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Open the AirlineDemoData.csv file provided in the R or Python distribution, depending on which language you installed.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>For R, look for <bpt id="p1">**</bpt>AirlineDemoSmall.csv<ept id="p1">**</ept> at C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\R_SERVICES\library\RevoScaleR\SampleData</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>For Python, look for <bpt id="p1">**</bpt>AirlineDemoSmall.csv<ept id="p1">**</ept> at C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\PYTHON_SERVICES\Lib\site-packages\revoscalepy\data\sample_data</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>When you select the file, default values are filled in for table name and schema.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Import flat file wizard showing airline demo defaults</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Click through the remaining pages, accepting the defaults, to import the data.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Query the data</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>As a validation step, run a query to confirm the data was uploaded.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>In Object Explorer, under Databases, right-click the <bpt id="p1">**</bpt>flightdata<ept id="p1">**</ept> database, and start a new query.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Run some simple queries:</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>In the following lesson, you will create a linear regression model based on this data.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Create a Python model using revoscalepy<ept id="p1">](use-python-revoscalepy-to-create-model.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

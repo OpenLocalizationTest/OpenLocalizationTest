@@ -1,0 +1,161 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="sqldev-py6-operationalize-the-model.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c00e4ba99b23abff0147627239093328e6f483ffb.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">00e4ba99b23abff0147627239093328e6f483ffb</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\sqldev-py6-operationalize-the-model.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Python + T-SQL: Run predictions</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Tutorial showing how to operationalize embedded PYthon script in SQL Server stored procedures with T-SQL functions</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Run predictions using Python embedded in a stored procedure</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article is part of a tutorial, <bpt id="p1">[</bpt>In-database Python analytics for SQL developers<ept id="p1">](sqldev-in-database-python-for-sql-developers.md)</ept>.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In this step, you learn to <bpt id="p1">*</bpt>operationalize<ept id="p1">*</ept> the models that you trained and saved in the previous step.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>In this scenario, operationalization means deploying the model to production for scoring.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>The integration with SQL Server makes this fairly easy, because you can embed Python code in a stored procedure.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>To get predictions from the model based on new inputs, just call the stored procedure from an application and pass the new data.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>This lesson demonstrates two methods for creating predictions based on a Python model: batch scoring, and scoring row by row.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Batch scoring:<ept id="p1">**</ept> To provide multiple rows of input data, pass a SELECT query as an argument to the stored procedure.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>The result is a table of observations corresponding to the input cases.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Individual scoring:<ept id="p1">**</ept> Pass a set of individual parameter values as input.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>The stored procedure returns a single row or value.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>All the Python code needed for scoring is provided as part of the stored procedures.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Batch scoring</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>The first two stored procedures illustrate the basic syntax for wrapping a Python prediction call in a stored procedure.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Both stored procedures require a table of data as inputs.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>The name of the exact model to use is provided as input parameter to the stored procedure.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>The stored procedure loads the serialized  model from the database table <ph id="ph1">`nyc_taxi_models`</ph>.table, using the SELECT statement in the stored procedure.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>The serialized model is stored in the Python variable <ph id="ph1">`mod`</ph> for further processing using Python.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>The new cases that need to be scored are obtained from the <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> query specified in <ph id="ph2">`@input_data_1`</ph>.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>As the query data is read, the rows are saved in the default data frame, <ph id="ph1">`InputDataSet`</ph>.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Both stored procedure use functions from <ph id="ph1">`sklearn`</ph> to calculate an accuracy metric, AUC (area under curve).</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Accuracy metrics such as AUC can only be generated if you also provide the target label (the <bpt id="p1">_</bpt>tipped<ept id="p1">_</ept> column).</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Predictions do not need the target label (variable <ph id="ph1">`y`</ph>), but the accuracy metric calculation does.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Therefore, if you don't have target labels for the data to be scored, you can modify the stored procedure to remove the AUC calculations, and return only the tip probabilities from the features (variable <ph id="ph1">`X`</ph> in the stored procedure).</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>PredictTipSciKitPy</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Rrun the following T-SQL statements to create the stored procedures.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>This stored procedure requires a model based on the scikit-learn package, because it uses functions specific to that package:</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>The data frame containing inputs is passed to the <ph id="ph1">`predict_proba`</ph> function of the logistic regression model, <ph id="ph2">`mod`</ph>.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`predict_proba`</ph> function (<ph id="ph2">`probArray = mod.predict_proba(X)`</ph>) returns a <bpt id="p1">**</bpt>float<ept id="p1">**</ept> that represents the probability that a tip (of any amount) will be given.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>PredictTipRxPy</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>This stored procedure uses the same inputs and creates the same type of scores as the previous stored procedure, but uses functions from the <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> package provided with SQL Server machine learning.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Run batch scoring using a SELECT query</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>The stored procedures <bpt id="p1">**</bpt>PredictTipSciKitPy<ept id="p1">**</ept> and <bpt id="p2">**</bpt>PredictTipRxPy<ept id="p2">**</ept> require two input parameters:</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>The query that retrieves the data for scoring</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>The name of a trained model</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>By passing those arguments to the stored procedure, you can select a particular model or change the data used for scoring.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>To use the <bpt id="p1">**</bpt>scikit-learn<ept id="p1">**</ept> model for scoring, call the stored procedure <bpt id="p2">**</bpt>PredictTipSciKitPy<ept id="p2">**</ept>, passing the model name and query string as inputs.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>The stored procedure returns predicted probabilities for each trip that was passed in as part of the input query.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>If you are using SSMS (SQL Server Management Studio) for running queries, the probabilities will appear as a table in the <bpt id="p1">**</bpt>Results<ept id="p1">**</ept> pane.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>Messages<ept id="p1">**</ept> pane outputs the accuracy metric (AUC or area under curve) with a value of around 0.56.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>To use the <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> model for scoring, call the stored procedure <bpt id="p2">**</bpt>PredictTipRxPy<ept id="p2">**</ept>, passing the model name and query string as inputs.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Single-row scoring</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Sometimes, instead of batch scoring, you might want to pass in a single case, getting values from an application, and returning a single result based on those values.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>For example, you could set up an Excel worksheet, web application, or report to call the stored procedure and pass to it inputs typed or selected by users.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>In this section, you'll learn how to create single predictions by calling two stored procedures:</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>PredictTipSingleModeSciKitPy<ept id="p1">](#predicttipsinglemodescikitpy)</ept> is designed for single-row scoring using the scikit-learn model.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>PredictTipSingleModeRxPy<ept id="p1">](#predicttipsinglemoderxpy)</ept> is designed for single-row scoring using the revoscalepy model.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>If you haven't trained a model yet, return to <bpt id="p1">[</bpt>Step 5<ept id="p1">](sqldev-py5-train-and-save-a-model-using-t-sql.md)</ept>!</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Both models take as input a series of single values, such as passenger count, trip distance, and so forth.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>A table-valued function, <ph id="ph1">`fnEngineerFeatures`</ph>, is used to convert latitude and longitude values from the inputs to a new feature, direct distance.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Lesson 4<ept id="p1">](sqldev-py4-create-data-features-using-t-sql.md)</ept> contains a description of this table-valued function.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Both stored procedures create a score based on the Python model.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>It is important that you provide all the input features required by the Python model when you call the stored procedure from an external application.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>To avoid errors, you might need to cast or convert the input data to a Python data type, in addition to validating data type and data length.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>PredictTipSingleModeSciKitPy</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Take a minute to review the code of the stored procedure that performs scoring using the <bpt id="p1">**</bpt>scikit-learn<ept id="p1">**</ept> model.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>PredictTipSingleModeRxPy</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>The following stored procedure performs scoring using the <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> model.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Generate scores from models</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>After the stored procedures have been created, it is easy to generate a score based on either model.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Just open a new <bpt id="p1">**</bpt>Query<ept id="p1">**</ept> window, and type or paste parameters for each of the feature columns.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>The seven required values are for these feature columns, in order:</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>passenger_count<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>trip_distance<ept id="p1">*</ept> v<bpt id="p2">*</bpt>trip_time_in_secs<ept id="p2">*</ept></source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>pickup_latitude<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>pickup_longitude<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>dropoff_latitude<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>dropoff_longitude<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>To generate a prediction by using the <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> model, run this statement:</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>To generate a score by using the <bpt id="p1">**</bpt>scikit-learn<ept id="p1">**</ept> model, run this statement:</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>The output from both procedures is a probability of a tip being paid for the taxi trip with the specified parameters or features.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Conclusions</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>In this tutorial, you've learned how to work with Python code embedded in stored procedures.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>The integration with <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> makes it much easier to deploy Python models for prediction and to incorporate model retraining as part of an enterprise data workflow.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>Previous step</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Train and save a Python model<ept id="p1">](sqldev-py5-train-and-save-a-model-using-t-sql.md)</ept></source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Python extension in SQL Server<ept id="p1">](../concepts/extension-python.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

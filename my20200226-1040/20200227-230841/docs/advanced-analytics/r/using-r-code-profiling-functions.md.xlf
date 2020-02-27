@@ -1,0 +1,53 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="using-r-code-profiling-functions.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13ce03ae1a8c4cdab87f46f63da6271886b4518b5e3.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">e03ae1a8c4cdab87f46f63da6271886b4518b5e3</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\using-r-code-profiling-functions.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Use R code profiling functions</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Improve performance and get faster results on R computations on SQL Server by using R profiling functions to return information about internal function calls.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Use R code profiling functions to improve performance</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>In addition to using SQL Server resources and tools to monitor R script execution, you can use performance tools provided by other R packages to get more information about internal function calls.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This article provides basic resources to get you started.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>For expert guidance, we recommend the <bpt id="p1">*</bpt>Performance<ept id="p1">*</ept> section in <bpt id="p2">[</bpt>"Advanced R" by Hadley Wickham<ept id="p2">](http://adv-r.had.co.nz)</ept>.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Using RPROF</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><bpt id="p2">*</bpt>rprof<ept id="p2">*</ept><ept id="p1">](https://www.rdocumentation.org/packages/utils/versions/3.5.1/topics/Rprof)</ept> is a function included in the base package <bpt id="p3">[</bpt><bpt id="p4">**</bpt>utils<ept id="p4">**</ept><ept id="p3">](https://www.rdocumentation.org/packages/utils/versions/3.5.1)</ept>, which is loaded by default.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>In general, the <bpt id="p1">*</bpt>rprof<ept id="p1">*</ept> function works by writing out the call stack to a file, at specified intervals.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>You can then use the <bpt id="p1">[</bpt><bpt id="p2">*</bpt>summaryRprof<ept id="p2">*</ept><ept id="p1">](https://www.rdocumentation.org/packages/utils/versions/3.5.1/topics/summaryRprof)</ept> function to process the output file.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>One advantage of <bpt id="p1">*</bpt>rprof<ept id="p1">*</ept> is that it performs sampling, thus lessening the performance load from monitoring.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>To use R profiling in your code, you call this function and specify its parameters, including the name of the location of the log file that will be written.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Profiling can be turned on and off in your code.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>The following syntax illustrates basic usage:</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Using this function requires that Windows Perl be installed on the computer where code is run.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Therefore, we recommend that you profile code during development in an R environment, and then deploy the debugged code to SQL Server.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>R System Functions</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>The R language includes many base package functions for returning the contents of system variables.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>For example, as part of your R code, you might use <ph id="ph1">`Sys.timezone`</ph> to get the current time zone, or <ph id="ph2">`Sys.Time`</ph> to get the system time from R.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>To get information about individual R system functions, type the function name as the argument to the R <ph id="ph1">`help()`</ph> function from an R command prompt.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Debugging and Profiling in R</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>The documentation for Microsoft R Open, which is installed by default, includes a manual on developing extensions for the R language that discusses <bpt id="p1">[</bpt>profiling and debugging<ept id="p1">](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Debugging)</ept> in detail.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>You can find the same documentation on your computer at C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\doc\manual.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>utils R package<ept id="p1">](https://www.rdocumentation.org/packages/utils/versions/3.5.1)</ept></source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>"Advanced R" by Hadley Wickham<ept id="p1">](http://adv-r.had.co.nz)</ept></source>
+        </trans-unit></group></body></file></xliff>

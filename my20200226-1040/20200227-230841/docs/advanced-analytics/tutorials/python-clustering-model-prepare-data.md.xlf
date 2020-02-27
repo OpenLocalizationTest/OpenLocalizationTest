@@ -1,0 +1,67 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="python-clustering-model-prepare-data.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c8ee19ddfa59f8f1a4a32c0adf08b8f36eef9aa1f.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">8ee19ddfa59f8f1a4a32c0adf08b8f36eef9aa1f</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\python-clustering-model-prepare-data.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Python tutorial: Prepare cluster data</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>In part two of this four-part tutorial series, you'll prepare SQL data to perform clustering in Python with SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Tutorial: Prepare data to categorize customers in Python with SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>In part two of this four-part tutorial series, you'll restore and prepare the data from a SQL database using Python.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Later in this series, you'll use this data to train and deploy a clustering model in Python with SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>In this article, you'll learn how to:</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Separate customers along different dimensions using Python</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Load the data from the SQL database into a Python data frame</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>In <bpt id="p1">[</bpt>part one<ept id="p1">](python-clustering-model.md)</ept>, you installed the prerequisites and restored the sample database.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>In <bpt id="p1">[</bpt>part three<ept id="p1">](python-clustering-model-build.md)</ept>, you'll learn how to create and train a K-Means clustering model in Python.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>In <bpt id="p1">[</bpt>part four<ept id="p1">](python-clustering-model-deploy.md)</ept>, you'll learn how to create a stored procedure in a SQL database that can perform clustering in Python based on new data.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Part two of this tutorial assumes you have fulfilled the prerequisites of <bpt id="p1">[</bpt><bpt id="p2">**</bpt>part one<ept id="p2">**</ept><ept id="p1">](python-clustering-model.md)</ept>.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Separate customers</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>To prepare for clustering customers, you'll first separate customers along the following dimensions:</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>orderRatio<ept id="p1">**</ept> = return order ratio (total number of orders partially or fully returned versus the total number of orders)</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>itemsRatio<ept id="p1">**</ept> = return item ratio (total number of items returned versus the number of items purchased)</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>monetaryRatio<ept id="p1">**</ept> = return amount ratio (total monetary amount of items returned versus the amount purchased)</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>frequency<ept id="p1">**</ept> = return frequency</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Open a new notebook in Azure Data Studio and enter the following script.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>In the connection string, replace connection details as needed.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Load the data into a data frame</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Results from the query are returned to Python using the Pandas <bpt id="p1">**</bpt>read_sql<ept id="p1">**</ept> function.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>As part of the process, you'll use the column information you defined in the previous script.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Now display the beginning of the data frame to verify it looks correct.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Clean up resources</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>If you're not going to continue with this tutorial, delete the tpcxbb_1gb database from SQL Server.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>In part two of this tutorial series, you completed these steps:</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Separate customers along different dimensions using Python</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Load the data from the SQL database into a Python data frame</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>To create a machine learning model that uses this customer data, follow part three of this tutorial series:</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Tutorial: Create a predictive model in Python with SQL Server Machine Learning Services<ept id="p1">](python-clustering-model-build.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

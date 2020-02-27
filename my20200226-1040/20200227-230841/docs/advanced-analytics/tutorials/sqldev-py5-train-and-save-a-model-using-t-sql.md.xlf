@@ -1,0 +1,129 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="sqldev-py5-train-and-save-a-model-using-t-sql.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c87194c1a77964f0e5aef3d0fae008d14cbfb8eb2.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">87194c1a77964f0e5aef3d0fae008d14cbfb8eb2</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\sqldev-py5-train-and-save-a-model-using-t-sql.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Python + T-SQL: Train model</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Python tutorial showing how to train and save a model using Transact-SQL on SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Train and save a Python model using T-SQL</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article is part of a tutorial, <bpt id="p1">[</bpt>In-database Python analytics for SQL developers<ept id="p1">](sqldev-in-database-python-for-sql-developers.md)</ept>.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In this step, you learn how to train a machine learning model using the Python packages <bpt id="p1">**</bpt>scikit-learn<ept id="p1">**</ept> and <bpt id="p2">**</bpt>revoscalepy<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>These Python libraries are already installed with SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>You load the modules and call the necessary functions to create and train the model using a SQL Server stored procedure.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>The model requires the data features you engineered in earlier lessons.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Finally, you save the trained model to a <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> table.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Split the sample data into training and testing sets</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Create a stored procedure called <bpt id="p1">**</bpt>PyTrainTestSplit<ept id="p1">**</ept> to divide the data in the nyctaxi_sample table into two parts: nyctaxi_sample_training and nyctaxi_sample_testing.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>This stored procedure should already be created for you, but you can run the following code to create it:</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>To divide your data using a custom split, run the stored procedure, and type an integer that represents the percentage of data allocated to the training set.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>For example, the following statement would allocate 60% of data to the training set.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Build a logistic regression model</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>After the data has been prepared, you can use it to train a model.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>You do this by calling a stored procedure that runs some Python code, taking as input the training data table.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>For this tutorial, you create two models, both binary classification models:</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>The stored procedure <bpt id="p1">**</bpt>PyTrainScikit<ept id="p1">**</ept> creates a tip prediction model using the <bpt id="p2">**</bpt>scikit-learn<ept id="p2">**</ept> package.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>The stored procedure <bpt id="p1">**</bpt>TrainTipPredictionModelRxPy<ept id="p1">**</ept> creates a tip prediction model using the <bpt id="p2">**</bpt>revoscalepy<ept id="p2">**</ept> package.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Each stored procedure uses the input data you provide to create and train a logistic regression model.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>All Python code is wrapped in the system stored procedure, <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md)</ept>.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>To make it easier to retrain the model on new data, you wrap the call to sp_execute_external_script in another stored procedure, and pass in the new training data as a parameter.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>This section will walk you through that process.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>PyTrainScikit</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>In <ph id="ph1">[!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]</ph>, open a new <bpt id="p1">**</bpt>Query<ept id="p1">**</ept> window and run the following statement to create the stored procedure <bpt id="p2">**</bpt>PyTrainScikit<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>The stored procedure contains a definition of the input data, so you don't need to provide an input query.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Run the following SQL statements to insert the trained model into table nyc<ph id="ph1">\_</ph>taxi_models.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Processing of the data and fitting the model might take a couple of mins.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Messages that would be piped to Python's <bpt id="p1">**</bpt>stdout<ept id="p1">**</ept> stream are displayed in the <bpt id="p2">**</bpt>Messages<ept id="p2">**</ept> window of <ph id="ph1">[!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>For example:</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>STDOUT message(s) from external script:<ept id="p1">*</ept><ph id="ph1">
+</ph><bpt id="p2">*</bpt>C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\PYTHON_SERVICES\lib\site-packages\revoscalepy<ept id="p2">*</ept></source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Open the table <bpt id="p1">*</bpt>nyc<ph id="ph1">\_</ph>taxi_models<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>You can see that one new row has been added, which contains the serialized model in the column <bpt id="p1">_</bpt>model<ept id="p1">_</ept>.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>SciKit_model<ept id="p1">*</ept> <bpt id="p2">*</bpt>0x800363736B6C6561726E2E6C696E6561....<ept id="p2">*</ept></source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>TrainTipPredictionModelRxPy</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>This stored procedure uses the new <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> package, which is a new package for Python.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>It contains objects, transformation, and algorithms similar to those provided for the R language's <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> package.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>By using <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept>, you can create remote compute contexts, move data between compute contexts, transform data, and train predictive models using popular algorithms such as logistic and linear regression, decision trees, and more.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>revoscalepy module in SQL Server<ept id="p1">](../python/ref-py-revoscalepy.md)</ept> and <bpt id="p2">[</bpt>revoscalepy function reference<ept id="p2">](https://docs.microsoft.com/r-server/python-reference/revoscalepy/revoscalepy-package)</ept>.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>In <ph id="ph1">[!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]</ph>, open a new <bpt id="p1">**</bpt>Query<ept id="p1">**</ept> window and run the following statement to create the stored procedure <bpt id="p2">_</bpt>TrainTipPredictionModelRxPy<ept id="p2">_</ept>.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Because the stored procedure already includes a definition of the input data, you don't need to provide an input query.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>This stored procedure performs the following steps as part of model training:</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>The SELECT query applies the custom scalar function <bpt id="p1">_</bpt>fnCalculateDistance<ept id="p1">_</ept> to calculate the direct distance between the pick-up and drop-off locations.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>The results of the query are stored in the default Python input variable, <ph id="ph1">`InputDataset`</ph>.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>The binary variable <bpt id="p1">_</bpt>tipped<ept id="p1">_</ept> is used as the <bpt id="p2">*</bpt>label<ept id="p2">*</ept> or outcome column, and the model is fit using these feature columns:  <bpt id="p3">_</bpt>passenger_count<ept id="p3">_</ept>, <bpt id="p4">_</bpt>trip_distance<ept id="p4">_</ept>, <bpt id="p5">_</bpt>trip_time_in_secs<ept id="p5">_</ept>, and <bpt id="p6">_</bpt>direct_distance<ept id="p6">_</ept>.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>The trained model is serialized and stored in the Python variable <ph id="ph1">`logitObj`</ph>.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>By adding the T-SQL keyword OUTPUT, you can add the variable as an output of the stored procedure.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>In the next step, that variable is used to insert the binary code of the model into a database table <bpt id="p1">_</bpt>nyc_taxi_models<ept id="p1">_</ept>.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>This mechanism makes it easy to store and re-use models.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Run the stored procedure as follows to insert the trained <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> model into the table <bpt id="p2">*</bpt>nyc_taxi_models<ept id="p2">*</ept>.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Processing of the data and fitting the model might take a while.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Messages that would be piped to Python's <bpt id="p1">**</bpt>stdout<ept id="p1">**</ept> stream are displayed in the <bpt id="p2">**</bpt>Messages<ept id="p2">**</ept> window of <ph id="ph1">[!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>For example:</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>STDOUT message(s) from external script:<ept id="p1">*</ept><ph id="ph1">
+</ph><bpt id="p2">*</bpt>C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\PYTHON_SERVICES\lib\site-packages\revoscalepy<ept id="p2">*</ept></source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Open the table <bpt id="p1">*</bpt>nyc_taxi_models<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>You can see that one new row has been added, which contains the serialized model in the column <bpt id="p1">_</bpt>model<ept id="p1">_</ept>.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>revoscalepy_model<ept id="p1">*</ept> <bpt id="p2">*</bpt>0x8003637265766F7363616c....<ept id="p2">*</ept></source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>In the next step, you use the trained models to create predictions.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>Next step</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Run predictions using Python embedded in a stored procedure<ept id="p1">](sqldev-py6-operationalize-the-model.md)</ept></source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Previous step</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Create data features using T-SQL<ept id="p1">](sqldev-py5-train-and-save-a-model-using-t-sql.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

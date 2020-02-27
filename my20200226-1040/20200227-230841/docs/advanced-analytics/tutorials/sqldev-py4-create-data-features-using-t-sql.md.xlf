@@ -1,0 +1,73 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="sqldev-py4-create-data-features-using-t-sql.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13ceb7f7b271c49922698058e396b69b91444c5b65a.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">eb7f7b271c49922698058e396b69b91444c5b65a</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\sqldev-py4-create-data-features-using-t-sql.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Python + T-SQL: Data features</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Tutorial showing how to add calculations to stored procedures for use in Python machine learning models.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Create Data Features using T-SQL</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>After data exploration, you have collected some insights from the data, and are ready to move on to <bpt id="p1">*</bpt>feature engineering<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This process of creating features from the raw data can be a critical step in advanced analytics modeling.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>This article is part of a tutorial, <bpt id="p1">[</bpt>In-database Python analytics for SQL developers<ept id="p1">](sqldev-in-database-python-for-sql-developers.md)</ept>.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>In this step, you'll learn how to create features from raw data by using a <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> function.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>You'll then call that function from a stored procedure to create a table that contains the feature values.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Define the Function</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>The distance values reported in the original data are based on the reported meter distance, and don't necessarily represent geographical distance or distance traveled.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Therefore, you'll need to calculate the direct distance between the pick-up and drop-off points, by using the coordinates available in the source NYC Taxi dataset.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>You can do this by using the <bpt id="p1">[</bpt>Haversine formula<ept id="p1">](https://en.wikipedia.org/wiki/Haversine_formula)</ept> in a custom <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> function.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>You'll use one custom T-SQL function, <bpt id="p1">_</bpt>fnCalculateDistance<ept id="p1">_</ept>, to compute the distance using the Haversine formula, and use a second custom T-SQL function, <bpt id="p2">_</bpt>fnEngineerFeatures<ept id="p2">_</ept>, to create a table containing all the features.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Calculate trip distance using fnCalculateDistance</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>The function <bpt id="p1">_</bpt>fnCalculateDistance<ept id="p1">_</ept> should have been downloaded and registered with <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> as part of the preparation for this walkthrough.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Take a minute to review the code.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>In <ph id="ph1">[!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]</ph>, expand <bpt id="p1">**</bpt>Programmability<ept id="p1">**</ept>, expand <bpt id="p2">**</bpt>Functions<ept id="p2">**</ept> and then <bpt id="p3">**</bpt>Scalar-valued functions<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Right-click <bpt id="p1">_</bpt>fnCalculateDistance<ept id="p1">_</ept>, and select <bpt id="p2">**</bpt>Modify<ept id="p2">**</ept> to open the <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> script in a new query window.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Notes:<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>The function is a scalar-valued function, returning a single data value of a predefined type.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>It takes latitude and longitude values as inputs, obtained from trip pick-up and drop-off locations.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>The Haversine formula converts locations to radians and uses those values to compute the direct distance in miles between those two locations.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>To add the computed value to a table that can be used for training the model, you'll use another function, <bpt id="p1">_</bpt>fnEngineerFeatures<ept id="p1">_</ept>.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Save the features using <bpt id="p1">_</bpt>fnEngineerFeatures<ept id="p1">_</ept></source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Take a minute to review the code for the custom T-SQL function, <bpt id="p1">_</bpt>fnEngineerFeatures<ept id="p1">_</ept>, which should have been created for you as part of the preparation for this walkthrough.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>This function is a table-valued function that takes multiple columns as inputs, and outputs a table with multiple feature columns.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>The purpose of this function is to create a feature set for use in building a model.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>The function <bpt id="p1">_</bpt>fnEngineerFeatures<ept id="p1">_</ept> calls the previously created T-SQL function, <bpt id="p2">_</bpt>fnCalculateDistance<ept id="p2">_</ept>, to get the direct distance between pickup and dropoff locations.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>To verify that this function works, you can use it to calculate the geographical distance for those trips where the metered distance was 0 but the pick-up and drop-off locations were different.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>As you can see, the distance reported by the meter doesn't always correspond to geographical distance.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>This is why feature engineering is important.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>In the next step, you'll learn how to use these data features to create and train a machine learning model using Python.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Next step</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Train and save a Python model using T-SQL<ept id="p1">](sqldev-py5-train-and-save-a-model-using-t-sql.md)</ept></source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Previous step</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Explore and visualize the data<ept id="p1">](sqldev-py3-explore-and-visualize-the-data.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

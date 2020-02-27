@@ -1,0 +1,101 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="scale-concurrent-execution-external-scripts.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cc10f92bcb0f8b64441ad4b088c4b8b3e2f62236b.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">c10f92bcb0f8b64441ad4b088c4b8b3e2f62236b</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\administration\scale-concurrent-execution-external-scripts.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Scale concurrent scripts</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Configure parallel or concurrent R and Python script execution in a user account pool to scale SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Scale concurrent execution of external scripts in SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Learn about worker accounts for SQL Server Machine Learning Services and how to change the default configuration to scale the number of concurrent execution of external scripts.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>As part of the installation process for Machine Learning Services, a new Windows <bpt id="p1">*</bpt>user account pool<ept id="p1">*</ept> is created to support execution of tasks by the <ph id="ph1">[!INCLUDE[rsql_launchpad](../../includes/rsql-launchpad-md.md)]</ph> service.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>The purpose of these worker accounts is to isolate concurrent execution of external scripts by different SQL Server users.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>In SQL Server 2019, <bpt id="p1">**</bpt>SQLRUserGroup<ept id="p1">**</ept> only has one member which is now the single SQL Server Launchpad service account instead of multiple worker accounts.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>This article describes the worker accounts for SQL Server 2016 and 2017.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Worker account group</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>A Windows account group is created by <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> setup for each instance on which machine learning is installed and enabled.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>In a default instance, the group name is <bpt id="p1">**</bpt>SQLRUserGroup<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>The name is the same whether you use Python or R or both.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>In a named instance, the default group name is suffixed with the instance name: for example, <bpt id="p1">**</bpt>SQLRUserGroupMyInstanceName<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>By default, the user account pool contains 20 user accounts.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>In most cases, 20 is more than adequate to support machine learning tasks, but you can change the number of accounts.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>The maximum number of accounts is 100.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>In a default instance, the individual accounts are named <bpt id="p1">**</bpt>MSSQLSERVER01<ept id="p1">**</ept> through <bpt id="p2">**</bpt>MSSQLSERVER20<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>For a named instance, the individual accounts are named after the instance name: for example, <bpt id="p1">**</bpt>MyInstanceName01<ept id="p1">**</ept> through <bpt id="p2">**</bpt>MyInstanceName20<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>If more than one instance uses machine learning, the computer will have multiple user groups.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>A group cannot be shared across instances.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a name = "HowToChangeGroup"&gt;</bpt> <ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Number of worker accounts</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>To modify the number of users in the account pool, you must edit the properties of the <ph id="ph1">[!INCLUDE[rsql_launchpad](../../includes/rsql-launchpad-md.md)]</ph> service as described below.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Passwords associated with each user account are generated at random, but you can change them later, after the accounts have been created.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Open SQL Server Configuration Manager and select <bpt id="p1">**</bpt>SQL Server Services<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Double-click the SQL Server Launchpad service and stop the service if it is running.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>On the <bpt id="p1">**</bpt>Service<ept id="p1">**</ept> tab, make sure that the Start Mode is set to Automatic.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>External scripts cannot start when the Launchpad is not running.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Click the <bpt id="p1">**</bpt>Advanced<ept id="p1">**</ept> tab and edit the value of <bpt id="p2">**</bpt>External Users Count<ept id="p2">**</ept> if necessary.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>This setting controls how many different SQL users can run external script sessions concurrently.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>The default is 20 accounts.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>The maximum number of users is 100.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Optionally, you can set the option <bpt id="p1">**</bpt>Reset External Users Password<ept id="p1">**</ept> to <bpt id="p2">_</bpt>Yes<ept id="p2">_</ept> if your organization has a policy that requires changing passwords on a regular basis.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Doing this will regenerate the encrypted passwords that Launchpad maintains for the user accounts.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Enforcing Password Policy<ept id="p1">](../security/sql-server-launchpad-service-account.md#bkmk_EnforcePolicy)</ept>.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Restart the Launchpad service.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Managing workloads</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>The number of accounts in this pool determines how many external script sessions can be active simultaneously.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>By default, 20 accounts are created, meaning that 20 different users can have active Python or R sessions at one time.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>You can increase the number of worker accounts, if you expect to run more than 20 concurrent scripts.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>When the same user executes multiple external scripts concurrently, all the sessions run by that user use the same worker account.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>For example, a single user might have 100 different Python or R scripts running concurrently, as long as resources permit, but all scripts would run using a single worker account.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>The number of worker accounts that you can support, and the number of concurrent sessions that any single user can run, is limited only by server resources.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Typically, memory is the first bottleneck that you will encounter when using the Python or R runtime.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>The resources that can be used by Python or R scripts are governed by SQL Server.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>We recommend that you monitor resource usage using SQL Server DMVs, or look at performance counters on the associated Windows job object, and adjust server memory use accordingly.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>If you have SQL Server Enterprise Edition, you can allocate resources used for running external scripts by configuring an <bpt id="p1">[</bpt>external resource pool<ept id="p1">](how-to-create-a-resource-pool.md)</ept>.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Monitor Python and R script execution using custom reports in SQL Server Management Studio<ept id="p1">](../../advanced-analytics/administration/monitor-sql-server-machine-learning-services-using-custom-reports-management-studio.md)</ept></source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Monitor SQL Server Machine Learning Services using dynamic management views (DMVs)<ept id="p1">](../../advanced-analytics/administration/monitor-sql-server-machine-learning-services-using-dynamic-management-views.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

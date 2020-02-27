@@ -1,0 +1,95 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="operationalizing-your-r-code.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c15c3406d6745802ece620942bf51b23c4d3643ee.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">15c3406d6745802ece620942bf51b23c4d3643ee</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\operationalizing-your-r-code.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Deploy R code in stored procedures</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Embed R language code in a SQL Server stored procedure to make it available to any client application having access to a SQL Server database.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Operationalize R code using stored procedures in SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>When using the R and Python features in SQL Server Machine Learning Services, the most common approach for moving solutions to a production environment is by embedding code in stored procedures.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This article summarizes the key points for the SQL developer to consider when operationalizing R code using SQL Server.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Deploy production-ready script using T-SQL and stored procedures</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Traditionally, integration of data science solutions has meant extensive recoding to support performance and integration.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>SQL Server Machine Learning Services simplifies this task because R and Python code can be run in SQL Server and called using stored procedures.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>For more information about the mechanics of embedding code in stored procedures, see:</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Create and run simple R scripts in SQL Server<ept id="p1">](../tutorials/quickstart-r-create-script.md)</ept></source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md)</ept></source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>A more comprehensive example of deploying R code into production by using stored procedures can be found at <bpt id="p1">[</bpt>Tutorial: R data analytics for SQL developers<ept id="p1">](../../advanced-analytics/tutorials/sqldev-in-database-r-for-sql-developers.md)</ept></source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Guidelines for optimizing R code for SQl</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Converting your R code in SQL is easier if some optimizations are done beforehand in the R or Python code.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>These include avoiding data types that cause problems, avoiding unnecessary data conversions, and rewriting the R code as a single function call that can be easily parameterized.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>For more information, see:</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>R libraries and data types<ept id="p1">](r-libraries-and-data-types.md)</ept></source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Converting R code for use in R Services<ept id="p1">](converting-r-code-for-use-in-sql-server.md)</ept></source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Use sqlrutils helper functions<ept id="p1">](ref-r-sqlrutils.md)</ept></source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Integrate R and Python with applications</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Because you can run R or Python from a stored procedure, you can execute scripts from any application that can send a T-SQL statement and handle the results.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>For example, you might retrain a model on a schedule by using the <bpt id="p1">[</bpt>Execute T-SQL task<ept id="p1">](https://docs.microsoft.com/sql/integration-services/control-flow/execute-t-sql-statement-task)</ept> in Integration Services, or by using another job scheduler that can run a stored procedure.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Scoring is an important task that can easily be automated, or started from external applications.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>You train the model beforehand, using R or Python or a stored procedure, and <bpt id="p1">[</bpt>save the model in binary format<ept id="p1">](../tutorials/walkthrough-build-and-save-the-model.md)</ept> to a table.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Then, the model can be loaded into a variable as part of a stored procedure call, using one of these options for scoring from T-SQL:</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>[Real-time scoring, optimized  for small batches</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Single-row scoring, for calling from an application</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Native scoring<ept id="p1">](../sql-native-scoring.md)</ept>, for fast batch prediction from SQL Server without calling R</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>This walkthrough provides examples of scoring using a stored procedure in both batch and single-row modes:</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>End to end data science walkthrough for R in SQL Server<ept id="p1">](../tutorials/walkthrough-data-science-end-to-end-walkthrough.md)</ept></source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>See these solution templates for examples of how to integrate scoring in an application:</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Retail forecasting<ept id="p1">](https://github.com/Microsoft/SQL-Server-R-Services-Samples/blob/master/RetailForecasting/Introduction.md)</ept></source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Fraud detection<ept id="p1">](https://github.com/Microsoft/r-server-fraud-detection)</ept></source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Customer clustering<ept id="p1">](https://github.com/Microsoft/sql-server-samples/tree/master/samples/features/r-services/getting-started/customer-clustering)</ept></source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Boost performance and scale</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Although the open-source R language has known limitations with regards to large data sets, the <bpt id="p1">[</bpt>RevoScaleR package APIs<ept id="p1">](ref-r-revoscaler.md)</ept> included with SQL Server Machine Learning Service can operate on large datasets and benefit from multi-threaded, multi-core, multi-process in-database computations.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>If your R solution uses complex aggregations or involves large datasets, you can leverage SQL Server's highly efficient in-memory aggregations and columnstore indexes, and let the R code handle the statistical computations and scoring.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>For more information about how to improve performance in SQL Server Machine Learning, see:</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Performance tuning for SQL Server R Services<ept id="p1">](../../advanced-analytics/r/sql-server-r-services-performance-tuning.md)</ept></source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Performance optimization tips and tricks<ept id="p1">](https://gallery.cortanaintelligence.com/Tutorial/SQL-Server-Optimization-Tips-and-Tricks-for-Analytics-Services)</ept></source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Adapt R code for other platforms or compute contexts</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>The same R code that you run against <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> data can be used against other data sources, such as Spark over HDFS, when you use the <bpt id="p1">[</bpt>standalone server option<ept id="p1">](../install/sql-machine-learning-standalone-windows-install.md)</ept> in SQL Server setup or when you install the non-SQL branded product, Microsoft Machine Learning Server (formerly known as <bpt id="p2">**</bpt>Microsoft R Server<ept id="p2">**</ept>):</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Machine Learning Server Documentation<ept id="p1">](https://docs.microsoft.com/r-server/)</ept></source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Explore R to RevoScaleR<ept id="p1">](https://docs.microsoft.com/r-server/r/tutorial-r-to-revoscaler)</ept></source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Write chunking algorithms<ept id="p1">](https://docs.microsoft.com/r-server/r/how-to-developer-write-chunking-algorithms)</ept></source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Computing with big data in R<ept id="p1">](https://docs.microsoft.com/r-server/r/tutorial-large-data-tips)</ept></source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Develop your own parallel algorithm<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revopemar/pemar)</ept></source>
+        </trans-unit></group></body></file></xliff>

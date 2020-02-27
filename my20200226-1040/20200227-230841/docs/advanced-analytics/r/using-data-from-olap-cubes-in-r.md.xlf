@@ -1,0 +1,177 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="using-data-from-olap-cubes-in-r.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c2da5cbf0fd3fbc5b8fe1105261fff98625d590e5.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">2da5cbf0fd3fbc5b8fe1105261fff98625d590e5</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\using-data-from-olap-cubes-in-r.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Using data from OLAP cubes in R</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>This article describes the olapR API, along with an overview of OLAP and MDX for R users who might be new to multidimensional cube databases.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Using data from OLAP cubes in R</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>olapR<ept id="p1">**</ept> package is an R package, provided by Microsoft for use with Machine Learning Server and SQL Server, that lets you run MDX queries to get data from OLAP cubes.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>With this package, you don't need to create linked servers or clean up flattened rowsets; you can get OLAP data directly from R.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>This article describes the API, along with an overview of OLAP and MDX for R users who might be new to multidimensional cube databases.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>An instance of Analysis Services can support either conventional multidimensional cubes, or tabular models, but an instance cannot support both types of models.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Therefore, before you try to build an MDX query against a cube, verify that the Analysis Services instance contains multidimensional models.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>What is an OLAP cube?</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>OLAP is short for Online Analytical Processing.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>OLAP solutions are widely used for capturing and storing critical business data over time.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>OLAP data is consumed for business analytics by a variety of tools, dashboards, and visualizations.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Online analytical processing<ept id="p1">](https://en.wikipedia.org/wiki/Online_analytical_processing)</ept>.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Microsoft provides <bpt id="p1">[</bpt>Analysis Services<ept id="p1">](https://docs.microsoft.com/sql/analysis-services/analysis-services)</ept>, which lets you design, deploy, and query OLAP data in the form of <bpt id="p2">_</bpt>cubes<ept id="p2">_</ept> or <bpt id="p3">_</bpt>tabular models<ept id="p3">_</ept>.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>A cube is a multi-dimensional database.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">_</bpt>Dimensions<ept id="p1">_</ept> are like facets of the data, or factors in R: you use dimensions to identify some particular subset of data that you want to summarize or analyze.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>For example, time is an important dimension, so much so that many OLAP solutions include multiple calendars defined by default, to use when slicing and summarizing data.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>For performance reasons, an OLAP database often calculates summaries (or <bpt id="p1">_</bpt>aggregations<ept id="p1">_</ept>) in advance, and then stores them for faster retrieval.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Summaries are based on  <bpt id="p1">*</bpt>measures<ept id="p1">*</ept>, which represent formulas that can be applied to numerical data.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>You use the dimensions to define a subset of data, and then compute the measure over that data.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>For example, you would use a measure to compute the total sales for a certain product line over multiple quarters minus taxes, to report the average shipping costs for a particular supplier, year-to-date cumulative wages paid, and so forth.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>MDX, short for multidimensional expressions, is the language used for querying cubes.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>An MDX query typically contains a data definition that includes one or more dimensions, and at least one measure, though MDX queries can get considerably more complex, and include rolling windows, cumulative averages, sums, ranks, or percentiles.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Here are some other terms that might be helpful when you start building MDX queries:</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Slicing<ept id="p1">*</ept> takes a subset of the cube by using values from a single dimension.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Dicing<ept id="p1">*</ept> creates a subcube by specifying a range of values on multiple dimensions.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Drill-down<ept id="p1">*</ept> navigates from a summary to details.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Drill-up<ept id="p1">*</ept> moves from details to a higher level of aggregation.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Roll-up<ept id="p1">*</ept> summarizes the data on a dimension.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Pivot<ept id="p1">*</ept> rotate the cube or the data selection.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>How to use olapR to create MDX queries</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>The following article provides detailed examples of the syntax for creating or executing queries against a cube:</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>How to create MDX queries using R<ept id="p1">](../../advanced-analytics/r/how-to-create-mdx-queries-using-olapr.md)</ept></source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>olapR API</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>olapR<ept id="p1">**</ept> package supports two methods of creating MDX queries:</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Use the MDX builder.<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Use the R functions in the package to generate a simple MDX query, by choosing a cube, and then setting axes and slicers.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>This is an easy way to build a valid MDX query if you do not have access to traditional OLAP tools, or don't have deep knowledge of the MDX language.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Not all MDX queries can be created by using this method, because MDX can be complex.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>However, this API supports most of the most common and useful operations, including slice, dice, drilldown, rollup, and pivot in N dimensions.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Copy-paste well-formed MDX.<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Manually create and then paste in any MDX query.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>This option is the best if you have existing MDX queries that you want to reuse, or if the query you want to build is too complex for <bpt id="p1">**</bpt>olapR<ept id="p1">**</ept> to handle.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>After building your MDX using any client utility, such as SSMS or Excel, save the query string.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Provide this MDX string as an argument to the <bpt id="p1">*</bpt>SSAS query handler<ept id="p1">*</ept> in the <bpt id="p2">**</bpt>olapR<ept id="p2">**</ept> package.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>The provider sends the query to the specified Analysis Services server, and passes back the results to R.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>For examples of how to build an MDX query or run an existing MDX query, see <bpt id="p1">[</bpt>How to create MDX queries using R<ept id="p1">](../../advanced-analytics/r/how-to-create-mdx-queries-using-olapr.md)</ept>.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Known issues</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>This section lists some known issues and common questions about  the <bpt id="p1">**</bpt>olapR<ept id="p1">**</ept> package.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Tabular model support</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>If you connect to an instance of Analysis Services that contains a tabular model, the <ph id="ph1">`explore`</ph> function reports success with a return value of TRUE.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>However, tabular model objects are different from multidimensional objects, and the structure of a multidimensional database is different from that of a tabular model.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Although DAX (Data analysis Expressions) is the language typically used with tabular models, you can design valid MDX queries against a tabular model, if you are already familiar with MDX.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>You cannot use the olapR constructors to build valid MDX queries against a tabular model.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>However, MDX queries are an inefficient way to retrieve data from a tabular model.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>If you need to get data from a tabular model for use in R, consider these methods instead:</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Enable DirectQuery on the model and add the server as a linked server in SQL Server.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>If the tabular model was built on a relational data mart, obtain the data directly from the source.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>How to determine whether an instance contains tabular or multidimensional models</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>A single Analysis Services instance can contain only one type of model, though it can contain multiple models.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>The reason is that there are fundamental differences between tabular models and multidimensional models that control the way data is stored and processed.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>For example, tabular models are stored in memory and leverage columnstore indexes to perform very fast calculations.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>In multidimensional models, data is stored on disk and aggregations are defined in advance and retrieved by using MDX queries.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>If you connect to Analysis Services using a client such as SQL Server Management Studio, you can tell at a glance which model type is supported, by looking at the icon for the database.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>You can also view and query the server properties to determine which type of model the instance supports.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>Server mode<ept id="p1">**</ept> property supports two values: <bpt id="p2">_</bpt>multidimensional<ept id="p2">_</ept> or <bpt id="p3">_</bpt>tabular<ept id="p3">_</ept>.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>See the following article for general information about the two types of models:</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Comparing multidimensional and tabular models<ept id="p1">](https://docs.microsoft.com/sql/analysis-services/comparing-tabular-and-multidimensional-solutions-ssas)</ept></source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>See the following article for information about querying server properties:</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>OLE DB for OLAP Schema Rowsets<ept id="p1">](https://docs.microsoft.com/bi-reference/schema-rowsets/ole-db-olap/ole-db-for-olap-schema-rowsets)</ept></source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>Writeback is not supported</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>It is not possible to write the results of custom R calculations back to the cube.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>In general, even when a cube is enabled for writeback, only limited operations are supported, and additional configuration might be required.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>We recommend that you use MDX for such operations.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Write-enabled dimensions<ept id="p1">](https://docs.microsoft.com/sql/analysis-services/multidimensional-models-olap-logical-dimension-objects/write-enabled-dimensions)</ept></source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Write-enabled partitions<ept id="p1">](https://docs.microsoft.com/sql/analysis-services/multidimensional-models-olap-logical-cube-objects/partitions-write-enabled-partitions)</ept></source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Set custom access to cell data<ept id="p1">](https://docs.microsoft.com/sql/analysis-services/multidimensional-models/grant-custom-access-to-cell-data-analysis-services)</ept></source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Long-running MDX queries block cube processing</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>Although the <bpt id="p1">**</bpt>olapR<ept id="p1">**</ept> package performs only read operations, long-running MDX queries can create locks that prevent the cube from being processed.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>Always test your MDX queries in advance so that you know how much data should be returned.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>If you try to connect to a cube that is locked, you might get an error that the SQL Server data warehouse cannot be reached.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>Suggested resolutions include enabling remote connections, checking the server or instance name, and so forth; however, consider the possibility of a prior open connection.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>An SSAS administrator can prevent locking issues by identifying and terminating open sessions.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>A timeout property can also be applied to MDX queries at the server level to force termination of all long-running queries.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>Resources</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>If you are new to OLAP or to MDX queries, see these Wikipedia articles:</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>OLAP cubes<ept id="p1">](https://en.wikipedia.org/wiki/OLAP_cube)</ept></source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>MDX queries<ept id="p1">](https://en.wikipedia.org/wiki/MultiDimensional_eXpressions)</ept></source>
+        </trans-unit></group></body></file></xliff>

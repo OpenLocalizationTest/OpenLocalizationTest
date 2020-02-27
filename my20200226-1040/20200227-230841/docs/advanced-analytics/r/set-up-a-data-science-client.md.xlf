@@ -1,0 +1,263 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="set-up-a-data-science-client.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c0a31afef0924e4eda2b2eb9fbe5d27f7f4ab9f51.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">0a31afef0924e4eda2b2eb9fbe5d27f7f4ab9f51</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\set-up-a-data-science-client.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Set up an R data science client</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Install local R libraries and tools on a development workstation for remote connections to SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Set up a data science client for R development on SQL Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>R integration is available in SQL Server 2016 or later when you include the R language option in an <bpt id="p1">[</bpt>SQL Server 2016 R Services<ept id="p1">](../install/sql-r-services-windows-install.md)</ept> or <bpt id="p2">[</bpt>SQL Server Machine Learning Services (In-Database)<ept id="p2">](../install/sql-machine-learning-services-windows-install.md)</ept> installation.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>To develop and deploy R solutions for SQL Server, install <bpt id="p1">[</bpt>Microsoft R Client<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-client/what-is-microsoft-r-client)</ept> on your development workstation to get <bpt id="p2">[</bpt>RevoScaleR<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept> and other R libraries.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>The RevoScaleR library, which is also required on the remote SQL Server instance, coordinates computing requests between both systems.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>In this article, learn how to configure an R client development workstation so that you can interact with a remote SQL Server enabled for machine learning and R integration.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>After completing the steps in this article, you will have the same R libraries as those on SQL Server.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>You will also know how to push computations from a local R session to a remote R session on SQL Server.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>Client-server components<ept id="p1">](media/sqlmls-r-client-revo.png "|::ref1::|")</ept></source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>To validate the installation, you can use built-in <bpt id="p1">**</bpt>RGUI<ept id="p1">**</ept> tool as described in this article, or <bpt id="p2">[</bpt>link the libraries<ept id="p2">](#install-ide)</ept> to RStudio or any another IDE that you normally use.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>An alternative to client library installation is using a <bpt id="p1">[</bpt>standalone server<ept id="p1">](../install/sql-machine-learning-standalone-windows-install.md)</ept> as a rich client, which some customers prefer for deeper scenario work.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>A standalone server is fully decoupled from SQL Server, but because it has the same R libraries, you can use it as a client for SQL Server in-database analytics.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>You can also use it for non-SQL-related work, including the ability to import and model data from other data platforms.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>If you install a standalone server, you can find the R executable at this location: <ph id="ph1">`C:\Program Files\Microsoft SQL Server\140\R_SERVER`</ph>.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>To validate your installation, <bpt id="p1">[</bpt>open an R console app<ept id="p1">](#R-tools)</ept> to run commands using the R.exe at that location.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Commonly used tools</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Whether you are an R developer new to SQL, or a SQL developer new to R and in-database analytics, you will need both an R development tool and a T-SQL query editor such as <bpt id="p1">[</bpt>SQL Server Management Studio (SSMS)<ept id="p1">](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)</ept> to exercise all of the capabilities of in-database analytics.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>For simple R development scenarios, you can use the RGUI executable, bundled in the base R distribution in MRO and SQL Server.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>This article explains how to use RGUI for both local and remote R sessions.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>For improved productivity, you should use a full-featured IDE such as <bpt id="p1">[</bpt>RStudio or Visual Studio<ept id="p1">](#install-ide)</ept>.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>SSMS is a separate download, useful for creating and running stored procedures on SQL Server, including those containing R code.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Almost any R code that you write in a development environment can be embedded in a stored procedure.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>You can step through other tutorials to learn about <bpt id="p1">[</bpt>SSMS and embedded R<ept id="p1">](../tutorials/sqldev-in-database-r-for-sql-developers.md)</ept>.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>1 - Install R packages</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Microsoft's R packages are available in multiple products and services.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>On a local workstation, we recommend installing Microsoft R Client.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>R Client provides <bpt id="p1">[</bpt>RevoScaleR<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept>, <bpt id="p2">[</bpt>MicrosoftML<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/microsoftml-package)</ept>, <bpt id="p3">[</bpt>SQLRUtils<ept id="p3">](https://docs.microsoft.com/machine-learning-server/r-reference/sqlrutils/sqlrutils)</ept>, and other R packages.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Download Microsoft R Client<ept id="p1">](https://aka.ms/rclient/download)</ept>.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>In the installation wizard, accept or change default installation path, accept or change the components list, and accept the Microsoft R Client license terms.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>When installation is finished, a welcome screen introduces you to the product and documentation.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Create an MKL_CBWR system environment variable to ensure consistent output on Intel Math Kernel Library (MKL) calculations.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>In Control Panel, click <bpt id="p1">**</bpt>System and Security<ept id="p1">**</ept><ph id="ph1"> &gt; </ph><bpt id="p2">**</bpt>System<ept id="p2">**</ept><ph id="ph2"> &gt; </ph><bpt id="p3">**</bpt>Advanced System Settings<ept id="p3">**</ept><ph id="ph3"> &gt; </ph><bpt id="p4">**</bpt>Environment Variables<ept id="p4">**</ept>.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Create a new System variable named <bpt id="p1">**</bpt>MKL_CBWR<ept id="p1">**</ept>, with a value set to <bpt id="p2">**</bpt>AUTO<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>2 - Locate executables</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Locate and list the contents of the installation folder to confirm that R.exe, RGUI, and other packages are installed.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>In File Explorer, open the C:\Program Files\Microsoft\R Client\R_SERVER\bin folder to confirm the location of R.exe.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Open the x64 subfolder to confirm <bpt id="p1">**</bpt>RGUI<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>You will use this tool in the next step.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Open C:\Program Files\Microsoft\R Client\R_SERVER\library to review the list of packages installed with R Client, including RevoScaleR, MicrosoftML, and others.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>3 - Start RGUI</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>When you install R with SQL Server, you get the same R tools that are standard to any base installation of R, such as RGui, Rterm, and so forth.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>These tools are lightweight, useful for checking package and library information, running ad hoc commands or script, or stepping through tutorials.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>You can use these tools to get R version information and confirm connectivity.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Open C:\Program Files\Microsoft\R Client\R_SERVER\bin\x64 and double-click <bpt id="p1">**</bpt>RGui<ept id="p1">**</ept> to start an R session with an R command prompt.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>When you start an R session from a Microsoft program folder, several packages, including RevoScaleR, load automatically.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Enter <ph id="ph1">`print(Revo.version)`</ph> at the command prompt to return RevoScaleR package version information.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>You should have version 9.2.1 or 9.3.0 for RevoScaleR.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Enter <bpt id="p1">**</bpt>search()<ept id="p1">**</ept> at the R prompt for a list of installed packages.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>Version information when loading R<ept id="p1">](../install/media/rclient-rgui-r-prompt.png "|::ref2::|")</ept></source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>4 - Get SQL permissions</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>In R Client, R processing is capped at two threads and in-memory data.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>For scalable processing using multiple cores and large data sets, you can shift execution (referred to as <bpt id="p1">*</bpt>compute context<ept id="p1">*</ept>) to the data sets and computational power of a remote SQL Server instance.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>This is the recommended approach for client integration with a production SQL Server instance, and you will need permissions and connection information to make it work.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>To connect to an instance of SQL Server to run scripts and upload data, you must have a valid login on the database server.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>You can use either a SQL login or integrated Windows authentication.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>We generally recommend that you use Windows integrated authentication, but using the SQL login is simpler for some scenarios, particularly when your script contains connection strings to external data.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>At a minimum, the account used to run code must have permission to read from the databases you are working with, plus the special permission EXECUTE ANY EXTERNAL SCRIPT.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Most developers also require permissions to create stored procedures, and to write data into tables containing training data or scored data.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>Ask the database administrator to <bpt id="p1">[</bpt>configure the following permissions for your account<ept id="p1">](../security/user-permission.md)</ept>, in the database where you use R:</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>EXECUTE ANY EXTERNAL SCRIPT<ept id="p1">**</ept> to run R script on the server.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>db_datareader<ept id="p1">**</ept> privileges to run the queries used for training the model.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>db_datawriter<ept id="p1">**</ept> to write training data or scored data.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>db_owner<ept id="p1">**</ept> to create objects such as stored procedures, tables, functions.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>You also need <bpt id="p1">**</bpt>db_owner<ept id="p1">**</ept> to create sample and test databases.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>If your code requires packages that are not installed by default with SQL Server, arrange with the database administrator to have the packages installed with the instance.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>SQL Server is a secured environment and there are restrictions on where packages can be installed.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Install new R packages on SQL Server<ept id="p1">](install-additional-r-packages-on-sql-server.md)</ept>.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>5 - Test connections</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>As a verification step, use <bpt id="p1">**</bpt>RGUI<ept id="p1">**</ept> and RevoScaleR to confirm connectivity to the remote server.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>SQL Server must be enabled for <bpt id="p1">[</bpt>remote connections<ept id="p1">](https://docs.microsoft.com/sql/database-engine/configure-windows/view-or-configure-remote-server-connection-options-sql-server)</ept> and you must have permissions, including a user login and a database to connect to.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>The following steps assume the demo database, <bpt id="p1">[</bpt>NYCTaxi_Sample<ept id="p1">](../tutorials/demo-data-nyctaxi-in-sql.md)</ept>, and Windows authentication.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>Open <bpt id="p1">**</bpt>RGUI<ept id="p1">**</ept> on the client workstation.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>For example, go to <ph id="ph1">`~\Program Files\Microsoft SQL Server\140\R_SERVER\bin\x64`</ph> and double-click <bpt id="p1">**</bpt>RGui.exe<ept id="p1">**</ept> to start it.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>RevoScaleR loads automatically.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Confirm RevoScaleR is operational by running this command: <ph id="ph1">`print(Revo.version)`</ph></source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>Enter demo script that executes on the remote server.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>You must modify the following sample script to include a valid name for a remote SQL Server instance.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>This session begins as a local session, but the <bpt id="p1">**</bpt>rxSummary<ept id="p1">**</ept> function executes on the remote SQL Server instance.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results:<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>This script connects to a database on the remote server, provides a query, creates a compute context <ph id="ph1">`cc`</ph> instruction for remote code execution, then provides the RevoScaleR function <bpt id="p1">**</bpt>rxSummary<ept id="p1">**</ept> to return a statistical summary of the query results.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>Get and set the compute context.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>Once you set a compute context, it remains in effect for the duration of the session.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>If you aren't sure whether computation is local or remote, run the following command to find out. Results that specify a connection string indicate a remote compute context.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>Return information about variables in the data source, including name and type.</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>Results include 23 variables.</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>Generate a scatter plot to explore whether there are dependencies between two variables.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>The following screenshot shows the input and scatter plot output.</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>Scatter plot in RGUI<ept id="p1">](media/rclient-setup-scatterplot.png "|::ref3::|")</ept></source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>6 - Link tools to R.exe</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>For sustained and serious development projects, you should install an integrated development environment (IDE).</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>SQL Server tools and the built-in R tools are not equipped for heavy R development.</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>Once you have working code, you can deploy it as a stored procedure for execution on SQL Server.</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>Point your IDE to the local R libraries: base R, RevoScaleR, and so forth.</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>Running workloads on a remote SQL Server occurs during script execution, when your script invokes a remote compute context on SQL Server, accessing data and operations on that server.</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>RStudio</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>When using <bpt id="p1">[</bpt>RStudio<ept id="p1">](https://www.rstudio.com/)</ept>, you can configure the environment to use the R libraries and executables that correspond to those on a remote SQL Server.</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>Check R package versions installed on SQL Server.</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Get R package information<ept id="p1">](../package-management/r-package-information.md)</ept>.</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>Install Microsoft R Client or one of the standalone server options to add RevoScaleR and other R packages, including the base R distribution used by your SQL Server instance.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>Choose a version at the same level or lower (packages are backward compatible) that provides the same package versions as on the server.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>For version information, see the version map in this article: <bpt id="p1">[</bpt>Upgrade R and Python components<ept id="p1">](../install/upgrade-r-and-python.md)</ept>.</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>In RStudio, <bpt id="p1">[</bpt>update your R path<ept id="p1">](https://support.rstudio.com/hc/articles/200486138-Using-Different-Versions-of-R)</ept> to point to the R environment providing RevoScaleR, Microsoft R Open, and other Microsoft packages.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>For an R Client installation, look for C:\Program Files\Microsoft\R Client\R_SERVER\bin\x64</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>For a standalone server, look for C:\Program Files\Microsoft SQL Server\140\R_SERVER\Library or C:\Program Files\Microsoft SQL Server\130\R_SERVER\Library</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>Close and then open RStudio.</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>When you reopen RStudio, the R executable from R Client (or standalone server) is the default R engine.</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>R Tools for Visual Studio (RTVS)</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>If you don't already have a preferred IDE for R, we recommend <bpt id="p1">**</bpt>R Tools for Visual Studio<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Download R Tools for Visual Studio (RTVS)<ept id="p1">](https://marketplace.visualstudio.com/items?itemName=MikhailArkhipov007.RTVS2019)</ept></source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Installation instructions<ept id="p1">](https://docs.microsoft.com/visualstudio/rtvs/installing-r-tools-for-visual-studio)</ept> - RTVS is available in several versions of Visual Studio.</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Get started with R Tools for Visual Studio<ept id="p1">](https://docs.microsoft.com/visualstudio/rtvs/getting-started-with-r)</ept></source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>Connect to SQL Server from RTVS</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>This example uses Visual Studio 2017 Community Edition, with the data science workload installed.</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>From the <bpt id="p1">**</bpt>File<ept id="p1">**</ept> menu, select <bpt id="p2">**</bpt>New<ept id="p2">**</ept> and then select <bpt id="p3">**</bpt>Project<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>The left-hand pane contains a list of preinstalled templates.</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>Click <bpt id="p1">**</bpt>R<ept id="p1">**</ept>, and select <bpt id="p2">**</bpt>R Project<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>In the <bpt id="p1">**</bpt>Name<ept id="p1">**</ept> box, type <ph id="ph1">`dbtest`</ph> and click <bpt id="p2">**</bpt>OK<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>Visual Studio creates a new project folder and a default script file, <ph id="ph1">`Script.R`</ph>.</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>Type <ph id="ph1">`.libPaths()`</ph> on the first line of the script file, and then press CTRL + ENTER.</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>The current R library path should be displayed in the <bpt id="p1">**</bpt>R Interactive<ept id="p1">**</ept> window.</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>Click the <bpt id="p1">**</bpt>R Tools<ept id="p1">**</ept> menu and select <bpt id="p2">**</bpt>Windows<ept id="p2">**</ept> to see a list of other R-specific windows that you can display in your workspace.</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>View help on packages in the current library by pressing CTRL + 3.</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>See R variables in the <bpt id="p1">**</bpt>Variable Explorer<ept id="p1">**</ept>, by pressing CTRL + 8.</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>Two different tutorials include exercises so that you can practice switching the compute context from local to a remote SQL Server instance.</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Tutorial: Use RevoScaleR R functions with SQL Server data<ept id="p1">](../tutorials/deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)</ept></source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Data Science End-to-End Walkthrough<ept id="p1">](../tutorials/walkthrough-data-science-end-to-end-walkthrough.md)</ept></source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve" extradata="ref1">
+          <source>Local and remote R sessions and libraries</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve" extradata="ref2">
+          <source>Open an R prompt</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve" extradata="ref3">
+          <source>Scatter plot on NYC Taxi demo data</source>
+        </trans-unit></group></body></file></xliff>

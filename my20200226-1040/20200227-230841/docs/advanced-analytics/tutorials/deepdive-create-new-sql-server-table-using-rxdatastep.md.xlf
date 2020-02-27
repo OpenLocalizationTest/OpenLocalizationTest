@@ -1,0 +1,87 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="deepdive-create-new-sql-server-table-using-rxdatastep.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c99f693210b567523b74f851d1db68470cae2891d.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">99f693210b567523b74f851d1db68470cae2891d</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\deepdive-create-new-sql-server-table-using-rxdatastep.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Create table using rxDataStep</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>RevoScaleR tutorial 11: How to create a SQL Server table using the R language on SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Create new SQL Server table using rxDataStep (SQL Server and RevoScaleR tutorial)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This is tutorial 11 of the <bpt id="p1">[</bpt>RevoScaleR tutorial series<ept id="p1">](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)</ept> on how to use <bpt id="p2">[</bpt>RevoScaleR functions<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept> with SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In this tutorial, you'll learn how to move data between in-memory data frames, the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> context, and local files.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>This tutorial uses a different data set.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>The Airline Delays dataset is a public dataset that is widely used for machine learning experiments.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>The data files used in this example are available in the same directory as other product samples.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Load data from a local XDF file</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>In the first half of this tutorial series, you used the <bpt id="p1">**</bpt>RxTextData<ept id="p1">**</ept> function to import data into R from a text file, and then used the <bpt id="p2">**</bpt>RxDataStep<ept id="p2">**</ept> function to move the data into <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>This tutorial takes a different approach, and uses data from a file saved in the <bpt id="p1">[</bpt>XDF format<ept id="p1">](https://en.wikipedia.org/wiki/Extensible_Data_Format)</ept>.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>After doing some lightweight transformations on the data using the XDF file, you save the transformed data into a new <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> table.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>What is XDF?<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>The XDF format is an XML standard developed for high-dimensional data and is the native file format used by <bpt id="p1">[</bpt>Machine Learning Server<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r/concept-what-is-xdf)</ept>.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>It is a binary file format with an R interface that optimizes row and column processing and analysis.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>You can use it for moving data and to store subsets of data that are useful for analysis.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Set the compute context to the local workstation.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>DDL permissions are needed for this step.<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Define a new data source object using the <bpt id="p1">**</bpt>RxXdfData<ept id="p1">**</ept> function.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>To define an XDF data source, specify the path to the data file.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>You could specify the path to the file using a text variable.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>However, in this case, there's a handy shortcut, which is to use the <bpt id="p1">**</bpt>rxGetOption<ept id="p1">**</ept> function and get the file  (AirlineDemoSmall.xdf) from the sample data directory.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Call <bpt id="p1">[</bpt>rxGetVarInfo<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxgetvarinfoxdf)</ept> on the in-memory data to view a summary of the dataset.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Did you notice that you did not need to call any other functions to load the data into the XDF file, and could call <bpt id="p1">**</bpt>rxGetVarInfo<ept id="p1">**</ept> on the data immediately?</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>That's because XDF is the default interim storage method for <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>In addition to XDF files, the <bpt id="p1">**</bpt>rxGetVarInfo<ept id="p1">**</ept> function now supports multiple source types.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Move contents to SQL Server</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>With the XDF data source created in the local R session, you can now move this data into a database table, storing <bpt id="p1">*</bpt>DayOfWeek<ept id="p1">*</ept> as an integer with values from 1 to 7.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Define a SQL Server data source object, specifying a table to contain the data, and connection to the remote server.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>As a precaution, include a step that checks whether a table with the same name already exists, and delete the table if it exists.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>An existing table of the same names prevents a new one from being created.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Load the data into the table using <bpt id="p1">**</bpt>rxDataStep<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>This function moves data between two already defined data sources and can optionally transform the data en route.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>This is a fairly large table, so wait until you see a final status message like this one: <bpt id="p1">*</bpt>Rows Read: 200000, Total Rows Processed: 600000<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Load data from a SQL table</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Once data exists in the table, you can load it by using a simple SQL query.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Create a new SQL Server data source.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>The input is a query on the new table you just created and loaded with data.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>This definition adds factor levels for the <bpt id="p1">*</bpt>DayOfWeek<ept id="p1">*</ept> column, using the <bpt id="p2">*</bpt>colInfo<ept id="p2">*</ept> argument to <bpt id="p3">**</bpt>RxSqlServerData<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Call <bpt id="p1">**</bpt>rxSummary<ept id="p1">**</ept> once more to review a summary of the data in your query.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Perform chunking analysis using rxDataStep<ept id="p1">](../../advanced-analytics/tutorials/deepdive-perform-chunking-analysis-using-rxdatastep.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

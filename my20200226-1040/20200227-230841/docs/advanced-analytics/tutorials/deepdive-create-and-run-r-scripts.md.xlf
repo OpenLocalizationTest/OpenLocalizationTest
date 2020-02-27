@@ -1,0 +1,77 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="deepdive-create-and-run-r-scripts.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c43745602fc099f1b992eb1d76622ff3d7e6d0916.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">43745602fc099f1b992eb1d76622ff3d7e6d0916</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\deepdive-create-and-run-r-scripts.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Summary statistics in RevoScaleR</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>RevoScaleR tutorial 5: How to compute statistical summary statistics using the R language on SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Compute summary statistics in R (SQL Server and RevoScaleR tutorial)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This is tutorial 5 of the <bpt id="p1">[</bpt>RevoScaleR tutorial series<ept id="p1">](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)</ept> on how to use <bpt id="p2">[</bpt>RevoScaleR functions<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept> with SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This tutorial uses the established data sources and compute contexts created in previous tutorials to run high-powered R scripts.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>In this tutorial, you will use local and remote server compute contexts for the following tasks:</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Switch the compute context to SQL Server</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Obtain summary statistics on remote data objects</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Compute a local summary</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>If you completed the previous tutorials, you should have these remote compute contexts: sqlCompute and sqlComputeTrace.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Moving forward, you use will sqlCompute and the local compute context in subsequent tutorials.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Use an R IDE or <bpt id="p1">**</bpt>Rgui<ept id="p1">**</ept> to run the R script in this tutorial.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Compute summary statistics on remote data</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Before you can run any R code remotely, you need to specify the remote compute context.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>All subsequent computations take place on the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> computer specified in the <bpt id="p1">*</bpt>sqlCompute<ept id="p1">*</ept> parameter.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>A compute context remains active until you change it.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>However, any R scripts that <bpt id="p1">*</bpt>cannot<ept id="p1">*</ept> run in a remote server context will automatically run locally.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>To see how a compute context works, generate summary statistics on the sqlFraudDS data source on the remote SQL Server.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>This data source object was created in <bpt id="p1">[</bpt>tutorial two<ept id="p1">](deepdive-create-sql-server-data-objects-using-rxsqlserverdata.md)</ept> and represents the ccFraudSmall table in the RevoDeepDive database.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Switch the compute context to sqlCompute created in the previous tutorial:</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Call the <bpt id="p1">[</bpt>rxSummary<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxsummary)</ept> function and pass required arguments, such as the formula and the data source, and assign the results to the variable <ph id="ph1">`sumOut`</ph>.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>The R language provides many summary functions, but <bpt id="p1">**</bpt>rxSummary<ept id="p1">**</ept> in <bpt id="p2">**</bpt>RevoScaleR<ept id="p2">**</ept> supports execution on various remote compute contexts, including  <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>For information about similar functions, see <bpt id="p1">[</bpt>Data summaries using RevoScaleR<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r/how-to-revoscaler-data-summaries)</ept>.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Print the contents of sumOut  to the console.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>If you get an error, wait a few minutes for execution to finish before retrying the command.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Create a local summary</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Change the compute context to do all your work locally.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>When extracting data from SQL Server, you can often get better performance by increasing the number of rows extracted for each read, assuming the increased block size can be accommodated in memory.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Run the following command to increase the value for the <bpt id="p1">*</bpt>rowsPerRead<ept id="p1">*</ept> parameter on the data source.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Previously, the value of <bpt id="p1">*</bpt>rowsPerRead<ept id="p1">*</ept> was set to 5000.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Call <bpt id="p1">**</bpt>rxSummary<ept id="p1">**</ept> on the new data source.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>The actual results should be the same as when you run <bpt id="p1">**</bpt>rxSummary<ept id="p1">**</ept> in the context of the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> computer.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>However, the operation might be faster or slower.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Much depends on the connection to your database, because the data is being transferred to your local computer for analysis.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Switch back to the remote compute context for the next several tutorials.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Visualize SQL Server data using R<ept id="p1">](../../advanced-analytics/tutorials/deepdive-visualize-sql-server-data-using-r.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

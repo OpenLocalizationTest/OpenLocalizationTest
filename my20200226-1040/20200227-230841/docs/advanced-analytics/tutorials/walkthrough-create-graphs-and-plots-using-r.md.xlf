@@ -1,0 +1,117 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="walkthrough-create-graphs-and-plots-using-r.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c34ec0c2814dda7d2cf4bada10e5e53c05f8e08b9.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">34ec0c2814dda7d2cf4bada10e5e53c05f8e08b9</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\walkthrough-create-graphs-and-plots-using-r.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>R tutorial: Create graphs and plots</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Tutorial showing how to create graphs and plots using R language functions on SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Create graphs and plots using SQL and R (walkthrough)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>In this part of the walkthrough, you learn techniques for generating plots and maps using R with SQL Server data.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>You create a simple histogram and then develop a more complex map plot.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>This step assumes an ongoing R session based on previous steps in this walkthrough.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>It uses the connection strings and data source objects created in those steps.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>The following tools and packages are used to run the script.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Rgui.exe to run R commands</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Management Studio to run T-SQL</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>googMap</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>ggmap package</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>mapproj package</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Create a histogram</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Generate the first plot, using the <bpt id="p1">[</bpt>rxHistogram<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxdatasource)</ept> function.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>The rxHistogram function provides functionality similar to that in open-source R packages, but can run in a remote execution context.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>The image is returned in the R graphics device for your development environment.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>For example, in RStudio, click the <bpt id="p1">**</bpt>Plot<ept id="p1">**</ept> window.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>In <ph id="ph1">[!INCLUDE[rsql_rtvs](../../includes/rsql-rtvs-md.md)]</ph>, a separate graphics window is opened.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>using rxHistogram to plot fare amounts<ept id="p1">](media/rsql-e2e-rxhistogramresult.png "|::ref1::|")</ept></source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Does your graph look different?</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>That's because <bpt id="p1">_</bpt>inDataSource<ept id="p1">_</ept> uses only the top 1000 rows.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>The ordering of rows using TOP is non-deterministic in the absence of an ORDER BY clause, so it's expected that the data and the resulting graph might vary.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>This particular image was generated using about 10,000 rows of data.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>We recommend that you experiment with different numbers of rows to get different graphs, and note how long it takes to return the results in your environment.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Create a map plot</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Typically, database servers block Internet access.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>This can be inconvenient when using R packages that need to download maps or other images to generate plots.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>However, there is a workaround that you might find useful when developing your own applications.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Basically, you generate the map representation on the client, and then overlay on the map the points that are stored as attributes in the SQL Server table.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Define the function that creates the R plot object.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>The custom function <bpt id="p1">*</bpt>mapPlot<ept id="p1">*</ept> creates a scatter plot that uses the taxi pickup locations, and plots the number of rides that started from each location.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>It uses the <bpt id="p1">**</bpt>ggplot2<ept id="p1">**</ept> and  <bpt id="p2">**</bpt>ggmap<ept id="p2">**</ept> packages, which should already be <bpt id="p3">[</bpt>installed and loaded<ept id="p3">](walkthrough-data-science-end-to-end-walkthrough.md#add-packages)</ept>.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">*</bpt>mapPlot<ept id="p1">*</ept> function takes two arguments: an existing data object, which you defined earlier using RxSqlServerData, and the map representation passed from the client.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>In the line beginning with the <bpt id="p1">*</bpt>ds<ept id="p1">*</ept> variable, rxImport is used to load into memory data from the previously created data source, <bpt id="p2">*</bpt>inDataSource<ept id="p2">*</ept>.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>(That data source contains only 1000 rows; if you want to create a map with more data points, you can substitute a different data source.)</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Whenever you use open-source R functions, data must be loaded into data frames in local memory.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>However, by calling the <bpt id="p1">[</bpt>rxImport<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rximport)</ept> function, you can run in the memory of the remote compute context.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Change the compute context to local, and load the libraries required for creating the maps.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`gc`</ph> variable stores a set of coordinates for Times Square, NY.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>The line beginning with <ph id="ph1">`googmap`</ph> generates a map with the specified coordinates at the center.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Switch to the SQL Server compute context, and render the results, by wrapping the plot function in <bpt id="p1">[</bpt>rxExec<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxexec)</ept> as shown here.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>The rxExec function is part of the <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> package, and supports execution of arbitrary R functions in a remote compute context.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>The map data in <ph id="ph1">`googMap`</ph> is passed as an argument to the remotely executed function <bpt id="p1">*</bpt>mapPlot<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Because the maps were generated in your local environment, they must be passed to the function in order to create the plot in the context of SQL Server.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>When the line beginning with <ph id="ph1">`plot`</ph> runs, the rendered data is serialized back to the local R environment so that you can view it in your R client.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>If you are using SQL Server in an Azure virtual machine, you might get an error at this point.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>An error occurs when the default firewall rule in Azure blocks network access by R code.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>For details on how to fix this error, see <bpt id="p1">[</bpt>Installing Machine Learning (R) Services on an Azure VM<ept id="p1">](../install/sql-machine-learning-azure-virtual-machine.md)</ept>.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>The following image shows the output plot.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>The taxi pickup locations are added to the map as red dots.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Your image might look different, depending how many locations are in the data source you used.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>plotting taxi rides using a custom R function<ept id="p1">](media/rsql-e2e-mapplot.png "|::ref2::|")</ept></source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Create data features using R and SQL<ept id="p1">](walkthrough-create-data-features.md)</ept></source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve" extradata="ref1">
+          <source>using rxHistogram to plot fare amounts</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve" extradata="ref2">
+          <source>plotting taxi rides using a custom R function</source>
+        </trans-unit></group></body></file></xliff>

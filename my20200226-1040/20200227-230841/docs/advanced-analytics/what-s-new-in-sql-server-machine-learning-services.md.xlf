@@ -1,0 +1,195 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="what-s-new-in-sql-server-machine-learning-services.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c3e21dfe719f40165e0e68e7bf6242c526c298eb4.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">3e21dfe719f40165e0e68e7bf6242c526c298eb4</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\what-s-new-in-sql-server-machine-learning-services.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>What's new in SQL Server Machine Learning Services?</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>New feature announcements for each release of SQL Server Machine Learning Services and SQL Server 2016 R Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>What's new in SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Machine learning capabilities are added to SQL Server in each release as we continue to expand, extend, and deepen the integration between the data platform, advanced analytics, and data science.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-ver15||&gt;=sql-server-linux-ver15||=sqlallproducts-allversions">
+          <source>New in SQL Server 2019</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-ver15||&gt;=sql-server-linux-ver15||=sqlallproducts-allversions">
+          <source>This release adds the top-requested features for Python and R machine learning operations in SQL Server.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-ver15||&gt;=sql-server-linux-ver15||=sqlallproducts-allversions">
+          <source>For more information about all of the features in this release, see <bpt id="p1">[</bpt>What's New in SQL Server 2019<ept id="p1">](../sql-server/what-s-new-in-sql-server-ver15.md)</ept> and <bpt id="p2">[</bpt>Release Notes for SQL Server 2019<ept id="p2">](../sql-server/sql-server-ver15-release-notes.md)</ept>.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-ver15||&gt;=sql-server-linux-ver15||=sqlallproducts-allversions">
+          <source>For the what's new documentation on Java in SQL Server 2019, see the <bpt id="p1">[</bpt>What's new in SQL Server Language Extensions?<ept id="p1">](https://docs.microsoft.com/sql/language-extensions/language-extensions-whats-new)</ept></source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-ver15||&gt;=sql-server-linux-ver15||=sqlallproducts-allversions">
+          <source>Below are the new features for SQL Server Machine Learning Services:</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-ver15||&gt;=sql-server-linux-ver15||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>Loopback connection to SQL Server from a Python or R script<ept id="p1">](connect/loopback-connection.md)</ept> is now supported for both Windows and Linux.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-ver15||&gt;=sql-server-linux-ver15||=sqlallproducts-allversions">
+          <source>On Windows and Linux, support for <bpt id="p1">[</bpt>CREATE EXTERNAL LIBRARY (Transact-SQL)<ept id="p1">](../t-sql/statements/create-external-library-transact-sql.md)</ept> for R and Python.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-ver15||&gt;=sql-server-linux-ver15||=sqlallproducts-allversions">
+          <source>Linux platform support for R and Python machine learning.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-ver15||&gt;=sql-server-linux-ver15||=sqlallproducts-allversions">
+          <source>Get started with <bpt id="p1">[</bpt>Install SQL Server Machine Learning Services on Linux<ept id="p1">](../linux/sql-server-linux-setup-machine-learning.md)</ept>.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-ver15||&gt;=sql-server-linux-ver15||=sqlallproducts-allversions">
+          <source>The <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql)</ept> introduces two new parameters that enable you to easily generate multiple models from partitioned data.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-ver15||&gt;=sql-server-linux-ver15||=sqlallproducts-allversions">
+          <source>Learn more in this tutorial, <bpt id="p1">[</bpt>Create partition-based models in R<ept id="p1">](tutorials/r-tutorial-create-models-per-partition.md)</ept>.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-ver15||&gt;=sql-server-linux-ver15||=sqlallproducts-allversions">
+          <source>Failover cluster support is now supported on Windows and Linux, assuming SQL Server Launchpad service is started on all nodes.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-ver15||&gt;=sql-server-linux-ver15||=sqlallproducts-allversions">
+          <source>For more information, see <bpt id="p1">[</bpt>SQL Server failover cluster installation<ept id="p1">](../sql-server/failover-clusters/install/sql-server-failover-cluster-installation.md)</ept>.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>New in SQL Server 2017</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>This release adds <bpt id="p1">[</bpt>Python support and industry-leading machine learning algorithms<ept id="p1">](https://cloudblogs.microsoft.com/sqlserver/2017/04/19/python-in-sql-server-2017-enhanced-in-database-machine-learning/)</ept>.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Renamed to reflect the new scope, SQL Server 2017 marks the introduction of <bpt id="p1">[</bpt>SQL Server Machine Learning Services (In-Database)<ept id="p1">](what-is-sql-server-machine-learning.md)</ept>, with language support for both Python and R.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>For feature announcements all-up, see <bpt id="p1">[</bpt>What's New in SQL Server 2017<ept id="p1">](../sql-server/what-s-new-in-sql-server-2017.md)</ept>.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>R enhancements</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>The R component of SQL Server Machine Learning Services is the next generation of SQL Server 2016 R Services, with updated versions of base R, RevoScaler, and other packages.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>New capabilities for R include <bpt id="p1">[</bpt><bpt id="p2">**</bpt>package management<ept id="p2">**</ept><ept id="p1">](r/install-additional-r-packages-on-sql-server.md)</ept>, with the following highlights:</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Database roles help DBAs manage packages and assign permissions for package installation.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>CREATE EXTERNAL LIBRARY<ept id="p1">](https://docs.microsoft.com/sql/t-sql/statements/create-external-library-transact-sql)</ept> helps DBAs manage packages in the familiar T-SQL language.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>RevoScaleR<ept id="p1">](r/use-revoscaler-to-manage-r-packages.md)</ept> functions help install, remove, or list packages owned by users.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>For more information, see <bpt id="p1">[</bpt>How to use RevoScaleR functions to find or install R packages on SQL Server<ept id="p1">](r/use-revoscaler-to-manage-r-packages.md)</ept>.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>R libraries</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Package</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Description</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>MicrosoftML<ept id="p2">**</ept><ept id="p1">](r/ref-r-microsoftml.md)</ept></source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>In this release, MicrosoftML is included in a default R installation, eliminating the upgrade step required in the previous SQL Server 2016 R Services.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>MicrosoftML provides state-of-the-art machine learning algorithms and data transformations that can be scaled or run in remote compute contexts.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Algorithms include customizable deep neural networks, fast decision trees and decision forests, linear regression, and logistic regression.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Python integration for in-database analytics</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Python is a language that offers great flexibility and power for a variety of machine learning tasks.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Open-source libraries for Python include several platforms for customizable neural networks, as well as popular libraries for natural language processing.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Because Python is integrated with the database engine, you can keep analytics close to the data and eliminate the costs and security risks associated with data movement.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>You can deploy machine learning solutions based on Python using tools like Visual Studio.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Your production applications can get predictions, models, or visuals from the Python 3.5 runtime using SQL Server data access methods.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>T-SQL and Python integration is supported through the <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql)</ept> system stored procedure.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>You can call any Python code using this stored procedure.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Code runs in a secure, dual architecture that enables enterprise-grade deployment of Python models and scripts, callable from an application using a simple stored procedure.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Additional performance gains are achieved by streaming data from SQL to Python processes and MPI ring parallelization.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>You can use the T-SQL <bpt id="p1">[</bpt>PREDICT<ept id="p1">](../t-sql/queries/predict-transact-sql.md)</ept> function to perform <bpt id="p2">[</bpt>native scoring<ept id="p2">](sql-native-scoring.md)</ept> on a pre-trained model that has been previously saved in the required binary format.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Python libraries</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Package</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Description</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>revoscalepy<ept id="p2">**</ept><ept id="p1">](python/ref-py-revoscalepy.md)</ept></source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Python-equivalent of RevoScaleR.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>You can create Python models for linear and logistic regressions, decision trees, boosted trees, and random forests, all parallelizable, and capable of being run in remote compute contexts.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>This package supports use of multiple data sources and remote compute contexts.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>The data scientist or developer can execute Python code on a remote SQL Server, to explore data or build models without moving data.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>microsoftml<ept id="p2">**</ept><ept id="p1">](python/ref-py-microsoftml.md)</ept></source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Python-equivalent of the MicrosoftML R package.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Pre-trained models</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>Pre-trained models<ept id="p2">**</ept><ept id="p1">](install/sql-pretrained-models-install.md)</ept> are available for both Python and R. Use these models for image recognition and positive-negative sentiment analysis, to generate predictions on your own data.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Standalone Server as a shared feature in SQL Server Setup</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>This release also adds <bpt id="p1">[</bpt>SQL Server Machine Learning Server (Standalone)<ept id="p1">](r/r-server-standalone.md)</ept>, a fully independent data science server, supporting statistical and predictive analytics in R and Python.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>As with R Services, this server is the next version of SQL Server 2016 R Server (Standalone).</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>With the standalone server, you can distribute and scale R or Python solutions with no dependencies on SQL Server.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>New in SQL Server 2016</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>This release introduced machine learning capabilities into SQL Server through <bpt id="p1">**</bpt>SQL Server 2016 R Services<ept id="p1">**</ept>, an in-database analytics engine for processing R script on resident data within a database engine instance.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Additionally, <bpt id="p1">**</bpt>SQL Server 2016 R Server (Standalone)<ept id="p1">**</ept> was released as a way to install R Server on a Windows server.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Initially, SQL Server Setup provided the only way to install R Server for Windows.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>In later releases, developers and data scientists who wanted R Server on Windows could use another standalone installer to achieve the same goal.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>The standalone server in SQL Server is functionally equivalent to the standalone server product, <bpt id="p1">[</bpt>Microsoft R Server for Windows<ept id="p1">](https://docs.microsoft.com/machine-learning-server/install/r-server-install-windows)</ept>.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>For feature announcements all-up, see <bpt id="p1">[</bpt>What's New in SQL Server 2016<ept id="p1">](../sql-server/what-s-new-in-sql-server-2016.md)</ept>.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Release</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Feature update</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>CU additions</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>Real-time scoring<ept id="p2">**</ept><ept id="p1">](real-time-scoring.md)</ept> relies on native C++ libraries to read a model stored in an optimized binary format, and then generate predictions without having to call the R runtime.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>This makes scoring operations much faster.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>With real-time scoring, you can run a stored procedure or perform real-time scoring from R code.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Real-time scoring is also available for SQL Server 2016, if the instance is upgraded to the latest release of <ph id="ph1">[!INCLUDE[rsql-platform-md](../includes/rsql-platform-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Initial release</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>R integration for in-database analytics<ept id="p2">**</ept><ept id="p1">](r/sql-server-r-services.md)</ept>.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>R packages for calling R functions in T-SQL, and vice versa.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>RevoScaleR functions provide R analytics at scale by chunking data into component parts, coordinating and managing distributed processing, and aggregating results.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>In SQL Server 2016 R Services (In-Database), the RevoScaleR engine is integrated with a database engine instance, brining data and analytics together in the same processing context.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>T-SQL and R integration through <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql)</ept>.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>You can call any R code using this stored procedure.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>This secure infrastructure enables enterprise-grade deployment of Rn models and scripts that can be called from an application using a simple stored procedure.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Additional performance gains are achieved by streaming data from SQL to R processes and MPI ring parallelization.</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>You can use the T-SQL <bpt id="p1">[</bpt>PREDICT<ept id="p1">](../t-sql/queries/predict-transact-sql.md)</ept> function to perform <bpt id="p2">[</bpt>native scoring<ept id="p2">](sql-native-scoring.md)</ept> on a pre-trained model that has been previously saved in the required binary format.</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Linux support</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>SQL Server 2019 adds Linux support for R and Python when you install the machine learning packages with a database engine instance.</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>For more information, see <bpt id="p1">[</bpt>Install SQL Server Machine Learning Services on Linux<ept id="p1">](../linux/sql-server-linux-setup-machine-learning.md)</ept>.</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>On Linux, SQL Server 2017 does not have R or Python integration, but you can use <bpt id="p1">[</bpt>Native scoring<ept id="p1">](sql-native-scoring.md)</ept> on Linux because that functionality is available through T-SQL <bpt id="p2">[</bpt>PREDICT<ept id="p2">](../t-sql/queries/predict-transact-sql.md)</ept>, which runs on Linux.</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Native scoring enables high-performance scoring from a pretrained model, without calling or even requiring an R runtime.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>Machine Learning Services in Azure SQL Database</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>Machine Learning Services in Azure SQL Database is in public preview.</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Azure SQL Database Machine Learning Services (preview)<ept id="p1">](https://docs.microsoft.com/azure/sql-database/sql-database-machine-learning-services-overview)</ept>.</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Install SQL Server Machine Learning Services (In-Database)<ept id="p1">](install/sql-machine-learning-services-windows-install.md)</ept></source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Machine learning tutorials and samples<ept id="p1">](tutorials/machine-learning-services-tutorials.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

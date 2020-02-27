@@ -1,0 +1,65 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="deepdive-transform-data-using-r.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c3e8c28548ba4fa5f5ad661e3b7b0872ad166b812.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">3e8c28548ba4fa5f5ad661e3b7b0872ad166b812</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\deepdive-transform-data-using-r.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Transform data using RevoScaleR</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>RevoScaleR tutorial 9: How to transform data using the R language on SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Transform data using R (SQL Server and RevoScaleR tutorial)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This is tutorial 9 of the <bpt id="p1">[</bpt>RevoScaleR tutorial series<ept id="p1">](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)</ept> on how to use <bpt id="p2">[</bpt>RevoScaleR functions<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept> with SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In this tutorial, you'll learn about the <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> functions for transforming data at various stages of your analysis.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Use <bpt id="p1">**</bpt>rxDataStep<ept id="p1">**</ept> to create and transform a data subset</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Use <bpt id="p1">**</bpt>rxImport<ept id="p1">**</ept> to transform in-transit data to or from an XDF file or an in-memory data frame during import</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Although not specifically for data movement, the functions <bpt id="p1">**</bpt>rxSummary<ept id="p1">**</ept>, <bpt id="p2">**</bpt>rxCube<ept id="p2">**</ept>, <bpt id="p3">**</bpt>rxLinMod<ept id="p3">**</ept>, and <bpt id="p4">**</bpt>rxLogit<ept id="p4">**</ept> all support data transformations.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Use rxDataStep to transform variables</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">[</bpt>rxDataStep<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxdatastep)</ept> function processes data one chunk at a time, reading from one data source and writing to another.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>You can specify the columns to transform, the transformations to load, and so forth.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>To make this example interesting, let's use a function from another R package to transform the data.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>boot<ept id="p1">**</ept> package is one of the "recommended" packages, meaning that <bpt id="p2">**</bpt>boot<ept id="p2">**</ept> is included with every distribution of R, but is not loaded automatically on start-up.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Therefore, the package should already be available on the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> instance configured for R integration.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>From the <bpt id="p1">**</bpt>boot<ept id="p1">**</ept> package, use the  function <bpt id="p2">**</bpt>inv.logit<ept id="p2">**</ept>, which computes the inverse of a logit.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>That is, the <bpt id="p1">**</bpt>inv.logit<ept id="p1">**</ept> function converts a logit back to a probability on the [0,1] scale.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Another way to  get predictions in this scale would be to set the <bpt id="p1">*</bpt>type<ept id="p1">*</ept> parameter to <bpt id="p2">**</bpt>response<ept id="p2">**</ept> in the original call to <bpt id="p3">**</bpt>rxPredict<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Start by creating a data source to hold the data destined for the table, <ph id="ph1">`ccScoreOutput`</ph>.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Add another data source to hold the data for the table <ph id="ph1">`ccScoreOutput2`</ph>.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>In the new table, store all the variables from the previous <ph id="ph1">`ccScoreOutput`</ph> table, plus the newly created variable.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Set the compute context to the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> instance.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Use the function <bpt id="p1">**</bpt>rxSqlServerTableExists<ept id="p1">**</ept> to check whether the output table <ph id="ph1">`ccScoreOutput2`</ph> already exists; and if so, use the function <bpt id="p2">**</bpt>rxSqlServerDropTable<ept id="p2">**</ept> to delete the table.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Call the <bpt id="p1">**</bpt>rxDataStep<ept id="p1">**</ept> function, and specify the desired transforms in a list.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>When you define the transformations that are applied to each column, you can also specify any additional R packages that are needed to perform the transformations.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>For more information about the types of transformations that you can perform, see <bpt id="p1">[</bpt>How to transform and subset data using RevoScaleR<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r/how-to-revoscaler-data-transform)</ept>.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Call <bpt id="p1">**</bpt>rxGetVarInfo<ept id="p1">**</ept> to view a summary of the variables in the new data set.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>The original logit scores are preserved, but a new column, <bpt id="p1">*</bpt>ccFraudProb<ept id="p1">*</ept>, has been added, in which the logit scores are represented as values between 0 and 1.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Notice that the factor variables have been written to the table <ph id="ph1">`ccScoreOutput2`</ph> as character data.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>To use them as factors in subsequent analyses, use the parameter <bpt id="p1">*</bpt>colInfo<ept id="p1">*</ept> to specify the levels.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Load data into memory using rxImport<ept id="p1">](../../advanced-analytics/tutorials/deepdive-load-data-into-memory-using-rximport.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

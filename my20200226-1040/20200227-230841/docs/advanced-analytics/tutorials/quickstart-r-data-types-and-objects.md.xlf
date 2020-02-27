@@ -1,0 +1,271 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="quickstart-r-data-types-and-objects.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13ca3f978865d2fdd643650a7c7308adb65d2c79fa7.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">a3f978865d2fdd643650a7c7308adb65d2c79fa7</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\quickstart-r-data-types-and-objects.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Quickstart: R data structures, data types, and objects</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>In this quickstart, you'll learn how to use data structures, data types, and objects when using R in SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>You'll learn about moving data between R and SQL Server, and the common issues that might occur.</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Quickstart: Data structures, data types, and objects using R in SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In this quickstart, you'll learn how to use data structures and data types when using R in SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>You'll learn about moving data between R and SQL Server, and the common issues that might occur.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Common issues to know up front include:</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Data types sometimes don't match</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Implicit conversions might take place</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Cast and convert operations are sometimes required</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>R and SQL use different data objects</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>This quickstart requires access to an instance of SQL Server with <bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../install/sql-machine-learning-services-windows-install.md)</ept> with the R language installed.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Your SQL Server instance can be in an Azure virtual machine or on-premises.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Just be aware that the external scripting feature is disabled by default, so you might need to <bpt id="p1">[</bpt>enable external scripting<ept id="p1">](../install/sql-machine-learning-services-windows-install.md#bkmk_enableFeature)</ept> and verify that <bpt id="p2">**</bpt>SQL Server Launchpad service<ept id="p2">**</ept> is running before you start.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>You also need a tool for running SQL queries that contain R scripts.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>You can run these scripts using any database management or query tool, as long as it can connect to a SQL Server instance, and run a T-SQL query or stored procedure.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>This quickstart uses <bpt id="p1">[</bpt>SQL Server Management Studio (SSMS)<ept id="p1">](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms)</ept>.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Always return a data frame</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>When your script returns results from R to SQL Server, it must return the data as a <bpt id="p1">**</bpt>data.frame<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Any other type of object that you generate in your script - whether that be a list, factor, vector, or binary data - must be converted to a data frame if you want to output it as part of the stored procedure results.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Fortunately, there are multiple R functions to support changing other objects to a data frame.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>You can even serialize a binary model and return it in a data frame, which you'll do later in this quickstart.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>First, let's experiment with some R basic R objects - vectors, matrices, and lists - and see how conversion to a data frame changes the output passed to SQL Server.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Compare these two "Hello World" scripts in R. The scripts look almost identical, but the first returns a single column of three values, whereas the second returns three columns with a single value each.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Example 1<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Example 2<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Identify schema and data types</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Why are the results so different?</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>The answer can usually be found by using the R <ph id="ph1">`str()`</ph> command.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Add the function <ph id="ph1">`str(object_name)`</ph> anywhere in your R script to have the data schema of the specified R object returned as an informational message.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>To view messages, see in the <bpt id="p1">**</bpt>Messages<ept id="p1">**</ept> pane of Visual Studio Code, or the <bpt id="p2">**</bpt>Messages<ept id="p2">**</ept> tab in SSMS.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>To figure out why Example 1 and Example 2 have such different results, insert the line <ph id="ph1">`str(OutputDataSet)`</ph> at the end of the <bpt id="p1">_</bpt><ph id="ph2">@script</ph><ept id="p1">_</ept> variable definition in each statement, like this:</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Example 1 with str function added<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Example 2 with str function added<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Now, review the text in <bpt id="p1">**</bpt>Messages<ept id="p1">**</ept> to see why the output is different.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results - Example 1<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results - Example 2<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>As you can see, a slight change in R syntax had a big effect on the schema of the results.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>We won't go into why, but the differences in R data types are explained in details in the <bpt id="p1">*</bpt>Data Structures<ept id="p1">*</ept> section in <bpt id="p2">[</bpt>"Advanced R" by Hadley Wickham<ept id="p2">](http://adv-r.had.co.nz)</ept>.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>For now, just be aware that you need to check the expected results when coercing R objects into data frames.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>You can also use R identity functions, such as <ph id="ph1">`is.matrix`</ph>, <ph id="ph2">`is.vector`</ph>, to return information about the internal data structure.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Implicit conversion of data objects</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Each R data object has its own rules for how values are handled when combined with other data objects if the two data objects have the same number of dimensions, or if any data object contains heterogeneous data types.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>First, create a small table of test data.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>For example, assume you run the following statement to perform matrix multiplication using R. You multiply a single-column matrix with the three values by an array with four values, and expect a 4x3 matrix as a result.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Under the covers, the column of three values is converted to a single-column matrix.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Because a matrix is just a special case of an array in R, the array <ph id="ph1">`y`</ph> is implicitly coerced to a single-column matrix to make the two arguments conform.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Col1</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Col2</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Col3</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Col4</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>12</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>13</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>14</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>15</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>120</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>130</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>140</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>150</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>1200</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>1300</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>1400</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>1500</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>However, note what happens when you change the size of the array <ph id="ph1">`y`</ph>.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Now R returns a single value as the result.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Col1</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>1542</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>Why?</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>In this case, because the two arguments can be handled as vectors of the same length, R returns the inner product as a matrix.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>This is the expected behavior according to the rules of linear algebra; however, it could cause problems if your downstream application expects the output schema to never change!</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Getting errors?</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>Make sure that you're running the stored procedure in the context of the database that contains the table, and not in <bpt id="p1">**</bpt>master<ept id="p1">**</ept> or another database.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Also, we suggest that you avoid using temporary tables for these examples.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>Some R clients will terminate a connection between batches, deleting temporary tables.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Merge or multiply columns of different length</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>R provides great flexibility for working with vectors of different sizes, and for combining these column-like structures into data frames.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>Lists of vectors can look like a table, but they don't follow all the rules that govern database tables.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>For example, the following script defines a numeric array of length 6 and stores it in the R variable <ph id="ph1">`df1`</ph>.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>The numeric array is then combined with the integers of the RTestData table, which contains three (3) values, to make a new data frame, <ph id="ph1">`df2`</ph>.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>To fill out the data frame, R repeats the elements retrieved from RTestData as many times as needed to match the number of elements in the array <ph id="ph1">`df1`</ph>.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Col2<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Col3<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>10</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>100</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>3</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>4</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>10</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>5</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>100</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>6</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>Remember that a data frame only looks like a table, and is actually a list of vectors.</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>Cast or convert SQL Server data</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>R and SQL Server don't use the same data types, so when you run a query in SQL Server to get data and then pass that to the R runtime, some type of implicit conversion usually takes place.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>Another set of conversions takes place when you return data from R to SQL Server.</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>SQL Server pushes the data from the query to the R process managed by the Launchpad service and converts it to an internal representation for greater efficiency.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>The R runtime loads the data into a data.frame variable and performs its own operations on the data.</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>The database engine returns the data to SQL Server using a secured internal connection and presents the data in terms of SQL Server data types.</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>You get the data by connecting to SQL Server using a client or network library that can issue SQL queries and handle tabular data sets.</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>This client application can potentially affect the data in other ways.</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>To see how this works, run a query such as this one on the <bpt id="p1">[</bpt>AdventureWorksDW<ept id="p1">](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks)</ept> data warehouse.</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>This view returns sales data used in creating forecasts.</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>You can use any version of AdventureWorks, or create a different query using a database of your own.</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>The point is to try to handle some data that contains text, datetime and numeric values.</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>Now, try pasting this query as the input to the stored procedure.</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>If you get an error, you'll probably need to make some edits to the query text.</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>For example, the string predicate in the WHERE clause must be enclosed by two sets of single quotation marks.</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>After you get the query working, review the results of the <ph id="ph1">`str`</ph> function to see how R treats the input data.</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>The datetime column has been processed using the R data type, <bpt id="p1">**</bpt>POSIXct<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>The text column "ProductSeries" has been identified as a <bpt id="p1">**</bpt>factor<ept id="p1">**</ept>, meaning a categorical variable.</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>String values are handled as factors by default.</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>If you pass a string to R, it is converted to an integer for internal use, and then mapped back to the string on output.</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>Summary</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>From even these short examples, you can see the need to check the effects of data conversion when passing SQL queries as input.</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>Because some SQL Server data types are not supported by R, consider these ways to avoid errors:</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>Test your data in advance and verify columns or values in your schema that could be a problem when passed to R code.</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>Specify columns in your input data source individually, rather than using <ph id="ph1">`SELECT *`</ph>, and know how each column will be handled.</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>Perform explicit casts as necessary when preparing your input data, to avoid surprises.</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>Avoid passing columns of data (such as GUIDS or rowguids) that cause errors and aren't useful for modeling.</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source>For more information on supported and unsupported data types, see <bpt id="p1">[</bpt>R libraries and data types<ept id="p1">](../r/r-libraries-and-data-types.md)</ept>.</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source>For information about the performance impact of run-time conversion of strings to numerical factors, see <bpt id="p1">[</bpt>SQL Server R Services performance tuning<ept id="p1">](../r/sql-server-r-services-performance-tuning.md)</ept>.</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source>To learn about writing advanced R functions in SQL Server, follow this quickstart:</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Write advanced R functions with SQL Server Machine Learning Services<ept id="p1">](quickstart-r-functions.md)</ept></source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source>For more information on using R in SQL Server Machine Learning Services, see the following articles:</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Create and score a predictive model in R with SQL Server Machine Learning Services<ept id="p1">](quickstart-r-train-score-model.md)</ept></source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>What is SQL Server Machine Learning Services (Python and R)?<ept id="p1">](../what-is-sql-server-machine-learning.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

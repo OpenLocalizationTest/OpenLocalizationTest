@@ -1,0 +1,105 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="deepdive-work-with-sql-server-data-using-r.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cae2fd2d200b6a231dd76f04556d6d221df00809f.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">ae2fd2d200b6a231dd76f04556d6d221df00809f</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\deepdive-work-with-sql-server-data-using-r.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Database for RevoScaleR tutorials</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>RevoScaleR tutorial 1: How to create a SQL Server database for R tutorials.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Create a database and permissions (SQL Server and RevoScaleR tutorial)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This is tutorial 1 of the <bpt id="p1">[</bpt>RevoScaleR tutorial series<ept id="p1">](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)</ept> on how to use <bpt id="p2">[</bpt>RevoScaleR functions<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept> with SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This tutorial describes how to create a SQL Server database and set the permissions necessary for completing the other tutorials in this series.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Use <bpt id="p1">[</bpt>SQL Server Management Studio<ept id="p1">](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)</ept> or another query editor to complete the following tasks:</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Create a new database to store the data for training and scoring two R models</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Create a database user login with permissions for creating and using database objects</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Create the database</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>This tutorial requires a database for storing data and code.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>If you're not an administrator, ask your DBA to create the database and login for you.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>You'll need permissions to write and read data, and to run R scripts.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>In SQL Server Management Studio, connect to an R-enabled database instance.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Right-click <bpt id="p1">**</bpt>Databases<ept id="p1">**</ept>, and select <bpt id="p2">**</bpt>New database<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Type a name for the new database: RevoDeepDive.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Create a login</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Click <bpt id="p1">**</bpt>New Query<ept id="p1">**</ept>, and change the database context to  the master database.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>In the new <bpt id="p1">**</bpt>Query<ept id="p1">**</ept> window, run the following commands to create the user accounts and assign them to the database used for this tutorial.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Be sure to change the database name if needed.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>To verify the login, select the new database, expand <bpt id="p1">**</bpt>Security<ept id="p1">**</ept>, and expand <bpt id="p2">**</bpt>Users<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Windows user<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>SQL login<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Assign permissions</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>This tutorial demonstrates R script and DDL operations, including creating and deleting tables and stored procedures, and running R script in an external process on SQL Server.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>In this step, assign permssions to allow these tasks.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>This example assumes a SQL login (DDUser01), but if you created a Windows login, use that instead.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Troubleshoot connections</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>This section lists some common issues that you might run across in the course of setting up the database.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>How can I verify database connectivity and check SQL queries?<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Before you run R code using the server, you might want to check that the database can be reached from your R development environment.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Both <bpt id="p1">[</bpt>Server Explorer in Visual Studio<ept id="p1">](https://docs.microsoft.com/previous-versions/x603htbk(v=vs.140))</ept> and <bpt id="p2">[</bpt>SQL Server Management Studio<ept id="p2">](../../ssms/download-sql-server-management-studio-ssms.md)</ept> are free tools with powerful database connectivity and management features.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>If you don't want to install additional database management tools, you can create a test connection to the SQL Server instance by using the <bpt id="p1">[</bpt>ODBC Data Source Administrator<ept id="p1">](https://docs.microsoft.com/sql/odbc/admin/odbc-data-source-administrator?view=sql-server-2017)</ept> in Control Panel.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>If the database is configured correctly and you enter the correct user name and password, you should be able to see the database you just created and select it as your default database.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Common reasons for connection failures include remote connections are not enabled for the server, and Named Pipes protocol is not enabled.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>You can find more troubleshooting tips in this article: <bpt id="p1">[</bpt>Troubleshoot Connecting to the SQL Server Database Engine<ept id="p1">](https://docs.microsoft.com/sql/database-engine/configure-windows/troubleshoot-connecting-to-the-sql-server-database-engine)</ept>.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>My table name has datareader prefixed to it - why?<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>When you specify the default schema for this user as <bpt id="p1">**</bpt>db_datareader<ept id="p1">**</ept>, all tables and other new objects created by this user are prefixed with the <bpt id="p2">*</bpt>schema<ept id="p2">*</ept> name.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>A schema is like a folder that you can add to a database to organize objects.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>The schema also defines a user's privileges within the database.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>When the schema is associated with one particular user name, the user is the <bpt id="p1">_</bpt>schema owner<ept id="p1">_</ept>.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>When you create an object, you always create it in your own schema, unless you specifically ask it to be created in another schema.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>For example, if you create a table with the name <bpt id="p1">**</bpt>TestData<ept id="p1">**</ept>, and your default schema is <bpt id="p2">**</bpt>db_datareader<ept id="p2">**</ept>, the table is created with the name <ph id="ph1">`&lt;database_name&gt;.db_datareader.TestData`</ph>.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>For this reason, a database can contain multiple tables with the same names, as long as the tables belong to different schemas.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>If you are looking for a table and do not specify a schema, the database server looks for a schema that you own.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Therefore, there is no need to specify the schema name when accessing tables in a schema associated with your login.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>I don't have DDL privileges. Can I still run the tutorial?<ept id="p1">**</ept>?</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Yes, but you should ask someone to pre-load the data into the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> tables, and skip ahead to the next tutorial.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>The functions that require DDL privileges are called out in the tutorial wherever possible.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Also, ask your administrator to grant you the permission, EXECUTE ANY EXTERNAL SCRIPT.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>It is needed for R script execution, whether remote or by using <ph id="ph1">`sp_execute_external_script`</ph>.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Create SQL Server data objects using RxSqlServerData<ept id="p1">](../../advanced-analytics/tutorials/deepdive-create-sql-server-data-objects-using-rxsqlserverdata.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

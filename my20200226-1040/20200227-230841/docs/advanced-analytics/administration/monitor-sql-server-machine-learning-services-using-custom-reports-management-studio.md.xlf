@@ -1,0 +1,101 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="monitor-sql-server-machine-learning-services-using-custom-reports-management-studio.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cafc90985fc7c0c6d7a04cb575ee9e93a4b7b4c51.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">afc90985fc7c0c6d7a04cb575ee9e93a4b7b4c51</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\administration\monitor-sql-server-machine-learning-services-using-custom-reports-management-studio.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Monitor scripts with custom reports</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Use custom reports in SQL Server Management Studio (SSMS) to monitor the execution of external scripts (Python and R), resources used, diagnose problems, and tune performance in SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Monitor Python and R script execution using custom reports in SQL Server Management Studio</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Use custom reports in SQL Server Management Studio (SSMS) to monitor the execution of external scripts (Python and R), resources used, diagnose problems, and tune performance in SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In these reports, you can view details such as:</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Active Python or R sessions</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Configuration settings for the instance</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Execution statistics for machine learning jobs</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Extended events for R Services</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Python or R packages installed on the current instance</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>This article explains how to install and use the custom reports provided for SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>For more information on reports in SQL Server Management Studio, see <bpt id="p1">[</bpt>Custom reports in Management Studio<ept id="p1">](../../ssms/object/custom-reports-in-management-studio.md)</ept>.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>How to install the reports</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>The reports are designed using SQL Server Reporting Services, but can be used directly from SQL Server Management Studio.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Reporting Services does not have to be installed on your SQL Server instance.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>To use these reports, follow these steps:</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Download the <bpt id="p1">[</bpt>SSMS Custom Reports<ept id="p1">](https://github.com/Microsoft/sql-server-samples/tree/master/samples/features/machine-learning-services/ssms-custom-reports)</ept> for SQL Server Machine Learning Services from GitHub.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Copy the reports to Management Studio</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Locate the custom reports folder used by SQL Server Management Studio.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>By default, custom reports are stored in this folder (where <bpt id="p1">**</bpt>user_name<ept id="p1">**</ept> is your Windows user name):</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>You can also specify a different folder, or create subfolders.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Copy the *.RDL files you downloaded to the custom reports folder.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Run the reports in Management Studio</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>In Management Studio, right-click the <bpt id="p1">**</bpt>Databases<ept id="p1">**</ept> node for the instance where you want to run the reports.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Click <bpt id="p1">**</bpt>Reports<ept id="p1">**</ept>, and then click <bpt id="p2">**</bpt>Custom Reports<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>In the <bpt id="p1">**</bpt>Open File<ept id="p1">**</ept> dialog box, locate the custom reports folder.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Select one of the RDL files you downloaded, and then click <bpt id="p1">**</bpt>Open<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Reports</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">[</bpt>SSMS Custom Reports repository in GitHub<ept id="p1">](https://github.com/Microsoft/sql-server-samples/tree/master/samples/features/machine-learning-services/ssms-custom-reports)</ept> includes the following reports:</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Report</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Active Sessions</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Users who are currently connected to the SQL Server instance and running a Python or R script.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Configuration</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Installation settings of Machine Learning Services and properties of the Python or R runtime.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Configure Instance</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Configure Machine Learning Services.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Execution Statistics</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Execution statistics of Machine Learning services.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>For example, you can get the total number of external scripts executions and number of parallel executions.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Extended Events</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Extended events that are available to get more insights into external scripts execution.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Packages</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>List the R or Python packages installed on the SQL Server instance and their properties, such as version and name.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Resource Usage</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>View the CPU, Memory, IO consumption of SQL Server, and external scripts execution.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>You can also view the memory setting for external resource pools.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Monitor SQL Server Machine Learning Services using dynamic management views (DMVs)<ept id="p1">](monitor-sql-server-machine-learning-services-using-dynamic-management-views.md)</ept></source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Extended events for R Services<ept id="p1">](../r/extended-events-for-sql-server-r-services.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

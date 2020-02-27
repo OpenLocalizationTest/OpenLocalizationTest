@@ -1,0 +1,183 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="sql-pretrained-models-install.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c97da2ed795d002fa47900eb21ead90b48b525387.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">97da2ed795d002fa47900eb21ead90b48b525387</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\install\sql-pretrained-models-install.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Install pre-trained models</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Add pre-trained models for sentiment analysis and image featurization to SQL Server Machine Learning Services (R or Python) or SQL Server R Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Install pre-trained machine learning models on SQL Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article explains how to use Powershell to add free pre-trained machine learning models for <bpt id="p1">*</bpt>sentiment analysis<ept id="p1">*</ept> and <bpt id="p2">*</bpt>image featurization<ept id="p2">*</ept> to a SQL Server instance having R or Python integration.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>The pre-trained models are built by Microsoft and ready-to-use, added to an instance as a post-install task.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>For more information about these models, see the <bpt id="p1">[</bpt>Resources<ept id="p1">](#bkmk_resources)</ept> section of this article.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Once installed, the pre-trained models are considered an implementation detail that power specific functions in the MicrosoftML (R) and microsoftml (Python) libraries.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>You should not (and cannot) view, customize, or retrain the models, nor can you treat them as an independent resource in custom code or paired other functions.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>To use the pretrained models, call the functions listed in the following table.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>R function (MicrosoftML)</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Python function (microsoftml)</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Usage</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>getSentiment<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/getsentiment)</ept></source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>get_sentiment<ept id="p1">](https://docs.microsoft.com//machine-learning-server/python-reference/microsoftml/get-sentiment)</ept></source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Generates  positive-negative sentiment score over text inputs.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>featurizeImage<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/featurizeimage)</ept></source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>featurize_image<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/featurize-image)</ept></source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Extracts text information from image file inputs.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Machine learning algorithms are computationally intensive.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>We recommend 16 GB RAM for low-to-moderate workloads, including completion of the tutorial walkthroughs using all of the sample data.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>You must have administrator rights on the computer and SQL Server to add pre-trained models.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>External scripts must be enabled and SQL Server LaunchPad service must be running.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Installation instructions provide the steps for enabling and verifying these capabilities.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>MicrosoftML R package<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/microsoftml-package)</ept> or <bpt id="p2">[</bpt>microsoftml Python package<ept id="p2">](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/microsoftml-package)</ept> contain the pre-trained models.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](sql-machine-learning-services-windows-install.md)</ept> includes both language versions of the machine learning library, so this prerequisite is met with no further action on your part.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>Because the libraries are present, you can use the PowerShell script described in this article to add the pre-trained models to these libraries.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>MicrosoftML R package<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/microsoftml-package)</ept> contain the pre-trained models.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>SQL Server R Services<ept id="p1">](sql-r-services-windows-install.md)</ept>, which is R only, does not include <bpt id="p2">[</bpt>MicrosoftML package<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/microsoftml-package)</ept> out of the box.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>To add MicrosoftML, you must do a <bpt id="p1">[</bpt>component upgrade<ept id="p1">](../install/upgrade-r-and-python.md)</ept>.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>One advantage of the component upgrade is that you can simultaneously add the pre-trained models, which makes running the PowerShell script unnecessary.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>However, if you already upgraded but missed adding the pre-trained models the first time around, you can run the PowerShell script as described in this article.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>It works for both versions of SQL Server.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>Before you do, confirm that the MicrosoftML library exists at <ph id="ph1">`C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\library`</ph>.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Check whether pre-trained models are installed</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>The install paths for R and Python models are as follows:</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>For R: <ph id="ph1">`C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\R_SERVICES\library\MicrosoftML\mxLibs\x64`</ph></source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>For Python: <ph id="ph1">`C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\PYTHON_SERVICES\Lib\site-packages\microsoftml\mxLibs`</ph></source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Model file names are listed below:</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>AlexNet<ph id="ph1">\_</ph>Updated.model</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>ImageNet1K<ph id="ph1">\_</ph>mean.xml</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>pretrained.model</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>ResNet<ph id="ph1">\_</ph>101<ph id="ph2">\_</ph>Updated.model</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>ResNet<ph id="ph1">\_</ph>18<ph id="ph2">\_</ph>Updated.model</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>ResNet<ph id="ph1">\_</ph>50<ph id="ph2">\_</ph>Updated.model</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>If the models are already installed, skip ahead to the <bpt id="p1">[</bpt>validation step<ept id="p1">](#verify)</ept> to confirm availability.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Download the installation script</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Click <bpt id="p1">[</bpt><ph id="ph1">https://aka.ms/mlm4sql</ph><ept id="p1">](https://aka.ms/mlm4sql)</ept> to download the file <bpt id="p2">**</bpt>Install-MLModels.ps1<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Execute with elevated privileges</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Start PowerShell.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>On the task bar, right-click the PowerShell program icon and select <bpt id="p1">**</bpt>Run as administrator<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Enter a fully-qualified path to the installation script file and include the instance name.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Assuming the Downloads folder and a default instance, the command might look like this:</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Output<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>On an internet-connected SQL Server Machine Learning Services default instance with R and Python, you should see messages similar to the following.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a name="verify"&gt;</bpt> <ept id="p1">&lt;/a&gt;</ept></source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Verify installation</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>First, check for the new files in the <bpt id="p1">[</bpt>mxlibs folder<ept id="p1">](#file-location)</ept>.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Next, run demo code to confirm the models are installed and functional.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>R verification steps</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Start <bpt id="p1">**</bpt>RGUI.EXE<ept id="p1">**</ept> at C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\R_SERVICES\bin\x64.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Paste in the following R script at the command prompt.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Press Enter to view the sentiment scores.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>Output should be as follows:</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Python verification steps</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Start <bpt id="p1">**</bpt>Python.exe<ept id="p1">**</ept> at C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\PYTHON_SERVICES.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Paste in the following Python script at the command prompt</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Press Enter to print the scores.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Output should be as follows:</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>If demo scripts fail, check the file location first.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>On systems having multiple instances of SQL Server, or for instances that run side-by-side with standalone versions, it's possible for the installation script to mis-read the environment and place the files in the wrong location.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>Usually, manually copying the files to the correct mxlib folder fixes the problem.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>Examples using pre-trained models</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>The following link include example code invoking the pretrained models.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Code sample: Sentiment Analysis using Text Featurizer<ept id="p1">](https://github.com/Microsoft/microsoft-r/tree/master/microsoft-ml/Samples/101/BinaryClassification/SimpleSentimentAnalysis)</ept></source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Research and resources</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>Currently the models that are available are deep neural network (DNN) models for sentiment analysis and image classification.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>All pre-trained models were trained by using Microsoft's <bpt id="p1">[</bpt>Computation Network Toolkit<ept id="p1">](https://cntk.ai/Features/Index.html)</ept>, or <bpt id="p2">**</bpt>CNTK<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>The configuration of each network was based on the following reference implementations:</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>ResNet-18</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>ResNet-50</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>ResNet-101</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>AlexNet</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>For more information about the algorithms used in these deep learning models, and how they are implemented and trained using CNTK, see these articles:</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Microsoft Researchers' Algorithm Sets ImageNet Challenge Milestone<ept id="p1">](https://www.microsoft.com/research/blog/microsoft-researchers-algorithm-sets-imagenet-challenge-milestone/)</ept></source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Microsoft Computational Network Toolkit offers most efficient distributed deep learning computational performance<ept id="p1">](https://www.microsoft.com/research/blog/microsoft-computational-network-toolkit-offers-most-efficient-distributed-deep-learning-computational-performance/)</ept></source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](sql-machine-learning-services-windows-install.md)</ept></source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Upgrade R and Python components in SQL Server instances<ept id="p1">](../install/upgrade-r-and-python.md)</ept></source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>MicrosoftML package for R<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/microsoftml-package)</ept></source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>microsoftml package for Python<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/microsoftml-package)</ept></source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,107 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="python-package-information.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c1aa12da4a138ea8f292fa8b64db00456d3c35fe3.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1aa12da4a138ea8f292fa8b64db00456d3c35fe3</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\package-management\python-package-information.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Get Python package information</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Learn how to get information about installed Python packages, including versions and installation locations, on SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Get Python package information</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article describes how to get information about installed Python packages, including versions and installation locations, on SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Example Python scripts show you how to list package information such as installation path and version.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Default Python library location</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>When you install machine learning with SQL Server, a single package library is created at the instance level for each language that you install.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>On Windows, the instance library is a secured folder registered with SQL Server.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>All script or code that runs in-database on SQL Server must load functions from the instance library.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>SQL Server can't access packages installed to other libraries.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>This applies to remote clients as well: any Python code running in the server compute context can only use packages installed in the instance library.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>To protect server assets, the default instance library can be modified only by a computer administrator.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>The default path of the binaries for Python is:</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve" moniker-range="&gt;sql-server-2017||=sqlallproducts-allversions">
+          <source>The default path of the binaries for Python is:</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>This assumes the default SQL instance, MSSQLSERVER.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>If SQL Server is installed as a user-defined named instance, the given name is used instead.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Run the following statement to verify the default library for the current instance.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>This example returns the list of folders included in the Python <ph id="ph1">`sys.path`</ph> variable.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>The list includes the current directory and the standard library path.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>For more information about the variable <ph id="ph1">`sys.path`</ph> and how it's used to set the interpreter's search path for modules, see <bpt id="p1">[</bpt>The Module Search Path<ept id="p1">](https://docs.python.org/2/tutorial/modules.html#the-module-search-path)</ept>.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Default Python packages</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>The following Python packages are installed with SQL Server Machine Learning Services when you select the Python feature during setup.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Packages</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Version</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>revoscalepy<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/revoscalepy-package)</ept></source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>9.2</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Used for remote compute contexts, streaming, parallel execution of rx functions for data import and transformation, modeling, visualization, and analysis.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>microsoftml<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/microsoftml-package)</ept></source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>9.2</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Adds machine learning algorithms in Python.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Component upgrades</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>By default, Python packages are refreshed through service packs and cumulative updates.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Additional packages and full version upgrades of core Python components are possible only through product upgrades or by binding Python support to Microsoft Machine Learning Server.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Upgrade R and Python components in SQL Server<ept id="p1">](../install/upgrade-r-and-python.md)</ept>.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Default open-source Python packages</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>When you select the Python language option during setup, Anaconda 4.2 distribution (over Python 3.5) is installed.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>In addition to Python code libraries, the standard installation includes sample data, unit tests, and sample scripts.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>You should never manually overwrite the version of Python installed by SQL Server Setup with newer versions on the web.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Microsoft Python packages are based on specific versions of Anaconda.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Modifying your installation could destabilize it.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>List all installed Python packages</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>The following example script displays a list of installed packages and their versions.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Find a single Python package</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>If you've installed a Python package and want to make sure that it's available to a particular SQL Server instance, you can execute a stored procedure to load the package and return messages.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>For example, the following code looks for the <ph id="ph1">`scikit-learn`</ph> package.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>If the package is found, the code returns the message "Package scikit-learn is installed".</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>The following example returns the versions of the revoscalepy package and of Python.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Install new Python packages<ept id="p1">](../python/install-additional-python-packages-on-sql-server.md)</ept></source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Get R package information<ept id="p1">](r-package-information.md)</ept></source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Install new R packages<ept id="p1">](../r/install-additional-r-packages-on-sql-server.md)</ept></source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>R and Python tutorials<ept id="p1">](../tutorials/machine-learning-services-tutorials.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,73 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="sqldev-in-database-python-for-sql-developers.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c3bafc3a524ec854dc9bf1669660827d5a6bc80f7.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">3bafc3a524ec854dc9bf1669660827d5a6bc80f7</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\sqldev-in-database-python-for-sql-developers.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Python + T-SQL: Develop model</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Learn how to embed Python code in SQL Server stored procedures and T-SQL functions.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Tutorial: Python data analytics for SQL developers</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>In this tutorial for SQL programmers, learn about Python integration by building and deploying a Python-based machine learning solution using a <bpt id="p1">[</bpt>NYCTaxi_sample<ept id="p1">](demo-data-nyctaxi-in-sql.md)</ept> database on SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>You'll use T-SQL, SQL Server Management Studio, and a database engine instance with <bpt id="p1">[</bpt>Machine Learning Services<ept id="p1">](../install/sql-machine-learning-services-windows-install.md)</ept> and Python language support.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>This tutorial introduces you to Python functions used in a data modeling workflow.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Steps include data exploration, building and training a binary classification model, and model deployment.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>You'll use sample data from the New York City Taxi and Limosine Commission, and the model you will build predicts whether a trip is likely to result in a tip based on the time of day, distance travelled, and pick-up location.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>All of the Python code used in this tutorial is wrapped in stored procedures that you create and run in Management Studio.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>This tutorial is available in both R and Python.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>For the R version, see <bpt id="p1">[</bpt>In-database analytics for R developers<ept id="p1">](sqldev-in-database-r-for-sql-developers.md)</ept>.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Overview</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>The process of building a machine learning solution is a complex one that can involve multiple tools, and the coordination of subject matter experts across several phases:</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>obtaining and cleaning data</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>exploring the data and building features useful for modeling</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>training and tuning the model</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>deployment to production</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Development and testing of the actual code is best performed using a dedicated development environment.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>However, after the script is fully tested, you can easily deploy it to <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> using <ph id="ph2">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> stored procedures in the familiar environment of <ph id="ph3">[!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Wrapping external code in stored procedures is the primary mechanism for operationalizing code in SQL Server.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Whether you are a SQL programmer new to Python, or a Python developer new to SQL, this multi-part tutorial introduces a typical workflow for conducting in-database analytics with Python and SQL Server.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Lesson 1: Explore and visualize the data using Python<ept id="p1">](sqldev-py3-explore-and-visualize-the-data.md)</ept></source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Lesson 2: Create data features using custom SQL functions<ept id="p1">](sqldev-py4-create-data-features-using-t-sql.md)</ept></source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Lesson 3: Train and save a Python model using T-SQL<ept id="p1">](sqldev-py5-train-and-save-a-model-using-t-sql.md)</ept></source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Lesson 4: Predict potential outcomes using a Python model in a stored procedure<ept id="p1">](sqldev-py6-operationalize-the-model.md)</ept></source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>After the model has been saved to the database, you can call the model for predictions from <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> by using stored procedures.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server Machine Learning Services with Python<ept id="p1">](../install/sql-machine-learning-services-windows-install.md#verify-installation)</ept></source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Permissions<ept id="p1">](../security/user-permission.md)</ept></source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>NYC Taxi demo database<ept id="p1">](demo-data-nyctaxi-in-sql.md)</ept></source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>All tasks can be done using <ph id="ph1">[!INCLUDE[tsql](../../includes/tsql-md.md)]</ph> stored procedures in <ph id="ph2">[!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>This tutorial assumes familiarity with basic database operations such as creating databases and tables, importing data, and writing SQL queries.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>It does not assume you know Python.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>As such, all Python code is provided.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Explore and visualize the data using Python<ept id="p1">](sqldev-py3-explore-and-visualize-the-data.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

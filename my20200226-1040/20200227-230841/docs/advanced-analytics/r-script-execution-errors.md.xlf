@@ -1,0 +1,119 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="r-script-execution-errors.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cd1cfd06fd881c4749879365feda14e3cfcb877a9.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">d1cfd06fd881c4749879365feda14e3cfcb877a9</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r-script-execution-errors.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Troubleshooting R scripts</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>This article documents several scripting errors when running R code in SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>R scripting errors in SQL Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article documents several scripting errors when running R code in SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>The list is not comprehensive.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>There are many packages, and errors can vary between versions of the same package.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>We recommend posting script errors on the <bpt id="p1">[</bpt>Machine Learning Server forum<ept id="p1">](https://social.msdn.microsoft.com/Forums/home?category=MicrosoftR)</ept>, which supports the machine learning components used in R Services (In-Database), Microsoft R Client, and Microsoft R Server.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Valid script fails in T-SQL or in stored procedures</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Before wrapping your R code in a stored procedure, it is a good idea to run your R code in an external IDE, or in one of the R tools such as RTerm or RGui.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>By using these methods, you can test and debug the code by using the detailed error messages that are returned by R.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>However, sometimes code that works perfectly in an external IDE or utility might fail to run in a stored procedure or in a SQL Server compute context.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>If this happens, there are a variety of issues to look for before you can assume that the package doesn't work in SQL Server.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Check to see whether Launchpad is running.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Review messages to see whether either the input data or output data contains columns with incompatible or unsupported data types.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>For example, queries on a SQL database often return GUIDs or RowGUIDs, both of which are unsupported.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>R libraries and data types<ept id="p1">](r/r-libraries-and-data-types.md)</ept>.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Review the help pages for individual R functions to determine whether all parameters are supported for the SQL Server compute context.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>For ScaleR help, use the inline R help commands, or see <bpt id="p1">[</bpt>Package Reference<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/revoscaler)</ept>.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>If the R runtime is functioning but your script returns errors, we recommend that you try debugging the script in a dedicated R development environment, such as  R Tools for Visual Studio.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>We also recommend that you review and slightly rewrite the script to correct any problems with data types that might arise when you move data between R and the database engine.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>R libraries and data types<ept id="p1">](r/r-libraries-and-data-types.md)</ept>.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Additionally, you can use the sqlrutils package to bundle your R script in a format that is more easily consumed as a stored procedure.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>For more information, see:</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>sqlrutils package<ept id="p1">](r/ref-r-sqlrutils.md)</ept></source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Create a stored procedure by using sqlrutils<ept id="p1">](r/how-to-create-a-stored-procedure-using-sqlrutils.md)</ept></source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Script returns inconsistent results</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>R scripts can return different values in a SQL Server context, for several reasons:</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Implicit type conversion is automatically performed on some data types, when the data is passed between SQL Server and R. For more information, see <bpt id="p1">[</bpt>R libraries and data types<ept id="p1">](r/r-libraries-and-data-types.md)</ept>.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Determine whether bitness is a factor.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>For example, there are often differences in the results of math operations for 32-bit and 64-bit floating point libraries.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Determine whether NaNs were produced in any operation.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>This can invalidate results.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Small differences can be amplified when you take a reciprocal of a number near zero.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Accumulated rounding errors can cause such things as values that are less than zero instead of zero.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Implied authentication for remote execution via ODBC</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>If you connect to the <ph id="ph1">[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]</ph> computer to run R commands by using the <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> functions, you might get an error when you use ODBC calls that write data to the server.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>This error happens only when you're using Windows authentication.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>The reason is that the worker accounts that are created for R Services do not have permission to connect to the server.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Therefore, ODBC calls cannot be executed on your behalf.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>The problem does not occur with SQL logins because, with SQL logins, the credentials are passed explicitly from the R client to the SQL Server instance and then to ODBC.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>However, using SQL logins is also less secure than using Windows authentication.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>To enable your Windows credentials to be passed securely from a script that's initiated remotely, SQL Server must emulate your credentials.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>This process is termed <bpt id="p1">_</bpt>implied authentication<ept id="p1">_</ept>.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>To make this work, the worker accounts that run R or Python scripts on the SQL Server computer must have the correct permissions.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Open <ph id="ph1">[!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)]</ph> as an administrator on the instance where you want to run R code.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Run the following script.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Be sure to edit the user group name, if you changed the default, and the computer and instance names.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Avoid clearing the workspace while you're running R in a SQL compute context</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Although clearing the workspace is common when you work in the R console, it can have unintended consequences in a SQL compute context.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`revoScriptConnection`</ph> is an object in the R workspace that contains information about an R session that's called from SQL Server.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>However, if your R code includes a command to clear the workspace (such as <ph id="ph1">`rm(list=ls())`</ph>), all information about the session and other objects in the R workspace is cleared as well.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>As a workaround, avoid indiscriminate clearing of variables and other objects while you're running R in SQL Server.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>You can delete specific variables by using the <bpt id="p1">**</bpt>remove<ept id="p1">**</ept> function:</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>If there are multiple variables to delete, we suggest that you save the names of temporary variables to a list and then perform periodic garbage collections on the list.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Machine Learning Services troubleshooting and known issues<ept id="p1">](machine-learning-troubleshooting-faq.md)</ept></source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Data collection for troubleshooting machine learning<ept id="p1">](data-collection-ml-troubleshooting-process.md)</ept></source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Upgrade and installation FAQ<ept id="p1">](r/upgrade-and-installation-faq-sql-server-r-services.md)</ept></source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Troubleshoot database engine connections<ept id="p1">](../database-engine/configure-windows/troubleshoot-connecting-to-the-sql-server-database-engine.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

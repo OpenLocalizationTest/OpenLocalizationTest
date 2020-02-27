@@ -1,0 +1,305 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="common-issues-external-script-execution.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c68c731767a83acbd4b7df84843f2c140c5a63d3e.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">68c731767a83acbd4b7df84843f2c140c5a63d3e</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\common-issues-external-script-execution.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Common issues with Launchpad</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>This article provides troubleshooting guidance for many issues that prevent the SQL Server Trusted Launchpad service from starting, including configuration problems or changes, or missing network protocols.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Common issues with Launchpad service and external script execution in SQL Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>SQL Server Trusted Launchpad service supports external script execution for R and Python.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Multiple issues can prevent Launchpad from starting, including configuration problems or changes, or missing network protocols.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>This article provides troubleshooting guidance for many issues.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>For any we missed, you can post questions to the <bpt id="p1">[</bpt>Machine Learning Server forum<ept id="p1">](https://social.msdn.microsoft.com/Forums/home?category=MicrosoftR)</ept>.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Determine whether Launchpad is running</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Open the <bpt id="p1">**</bpt>Services<ept id="p1">**</ept> panel (Services.msc).</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Or, from the command line, type <bpt id="p1">**</bpt>SQLServerManager13.msc<ept id="p1">**</ept> or <bpt id="p2">**</bpt>SQLServerManager14.msc<ept id="p2">**</ept> to open <bpt id="p3">[</bpt>SQL Server Configuration Manager<ept id="p3">](https://docs.microsoft.com/sql/relational-databases/sql-server-configuration-manager)</ept>.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Make a note of the service account that Launchpad is running under.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Each instance where R or Python is enabled should have its own instance of the Launchpad service.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>For example, the service for a named instance might be something like <bpt id="p1">_</bpt>MSSQLLaunchpad$InstanceName<ept id="p1">_</ept>.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>If the service is stopped, restart it.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>On restarting, if there are any issues with configuration, a message is published in the system event log, and the service is stopped again.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Check the system event log for details about why the service stopped.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Review the contents of RSetup.log, and make sure that there are no errors in the setup.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>For example, the message <bpt id="p1">*</bpt>Exiting with code 0<ept id="p1">*</ept> indicates failure of the service to start.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>To look for other errors, review the contents of rlauncher.log.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Check the Launchpad service account</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>The default service account might be "NT Service<ph id="ph1">\$</ph>SQL2016" or "NT Service<ph id="ph2">\$</ph>SQL2017".</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>The final part might vary, depending on your SQL instance name.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>The Launchpad service (Launchpad.exe) runs by using a low-privilege service account.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>However, to start R and Python and communicate with the database instance, the Launchpad service account requires the following user rights:</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Log on as a service (SeServiceLogonRight)</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Replace a process-level token (SeAssignPrimaryTokenPrivilege)</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Bypass traverse checking (SeChangeNotifyPrivilege)</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Adjust memory quotas for a process (SeIncreaseQuotaSizePrivilege)</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>For information about these user rights, see the "Windows privileges and rights" section in <bpt id="p1">[</bpt>Configure Windows service accounts and permissions<ept id="p1">](../database-engine/configure-windows/configure-windows-service-accounts-and-permissions.md)</ept>.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>If you are familiar with the use of the Support Diagnostics Platform (SDP) tool for SQL Server diagnostics, you can use SDP to review the output file with the name MachineName_UserRights.txt.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>User group for Launchpad cannot log on locally</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>During setup of Machine Learning Services, SQL Server creates the Windows user group <bpt id="p1">**</bpt>SQLRUserGroup<ept id="p1">**</ept> and then provisions it with all rights necessary for Launchpad to connect to SQL Server and run external script jobs.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>If this user group is enabled, it is also used to execute Python scripts.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>However, in organizations where more restrictive security policies are enforced, the rights that are required by this group might have been manually removed, or they might be automatically revoked by policy.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>If the rights have been removed, Launchpad can no longer connect to SQL Server, and SQL Server cannot call the external runtime.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>To correct the problem, ensure that the group <bpt id="p1">**</bpt>SQLRUserGroup<ept id="p1">**</ept> has the system right <bpt id="p2">**</bpt>Allow log on locally<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Configure Windows service accounts and permissions<ept id="p1">](../database-engine/configure-windows/configure-windows-service-accounts-and-permissions.md)</ept>.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Permissions to run external scripts</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Even if Launchpad is configured correctly, it returns an error if the user does not have permission to run R or Python scripts.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>If you installed SQL Server as a database administrator or you are a database owner, you are automatically granted this permission.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>However, other users usually have more limited permissions.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>If they try to run an R script, they get a Launchpad error.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>To correct the problem, in SQL Server Management Studio, a security administrator can modify the SQL login or Windows user account by running the following script:</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>GRANT (Transact-SQL<ept id="p1">](../t-sql/statements/grant-transact-sql.md)</ept>.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Common Launchpad errors</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>This section lists the most common error messages that Launchpad returns.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>"Unable to launch runtime for R script"</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>If the Windows group for R users (also used for Python) cannot log on to the instance that is running R Services, you might see the following errors:</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Errors generated when you try to run R scripts:</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">*</bpt>Unable to launch runtime for 'R' script. Please check the configuration of the 'R' runtime.<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">*</bpt>An external script error occurred. Unable to launch the runtime.<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Errors generated by the   <ph id="ph1">[!INCLUDE[rsql_launchpad](../includes/rsql-launchpad-md.md)]</ph> service:</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">*</bpt>Failed to initialize the launcher RLauncher.dll<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">*</bpt>No launcher dlls were registered!<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">*</bpt>Security logs indicate that the account NT SERVICE was unable to log on<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>For information about how to grant this user group the necessary permissions, see <bpt id="p1">[</bpt>Install SQL Server R Services<ept id="p1">](install/sql-r-services-windows-install.md)</ept>.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>This limitation does not apply if you use SQL logins to run R scripts from a remote workstation.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>"Logon failure: the user has not been granted the requested logon type"</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>By default, <ph id="ph1">[!INCLUDE[rsql_launchpad_md](../includes/rsql-launchpad-md.md)]</ph> uses the following account on startup: <ph id="ph2">`NT Service\MSSQLLaunchpad`</ph>.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>The account is configured by <ph id="ph1">[!INCLUDE[ssNoVersion_md](../includes/ssnoversion-md.md)]</ph> setup to have all necessary permissions.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>If you assign a different account to Launchpad, or the right is removed by a policy on the SQL Server machine, the account might not have the necessary permissions, and you might see this error:</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>ERROR_LOGON_TYPE_NOT_GRANTED 1385 (0x569) Logon failure: the user has not been granted the requested logon type at this computer.<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>To grant the necessary permissions to the new service account, use the Local Security Policy application, and update the permissions on the account to include the following permissions:</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>Adjust memory quotas for a process (SeIncreaseQuotaPrivilege)</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Bypass traverse checking (SeChangeNotifyPrivilege)</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Log on as a service (SeServiceLogonRight)</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Replace a process-level token (SeAssignPrimaryTokenPrivilege)</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>"Unable to communicate with the Launchpad service"</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>If you have installed and then enabled machine learning, but you get this error when you try to run an R or Python script, the Launchpad service for the instance might have stopped running.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>From a Windows command prompt, open the SQL Server Configuration Manager.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>SQL Server Configuration Manager<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/sql-server-configuration-manager)</ept>.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>Right-click SQL Server Launchpad for the instance, and then select <bpt id="p1">**</bpt>Properties<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>Select the <bpt id="p1">**</bpt>Service<ept id="p1">**</ept> tab, and then verify that the service is running.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>If it is not running, change the <bpt id="p1">**</bpt>Start Mode<ept id="p1">**</ept> to <bpt id="p2">**</bpt>Automatic<ept id="p2">**</ept>, and then select <bpt id="p3">**</bpt>Apply<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>Restarting the service usually fixes the problem so that machine learning scripts can run.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>If the restart does not fix the issue, note the path and the arguments in the <bpt id="p1">**</bpt>Binary Path<ept id="p1">**</ept> property, and do the following:</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>a.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Review the launcher's .config file and ensure that the working directory is valid.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>b.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>Ensure that the Windows group that's used by Launchpad can connect to the SQL Server instance.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>c.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>If you change any of the service properties, restart the Launchpad service.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>"Fatal error creation of tmpFile failed"</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>In this scenario, you have successfully installed machine learning features, and Launchpad is running.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>You try to run some simple R or Python code, but Launchpad fails with an error like the following:</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Unable to communicate with the runtime for R script. Please check the requirements of R runtime.<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>At the same time, the external script runtime writes the following message as part of the STDERR message:</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Fatal error: creation of tmpfile failed.<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>This error indicates that the account that Launchpad is attempting to use does not have permission to log on to the database.</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>This situation can happen when strict security policies are implemented.</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>To determine whether this is the case, review the SQL Server logs, and check to see whether the MSSQLSERVER01 account was denied at login.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>The same information is provided in the logs that are specific to R<ph id="ph1">\_</ph>SERVICES or PYTHON<ph id="ph2">\_</ph>SERVICES.</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>Look for ExtLaunchError.log.</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>By default, 20 accounts are set up and associated with the Launchpad.exe process, with the names MSSQLSERVER01 through MSSQLSERVER20.</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>If you make heavy use of R or Python, you can increase the number of accounts.</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>To resolve the issue, ensure that the group has <bpt id="p1">*</bpt>Allow Log on Locally<ept id="p1">*</ept> permissions to the local instance where machine learning features have been installed and enabled.</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>In some environments, this permission level might require a GPO exception from the network administrator.</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>"Not enough quota to process this command"</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>This error can mean one of several things:</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>Launchpad might have insufficient external users to run the external query.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>For example, if you are running more than 20 external queries concurrently, and there are only 20 default users, one or more queries might fail.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>Insufficient memory is available to process the R task.</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>This error happens most often in a default environment, where SQL Server might be using up to 70 percent of the computer's resources.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>For information about how to modify the server configuration to support greater use of resources by R, see <bpt id="p1">[</bpt>Operationalizing your R code<ept id="p1">](r/operationalizing-your-r-code.md)</ept>.</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>"Can't find package"</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>If you run R code in SQL Server and get this message, but did not get the message when you ran the same code outside SQL Server, it means that the package was not installed to the default library location used by SQL Server.</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>This error can happen in many ways:</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>You installed a new package on the server, but access was denied, so R installed the package to a user library.</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>You installed R Services and then installed another R tool or set of libraries, including Microsoft R Server (Standalone), Microsoft R Client, RStudio, and so forth.</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>To determine the location of the R package library that's used by the instance, open SQL Server Management Studio (or any other database query tool), connect to the instance, and then run the following stored procedure:</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>Sample results</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>STDOUT message(s) from external script:<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>[1] "C:<ph id="ph1">\\</ph>Program Files<ph id="ph2">\\</ph>Microsoft SQL Server<ph id="ph3">\\</ph>MSSQL13.SQL2016<ph id="ph4">\\</ph>R_SERVICES"<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>[1] "C:/Program Files/Microsoft SQL Server/MSSQL13.SQL2016/R_SERVICES/library"<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>To resolve the issue, you must reinstall the package to the SQL Server instance library.</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>If you have upgraded an instance of SQL Server 2016 to use the latest version of Microsoft R, the default library location is different.</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>For more information, see <bpt id="p1">[</bpt>Use SqlBindR to upgrade an instance of R Services<ept id="p1">](install/upgrade-r-and-python.md)</ept>.</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Launchpad shuts down due to mismatched DLLs</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>If you install the database engine with other features, patch the server, and then later add the Machine Learning feature by using the original media, the wrong version of the Machine Learning components might be installed.</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>When Launchpad detects a version mismatch, it shuts down and creates a dump file.</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>To avoid this problem, be sure to install any new features at the same patch level as the server instance.</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">**</bpt>The wrong way to upgrade:<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Install SQL Server 2016 without R Services.</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Upgrade SQL Server 2016 Cumulative Update 2.</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Install R Services (In-Database) by using the RTM media.</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">**</bpt>The correct way to upgrade:<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Install SQL Server 2016 without R Services.</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Upgrade SQL Server 2016 to the desired patch level.</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>For example, install Service Pack 1 and then Cumulative Update 2.</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>To add the feature at the correct patch level, run SP1 and CU2 setup again, and then choose R Services (In-Database).</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Launchpad fails to start if 8dot3 notation is required</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>On older systems, Launchpad can fail to start if there is an 8dot3 notation requirement.</source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>This requirement has been removed in later releases.</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>SQL Server 2016 R Services customers should install one of the following:</source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>SQL Server 2016 SP1 and CU1: <bpt id="p1">[</bpt>Cumulative Update 1 for SQL Server<ept id="p1">](https://support.microsoft.com/help/3208177/cumulative-update-1-for-sql-server-2016-sp1)</ept>.</source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>SQL Server 2016 RTM, Cumulative Update 3, and this <bpt id="p1">[</bpt>hotfix<ept id="p1">](https://support.microsoft.com/help/3210110/on-demand-hotfix-update-package-for-sql-server-2016-cu3)</ept>, which is available on demand.</source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>For compatibility with R, SQL Server 2016 R Services (In-Database) required the drive where the feature is installed to support the creation of short file names by using <bpt id="p1">*</bpt>8dot3 notation<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>An 8.3 file name is also called a <bpt id="p1">*</bpt>short file name<ept id="p1">*</ept>, and it's used for compatibility with earlier versions of Microsoft Windows or as an alternative to long file names.</source>
+        </trans-unit><trans-unit id="239" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>If the volume where you are installing R does not support short file names, the processes that launch R from SQL Server might not be able to locate the correct executable, and Launchpad will not start.</source>
+        </trans-unit><trans-unit id="240" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>As a workaround, you can enable the 8dot3 notation on the volume where SQL Server is installed and where R Services is installed.</source>
+        </trans-unit><trans-unit id="241" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>You must then provide the short name for the working directory in the R Services configuration file.</source>
+        </trans-unit><trans-unit id="242" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>To enable 8dot3 notation, run the fsutil utility with the <bpt id="p1">*</bpt>8dot3name<ept id="p1">*</ept> argument as described here: <bpt id="p2">[</bpt>fsutil 8dot3name<ept id="p2">](https://technet.microsoft.com/library/ff621566(v=ws.11).aspx)</ept>.</source>
+        </trans-unit><trans-unit id="243" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>After the 8dot3 notation is enabled, open the RLauncher.config file and note the property of <ph id="ph1">`WORKING_DIRECTORY`</ph>.</source>
+        </trans-unit><trans-unit id="244" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>For information about how to find this file, see <bpt id="p1">[</bpt>Data collection for Machine Learning troubleshooting<ept id="p1">](data-collection-ml-troubleshooting-process.md)</ept>.</source>
+        </trans-unit><trans-unit id="245" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Use the fsutil utility with the <bpt id="p1">*</bpt>file<ept id="p1">*</ept> argument to specify a short file path for the folder that's specified in WORKING_DIRECTORY.</source>
+        </trans-unit><trans-unit id="246" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Edit the configuration file to specify the same working directory that you entered in the WORKING_DIRECTORY property.</source>
+        </trans-unit><trans-unit id="247" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2016||=sqlallproducts-allversions">
+          <source>Alternatively, you can specify a different working directory and choose an existing path that's already compatible with the 8dot3 notation.</source>
+        </trans-unit><trans-unit id="248" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="249" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Machine Learning Services troubleshooting and known issues<ept id="p1">](machine-learning-troubleshooting-faq.md)</ept></source>
+        </trans-unit><trans-unit id="250" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Data collection for troubleshooting machine learning<ept id="p1">](data-collection-ml-troubleshooting-process.md)</ept></source>
+        </trans-unit><trans-unit id="251" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Upgrade and installation FAQ<ept id="p1">](r/upgrade-and-installation-faq-sql-server-r-services.md)</ept></source>
+        </trans-unit><trans-unit id="252" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Troubleshoot database engine connections<ept id="p1">](../database-engine/configure-windows/troubleshoot-connecting-to-the-sql-server-database-engine.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

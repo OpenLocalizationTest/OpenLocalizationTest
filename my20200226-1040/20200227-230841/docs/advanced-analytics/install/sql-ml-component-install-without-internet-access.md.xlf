@@ -1,0 +1,287 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="sql-ml-component-install-without-internet-access.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13ce966406a20df723c453a5c8083f00f2e4989d9d0.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">e966406a20df723c453a5c8083f00f2e4989d9d0</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\install\sql-ml-component-install-without-internet-access.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Install without internet access</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Install SQL Server machine learning R and Python on computers isolated behind a network firewall.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Install SQL Server machine learning R and Python on computers with no internet access</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>By default, installers connect to Microsoft download sites to get required and updated components for machine learning on SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>If firewall constraints prevent the installer from reaching these sites, you can use an internet-connected device to download files, transfer files to an offline server, and then run setup.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>In-database analytics consist of database engine instance, plus additional components for R and Python integration, depending on the version of SQL Server.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>SQL Server 2019 includes R, Python, and Java</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>SQL Server 2017 includes R and Python</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>SQL Server 2016 is R-only</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>On an isolated server, machine learning and R/Python language-specific features are added through CAB files.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>SQL Server 2019 offline install</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>To install SQL Server Machine Learning Services (R and Python) on an isolated server, start by downloading the initial release of SQL Server and the corresponding CAB files for R and Python support.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>Even if you plan to immediately update your server to use the latest cumulative update, an initial release must be installed first.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>SQL Server 2019 does not have service packs.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>The initial release is the only base line, with servicing through cumulative updates only.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>1 - Download 2019 CABs</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>On a computer having an internet connection, download the CAB files providing R and Python features for the initial release and the installation media for SQL Server 2019.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>Release</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>Download link</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>Microsoft R Open</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>SRO_3.5.2.125_1033.cab<ept id="p1">](https://go.microsoft.com/fwlink/?linkid=2085686)</ept></source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>Microsoft R Server</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>SRS_9.4.7.25_1033.cab<ept id="p1">](https://go.microsoft.com/fwlink/?linkid=2085792)</ept></source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>Microsoft Python Open</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>SPO_4.5.12.120_1033.cab<ept id="p1">](https://go.microsoft.com/fwlink/?linkid=2085793)</ept></source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>Microsoft Python Server</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>SPS_9.4.7.25_1033.cab<ept id="p1">](https://go.microsoft.com/fwlink/?linkid=2085685)</ept></source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>The Java feature is included with the SQL Server installation media and doesn't need a separate CAB file.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>2 - Get SQL Server 2019 installation media</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>On a computer having an internet connection, download the <bpt id="p1">[</bpt>SQL Server 2019 setup program<ept id="p1">](https://www.microsoft.com/sql-server/sql-server-downloads)</ept>.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>Double-click setup and choose the <bpt id="p1">**</bpt>Download Media<ept id="p1">**</ept> installation type.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>With this option, setup creates a local .iso (or .cab) file containing the installation media.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source><bpt id="p1">![</bpt>Choose the download media installation type<ept id="p1">](media/2019offline-download-tile.png "|::ref1::|")</ept></source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>SQL Server 2017 offline install</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>To install SQL Server Machine Learning Services (R and Python) on an isolated server, start by downloading the initial release of SQL Server and the corresponding CAB files for R and Python support.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>Even if you plan to immediately update your server to use the latest cumulative update, an initial release must be installed first.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>SQL Server 2017 does not have service packs.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>It's the first release of SQL Server to use the initial release as the only base line, with servicing through cumulative updates only.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>1 - Download 2017 CABs</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>On a computer having an internet connection, download the CAB files providing R and Python features for the initial release and the installation media for SQL Server 2017.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>Release</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>Download link</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>Microsoft R Open</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>SRO_3.3.3.24_1033.cab<ept id="p1">](https://go.microsoft.com/fwlink/?LinkId=851496)</ept></source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>Microsoft R Server</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>SRS_9.2.0.24_1033.cab<ept id="p1">](https://go.microsoft.com/fwlink/?LinkId=851507)</ept></source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>Microsoft Python Open</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>SPO_9.2.0.24_1033.cab<ept id="p1">](https://go.microsoft.com/fwlink/?LinkId=851502)</ept></source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>Microsoft Python Server</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>SPS_9.2.0.24_1033.cab<ept id="p1">](https://go.microsoft.com/fwlink/?LinkId=851508)</ept></source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>2 - Get SQL Server 2017 installation media</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>On a computer having an internet connection, download the <bpt id="p1">[</bpt>SQL Server 2017 setup program<ept id="p1">](https://www.microsoft.com/sql-server/sql-server-downloads)</ept>.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>Double-click setup and choose the <bpt id="p1">**</bpt>Download Media<ept id="p1">**</ept> installation type.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>With this option, setup creates a local .iso (or .cab) file containing the installation media.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">![</bpt>Choose the download media installation type<ept id="p1">](media/offline-download-tile.png "|::ref2::|")</ept></source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>SQL Server 2016 offline install</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>SQL Server 2016 in-database analytics is R-only, with just two CAB files for product packages and Microsoft's distribution of open-source R, respectively.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>Start by installing any one of these releases: RTM, SP 1, SP 2.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>Once a base installation is in place, cumulative updates can be applied as a next step.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>On a computer having an internet connection, download the CAB files used by setup to install in-database analytics on SQL Server 2016.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>1 - Download 2016 CABs</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>Release</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>Microsoft R Open</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>Microsoft R Server</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">**</bpt>SQL Server 2016 RTM<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>SRO_3.2.2.803_1033.cab<ept id="p1">](https://go.microsoft.com/fwlink/?LinkId=761266)</ept></source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>SRS_8.0.3.0_1033.cab<ept id="p1">](https://go.microsoft.com/fwlink/?LinkId=735051)</ept></source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">**</bpt>SQL Server 2016 SP 1<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>SRO_3.2.2.15000_1033.cab<ept id="p1">](https://go.microsoft.com/fwlink/?LinkId=824879)</ept></source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>SRS_8.0.3.15000_1033.cab<ept id="p1">](https://go.microsoft.com/fwlink/?LinkId=824881)</ept></source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">**</bpt>SQL Server 2016 SP 2<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>SRO_3.2.2.16000_1033.cab<ept id="p1">](https://go.microsoft.com/fwlink/?LinkId=866039)</ept></source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>SRS_8.0.3.17000_1033.cab<ept id="p1">](https://go.microsoft.com/fwlink/?LinkId=850317)</ept></source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>2 - Get SQL Server 2016 installation media</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>You can install SQL Server 2016 RTM, SP 1, or SP 2 as your first installation on the target computer.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>Any of these versions can accept a cumulative update.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>One way to get an .iso file containing the installation media is through <bpt id="p1">[</bpt>Visual Studio Dev Essentials<ept id="p1">](https://visualstudio.microsoft.com/dev-essentials/)</ept>.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>Sign in, and then use the <bpt id="p1">**</bpt>Downloads<ept id="p1">**</ept> link to find the SQL Server 2016 release you want to install.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>The download is in the form of an .iso file, which you can copy to the target computer for an offline installation.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>Transfer files</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>Copy the SQL Server installation media (.iso or .cab) and in-database analytics CAB files to the target computer.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>Place the CAB files and installation media file in the same folder on the target machine, such as the setup user's %TEMP% folder.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>The %TEMP% folder is required for Python CAB files.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>For R, you can use %TEMP% or set the <ph id="ph1">`myrcachedirectory`</ph> parameter to the CAB path.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>Run Setup</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>When you run SQL Server Setup on a computer disconnected from the internet, Setup adds an <bpt id="p1">**</bpt>Offline installation<ept id="p1">**</ept> page to the wizard so that you can specify the location of the CAB files you copied in the previous step.</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>To begin installation, double-click the .iso or .cab file to access the installation media.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>You should see the <bpt id="p1">**</bpt>setup.exe<ept id="p1">**</ept> file.</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>Right-click <bpt id="p1">**</bpt>setup.exe<ept id="p1">**</ept> and run as administrator.</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>When the setup wizard displays the licensing page for open-source R or Python components, click  <bpt id="p1">**</bpt>Accept<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>Acceptance of licensing terms allows you to proceed to the next step.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>When you get to the <bpt id="p1">**</bpt>Offline installation<ept id="p1">**</ept> page, in <bpt id="p2">**</bpt>Install Path<ept id="p2">**</ept>, specify the folder containing the CAB files you copied earlier.</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>Continue following the on-screen prompts to complete the installation.</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>Apply cumulative updates</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>We recommend that you apply the latest cumulative update to both the database engine and machine learning components.</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>Cumulative updates are installed through the Setup program.</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>Start with a baseline instance.</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>You can only apply cumulative updates to existing installations of the initial release of SQL Server.</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>On an internet connected device, go to the cumulative update list for your version of SQL Server:</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve" moniker-range="=sql-server-ver15||=sqlallproducts-allversions">
+          <source>SQL Server 2019 updates <bpt id="p1">*</bpt>(updates are not yet available for 2019)<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>Start with a baseline instance.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>You can only apply cumulative updates to existing installations of the initial release of SQL Server.</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>On an internet connected device, go to the cumulative update list for your version of SQL Server:</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>SQL Server 2017 updates<ept id="p1">](https://sqlserverupdates.com/sql-server-2017-updates/)</ept></source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>Start with a baseline instance.</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>You can only apply cumulative updates to existing installations of the SQL Server 2016 initial release, SQL Server 2016 SP 1, or SQL Server 2016 SP 2.</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>On an internet connected device, go to the cumulative update list for your version of SQL Server:</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>SQL Server 2016 updates<ept id="p1">](https://sqlserverupdates.com/sql-server-2016-updates/)</ept></source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>Select the latest cumulative update to download the executable.</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>Get corresponding CAB files for R and Python.</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>For download links, see <bpt id="p1">[</bpt>CAB downloads for cumulative updates on SQL Server in-database analytics instances<ept id="p1">](sql-ml-cab-downloads.md)</ept>.</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>Transfer all files, executable and CAB files, to the same folder on the offline computer.</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>Run Setup.</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>Accept the licensing terms, and on the Feature selection page, review the features for which cumulative updates are applied.</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>You should see every feature installed for the current instance, including machine learning features.</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>Select features from the feature tree<ept id="p1">](media/cumulative-update-feature-selection.png "|::ref3::|")</ept></source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>Continue through the wizard, accepting the licensing terms for R and Python distributions.</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>During installation, you are prompted to choose the folder location containing the updated CAB files.</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>Set environment variables</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>For R feature integration only, you should set the <bpt id="p1">**</bpt>MKL_CBWR<ept id="p1">**</ept> environment variable to <bpt id="p2">[</bpt>ensure consistent output<ept id="p2">](https://software.intel.com/articles/introduction-to-the-conditional-numerical-reproducibility-cnr)</ept> from Intel Math Kernel Library (MKL) calculations.</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>In Control Panel, click <bpt id="p1">**</bpt>System and Security<ept id="p1">**</ept><ph id="ph1"> &gt; </ph><bpt id="p2">**</bpt>System<ept id="p2">**</ept><ph id="ph2"> &gt; </ph><bpt id="p3">**</bpt>Advanced System Settings<ept id="p3">**</ept><ph id="ph3"> &gt; </ph><bpt id="p4">**</bpt>Environment Variables<ept id="p4">**</ept>.</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>Create a new User or System variable.</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>Set variable name to <ph id="ph1">`MKL_CBWR`</ph></source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>Set the variable value to <ph id="ph1">`AUTO`</ph></source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>This step requires a server restart.</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>If you are about to enable script execution, you can hold off on the restart until all of the configuration work is done.</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>Post-install configuration</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>After installation is finished, restart the service and then configure the server to enable script execution:</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>Enable external script execution<ept id="p1">](sql-machine-learning-services-windows-install.md#bkmk_enableFeature)</ept></source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source>An initial offline installation of SQL Server Machine Learning Services requires the same configuration as an online installation:</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>Verify installation<ept id="p1">](sql-machine-learning-services-windows-install.md#verify-installation)</ept></source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve" moniker-range="&gt;=sql-server-2017||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>Additional configuration as needed<ept id="p1">](sql-machine-learning-services-windows-install.md#additional-configuration)</ept></source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>After installation is finished, restart the service and then configure the server to enable script execution:</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>Enable external script execution<ept id="p1">](sql-r-services-windows-install.md#bkmk_enableFeature)</ept></source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>An initial offline installation of SQL Server R Services requires the same configuration as an online installation:</source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>Verify installation<ept id="p1">](sql-r-services-windows-install.md#verify-installation)</ept></source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source><bpt id="p1">[</bpt>Additional configuration as needed<ept id="p1">](sql-r-services-windows-install.md#bkmk_FollowUp)</ept></source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="239" translate="yes" xml:space="preserve">
+          <source>To check the installation status of the instance and fix common issues, see <bpt id="p1">[</bpt>Custom reports for SQL Server<ept id="p1">](../r/monitor-r-services-using-custom-reports-in-management-studio.md)</ept>.</source>
+        </trans-unit><trans-unit id="240" translate="yes" xml:space="preserve">
+          <source>For help with any unfamiliar messages or log entries, see <bpt id="p1">[</bpt>Upgrade and installation FAQ - Machine Learning Services<ept id="p1">](../r/upgrade-and-installation-faq-sql-server-r-services.md)</ept>.</source>
+        </trans-unit><trans-unit id="241" translate="yes" xml:space="preserve" extradata="ref1">
+          <source>Download media</source>
+        </trans-unit><trans-unit id="242" translate="yes" xml:space="preserve" extradata="ref2">
+          <source>Download media</source>
+        </trans-unit><trans-unit id="243" translate="yes" xml:space="preserve" extradata="ref3">
+          <source>feature list</source>
+        </trans-unit></group></body></file></xliff>

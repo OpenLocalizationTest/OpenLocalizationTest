@@ -1,0 +1,139 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="quickstart-r-train-score-model.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cb6be97041912027cf284ff34c2c826a37edabe93.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">b6be97041912027cf284ff34c2c826a37edabe93</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\quickstart-r-train-score-model.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Quickstart: Train a model in R</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>In this quickstart, you'll create and train a predictive model using T. You'll save the model to a table in your SQL Server instance, and then use the model to predict values from new data using SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Quickstart: Create and score a predictive model in R with SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>In this quickstart, you'll create and train a predictive model using T. You'll save the model to a table in your SQL Server instance, and then use the model to predict values from new data using <bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../what-is-sql-server-machine-learning.md)</ept>.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>You'll create and execute two stored procedures running in SQL.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>The first one uses the <bpt id="p1">**</bpt>mtcars<ept id="p1">**</ept> dataset included with R and generates a simple generalized linear model (GLM) that predicts the probability that a vehicle has been fitted with a manual transmission.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>The second procedure is for scoring - it calls the model generated in the first procedure to output a set of predictions based on new data.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>By placing R code in a SQL stored procedure, operations are contained in SQL, are reusable, and can be called by other stored procedures and client applications.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>If you need a refresher on linear models, try this tutorial which describes the process of fitting a model using rxLinMod:  <bpt id="p1">[</bpt>Fitting Linear Models<ept id="p1">](/machine-learning-server/r/how-to-revoscaler-linear-model)</ept></source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>By completing this quickstart, you'll learn:</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>How to embed R code in a stored procedure</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>How to pass inputs to your code through inputs on the stored procedure</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>How stored procedures are used to operationalize models</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>This quickstart requires access to an instance of SQL Server with <bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../install/sql-machine-learning-services-windows-install.md)</ept> with the R language installed.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Your SQL Server instance can be in an Azure virtual machine or on-premises.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Just be aware that the external scripting feature is disabled by default, so you might need to <bpt id="p1">[</bpt>enable external scripting<ept id="p1">](../install/sql-machine-learning-services-windows-install.md#bkmk_enableFeature)</ept> and verify that <bpt id="p2">**</bpt>SQL Server Launchpad service<ept id="p2">**</ept> is running before you start.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>You also need a tool for running SQL queries that contain R scripts.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>You can run these scripts using any database management or query tool, as long as it can connect to a SQL Server instance, and run a T-SQL query or stored procedure.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>This quickstart uses <bpt id="p1">[</bpt>SQL Server Management Studio (SSMS)<ept id="p1">](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms)</ept>.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Create the model</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>To create the model, you'll create source data for training, create the model and train it using the data, then store the model in a SQL database where it can be used to generate predictions with new data.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Create the source data</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Open SSMS, connect to your SQL Server instance, and open a new query window.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Create a table to save the training data.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Insert the data from the built-in dataset <ph id="ph1">`mtcars`</ph>.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Many datasets, small and large, are included with the R runtime.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>To get a list of datasets installed with R, type <ph id="ph1">`library(help="datasets")`</ph> from an R command prompt.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Create and train the model</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>The car speed data contains two columns, both numeric: horsepower (<ph id="ph1">`hp`</ph>) and weight (<ph id="ph2">`wt`</ph>).</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>From this data, you'll create a generalized linear model (GLM) that estimates the probability that a vehicle has been fitted with a manual transmission.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>To build the model, you define the formula inside your R code, and pass the data as an input parameter.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>The first argument to <ph id="ph1">`glm`</ph> is the <bpt id="p1">*</bpt>formula<ept id="p1">*</ept> parameter, which defines <ph id="ph2">`am`</ph> as dependent on <ph id="ph3">`hp + wt`</ph>.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>The input data is stored in the variable <ph id="ph1">`MTCarsData`</ph>, which is populated by the SQL query.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>If you don't assign a specific name to your input data, the default variable name would be <bpt id="p1">_</bpt>InputDataSet<ept id="p1">_</ept>.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Store the model in the SQL database</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Next, store the model in a SQL database so you can use it for prediction or retrain it.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Create a table to store the model.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>The output of an R package that creates a model is usually a binary object.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Therefore, the table where you store the model must provide a column of <bpt id="p1">**</bpt>varbinary(max)<ept id="p1">**</ept> type.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Run the following Transact-SQL statement to call the stored procedure, generate the model, and save it to the table you created.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>If you run this code a second time, you get this error: "Violation of PRIMARY KEY constraint...Cannot insert duplicate key in object dbo.stopping_distance_models".</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>One option for avoiding this error is to update the name for each new model.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>For example, you could change the name to something more descriptive, and include the model type, the day you created it, and so forth.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Score new data using the trained model</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Scoring<ept id="p1">*</ept> is a term used in data science to mean generating predictions, probabilities, or other values based on new data fed into a trained model.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>You'll use the model you created in the previous section to score predictions against new data.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Create a table of new data</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>First, create a table with new data.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Predict manual transmission</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>To get predictions based on your model, write a SQL script that does the following:</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Gets the model you want</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Gets the new input data</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Calls an R prediction function that is compatible with that model</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Over time, the table might contain multiple R models, all built using different parameters or algorithms, or trained on different subsets of data.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>In this example, we'll use the model named <ph id="ph1">`default model`</ph>.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>The script above performs the following steps:</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Use a SELECT statement to get a single model from the table, and pass it as an input parameter.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>After retrieving the model from the table, call the <ph id="ph1">`unserialize`</ph> function on the model.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>Apply the <ph id="ph1">`predict`</ph> function with appropriate arguments to the model, and provide the new input data.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>In the example, the <ph id="ph1">`str`</ph> function is added during the testing phase, to check the schema of data being returned from R. You can remove the statement later.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>The column names used in the R script are not necessarily passed to the stored procedure output.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Here the WITH RESULTS clause is used to define some new column names.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Result set for predicting properbility of manual transmission</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>It's also possible to use the <bpt id="p1">[</bpt>PREDICT (Transact-SQL)<ept id="p1">](../../t-sql/queries/predict-transact-sql.md)</ept> statement to generate a predicted value or score based on a stored model.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>For more information on SQL Server Machine Learning Services, see:</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>What is SQL Server Machine Learning Services (Python and R)?<ept id="p1">](../what-is-sql-server-machine-learning.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

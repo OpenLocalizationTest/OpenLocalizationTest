@@ -1,0 +1,103 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="deepdive-data-science-deep-dive-using-the-revoscaler-packages.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cfc1f427659155b5379a681787a633b6037b4bd87.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">fc1f427659155b5379a681787a633b6037b4bd87</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\deepdive-data-science-deep-dive-using-the-revoscaler-packages.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>RevoScaleR deep-dive tutorial</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>In this tutorial series, learn how to call RevoScaleR functions using SQL Server Machine Learning R integration.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Tutorial: Use RevoScaleR R functions with SQL Server data</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>In this multi-part tutorial series, you're introduced to a range of <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> functions for tasks associated with data science.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In the process, you'll learn how to create a remote compute context, move data between local and remote compute contexts, and execute R code on a remote SQL Server.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>You'll also learn how to analyze and plot data both locally and on the remote server, and how to create and deploy models.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RevoScaleR<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept> is a Microsoft R package providing distributed and parallel processing for data science and machine learning workloads.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>For R development in SQL Server, <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> is one of the core built-in packages, with functions for creating data source objects, setting a compute context, managing packages, and most importantly: working with data end-to-end, from import to visualization and analysis.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Machine Learning algorithms in SQL Server have a dependency on <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> data sources.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Given the importance of <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept>, knowing when and how to call its functions is an essential skill.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../install/sql-machine-learning-services-windows-install.md)</ept> with the R feature, or <bpt id="p2">[</bpt>SQL Server R Services (in-Database)<ept id="p2">](../install/sql-r-services-windows-install.md)</ept></source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Database permissions<ept id="p1">](../security/user-permission.md)</ept> and a SQL Server database user login</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server Management Studio<ept id="p1">](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)</ept></source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>An IDE such as RStudio or the built-in RGUI tool included with R</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>To switch back and forth between local and remote compute contexts, you need two systems.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Local is typically a development workstation with sufficient power for data science workloads.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Remote in this case is SQL Server with the R feature enabled.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Switching compute contexts is predicated on having the same-version <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> on both local and remote systems.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>On a local workstation, you can get the <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> packages and related providers by installing Microsoft R Client.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>If you need to put client and server on the same computer, be sure to install a second set of Microsoft R libraries for sending R script from a "remote" client.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Do not use the R libraries that are installed in the program files of the SQL Server instance.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Specifically, if you are using one computer, you need the <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> library in both of these locations to support client and server operations.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>C:\Program Files\Microsoft\R Client\R_SERVER\library\RevoScaleR</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\R_SERVICES\library\RevoScaleR</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>For instructions on client configuration, see <bpt id="p1">[</bpt>Set up a data science client for R development<ept id="p1">](../r/set-up-a-data-science-client.md)</ept>.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>R development tools</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>R developers typically use IDEs for writing and debugging R code.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Here are some suggestions:</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>R Tools for Visual Studio<ept id="p1">**</ept> (RTVS) is a free plug-in that provides Intellisense, debugging, and support for Microsoft R. You can use it with both R Server and SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>To download, see <bpt id="p1">[</bpt>R Tools for Visual Studio<ept id="p1">](https://marketplace.visualstudio.com/items?itemName=MikhailArkhipov007.RTVS2019)</ept>.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>RStudio<ept id="p1">**</ept> is one of the more popular environments for R development.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt><ph id="ph1">https://www.rstudio.com/products/RStudio/</ph><ept id="p1">](https://www.rstudio.com/products/RStudio/)</ept>.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Basic R tools (R.exe, RTerm.exe, RScripts.exe) are also installed by default when you install R in SQL Server or R Client.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>If you do not wish to install an IDE, you can use built-in R tools to execute the code in this tutorial.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Recall that <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> is required on both local and remote computers.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>You cannot complete this tutorial using a generic installation of RStudio or other environment that's missing the Microsoft R libraries.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Set Up a Data Science Client<ept id="p1">](../r/set-up-a-data-science-client.md)</ept>.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Summary of tasks</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Data is initially obtained from CSV files or XDF files.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>You import the data into <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> using the functions in the <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> package.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Model training and scoring is performed using the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> compute context.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Use <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> functions to create new <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> tables to save your scoring results.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Create plots both on the server and in the local compute context.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Train a model on data in <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> database, running R in the <ph id="ph2">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> instance.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Extract a subset of data and save it as an XDF file for re-use in analysis on your local workstation.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Get new data for scoring, by opening an ODBC connection to the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> database.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Scoring is done on the local workstation.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Create a custom R function and run it in the server compute context to perform a simulation.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Tutorial 1: Create database and permissions<ept id="p1">](deepdive-work-with-sql-server-data-using-r.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

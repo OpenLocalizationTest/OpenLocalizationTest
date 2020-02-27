@@ -1,0 +1,259 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="r-and-data-optimization-r-services.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cd966094277f47d3ef12239c32a75c9a3ecbf88c9.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">d966094277f47d3ef12239c32a75c9a3ecbf88c9</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\r-and-data-optimization-r-services.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Performance tuning for data</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>This article discusses performance optimizations for R or Python scripts that run in SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>It also describes methods that you can use to update your R code, both to boost performance and to avoid known issues.</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Performance for R Services - data optimization</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This article is the third in a series that describes performance optimization for R Services based on two case studies.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>This article discusses performance optimizations for R or Python scripts that run in SQL Server.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>It also describes methods that you can use to update your R code, both to boost performance and to avoid known issues.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Choosing a compute context</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>In SQL Server 2016 and 2017, you can use either the <bpt id="p1">**</bpt>local<ept id="p1">**</ept> or <bpt id="p2">**</bpt>SQL<ept id="p2">**</ept> compute context when  running R or Python script.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>When using the <bpt id="p1">**</bpt>local<ept id="p1">**</ept> compute context, analysis is performed on your computer and not on the server.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Therefore, if you are getting data from SQL Server to use in your code, the data must be fetched over the network.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>The performance hit incurred for this network transfer depends on the size of the data transferred, speed of the network, and other network transfers occurring at the same time.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>When using the <bpt id="p1">**</bpt>SQL Server compute context<ept id="p1">**</ept>, the code is executed on the server.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>If you are getting data from SQL Server, the data should be local to the server running the analysis, and therefore no network overhead is introduced.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>If you need to import data from other sources, consider arranging ETL beforehand.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>When working with large data sets, you should always use the SQL compute context.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Factors</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>The R language has the concept of <bpt id="p1">*</bpt>factors<ept id="p1">*</ept>, which are special variable for categorical data.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Data scientists often use factor variables in their formula, because handling categorical variables as factors ensures that the data is processed properly by machine learning functions.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>R for Dummies: Factor Variables<ept id="p1">](https://www.dummies.com/programming/r/how-to-look-at-the-structure-of-a-factor-in-r/)</ept>.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>By design, factor variables can be converted from strings to integers and back again for storage or processing.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>The R <ph id="ph1">`data.frame`</ph> function handles all strings as factor variables, unless the argument <bpt id="p1">*</bpt>stringsAsFactors<ept id="p1">*</ept> is set to <bpt id="p2">**</bpt>False<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>What this means is that strings are automatically converted to an integer for processing, and then mapped back to the original string.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>If the source data for factors is stored as an integer, performance can suffer, because R converts the factor integers to strings at run time, and then performs its own internal string-to-integer conversion.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>To avoid such run-time conversions, consider storing the values as integers in the SQL Server table, and using the <bpt id="p1">_</bpt>colInfo<ept id="p1">_</ept> argument to specify the levels for the column used as factor.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Most data source objects in RevoScaleR take the parameter <bpt id="p1">_</bpt>colInfo<ept id="p1">_</ept>.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>You use this parameter to name the variables used by the data source, specify their type, and define the variables levels or transformations on the column values.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>For example, the following R function call gets the integers 1, 2, and 3 from a table, but maps the values to a factor with levels "apple", "orange", and "banana".</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>When the source column contains strings, it is always more efficient to specify the levels ahead of time using the <bpt id="p1">_</bpt>colInfo<ept id="p1">_</ept> parameter.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>For example, the following R code treats the strings as factors as they are being read.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>If there is no semantic difference in the model generation, then the latter approach can lead to better performance.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Data transformations</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Data scientists often use transformation functions written in R as part of the analysis.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>The transformation function is applied to each row retrieved from the table.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>In SQL Server, such transformations are applied to all rows retrieved in a batch, which requires communication between the R interpreter and the analytics engine.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>To perform the transformation, the data moves from SQL to the analytics engine and then to the R interpreter process and back.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>For this reason, using transformations as part of your R code can have a significant adverse effect on the performance of the algorithm, depending on the amount of data involved.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>It is more efficient to have all necessary columns in the table or view before performing analysis, and avoid transformations during the computation.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>If it is not possible to add additional columns to existing tables, consider creating another table or view with the transformed columns and use an appropriate query to retrieve the data.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Batch row reads</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>If you use a SQL Server data source (<ph id="ph1">`RxSqlServerData`</ph>) in your code, we recommend that you try using the parameter <bpt id="p1">_</bpt>rowsPerRead<ept id="p1">_</ept> to specify batch size.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>This parameter defines the number of rows that are queried and then sent to the external script for processing.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>At run time, the algorithm sees only the specified number of rows in each batch.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>The ability to control the amount of data that is processed at a time can help you solve or avoid problems.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>For example, if your input dataset is very wide (has many columns), or if the dataset has a few large columns (such as free text), you can reduce the batch size to avoid paging data out of memory.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>By default, the value of this parameter is set to 50000, to ensure decent performance even on machines with low memory.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>If the server has enough available memory, increasing this value to 500,000 or even a million can yield better performance, especially for large tables.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>The benefits of increasing batch size become evident on a large data set, and in a task that can run on multiple processes.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>However, increasing this value does not always produce the best results.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>We recommend that you experiment with your data and algorithm to determine the optimal value.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Parallel processing</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>To improve the performance of <bpt id="p1">**</bpt>rx<ept id="p1">**</ept> analytic functions, you can leverage the ability of SQL Server to execute tasks in parallel using available cores on the server computer.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>There are two ways to achieve parallelization with R in SQL Server:</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Use <ph id="ph1">\@</ph>parallel.<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>When using the <ph id="ph1">`sp_execute_external_script`</ph> stored procedure to run an R script, set the <ph id="ph2">`@parallel`</ph> parameter to <ph id="ph3">`1`</ph>.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>This is the best method if your R script does <bpt id="p1">**</bpt>not<ept id="p1">**</ept> use RevoScaleR functions, which have other mechanisms for processing.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>If your script uses RevoScaleR functions (generally prefixed with "rx"), parallel processing is performed automatically and you do not need to explicitly set <ph id="ph1">`@parallel`</ph> to <ph id="ph2">`1`</ph>.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>If the R script can be parallelized, and if the SQL query can be parallelized, then the database engine creates multiple parallel processes.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>The maximum number of processes that can be created is equal to the <bpt id="p1">**</bpt>max degree of parallelism<ept id="p1">**</ept> (MAXDOP) setting for the instance.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>All processes then run the same script, but receive only a portion of the data.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Thus, this method is not useful with scripts that must see all the data, such as when training a model.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>However, it is useful when performing tasks such as batch prediction in parallel.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>For more information on using parallelism with <ph id="ph1">`sp_execute_external_script`</ph>, see the <bpt id="p1">**</bpt>Advanced tips: parallel processing<ept id="p1">**</ept> section of <bpt id="p2">[</bpt>Using R Code in Transact-SQL<ept id="p2">](../tutorials/quickstart-r-create-script.md)</ept>.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Use numTasks =1.<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>When using <bpt id="p1">**</bpt>rx<ept id="p1">**</ept> functions in a SQL Server compute context, set the value of the <bpt id="p2">_</bpt>numTasks<ept id="p2">_</ept> parameter to the number of processes that you would like to create.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>The number of processes created can never be more than <bpt id="p1">**</bpt>MAXDOP<ept id="p1">**</ept>; however, the actual number of processes created is determined by the database engine and may be less than you requested.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>If the R script can be parallelized, and if the SQL query can be parallelized, then SQL Server creates multiple parallel processes when running the rx functions.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>The actual number of processes that are created depends on a variety of factors such as resource governance, current usage of resources, other sessions, and the query execution plan for the query used with the R script.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Query parallelization</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>In Microsoft R, you can work with SQL Server data sources by defining your data as an RxSqlServerData data source object.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>Creates a data source based on an entire table or view:</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>Creates a data source based on a SQL query:</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>If a table is specified in the data source instead of a query, R Services uses internal heuristics to determines the necessary columns to fetch from the table; however, this approach is unlikely to result in parallel execution.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>To ensure that the data can be analyzed in parallel, the query used to retrieve the data should be framed in such a way that the database engine can create a parallel query plan.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>If the code or algorithm uses large volumes of data, make sure that the query given to <ph id="ph1">`RxSqlServerData`</ph> is optimized for parallel execution.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>A query that does not result in a parallel execution plan can result in a single process for computation.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>If you need to work with large datasets, use Management Studio or another SQL query analyzer before you run your R code, to analyze the execution plan.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Then, take any recommended steps to improve the performance of the query.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>For example, a missing index on a table can affect the time taken to execute a query.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Monitor and Tune for Performance<ept id="p1">](../../relational-databases/performance/monitor-and-tune-for-performance.md)</ept>.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>Another common mistake that can affect performance is that a query retrieves more columns than are required.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>For example, if a formula is based on only three columns, but your source table has 30 columns, you are moving data unnecessarily.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>Avoid using <ph id="ph1">`SELECT *`</ph>!</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>Take some time to review the columns in the dataset and identify only the ones needed for analysis</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>Remove from your queries any columns that contain data types that are incompatible with R code, such as GUIDS and rowguids</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>Check for unsupported date and time formats</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>Rather than load a table, create a view that selects certain values or casts columns to avoid conversion errors</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>Optimizing the machine learning algorithm</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>This section provides miscellaneous tips and resources that are specific to RevoScaleR and other options in Microsoft R.</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>A general discussion of R optimization is out of the scope of this article.</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>However, if you need to make your code faster, we recommend the popular article, <bpt id="p1">[</bpt>The R Inferno<ept id="p1">](https://www.burns-stat.com/pages/Tutor/R_inferno.pdf)</ept>.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>It covers programming constructs in R and common pitfalls in vivid language and detail, and provides many  specific examples of R programming techniques.</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>Optimizations for RevoScaleR</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>Many RevoScaleR algorithms support parameters to control how the trained model is generated.</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>While  the accuracy and correctness of the model is important, the performance of the algorithm might be equally important.</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>To get the right balance between accuracy and training time, you can modify parameters to increase the speed of computation, and in many cases, improve performance without reducing the accuracy or correctness.</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxDTree<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxdtree)</ept></source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`rxDTree`</ph> supports the <ph id="ph2">`maxDepth`</ph> parameter, which controls the depth of the decision tree.</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>As <ph id="ph1">`maxDepth`</ph> is increased, performance can degrade, so it is important to analyze the benefits of increasing the depth vs. hurting performance.</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>You can also control the balance between time complexity and prediction accuracy by adjusting parameters such as <ph id="ph1">`maxNumBins`</ph>, <ph id="ph2">`maxDepth`</ph>, <ph id="ph3">`maxComplete`</ph>, and <ph id="ph4">`maxSurrogate`</ph>.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>Increasing the depth to beyond 10 or 15 can make the computation very expensive.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxLinMod<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxlinmod)</ept></source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>Try using the <ph id="ph1">`cube`</ph> argument if the first dependent variable in the formula is a factor variable.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>When <ph id="ph1">`cube`</ph> is set to <ph id="ph2">`TRUE`</ph>, the regression is performed using a partitioned inverse, which might be faster and use less memory than standard regression computation.</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>If the formula has a large number of variables, the performance gain can be significant.</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxLogit<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxlogit)</ept></source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>Use the <ph id="ph1">`cube`</ph> argument if the first dependent variable is a factor variable.</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>When <ph id="ph1">`cube`</ph> is set to <ph id="ph2">`TRUE`</ph>, the algorithm uses a partitioned inverse, which might be faster and use less memory.</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>If the formula has a large number of variables, the performance gain can be significant.</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>For additional guidance on optimization of RevoScaleR, see these articles:</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>Support article: <bpt id="p1">[</bpt>Performance tuning options for rxDForest and rxDTree<ept id="p1">](https://support.microsoft.com/kb/3104235)</ept></source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>Methods for controlling model fit in a boosted tree model: <bpt id="p1">[</bpt>Estimating Models Using Stochastic Gradient Boosting<ept id="p1">](https://docs.microsoft.com/r-server/r/how-to-revoscaler-boosting)</ept></source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>Overview of how RevoScaleR moves and processes data: <bpt id="p1">[</bpt>Write custom chunking algorithms in ScaleR<ept id="p1">](https://docs.microsoft.com/r-server/r/how-to-developer-write-chunking-algorithms)</ept></source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>Programming model for RevoScaleR: <bpt id="p1">[</bpt>Managing threads in RevoScaleR<ept id="p1">](https://docs.microsoft.com/r-server/r/how-to-developer-manage-threads)</ept></source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>Function reference for <bpt id="p1">[</bpt>rxDForest<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxdforest)</ept></source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>Function reference for <bpt id="p1">[</bpt>rxBTrees<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxbtrees)</ept></source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>Use MicrosoftML</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>We also recommend that you look into the new <bpt id="p1">**</bpt>MicrosoftML<ept id="p1">**</ept> package, which provides scalable machine learning algorithms that can use the compute contexts and transformations provided by RevoScaleR.</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Get started with MicrosoftML<ept id="p1">](https://docs.microsoft.com/r-server/r/concept-what-is-the-microsoftml-package)</ept></source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>How to choose a MicrosoftML algorithm<ept id="p1">](https://docs.microsoft.com/r-server/r/how-to-choose-microsoftml-algorithms-cheatsheet)</ept></source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>Operationalize a solution using Microsoft R Server</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>If your scenario involves fast prediction using a stored model, or integrating machine learning into an application, you can use the <bpt id="p1">[</bpt>operationalization<ept id="p1">](https://docs.microsoft.com/r-server/what-is-operationalization)</ept> features in Microsoft R Server (formerly known as DeployR).</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>As a <bpt id="p1">**</bpt>data scientist<ept id="p1">**</ept>, use the <bpt id="p2">[</bpt>mrsdeploy package<ept id="p2">](https://docs.microsoft.com/r-server/r-reference/mrsdeploy/mrsdeploy-package)</ept> to share R code with other computers, and integrate R analytics inside web, desktop, mobile, and dashboard applications: <bpt id="p3">[</bpt>How to publish and manage R web services in R Server<ept id="p3">](https://docs.microsoft.com/r-server/operationalize/how-to-deploy-web-service-publish-manage-in-r)</ept></source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>As an <bpt id="p1">**</bpt>administrator<ept id="p1">**</ept>, learn how to manage packages, monitor web nodes and compute nodes, and control security on R jobs: <bpt id="p2">[</bpt>How to interact with and consume web services in R<ept id="p2">](https://docs.microsoft.com/r-server/operationalize/how-to-consume-web-service-interact-in-r)</ept></source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>Articles in this series</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Performance tuning for R - introduction<ept id="p1">](sql-server-r-services-performance-tuning.md)</ept></source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Performance tuning for R - SQL Server configuration<ept id="p1">](sql-server-configuration-r-services.md)</ept></source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Performance tuning for R - R code and data optimization<ept id="p1">](r-and-data-optimization-r-services.md)</ept></source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Performance Tuning - case study results<ept id="p1">](performance-case-study-r-services.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,189 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="how-to-create-a-stored-procedure-using-sqlrutils.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13ce0846442abce6dd598c6318e4ba7cf9e74685066.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">e0846442abce6dd598c6318e4ba7cf9e74685066</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\how-to-create-a-stored-procedure-using-sqlrutils.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Create an R stored procedure</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Use the sqlrutils R package in SQL Server to bundle R language code into a single function that can be passed as an argument to a stored procedure.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Create a stored procedure using sqlrutils</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article describes the steps for converting your R code to run as a T-SQL stored procedure.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>For best possible results, your code might need to be modified somewhat, to ensure that all inputs can be parameterized.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a name="bkmk_rewrite"&gt;</bpt><ept id="p1">&lt;/a&gt;</ept>Step 1.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Rewrite R Script</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>For the best results, you should rewrite your R code to encapsulate it as a single function.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>All variables used by the function should be defined inside the function, or should be defined as input parameters.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>See the <bpt id="p1">[</bpt>sample code<ept id="p1">](#samples)</ept> in this article.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Also, because the input parameters for the R function will become the input parameters of the SQL stored procedure, you must ensure that your inputs and outputs conform to the following type requirements:</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Inputs</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Among the input parameters, there can be at most one data frame.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>The objects inside the data frame, as well as all other input parameters of the function, must be of the following R data types:</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>POSIXct</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>numeric</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>character</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>integer</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>logical</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>raw</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>If an input type is not one of the above types, it needs to be serialized and passed into the function as <bpt id="p1">*</bpt>raw<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>In this case, the function must also include code to deserialize the input.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Outputs</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>The function can output one of the following:</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>A data frame containing the supported data types.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>All objects in the data frame must use one of the supported data types.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>A named list, containing at most one data frame.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>All members of the list should use one of the supported data types.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>A NULL, if your function does not return any result</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Step 2.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Generate Required Objects</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>After your R code has been cleaned up and can be called as a single function, you will use the functions in the <bpt id="p1">**</bpt>sqlrutils<ept id="p1">**</ept> package to prepare the inputs and outputs in a form that can be passed to the constructor that actually builds the stored procedure.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>sqlrutils<ept id="p1">**</ept> provides functions that define the input data schema and type, and define the output data schema and type.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>It also includes functions that can convert R objects to the required output type.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>You might make multiple function calls to create the required objects, depending on the data types your code uses.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Inputs</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>If your function takes inputs, for each input, call the following functions:</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`setInputData`</ph> if the input is a data frame</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`setInputParameter`</ph> for all other input types</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>When you make each function call, an R object is created that you will later pass as an argument to <ph id="ph1">`StoredProcedure`</ph>, to create the complete stored procedure.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Outputs</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>sqlrutils<ept id="p1">**</ept> provides multiple functions for converting R objects such as lists to the data.frame required by SQL Server.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>If your function outputs a data frame directly, without first wrapping it into a list, you can skip this step.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>You can also skip the conversion this step if your function returns NULL.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>When converting a list or getting a particular item from a list, choose from these functions:</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`setOutputData`</ph> if the variable to get from the list is a data frame</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`setOutputParameter`</ph> for all other members of the list</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>When you make each function call, an R object is created that you will later pass as an argument to <ph id="ph1">`StoredProcedure`</ph>, to create the complete stored procedure.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Step 3.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Generate the Stored Procedure</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>When all input and output parameters are ready, make a call to the <ph id="ph1">`StoredProcedure`</ph> constructor.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Usage<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>To illustrate, assume that you want to create a stored procedure named <bpt id="p1">**</bpt>sp_rsample<ept id="p1">**</ept> with these parameters:</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Uses an existing function <bpt id="p1">**</bpt>foosql<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>The function was based on existing code in R function <bpt id="p1">**</bpt>foo<ept id="p1">**</ept>, but you  rewrote the function to conform to the requirements as described in <bpt id="p2">[</bpt>this section<ept id="p2">](#bkmk_rewrite)</ept>, and named the updated function as <bpt id="p3">**</bpt>foosql<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Uses the data frame <bpt id="p1">**</bpt>queryinput<ept id="p1">**</ept> as input</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Generates as output a data frame with the R variable name, <bpt id="p1">**</bpt>sqloutput<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>You want to create the T-SQL code as a file in the <ph id="ph1">`C:\Temp`</ph> folder, so that you can run it using SQL Server Management Studio later</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Because you are writing the file to the file system, you can omit the arguments that define the database connection.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>The output of the function is a T-SQL stored procedure that can be executed on an instance of SQL Server 2016 (requires R Services) or SQL Server 2017 (requires Machine Learning Services with R).</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>For additional examples, see the package help, by calling <ph id="ph1">`help(StoredProcedure)`</ph> from an R environment.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Step 4.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Register and Run the Stored Procedure</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>There are two ways that you can run the stored procedure:</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Using T-SQL, from any client that supports connections to the SQL Server 2016 or SQL Server 2017 instance</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>From an R environment</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Both methods require that the stored procedure be registered in the database where you intend to use the stored procedure.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Register the stored procedure</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>You can register the stored procedure using R, or you can run the CREATE PROCEDURE statement in T-SQL.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Using T-SQL.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>If you are more comfortable with T-SQL, open SQL Server Management Studio (or any other client that can run SQL DDL commands) and execute the CREATE PROCEDURE statement using the code prepared by the <ph id="ph1">`StoredProcedure`</ph> function.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>Using R. While you are still in your R environment, you can use the <ph id="ph1">`registerStoredProcedure`</ph> function in <bpt id="p1">**</bpt>sqlrutils<ept id="p1">**</ept> to register the stored procedure with the database.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>For example, you could register the stored procedure <bpt id="p1">**</bpt>sp_rsample<ept id="p1">**</ept> in the instance and database defined in <bpt id="p2">*</bpt>sqlConnStr<ept id="p2">*</ept>, by making this R call:</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Regardless of whether you use R or SQL, you must run the statement using an account that has permissions to create new database objects.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>Run using SQL</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>After the stored procedure has been created, open a connection to the SQL database using any client that supports T-SQL, and pass values for any parameters required by the stored procedure.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>Run using R</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Some additional preparation is needed if you want to execute the stored procedure from R code, rather from SQL Server.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>For example, if the stored procedure requires input values, you must set those input parameters before the function can be executed, and then pass those objects to the stored procedure in your R code.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>The overall process of calling the prepared SQL stored procedure is as follows:</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>Call <ph id="ph1">`getInputParameters`</ph> to get a list of input parameter objects.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>Define a <ph id="ph1">`$query`</ph> or set a <ph id="ph2">`$value`</ph> for each input parameter.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>Use <ph id="ph1">`executeStoredProcedure`</ph> to execute the stored procedure from the R development environment, passing the list of input parameter objects that you set.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a name = "samples"&gt;</bpt><ept id="p1">&lt;/a&gt;</ept>Example</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>This example shows the before and after versions of an R script that gets data from a SQL Server database, performs some transformations on the data, and saves it to a different database.</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>This simple example is used only to demonstrate how you might rearrange your R code to make it easier to convert to a stored procedure.</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>Before code preparation</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>When you use an ODBC connection rather than invoking the <bpt id="p1">*</bpt>RxSqlServerData<ept id="p1">*</ept> function, you must open the connection using <bpt id="p2">*</bpt>rxOpen<ept id="p2">*</ept> before you can perform operations on the database.</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>After code preparation</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>In the updated version, the first line defines the function name.</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>All other code from the original R solution becomes a part of that function.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>Although you do not need to open the ODBC connection explicitly as part of your code, an ODBC connection is still required to use <bpt id="p1">**</bpt>sqlrutils<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>See Also</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>sqlrutils (SQL)<ept id="p1">](ref-r-sqlrutils.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

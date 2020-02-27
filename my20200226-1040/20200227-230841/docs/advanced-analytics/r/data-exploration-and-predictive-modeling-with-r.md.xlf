@@ -1,0 +1,143 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="data-exploration-and-predictive-modeling-with-r.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c561d1d32cef9102200bcc3b0730c96afed06d91a.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">561d1d32cef9102200bcc3b0730c96afed06d91a</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\data-exploration-and-predictive-modeling-with-r.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Predictive modeling with R</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>This article describes improvements to the data science process that are possible through integration with SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Data exploration and predictive modeling with R in SQL Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article describes improvements to the data science process that are possible through integration with SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Applies to: SQL Server 2016 R Services, SQL Server 2017 Machine Learning Services</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>The Data Science Process</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Data scientists often use R to explore data and build predictive models.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>This is typically an iterative process of trial and error until a good predictive model is reached.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>As an experienced data scientist, you  might connect to the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> database and fetch the data to your local workstation using the RODBC package, explore your data, and build a predictive model using standard R packages.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>However, this approach has many drawbacks, that hae hindered the wider adoption of R in the enterprise.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Data movement can be slow, inefficient, or insecure</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>R itself has performance and scale limitations</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>These drawbacks become more apparent when you need to move and analyze large amounts of data, or use data sets that don't fit into the memory available on your computer.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>The new, scalable packages and R functions included with <ph id="ph1">[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)]</ph> help you overcome many of these challenges.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>What's Different about RevoScaleR?</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> package contains implementations of some of the most popular R functions, which have been redesigned to provide parallelism and scale.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Distributed Computing using RevoScaleR<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r/how-to-revoscaler-distributed-computing)</ept>.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>The RevoScaleR package also provides support for changing <bpt id="p1">*</bpt>execution context<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>What this means is that, for an entire solution or for just one function, you can indicate that computations should be performed using the resources of the computer that hosts the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> instance, rather than your local workstation.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>There are multiple advantages to doing this: you avoid unnecessary data movement, and you can leverage greater computation resources on the server computer.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>R Environment and Packages</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>The R environment supported in <ph id="ph1">[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)]</ph> consists of a runtime, the open source language, and a graphical engine supported and extended by multiple packages.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>The language allows a variety of extensions that are implemented using packages.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Using Other R Packages</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>In addition to the proprietary R libraries included with Microsoft Machine Learning, you can use almost any R packages in your solution, including:</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>General purpose R packages from public repositories.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>You can obtain the most popular open source R packages from public repositories such as CRAN, which hosts has over 6000 packages that can be used by data scientists.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>For the Windows platform, R packages are provided as zip files and can be downloaded and installed under the GPL license.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>For information about how to install third-party packages for use with <ph id="ph1">[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)]</ph>, see <bpt id="p1">[</bpt>Install Additional R Packages on SQL Server<ept id="p1">](../../advanced-analytics/r/install-additional-r-packages-on-sql-server.md)</ept></source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Additional packages and libraries provided by <ph id="ph1">[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> package includes high performance big data analytics, improved versions of functions that support common data science tasks, optimized learners for Naive Bayes, linear regression, time series models, and neural networks, and advanced math libraries.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>RevoPemaR<ept id="p1">**</ept> package lets you develop your own parallel external memory algorithms in R.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>For more information about these packages and how to use them, see <bpt id="p1">[</bpt>What is RevoScaleR<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r/concept-what-is-revoscaler)</ept> and <bpt id="p2">[</bpt>Get started with RevoPemaR<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r/how-to-developer-pemar)</ept>.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>MicrosoftML<ept id="p1">**</ept> contains a collection of highly optimized machine learning algorithms and data transformations from the Microsoft Data Science team.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Many of the algorithms are also used in Azure Machine Learning.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>MicrosoftML in SQL Server<ept id="p1">](ref-r-microsoftml.md)</ept>.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>R Development Tools</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>When developing your R solution, be sure to download Microsoft R Client.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>This free download includes the libraries needed to support remote compute contexts and scalable alorithms:</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt><ph id="ph1">[!INCLUDE[rsql_rro-noversion](../../includes/rsql-rro-noversion-md.md)]</ph>:<ept id="p1">**</ept> A distribution of the R runtime and a set of packages, such as the Intel math kernel library, that boost the performance of standard R operations.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>RevoScaleR:<ept id="p1">**</ept> An R package that lets you push computations to an instance of <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">[!INCLUDE[rsql_rre-noversion](../../includes/rsql-rre-noversion-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>It also includes a set of common R functions that have been redesigned to provide better performance and scalability.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>You can identify these improved functions  by the <bpt id="p1">**</bpt>rx<ept id="p1">**</ept> prefix.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>It also includes enhanced data providers for a variety of sources; these functions are prefixed with <bpt id="p1">**</bpt>Rx<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>You can use any Windows-based code editor that supports R, such as <ph id="ph1">[!INCLUDE[rsql_rtvs](../../includes/rsql-rtvs-md.md)]</ph> or RStudio.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>The download of <ph id="ph1">[!INCLUDE[rsql_rro-noversion](../../includes/rsql-rro-noversion-md.md)]</ph> also includes common command-line tools for R such as RGui.exe.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Use New Data Sources and Compute Contexts</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>When using the RevoScaleR package to connect to <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph>, look for these functions to use in your R code:</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>RxSqlServerData<ept id="p1">**</ept> is a function provided in the RevoScaleR package to support improved data connectivity to <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>You use this function in your R code to define the <bpt id="p1">*</bpt>data source<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>The data source object specifies the server and tables where the data resides and manages the task of  reading data from and writing data to <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>RxInSqlServer<ept id="p1">**</ept> function can be used to specify the <bpt id="p2">*</bpt>compute context<ept id="p2">*</ept>.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>In other words, you can indicate where the R code should be executed: on your local workstation, or on the computer that hosts the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> instance.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>RevoScaleR Functions<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept>.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>When you set the compute context, it affects only computations that support remote execution context, which means R operations provided by the RevoScaleR package and related functions.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Typically, R solutions based on standard CRAN packages cannot run in a remote compute context, though they can be run on the <ph id="ph1">[!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)]</ph> computer if started by T-SQL.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>However, you can use the <ph id="ph1">`rxExec`</ph> function to call individual R functions and run them remotely in <ph id="ph2">[!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>For examples of how to create and work with data sources and execution contexts,  see these tutorials:</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Data Science Deep Dive<ept id="p1">](../../advanced-analytics/tutorials/deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)</ept></source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Data Analysis using Microsoft R<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r/how-to-introduction)</ept></source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Deploy R Code to Production</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>An important part of data science is providing your analyses to others, or using predictive models to improve business results or processes.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>In <ph id="ph1">[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)]</ph>, it is easy to move to production when your R script or model is ready.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>For more information about how you can move your code to run in <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph>, see <bpt id="p1">[</bpt>Operationalizing Your R Code<ept id="p1">](../../advanced-analytics/r/operationalizing-your-r-code.md)</ept>.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Typically the deployment process begins with cleaning up your script to eliminate code that is not needed in production.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>As you move computations closer to the data, you might find ways to  more efficiently move, summarize, or present data than doing everything in R.  We recommend that the data scientist consult with a database developer about ways to improve performance, especially if the solution does data cleansing or feature engineering that might be more effective in SQL.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Changes to ETL processes might be needed to ensure that workflows for building or scoring a model don't fail, and that input data is available in the right format.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>See Also</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Comparison of Base R and RevoScaleR Functions<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler-compared-to-base-r)</ept></source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RevoScaleR library in SQL Server<ept id="p1">](ref-r-revoscaler.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

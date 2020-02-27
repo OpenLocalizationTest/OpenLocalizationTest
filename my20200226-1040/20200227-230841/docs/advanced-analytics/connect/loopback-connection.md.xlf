@@ -1,0 +1,93 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="loopback-connection.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cc7fa36db48a7912951f0232136945798caf6f7f7.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">c7fa36db48a7912951f0232136945798caf6f7f7</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\connect\loopback-connection.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>SQL loopback connection</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Learn how to use a loopback connection to connect back to SQL Server over ODBC to read or write data from a Python or R script executed from sp_execute_external_script.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>You can use this when you can't use the InputDataSet and OutputDataSet arguments of sp_execute_external_script.</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Loopback connection to SQL Server from a Python or R script</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Learn how to use a loopback connection to connect back to SQL Server over <bpt id="p1">[</bpt>ODBC<ept id="p1">](../../connect/odbc/microsoft-odbc-driver-for-sql-server.md)</ept> to read or write data from a Python or R script executed from <ph id="ph1">`sp_execute_external_script`</ph>.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>You can use this when using the <bpt id="p1">**</bpt>InputDataSet<ept id="p1">**</ept> and <bpt id="p2">**</bpt>OutputDataSet<ept id="p2">**</ept> arguments of <ph id="ph1">`sp_execute_external_script`</ph> are not possible.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Connection string</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>To make a loopback connection, you need to use a correct connection string.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>The common mandatory arguments are the name of the <bpt id="p1">[</bpt>ODBC driver<ept id="p1">](../../connect/odbc/microsoft-odbc-driver-for-sql-server.md)</ept>, the server address, and the name of database.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Connection string on Windows</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>For authentication on SQL Server on Windows, the Python or R script can use the <bpt id="p1">**</bpt>Trusted_Connection<ept id="p1">**</ept> connection string attribute to authenticate as the same user that ran the sp_execute_external_script.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Here is an example of the loopback connection string on Windows:</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Connection string on Linux</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>For authentication on SQL Server on Linux, the Python or R script needs to use <bpt id="p1">**</bpt>ClientCertificate<ept id="p1">**</ept> and <bpt id="p2">**</bpt>ClientKey<ept id="p2">**</ept> attributes of the ODBC driver to authenticate as the same user that executed <ph id="ph1">`sp_execute_external_script`</ph>.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>This requires the use of <bpt id="p1">[</bpt>latest ODBC driver<ept id="p1">](../../connect/odbc/download-odbc-driver-for-sql-server.md)</ept> version 17.4.1.1.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Here is an example of the loopback connection string on Linux:</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>The server address, client certificate file location, and client key file location are unique to every <ph id="ph1">`sp_execute_external_script`</ph> and can be obtained by the use of the API <bpt id="p1">**</bpt>rx_get_sql_loopback_connection_string()<ept id="p1">**</ept> for Python or <bpt id="p2">**</bpt>rxGetSqlLoopbackConnectionString()<ept id="p2">**</ept> for R.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>For more information on the connection string attributes, see the <bpt id="p1">[</bpt>DSN and Connection String Keywords and Attributes<ept id="p1">](https://docs.microsoft.com/sql/connect/odbc/dsn-connection-string-attribute?view=sql-server-linux-ver15#new-connection-string-keywords-and-connection-attributes)</ept> for Microsoft ODBC Driver for SQL Server.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Generate connection string with revoscalepy for Python</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>You can use the API <bpt id="p1">**</bpt>rx_get_sql_loopback_connection_string()<ept id="p1">**</ept> in <bpt id="p2">[</bpt>revoscalepy<ept id="p2">](../python/ref-py-revoscalepy.md)</ept> to generate a correct connection string for a loopback connection in a Python script.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>It accepts the following arguments:</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Argument</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>name_of_database</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Name of the database to which the connection is to be made</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>odbc_driver</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Name of the odbc driver</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Examples</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Example for SQL Server on Windows:</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Example for SQL Server on Linux:</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Generate connection string with RevoScaleR for R</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>You can use the API <bpt id="p1">**</bpt>rxGetSqlLoopbackConnectionString()<ept id="p1">**</ept> in <bpt id="p2">[</bpt>RevoScaleR<ept id="p2">](../r/ref-r-revoscaler.md)</ept> to generate a correct connection string for a loopback connection in an R script.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>It accepts the following arguments:</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Argument</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>nameOfDatabase</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Name of the database to which the connection is to be made</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>odbcDriver</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Name of the odbc driver</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Examples</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Example for SQL Server on Windows:</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Example for SQL Server on Linux:</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Microsoft ODBC driver for SQL Server<ept id="p1">](../../connect/odbc/microsoft-odbc-driver-for-sql-server.md)</ept></source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>revoscalepy<ept id="p1">](../python/ref-py-revoscalepy.md)</ept></source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RevoScaleR<ept id="p1">](../r/ref-r-revoscaler.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,99 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="deepdive-score-new-data.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c26f5c7b56298e6a3bd5f1fa9d8bc1d4db79d60af.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">26f5c7b56298e6a3bd5f1fa9d8bc1d4db79d60af</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\deepdive-score-new-data.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Score data using RevoScaleR</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>RevoScaleR tutorial 8: How to score data using the R language on SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Score new data (SQL Server and RevoScaleR tutorial)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This is tutorial 8 of the <bpt id="p1">[</bpt>RevoScaleR tutorial series<ept id="p1">](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)</ept> on how to use <bpt id="p2">[</bpt>RevoScaleR functions<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept> with SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In this tutorial, you'll use the logistic regression model that you created in the previous tutorial to score another data set that uses the same independent variables as inputs.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Score new data</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Create a histogram of the scores</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>You need DDL admin privileges for some of these steps.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Generate and save scores</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Update the sqlScoreDS data source (created in <bpt id="p1">[</bpt>tutorial two<ept id="p1">](deepdive-create-sql-server-data-objects-using-rxsqlserverdata.md)</ept>) to use column information created in the previous tutorial.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>To make sure you don't lose the results, create a new data source object.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Then, use the new data source object to populate a new table in the RevoDeepDive database.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>At this point, the table has not been created.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>This statement just defines a container for the data.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Check the current compute context using <bpt id="p1">**</bpt>rxGetComputeContext()<ept id="p1">**</ept>, and set the compute context to the server if needed.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>As a precaution, check for the existence of the output table.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>If one already exists with the same name, you will get an error when attempting to write the new table.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>To do this, make a call to the functions <bpt id="p1">[</bpt>rxSqlServerTableExists<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxsqlserverdroptable)</ept> and <bpt id="p2">[</bpt>rxSqlServerDropTable<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxsqlserverdroptable)</ept>, passing the table name as input.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>rxSqlServerTableExists<ept id="p1">**</ept> queries the ODBC driver and returns TRUE if the table exists, FALSE otherwise.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>rxSqlServerDropTable<ept id="p1">**</ept> executes the DDL and returns TRUE if the table is successfully dropped, FALSE otherwise.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Execute <bpt id="p1">[</bpt>rxPredict<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxpredict)</ept> to create the scores, and save them in the new table defined in data source sqlScoreDS.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>rxPredict<ept id="p1">**</ept> function is another function that supports running in remote compute contexts.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>You can use the <bpt id="p1">**</bpt>rxPredict<ept id="p1">**</ept> function to create scores from models based on <bpt id="p2">[</bpt>rxLinMod<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxlinmod)</ept>, <bpt id="p3">[</bpt>rxLogit<ept id="p3">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxlogit)</ept>, or <bpt id="p4">[</bpt>rxGlm<ept id="p4">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxglm)</ept>.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>The parameter <bpt id="p1">*</bpt>writeModelVars<ept id="p1">*</ept> is set to <bpt id="p2">**</bpt>TRUE<ept id="p2">**</ept> here.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>This means that the variables that were used for estimation will be included in the new table.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>The parameter <bpt id="p1">*</bpt>predVarNames<ept id="p1">*</ept> specifies the variable where results will be stored.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Here you are passing a new variable, <ph id="ph1">`ccFraudLogitScore`</ph>.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">*</bpt>type<ept id="p1">*</ept> parameter for <bpt id="p2">**</bpt>rxPredict<ept id="p2">**</ept> defines how you want the predictions calculated.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Specify the keyword <bpt id="p1">**</bpt>response<ept id="p1">**</ept> to generate scores based on the scale of the response variable.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Or, use the keyword <bpt id="p1">**</bpt>link<ept id="p1">**</ept> to generate scores based on the underlying link function, in which case predictions are created using a logistic scale.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>After a while, you can refresh the list of tables in Management Studio to see the new table and its data.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>To add additional variables to the output predictions, use the <bpt id="p1">*</bpt>extraVarsToWrite<ept id="p1">*</ept> argument.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>For example, in the following code, the variable <bpt id="p1">*</bpt>custID<ept id="p1">*</ept> is added from the scoring data table into the output table of predictions.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Display scores in a histogram</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>After the new table has been created, compute and display a histogram of the 10,000 predicted scores.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Computation is faster if you specify the low and high values, so get those from the database and add them to your working data.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Create a new data source, sqlMinMax, that queries the database to get the low and high values.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>From this example, you can see how easy it is to use <bpt id="p1">**</bpt>RxSqlServerData<ept id="p1">**</ept> data source objects to define arbitrary datasets based on SQL queries, functions, or stored procedures, and then use those in your R code.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>The variable does not store the actual values, just the data source definition; the query is executed to generate the values only when you use it in a function like <bpt id="p1">**</bpt>rxImport<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Call the <bpt id="p1">[</bpt>rxImport<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rximport)</ept> function to put the values in a data frame that can be shared across compute contexts.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Now that the maximum and minimum values are available, use the values to create another data source for the generated scores.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Use the data source object sqlOutScoreDS to get the scores, and compute and display a histogram.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Add the code to set the compute context if needed.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>complex histogram created by R<ept id="p1">](media/rsql-sue-complex-histogram.png "|::ref1::|")</ept></source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Transform data using R<ept id="p1">](../../advanced-analytics/tutorials/deepdive-transform-data-using-r.md)</ept></source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve" extradata="ref1">
+          <source>complex histogram created by R</source>
+        </trans-unit></group></body></file></xliff>

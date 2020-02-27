@@ -1,0 +1,57 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="deepdive-load-data-into-memory-using-rximport.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cb9b3924f2c9b315e519d5f65e68d2006a2a6edf4.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">b9b3924f2c9b315e519d5f65e68d2006a2a6edf4</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\deepdive-load-data-into-memory-using-rximport.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Load data using rxImport</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>RevoScaleR tutorial 10: How to load data using the R language on SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Load data into memory using rxImport (SQL Server and RevoScaleR tutorial)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This is tutorial 10 of the <bpt id="p1">[</bpt>RevoScaleR tutorial series<ept id="p1">](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)</ept> on how to use <bpt id="p2">[</bpt>RevoScaleR functions<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept> with SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In this tutorial, you'll learn how to get data from <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph>, and then use the <bpt id="p1">**</bpt>rxImport<ept id="p1">**</ept> function to put the data of interest into a local file.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>That way, you can analyze it in the local compute context repeatedly, without having to re-query the database.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">[</bpt>rxImport<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rximport)</ept> function can be used to move data from a data source into a data frame in session memory, or into an XDF file on disk.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>If you don't specify a file as destination, data is put into memory as a data frame.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Extract a subset of data from SQL Server to local memory</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>You've decided that you want to examine only the high risk individuals in more detail.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>The source table in <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> is big, so you want to get the information about just the high-risk customers.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>You then load that data into a data frame in the memory of the local workstation.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Reset the compute context to your local workstation.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Create a new SQL Server data source object, providing a valid SQL statement in the <bpt id="p1">*</bpt>sqlQuery<ept id="p1">*</ept> parameter.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>This example gets a subset of the observations with the highest risk scores.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>That way, only the data you really need is put in local memory.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Call the function <bpt id="p1">[</bpt>rxImport<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rximport)</ept> to read the data into a data frame in the local R session.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>If the operation was successful, you should see a status message like this one: "Rows Read: 35, Total Rows Processed: 35, Total Chunk Time: 0.036 seconds"</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Now that the high-risk observations are in an in-memory data frame, you can use various R functions to manipulate the data frame.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>For example, you can order customers by their risk score, and print a list of the customers who pose the highest risk.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>More about rxImport</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>You can use <bpt id="p1">**</bpt>rxImport<ept id="p1">**</ept> not just to move data, but to transform data in the process of reading it.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>For example, you can specify the number of characters for fixed-width columns, provide a description of the variables, set levels for factor columns, and even create new levels to use after importing.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>rxImport<ept id="p1">**</ept> function assigns variable names to the columns during the import process, but you can indicate new variable names by using the <bpt id="p2">*</bpt>colInfo<ept id="p2">*</ept> parameter, or change data types using the <bpt id="p3">*</bpt>colClasses<ept id="p3">*</ept> parameter.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>By specifying additional operations in the <bpt id="p1">*</bpt>transforms<ept id="p1">*</ept> parameter, you can do elementary processing on each chunk of data that is read.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Create new SQL Server table using rxDataStep<ept id="p1">](../../advanced-analytics/tutorials/deepdive-move-data-between-sql-server-and-xdf-file.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

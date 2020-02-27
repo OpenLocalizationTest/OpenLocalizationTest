@@ -1,0 +1,129 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="sqldev-py3-explore-and-visualize-the-data.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c2aef2ed82803af2a6ca1966cde5f5bf6675ca016.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">2aef2ed82803af2a6ca1966cde5f5bf6675ca016</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\sqldev-py3-explore-and-visualize-the-data.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Python + T-SQL: Explore data</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Tutorial showing how to embed Python in SQL Server stored procedures and T-SQL functions</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Explore and visualize the data</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article is part of a tutorial, <bpt id="p1">[</bpt>In-database Python analytics for SQL developers<ept id="p1">](sqldev-in-database-python-for-sql-developers.md)</ept>.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In this step, you explore the sample data and generate some plots.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Later, you learn how to serialize graphics objects in Python, and then deserialize those objects and make plots.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Review the data</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>First, take a minute to browse the data schema, as we've made some changes to make it easier to use the NYC Taxi data</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>The original dataset used separate files for the taxi identifiers and trip records.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>We've joined the two original datasets on the columns <bpt id="p1">_</bpt>medallion<ept id="p1">_</ept>, <bpt id="p2">_</bpt>hack_license<ept id="p2">_</ept>, and <bpt id="p3">_</bpt>pickup_datetime<ept id="p3">_</ept>.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>The original dataset spanned many files and was quite large.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>We've downsampled to get just 1% of the original number of records.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>The current data table has 1,703,957 rows and 23 columns.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Taxi identifiers<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">_</bpt>medallion<ept id="p1">_</ept> column represents the taxi's unique ID number.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">_</bpt>hack_license<ept id="p1">_</ept> column contains the taxi driver's license number (anonymized).</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Trip and fare records<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Each trip record includes the pickup and drop-off location and time, and the trip distance.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Each fare record includes payment information such as the payment type, total amount of payment, and the tip amount.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>The last three columns can be used for various machine learning tasks.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">_</bpt>tip_amount<ept id="p1">_</ept> column contains continuous numeric values and can be used as the <bpt id="p2">**</bpt>label<ept id="p2">**</ept> column for regression analysis.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">_</bpt>tipped<ept id="p1">_</ept> column has only yes/no values and is used for binary classification.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">_</bpt>tip_class<ept id="p1">_</ept> column has multiple <bpt id="p2">**</bpt>class labels<ept id="p2">**</ept> and therefore can be used as the label for multi-class classification tasks.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>The values used for the label columns are all based on the <ph id="ph1">`tip_amount`</ph> column, using these business rules:</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Label column <ph id="ph1">`tipped`</ph> has possible values 0 and 1</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>If <ph id="ph1">`tip_amount`</ph> &gt; 0, <ph id="ph2">`tipped`</ph> = 1; otherwise <ph id="ph3">`tipped`</ph> = 0</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Label column <ph id="ph1">`tip_class`</ph> has possible class values 0-4</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Class 0: <ph id="ph1">`tip_amount`</ph> = $0</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Class 1: <ph id="ph1">`tip_amount`</ph> &gt; $0 and <ph id="ph2">`tip_amount`</ph> &lt;= $5</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Class 2: <ph id="ph1">`tip_amount`</ph> &gt; $5 and <ph id="ph2">`tip_amount`</ph> &lt;= $10</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Class 3: <ph id="ph1">`tip_amount`</ph> &gt; $10 and <ph id="ph2">`tip_amount`</ph> &lt;= $20</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Class 4: <ph id="ph1">`tip_amount`</ph> &gt; $20</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Create plots using Python in T-SQL</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Developing a data science solution usually includes intensive data exploration and data visualization.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Because visualization is such a powerful tool for understanding the distribution of the data and outliers, Python provides many packages for visualizing data.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>matplotlib<ept id="p1">**</ept> module is one of the more popular libraries for visualization, and includes many functions for creating histograms, scatter plots, box plots, and other data exploration graphs.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>In this section, you learn how to work with plots using stored procedures.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Rather than open the image on the server, you store the Python object  <ph id="ph1">`plot`</ph> as <bpt id="p1">**</bpt>varbinary<ept id="p1">**</ept> data, and then write that to a file that can be shared or viewed elsewhere.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Create a plot as varbinary data</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>The stored procedure returns a serialized Python <ph id="ph1">`figure`</ph> object as a stream of <bpt id="p1">**</bpt>varbinary<ept id="p1">**</ept> data.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>You cannot view the binary data directly, but you can use Python code on the client to deserialize and view the figures, and then save the image file on a client computer.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Create the stored procedure <bpt id="p1">**</bpt>PyPlotMatplotlib<ept id="p1">**</ept>, if the PowerShell script did not already do so.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>The variable <ph id="ph1">`@query`</ph> defines the query text <ph id="ph2">`SELECT tipped FROM nyctaxi_sample`</ph>, which is passed to the Python code block as the argument to the script input variable, <ph id="ph3">`@input_data_1`</ph>.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>The Python script is fairly simple: <bpt id="p1">**</bpt>matplotlib<ept id="p1">**</ept> <ph id="ph1">`figure`</ph> objects are used to make the histogram and scatter plot, and these objects are then serialized using the <ph id="ph2">`pickle`</ph> library.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>The Python graphics object is serialized to a <bpt id="p1">**</bpt>pandas<ept id="p1">**</ept> DataFrame for output.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Now run the stored procedure with no arguments to generate a plot from the data hard-coded as the input query.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>The results should be something like this:</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>From a <bpt id="p1">[</bpt>Python client<ept id="p1">](../python/setup-python-client-tools-sql.md)</ept>, you can now connect to the SQL Server instance that generated the binary plot objects, and view the plots.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>To do this, run the following Python code, replacing the server name, database name, and credentials as appropriate.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Make sure the Python version is the same on the client and the server.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Also make sure that the Python libraries on your client (such as matplotlib) are the same or higher version relative to the libraries installed on the server.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Using SQL Server authentication:<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Using Windows authentication:<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>If the connection is successful, you should see a message like the following:</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>The plots are saved in directory: xxxx<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>The output file is created in the Python working directory.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>To view the plot, locate the Python working directory, and open the file.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>The following image shows a plot saved on the client computer.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">![</bpt>Tip amount vs Fare amount<ept id="p1">](media/sqldev-python-sample-plot.png "|::ref1::|")</ept></source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>Next step</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Create data features using T-SQL<ept id="p1">](sqldev-py5-train-and-save-a-model-using-t-sql.md)</ept></source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Previous step</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Download the NYC Taxi data set<ept id="p1">](demo-data-nyctaxi-in-sql.md)</ept></source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve" extradata="ref1">
+          <source>Tip amount vs Fare amount</source>
+        </trans-unit></group></body></file></xliff>

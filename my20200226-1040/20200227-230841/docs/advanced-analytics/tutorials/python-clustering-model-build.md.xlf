@@ -1,0 +1,103 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="python-clustering-model-build.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c9669686d0163b9ce1c362e7cdf2814c7a95bfaa8.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9669686d0163b9ce1c362e7cdf2814c7a95bfaa8</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\python-clustering-model-build.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Python tutorial: Build cluster model</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>In part three of this four-part tutorial series, you'll build a K-Means model to perform clustering in Python with SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Tutorial: Build a model in Python to categorize customers with SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>In part three of this four-part tutorial series, you'll build a K-Means model in Python to perform clustering.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In the next part of this series, you'll deploy this model in a SQL database with SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>In this article, you'll learn how to:</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Define the number of clusters for a K-Means algorithm</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Perform clustering</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Analyze the results</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>In <bpt id="p1">[</bpt>part one<ept id="p1">](python-clustering-model.md)</ept>, you installed the prerequisites and restored the sample database.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>In <bpt id="p1">[</bpt>part two<ept id="p1">](python-clustering-model-prepare-data.md)</ept>, you learned how to prepare the data from a SQL database to perform clustering.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>In <bpt id="p1">[</bpt>part four<ept id="p1">](python-clustering-model-deploy.md)</ept>, you'll learn how to create a stored procedure in a SQL database that can perform clustering in Python based on new data.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Part three of this tutorial assumes you have fulfilled the prerequisites of <bpt id="p1">[</bpt><bpt id="p2">**</bpt>part one<ept id="p2">**</ept><ept id="p1">](python-clustering-model.md)</ept>, and completed the steps in <bpt id="p3">[</bpt><bpt id="p4">**</bpt>part two<ept id="p4">**</ept><ept id="p3">](python-clustering-model-prepare-data.md)</ept>.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Define the number of clusters</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>To cluster your customer data, you'll use the <bpt id="p1">**</bpt>K-Means<ept id="p1">**</ept> clustering algorithm, one of the simplest and most well-known ways of grouping data.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>You can read more about K-Means in <bpt id="p1">[</bpt>A complete guide to K-means clustering algorithm<ept id="p1">](https://www.kdnuggets.com/2019/05/guide-k-means-clustering-algorithm.html)</ept>.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>The algorithm accepts two inputs: The data itself, and a predefined number "<bpt id="p1">*</bpt>k<ept id="p1">*</ept>" representing the number of clusters to generate.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>The output is <bpt id="p1">*</bpt>k<ept id="p1">*</ept> clusters with the input data partitioned among the clusters.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>The goal of K-means is to group the items into k clusters such that all items in same cluster are as similar to each other, and as different from items in other clusters, as possible.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>To determine the number of clusters for the algorithm to use, use a plot of the within groups sum of squares, by number of clusters extracted.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>The appropriate number of clusters to use is at the bend or "elbow" of the plot.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Elbow graph</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Based on the graph, it looks like <bpt id="p1">*</bpt>k = 4<ept id="p1">*</ept> would be a good value to try.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>That <bpt id="p1">*</bpt>k<ept id="p1">*</ept> value will group the customers into four clusters.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Perform clustering</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>In the following Python script, you'll use the KMeans function from the sklearn package.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Analyze the results</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Now that you've performed clustering using K-Means, the next step is to analyze the result and see if you can find any actionable information.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Look at the clustering mean values and cluster sizes printed from the previous script.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>The four cluster means are given using the variables defined in <bpt id="p1">[</bpt>part one<ept id="p1">](python-clustering-model-prepare-data.md#separate-customers)</ept>:</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>orderRatio<ept id="p1">*</ept> = return order ratio (total number of orders partially or fully returned versus the total number of orders)</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>itemsRatio<ept id="p1">*</ept> = return item ratio (total number of items returned versus the number of items purchased)</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>monetaryRatio<ept id="p1">*</ept> = return amount ratio (total monetary amount of items returned versus the amount purchased)</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>frequency<ept id="p1">*</ept> = return frequency</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Data mining using K-Means often requires further analysis of the results, and further steps to better understand each cluster, but it can provide some good leads.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Here are a couple ways you could interpret these results:</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Cluster 0 seems to be a group of customers that are not active (all values are zero).</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Cluster 3 seems to be a group that stands out in terms of return behavior.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Cluster 0 is a set of customers who are clearly not active.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Perhaps you can target marketing efforts towards this group to trigger an interest for purchases.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>In the next step, you'll query the database for the email addresses of customers in cluster 0, so that you can send a marketing email to them.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Clean up resources</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>If you're not going to continue with this tutorial, delete the tpcxbb_1gb database from SQL Server.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>In part three of this tutorial series, you completed these steps:</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Define the number of clusters for a K-Means algorithm</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Perform clustering</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Analyze the results</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>To deploy the machine learning model you've created, follow part four of this tutorial series:</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Tutorial: Deploy a clustering model in Python with SQL Server Machine Learning Services<ept id="p1">](python-clustering-model-deploy.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

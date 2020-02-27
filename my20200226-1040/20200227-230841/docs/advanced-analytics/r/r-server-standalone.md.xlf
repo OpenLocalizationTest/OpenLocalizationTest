@@ -1,0 +1,169 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="r-server-standalone.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c2412bfb8bcd3cacc2db2702879353b92e328b09a.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">2412bfb8bcd3cacc2db2702879353b92e328b09a</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\r-server-standalone.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>What is standalone Machine Learning Server or R Server?</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Overview introduction to standalone R Server and Machine Learning Server in SQL Server Setup</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>What are standalone Machine Learning Server or R Server in SQL Server?</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>SQL Server provides installation support for a standalone R Server or Machine Learning Server that runs independently of SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Depending on your SQL Server version, a standalone server has a foundation of open-source R and possibly Python, overlaid with high-performance libraries from Microsoft that add statistical and predictive analytics at scale.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Libraries also enable machine learning tasks scripted in R or Python.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>In SQL Server 2016, this feature is called <bpt id="p1">**</bpt>R Server (Standalone)<ept id="p1">**</ept> and is R-only.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>In SQL Server 2017, it's called <bpt id="p1">**</bpt>Machine Learning Server (Standalone)<ept id="p1">**</ept> and includes both R and Python.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>As installed by SQL Server Setup, a standalone server is functionally equivalent to the non-SQL-branded versions of <bpt id="p1">[</bpt>Microsoft Machine Learning Server<ept id="p1">](https://docs.microsoft.com/machine-learning-server/what-is-machine-learning-server)</ept>, supporting the same user scenarios, including remote execution, operationalization and web services, and the complete collection of R and Python libraries.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Components</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>SQL Server 2016 is R only.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>SQL Server 2017 supports R and Python.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>The following table describes the features in each version.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Component</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>R packages</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>RevoScaleR<ept id="p2">**</ept><ept id="p1">](ref-r-revoscaler.md)</ept> is the primary library for scalable R with functions for data manipulation, transformation, visualization, and analysis.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>MicrosoftML<ept id="p2">**</ept><ept id="p1">](ref-r-microsoftml.md)</ept> adds machine learning algorithms to create custom models for text analysis, image analysis, and sentiment analysis.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>sqlRUtils<ept id="p2">**</ept><ept id="p1">](ref-r-sqlrutils.md)</ept> provides helper functions for putting R scripts into a T-SQL stored procedure, registering a stored procedure with a database, and running the stored procedure from an R development environment.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>mrsdeploy<ept id="p2">**</ept><ept id="p1">](operationalization-with-mrsdeploy.md)</ept> offers web service deployment (in SQL Server 2017 only).</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>olapR<ept id="p2">**</ept><ept id="p1">](ref-r-olapr.md)</ept> is for specifying MDX queries in R.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Microsoft R Open (MRO)</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>MRO<ept id="p2">**</ept><ept id="p1">](https://mran.microsoft.com/open)</ept> is Microsoft's open-source distribution of R. The package and interpreter are included.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Always use the version of MRO bundled in setup.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>R tools</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>R console windows and command prompts are standard tools in an R distribution.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Find them at \Program files\Microsoft SQL Server\140\R_SERVER\bin\x64.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>R Samples and scripts</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Open-source R and RevoScaleR packages include built-in data sets so that you can create and run script using pre-installed data.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Look for them at \Program files\Microsoft SQL Server\140\R_SERVER\library\datasets and \library\RevoScaleR.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Python packages</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>revoscalepy<ept id="p2">**</ept><ept id="p1">](../python/ref-py-revoscalepy.md)</ept> is the primary library for scalable Python with functions for data manipulation, transformation, visualization, and analysis.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>microsoftml<ept id="p2">**</ept><ept id="p1">](../python/ref-py-microsoftml.md)</ept> adds machine learning algorithms to create custom models for text analysis, image analysis, and sentiment analysis.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Python tools</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>The built-in Python command-line tool is useful for ad hoc testing and tasks.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Find the tool at \Program files\Microsoft SQL Server\140\PYTHON_SERVER\python.exe.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Anaconda</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Anaconda is an open-source distribution of Python and essential packages.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Python samples and scripts</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>As with R, Python includes built-in data sets  and scripts.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Find the revoscalepy data at \Program files\Microsoft SQL Server\140\PYTHON_SERVER\lib\site-packages\revoscalepy\data\sample-data.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Pre-trained models in R and Python</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Pre-trained models are created for specific use cases and maintained by the data science engineering team at Microsoft.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>You can use the pre-trained models as-is to score positive-negative sentiment in text, or detect features in images, using new data inputs that you provide.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Pre-trained models are supported and usable on a standalone server, but you cannot install them through SQL Server Setup.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Install pretrained machine learning models on SQL Server<ept id="p1">](../install/sql-pretrained-models-install.md)</ept>.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Using a standalone server</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>R and Python developers typically choose a standalone server to move beyond the memory and processing constraints of open-source R and Python.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>R and Python libraries executing on a standalone server can load and process large amounts of data on multiple cores and aggregate the results into a single consolidated output.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>High-performance functions are engineered for both scale and utility: delivering predictive analytics, statistical modeling, data visualizations, and leading-edge machine learning algorithms in a commercial server product engineered and supported by Microsoft.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>As an independent server decoupled from SQL Server, the R and Python environment is configured, secured, and accessed using the underlying operating system and standard tools provided in the standalone server, not SQL Server.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>There is no built-in support for SQL Server relational data.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>If you want to use SQL Server data, you can create data source objects and connections as you would from any client.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>As an adjunct to SQL Server, a standalone server is also useful as a powerful development environment if you need both local and remote computing.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>The R and Python packages on a standalone server are the same as those provided with a database engine installation, allowing for code portability and <bpt id="p1">[</bpt>compute-context switching<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r/concept-what-is-compute-context)</ept>.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>How to get started</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Start with setup, attach the binaries to your favorite development tool, and write your first script.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Step 1: Install the software</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Install either one of these versions:</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server 2017 Machine Learning Server (standalone)<ept id="p1">](../install/sql-machine-learning-standalone-windows-install.md)</ept></source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server 2016 R Server (Standalone) - R only<ept id="p1">](../install/sql-r-standalone-windows-install.md)</ept></source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Step 2: Configure a development tool</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>On a standalone server, it's common to work locally using a development installed on the same computer.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Set up R tools<ept id="p1">](set-up-a-data-science-client.md)</ept></source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Set up Python tools<ept id="p1">](../python/setup-python-client-tools-sql.md)</ept></source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Step 3: Write your first script</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Write R or Python script using functions from RevoScaleR, revoscalepy, and the machine learning algorithms.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Explore R and RevoScaleR in 25 Functions<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r/tutorial-r-to-revoscaler)</ept>: Start with basic R commands and then progress to the RevoScaleR distributable analytical functions that provide high performance and scaling to R solutions.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Includes parallelizable versions of many of the most popular R modeling packages, such as k-means clustering, decision trees, and decision forests, and tools for data manipulation.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Quickstart: An example of binary classification with the microsoftml Python package<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python/quickstart-binary-classification-with-microsoftml)</ept>: Create a binary classification model using the functions from microsoftml and the well-known breast cancer dataset.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>Choose the best language for the task.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>R is best for statistical computations that are difficult to implement using SQL.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>For set-based operations over data, leverage the power of <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> to achieve maximum performance.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Use the in-memory database engine for very fast computations over columns.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>Step 4: Operationalize your solution</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Standalone servers can use the <bpt id="p1">[</bpt>operationalization<ept id="p1">](https://docs.microsoft.com//machine-learning-server/what-is-operationalization)</ept> functionality of the non-SQL-branded <bpt id="p2">[</bpt>Microsoft Machine Learning Server<ept id="p2">](https://docs.microsoft.com/machine-learning-server/what-is-machine-learning-server)</ept>.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>You can configure a standalone server for operationalization, which gives you these benefits: deploy and host your code as web services, run diagnostics, test web service capacity.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Step 5: Maintain your server</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>SQL Server releases cumulative updates on a regular basis.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>Applying the cumulative updates adds security and functional enhancements to an existing installation.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>Descriptions of new or changed functionality can be found in the <bpt id="p1">[</bpt>CAB Downloads<ept id="p1">](../install/sql-ml-cab-downloads.md)</ept> article and on the web pages for <bpt id="p2">[</bpt>SQL Server 2016 cumulative updates<ept id="p2">](https://support.microsoft.com/help/3177312/sql-server-2016-build-versions)</ept> and <bpt id="p3">[</bpt>SQL Server 2017 cumulative updates<ept id="p3">](https://support.microsoft.com/help/4047329)</ept>.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>For more information on how to apply updates to an existing instance, see <bpt id="p1">[</bpt>Apply updates<ept id="p1">](../install/sql-machine-learning-standalone-windows-install.md#apply-cu)</ept> in the installation instructions.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Install R Server (Standalone) or Machine Learning Server (Standalone)<ept id="p1">](../install/sql-machine-learning-standalone-windows-install.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,63 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="deepdive-create-models.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c11feb62609cba61a695dd60085461410a38ed0f7.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">11feb62609cba61a695dd60085461410a38ed0f7</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\deepdive-create-models.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Create R models with RevoScaleR</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>RevoScaleR tutorial 7: How to build a model using the R language on SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Create R models (SQL Server and RevoScaleR tutorial)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This is tutorial 7 of the <bpt id="p1">[</bpt>RevoScaleR tutorial series<ept id="p1">](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)</ept> on how to use <bpt id="p2">[</bpt>RevoScaleR functions<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept> with SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>You have enriched the training data.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>In this tutorial, you'll analyze the data using regression modeling.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Linear models are an important tool in the world of predictive analytics.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> package includes regression algorithms that can subdivide the workload and run it in parallel.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Create a linear regression model</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Create a logistic regression model</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Create a linear regression model</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>In this step, create a simple linear model that estimates the credit card balance for the customers using as independent variables the values in the <bpt id="p1">*</bpt>gender<ept id="p1">*</ept> and <bpt id="p2">*</bpt>creditLine<ept id="p2">*</ept> columns.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>To do this, use the <bpt id="p1">[</bpt>rxLinMod<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxlinmod)</ept> function, which supports remote compute contexts.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Create an R variable to store the completed model, and call <bpt id="p1">**</bpt>rxLinMod<ept id="p1">**</ept>, passing an appropriate formula.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>To view a summary of the results, call the standard R <bpt id="p1">**</bpt>summary<ept id="p1">**</ept> function on the model object.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>You might think it peculiar that a plain R function like <bpt id="p1">**</bpt>summary<ept id="p1">**</ept> would work here, since in the previous step, you set the compute context to the server.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>However, even when the <bpt id="p1">**</bpt>rxLinMod<ept id="p1">**</ept> function uses the remote compute context to create the model, it also returns an object that contains the model to your local workstation, and stores it in the shared directory.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Therefore, you can run standard R commands against the model just as if it had been created using the "local" context.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Create a logistic regression model</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Next, create a logistic regression model that indicates whether a particular customer is a fraud risk.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>You'll use the <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> <bpt id="p2">[</bpt>rxLogit<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxlogit)</ept> function, which supports fitting of logistic regression models in remote compute contexts.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Keep the compute context as is.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>You'll also continue to use the same data source as well.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Call the <bpt id="p1">**</bpt>rxLogit<ept id="p1">**</ept> function and pass the formula needed to define the model.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Because it is a large model, containing 60 independent variables, including three dummy variables that are dropped, you might have to wait some time for the compute context to return the object.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>The reason the model is so large is that, in R and in the <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> package, every level of a categorical factor variable is automatically treated as a separate dummy variable.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>To view a summary of the returned model, call the R <bpt id="p1">**</bpt>summary<ept id="p1">**</ept> function.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Partial results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Score new data<ept id="p1">](../../advanced-analytics/tutorials/deepdive-score-new-data.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

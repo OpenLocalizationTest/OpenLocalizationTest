@@ -1,0 +1,235 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="real-time-scoring.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c746a9cadfca28aae3bd2781a3daf71aabb8d6e5b.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">746a9cadfca28aae3bd2781a3daf71aabb8d6e5b</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\real-time-scoring.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Real-time scoring using sp_rxPredict</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Generate predictions using sp_rxPredict, scoring data inputs against a pre-trained model written in R on SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Real-time scoring with sp_rxPredict in SQL Server machine learning</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Real-time scoring uses the <bpt id="p1">[</bpt>sp_rxPredict<ept id="p1">](https://docs.microsoft.com//sql/relational-databases/system-stored-procedures/sp-rxpredict-transact-sql)</ept> system stored procedure and the CLR extension capabilities in SQL Server for high-performance predictions or scores in forecasting workloads.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Real-time scoring is language-agnostic and executes with no dependencies on R or Python run times.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Assuming a model created and trained using Microsoft functions, and then serialized to a binary format in SQL Server, you can use real-time scoring to generate predicted outcomes on new data inputs on SQL Server instances that do not have the R or Python add-on installed.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>How real-time scoring works</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Real-time scoring is supported  on specific model types based on RevoScaleR or MicrosoftML functions such as  <bpt id="p1">[</bpt>rxLinMod (RevoScaleR)<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxlinmod)</ept><bpt id="p2">[</bpt>rxNeuralNet (MicrosoftML)<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/rxneuralnet)</ept>.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>It uses native C++ libraries to generate scores, based on user input provided to a machine learning model stored in a special binary format.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Because a trained model can be used for scoring without having to call an external language runtime, the overhead of multiple processes is reduced.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>This supports much faster prediction performance for production scoring scenarios.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Because the data never leaves SQL Server, results can be generated and inserted into a new table without any data translation between R and SQL.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Real-time scoring is a multi-step process:</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>The stored procedure that does scoring must be enabled on a per-database basis.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>You load the pre-trained model in binary format.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>You provide new input data to be scored, either tabular or single rows, as input to the model.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>To generate scores, call the <bpt id="p1">[</bpt>sp_rxPredict<ept id="p1">](https://docs.microsoft.com//sql/relational-databases/system-stored-procedures/sp-rxpredict-transact-sql)</ept> stored procedure.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Enable SQL Server CLR integration<ept id="p1">](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/introduction-to-sql-server-clr-integration)</ept>.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Enable real-time scoring<ept id="p1">](#bkmk_enableRtScoring)</ept>.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>The model must be trained in advance using one of the supported <bpt id="p1">**</bpt>rx<ept id="p1">**</ept> algorithms.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>For R, real-time scoring with <ph id="ph1">`sp_rxPredict`</ph> works with <bpt id="p1">[</bpt>RevoScaleR and MicrosoftML supported algorithms<ept id="p1">](#bkmk_rt_supported_algos)</ept>.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>For Python, see <bpt id="p1">[</bpt>revoscalepy and microsoftml supported algorithms<ept id="p1">](#bkmk_py_supported_algos)</ept></source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Serialize the model using <bpt id="p1">[</bpt>rxSerialize<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxserializemodel)</ept> for R, and <bpt id="p2">[</bpt>rx_serialize_model<ept id="p2">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-serialize-model)</ept> for Python.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>These serialization functions have been optimized to support fast scoring.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Save the model to the database engine instance from which you want to call it.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>This instance is not required to have the R or Python runtime extension.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Real-time scoring is currently optimized for fast predictions on smaller data sets, ranging from a few rows to hundreds of thousands of rows.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>On big datasets, using <bpt id="p1">[</bpt>rxPredict<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxpredict)</ept> might be faster.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Supported algorithms</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Python algorithms using real-time scoring</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>revoscalepy models</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_lin_mod<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-lin-mod)</ept> <ph id="ph1">\*</ph></source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_logit<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-logit)</ept> <ph id="ph1">\*</ph></source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_btrees<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-btrees)</ept> <ph id="ph1">\*</ph></source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_dtree<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-dtree)</ept> <ph id="ph1">\*</ph></source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_dforest<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-dforest)</ept> <ph id="ph1">\*</ph></source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Models marked with <ph id="ph1">\*</ph> also support native scoring with the PREDICT function.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>microsoftml models</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_fast_trees<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/rx-fast-trees)</ept></source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_fast_forest<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/rx-fast-forest)</ept></source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_logistic_regression<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/rx-logistic-regression)</ept></source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_oneclass_svm<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/rx-oneclass-svm)</ept></source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_neural_net<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/rx-neural-network)</ept></source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_fast_linear<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/rx-fast-linear)</ept></source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Transformations supplied by microsoftml</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>featurize_text<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/featurize-text)</ept></source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>concat<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/concat)</ept></source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>categorical<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/categorical)</ept></source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>categorical_hash<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/categorical-hash)</ept></source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>R algorithms using real-time scoring</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>RevoScaleR models</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxLinMod<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxlinmod)</ept> <ph id="ph1">\*</ph></source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxLogit<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxlogit)</ept> <ph id="ph1">\*</ph></source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxBTrees<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxbtrees)</ept> <ph id="ph1">\*</ph></source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxDtree<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxdtree)</ept> <ph id="ph1">\*</ph></source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxdForest<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxdforest)</ept> <ph id="ph1">\*</ph></source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Models marked with <ph id="ph1">\*</ph> also support native scoring with the PREDICT function.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>MicrosoftML models</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxFastTrees<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/rxfasttrees)</ept></source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxFastForest<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/rxfastforest)</ept></source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxLogisticRegression<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/rxlogisticregression)</ept></source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxOneClassSvm<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/rxoneclasssvm)</ept></source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxNeuralNet<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/rxneuralnet)</ept></source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxFastLinear<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/rxfastlinear)</ept></source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Transformations supplied by MicrosoftML</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>featurizeText<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/rxfasttrees)</ept></source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>concat<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/concat)</ept></source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>categorical<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/categorical)</ept></source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>categoricalHash<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/categoricalHash)</ept></source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>selectFeatures<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/selectFeatures)</ept></source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>Unsupported model types</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>Real-time scoring does not use an interpreter; therefore, any functionality that might require an interpreter is not supported during the scoring step.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>These might include:</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>Models using the <ph id="ph1">`rxGlm`</ph> or <ph id="ph2">`rxNaiveBayes`</ph> algorithms are not supported.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Models using a transformation function or formula containing a transformation, such as <ph id="ph1">&lt;code&gt;A ~ log(B)&lt;/code&gt;</ph> are not supported in real-time scoring.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>To use a model of this type, we recommend that you perform the transformation on input data before passing the data to real-time scoring.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Example: sp_rxPredict</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>This section describes the steps required to set up <bpt id="p1">**</bpt>real-time<ept id="p1">**</ept> prediction, and provides an example in R of how to call the function from T-SQL.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>Step 1.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>Enable the real-time scoring procedure</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>You must enable this feature for each database that you want to use for scoring.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>The server administrator should run the command-line utility, RegisterRExt.exe, which is included with the RevoScaleR package.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>In order for real-time scoring to work, SQL CLR functionality needs to be enabled in the instance; additionally, the database needs to be marked trustworthy.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>When you run the script, these actions are performed for you.</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>However, consider the additional security implications before doing this!</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>Open an elevated command prompt, and navigate to the folder where RegisterRExt.exe is located.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>The following path can be used in a default installation:</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>Run the following command, substituting the name of your instance and the target database where you want to enable the extended stored procedures:</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>For example, to add the extended stored procedure to the CLRPredict database on the default instance, type:</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>The instance name is optional if the database is on the default instance.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>If you are using a named instance, you must specify the instance name.</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>RegisterRExt.exe creates the following objects:</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>Trusted assemblies</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>The stored procedure <ph id="ph1">`sp_rxPredict`</ph></source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>A new database role, <ph id="ph1">`rxpredict_users`</ph>.</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>The database administrator can use this role to grant permission to users who use the real-time scoring functionality.</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>Add any users who need to run <ph id="ph1">`sp_rxPredict`</ph> to the new role.</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>In SQL Server 2017, additional security measures are in place to prevent problems with CLR integration.</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>These measures impose additional restrictions on the use of this stored procedure as well.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>Step 2.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>Prepare and save the model</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>The binary format required by sp<ph id="ph1">\_</ph>rxPredict is the same as the format required to use the PREDICT function.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>Therefore, in your R code, include a call to <bpt id="p1">[</bpt>rxSerializeModel<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxserializemodel)</ept>, and be sure to specify <ph id="ph1">`realtimeScoringOnly = TRUE`</ph>, as in this example:</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>Step 3.</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>Call sp_rxPredict</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>You call sp<ph id="ph1">\_</ph>rxPredict as you would any other stored procedure.</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>In the current release, the stored procedure takes only two parameters: <bpt id="p1">_</bpt><ph id="ph1">\@</ph>model<ept id="p1">_</ept> for the model in binary format, and <bpt id="p2">_</bpt><ph id="ph2">\@</ph>inputData<ept id="p2">_</ept> for the data to use in scoring, defined as a valid SQL query.</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>Because the binary format is the same that is used by the PREDICT function, you can use the models and data table from the preceding example.</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>The call to sp<ph id="ph1">\_</ph>rxPredict fails if the input data for scoring does not include columns that match the requirements of the model.</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>Currently, only the following .NET data types are supported: double, float, short, ushort, long, ulong and string.</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>Therefore, you might need to filter out unsupported types in your input data before using it for real-time scoring.</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>For information about corresponding SQL types, see <bpt id="p1">[</bpt>SQL-CLR Type Mapping<ept id="p1">](/dotnet/framework/data/adonet/sql/linq/sql-clr-type-mapping)</ept> or <bpt id="p2">[</bpt>Mapping CLR Parameter Data<ept id="p2">](https://docs.microsoft.com/sql/relational-databases/clr-integration-database-objects-types-net-framework/mapping-clr-parameter-data)</ept>.</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>Disable real-time scoring</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>To disable real-time scoring functionality, open an elevated command prompt, and run the following command: <ph id="ph1">`RegisterRExt.exe /uninstallrts /database:&lt;database_name&gt; [/instance:name]`</ph></source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>For more background on scoring in SQL Server, see <bpt id="p1">[</bpt>How to generate predictions in SQL Server machine learning<ept id="p1">](r/how-to-do-realtime-scoring.md)</ept>.</source>
+        </trans-unit></group></body></file></xliff>

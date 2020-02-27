@@ -1,0 +1,174 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="deepdive-create-sql-server-data-objects-using-rxsqlserverdata.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c7869fc3fc67cb24542223c2300cd7b6ebcf1eb41.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">7869fc3fc67cb24542223c2300cd7b6ebcf1eb41</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\deepdive-create-sql-server-data-objects-using-rxsqlserverdata.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Create RxSqlServerData objects</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>RevoScaleR tutorial 2: How to create data objects using the R language on SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Create SQL Server data objects using RxSqlServerData (SQL Server and RevoScaleR tutorial)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This is tutorial 2 of the <bpt id="p1">[</bpt>RevoScaleR tutorial series<ept id="p1">](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)</ept> on how to use <bpt id="p2">[</bpt>RevoScaleR functions<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept> with SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This tutorial is a continuation of database creation: adding tables and loading data.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>If a DBA created the database and login in <bpt id="p1">[</bpt>tutorial two<ept id="p1">](deepdive-work-with-sql-server-data-using-r.md)</ept>, you can add tables using an R IDE like RStudio or a built-in tool like <bpt id="p2">**</bpt>Rgui<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>From R, connect to SQL Server and use <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> functions to perform the following tasks:</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Create tables for training data and predictions</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Load tables with data from a local .csv file</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Sample data is simulated credit card fraud data (the ccFraud dataset), partitioned into training and scoring datasets.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>The data file is included in <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Use an R IDE or <bpt id="p1">**</bpt>Rgui<ept id="p1">**</ept> to complete these taks.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Be sure to use the R executables found at this location: C:\Program Files\Microsoft\R Client\R_SERVER\bin\x64 (either Rgui.exe if you are using that tool, or an R IDE pointing to C:\Program Files\Microsoft\R Client\R_SERVER).</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Having an <bpt id="p1">[</bpt>R client workstation<ept id="p1">](../r/set-up-a-data-science-client.md)</ept> with these executables is considered a prerequisite of this tutorial.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Create the training data table</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Store the database connection string in an R variable.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Below are two examples of valid ODBC connection strings for SQL Server: one using a SQL login, and one for Windows integrated authentication.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Be sure to modify the server name, user name, and password as appropriate.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>SQL login<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Windows authentication<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Specify the name of the table you want to create, and save it in an R variable.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Because the server instance and database name are already specified as part of the connection string, when you combine the two variables, the <bpt id="p1">*</bpt>fully qualified<ept id="p1">*</ept> name of the new table becomes <bpt id="p2">*</bpt>instance.database.schema.ccFraudSmall<ept id="p2">*</ept>.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Optionally, specify <bpt id="p1">*</bpt>rowsPerRead<ept id="p1">*</ept> to control how many rows of data are read in each batch.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>Although this parameter is optional, setting it can result in more efficient computations.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Most of the enhanced analytical functions in <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> and <bpt id="p2">**</bpt>MicrosoftML<ept id="p2">**</ept> process data in chunks.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">*</bpt>rowsPerRead<ept id="p1">*</ept> parameter determines the number of rows in each chunk.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>You might need to experiment with this setting to find the right balance.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>If the value is too large, data access might be slow if there is not enough memory to process data in chunks of that size.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Conversely, on some systems, if the value of <bpt id="p1">*</bpt>rowsPerRead<ept id="p1">*</ept> is too small, performance can also slow down.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>As an initial value, use the default batch process size defined by the database engine instance to control the number of rows in each chunk (5,000 rows).</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Save that value in the variable <bpt id="p1">*</bpt>sqlRowsPerRead<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Define a variable for the new data source object, and pass the arguments previously defined to the <bpt id="p1">**</bpt>RxSqlServerData<ept id="p1">**</ept> constructor.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Note that this only creates the data source object and does not populate it.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Loading data is a separate step.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Create the scoring data table</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Using the same steps, create the table that holds the scoring data using the same process.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>Create a new R variable, <bpt id="p1">*</bpt>sqlScoreTable<ept id="p1">*</ept>, to store the name of the table used for scoring.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Provide that variable as an argument to the <bpt id="p1">**</bpt>RxSqlServerData<ept id="p1">**</ept> function to define a second data source object, <bpt id="p2">*</bpt>sqlScoreDS<ept id="p2">*</ept>.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Because you've already defined the connection string and other parameters as variables in the R workspace, you can reuse it for new data sources representing different tables, views, or queries.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>The function uses different arguments for defining a data source based on an entire table than for a data source based on a query.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>This is because the SQL Server database engine must prepare the queries differently.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Later in this tutorial, you learn how to create a data source object based on a SQL query.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Load data into SQL tables using R</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Now that you have created the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> tables, you can load data into them using the appropriate <bpt id="p1">**</bpt>Rx<ept id="p1">**</ept> function.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> package contains functions specific to data source types.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>For text data, use <bpt id="p1">[</bpt>RxTextData<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxtextdata)</ept> to generate the data source object.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>There are additional functions for creating data source objects from Hadoop data, ODBC data, and so forth.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>For this section, you must have <bpt id="p1">**</bpt>Execute DDL<ept id="p1">**</ept> permissions on the database.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Load data into the training table</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Create an R variable, <bpt id="p1">*</bpt>ccFraudCsv<ept id="p1">*</ept>, and assign to the variable the file path for the CSV file containing the sample data.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>This dataset is provided in <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>The "sampleDataDir" is a keyword on the <bpt id="p1">**</bpt>rxGetOption<ept id="p1">**</ept> function.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Notice the call to <bpt id="p1">**</bpt>rxGetOption<ept id="p1">**</ept>, which is the GET method associated with <bpt id="p2">[</bpt>rxOptions<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxoptions)</ept> in <bpt id="p3">**</bpt>RevoScaleR<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Use this utility to set and list options related to local and remote compute contexts, such as the default shared directory, or the number of processors (cores) to use in computations.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>This particular call gets the samples from the correct library, regardless of where you are running your code.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>For example, try running the function on SQL Server, and on your development computer, and see how the paths differ.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Define a variable to store the new data, and use the <bpt id="p1">**</bpt>RxTextData<ept id="p1">**</ept> function to specify the text data source.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>The argument <bpt id="p1">*</bpt>colClasses<ept id="p1">*</ept> is important.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>You use it to indicate the data type to assign to each column of data loaded from the text file.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>In this example, all columns are handled as text, except for the named columns, which are handled as integers.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>At this point, you might want to pause a moment, and view your database in <ph id="ph1">[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Refresh the list of tables in the database.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>You can see that, although the R data objects have been created in your local workspace, the tables have not been created in the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> database.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>Also, no data has been loaded from the text file into the R variable.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Insert the data by calling the function <bpt id="p1">[</bpt>rxDataStep<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxdatastep)</ept> function.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Assuming no problems with your connection string, after a brief pause, you should see results like these:</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Total Rows written: 10000, Total time: 0.466<ept id="p1">*</ept> <bpt id="p2">*</bpt>Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.577 seconds<ept id="p2">*</ept></source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Refresh the list of tables.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>To verify that each variable has the correct data types and was imported successfully, you can also right-click the table in <ph id="ph1">[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]</ph> and select <bpt id="p1">**</bpt>Select Top 1000 Rows<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Load data into the scoring table</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>Repeat the steps to load the data set used for scoring into the database.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>Start by providing the path to the source file.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>Use the <bpt id="p1">**</bpt>RxTextData<ept id="p1">**</ept> function to get the data and save it in the variable, <bpt id="p2">*</bpt>inTextData<ept id="p2">*</ept>.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Call the <bpt id="p1">**</bpt>rxDataStep<ept id="p1">**</ept> function to overwrite the current table with the new schema and data.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">*</bpt>inData<ept id="p1">*</ept> argument defines the data source to use.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">*</bpt>outFile<ept id="p1">*</ept> argument specifies the table in <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> where you want to save the data.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>If the table already exists and you don't use the <bpt id="p1">*</bpt>overwrite<ept id="p1">*</ept> option, results are inserted without truncation.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Again, if the connection was successful, you should see a message indicating completion and the time required to write the data into the table:</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Total Rows written: 10000, Total time: 0.384<ept id="p1">*</ept><ph id="ph1">
+</ph><bpt id="p2">*</bpt>Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.456 seconds<ept id="p2">*</ept></source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>More about rxDataStep</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxDataStep<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxdatastep)</ept> is a powerful function that can perform multiple transformations on an R data frame.</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>You can also use rxDataStep to convert data into the representation required by the destination: in this case, <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>Optionally, you can specify transformations on the data, by using R functions in the arguments to <bpt id="p1">**</bpt>rxDataStep<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>Examples of these operations are provided later in this tutorial.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Query and modify the SQL Server data<ept id="p1">](../../advanced-analytics/tutorials/deepdive-query-and-modify-the-sql-server-data.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

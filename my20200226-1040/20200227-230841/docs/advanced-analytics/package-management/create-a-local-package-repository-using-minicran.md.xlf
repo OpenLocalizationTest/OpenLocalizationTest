@@ -1,0 +1,163 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="create-a-local-package-repository-using-minicran.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cc8ddfcf997cd4cc62f1c65efd7ecfc4cf3aff730.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">c8ddfcf997cd4cc62f1c65efd7ecfc4cf3aff730</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\package-management\create-a-local-package-repository-using-minicran.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Create a repository with miniCRAN</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Learn how to install R packages offline by using the miniCRAN package to create a local repository of packages and dependencies.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Create a local R package repository using miniCRAN</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article describes how to install R packages offline by using <bpt id="p1">[</bpt>miniCRAN<ept id="p1">](https://cran.r-project.org/web/packages/miniCRAN/index.html)</ept> to create a local repository of packages and dependencies.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>miniCRAN<ept id="p1">**</ept> identifies and downloads packages and dependencies into a single folder that you copy to other computers for offline R package installation.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>You can specify one or more packages, and <bpt id="p1">**</bpt>miniCRAN<ept id="p1">**</ept> recursively reads the dependency tree for these packages.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>It then downloads only the listed packages and their dependencies from CRAN or similar repositories.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>When it's done, <bpt id="p1">**</bpt>miniCRAN<ept id="p1">**</ept> creates an internally consistent repository consisting of the selected packages and all required dependencies.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>You can move this local repository to the server, and proceed to install the packages without an internet connection.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Experienced R users often look for the list of dependent packages in the DESCRIPTION file of a downloaded package.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>However, packages listed in <bpt id="p1">**</bpt>Imports<ept id="p1">**</ept> might have second-level dependencies.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>For this reason, we recommend <bpt id="p1">**</bpt>miniCRAN<ept id="p1">**</ept> for assembling the full collection of required packages.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Why create a local repository</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>The goal of creating a local package repository is to provide a single location that a server administrator or other users in the organization can use to install new R packages on a server, especially one that does not have internet access.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>After creating the repository, you can modify it by adding new packages or upgrading the version of existing packages.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Package repositories are useful in these scenarios:</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Security<ept id="p1">**</ept>: Many R users are accustomed to downloading and installing new R packages at will, from CRAN or one of its mirror sites.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>However, for security reasons, production servers running <ph id="ph1">[!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)]</ph> typically do not have internet connectivity.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Easier offline installation<ept id="p1">**</ept>: To install a package to an offline server requires that you also download all package dependencies.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Using miniCRAN makes it easier to get all dependencies in the correct format and avoid dependency errors.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Improved version management<ept id="p1">**</ept>: In a multi-user environment, there are good reasons to avoid unrestricted installation of multiple package versions on the server.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Use a local repository to provide a consistent set of packages for your users.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Install miniCRAN</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>miniCRAN<ept id="p1">**</ept> package itself is dependent on 18 other CRAN packages, among which is the <bpt id="p2">**</bpt>RCurl<ept id="p2">**</ept> package, which has a system dependency on the <bpt id="p3">**</bpt>curl-devel<ept id="p3">**</ept> package.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Similarly, package <bpt id="p1">**</bpt>XML<ept id="p1">**</ept> has a dependency on <bpt id="p2">**</bpt>libxml2-devel<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>To resolve dependencies, we recommend that you build your local repository initially on a machine with full internet access.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Run the following commands on a computer with a base R, R tools, and internet connection.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>It's assumed that this is not your SQL Server computer.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>The following commands install the <bpt id="p1">**</bpt>miniCRAN<ept id="p1">**</ept> package and the <bpt id="p2">**</bpt>igraph<ept id="p2">**</ept> package.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>This example checks whether the package is already installed, but you can bypass the <ph id="ph1">`if`</ph> statements and install the packages directly.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Set the CRAN mirror and MRAN snapshot</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Specify a mirror site to use in getting packages.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>For example, you could use the MRAN site, or any other site in your region that contains the packages you need.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>If a download fails, try another mirror site.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Create a local folder</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Create a local folder in which to store the collected packages.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>If you repeat this often, you might want to use a descriptive name, such as "miniCRANZooPackages" or "miniCRANMyRPackageV2".</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Specify the folder as the local repo.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>R syntax uses a forward slash for path names, which is opposite from Windows conventions.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Add packages to the local repo</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>After <bpt id="p1">**</bpt>miniCRAN<ept id="p1">**</ept> is installed and loaded, create a list that specifies the additional packages you want to download.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Do <bpt id="p1">**</bpt>not<ept id="p1">**</ept> add dependencies to this initial list.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>igraph<ept id="p1">**</ept> package used by <bpt id="p2">**</bpt>miniCRAN<ept id="p2">**</ept> generates the list of dependencies automatically.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>For more information about how to use the generated dependency graph, see <bpt id="p1">[</bpt>Using miniCRAN to identify package  dependencies<ept id="p1">](https://cran.r-project.org/web/packages/miniCRAN/vignettes/miniCRAN-dependency-graph.html)</ept>.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Add target packages "zoo" and "forecast" to a variable.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Optionally, plot the dependency graph.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>This is not necessary, but it can be informative.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Create the local repo.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Be sure to change the R version, if necessary, to the version installed on your SQL Server instance.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>If you did a component upgrade, your version might be newer than the original version.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Get R package information<ept id="p1">](../package-management/r-package-information.md)</ept>.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>From this information, the miniCRAN package creates the folder structure that you need to copy the packages to the <ph id="ph1">[!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)]</ph> later.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>At this point you should have a folder containing the packages you need and any additional packages that are required.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>The folder should contain a collection of zipped packages.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Do not unzip the packages or rename any files.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Optionally, run the following code to list the packages contained in the local miniCRAN repository.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Add packages to the instance library</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>After you have a local repository with the packages you need, move the package repository to the SQL Server computer.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>The following procedure describes how to install the packages using R tools.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve" moniker-range="&gt;sql-server-2017||&gt;=sql-server-linux-ver15||=sqlallproducts-allversions">
+          <source>The recommended method for installing packages is using <bpt id="p1">**</bpt>sqlmlutils<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve" moniker-range="&gt;sql-server-2017||&gt;=sql-server-linux-ver15||=sqlallproducts-allversions">
+          <source>See <bpt id="p1">[</bpt>Install new R packages with sqlmlutils<ept id="p1">](install-additional-r-packages-on-sql-server.md)</ept>.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Copy the folder containing the miniCRAN repository, in its entirety, to the server where you plan to install the packages.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>The folder typically has this structure:</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>In this procedure, we assume a folder off the root drive.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Open an R tool associated with the instance (for example, you could use Rgui.exe).</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Right-click and select <bpt id="p1">**</bpt>Run as administrator<ept id="p1">**</ept> to allow the tool to make updates to your system.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>For example, the default file location for RGUI is <ph id="ph1">`C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\bin\x64`</ph>.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>For example, the file location for RGUI is <ph id="ph1">`C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\R_SERVICES\bin\x64`</ph>.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve" moniker-range="&gt;sql-server-2017||=sqlallproducts-allversions">
+          <source>For example, the file location for RGUI is <ph id="ph1">`C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\R_SERVICES\bin\x64`</ph>.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Get the path for the instance library, and add it to the list of library paths.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve" moniker-range="=sql-server-2016||=sqlallproducts-allversions">
+          <source>For example,</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve" moniker-range="=sql-server-2017||=sqlallproducts-allversions">
+          <source>For example,</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve" moniker-range="&gt;sql-server-2017||=sqlallproducts-allversions">
+          <source>For example,</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Specify the new location on the server where you copied the <bpt id="p1">**</bpt>miniCRAN<ept id="p1">**</ept> repository as <ph id="ph1">`server_repo`</ph>.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>In this example, we assume that you copied the repository to a temporary folder on the server.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Since you're working in a new R workspace on the server, you must also furnish the list of packages to install.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>Install the packages, providing the path to the local copy of the miniCRAN repo.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>From the instance library, you can view the installed packages using a command like the following:</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Get R package information<ept id="p1">](../package-management/r-package-information.md)</ept></source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>R tutorials<ept id="p1">](../tutorials/sql-server-r-tutorials.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

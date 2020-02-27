@@ -1,0 +1,187 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="install-additional-r-packages-on-sql-server.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c0e28d62292c8bcc4b98d8991fbf4bd8708bbbc76.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">0e28d62292c8bcc4b98d8991fbf4bd8708bbbc76</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\package-management\install-additional-r-packages-on-sql-server.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Install new R packages</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Learn how to use sqlmlutils to install new R packages to an instance of SQL Server Machine Learning Services or SQL Server R Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Install new R packages with sqlmlutils</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article describes how to use functions in the <bpt id="p1">[</bpt><bpt id="p2">**</bpt>sqlmlutils<ept id="p2">**</ept><ept id="p1">](https://github.com/Microsoft/sqlmlutils)</ept> package to install new R packages to an instance of SQL Server Machine Learning Services or SQL Server R Services.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>The packages you install can be used in R scripts running in-database using the <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql)</ept> T-SQL statement.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>The standard R <ph id="ph1">`install.packages`</ph> command is not recommended for adding R packages on SQL Server.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Instead, use <bpt id="p1">**</bpt>sqlmlutils<ept id="p1">**</ept> as described in this article.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Prerequisites</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Install <bpt id="p1">[</bpt>R<ept id="p1">](https://www.r-project.org)</ept> and <bpt id="p2">[</bpt>RStudio Desktop<ept id="p2">](https://www.rstudio.com/products/rstudio/download/)</ept> on the client computer you use to connect to SQL Server.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>You can use any R IDE for running scripts, but this article assumes RStudio.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Install <bpt id="p1">[</bpt>Azure Data Studio<ept id="p1">](https://docs.microsoft.com/sql/azure-data-studio/what-is)</ept> or <bpt id="p2">[</bpt>SQL Server Management Studio<ept id="p2">](https://docs.microsoft.com/sql/ssms/sql-server-management-studio-ssms)</ept> (SSMS) on the client computer you use to connect to SQL Server.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>You can use other database management or query tools, but this article assumes Azure Data Studio or SSMS.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Other considerations</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>R script running in SQL Server can use only packages installed in the default instance library.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>SQL Server cannot load packages from external libraries, even if that library is on the same computer.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>This includes R libraries installed with other Microsoft products.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>On a hardened SQL Server environment, you might want to avoid the following:</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Packages that require network access</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Packages that require elevated file system access</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Packages used for web development or other tasks that don't benefit by running inside SQL Server</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Install sqlmlutils on the client computer</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>To use <bpt id="p1">**</bpt>sqlmlutils<ept id="p1">**</ept>, you first need to install it on the client computer you use to connect to SQL Server.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>sqlmlutils<ept id="p1">**</ept> package depends on the <bpt id="p2">**</bpt>RODBCext<ept id="p2">**</ept> package, and <bpt id="p3">**</bpt>RODBCext<ept id="p3">**</ept> depends on a number of other packages.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>The following procedures install all of these packages in the correct order.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Install sqlmlutils online</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>If the client computer has Internet access, you can download and install <bpt id="p1">**</bpt>sqlmlutils<ept id="p1">**</ept> and its dependent packages online.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Download the latest <bpt id="p1">**</bpt>sqlmlutils<ept id="p1">**</ept> zip file from <ph id="ph1">https://github.com/Microsoft/sqlmlutils/tree/master/R/dist</ph> to the client computer.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Don't unzip the file.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Open a <bpt id="p1">**</bpt>Command Prompt<ept id="p1">**</ept> and run the following commands to install the packages <bpt id="p2">**</bpt>sqlmlutils<ept id="p2">**</ept> and <bpt id="p3">**</bpt>RODBCext<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Substitute the full path to the <bpt id="p1">**</bpt>sqlmlutils<ept id="p1">**</ept> zip file you downloaded (this example assumes the file is in your Documents folder).</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>RODBCext<ept id="p1">**</ept> package is found online and installed.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Install sqlmlutils offline</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>If the client computer doesn't have an Internet connection, you need to download the packages <bpt id="p1">**</bpt>sqlmlutils<ept id="p1">**</ept> and <bpt id="p2">**</bpt>RODBCext<ept id="p2">**</ept> in advance using a computer that does have Internet access.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>You then can copy the files to a folder on the client computer and install the packages offline.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>RODBCext<ept id="p1">**</ept> package has a number of dependent packages, and identifying all dependencies for a package gets complicated.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>We recommend that you use <bpt id="p1">[</bpt><bpt id="p2">**</bpt>miniCRAN<ept id="p2">**</ept><ept id="p1">](https://andrie.github.io/miniCRAN/)</ept> to create a local repository folder for the package that includes all the dependent packages.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Create a local R package repository using miniCRAN<ept id="p1">](create-a-local-package-repository-using-minicran.md)</ept>.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>sqlmlutils<ept id="p1">**</ept> package consists of a single zip file that you can copy to the client computer and install.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>On a computer with Internet access:</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Install <bpt id="p1">**</bpt>miniCRAN<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>See <bpt id="p1">[</bpt>Install miniCRAN<ept id="p1">](create-a-local-package-repository-using-minicran.md#install-minicran)</ept> for details.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>In RStudio, run the following R script to create a local repository of the package <bpt id="p1">**</bpt>RODBCext<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>This example creates the repository in the folder <ph id="ph1">`c:\downloads\rodbcext`</ph>.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>For the <ph id="ph1">`Rversion`</ph> value, use the version of R installed on SQL Server.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>To verify the installed version, use the following T-SQL command.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Download the latest <bpt id="p1">**</bpt>sqlmlutils<ept id="p1">**</ept> zip file from <ph id="ph1">https://github.com/Microsoft/sqlmlutils/tree/master/R/dist</ph> (don't unzip the file).</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>For example, download the file to <ph id="ph1">`c:\downloads\sqlmlutils_0.7.1.zip`</ph>.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Copy the entire <bpt id="p1">**</bpt>RODBCext<ept id="p1">**</ept> repository folder (<ph id="ph1">`c:\downloads\rodbcext`</ph>) and the <bpt id="p2">**</bpt>sqlmlutils<ept id="p2">**</ept> zip file (<ph id="ph2">`c:\downloads\sqlmlutils_0.7.1.zip`</ph>) to the client computer.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>For example, copy them to the folder <ph id="ph1">`c:\temp\packages`</ph> on the client computer.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>On the client computer you use to connect to SQL Server, open a command prompt and run the following commands to install <bpt id="p1">**</bpt>RODBCext<ept id="p1">**</ept> and then <bpt id="p2">**</bpt>sqlmlutils<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Add an R package on SQL Server</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>In the following example, you'll add the <bpt id="p1">[</bpt><bpt id="p2">**</bpt>glue<ept id="p2">**</ept><ept id="p1">](https://cran.r-project.org/web/packages/glue/)</ept> package to SQL Server.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Add the package online</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>If the client computer you use to connect to SQL Server has Internet access, you can use <bpt id="p1">**</bpt>sqlmlutils<ept id="p1">**</ept> to find the <bpt id="p2">**</bpt>glue<ept id="p2">**</ept> package and any dependencies over the Internet, and then install the package to a SQL Server instance remotely.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>On the client computer, open RStudio and create a new <bpt id="p1">**</bpt>R Script<ept id="p1">**</ept> file.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Use the following R script to install the <bpt id="p1">**</bpt>glue<ept id="p1">**</ept> package using <bpt id="p2">**</bpt>sqlmlutils<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Substitute your own SQL Server database connection information.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>scope<ept id="p1">**</ept> can be either <bpt id="p2">**</bpt>PUBLIC<ept id="p2">**</ept> or <bpt id="p3">**</bpt>PRIVATE<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>Public scope is useful for the database administrator to install packages that all users can use.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>Private scope makes the package  available only to the user who installs it.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>If you don't specify the scope, the default scope is <bpt id="p1">**</bpt>PRIVATE<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Add the package offline</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>If the client computer doesn't have an Internet connection, you can use <bpt id="p1">**</bpt>miniCRAN<ept id="p1">**</ept> to download the <bpt id="p2">**</bpt>glue<ept id="p2">**</ept> package using a computer that does have Internet access.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>You then copy the package to the client computer where you can install the package offline.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>See <bpt id="p1">[</bpt>Install miniCRAN<ept id="p1">](create-a-local-package-repository-using-minicran.md#install-minicran)</ept> for information on installing <bpt id="p2">**</bpt>miniCRAN<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>On a computer with Internet access:</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Run the following R script to create a local repository for <bpt id="p1">**</bpt>glue<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>This example creates the repository folder in <ph id="ph1">`c:\downloads\glue`</ph>.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>For the <ph id="ph1">`Rversion`</ph> value, use the version of R installed on SQL Server.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>To verify the installed version, use the following T-SQL command.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>Copy the entire <bpt id="p1">**</bpt>glue<ept id="p1">**</ept> repository folder (<ph id="ph1">`c:\downloads\glue`</ph>) to the client computer.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>For example, copy it to the folder <ph id="ph1">`c:\temp\packages\glue`</ph>.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>On the client computer:</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Open RStudio and create a new <bpt id="p1">**</bpt>R Script<ept id="p1">**</ept> file.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>Use the following R script to install the <bpt id="p1">**</bpt>glue<ept id="p1">**</ept> package using <bpt id="p2">**</bpt>sqlmlutils<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Substitute your own SQL Server database connection information (if you don't use Windows Authentication, add <ph id="ph1">`uid`</ph> and <ph id="ph2">`pwd`</ph> parameters).</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>scope<ept id="p1">**</ept> can be either <bpt id="p2">**</bpt>PUBLIC<ept id="p2">**</ept> or <bpt id="p3">**</bpt>PRIVATE<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Public scope is useful for the database administrator to install packages that all users can use.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>Private scope makes the package  available only to the user who installs it.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>If you don't specify the scope, the default scope is <bpt id="p1">**</bpt>PRIVATE<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>Use the package</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>Once the <bpt id="p1">**</bpt>glue<ept id="p1">**</ept> package is installed, you can use it in an R script in SQL Server with the T-SQL <bpt id="p2">**</bpt>sp_execute_external_script<ept id="p2">**</ept> command.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>Open Azure Data Studio or SSMS and connect to your SQL Server database.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>Run the following command:</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>Remove the package</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>If you would like to remove the <bpt id="p1">**</bpt>glue<ept id="p1">**</ept> package, run the following R script.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>Use the same <bpt id="p1">**</bpt>connection<ept id="p1">**</ept> variable you defined earlier.</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>For information about installed R packages, see <bpt id="p1">[</bpt>Get R package information<ept id="p1">](r-package-information.md)</ept></source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>For help in working with R packages, see <bpt id="p1">[</bpt>Tips for using R packages<ept id="p1">](tips-for-using-r-packages.md)</ept></source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>For information about installing Python packages, see <bpt id="p1">[</bpt>Install Python packages with pip<ept id="p1">](install-additional-python-packages-on-sql-server.md)</ept></source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>For more information about SQL Server Machine Learning Services, see <bpt id="p1">[</bpt>What is SQL Server Machine Learning Services (Python and R)?<ept id="p1">](../what-is-sql-server-machine-learning.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

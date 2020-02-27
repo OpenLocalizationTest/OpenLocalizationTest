@@ -1,0 +1,203 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="ref-py-revoscalepy.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cc6de9072c32155446b3ff40df3f81af9073c1090.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">c6de9072c32155446b3ff40df3f81af9073c1090</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\python\ref-py-revoscalepy.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>revoscalepy Python package</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Introduction to the revoscalepy module in SQL Server Machine Learning Services with Python.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>revoscalepy (Python module in SQL Server)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> is a Python35-compatible module from Microsoft that supports distributed computing, remote compute contexts, and high-performance data science algorithms.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>It is based on the <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> package for R (distributed with Microsoft R Server and SQL Server R Services), offering similar functionality:</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Local and remote compute contexts on systems having the same version of <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Data transformation and visualization functions</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Data science functions, scalable through distributed or parallel processing</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Improved performance, including use of the Intel math libraries</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Data sources and compute contexts that you create in <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> can also be used in machine learning algorithms.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>For an introduction to these algorithms, see <bpt id="p1">[</bpt>microsoftml Python module in SQL Server<ept id="p1">](ref-py-microsoftml.md)</ept>.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Full reference documentation</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> library is distributed in multiple Microsoft products, but usage is the same whether you get the library in SQL Server or another product.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Because the functions are the same, <bpt id="p1">[</bpt>documentation for individual revoscalepy functions<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/revoscalepy-package)</ept> is published to just one location under the <bpt id="p2">[</bpt>Python reference<ept id="p2">](https://docs.microsoft.com/machine-learning-server/python-reference/introducing-python-package-reference)</ept> for Microsoft Machine Learning Server.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Should any product-specific behaviors exist, discrepancies will be noted in the function help page.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Versions and platforms</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> module is based on Python 3.5 and available only when you install one of the following Microsoft products or downloads:</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../install/sql-machine-learning-services-windows-install.md)</ept></source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Microsoft Machine Learning Server 9.2.0 or later<ept id="p1">](https://docs.microsoft.com/machine-learning-server/)</ept></source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Python client libraries for a data science client<ept id="p1">](setup-python-client-tools-sql.md)</ept></source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Full product release versions are Windows-only in SQL Server 2017.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Both Windows and Linux are supported for <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> in <bpt id="p2">[</bpt>SQL Server 2019<ept id="p2">](../../linux/sql-server-linux-setup-machine-learning.md)</ept>.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Functions by category</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>This section lists the functions by category to give you an idea of how each one is used.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>You can also use the <bpt id="p1">[</bpt>table of contents<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/introducing-python-package-reference)</ept> to find functions in alphabetical order.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>1-Data source and compute</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> includes functions for creating data sources and setting the location, or <bpt id="p2">*</bpt>compute context<ept id="p2">*</ept>, of where computations are performed.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Functions relevant to SQL Server scenarios are listed in the table below.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>SQL Server and Python use different data types in some cases.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>For a list of mappings between SQL and Python data types, see <bpt id="p1">[</bpt>Python-to-SQL data types<ept id="p1">](python-libraries-and-data-types.md)</ept>.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Function</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxInSqlServer<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rxinsqlserver)</ept></source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Create a SQL Server compute context object to push computations to a remote instance.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Several <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> functions take compute context as an argument.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>For a context-switch example, see <bpt id="p1">[</bpt>Create a model using revoscalepy<ept id="p1">](../tutorials/use-python-revoscalepy-to-create-model.md)</ept>.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxSqlServerData<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rxsqlserverdata)</ept></source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Create a data object based on a SQL Server query or table.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxOdbcData<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rxodbcdata)</ept></source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Create a data source based on an ODBC connection.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>RxXdfData<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rxxdfdata)</ept></source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Create a data source based on a local XDF file.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>XDF files are often used to offload in-memory data to disk.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>An XDF file can be useful when working with more data than can be transferred from the database in one batch, or more data than can fit in memory.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>For example, if you regularly move large amounts of data from a database to a local workstation, rather than query the database repeatedly for each R operation, you can use the XDF file as a kind of cache to save the data locally and then work with it in your R workspace.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>If you are new to the idea of data sources or compute contexts, we recommend that you start with <bpt id="p1">[</bpt>distributed computing<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r/how-to-revoscaler-distributed-computing)</ept> in the Microsoft Machine Learning Server documentation.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>2-Data manipulation (ETL)</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>Function</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_import<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-import)</ept></source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Import data into an .xdf file or data frame.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_data_step<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-data-step)</ept></source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Transform data from an input data set to an output data set.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>3-Training and summarization</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Function</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_btrees<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-btrees)</ept></source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Fit stochastic gradient boosted decision trees</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_dforest<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-dforest)</ept></source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>Fit classification and regression decision forests</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_dtree<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-dtree)</ept></source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Fit classification and regression trees</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_lin_mod<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-lin-mod)</ept></source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>Create a linear regression model</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_logit<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-logit)</ept></source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Create a logistic regression model</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_summary<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-summary)</ept></source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>Produce univariate summaries of objects in revoscalepy.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>You should also review the functions in <bpt id="p1">[</bpt>microsoftml<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/microsoftml-package)</ept> for additional approaches.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>4-Scoring functions</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>Function</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_predict<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-predict)</ept></source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Generate predictions from a trained model</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>)</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Generates predictions from a trained model and can be used for real-time scoring.</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_predict_default<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-predict-default)</ept></source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>Compute predicted values and residuals using rx_lin_mod and rx_logit objects.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_predict_rx_dforest<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-predict-rx-dforest)</ept></source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>Calculate predicted or fitted values for a data set from an rx_dforest or rx_btrees object.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_predict_rx_dtree<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-predict-rx-dtree)</ept></source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>Calculate predicted or fitted values for a data set from an rx_dtree object.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>How to work with revoscalepy</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>Functions in <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> are callable in Python code encapsulated in stored procedures.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>Most developers build <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> solutions locally, and then migrate finished Python code to stored procedures as a deployment exercise.</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>When running locally, you typically run a Python script from the command line, or from a Python development environment, and specify a SQL Server compute context using one of the <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> functions.</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>You can use the remote compute context for the entire code, or for individual functions.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>For example, you might want to offload model training to the server to use the latest data and avoid data movement.</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>When you are ready to encapsulate Python script inside a stored procedure, <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql)</ept>, we recommend rewriting the code as a single function that has clearly defined inputs and outputs.</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>Inputs and outputs must be <bpt id="p1">**</bpt>pandas<ept id="p1">**</ept> data frames.</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>When this is done, you can call the stored procedure from any client that supports T-SQL, easily pass SQL queries as inputs, and save the results to SQL tables.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>For an example, see <bpt id="p1">[</bpt>Learn in-database Python analytics for SQL developers<ept id="p1">](../tutorials/sqldev-in-database-python-for-sql-developers.md)</ept>.</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>Using revoscalepy with microsoftml</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>The Python functions for <bpt id="p1">[</bpt>microsoftml<ept id="p1">](ref-py-microsoftml.md)</ept> are integrated with the compute contexts and data sources that are provided in revoscalepy.</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>When calling functions from microsoftml, for example when defining and training a model, use the revoscalepy functions to execute the Python code either locally or in a SQl Server remote compute context.</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>The following example shows the syntax for importing modules in your Python code.</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>You  can then reference the individual functions you need.</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Python tutorials<ept id="p1">](../tutorials/sql-server-python-tutorials.md)</ept></source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Tutorial: Embed Python code in T-SQL<ept id="p1">](../tutorials/run-python-using-t-sql.md)</ept></source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Python Reference (Microsoft Machine Learning Server)<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/introducing-python-package-reference)</ept></source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,163 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="extension-python.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c0445fb83a1ee4c4e2a991df8e698f24988454d19.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">0445fb83a1ee4c4e2a991df8e698f24988454d19</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\concepts\extension-python.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Python language extension</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Learn about Python code execution and built-in Python libraries in SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Python language extension in SQL Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>The Python extension is part of the SQL Server Machine Learning Services add-on to the relational database engine.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>It adds a Python execution environment, Anaconda distribution with the Python 3.5 runtime and interpreter, standard libraries and tools, and the Microsoft product libraries for Python: <bpt id="p1">[</bpt>revoscalepy<ept id="p1">](../python/ref-py-revoscalepy.md)</ept> for analytics at scale and <bpt id="p2">[</bpt>microsoftml<ept id="p2">](../python/ref-py-microsoftml.md)</ept> for machine learning algorithms.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Python integration is installed as <bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](../what-is-sql-server-machine-learning.md)</ept>.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Installation of the Python 3.5 runtime and interpreter ensures near-complete compatibility with standard Python solutions.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Python runs in a separate process from SQL Server, to guarantee that database operations are not compromised.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Python components</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>SQL Server includes both open-source and proprietary packages.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>The Python runtime installed by Setup is Anaconda 4.2 with Python 3.5.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>The Python runtime is installed independently of SQL tools, and is executed outside of core engine processes, in the extensibility framework.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>As part of the installation of Machine Learning Services with Python, you must consent to the terms of the GNU Public License.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>SQL Server does not modify the Python executables, but you must use the version of Python installed by Setup because that version is the one that the proprietary packages are built and tested on.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>For a list of packages supported by the Anaconda distribution, see the Continuum analytics site: <bpt id="p1">[</bpt>Anaconda package list<ept id="p1">](https://docs.continuum.io/anaconda/packages/pkg-docs)</ept>.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>The Anaconda distribution associated with a specific database engine instance can be found in the folder associated with the instance.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>For example, if you installed SQL Server 2017 database engine with Machine Learning Services and Python on the default instance, look under <ph id="ph1">`C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\PYTHON_SERVICES`</ph>.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Python packages added by Microsoft for parallel and distributed workloads include the following libraries.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Library</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>revoscalepy<ept id="p2">**</ept><ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/revoscalepy-package)</ept></source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Supports data source objects and data exploration, manipulation, transformation, and visualization.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>It supports creation of remote compute contexts, as well as a various scalable machine learning models, such as <bpt id="p1">**</bpt>rxLinMod<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>revoscalepy module with SQL Server<ept id="p1">](../python/ref-py-revoscalepy.md)</ept>.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>microsoftml<ept id="p2">**</ept><ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/microsoftml-package)</ept></source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Contains machine learning algorithms that have been optimized for speed and accuracy, as well as in-line transformations for working with text and images.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>microsoftml module with SQL Server<ept id="p1">](../python/ref-py-microsoftml.md)</ept>.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>Microsoftml and revoscalepy are tightly coupled; data sources used in microsoftml are defined as revoscalepy objects.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Compute context limitations in revoscalepy transfer to microsoftml.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>Namely, all functionality is available for local operations, but switching to a remote compute context requires RxInSqlServer.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Using Python in SQL Server</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>You import the <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept> module into your Python code, and then call functions from the module, like any other Python functions.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Supported data sources include ODBC databases, SQL Server, and XDF file format to exchange data with other sources, or with R solutions.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Input data for Python must be tabular.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>All Python results must be returned in the form of a <bpt id="p1">**</bpt>pandas<ept id="p1">**</ept> data frame.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Supported compute contexts include local, or remote SQL Server compute context.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>A remote compute context refers to code execution that starts on one computer such as a workstation, but then switches script execution to a remote computer.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Switching the compute context requires that both systems have the same revoscalepy library.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Local compute context, as you might expect, includes execution of Python code on the same server as the database engine instance, with code inside T-SQL or embedded in a stored procedure.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>You can also run the code from a local Python IDE and have the script execute on the SQL Server computer, by defining a remote compute context.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Execution architecture</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>The following diagrams depict the interaction of SQL Server components with the Python runtime in each of the supported scenarios: running script in-database, and remote execution from a Python terminal, using a SQL Server compute context.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Python scripts executed in-database</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>When you run Python "inside" SQL Server, you must encapsulate the Python script inside a special stored procedure, <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md)</ept>.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>After the script has been embedded in the stored procedure, any application that can make a stored procedure call can initiate execution of the Python code.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Thereafter SQL Server manages code execution as summarized in the following diagram.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>script-in-db-python</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>A request for the Python runtime is indicated by the parameter <ph id="ph1">`@language='Python'`</ph> passed to the stored procedure.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>SQL Server sends this request to the launchpad service.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>In Linux, SQL uses a <bpt id="p1">**</bpt>launchpadd<ept id="p1">**</ept> service to communicate with a separate launchpad process for each user.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>See the <bpt id="p1">[</bpt>Extensibility architecture diagram<ept id="p1">](extensibility-framework.md#architecture-diagram)</ept> for details.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>The launchpad service starts the appropriate launcher; in this case, PythonLauncher.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>PythonLauncher starts the external Python35 process.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>BxlServer coordinates with the Python runtime to manage exchanges of data, and storage of working results.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>SQL Satellite manages communications about related tasks and processes with SQL Server.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>BxlServer uses SQL Satellite to communicate status and results to SQL Server.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>SQL Server gets results and closes related tasks and processes.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Python scripts executed from a remote client</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>You can run Python scripts from a remote computer, such as a laptop, and have them execute in the context of the SQl Server computer, if these conditions are met:</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>You design the scripts appropriately</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>The remote computer has installed the extensibility libraries that are used by Machine Learning Services.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">[</bpt>revoscalepy<ept id="p1">](../python/ref-py-revoscalepy.md)</ept> package is required to use remote compute contexts.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>The following diagram summarizes the overall workflow when scripts are sent from a remote computer.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>remote-sqlcc-from-python</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>For functions that are supported in <bpt id="p1">**</bpt>revoscalepy<ept id="p1">**</ept>, the Python runtime calls a linking function, which in turn calls BxlServer.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>BxlServer is included with Machine Learning Services (In-Database) and runs in a separate process from the Python runtime.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>BxlServer determines the connection target and initiates a connection using ODBC, passing credentials supplied as part of the connection string in the Python script.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>BxlServer opens a connection to the SQL Server instance.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>When an external script runtime is called, the launchpad service is invoked, which in turn starts the appropriate launcher: in this case, PythonLauncher.dll.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Thereafter, processing of Python code is handled in a workflow similar to that when Python code is invoked from a stored procedure in T-SQL.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>PythonLauncher makes a call to the instance of the Python that is installed on the SQL Server computer.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>Results are returned to BxlServer.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>SQL Satellite manages communication with SQL Server and cleanup of related job objects.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>SQL Server passes results back to the client.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>revoscalepy module in SQL Server<ept id="p1">](../python/ref-py-revoscalepy.md)</ept></source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>revoscalepy function reference<ept id="p1">](https://docs.microsoft.com/r-server/python-reference/revoscalepy/revoscalepy-package)</ept></source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Extensibility framework in SQL Server<ept id="p1">](extensibility-framework.md)</ept></source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>R and machine learning extensions in SQL Server<ept id="p1">](extension-r.md)</ept></source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Get Python package information<ept id="p1">](../package-management/python-package-information.md)</ept></source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Install Python packages with sqlmlutils<ept id="p1">](../package-management/install-additional-python-packages-on-sql-server.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,65 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="sqldev-train-and-save-a-model-using-t-sql.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c406f8e1c60c5820f9edaaf7760b7aeed321d2611.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">406f8e1c60c5820f9edaaf7760b7aeed321d2611</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\sqldev-train-and-save-a-model-using-t-sql.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>R + T-SQL tutorial: Train model</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Tutorial showing how to train, serialize, and save an R model using SQL Server stored procedures and T-SQL functions.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Lesson 3: Train and save a model using T-SQL</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article is part of a tutorial for SQL developers on how to use R in SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In this lesson, you'll learn how to train a machine learning model by using R. You'll train the model using the data features you created in the previous lesson, and then save the trained model in a <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> table.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>In this case, the R packages are already installed with <ph id="ph1">[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)]</ph>, so everything can be done from SQL.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Create the stored procedure</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>When calling R from T-SQL, you use the system stored procedure, <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md)</ept>.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>However, for processes that you repeat often, such as retraining a model, it is easier to encapsulate the call to  sp_execute_exernal_script in another stored procedure.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>In <ph id="ph1">[!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]</ph>, open a new <bpt id="p1">**</bpt>Query<ept id="p1">**</ept> window.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Run the following statement to create the stored procedure <bpt id="p1">**</bpt>RxTrainLogitModel<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>This stored procedure defines the input data and uses <bpt id="p1">**</bpt>rxLogit<ept id="p1">**</ept> from RevoScaleR to create a logistic regression model.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>To ensure that some data is left over to test the model, 70% of the data are randomly selected from the taxi data table for training purposes.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>The SELECT query uses the custom scalar function <bpt id="p1">*</bpt>fnCalculateDistance<ept id="p1">*</ept> to calculate the direct distance between the pick-up and drop-off locations.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>The results of the query are stored in the default R input variable, <ph id="ph1">`InputDataset`</ph>.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>The R script calls the <bpt id="p1">**</bpt>rxLogit<ept id="p1">**</ept> function, which is one of the enhanced R functions included with <ph id="ph1">[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)]</ph>, to create the logistic regression model.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>The binary variable <bpt id="p1">_</bpt>tipped<ept id="p1">_</ept> is used as the <bpt id="p2">*</bpt>label<ept id="p2">*</ept> or outcome column,  and the model is fit using these feature columns:  <bpt id="p3">_</bpt>passenger_count<ept id="p3">_</ept>, <bpt id="p4">_</bpt>trip_distance<ept id="p4">_</ept>, <bpt id="p5">_</bpt>trip_time_in_secs<ept id="p5">_</ept>, and <bpt id="p6">_</bpt>direct_distance<ept id="p6">_</ept>.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>The trained model, saved in the R variable <ph id="ph1">`logitObj`</ph>, is serialized and returned as an output parameter.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Train and deploy the R model using the stored procedure</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Because the stored procedure already includes a definition of the input data, you don't need to provide an input query.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>To train and deploy the R model, call the stored procedure and insert it into the database table <bpt id="p1">_</bpt>nyc_taxi_models<ept id="p1">_</ept>, so that you can use it for future predictions:</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Watch the <bpt id="p1">**</bpt>Messages<ept id="p1">**</ept> window of <ph id="ph1">[!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]</ph> for messages that would be piped to R's <bpt id="p2">**</bpt>stdout<ept id="p2">**</ept> stream, like this message:</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>"STDOUT message(s) from external script: Rows Read: 1193025, Total Rows Processed: 1193025, Total Chunk Time: 0.093 seconds"</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>You might also see messages specific to the individual function, <ph id="ph1">`rxLogit`</ph>, displaying the variables and test metrics generated as part of model creation.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>When the statement has completed, open the table <bpt id="p1">*</bpt>nyc_taxi_models<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Processing of the data and fitting the model might take a while.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>You can see that one new row has been added, which contains the serialized model in the column <bpt id="p1">_</bpt>model<ept id="p1">_</ept> and the model name <bpt id="p2">**</bpt>RxTrainLogit_model<ept id="p2">**</ept> in the column <bpt id="p3">_</bpt>name<ept id="p3">_</ept>.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>In the next step you'll use the trained model to generate predictions.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Next lesson</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Lesson 4: Predict potential outcomes using an R model in a stored procedure<ept id="p1">](../tutorials/sqldev-operationalize-the-model.md)</ept></source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Previous lesson</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Lesson 2: Create data features using R and T-SQL functions<ept id="p1">](..//tutorials/sqldev-create-data-features-using-t-sql.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

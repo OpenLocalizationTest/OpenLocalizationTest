@@ -1,0 +1,305 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="create-external-resource-pool.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cfc1803724f0dafccc1fe41d8e17060810a85e001.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">fc1803724f0dafccc1fe41d8e17060810a85e001</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\administration\create-external-resource-pool.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Create a resource pool</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Learn how you can create and use a resource pool for managing Python and R workloads in SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Create a resource pool for SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Learn how you can create and use a resource pool for managing Python and R workloads in SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>The process includes multiple steps:</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Review status of any existing resource pools.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>It is important that you understand what services are using existing resources.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Modify server resource pools.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Create a new resource pool for external processes.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Create a classification function to identify external script requests.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Verify that the new external resource pool is capturing R or Python jobs from the specified clients or accounts.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Review the status of existing resource pools</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Use a statement such as the following to check the resources allocated to the default pool for the server.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Sample results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>pool_id</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>name</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>min_cpu_percent</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>max_cpu_percent</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>min_memory_percent</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>max_memory_percent</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>cap_cpu_percent</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>min_iops_per_volume</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>max_iops_per_volume</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>default</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>100</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>100</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>100</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Check the resources allocated to the default <bpt id="p1">**</bpt>external<ept id="p1">**</ept> resource pool.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Sample results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>external_pool_id</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>name</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>max_cpu_percent</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>max_memory_percent</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>max_processes</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>version</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>default</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>100</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>20</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Under these server default settings, the external runtime will probably have insufficient resources to complete most tasks.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>To change this, you must modify the server resource usage as follows:</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Reduce the maximum computer memory that can be used by the database engine.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Increase the maximum computer memory that can be used by the external process.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Modify server resource usage</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>In <ph id="ph1">[!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]</ph>, run the following statement to limit <ph id="ph2">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> memory usage to <bpt id="p1">**</bpt>60%<ept id="p1">**</ept> of the value in the 'max server memory' setting.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Similarly, run the following statement to limit the use of memory by external processes to <bpt id="p1">**</bpt>40%<ept id="p1">**</ept> of total computer resources.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>To enforce these changes, you must reconfigure and restart Resource Governor as follows:</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>These are just suggested settings to start with; you should evaluate your machine learning tasks in light of other server processes to determine the correct balance for your environment and workload.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Create a user-defined external resource pool</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>Any changes to the configuration of Resource Governor are enforced across the server as a whole and affect  workloads that use the default pools for the server, as well as workloads that use the external pools.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Therefore, to provide more fine-grained control over which workloads should have precedence, you can create a new user-defined external resource pool.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>You should also define a classification function and assign it to the external resource pool.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>EXTERNAL<ept id="p1">**</ept> keyword is new.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Begin by creating a new <bpt id="p1">*</bpt>user-defined external resource pool<ept id="p1">*</ept>.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>In the following example, the pool is named <bpt id="p1">**</bpt>ds_ep<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>Create a workload group named <ph id="ph1">`ds_wg`</ph> to use in managing session requests.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>For SQL queries you'll use the default pool; for all external process queries will use the <ph id="ph1">`ds_ep`</ph> pool.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Requests are assigned to the default group whenever the request cannot be classified, or if there is any other classification failure.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Resource Governor Workload Group<ept id="p1">](../../relational-databases/resource-governor/resource-governor-workload-group.md)</ept> and <bpt id="p2">[</bpt>CREATE WORKLOAD GROUP &amp;#40;Transact-SQL&amp;#41;<ept id="p2">](../../t-sql/statements/create-workload-group-transact-sql.md)</ept>.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Create a classification function for machine learning</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>A classification function examines incoming tasks and determines whether the task is one that can be run using the current resource pool.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Tasks that do not meet the criteria of the classification function are assigned back to the server's default resource pool.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Begin by specifying that a classifier function should be used by Resource Governor to determine resource pools.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>You can assign a <bpt id="p1">**</bpt>null<ept id="p1">**</ept> as a placeholder for the classifier function.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>ALTER RESOURCE GOVERNOR &amp;#40;Transact-SQL&amp;#41;<ept id="p1">](../../t-sql/statements/alter-resource-governor-transact-sql.md)</ept>.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>In the classifier function for each resource pool, define the type of statements or incoming requests that should be assigned to the resource pool.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>For example, the following function returns the name of the schema assigned to the user-defined external resource pool if the application that sent the request is either 'Microsoft R Host', 'RStudio', or 'Mashup'; otherwise it returns the default resource pool.</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>When the function has been created, reconfigure the resource group to assign the new classifier function to the external resource group that you defined earlier.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Verify new resource pools and affinity</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>To verify that the changes have been made, you should check the configuration of server memory and CPU for each of the workload groups associated with these instance resource pools:</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>the default pool for the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> server</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>the default resource pool for external processes</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>the user-defined pool for external processes</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source>Run the following statement to view all workload groups:</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Sample results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>group_id</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>name</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>importance</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>request_max_memory_grant_percent</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>request_max_cpu_time_sec</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>request_memory_grant_timeout_sec</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>max_dop</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>group_max_requests pool_id</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>pool_idd</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>external_pool_id</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>internal</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>Medium</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>25</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>default</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>Medium</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>25</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>256</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>ds_wg</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>Medium</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>25</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>256</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>Use the new catalog view, <bpt id="p1">[</bpt>sys.resource_governor_external_resource_pools &amp;#40;Transact-SQL&amp;#41;<ept id="p1">](../../relational-databases/system-catalog-views/sys-resource-governor-external-resource-pools-transact-sql.md)</ept>, to view all external resource pools.</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Sample results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>external_pool_id</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>name</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>max_cpu_percent</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source>max_memory_percent</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source>max_processes</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source>version</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source>default</source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source>100</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source>20</source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve">
+          <source>256</source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve">
+          <source>ds_ep</source>
+        </trans-unit><trans-unit id="239" translate="yes" xml:space="preserve">
+          <source>100</source>
+        </trans-unit><trans-unit id="240" translate="yes" xml:space="preserve">
+          <source>40</source>
+        </trans-unit><trans-unit id="241" translate="yes" xml:space="preserve">
+          <source>0</source>
+        </trans-unit><trans-unit id="242" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="243" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Resource Governor Catalog Views &amp;#40;Transact-SQL&amp;#41;<ept id="p1">](../../relational-databases/system-catalog-views/resource-governor-catalog-views-transact-sql.md)</ept>.</source>
+        </trans-unit><trans-unit id="244" translate="yes" xml:space="preserve">
+          <source>Run the following statement to return information about the computer resources that are affinitized to the external resource pool, if applicable:</source>
+        </trans-unit><trans-unit id="245" translate="yes" xml:space="preserve">
+          <source>In this case, because the pools were created with an affinity of AUTO, no information is displayed.</source>
+        </trans-unit><trans-unit id="246" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>sys.dm_resource_governor_resource_pool_affinity &amp;#40;Transact-SQL&amp;#41;<ept id="p1">](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-resource-pool-affinity-transact-sql.md)</ept>.</source>
+        </trans-unit><trans-unit id="247" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="248" translate="yes" xml:space="preserve">
+          <source>For more information about managing server resources, see:</source>
+        </trans-unit><trans-unit id="249" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Resource Governor<ept id="p1">](../../relational-databases/resource-governor/resource-governor.md)</ept></source>
+        </trans-unit><trans-unit id="250" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Resource Governor Related Dynamic Management Views &amp;#40;Transact-SQL&amp;#41;<ept id="p1">](../../relational-databases/system-dynamic-management-views/resource-governor-related-dynamic-management-views-transact-sql.md)</ept></source>
+        </trans-unit><trans-unit id="251" translate="yes" xml:space="preserve">
+          <source>For an overview of resource governance for machine learning, see:</source>
+        </trans-unit><trans-unit id="252" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Manage Python and R workloads with Resource Governor in SQL Server Machine Learning Services<ept id="p1">](resource-governor.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

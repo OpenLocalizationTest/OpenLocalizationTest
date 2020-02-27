@@ -1,0 +1,109 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="deepdive-define-and-use-compute-contexts.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cc90c935f85584f8886ae112d5cfc03759c0a129a.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">c90c935f85584f8886ae112d5cfc03759c0a129a</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\deepdive-define-and-use-compute-contexts.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Use RevoScaleR compute contexts</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>RevoScaleR tutorial 4: How to define a compute context using the R language on SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Define and use compute contexts (SQL Server and RevoScaleR tutorial)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This is tutorial 4 of the <bpt id="p1">[</bpt>RevoScaleR tutorial series<ept id="p1">](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)</ept> on how to use <bpt id="p2">[</bpt>RevoScaleR functions<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept> with SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In the previous tutorial, you used <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> functions to inspect data objects.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>This tutorial introduces the <bpt id="p1">[</bpt>RxInSqlServer<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxinsqlserver)</ept> function, which lets you define a compute context for a remote SQL Server.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>With a remote compute context, you can shift R execution from a local session to a remote session on the server.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Learn the elements of a remote SQL Server compute context</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Enable tracing on a compute context object</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> supports multiple compute contexts: Hadoop, Spark on HDFS, and SQL Server in-database.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>For SQL Server, the <bpt id="p1">**</bpt>RxInSqlServer<ept id="p1">**</ept> function is used for server connections and passing objects between the local computer and the remote execution context.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Create and set a compute context</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>RxInSqlServer<ept id="p1">**</ept> function that creates the SQL Server compute context uses the following information:</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Connection string for the <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> instance</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Specification of how output should be handled</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Optional specification of a shared data directory</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Optional arguments that enable tracing or specify the trace level</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>This section walks you through each part.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Specify the connection string for the instance where computations are performed.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>You can re-use the connection string that you created earlier.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Using a SQL login<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Using Windows authentication<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Specify how you want the output handled.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>The following script directs the local R session to wait for R job results on the server before processing the next operation.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>It also suppresses output from remote computations from appearing in the local session.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">*</bpt>wait<ept id="p1">*</ept> argument to <bpt id="p2">**</bpt>RxInSqlServer<ept id="p2">**</ept> supports these options:</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>TRUE<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>The job is configured as blocking and does not return until it has completed or has failed.</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Distributed and parallel computing in Machine Learning Server<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r/how-to-revoscaler-distributed-computing)</ept>.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>FALSE<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Jobs are configured as non-blocking and return immediately, allowing you to continue running other R code.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>However, even in non-blocking mode, the client connection with <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> must be maintained while the job is running.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Optionally, specify the location of a local directory for shared use by the local R session and by the remote <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> computer and its accounts.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>If you want to manually create a specific directory for sharing, you can add a line like the following:</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>Pass arguments to the <bpt id="p1">**</bpt>RxInSqlServer<ept id="p1">**</ept> constructor to create the <bpt id="p2">*</bpt>compute context object<ept id="p2">*</ept>.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>The syntax for <bpt id="p1">**</bpt>RxInSqlServer<ept id="p1">**</ept> looks almost identical to that of the <bpt id="p2">**</bpt>RxSqlServerData<ept id="p2">**</ept> function that you used earlier to define the data source.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>However, there are some important differences.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>The data source object, defined by using the function <bpt id="p1">[</bpt>RxSqlServerData<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxsqlserverdata)</ept>, specifies where the data is stored.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>In contrast, the compute context, defined by using the function <bpt id="p1">[</bpt>RxInSqlServer<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxinsqlserver)</ept> indicates where aggregations and other computations are to take place.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>Defining a compute context does not affect any other generic R computations that you might perform on your workstation, and does not change the source of the data.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>For example, you could define a local text file as the data source but change the compute context to SQL Server and do all your reading and summaries on the data on the SQL Server computer.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>Activate the remote compute context.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Return information about the compute context, including its properties.</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>Reset the compute context back to the local computer by specifying the "local" keyword (the next tutorial demonstrates using the remote compute context).</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>For a list of other keywords supported by this function, type <ph id="ph1">`help("rxSetComputeContext")`</ph> from an R command line.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Enable tracing</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>Sometimes operations work on your local context, but have issues when running in a remote compute context.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>If you want to analyze issues or monitor performance, you can enable tracing in the compute context, to support run-time troubleshooting.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Create a new compute context that uses the same connection string, but add the arguments <bpt id="p1">*</bpt>traceEnabled<ept id="p1">*</ept> and <bpt id="p2">*</bpt>traceLevel<ept id="p2">*</ept> to the <bpt id="p3">**</bpt>RxInSqlServer<ept id="p3">**</ept> constructor.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>In this example, the <bpt id="p1">*</bpt>traceLevel<ept id="p1">*</ept> property is set to 7, meaning "show all tracing information."</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Use the <bpt id="p1">[</bpt>rxSetComputeContext<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxsetcomputecontext)</ept> function to specify the tracing-enabled compute context by name.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Learn how to switch compute contexts to run R code on the server or locally.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Compute summary statistics in local and remote compute contexts<ept id="p1">](../../advanced-analytics/tutorials/deepdive-create-and-run-r-scripts.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

@@ -1,0 +1,73 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="ref-r-olapr.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c507bd04140880a3c15f1e72eed49c29ade56769c.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">507bd04140880a3c15f1e72eed49c29ade56769c</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\ref-r-olapr.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>olapR R function library</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Introduction to the olapR function library in SQL Server 2016 R Services and SQL Server Machine Learning Services with R.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>olapR (R library in SQL Server)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>olapR<ept id="p1">**</ept> is a Microsoft library of R functions used for MDX queries against a SQL Server Analysis Services OLAP cube.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Functions do not support all MDX operations, but you can build queries that slice, dice, drilldown, rollup, and pivot on dimensions.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>This package is not preloaded into an R session.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Run the following command to load the library.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>You can use this library on connections to an Analysis Services OLAP cube on all supported versions of SQL Server.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Connections to a tabular model are not supported at this time.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Package version</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Current version is 1.0.0 in all Windows-only products and downloads providing the library.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Full reference documentation</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>olapr<ept id="p1">**</ept> library is distributed in multiple Microsoft products, but usage is the same whether you get the library in SQL Server or another product.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Because the functions are the same, <bpt id="p1">[</bpt>documentation for individual sqlrutils functions<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/olapr/olapr)</ept> is published to just one location under the <bpt id="p2">[</bpt>R reference<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/introducing-r-server-r-package-reference)</ept> for Microsoft Machine Learning Server.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Should any product-specific behaviors exist, discrepancies will be noted in the function help page.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Availability and location</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>This package is provided in the following products, as well as on several virtual machine images on Azure.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Package location varies accordingly.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Product</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Location</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>SQL Server Machine Learning Services (with R integration)</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\R_SERVICES\library</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>SQL Server 2016 R Services</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\library</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>Microsoft Machine Learning Server (R Server)</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>C:\Program Files\Microsoft\R_SERVER\library</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Microsoft R Client</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>C:\Program Files\Microsoft\R Client\R_SERVER\library</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Data Science Virtual Machine (on Azure)</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>C:\Program Files\Microsoft\R Client\R_SERVER\library</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>SQL Server Virtual Machine (on Azure) <bpt id="p1">&lt;sup&gt;</bpt>1<ept id="p1">&lt;/sup&gt;</ept></source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\R_SERVICES\library</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;sup&gt;</bpt>1<ept id="p1">&lt;/sup&gt;</ept> R integration is optional in SQL Server.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>The olapR library will be installed when you add the Machine Learning or R feature during VM configuration.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>How to create MDX queries using olapR<ept id="p1">](how-to-create-mdx-queries-using-olapr.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

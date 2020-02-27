@@ -1,0 +1,127 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="deepdive-perform-chunking-analysis-using-rxdatastep.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c0ad082c3a21292b782d5888b48b698c986c0b5b2.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">0ad082c3a21292b782d5888b48b698c986c0b5b2</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\tutorials\deepdive-perform-chunking-analysis-using-rxdatastep.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Chunking analysis in RevoScaleR</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>RevoScaleR tutorial 12: How to chunk data for distributed analysis using the R language on SQL Server.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Perform chunking analysis using rxDataStep (SQL Server and RevoScaleR tutorial)</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This is tutorial 12 of the <bpt id="p1">[</bpt>RevoScaleR tutorial series<ept id="p1">](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)</ept> on how to use <bpt id="p2">[</bpt>RevoScaleR functions<ept id="p2">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept> with SQL Server.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>In this tutorial, you'll use the <bpt id="p1">**</bpt>rxDataStep<ept id="p1">**</ept> function to process data in chunks, rather than requiring that the entire dataset be loaded into memory and processed at one time, as in traditional R. The <bpt id="p2">**</bpt>rxDataStep<ept id="p2">**</ept> functions reads the data in chunk, applies R functions to each chunk of data in turn, and then saves the summary results for each chunk to a common <ph id="ph1">[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]</ph> data source.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>When all data has been read, the results are combined.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>For this tutorial, you compute a contingency table by using the <bpt id="p1">**</bpt>table<ept id="p1">**</ept> function in R. This example is meant for instructional purposes only.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>If you need to tabulate real-world data sets, we recommend that you use the <bpt id="p1">**</bpt>rxCrossTabs<ept id="p1">**</ept> or <bpt id="p2">**</bpt>rxCube<ept id="p2">**</ept> functions in <bpt id="p3">**</bpt>RevoScaleR<ept id="p3">**</ept>, which are optimized for this sort of operation.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Partition data by values</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Create a custom R function that calls the R <bpt id="p1">**</bpt>table<ept id="p1">**</ept> function on each chunk of data, and name the new function <bpt id="p2">**</bpt>ProcessChunk<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Set the compute context to the server.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Define a SQL Server data source to hold the data you're processing.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Start by assigning a SQL query to a variable.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Then, use that variable in the <bpt id="p1">*</bpt>sqlQuery<ept id="p1">*</ept> argument of a new SQL Server data source.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Optionally, you can run <bpt id="p1">**</bpt>rxGetVarInfo<ept id="p1">**</ept> on this data source.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>At this point, it contains a single column: <bpt id="p1">*</bpt>Var 1: DayOfWeek, Type: factor, no factor levels available<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Before applying this factor variable to the source data, create a separate table to hold the intermediate results.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Again, you just use the <bpt id="p1">**</bpt>RxSqlServerData<ept id="p1">**</ept> function to define the data, making sure to delete any existing tables of the same name.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>Call the custom function <bpt id="p1">**</bpt>ProcessChunk<ept id="p1">**</ept> to transform the data as it is read, by using it as the <bpt id="p2">*</bpt>transformFunc<ept id="p2">*</ept> argument to the <bpt id="p3">**</bpt>rxDataStep<ept id="p3">**</ept> function.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>To view the intermediate results of <bpt id="p1">**</bpt>ProcessChunk<ept id="p1">**</ept>, assign the results of <bpt id="p2">**</bpt>rxImport<ept id="p2">**</ept> to a variable, and then output the results to the console.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Partial results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>3</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>4</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>5</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>6</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>7</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>8228</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>8924</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>6916</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>6932</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>6944</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>5602</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>6454</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>8321</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>5351</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>7329</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>7411</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>7409</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>6487</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>7692</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>To compute the final results across all chunks, sum the columns, and display the results in the console.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Results<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>1</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>2</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>3</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>4</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>5</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>6</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>7</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>97975</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>77725</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>78875</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>81304</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>82987</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>86159</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>94975</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>To remove the intermediate results table, make a call to <bpt id="p1">**</bpt>rxSqlServerDropTable<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>R Tutorials for SQL Server<ept id="p1">](sql-server-r-tutorials.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

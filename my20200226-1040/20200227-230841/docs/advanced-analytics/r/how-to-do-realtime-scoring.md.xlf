@@ -1,0 +1,231 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="how-to-do-realtime-scoring.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c7822cd56a52e47493fe175c293dbfe491a9524af.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">7822cd56a52e47493fe175c293dbfe491a9524af</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\r\how-to-do-realtime-scoring.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Generate forecasts and predictions</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Use rxPredict, or sp_rxPredict for real-time scoring, or PREDICT T-SQL for native scoring for predictions and forecasting in R and Python in SQL Server Machine Learning.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>How to generate forecasts and predictions using machine learning models in SQL Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Using an existing model to forecast or predict outcomes for new data inputs is a core task in machine learning.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>This article enumerates the approaches for generating predictions in SQL Server.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>Among the approaches are internal processing methodologies for high-speed predictions, where speed is based on incremental reductions of run time dependencies.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>Fewer dependencies mean faster predictions.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>Using the internal processing infrastructure (real-time or native scoring) comes with library requirements.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>Functions must be from the Microsoft libraries.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>R or Python code calling open-source or third-party functions is not supported in CLR or C++ extensions.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>The following table summarizes the scoring frameworks for forecasting and predictions.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Methodology</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Interface</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Library requirements</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Processing speeds</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Extensibility framework</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxPredict (R)<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxpredict)</ept></source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rx_predict (Python)<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-predict)</ept></source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>None.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Models can be based on any R or Python function</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Hundreds of milliseconds.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Loading a runtime environment has a fixed cost, averaging three to six hundred milliseconds, before any new data is scored.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Real-time scoring CLR extension<ept id="p1">](../real-time-scoring.md)</ept></source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>sp_rxPredict<ept id="p1">](https://docs.microsoft.com//sql/relational-databases/system-stored-procedures/sp-rxpredict-transact-sql)</ept> on a serialized model</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>R: RevoScaleR, MicrosoftML</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>Python: revoscalepy, microsoftml</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>Tens of milliseconds, on average.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Native scoring C++ extension<ept id="p1">](../sql-native-scoring.md)</ept></source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>PREDICT T-SQL function<ept id="p1">](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql)</ept> on a serialized model</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>R: RevoScaleR</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Python: revoscalepy</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Less than 20 milliseconds, on average.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Speed of processing and not substance of the output is the differentiating feature.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Assuming the same functions and inputs, the scored output should not vary based on the approach you use.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>The model must be created using a supported function, then serialized to a raw byte stream saved to disk, or stored in binary format in a database.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Using a stored procedure or T-SQL, you can load and use a binary model without the overhead of an R or Python language run time, resulting in faster time to completion when generating prediction scores on new inputs.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>The significance of CLR and C++ extensions is proximity to the database engine itself.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>The native language of the database engine is C++, which means extensions written in C++ run with fewer dependencies.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>In contrast, CLR extensions depend on .NET Core.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>As you might expect, platform support is impacted by these run time environments.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Native database engine extensions run anywhere the relational database is supported: Windows, Linux, Azure.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>CLR extensions with the .NET Core requirement is currently Windows only.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>Scoring overview</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">_</bpt>Scoring<ept id="p1">_</ept> is a two-step process.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>First, you specify an already trained model to load from a table.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Second, pass new input data to the function, to generate prediction values (or <bpt id="p1">_</bpt>scores<ept id="p1">_</ept>).</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>The input is often a T-SQL query, returning either tabular or single rows.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>You can choose to output a single column value representing a probability, or you might output several values, such as a confidence interval, error, or other useful complement to the prediction.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>Taking a step back, the overall process of preparing the model and then generating scores can be summarized this way:</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>Create a model using a supported algorithm.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>Support varies by the scoring methodology you choose.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>Train the model.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>Serialize the model using a special binary format.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>Save the model to SQL Server.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>Typically this means storing the serialized model in a SQL Server table.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>Call the function or stored procedure, specifying the model and data inputs as parameters.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>When the input includes many rows of data, it is usually faster to insert the prediction values into a table as part of the scoring process.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>Generating a single score is more typical in a scenario where you get input values from a form or user request, and return the score to a client application.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>To improve performance when generating successive scores, SQL Server might cache the model so that it can be reloaded into memory.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>Compare methods</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>To preserve the integrity of core database engine processes, support for R and Python is enabled in a dual architecture that isolates language processing from RDBMS processing.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Starting in SQL Server 2016, Microsoft added an extensibility framework that allows R scripts to be executed from T-SQL.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>In SQL Server 2017, Python integration was added.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>The extensibility framework supports any operation you might perform in R or Python, ranging from simple functions to training complex machine learning models.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>However, the dual-process architecture requires invoking an external R or Python process for every call, regardless of the complexity of the operation.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>When the workload entails loading a pre-trained model from a table and scoring against it on data already in SQL Server, the overhead of calling the external processes adds latency that can be unacceptable in certain circumstances.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>For example, fraud detection requires fast scoring to be relevant.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>To increase scoring speeds for scenarios like fraud detection, SQL Server added built-in scoring libraries as C++ and CLR extensions that eliminate the overhead of R and Python start-up processes.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>Real-time scoring<ept id="p2">**</ept><ept id="p1">](../real-time-scoring.md)</ept> was the first solution for high-performance scoring.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>Introduced in early versions of SQL Server 2017 and later updates to SQL Server 2016, real-time scoring relies on CLR libraries that stand in for R and Python processing over Microsoft-controlled functions in RevoScaleR, MicrosoftML (R), revoscalepy, and microsoftml (Python).</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>CLR libraries are invoked using the <bpt id="p1">**</bpt>sp_rxPredict<ept id="p1">**</ept> stored procedure to generates scores from any supported model type, without calling the R or Python runtime.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>Native scoring<ept id="p2">**</ept><ept id="p1">](../sql-native-scoring.md)</ept> is a SQL Server 2017 feature, implemented as a native C++ library, but only for RevoScaleR and revoscalepy models.</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source>It is the fastest and more secure approach, but supports a smaller set of functions relative to other methodologies.</source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>Choose a scoring method</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source>Platform requirements often dictate which scoring methodology to use.</source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>Product version and platform</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>Methodology</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>SQL Server 2017 on Windows, SQL Server 2017 Linux, and Azure SQL Database</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Native scoring<ept id="p1">**</ept> with T-SQL PREDICT</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>SQL Server 2017 (Windows only), SQL Server 2016 R Services at SP1 or higher</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Real-time scoring<ept id="p1">**</ept> with sp<ph id="ph1">\_</ph>rxPredict stored procedure</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>We recommend native scoring with the PREDICT function.</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>Using sp<ph id="ph1">\_</ph>rxPredict requires that you enable SQLCLR integration.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>Consider the security implications before you enable this option.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>Serialization and storage</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>To use a model with either of the fast scoring options, save the model using a special serialized format, which has been optimized for size and scoring efficiency.</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source>Call <bpt id="p1">[</bpt>rxSerializeModel<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxserializemodel)</ept> to write a supported model to the <bpt id="p2">**</bpt>raw<ept id="p2">**</ept> format.</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>Call <bpt id="p1">[</bpt>rxUnserializeModel<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxserializemodel)</ept>` to reconstitute the model for use in other R code, or to view the model.</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Using SQL<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source>From SQL code, you can train the model using <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](https://docs.microsoft.com//sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql)</ept>, and directly insert the trained models into a table, in a column of type <bpt id="p2">**</bpt>varbinary(max)<ept id="p2">**</ept>.</source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>For a simple example, see <bpt id="p1">[</bpt>Create a preditive model in R<ept id="p1">](../tutorials/quickstart-r-train-score-model.md)</ept></source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Using R<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>From R code, call the <bpt id="p1">[</bpt>rxWriteObject<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxwriteobject)</ept> function from RevoScaleR package to write the model directly to the database.</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>The <bpt id="p1">**</bpt>rxWriteObject()<ept id="p1">**</ept> function can retrieve R objects from an ODBC data source like SQL Server, or write objects to SQL Server.</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>The API is modeled after a simple key-value store.</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>If you use this function, be sure to serialize the model using <bpt id="p1">[</bpt>rxSerializeModel<ept id="p1">](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxserializemodel)</ept> first.</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>Then, set the <bpt id="p1">*</bpt>serialize<ept id="p1">*</ept> argument in <bpt id="p2">**</bpt>rxWriteObject<ept id="p2">**</ept> to FALSE, to avoid repeating the serialization step.</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>Serializing a model to a binary format is useful, but not required if you are scoring predictions using R and Python run time environment in the extensibility framework.</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>You can save a model in raw byte format to a file and then read from the file into SQL Server.</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>This option might be useful if you are moving or copying models between environments.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>Scoring in related products</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>If you are using the <bpt id="p1">[</bpt>standalone server<ept id="p1">](r-server-standalone.md)</ept> or a <bpt id="p2">[</bpt>Microsoft Machine Learning Server<ept id="p2">](https://docs.microsoft.com/machine-learning-server/what-is-machine-learning-server)</ept>, you have other options besides stored procedures and T-SQL functions for generating predictions quickly.</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>Both the standalone server and Machine Learning Server support the concept of a <bpt id="p1">*</bpt>web service<ept id="p1">*</ept> for code deployment.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>You can bundle an R or Python pre-trained model as a web service, called at run time to evaluate new data inputs.</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>For more information, see these articles:</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>What are web services in Machine Learning Server?<ept id="p1">](https://docs.microsoft.com/machine-learning-server/operationalize/concept-what-are-web-services)</ept></source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>What is operationalization?<ept id="p1">](https://docs.microsoft.com/machine-learning-server/what-is-operationalization)</ept></source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Deploy a Python model as a web service with azureml-model-management-sdk<ept id="p1">](https://docs.microsoft.com/machine-learning-server/operationalize/python/quickstart-deploy-python-web-service)</ept></source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Publish an R code block or a real-time model as a new web service<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/mrsdeploy/publishservice)</ept></source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>mrsdeploy package for R<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/mrsdeploy/mrsdeploy-package)</ept></source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxSerializeModel<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxserializemodel)</ept></source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>rxRealTimeScoring<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxrealtimescoring)</ept></source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>sp-rxPredict<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-rxpredict-transact-sql)</ept></source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>PREDICT T-SQL<ept id="p1">](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql)</ept></source>
+        </trans-unit></group></body></file></xliff>

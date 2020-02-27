@@ -1,0 +1,149 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="extension-r.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c98ef57702b01a3f32babd6b0ac9b64fb3c22e9ea.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">98ef57702b01a3f32babd6b0ac9b64fb3c22e9ea</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\concepts\extension-r.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>R language extension</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Learn about R code execution and built-in R libraries in SQL Server R Services or SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>R language extension in SQL Server</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>The R extension is part of the SQL Server Machine Learning Services add-on to the relational database engine.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>It adds an R execution environment, base R distribution with standard libraries and tools, and the Microsoft R libraries: <bpt id="p1">[</bpt>RevoScaleR<ept id="p1">](../r/ref-r-revoscaler.md)</ept> for analytics at scale, <bpt id="p2">[</bpt>MicrosoftML<ept id="p2">](../r/ref-r-microsoftml.md)</ept> for machine learning algorithms, and other libraries for accessing data or R code in SQL Server.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>R integration is available in <bpt id="p1">[</bpt>SQL Server R Services<ept id="p1">](../r/sql-server-r-services.md)</ept> and <bpt id="p2">[</bpt>SQL Server Machine Learning Services<ept id="p2">](../what-is-sql-server-machine-learning.md)</ept>.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>R components</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>SQL Server includes both open-source and proprietary packages.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>The base R libraries are installed through Microsoft's distribution of open-source R: Microsoft R Open (MRO).</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Current users of R should be able to port their R code and execute it as an external process on SQL Server with few or no modifications.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>MRO is installed independently of SQL tools, and is executed outside of core engine processes, in the extensibility framework.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>During installation, you must consent to the terms of the open-source license.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>Thereafter, you can run standard R packages without further modification just as you would in any other open-source distribution of R.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>SQL Server does not modify the base R executables, but you must use the version of R installed by Setup because that version is the one that the proprietary packages are built and tested on.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>For more information about how MRO differs from a base distribution of R that you might get from CRAN, see <bpt id="p1">[</bpt>Interoperability with R language and Microsoft R products and features<ept id="p1">](https://docs.microsoft.com/r-server/what-is-r-server-interoperability)</ept>.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>The R base package distribution installed by Setup can be found in the folder associated with the instance.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>For example, if you installed R Services on a SQL Server default instance, the R libraries are located in this folder by default: <ph id="ph1">`C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\library`</ph>.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Similarly, the R tools associated with the default instance would be located in this folder by default: <ph id="ph1">`C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\bin`</ph>.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>R packages added by Microsoft for parallel and distributed workloads include the following libraries.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>Library</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Description</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>RevoScaleR<ept id="p2">**</ept><ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)</ept></source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>Supports data source objects and data exploration, manipulation, transformation, and visualization.</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>It supports creation of remote compute contexts, as well as a various scalable machine learning models, such as <bpt id="p1">**</bpt>rxLinMod<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>The APIs have been optimized to analyze data sets that are too big to fit in memory and to perform computations distributed over several cores or processors.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>The RevoScaleR package also supports the XDF file format for faster movement and storage of data used for analysis.</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source>The XDF format uses columnar storage, is portable, and can be used to load and then manipulate data from various sources, including text, SPSS, or an ODBC connection.</source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt><bpt id="p2">**</bpt>MicrosoftML<ept id="p2">**</ept><ept id="p1">](https://docs.microsoft.com/r-server/r/concept-what-is-the-microsoftml-package)</ept></source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source>Contains machine learning algorithms that have been optimized for speed and accuracy, as well as in-line transformations for working with text and images.</source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>MicrosoftML in SQL Server<ept id="p1">](../r/ref-r-microsoftml.md)</ept>.</source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Using R in SQL Server</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>You can script R using base functions, but to benefit from multi-processing, you must import the <bpt id="p1">**</bpt>RevoScaleR<ept id="p1">**</ept> and <bpt id="p2">**</bpt>MicrosoftML<ept id="p2">**</ept> modules into your R code, and then call its functions to create models that execute in parallel.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>Supported data sources include ODBC databases, SQL Server, and XDF file format to exchange data with other sources, or with R solutions.</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>Input data must be tabular.</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>All R results must be returned in the form of a data frame.</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source>Supported compute contexts include local, or remote SQL Server compute context.</source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source>A remote compute context refers to code execution that starts on one computer such as a workstation, but then switches script execution to a remote computer.</source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source>Switching the compute context requires that both systems have the same RevoScaleR library.</source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>Local compute context, as you might expect, includes execution of R code on the same server as the database engine instance, with code inside T-SQL or embedded in a stored procedure.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>You can also run the code from a local R IDE and have the script execute on the SQL Server computer, by defining a remote compute context.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>Execution architecture</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>The following diagrams depict the interaction of SQL Server components with the R runtime in each of the supported scenarios: running script in-database, and remote execution from an R command line, using a SQL Server compute context.</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>R scripts executed from SQL Server in-database</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source>R code that is run from "inside" SQL Server is executed by calling a stored procedure.</source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>Thus, any application that can make a stored procedure call can initiate execution of R code.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>Thereafter SQL Server manages the execution of R code as summarized in the following diagram.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>rsql_indb780-01</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>A request for the R runtime is indicated by the parameter <bpt id="p1">_</bpt><ph id="ph1">@language</ph>='R'<ept id="p1">_</ept> passed to the stored procedure, <bpt id="p2">[</bpt>sp_execute_external_script<ept id="p2">](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md)</ept>.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>SQL Server sends this request to the launchpad service.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>In Linux, SQL uses a <bpt id="p1">**</bpt>launchpadd<ept id="p1">**</ept> service to communicate with a separate launchpad process for each user.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>See the <bpt id="p1">[</bpt>Extensibility architecture diagram<ept id="p1">](extensibility-framework.md#architecture-diagram)</ept> for details.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>The launchpad service starts the appropriate launcher; in this case, RLauncher.</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source>RLauncher starts the external R process.</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>BxlServer coordinates with the R runtime to manage exchanges of data with SQL Server and storage of working results.</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>SQL Satellite manages communications about related tasks and processes with SQL Server.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>BxlServer uses SQL Satellite to communicate status and results to SQL Server.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>SQL Server gets results and closes related tasks and processes.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>R scripts executed from a remote client</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source>When connecting from a remote data science client that supports Microsoft R, you can run R functions in the context of SQL Server by using the RevoScaleR functions.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>This is a different workflow from the previous one, and is summarized in the following diagram.</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>rsql_fromR2db-01</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>For RevoScaleR functions, the R runtime calls a linking function which in turn calls BxlServer.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>BxlServer is provided with Microsoft R and runs in a separate process from the R runtime.</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>BxlServer determines the connection target and initiates a connection using ODBC, passing credentials supplied as part of the connection string in the R data source object.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>BxlServer opens a connection to the SQL Server instance.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>For an R call, the launchpad service is invoked, which is turn starts the appropriate launcher, RLauncher.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>Thereafter, processing of R code is similar to the process for running R code from T-SQL.</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>RLauncher makes a call to the instance of the R runtime that is installed on the SQL Server computer.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>Results are returned to BxlServer.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>SQL Satellite manages communication with SQL Server and cleanup of related job objects.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>SQL Server passes results back to the client.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source>See also</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Extensibility framework in SQL Server<ept id="p1">](extensibility-framework.md)</ept></source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Python and machine learning extensions in SQL Server<ept id="p1">](extension-python.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

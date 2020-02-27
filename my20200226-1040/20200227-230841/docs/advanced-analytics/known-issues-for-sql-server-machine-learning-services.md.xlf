@@ -1,0 +1,699 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="known-issues-for-sql-server-machine-learning-services.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cda725efe691aae60bf9776bbe73f80227067d2e2.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">da725efe691aae60bf9776bbe73f80227067d2e2</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\known-issues-for-sql-server-machine-learning-services.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Known issues for Python and R</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve">
+          <source>Known issues in SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>This article describes known problems or limitations with machine learning components that are provided as an option in <bpt id="p1">[</bpt>SQL Server Machine Learning Services<ept id="p1">](what-is-sql-server-machine-learning.md)</ept> and <bpt id="p2">[</bpt>SQL Server 2016 R Services<ept id="p2">](r/sql-server-r-services.md)</ept>.</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>Setup and configuration issues</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>For a description of processes and common questions that are related to initial setup and configuration, see <bpt id="p1">[</bpt>Upgrade and installation FAQ<ept id="p1">](r/upgrade-and-installation-faq-sql-server-r-services.md)</ept>.</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>It contains information about upgrades, side-by-side installation, and installation of new R or Python components.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>1. Inconsistent results in MKL computations due to missing environment variable</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to:<ept id="p1">**</ept> R_SERVER binaries 9.0, 9.1, 9.2 or 9.3.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>R_SERVER uses the Intel Math Kernel Library (MKL).</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>For computations involving MKL, inconsistent results can occur if your system is missing an environment variable.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>Set the environment variable <ph id="ph1">`'MKL_CBWR'=AUTO`</ph> to ensure conditional numerical reproducibility in R_SERVER.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Introduction to Conditional Numerical Reproducibility (CNR)<ept id="p1">](https://software.intel.com/articles/introduction-to-the-conditional-numerical-reproducibility-cnr)</ept>.</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Workaround<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>In Control Panel, click <bpt id="p1">**</bpt>System and Security<ept id="p1">**</ept><ph id="ph1"> &gt; </ph><bpt id="p2">**</bpt>System<ept id="p2">**</ept><ph id="ph2"> &gt; </ph><bpt id="p3">**</bpt>Advanced System Settings<ept id="p3">**</ept><ph id="ph3"> &gt; </ph><bpt id="p4">**</bpt>Environment Variables<ept id="p4">**</ept>.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>Create a new User or System variable.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>Set variable name to 'MKL_CBWR'.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Set the 'Variable value' to 'AUTO'.</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source>Restart R_SERVER.</source>
+        </trans-unit><trans-unit id="119" translate="yes" xml:space="preserve">
+          <source>On SQL Server, you can restart SQL Server Launchpad Service.</source>
+        </trans-unit><trans-unit id="120" translate="yes" xml:space="preserve">
+          <source>If you are running the SQL Server 2019 on Linux, edit or create <bpt id="p1">*</bpt>.bash_profile<ept id="p1">*</ept> in your user home directory, adding the line <ph id="ph1">`export MKL_CBWR="AUTO"`</ph>.</source>
+        </trans-unit><trans-unit id="121" translate="yes" xml:space="preserve">
+          <source>Execute this file by typing <ph id="ph1">`source .bash_profile`</ph> at a bash command prompt.</source>
+        </trans-unit><trans-unit id="122" translate="yes" xml:space="preserve">
+          <source>Restart R_SERVER by typing <ph id="ph1">`Sys.getenv()`</ph> at the R command prompt.</source>
+        </trans-unit><trans-unit id="123" translate="yes" xml:space="preserve">
+          <source>2. R Script runtime error (SQL Server 2017 CU5-CU7 Regression)</source>
+        </trans-unit><trans-unit id="124" translate="yes" xml:space="preserve">
+          <source>For SQL Server 2017, in cumulative updates 5 through 7, there is a regression in the <bpt id="p1">**</bpt>rlauncher.config<ept id="p1">**</ept> file where the temp directory file path includes a space.</source>
+        </trans-unit><trans-unit id="125" translate="yes" xml:space="preserve">
+          <source>This regression is corrected in CU8.</source>
+        </trans-unit><trans-unit id="126" translate="yes" xml:space="preserve">
+          <source>The error you will see when running R script includes the following messages:</source>
+        </trans-unit><trans-unit id="127" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Unable to communicate with the runtime for 'R' script. Please check the requirements of 'R' runtime.<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="128" translate="yes" xml:space="preserve">
+          <source>STDERR message(s) from external script:</source>
+        </trans-unit><trans-unit id="129" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Fatal error: cannot create 'R_TempDir'<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="130" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Workaround<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="131" translate="yes" xml:space="preserve">
+          <source>Apply CU8 when it becomes available.</source>
+        </trans-unit><trans-unit id="132" translate="yes" xml:space="preserve">
+          <source>Alternatively, you can recreate <bpt id="p1">**</bpt>rlauncher.config<ept id="p1">**</ept> by running <bpt id="p2">**</bpt>registerrext<ept id="p2">**</ept> with uninstall/install on an elevated command prompt.</source>
+        </trans-unit><trans-unit id="133" translate="yes" xml:space="preserve">
+          <source>The following example shows the commands with the default instance "MSSQL14.MSSQLSERVER" installed into "C:\Program Files\Microsoft SQL Server<ph id="ph1">\"</ph>:</source>
+        </trans-unit><trans-unit id="134" translate="yes" xml:space="preserve">
+          <source>3. Unable to install SQL Server machine learning features on a domain controller</source>
+        </trans-unit><trans-unit id="135" translate="yes" xml:space="preserve">
+          <source>If you try to install SQL Server 2016 R Services or SQL Server Machine Learning Services on a domain controller, setup fails, with these errors:</source>
+        </trans-unit><trans-unit id="136" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>An error occurred during the setup process of the feature<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="137" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Cannot find group with identity<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="138" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Component error code: 0x80131509<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="139" translate="yes" xml:space="preserve">
+          <source>The failure occurs because, on a domain controller, the service cannot create the 20 local accounts required to run machine learning.</source>
+        </trans-unit><trans-unit id="140" translate="yes" xml:space="preserve">
+          <source>In general, we do not recommend installing SQL Server on a domain controller.</source>
+        </trans-unit><trans-unit id="141" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Support bulletin 2032911<ept id="p1">](https://support.microsoft.com/help/2032911/you-may-encounter-problems-when-installing-sql-server-on-a-domain-cont)</ept>.</source>
+        </trans-unit><trans-unit id="142" translate="yes" xml:space="preserve">
+          <source>4. Install the latest service release to ensure compatibility with Microsoft R Client</source>
+        </trans-unit><trans-unit id="143" translate="yes" xml:space="preserve">
+          <source>If you install the latest version of Microsoft R Client and use it to run R on SQL Server in a remote compute context, you might get an error like the following:</source>
+        </trans-unit><trans-unit id="144" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>You are running version 9.x.x of Microsoft R Client on your computer, which is incompatible with Microsoft R Server version 8.x.x. Download and install a compatible version.<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="145" translate="yes" xml:space="preserve">
+          <source>SQL Server 2016 requires that the R libraries on the client exactly match the R libraries on the server.</source>
+        </trans-unit><trans-unit id="146" translate="yes" xml:space="preserve">
+          <source>The restriction has been removed for releases later than R Server 9.0.1.</source>
+        </trans-unit><trans-unit id="147" translate="yes" xml:space="preserve">
+          <source>However, if you encounter this error, verify the version of the R libraries that's used by your client and the server and, if necessary, update the client to match the server version.</source>
+        </trans-unit><trans-unit id="148" translate="yes" xml:space="preserve">
+          <source>The version of R that is installed with SQL Server R Services is updated whenever a SQL Server service release is installed.</source>
+        </trans-unit><trans-unit id="149" translate="yes" xml:space="preserve">
+          <source>To ensure that you always have the most up-to-date versions of R components, be sure to install all service packs.</source>
+        </trans-unit><trans-unit id="150" translate="yes" xml:space="preserve">
+          <source>To ensure compatibility with Microsoft R Client 9.0.0, install the updates that are described in this <bpt id="p1">[</bpt>support article<ept id="p1">](https://support.microsoft.com/kb/3210262)</ept>.</source>
+        </trans-unit><trans-unit id="151" translate="yes" xml:space="preserve">
+          <source>To avoid problems with R packages, you can also upgrade the version of the R libraries that are installed on the server, by changing your servicing agreement to use the Modern Lifecycle Support policy, as described in <bpt id="p1">[</bpt>the next section<ept id="p1">](#bkmk_sqlbindr)</ept>.</source>
+        </trans-unit><trans-unit id="152" translate="yes" xml:space="preserve">
+          <source>When you do so, the version of R that's installed with SQL Server is updated on the same schedule used for updates of machine Learning Server (formerly Microsoft R Server).</source>
+        </trans-unit><trans-unit id="153" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to:<ept id="p1">**</ept> SQL Server 2016 R Services, with R Server version 9.0.0 or earlier</source>
+        </trans-unit><trans-unit id="154" translate="yes" xml:space="preserve">
+          <source>5. R components missing from CU3 setup</source>
+        </trans-unit><trans-unit id="155" translate="yes" xml:space="preserve">
+          <source>A limited number of Azure virtual machines were provisioned without the R installation files that should be included with SQL Server.</source>
+        </trans-unit><trans-unit id="156" translate="yes" xml:space="preserve">
+          <source>The issue applies to virtual machines provisioned in the period from 2018-01-05 to 2018-01-23.</source>
+        </trans-unit><trans-unit id="157" translate="yes" xml:space="preserve">
+          <source>This issue might also affect on-premises installations, if you applied the CU3 update for SQL Server 2017 during the period from 2018-01-05 to 2018-01-23.</source>
+        </trans-unit><trans-unit id="158" translate="yes" xml:space="preserve">
+          <source>A service release has been provided that includes the correct version of the R installation files.</source>
+        </trans-unit><trans-unit id="159" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Cumulative Update Package 3 for SQL Server 2017 KB4052987<ept id="p1">](https://www.microsoft.com/download/details.aspx?id=56128)</ept>.</source>
+        </trans-unit><trans-unit id="160" translate="yes" xml:space="preserve">
+          <source>To install the components and repair SQL Server 2017 CU3, you must uninstall CU3, and reinstall the updated version:</source>
+        </trans-unit><trans-unit id="161" translate="yes" xml:space="preserve">
+          <source>Download the updated CU3 installation file, which includes the R installers.</source>
+        </trans-unit><trans-unit id="162" translate="yes" xml:space="preserve">
+          <source>Uninstall CU3.</source>
+        </trans-unit><trans-unit id="163" translate="yes" xml:space="preserve">
+          <source>In Control Panel, search for <bpt id="p1">**</bpt>Uninstall an update<ept id="p1">**</ept>, and then select "Hotfix 3015 for SQL Server 2017 (KB4052987) (64-bit)".</source>
+        </trans-unit><trans-unit id="164" translate="yes" xml:space="preserve">
+          <source>Proceed with uninstall steps.</source>
+        </trans-unit><trans-unit id="165" translate="yes" xml:space="preserve">
+          <source>Reinstall the CU3 update, by double-clicking on the update for KB4052987 that you just downloaded: <ph id="ph1">`SQLServer2017-KB4052987-x64.exe`</ph>.</source>
+        </trans-unit><trans-unit id="166" translate="yes" xml:space="preserve">
+          <source>Follow the installation instructions.</source>
+        </trans-unit><trans-unit id="167" translate="yes" xml:space="preserve">
+          <source>6. Unable to install Python components in offline installations of SQL Server 2017 CTP 2.0 or later</source>
+        </trans-unit><trans-unit id="168" translate="yes" xml:space="preserve">
+          <source>If you install a pre-release version of SQL Server 2017 on a computer without internet access, the installer might fail to display the page that prompts for the location of the downloaded Python components.</source>
+        </trans-unit><trans-unit id="169" translate="yes" xml:space="preserve">
+          <source>In such an instance, you can install the Machine Learning Services feature, but not the Python components.</source>
+        </trans-unit><trans-unit id="170" translate="yes" xml:space="preserve">
+          <source>This issue is fixed in the release version.</source>
+        </trans-unit><trans-unit id="171" translate="yes" xml:space="preserve">
+          <source>Also, this limitation does not apply to R components.</source>
+        </trans-unit><trans-unit id="172" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to:<ept id="p1">**</ept> SQL Server 2017 with Python</source>
+        </trans-unit><trans-unit id="173" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">&lt;a name="bkmk_sqlbindr"&gt;</bpt><ept id="p1">&lt;/a&gt;</ept> Warning of incompatible version when you connect to an older version of SQL Server R Services from a client by using <ph id="ph1">[!INCLUDE[ssSQLv14_md](../includes/sssqlv14-md.md)]</ph></source>
+        </trans-unit><trans-unit id="174" translate="yes" xml:space="preserve">
+          <source>When you run R code in a SQL Server 2016 compute context, you might see the following error:</source>
+        </trans-unit><trans-unit id="175" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>You are running version 9.0.0 of Microsoft R Client on your computer, which is incompatible with the Microsoft R Server version 8.0.3. Download and install a compatible version.<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="176" translate="yes" xml:space="preserve">
+          <source>This message is displayed if either of the following two statements is true,</source>
+        </trans-unit><trans-unit id="177" translate="yes" xml:space="preserve">
+          <source>You installed R Server (Standalone) on a client computer by using the setup wizard for <ph id="ph1">[!INCLUDE[ssSQLv14_md](../includes/sssqlv14-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="178" translate="yes" xml:space="preserve">
+          <source>You installed Microsoft R Server by using the <bpt id="p1">[</bpt>separate Windows installer<ept id="p1">](https://docs.microsoft.com/machine-learning-server/install/r-server-install-windows)</ept>.</source>
+        </trans-unit><trans-unit id="179" translate="yes" xml:space="preserve">
+          <source>To ensure that the server and client use the same version you might need to use <bpt id="p1">_</bpt>binding<ept id="p1">_</ept>, supported for Microsoft R Server 9.0 and later releases, to upgrade the R components in SQL Server 2016 instances.</source>
+        </trans-unit><trans-unit id="180" translate="yes" xml:space="preserve">
+          <source>To determine if support for upgrades is available for your version of R Services, see <bpt id="p1">[</bpt>Upgrade an instance of R Services using SqlBindR.exe<ept id="p1">](install/upgrade-r-and-python.md)</ept>.</source>
+        </trans-unit><trans-unit id="181" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to:<ept id="p1">**</ept> SQL Server 2016 R Services, with R Server version 9.0.0 or earlier</source>
+        </trans-unit><trans-unit id="182" translate="yes" xml:space="preserve">
+          <source>7. Setup for SQL Server 2016 service releases might fail to install newer versions of R components</source>
+        </trans-unit><trans-unit id="183" translate="yes" xml:space="preserve">
+          <source>When you install a cumulative update or install a service pack for SQL Server 2016 on a computer that is not connected to the internet, the setup wizard might fail to display the prompt that lets you update the R components by using downloaded CAB files.</source>
+        </trans-unit><trans-unit id="184" translate="yes" xml:space="preserve">
+          <source>This failure typically occurs when multiple components were installed together with the database engine.</source>
+        </trans-unit><trans-unit id="185" translate="yes" xml:space="preserve">
+          <source>As a workaround, you can install the service release by using the command line and specifying the <ph id="ph1">`MRCACHEDIRECTORY`</ph> argument as shown in this example, which installs CU1 updates:</source>
+        </trans-unit><trans-unit id="186" translate="yes" xml:space="preserve">
+          <source>To get the latest installers, see <bpt id="p1">[</bpt>Install machine learning components without internet access<ept id="p1">](install/sql-ml-component-install-without-internet-access.md)</ept>.</source>
+        </trans-unit><trans-unit id="187" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to:<ept id="p1">**</ept> SQL Server 2016 R Services, with R Server version 9.0.0 or earlier</source>
+        </trans-unit><trans-unit id="188" translate="yes" xml:space="preserve">
+          <source>8. Launchpad services fails to start if the version is different from the R version</source>
+        </trans-unit><trans-unit id="189" translate="yes" xml:space="preserve">
+          <source>If you install SQL Server R Services separately from the database engine, and the build versions are different, you might see the following error in the System Event log:</source>
+        </trans-unit><trans-unit id="190" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>The SQL Server Launchpad service failed to start due to the following error: The service did not respond to the start or control request in a timely fashion.<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="191" translate="yes" xml:space="preserve">
+          <source>For example, this error might occur if you install the database engine by using the release version, apply a patch to upgrade the database engine, and then add the R Services feature by using the release version.</source>
+        </trans-unit><trans-unit id="192" translate="yes" xml:space="preserve">
+          <source>To avoid this problem, use a utility such as File Manager to compare the versions of Launchpad.exe with version of SQL binaries, such as sqldk.dll.</source>
+        </trans-unit><trans-unit id="193" translate="yes" xml:space="preserve">
+          <source>All components should have the same version number.</source>
+        </trans-unit><trans-unit id="194" translate="yes" xml:space="preserve">
+          <source>If you upgrade one component, be sure to apply the same upgrade to all other installed components.</source>
+        </trans-unit><trans-unit id="195" translate="yes" xml:space="preserve">
+          <source>Look for Launchpad in the <ph id="ph1">`Binn`</ph> folder for the instance.</source>
+        </trans-unit><trans-unit id="196" translate="yes" xml:space="preserve">
+          <source>For example, in a default installation of SQL Server 2016, the path might be <ph id="ph1">`C:\Program Files\Microsoft SQL Server\MSSQL.13.InstanceNameMSSQL\Binn`</ph>.</source>
+        </trans-unit><trans-unit id="197" translate="yes" xml:space="preserve">
+          <source>9. Remote compute contexts are blocked by a firewall in SQL Server instances that are running on Azure virtual machines</source>
+        </trans-unit><trans-unit id="198" translate="yes" xml:space="preserve">
+          <source>If you have installed <ph id="ph1">[!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]</ph> on an Azure virtual machine, you might not be able to use compute contexts that require the use of the virtual machine's workspace.</source>
+        </trans-unit><trans-unit id="199" translate="yes" xml:space="preserve">
+          <source>The reason is that, by default, the firewall on Azure virtual machines includes a rule that blocks network access for local R user accounts.</source>
+        </trans-unit><trans-unit id="200" translate="yes" xml:space="preserve">
+          <source>As a workaround, on the Azure VM, open <bpt id="p1">**</bpt>Windows Firewall with Advanced Security<ept id="p1">**</ept>, select <bpt id="p2">**</bpt>Outbound Rules<ept id="p2">**</ept>, and disable the following rule: <bpt id="p3">**</bpt>Block network access for R local user accounts in SQL Server instance MSSQLSERVER<ept id="p3">**</ept>.</source>
+        </trans-unit><trans-unit id="201" translate="yes" xml:space="preserve">
+          <source>You can also leave the rule enabled, but change the security property to <bpt id="p1">**</bpt>Allow if secure<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="202" translate="yes" xml:space="preserve">
+          <source>10. Implied authentication in SQLEXPRESS</source>
+        </trans-unit><trans-unit id="203" translate="yes" xml:space="preserve">
+          <source>When you run R jobs from a remote data-science workstation by using Integrated Windows authentication, SQL Server uses <bpt id="p1">*</bpt>implied authentication<ept id="p1">*</ept> to generate any local ODBC calls that might be required by the script.</source>
+        </trans-unit><trans-unit id="204" translate="yes" xml:space="preserve">
+          <source>However, this feature did not work in the RTM build of SQL Server Express Edition.</source>
+        </trans-unit><trans-unit id="205" translate="yes" xml:space="preserve">
+          <source>To fix the issue, we recommend that you upgrade to a later service release.</source>
+        </trans-unit><trans-unit id="206" translate="yes" xml:space="preserve">
+          <source>If upgrade is not feasible, as a workaround, use  a SQL login to run remote R jobs that might require embedded ODBC calls.</source>
+        </trans-unit><trans-unit id="207" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to:<ept id="p1">**</ept> SQL Server 2016 R Services Express Edition</source>
+        </trans-unit><trans-unit id="208" translate="yes" xml:space="preserve">
+          <source>11. Performance limits when libraries used by SQL Server are called from other tools</source>
+        </trans-unit><trans-unit id="209" translate="yes" xml:space="preserve">
+          <source>It is possible to call the machine learning libraries that are installed for SQL Server from an external application, such as RGui.</source>
+        </trans-unit><trans-unit id="210" translate="yes" xml:space="preserve">
+          <source>Doing so might be the most convenient way to accomplish certain tasks, such as installing new packages, or running ad hoc tests on very short code samples.</source>
+        </trans-unit><trans-unit id="211" translate="yes" xml:space="preserve">
+          <source>However, outside of SQL Server, performance might be limited.</source>
+        </trans-unit><trans-unit id="212" translate="yes" xml:space="preserve">
+          <source>For example, even if you are using the Enterprise Edition of SQL Server, R runs in single-threaded mode when you run your R code by using external tools.</source>
+        </trans-unit><trans-unit id="213" translate="yes" xml:space="preserve">
+          <source>To get the benefits of performance in SQL Server, initiate a SQL Server connection and use <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md)</ept> to call the external script runtime.</source>
+        </trans-unit><trans-unit id="214" translate="yes" xml:space="preserve">
+          <source>In general, avoid calling the machine learning libraries that are used by SQL Server from external tools.</source>
+        </trans-unit><trans-unit id="215" translate="yes" xml:space="preserve">
+          <source>If you need to debug R or Python code, it is typically easier to do so outside of SQL Server.</source>
+        </trans-unit><trans-unit id="216" translate="yes" xml:space="preserve">
+          <source>To get the same  libraries that are in SQL Server, you can install Microsoft R Client, <bpt id="p1">[</bpt>SQL Server 2017 Machine Learning Server (Standalone)<ept id="p1">](install/sql-machine-learning-standalone-windows-install.md)</ept>, or <bpt id="p2">[</bpt>SQL Server 2016 R Server (Standalone)<ept id="p2">](install/sql-r-standalone-windows-install.md)</ept>.</source>
+        </trans-unit><trans-unit id="217" translate="yes" xml:space="preserve">
+          <source>12. SQL Server Data Tools does not support permissions required by external scripts</source>
+        </trans-unit><trans-unit id="218" translate="yes" xml:space="preserve">
+          <source>When you use Visual Studio or SQL Server Data Tools to publish a database project, if any principal has permissions specific to external script execution, you might get an error like this one:</source>
+        </trans-unit><trans-unit id="219" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>TSQL Model: Error detected when reverse engineering the database. The permission was not recognized and was not imported.<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="220" translate="yes" xml:space="preserve">
+          <source>Currently the DACPAC model does not support the permissions used by R Services or Machine Learning Services, such as GRANT ANY EXTERNAL SCRIPT, or EXECUTE ANY EXTERNAL SCRIPT.</source>
+        </trans-unit><trans-unit id="221" translate="yes" xml:space="preserve">
+          <source>This issue will be fixed in a later release.</source>
+        </trans-unit><trans-unit id="222" translate="yes" xml:space="preserve">
+          <source>As a workaround, run the additional GRANT statements in a post-deployment script.</source>
+        </trans-unit><trans-unit id="223" translate="yes" xml:space="preserve">
+          <source>13. External script execution is throttled due to resource governance default values</source>
+        </trans-unit><trans-unit id="224" translate="yes" xml:space="preserve">
+          <source>In Enterprise Edition, you can use resource pools to manage external script processes.</source>
+        </trans-unit><trans-unit id="225" translate="yes" xml:space="preserve">
+          <source>In some early release builds, the maximum memory that could be allocated to the R processes was 20 percent.</source>
+        </trans-unit><trans-unit id="226" translate="yes" xml:space="preserve">
+          <source>Therefore, if the server had 32 GB of RAM, the R executables (RTerm.exe and BxlServer.exe) could use a maximum of 6.4 GB in a single request.</source>
+        </trans-unit><trans-unit id="227" translate="yes" xml:space="preserve">
+          <source>If you encounter resource limitations, check the current default.</source>
+        </trans-unit><trans-unit id="228" translate="yes" xml:space="preserve">
+          <source>If 20 percent is not enough, see the documentation for <ph id="ph1">[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]</ph> on how to change this value.</source>
+        </trans-unit><trans-unit id="229" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to:<ept id="p1">**</ept> SQL Server 2016 R Services, Enterprise Edition</source>
+        </trans-unit><trans-unit id="230" translate="yes" xml:space="preserve">
+          <source>14. Error when using <ph id="ph1">`sp_execute_external_script`</ph> without <ph id="ph2">`libc++.so`</ph> on Linux</source>
+        </trans-unit><trans-unit id="231" translate="yes" xml:space="preserve">
+          <source>On a clean Linux machine that does not have <ph id="ph1">`libc++.so`</ph> installed, running a <ph id="ph2">`sp_execute_external_script`</ph> (SPEES) query with Java or an external language fails because <ph id="ph3">`commonlauncher.so`</ph> fails to load <ph id="ph4">`libc++.so`</ph>.</source>
+        </trans-unit><trans-unit id="232" translate="yes" xml:space="preserve">
+          <source>For example:</source>
+        </trans-unit><trans-unit id="233" translate="yes" xml:space="preserve">
+          <source>This fails with a message similar to the following:</source>
+        </trans-unit><trans-unit id="234" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`mssql-launchpadd`</ph> logs will show an error message similar to the following:</source>
+        </trans-unit><trans-unit id="235" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Workaround<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="236" translate="yes" xml:space="preserve">
+          <source>You can perform one of the following workarounds:</source>
+        </trans-unit><trans-unit id="237" translate="yes" xml:space="preserve">
+          <source>Copy <ph id="ph1">`libc++*`</ph> from <ph id="ph2">`/opt/mssql/lib`</ph> to the default system path <ph id="ph3">`/lib64`</ph></source>
+        </trans-unit><trans-unit id="238" translate="yes" xml:space="preserve">
+          <source>Add the following entries to <ph id="ph1">`/var/opt/mssql/mssql.conf`</ph> to expose the path:</source>
+        </trans-unit><trans-unit id="239" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to:<ept id="p1">**</ept> SQL Server 2019 on Linux</source>
+        </trans-unit><trans-unit id="240" translate="yes" xml:space="preserve">
+          <source>R script execution issues</source>
+        </trans-unit><trans-unit id="241" translate="yes" xml:space="preserve">
+          <source>This section contains known issues that are specific to running R on SQL Server, as well as some issues that are related to the R libraries and tools published by Microsoft, including RevoScaleR.</source>
+        </trans-unit><trans-unit id="242" translate="yes" xml:space="preserve">
+          <source>For additional known issues that might affect R solutions, see the <bpt id="p1">[</bpt>Machine Learning Server<ept id="p1">](https://docs.microsoft.com/machine-learning-server/resources-known-issues)</ept> site.</source>
+        </trans-unit><trans-unit id="243" translate="yes" xml:space="preserve">
+          <source>1. Access denied warning when executing R scripts on SQL Server in a non default location</source>
+        </trans-unit><trans-unit id="244" translate="yes" xml:space="preserve">
+          <source>If the instance of SQL Server has been installed to a non-default location, such as outside the <ph id="ph1">`Program Files`</ph> folder, the warning ACCESS_DENIED is raised when you try to run scripts that install a package.</source>
+        </trans-unit><trans-unit id="245" translate="yes" xml:space="preserve">
+          <source>For example:</source>
+        </trans-unit><trans-unit id="246" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>In <ph id="ph1">`normalizePath(path.expand(path), winslash, mustWork)`</ph> : path[2]="~ExternalLibraries/R/8/1": Access is denied<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="247" translate="yes" xml:space="preserve">
+          <source>The reason is that an R function attempts to read the path, and fails if the built-in users group <bpt id="p1">**</bpt>SQLRUserGroup<ept id="p1">**</ept>, does not have read access.</source>
+        </trans-unit><trans-unit id="248" translate="yes" xml:space="preserve">
+          <source>The warning that is raised does not block execution of the current R script, but the warning might recur repeatedly whenever the user runs any other R script.</source>
+        </trans-unit><trans-unit id="249" translate="yes" xml:space="preserve">
+          <source>If you have installed SQL Server to the default location, this error does not occur, because all Windows users have read permissions on the <ph id="ph1">`Program Files`</ph> folder.</source>
+        </trans-unit><trans-unit id="250" translate="yes" xml:space="preserve">
+          <source>This issue ia addressed in an upcoming service release.</source>
+        </trans-unit><trans-unit id="251" translate="yes" xml:space="preserve">
+          <source>As a workaround, provide the group, <bpt id="p1">**</bpt>SQLRUserGroup<ept id="p1">**</ept>, with read access for all parent folders of <ph id="ph1">`ExternalLibraries`</ph>.</source>
+        </trans-unit><trans-unit id="252" translate="yes" xml:space="preserve">
+          <source>2. Serialization error between old and new versions of RevoScaleR</source>
+        </trans-unit><trans-unit id="253" translate="yes" xml:space="preserve">
+          <source>When you pass a model using a serialized format to a remote SQL Server instance, you might get the error:</source>
+        </trans-unit><trans-unit id="254" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>Error in memDecompress(data, type = decompress) internal error -3 in memDecompress(2).<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="255" translate="yes" xml:space="preserve">
+          <source>This error is raised if you saved the model using a recent version of the serialization function, <bpt id="p1">[</bpt>rxSerializeModel<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxserializemodel)</ept>, but the SQL Server instance where you deserialize the model has an older version of the RevoScaleR APIs, from SQL Server 2017 CU2 or earlier.</source>
+        </trans-unit><trans-unit id="256" translate="yes" xml:space="preserve">
+          <source>As a workaround, you can upgrade the SQL Server 2017 instance to CU3 or later.</source>
+        </trans-unit><trans-unit id="257" translate="yes" xml:space="preserve">
+          <source>The error does not appear if the API version is the same, or if you are moving a model saved with an older serialization function to a server that uses a newer version of the serialization API.</source>
+        </trans-unit><trans-unit id="258" translate="yes" xml:space="preserve">
+          <source>In other words, use the same version of RevoScaleR for both serialization and deserialization operations.</source>
+        </trans-unit><trans-unit id="259" translate="yes" xml:space="preserve">
+          <source>3. Real-time scoring does not correctly handle the <bpt id="p1">_</bpt>learningRate<ept id="p1">_</ept> parameter in tree and forest models</source>
+        </trans-unit><trans-unit id="260" translate="yes" xml:space="preserve">
+          <source>If you create a model using a decision tree or decision forest method and specify the learning rate, you might see inconsistent results when using <ph id="ph1">`sp_rxpredict`</ph> or the SQL <ph id="ph2">`PREDICT`</ph> function, as compared to using <ph id="ph3">`rxPredict`</ph>.</source>
+        </trans-unit><trans-unit id="261" translate="yes" xml:space="preserve">
+          <source>The cause is an error in the API that processes serialized models, and is limited to the <ph id="ph1">`learningRate`</ph> parameter: for example, in <bpt id="p1">[</bpt>rxBTrees<ept id="p1">](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxbtrees)</ept>, or</source>
+        </trans-unit><trans-unit id="262" translate="yes" xml:space="preserve">
+          <source>This issue is addressed in an upcoming service release.</source>
+        </trans-unit><trans-unit id="263" translate="yes" xml:space="preserve">
+          <source>4. Limitations on processor affinity for R jobs</source>
+        </trans-unit><trans-unit id="264" translate="yes" xml:space="preserve">
+          <source>In the initial release build of SQL Server 2016, you could set processor affinity only for CPUs in the first k-group.</source>
+        </trans-unit><trans-unit id="265" translate="yes" xml:space="preserve">
+          <source>For example, if the server is a 2-socket machine with two k-groups, only processors from the first k-group are used for the R processes.</source>
+        </trans-unit><trans-unit id="266" translate="yes" xml:space="preserve">
+          <source>The same limitation applies when you configure resource governance for R script jobs.</source>
+        </trans-unit><trans-unit id="267" translate="yes" xml:space="preserve">
+          <source>This issue is fixed in SQL Server 2016 Service Pack 1.</source>
+        </trans-unit><trans-unit id="268" translate="yes" xml:space="preserve">
+          <source>We recommend that you upgrade to the latest service release.</source>
+        </trans-unit><trans-unit id="269" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to:<ept id="p1">**</ept> SQL Server 2016 R Services RTM version</source>
+        </trans-unit><trans-unit id="270" translate="yes" xml:space="preserve">
+          <source>5. Changes to column types cannot be performed when reading data in a SQL Server compute context</source>
+        </trans-unit><trans-unit id="271" translate="yes" xml:space="preserve">
+          <source>If your compute context is set to the SQL Server instance, you cannot use the <bpt id="p1">_</bpt>colClasses<ept id="p1">_</ept> argument (or other similar arguments) to change the data type of columns in your R code.</source>
+        </trans-unit><trans-unit id="272" translate="yes" xml:space="preserve">
+          <source>For example, the following statement would result in an error if the column CRSDepTimeStr is not already an integer:</source>
+        </trans-unit><trans-unit id="273" translate="yes" xml:space="preserve">
+          <source>As a workaround, you can rewrite the SQL query to use CAST or CONVERT and present the data to R by using the correct data type.</source>
+        </trans-unit><trans-unit id="274" translate="yes" xml:space="preserve">
+          <source>In general, performance is better when you work with data by using SQL rather than by changing data in the R code.</source>
+        </trans-unit><trans-unit id="275" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to:<ept id="p1">**</ept> SQL Server 2016 R Services</source>
+        </trans-unit><trans-unit id="276" translate="yes" xml:space="preserve">
+          <source>6. Limits on size of serialized models</source>
+        </trans-unit><trans-unit id="277" translate="yes" xml:space="preserve">
+          <source>When you save a model to a SQL Server table, you must serialize the model and save it in a binary format.</source>
+        </trans-unit><trans-unit id="278" translate="yes" xml:space="preserve">
+          <source>Theoretically the maximum size of a model that can be stored with this method is 2 GB, which is the maximum size of varbinary columns in SQL Server.</source>
+        </trans-unit><trans-unit id="279" translate="yes" xml:space="preserve">
+          <source>If you need to use larger models, the following workarounds are available:</source>
+        </trans-unit><trans-unit id="280" translate="yes" xml:space="preserve">
+          <source>Take steps to reduce the size of your model.</source>
+        </trans-unit><trans-unit id="281" translate="yes" xml:space="preserve">
+          <source>Some open source R packages include a great deal of information in the model object, and much of this information can be removed for deployment.</source>
+        </trans-unit><trans-unit id="282" translate="yes" xml:space="preserve">
+          <source>Use feature selection to remove unnecessary columns.</source>
+        </trans-unit><trans-unit id="283" translate="yes" xml:space="preserve">
+          <source>If you are using an open source algorithm, consider a similar implementation using the corresponding algorithm in MicrosoftML or RevoScaleR.</source>
+        </trans-unit><trans-unit id="284" translate="yes" xml:space="preserve">
+          <source>These packages have been optimized for deployment scenarios.</source>
+        </trans-unit><trans-unit id="285" translate="yes" xml:space="preserve">
+          <source>After the model has been rationalized and the size reduced using the preceding steps, see if the <bpt id="p1">[</bpt>memCompress<ept id="p1">](https://www.rdocumentation.org/packages/base/versions/3.4.1/topics/memCompress)</ept> function in base R can be used to reduce the size of the model before passing it to SQL Server.</source>
+        </trans-unit><trans-unit id="286" translate="yes" xml:space="preserve">
+          <source>This option is best when the model is close to the 2 GB limit.</source>
+        </trans-unit><trans-unit id="287" translate="yes" xml:space="preserve">
+          <source>For larger models, you can use the SQL Server <bpt id="p1">[</bpt>FileTable<ept id="p1">](../relational-databases/blob/filetables-sql-server.md)</ept> feature to store the models, rather than using a varbinary column.</source>
+        </trans-unit><trans-unit id="288" translate="yes" xml:space="preserve">
+          <source>To use FileTables, you must add a firewall exception, because data stored in FileTables is managed by the Filestream filesystem driver in SQL Server, and default firewall rules block network file access.</source>
+        </trans-unit><trans-unit id="289" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Enable Prerequisites for FileTable<ept id="p1">](../relational-databases/blob/enable-the-prerequisites-for-filetable.md)</ept>.</source>
+        </trans-unit><trans-unit id="290" translate="yes" xml:space="preserve">
+          <source>After you have enabled FileTable, to write the model, you get a path from SQL using the FileTable API, and then write the model to that location from your code.</source>
+        </trans-unit><trans-unit id="291" translate="yes" xml:space="preserve">
+          <source>When you need to read the model, you get the path from SQL and then call the model using the path from your script.</source>
+        </trans-unit><trans-unit id="292" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Access FileTables with File Input-Output APIs<ept id="p1">](../relational-databases/blob/access-filetables-with-file-input-output-apis.md)</ept>.</source>
+        </trans-unit><trans-unit id="293" translate="yes" xml:space="preserve">
+          <source>7. Avoid clearing workspaces when you execute R code in a <ph id="ph1">[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]</ph> compute context</source>
+        </trans-unit><trans-unit id="294" translate="yes" xml:space="preserve">
+          <source>If you use an R command to clear your workspace of objects while running R code in a <ph id="ph1">[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]</ph> compute context, or if you clear the workspace as part of an R script called by using <bpt id="p1">[</bpt>sp_execute_external_script<ept id="p1">](../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md)</ept>, you might get this error: <bpt id="p2">*</bpt>workspace object revoScriptConnection not found<ept id="p2">*</ept></source>
+        </trans-unit><trans-unit id="295" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`revoScriptConnection`</ph> is an object in the R workspace that contains information about an R session that is called from <ph id="ph2">[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="296" translate="yes" xml:space="preserve">
+          <source>However, if your R code includes a command to clear the workspace (such as <ph id="ph1">`rm(list=ls()))`</ph>, all information about the session and other objects in the R workspace is cleared as well.</source>
+        </trans-unit><trans-unit id="297" translate="yes" xml:space="preserve">
+          <source>As a workaround, avoid indiscriminate clearing of variables and other objects while you're running R in <ph id="ph1">[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="298" translate="yes" xml:space="preserve">
+          <source>Although clearing the workspace is common when working in the R console, it can have unintended consequences.</source>
+        </trans-unit><trans-unit id="299" translate="yes" xml:space="preserve">
+          <source>To delete specific variables, use the R <ph id="ph1">`remove`</ph> function: for example, <ph id="ph2">`remove('name1', 'name2', ...)`</ph></source>
+        </trans-unit><trans-unit id="300" translate="yes" xml:space="preserve">
+          <source>If there are multiple variables to delete, save the names of temporary variables to a list and perform periodic garbage collection.</source>
+        </trans-unit><trans-unit id="301" translate="yes" xml:space="preserve">
+          <source>8. Restrictions on data that can be provided as input to an R script</source>
+        </trans-unit><trans-unit id="302" translate="yes" xml:space="preserve">
+          <source>You cannot use in an R script the following types of query results:</source>
+        </trans-unit><trans-unit id="303" translate="yes" xml:space="preserve">
+          <source>Data from a <ph id="ph1">[!INCLUDE[tsql](../includes/tsql-md.md)]</ph> query that references AlwaysEncrypted columns.</source>
+        </trans-unit><trans-unit id="304" translate="yes" xml:space="preserve">
+          <source>Data from a <ph id="ph1">[!INCLUDE[tsql](../includes/tsql-md.md)]</ph> query that references masked columns.</source>
+        </trans-unit><trans-unit id="305" translate="yes" xml:space="preserve">
+          <source>If you need to use masked data in an R script, a possible workaround is to make a copy of the data in a temporary table and use that data instead.</source>
+        </trans-unit><trans-unit id="306" translate="yes" xml:space="preserve">
+          <source>9. Use of strings as factors can lead to performance degradation</source>
+        </trans-unit><trans-unit id="307" translate="yes" xml:space="preserve">
+          <source>Using string type variables as factors can greatly increase the amount of memory used for R operations.</source>
+        </trans-unit><trans-unit id="308" translate="yes" xml:space="preserve">
+          <source>This is a known issue with R in general, and there are many articles on the subject.</source>
+        </trans-unit><trans-unit id="309" translate="yes" xml:space="preserve">
+          <source>For example, see <bpt id="p1">[</bpt>Factors are not first-class citizens in R, by John Mount, in R-bloggers)<ept id="p1">](https://www.r-bloggers.com/factors-are-not-first-class-citizens-in-r/)</ept> or <bpt id="p2">[</bpt>stringsAsFactors: An unauthorized biography, by Roger Peng<ept id="p2">](https://simplystatistics.org/2015/07/24/stringsasfactors-an-unauthorized-biography/)</ept>.</source>
+        </trans-unit><trans-unit id="310" translate="yes" xml:space="preserve">
+          <source>Although the issue is not specific to SQL Server, it can greatly affect performance of R code run in SQl Server.</source>
+        </trans-unit><trans-unit id="311" translate="yes" xml:space="preserve">
+          <source>Strings are typically stored as varchar or nvarchar, and if a column of string data has many unique values, the process of internally converting these to integers and back to strings by R can even lead to memory allocation errors.</source>
+        </trans-unit><trans-unit id="312" translate="yes" xml:space="preserve">
+          <source>If you do not absolutely require a string data type for other operations, mapping the string values to a numeric (integer) data type as part of data preparation would be beneficial from a performance and scale perspective.</source>
+        </trans-unit><trans-unit id="313" translate="yes" xml:space="preserve">
+          <source>For a discussion of this issue, and other tips, see <bpt id="p1">[</bpt>Performance for R Services - data optimization<ept id="p1">](r/r-and-data-optimization-r-services.md)</ept>.</source>
+        </trans-unit><trans-unit id="314" translate="yes" xml:space="preserve">
+          <source>10. Arguments <bpt id="p1">*</bpt>varsToKeep<ept id="p1">*</ept> and <bpt id="p2">*</bpt>varsToDrop<ept id="p2">*</ept> are not supported for SQL Server data sources</source>
+        </trans-unit><trans-unit id="315" translate="yes" xml:space="preserve">
+          <source>When you use the rxDataStep function to write results to a table, using the <bpt id="p1">*</bpt>varsToKeep<ept id="p1">*</ept> and <bpt id="p2">*</bpt>varsToDrop<ept id="p2">*</ept> is a handy way of specifying the columns to include or exclude as part of the operation.</source>
+        </trans-unit><trans-unit id="316" translate="yes" xml:space="preserve">
+          <source>However, these arguments are not supported for SQL Server data sources.</source>
+        </trans-unit><trans-unit id="317" translate="yes" xml:space="preserve">
+          <source>11. Limited support for SQL data types in sp<ph id="ph1">\_</ph>execute<ph id="ph2">\_</ph>external<ph id="ph3">\_</ph>script</source>
+        </trans-unit><trans-unit id="318" translate="yes" xml:space="preserve">
+          <source>Not all data types that are supported in SQL can be used in R. As a workaround, consider casting the unsupported data type to a supported data type before passing the data to sp<ph id="ph1">\_</ph>execute<ph id="ph2">\_</ph>external<ph id="ph3">\_</ph>script.</source>
+        </trans-unit><trans-unit id="319" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>R libraries and data types<ept id="p1">](r/r-libraries-and-data-types.md)</ept>.</source>
+        </trans-unit><trans-unit id="320" translate="yes" xml:space="preserve">
+          <source>12. Possible string corruption using unicode strings in varchar columns</source>
+        </trans-unit><trans-unit id="321" translate="yes" xml:space="preserve">
+          <source>Passing unicode data in varchar columns from <ph id="ph1">[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]</ph> to R/Python can result in string corruption.</source>
+        </trans-unit><trans-unit id="322" translate="yes" xml:space="preserve">
+          <source>This is due to the encoding for these unicode string in <ph id="ph1">[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]</ph> collations   may not match with the default UTF-8 encoding used in R/Python.</source>
+        </trans-unit><trans-unit id="323" translate="yes" xml:space="preserve">
+          <source>To send any non-ASCII string data from <ph id="ph1">[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]</ph> to R/Python, use UTF-8 encoding (available in <ph id="ph2">[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)]</ph>) or use nvarchar type for the same.</source>
+        </trans-unit><trans-unit id="324" translate="yes" xml:space="preserve">
+          <source>13. Only one value of type <ph id="ph1">`raw`</ph> can be returned from <ph id="ph2">`sp_execute_external_script`</ph></source>
+        </trans-unit><trans-unit id="325" translate="yes" xml:space="preserve">
+          <source>When a binary data type (the R <bpt id="p1">**</bpt>raw<ept id="p1">**</ept> data type) is returned from R, the value must be sent in the output data frame.</source>
+        </trans-unit><trans-unit id="326" translate="yes" xml:space="preserve">
+          <source>With data types other than <bpt id="p1">**</bpt>raw<ept id="p1">**</ept>, you can return parameter values along with the results of the stored procedure by adding the OUTPUT keyword.</source>
+        </trans-unit><trans-unit id="327" translate="yes" xml:space="preserve">
+          <source>For more information, see <bpt id="p1">[</bpt>Parameters<ept id="p1">](https://docs.microsoft.com/sql/relational-databases/stored-procedures/parameters)</ept>.</source>
+        </trans-unit><trans-unit id="328" translate="yes" xml:space="preserve">
+          <source>If you want to use multiple output sets that include values of type <bpt id="p1">**</bpt>raw<ept id="p1">**</ept>, one possible workaround is to do multiple calls of the stored procedure, or to send the result sets back to <ph id="ph1">[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]</ph> by using ODBC.</source>
+        </trans-unit><trans-unit id="329" translate="yes" xml:space="preserve">
+          <source>14. Loss of precision</source>
+        </trans-unit><trans-unit id="330" translate="yes" xml:space="preserve">
+          <source>Because <ph id="ph1">[!INCLUDE[tsql](../includes/tsql-md.md)]</ph> and R support various data types, numeric data types can suffer loss of precision during conversion.</source>
+        </trans-unit><trans-unit id="331" translate="yes" xml:space="preserve">
+          <source>For more information about implicit data-type conversion, see <bpt id="p1">[</bpt>R libraries and data types<ept id="p1">](r/r-libraries-and-data-types.md)</ept>.</source>
+        </trans-unit><trans-unit id="332" translate="yes" xml:space="preserve">
+          <source>15. Variable scoping error when you use the transformFunc parameter</source>
+        </trans-unit><trans-unit id="333" translate="yes" xml:space="preserve">
+          <source>To transform data while you are modeling, you can pass a <bpt id="p1">*</bpt>transformFunc<ept id="p1">*</ept> argument in a function such as <ph id="ph1">`rxLinmod`</ph> or <ph id="ph2">`rxLogit`</ph>.</source>
+        </trans-unit><trans-unit id="334" translate="yes" xml:space="preserve">
+          <source>However, nested function calls can lead to scoping errors in the SQL Server compute context, even if the calls work correctly in the local compute context.</source>
+        </trans-unit><trans-unit id="335" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>The sample data set for the analysis has no variables<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="336" translate="yes" xml:space="preserve">
+          <source>For example, assume that you have defined two functions, <ph id="ph1">`f`</ph> and <ph id="ph2">`g`</ph>, in your local global environment, and <ph id="ph3">`g`</ph> calls <ph id="ph4">`f`</ph>.</source>
+        </trans-unit><trans-unit id="337" translate="yes" xml:space="preserve">
+          <source>In distributed or remote calls involving <ph id="ph1">`g`</ph>, the call to <ph id="ph2">`g`</ph> might fail with this error, because <ph id="ph3">`f`</ph> cannot be found, even if you have passed both <ph id="ph4">`f`</ph> and <ph id="ph5">`g`</ph> to the remote call.</source>
+        </trans-unit><trans-unit id="338" translate="yes" xml:space="preserve">
+          <source>If you encounter this problem, you can work around the issue by embedding the definition of <ph id="ph1">`f`</ph> inside your definition of <ph id="ph2">`g`</ph>, anywhere before <ph id="ph3">`g`</ph> would ordinarily call <ph id="ph4">`f`</ph>.</source>
+        </trans-unit><trans-unit id="339" translate="yes" xml:space="preserve">
+          <source>For example:</source>
+        </trans-unit><trans-unit id="340" translate="yes" xml:space="preserve">
+          <source>To avoid the error, rewrite the definition as follows:</source>
+        </trans-unit><trans-unit id="341" translate="yes" xml:space="preserve">
+          <source>16. Data import and manipulation using RevoScaleR</source>
+        </trans-unit><trans-unit id="342" translate="yes" xml:space="preserve">
+          <source>When <bpt id="p1">**</bpt>varchar<ept id="p1">**</ept> columns are read from a database, white space is trimmed.</source>
+        </trans-unit><trans-unit id="343" translate="yes" xml:space="preserve">
+          <source>To prevent this, enclose strings in non-white-space characters.</source>
+        </trans-unit><trans-unit id="344" translate="yes" xml:space="preserve">
+          <source>When functions such as <ph id="ph1">`rxDataStep`</ph> are used to create database tables that have <bpt id="p1">**</bpt>varchar<ept id="p1">**</ept> columns, the column width is estimated based on a sample of the data.</source>
+        </trans-unit><trans-unit id="345" translate="yes" xml:space="preserve">
+          <source>If the width can vary, it might be necessary to pad all strings to a common length.</source>
+        </trans-unit><trans-unit id="346" translate="yes" xml:space="preserve">
+          <source>Using a transform to change a variable's data type is not supported when repeated calls to <ph id="ph1">`rxImport`</ph> or <ph id="ph2">`rxTextToXdf`</ph> are used to import and append rows, combining multiple input files into a single .xdf file.</source>
+        </trans-unit><trans-unit id="347" translate="yes" xml:space="preserve">
+          <source>17. Limited support for rxExec</source>
+        </trans-unit><trans-unit id="348" translate="yes" xml:space="preserve">
+          <source>In SQL Server 2016, the <ph id="ph1">`rxExec`</ph> function that's provided by the RevoScaleR package can be used only in single-threaded mode.</source>
+        </trans-unit><trans-unit id="349" translate="yes" xml:space="preserve">
+          <source>18. Increase the maximum parameter size to support rxGetVarInfo</source>
+        </trans-unit><trans-unit id="350" translate="yes" xml:space="preserve">
+          <source>If you use data sets with extremely large numbers of variables (for example, over 40,000), set the <ph id="ph1">`max-ppsize`</ph> flag when you start R to use functions such as <ph id="ph2">`rxGetVarInfo`</ph>.</source>
+        </trans-unit><trans-unit id="351" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`max-ppsize`</ph> flag specifies the maximum size of the pointer protection stack.</source>
+        </trans-unit><trans-unit id="352" translate="yes" xml:space="preserve">
+          <source>If you are using the R console (for example, RGui.exe or RTerm.exe), you can set the value of <bpt id="p1">_</bpt>max-ppsize<ept id="p1">_</ept> to 500000 by typing:</source>
+        </trans-unit><trans-unit id="353" translate="yes" xml:space="preserve">
+          <source>19. Issues with the rxDTree function</source>
+        </trans-unit><trans-unit id="354" translate="yes" xml:space="preserve">
+          <source>The <ph id="ph1">`rxDTree`</ph> function does not currently support in-formula transformations.</source>
+        </trans-unit><trans-unit id="355" translate="yes" xml:space="preserve">
+          <source>In particular, using the <ph id="ph1">`F()`</ph> syntax for creating factors on the fly is not supported.</source>
+        </trans-unit><trans-unit id="356" translate="yes" xml:space="preserve">
+          <source>However, numeric data is automatically binned.</source>
+        </trans-unit><trans-unit id="357" translate="yes" xml:space="preserve">
+          <source>Ordered factors are treated the same as factors in all RevoScaleR analysis functions except <ph id="ph1">`rxDTree`</ph>.</source>
+        </trans-unit><trans-unit id="358" translate="yes" xml:space="preserve">
+          <source>20. Data.table as an OutputDataSet in R</source>
+        </trans-unit><trans-unit id="359" translate="yes" xml:space="preserve">
+          <source>Using <ph id="ph1">`data.table`</ph> as an <ph id="ph2">`OutputDataSet`</ph> in R is not supported in SQL Server 2017 Cumulative Update 13 (CU13) and earlier.</source>
+        </trans-unit><trans-unit id="360" translate="yes" xml:space="preserve">
+          <source>The following message might appear:</source>
+        </trans-unit><trans-unit id="361" translate="yes" xml:space="preserve">
+          <source><ph id="ph1">`data.table`</ph> as an <ph id="ph2">`OutputDataSet`</ph> in R is supported in SQL Server 2017 Cumulative Update 14 (CU14) and later.</source>
+        </trans-unit><trans-unit id="362" translate="yes" xml:space="preserve">
+          <source>21. Running a long script fails while installing a library</source>
+        </trans-unit><trans-unit id="363" translate="yes" xml:space="preserve">
+          <source>Running a long running external script session and having the dbo in parallel trying to install a library on a different database can terminate the script.</source>
+        </trans-unit><trans-unit id="364" translate="yes" xml:space="preserve">
+          <source>For example, running this external script against master:</source>
+        </trans-unit><trans-unit id="365" translate="yes" xml:space="preserve">
+          <source>While the dbo in parallel installs a library in LibraryManagementFunctional:</source>
+        </trans-unit><trans-unit id="366" translate="yes" xml:space="preserve">
+          <source>The previous long running external script against master will terminate with the following error message:</source>
+        </trans-unit><trans-unit id="367" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>A 'R' script error occurred during execution of 'sp_execute_external_script' with HRESULT 0x800704d4.<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="368" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Workaround<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="369" translate="yes" xml:space="preserve">
+          <source>Don’t run the library install in parallel to the long-running query.</source>
+        </trans-unit><trans-unit id="370" translate="yes" xml:space="preserve">
+          <source>Or rerun the long running query after the installation is complete.</source>
+        </trans-unit><trans-unit id="371" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to:<ept id="p1">**</ept> SQL Server 2019 on Linux &amp; Big Data Clusters only.</source>
+        </trans-unit><trans-unit id="372" translate="yes" xml:space="preserve">
+          <source>Python script execution issues</source>
+        </trans-unit><trans-unit id="373" translate="yes" xml:space="preserve">
+          <source>This section contains known issues that are specific to running Python on SQL Server, as well as issues that are related to the Python packages published by Microsoft, including <bpt id="p1">[</bpt>revoscalepy<ept id="p1">](https://docs.microsoft.com/r-server/python-reference/revoscalepy/revoscalepy-package)</ept> and <bpt id="p2">[</bpt>microsoftml<ept id="p2">](https://docs.microsoft.com/r-server/python-reference/microsoftml/microsoftml-package)</ept>.</source>
+        </trans-unit><trans-unit id="374" translate="yes" xml:space="preserve">
+          <source>1. Call to pretrained model fails if path to model is too long</source>
+        </trans-unit><trans-unit id="375" translate="yes" xml:space="preserve">
+          <source>If you installed the pretrained models in an early release of SQL Server 2017, the complete path to the trained model file might be too long for Python to read.</source>
+        </trans-unit><trans-unit id="376" translate="yes" xml:space="preserve">
+          <source>This limitation is fixed in a later service release.</source>
+        </trans-unit><trans-unit id="377" translate="yes" xml:space="preserve">
+          <source>There are several potential workarounds:</source>
+        </trans-unit><trans-unit id="378" translate="yes" xml:space="preserve">
+          <source>When you install the pretrained models, choose a custom location.</source>
+        </trans-unit><trans-unit id="379" translate="yes" xml:space="preserve">
+          <source>If possible, install the SQL Server instance under a custom installation path with a shorter path, such as C:\SQL\MSSQL14.MSSQLSERVER.</source>
+        </trans-unit><trans-unit id="380" translate="yes" xml:space="preserve">
+          <source>Use the Windows utility <bpt id="p1">[</bpt>Fsutil<ept id="p1">](https://technet.microsoft.com/library/cc788097(v=ws.11).aspx)</ept> to create a hard link that maps the model file to a shorter path.</source>
+        </trans-unit><trans-unit id="381" translate="yes" xml:space="preserve">
+          <source>Update to the latest service release.</source>
+        </trans-unit><trans-unit id="382" translate="yes" xml:space="preserve">
+          <source>2. Error when saving serialized model to SQL Server</source>
+        </trans-unit><trans-unit id="383" translate="yes" xml:space="preserve">
+          <source>When you pass a model to a remote SQL Server instance, and try to read the binary model using the <ph id="ph1">`rx_unserialize`</ph> function in <bpt id="p1">[</bpt>revoscalepy<ept id="p1">](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/revoscalepy-package)</ept>, you might get the error:</source>
+        </trans-unit><trans-unit id="384" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>NameError: name 'rx_unserialize_model' is not defined<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="385" translate="yes" xml:space="preserve">
+          <source>This error is raised if you saved the model using a recent version of the serialization function, but the SQL Server instance where you deserialize the model does not recognize the  serialization API.</source>
+        </trans-unit><trans-unit id="386" translate="yes" xml:space="preserve">
+          <source>To resolve the issue, upgrade the SQL Server 2017 instance to CU3 or later.</source>
+        </trans-unit><trans-unit id="387" translate="yes" xml:space="preserve">
+          <source>3. Failure to initialize a varbinary variable causes an error in BxlServer</source>
+        </trans-unit><trans-unit id="388" translate="yes" xml:space="preserve">
+          <source>If you run Python code in SQL Server using <ph id="ph1">`sp_execute_external_script`</ph>, and the code has output variables of type varbinary(max), varchar(max) or similar types, the variable must be initialized or set as part of your script.</source>
+        </trans-unit><trans-unit id="389" translate="yes" xml:space="preserve">
+          <source>Otherwise, the data exchange component, BxlServer, raises an error and stops working.</source>
+        </trans-unit><trans-unit id="390" translate="yes" xml:space="preserve">
+          <source>This limitation will be fixed in an upcoming service release.</source>
+        </trans-unit><trans-unit id="391" translate="yes" xml:space="preserve">
+          <source>As a workaround, make sure that the variable is initialized within the Python script.</source>
+        </trans-unit><trans-unit id="392" translate="yes" xml:space="preserve">
+          <source>Any valid value can be used, as in the following examples:</source>
+        </trans-unit><trans-unit id="393" translate="yes" xml:space="preserve">
+          <source>4. Telemetry warning on successful execution of Python code</source>
+        </trans-unit><trans-unit id="394" translate="yes" xml:space="preserve">
+          <source>Beginning with SQL Server 2017 CU2, the following message might appear even if Python code otherwise runs successfully:</source>
+        </trans-unit><trans-unit id="395" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>STDERR message(s) from external script:<ept id="p1">*</ept><ph id="ph1">
+</ph><bpt id="p2">*</bpt>~PYTHON_SERVICES\lib\site-packages\revoscalepy\utils\RxTelemetryLogger<ept id="p2">*</ept><ph id="ph2">
+</ph><bpt id="p3">*</bpt>SyntaxWarning: telemetry_state is used prior to global declaration<ept id="p3">*</ept></source>
+        </trans-unit><trans-unit id="396" translate="yes" xml:space="preserve">
+          <source>This issue has been fixed in SQL Server 2017 Cumulative Update 3 (CU3).</source>
+        </trans-unit><trans-unit id="397" translate="yes" xml:space="preserve">
+          <source>5. Numeric, decimal and money data types not supported</source>
+        </trans-unit><trans-unit id="398" translate="yes" xml:space="preserve">
+          <source>Beginning with SQL Server 2017 Cumulative Update 12 (CU12), numeric, decimal and money data types in WITH RESULT SETS are unsupported when using Python with <ph id="ph1">`sp_execute_external_script`</ph>.</source>
+        </trans-unit><trans-unit id="399" translate="yes" xml:space="preserve">
+          <source>The following messages might appear:</source>
+        </trans-unit><trans-unit id="400" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>[Code: 39004, SQL State: S1000]  A 'Python' script error occurred during execution of'sp_execute_external_script' with HRESULT 0x80004004.<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="401" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>[Code: 39019, SQL State: S1000]  An external script error occurred:<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="402" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>SqlSatelliteCall error: Unsupported type in output schema. Supported types: bit, smallint, int, datetime, smallmoney, real and float. char, varchar are partially supported.<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="403" translate="yes" xml:space="preserve">
+          <source>This has been fixed in SQL Server 2017 Cumulative Update 14 (CU14).</source>
+        </trans-unit><trans-unit id="404" translate="yes" xml:space="preserve">
+          <source>6. Bad interpreter error when installing Python packages with pip on Linux</source>
+        </trans-unit><trans-unit id="405" translate="yes" xml:space="preserve">
+          <source>On SQL Server 2019, if you try to use <bpt id="p1">**</bpt>pip<ept id="p1">**</ept>.</source>
+        </trans-unit><trans-unit id="406" translate="yes" xml:space="preserve">
+          <source>For example:</source>
+        </trans-unit><trans-unit id="407" translate="yes" xml:space="preserve">
+          <source>You will then get this error:</source>
+        </trans-unit><trans-unit id="408" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>bash: /opt/mssql/mlservices/runtime/python/bin/pip: /opt/microsoft/mlserver/9.4.7/bin/python/python: bad interpreter: No such file or directory<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="409" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Workaround<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="410" translate="yes" xml:space="preserve">
+          <source>Install <bpt id="p1">**</bpt>pip<ept id="p1">**</ept> from the <bpt id="p2">[</bpt>Python Package Authority (PyPA)<ept id="p2">](https://www.pypa.io)</ept>:</source>
+        </trans-unit><trans-unit id="411" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Recommendation<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="412" translate="yes" xml:space="preserve">
+          <source>See <bpt id="p1">[</bpt>Install Python packages with sqlmlutils<ept id="p1">](package-management/install-additional-python-packages-on-sql-server.md)</ept>.</source>
+        </trans-unit><trans-unit id="413" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to:<ept id="p1">**</ept> SQL Server 2019 on Linux</source>
+        </trans-unit><trans-unit id="414" translate="yes" xml:space="preserve">
+          <source>7. Unable to install Python packages using pip after installing SQL Server 2019 on Windows</source>
+        </trans-unit><trans-unit id="415" translate="yes" xml:space="preserve">
+          <source>After installing SQL Server 2019 on Windows, attempting to install a python package via <bpt id="p1">**</bpt>pip<ept id="p1">**</ept> from a DOS command line will fail.</source>
+        </trans-unit><trans-unit id="416" translate="yes" xml:space="preserve">
+          <source>For example:</source>
+        </trans-unit><trans-unit id="417" translate="yes" xml:space="preserve">
+          <source>This will return the following error:</source>
+        </trans-unit><trans-unit id="418" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">*</bpt>pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.<ept id="p1">*</ept></source>
+        </trans-unit><trans-unit id="419" translate="yes" xml:space="preserve">
+          <source>This is a problem specific to the Anaconda package.</source>
+        </trans-unit><trans-unit id="420" translate="yes" xml:space="preserve">
+          <source>It will be fixed in an upcoming service release.</source>
+        </trans-unit><trans-unit id="421" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Workaround<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="422" translate="yes" xml:space="preserve">
+          <source>Copy the following files:</source>
+        </trans-unit><trans-unit id="423" translate="yes" xml:space="preserve">
+          <source>from the folder</source>
+        </trans-unit><trans-unit id="424" translate="yes" xml:space="preserve">
+          <source>to the folder</source>
+        </trans-unit><trans-unit id="425" translate="yes" xml:space="preserve">
+          <source>Then open a new DOS command shell prompt.</source>
+        </trans-unit><trans-unit id="426" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to:<ept id="p1">**</ept> SQL Server 2019 on Windows</source>
+        </trans-unit><trans-unit id="427" translate="yes" xml:space="preserve">
+          <source>8. Error when using <ph id="ph1">`sp_execute_external_script`</ph> without <ph id="ph2">`libc++abo.so`</ph> on Linux</source>
+        </trans-unit><trans-unit id="428" translate="yes" xml:space="preserve">
+          <source>On a clean Linux machine that does not have <ph id="ph1">`libc++abi.so`</ph> installed, running a <ph id="ph2">`sp_execute_external_script`</ph> (SPEES) query fails with a "No such file or directory" error.</source>
+        </trans-unit><trans-unit id="429" translate="yes" xml:space="preserve">
+          <source>For example:</source>
+        </trans-unit><trans-unit id="430" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Workaround<ept id="p1">**</ept></source>
+        </trans-unit><trans-unit id="431" translate="yes" xml:space="preserve">
+          <source>Run the following command:</source>
+        </trans-unit><trans-unit id="432" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">**</bpt>Applies to:<ept id="p1">**</ept> SQL Server 2019 on Linux</source>
+        </trans-unit><trans-unit id="433" translate="yes" xml:space="preserve">
+          <source>Revolution R Enterprise and Microsoft R Open</source>
+        </trans-unit><trans-unit id="434" translate="yes" xml:space="preserve">
+          <source>This section lists issues specific to R connectivity, development, and performance tools that are provided by Revolution Analytics.</source>
+        </trans-unit><trans-unit id="435" translate="yes" xml:space="preserve">
+          <source>These tools were provided in earlier pre-release versions of <ph id="ph1">[!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]</ph>.</source>
+        </trans-unit><trans-unit id="436" translate="yes" xml:space="preserve">
+          <source>In general, we recommend that you uninstall these previous versions and install the latest version of SQL Server or Microsoft R Server.</source>
+        </trans-unit><trans-unit id="437" translate="yes" xml:space="preserve">
+          <source>1. Revolution R Enterprise is not supported</source>
+        </trans-unit><trans-unit id="438" translate="yes" xml:space="preserve">
+          <source>Installing Revolution R Enterprise side by side with any version of <ph id="ph1">[!INCLUDE[rsql_productname_md](../includes/rsql-productname-md.md)]</ph> is not supported.</source>
+        </trans-unit><trans-unit id="439" translate="yes" xml:space="preserve">
+          <source>If you have an existing license for Revolution R Enterprise, you must put it on a separate computer from both the <ph id="ph1">[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]</ph> instance and any workstation that you want to use to connect to the <ph id="ph2">[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]</ph> instance.</source>
+        </trans-unit><trans-unit id="440" translate="yes" xml:space="preserve">
+          <source>Some pre-release versions of <ph id="ph1">[!INCLUDE[rsql_productname](../includes/rsql-productname-md.md)]</ph> included an R development environment for Windows that was created by Revolution Analytics.</source>
+        </trans-unit><trans-unit id="441" translate="yes" xml:space="preserve">
+          <source>This tool is no longer provided, and is not supported.</source>
+        </trans-unit><trans-unit id="442" translate="yes" xml:space="preserve">
+          <source>For compatibility with <ph id="ph1">[!INCLUDE[rsql_productname](../includes/rsql-productname-md.md)]</ph>, we recommend that you install Microsoft R Client instead.</source>
+        </trans-unit><trans-unit id="443" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>R Tools for Visual Studio<ept id="p1">](https://marketplace.visualstudio.com/items?itemName=MikhailArkhipov007.RTVS2019)</ept> and <bpt id="p2">[</bpt>Visual Studio Code<ept id="p2">](https://code.visualstudio.com/)</ept> also supports Microsoft R solutions.</source>
+        </trans-unit><trans-unit id="444" translate="yes" xml:space="preserve">
+          <source>2. Compatibility issues with SQLite ODBC driver and RevoScaleR</source>
+        </trans-unit><trans-unit id="445" translate="yes" xml:space="preserve">
+          <source>Revision 0.92 of the SQLite ODBC driver is incompatible with RevoScaleR.</source>
+        </trans-unit><trans-unit id="446" translate="yes" xml:space="preserve">
+          <source>Revisions 0.88-0.91 and 0.93 and later are known to be compatible.</source>
+        </trans-unit><trans-unit id="447" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="448" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Troubleshooting machine learning in SQL Server<ept id="p1">](machine-learning-troubleshooting-faq.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

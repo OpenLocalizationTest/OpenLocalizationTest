@@ -1,0 +1,37 @@
+<?xml version="1.0"?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd"><file datatype="xml" original="firewall-configuration.md" source-language="en-US" target-language="en-US"><header><tool tool-id="mdxliff" tool-name="mdxliff" tool-version="1.0-0c45fb3" tool-company="Microsoft" /><xliffext:skl_file_name xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13cc55f68a1134fee6477c52182ad66b8705e363296.skl</xliffext:skl_file_name><xliffext:version xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">1.2</xliffext:version><xliffext:ms.openlocfilehash xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">c55f68a1134fee6477c52182ad66b8705e363296</xliffext:ms.openlocfilehash><xliffext:ms.sourcegitcommit xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">9e8b99b7-5dd1-4f94-ba72-fb306822a13c</xliffext:ms.sourcegitcommit><xliffext:ms.lasthandoff xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">02/27/2020</xliffext:ms.lasthandoff><xliffext:ms.openlocfilepath xmlns:xliffext="urn:microsoft:content:schema:xliffextensions">docs\advanced-analytics\security\firewall-configuration.md</xliffext:ms.openlocfilepath></header><body><group id="content" extype="content"><trans-unit id="101" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>Firewall configuration</source>
+        </trans-unit><trans-unit id="102" translate="yes" xml:space="preserve" restype="x-metadata">
+          <source>How to configure the firewall for outbound connections from SQL Server Machine Learning Services.</source>
+        </trans-unit><trans-unit id="103" translate="yes" xml:space="preserve">
+          <source>Firewall configuration for SQL Server Machine Learning Services</source>
+        </trans-unit><trans-unit id="104" translate="yes" xml:space="preserve">
+          <source>This article lists firewall configuration considerations that the administrator or architect should bear in mind when using machine learning services.</source>
+        </trans-unit><trans-unit id="105" translate="yes" xml:space="preserve">
+          <source>Default firewall rules</source>
+        </trans-unit><trans-unit id="106" translate="yes" xml:space="preserve">
+          <source>By default, the SQL Server Setup disables outbound connections by creating firewall rules.</source>
+        </trans-unit><trans-unit id="107" translate="yes" xml:space="preserve">
+          <source>In SQL Server 2016 and 2017, these rules are based on local user accounts, where Setup created one outbound rule for <bpt id="p1">**</bpt>SQLRUserGroup<ept id="p1">**</ept> that denied network access to its members (each worker account was listed as a local principle subject to the rule.</source>
+        </trans-unit><trans-unit id="108" translate="yes" xml:space="preserve">
+          <source>For more information about SQLRUserGroup, see <bpt id="p1">[</bpt>Security overview for the extensibility framework in SQL Server Machine Learning Services<ept id="p1">](../../advanced-analytics/concepts/security.md#sqlrusergroup)</ept>.</source>
+        </trans-unit><trans-unit id="109" translate="yes" xml:space="preserve">
+          <source>In SQL Server 2019, as part of the move to AppContainers, there are new firewall rules based on AppContainer SIDs: one for each of the 20 AppContainers created by SQL Server Setup.</source>
+        </trans-unit><trans-unit id="110" translate="yes" xml:space="preserve">
+          <source>Naming conventions for the firewall rule name are <bpt id="p1">**</bpt>Block network access for AppContainer-00 in SQL Server instance MSSQLSERVER<ept id="p1">**</ept>, where 00 is the number of the AppContainer (00-20 by default), and MSSQLSERVER is the name of the SQL Server instance.</source>
+        </trans-unit><trans-unit id="111" translate="yes" xml:space="preserve">
+          <source>If network calls are required, you can disable the outbound rules in Windows Firewall.</source>
+        </trans-unit><trans-unit id="112" translate="yes" xml:space="preserve">
+          <source>Restrict network access</source>
+        </trans-unit><trans-unit id="113" translate="yes" xml:space="preserve">
+          <source>In a default installation, a Windows firewall rule is used to block all outbound network access from external runtime processes.</source>
+        </trans-unit><trans-unit id="114" translate="yes" xml:space="preserve">
+          <source>Firewall rules should be created to prevent the external runtime processes from downloading packages or from making other network calls that could potentially be malicious.</source>
+        </trans-unit><trans-unit id="115" translate="yes" xml:space="preserve">
+          <source>If you are using a different firewall program, you can also create rules to block outbound network connection for external runtimes, by setting rules for the local user accounts or for the group represented by the user account pool.</source>
+        </trans-unit><trans-unit id="116" translate="yes" xml:space="preserve">
+          <source>We strongly recommend that you turn on Windows Firewall (or another firewall of your choice) to prevent unrestricted network access by the R or Python runtimes.</source>
+        </trans-unit><trans-unit id="117" translate="yes" xml:space="preserve">
+          <source>Next steps</source>
+        </trans-unit><trans-unit id="118" translate="yes" xml:space="preserve">
+          <source><bpt id="p1">[</bpt>Configure Windows firewall for in-bound connections<ept id="p1">](../../database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access.md)</ept></source>
+        </trans-unit></group></body></file></xliff>

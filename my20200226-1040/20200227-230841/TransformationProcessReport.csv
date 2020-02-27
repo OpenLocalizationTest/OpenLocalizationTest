@@ -1,0 +1,272 @@
+docs\advanced-analytics\index.yml,Failed,Failed - Exception Occured - '"C:\Program Files\Git\cmd\git.exe" fetch' failed in directory 'C:\ol\2gc970c\0' with exit code 128: 
+STDOUT:'
+'
+STDERR:
+'remote: Repository not found.
+fatal: repository 'https://4eb600a564be767550661bef00337403d54a292d@github.com/MicrosoftDocs/schemas/' not found
+
+'
+docs\advanced-analytics\install\media\2017setup-installation-page-mlsvr.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\media\ml-solution-development-process.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\python-tutorial-elbow-graph.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\media\index\logo_java.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\data-science-scenarios-and-solution-templates.md,Succeeded,Successful
+docs\advanced-analytics\install\media\cumulative-update-feature-selection.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\install\media\2019offline-download-tile.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\r\upgrade-and-installation-faq-sql-server-r-services.md,Succeeded,Successful
+docs\advanced-analytics\install\media\2017setup-features-page-mlsvr-rpy.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\r\media\remote-sqlcc-from-r2.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\quickstart-r-create-script.md,Succeeded,Successful
+docs\advanced-analytics\package-management\r-package-information.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\select-rtestdata.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\rsql-devtut-tipamtfareamt.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\data-collection-ml-troubleshooting-process.md,Succeeded,Successful
+docs\advanced-analytics\r\ref-r-olapr.md,Succeeded,Successful
+docs\advanced-analytics\install\media\sql-15-failoverclusterinstall-sqlmls-small.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\python\ref-py-revoscalepy.md,Succeeded,Successful
+docs\advanced-analytics\r\operationalizing-your-r-code.md,Succeeded,Successful
+docs\advanced-analytics\install\sql-r-services-windows-install.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\sqldev-py5-train-and-save-a-model-using-t-sql.md,Succeeded,Successful
+docs\advanced-analytics\media\index\video.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\quickstart-r-train-score-model.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\python-clustering-model-build.md,Succeeded,Successful
+docs\advanced-analytics\administration\media\dmv-resource-pools.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\python\media\jupyter-notebook-local-revo.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\r\media\2017setup-features-page-mls-rpy.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\r-data-generated-output.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\r\set-up-a-data-science-client.md,Succeeded,Successful
+docs\advanced-analytics\security\media\implied-auth-login4.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\python\media\remote-sqlcc-from-python3.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\sqldev-python-sample-plot.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\security\firewall-configuration.md,Succeeded,Successful
+docs\advanced-analytics\real-time-scoring.md,Succeeded,Successful
+docs\advanced-analytics\r\media\2016-setup-installation-rsvcs.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\install\media\2016-setup-installation-rsvcs.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\deepdive-data-science-deep-dive-using-the-revoscaler-packages.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\demo-data-airlinedemo-in-sql.md,Succeeded,Successful
+docs\advanced-analytics\machine-learning-troubleshooting-faq.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\r-predict-stopping-distance-resultset.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\r\save-and-load-r-objects-from-sql-server-using-odbc.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\use-python-revoscalepy-to-create-model.md,Succeeded,Successful
+docs\advanced-analytics\python\setup-python-client-tools-sql.md,Succeeded,Successful
+docs\advanced-analytics\r\ref-r-revoscaler.md,Succeeded,Successful
+docs\advanced-analytics\install\media\2019setup-features-page-mlsvr-rpy.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\sqldev-python-newcolumn.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\install\sql-pretrained-models-install.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\train-score-using-python-NB-model-results.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\media\create-workflows-using-r-in-sql-server\ssis-exec-predictions.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\python-ski-rental-linear-regression.md,Succeeded,Successful
+docs\advanced-analytics\package-management\install-python-packages-standard-tools.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\deepdive-move-data-between-sql-server-and-xdf-file.md,Succeeded,Successful
+docs\advanced-analytics\r\creating-multiple-models-using-rxexecby.md,Succeeded,Successful
+docs\advanced-analytics\r\using-data-from-olap-cubes-in-r.md,Succeeded,Successful
+docs\advanced-analytics\administration\media\dmv-active-sessions.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\rsql-basictut-hello1code.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\administration\create-external-resource-pool.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\sqldev-py4-create-data-features-using-t-sql.md,Succeeded,Successful
+docs\advanced-analytics\r\sql-server-configuration-r-services.md,Succeeded,Successful
+docs\advanced-analytics\install\media\2016setup-rsvcs-features.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\deepdive-create-sql-server-data-objects-using-rxsqlserverdata.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\deepdive-create-models.md,Succeeded,Successful
+docs\advanced-analytics\install\upgrade-r-and-python.md,Succeeded,Successful
+docs\advanced-analytics\python\media\ml-svcs-license-python.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\administration\scale-concurrent-execution-external-scripts.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\quickstart-r-working-input-outputs-results-1.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\administration\extended-events-predict-tsql.md,Succeeded,Successful
+docs\advanced-analytics\r\creating-workflows-that-use-r-in-sql-server.md,Succeeded,Successful
+docs\advanced-analytics\package-management\package-install-uninstall-and-sync.md,Succeeded,Successful
+docs\advanced-analytics\r-script-execution-errors.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\quickstart-python-train-score-model.md,Succeeded,Successful
+docs\advanced-analytics\r\how-to-create-a-stored-procedure-using-sqlrutils.md,Succeeded,Successful
+docs\advanced-analytics\administration\media\dmv-installed-packages-python.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\install\media\2019setup-installation-page-mlsvcs.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\package-management\python-package-information.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\python-clustering-model-prepare-data.md,Succeeded,Successful
+docs\advanced-analytics\security\media\implied-auth-login1.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\rsql-installed-packages.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\security\media\implied-auth-login5.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\rsql-e2e-rocplot.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\concepts\extension-r.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\deepdive-define-and-use-compute-contexts.md,Succeeded,Successful
+docs\advanced-analytics\r\media\sqlmls-r-client-revo.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\walkthrough-view-and-summarize-data-using-r.md,Succeeded,Successful
+docs\advanced-analytics\security\media\implied-auth-python2.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\sql-native-scoring.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\sql-server-python-tutorials.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\sqldev-train-and-save-a-model-using-t-sql.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\sqldev-explore-and-visualize-the-data.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\deepdive-query-and-modify-the-sql-server-data.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\python-output-pythontestdata.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\python\media\script-in-db-python2.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\deepdive-score-new-data.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\sql-server-r-tutorials.md,Succeeded,Successful
+docs\advanced-analytics\r\r-libraries-and-data-types.md,Succeeded,Successful
+docs\advanced-analytics\media\create-workflows-using-r-in-sql-server\ssis-exec-rxlinmod.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\install\sql-ml-cab-downloads.md,Succeeded,Successful
+docs\advanced-analytics\r\media\2016-setup-installation-rsvr.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\rsql-basictut-hello1.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\demo-data-nyctaxi-in-sql.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\python-ski-rental-linear-regression-deploy-model.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\python-package-list.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\security\user-permission.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\python-clustering-model-deploy.md,Succeeded,Successful
+docs\advanced-analytics\r\converting-r-code-for-use-in-sql-server.md,Succeeded,Successful
+docs\advanced-analytics\administration\monitor-sql-server-machine-learning-services-using-custom-reports-management-studio.md,Succeeded,Successful
+docs\advanced-analytics\install\media\2019setup-features-page-mls-rpy.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\deepdive-create-new-sql-server-table-using-rxdatastep.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\r-output-rtestdata.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\walkthrough-create-graphs-and-plots-using-r.md,Succeeded,Successful
+docs\advanced-analytics\install\media\2016-setup-installation-rsvr.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\r\media\2017setup-python-license.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\administration\media\dmv-memory-configuration.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\rsql-devtut-tippedornot.jpg,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\media\generic-architecture-windows.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\install\sql-machine-learning-services-windows-install.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\rsql-basictut-listofmodels.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\sqldev-python-browsetables1.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\media\generic-architecture-linux.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\toc.yml,Failed,Failed - Exception Occured - '"C:\Program Files\Git\cmd\git.exe" fetch' failed in directory 'C:\ol\2gc970c\1' with exit code 128: 
+STDOUT:'
+'
+STDERR:
+'remote: Repository not found.
+fatal: repository 'https://4eb600a564be767550661bef00337403d54a292d@github.com/MicrosoftDocs/schemas/' not found
+
+'
+docs\advanced-analytics\install\sql-ml-component-install-without-internet-access.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\python-ski-rental-linear-regression-train-model.md,Succeeded,Successful
+docs\advanced-analytics\what-s-new-in-sql-server-machine-learning-services.md,Succeeded,Successful
+docs\advanced-analytics\package-management\install-r-packages-with-revoscaler.md,Succeeded,Successful
+docs\advanced-analytics\install\sql-machine-learning-azure-virtual-machine.md,Succeeded,Successful
+docs\advanced-analytics\media\ml-service-value-add.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\sqldev-create-data-features-using-t-sql.md,Succeeded,Successful
+docs\advanced-analytics\security\create-a-login-for-sqlrusergroup.md,Succeeded,Successful
+docs\advanced-analytics\install\media\2017setup-features-page-mls-rpy.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\walkthrough-data-science-end-to-end-walkthrough.md,Succeeded,Successful
+docs\advanced-analytics\package-management\r-package-how-to-enable-or-disable.md,Succeeded,Successful
+docs\advanced-analytics\r\using-r-code-profiling-functions.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\rsql-sue-scatterplotresults.jpg,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\python\media\data-scientist-python-workflow.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\python\media\data-scientist-python-client-library.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\deepdive-visualize-sql-server-data-using-r.md,Succeeded,Successful
+docs\advanced-analytics\r\media\rsql-devtut-browsetables.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\deepdive-transform-data-using-r.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\python-tutorial-prediction-results.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\sqldev-py6-operationalize-the-model.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\r-predict-am-resultset.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\r\ref-r-sqlrutils.md,Succeeded,Successful
+docs\advanced-analytics\r\sql-server-r-services-performance-tuning.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\python-clustering-model.md,Succeeded,Successful
+docs\advanced-analytics\install\sql-machine-learning-standalone-windows-install.md,Succeeded,Successful
+docs\advanced-analytics\security\media\implied-auth-login2.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\administration\media\dmv-memory-usage.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\media\create-workflows-using-r-in-sql-server\ssis-exec-sql-insert-data.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\security\media\implied-auth-rsql.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\install\media\2019setup-installation-page-mlsvr.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\install\media\offline-download-tile.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\quickstart-r-functions.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\r-tutorial-create-models-per-partition.md,Succeeded,Successful
+docs\advanced-analytics\install\sql-server-machine-learning-services-2019.md,Succeeded,Successful
+docs\advanced-analytics\r\how-to-do-realtime-scoring.md,Succeeded,Successful
+docs\advanced-analytics\python\media\jupyter-notebook-python-registration.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\administration\media\dmv-settings-and-configuration.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\package-management\tips-for-using-r-packages.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\quickstart-python-data-structures.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\rsql-basictut-getsamedatar.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\r\how-to-create-mdx-queries-using-olapr.md,Succeeded,Successful
+docs\advanced-analytics\r\media\rsql-keyscenario1.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\nyctaxidatatablesummary.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\sqldev-py3-explore-and-visualize-the-data.md,Succeeded,Successful
+docs\advanced-analytics\r\media\2016setup-rserver-features.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\concepts\extension-python.md,Succeeded,Successful
+docs\advanced-analytics\r\media\2016setup-rsvcs-features.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\walkthrough-build-and-save-the-model.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\python-ski-rental-linear-regression-prepare-data.md,Succeeded,Successful
+docs\advanced-analytics\python\media\ml-svcs-features-python-highlight.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\concepts\extensibility-framework.md,Succeeded,Successful
+docs\advanced-analytics\install\media\mls-921-installer-start.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\python\media\data-scientist-python-autorest.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\install\media\2017setup-installation-page-mlsvcs.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\walkthrough-deploy-and-use-the-model.md,Succeeded,Successful
+docs\advanced-analytics\package-management\install-additional-python-packages-on-sql-server.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\rsql-devtut-tipamtbyfareamt.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\package-management\install-additional-r-packages-on-sql-server.md,Succeeded,Successful
+docs\advanced-analytics\concepts\security.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\rsql-e2e-ssms-newobjects.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\common-issues-external-script-execution.md,Succeeded,Successful
+docs\advanced-analytics\install\media\mls-931-installer-mssql13.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\python\media\sqlmls-python-client-revo.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\administration\monitor-sql-server-machine-learning-services-using-dynamic-management-views.md,Succeeded,Successful
+docs\advanced-analytics\media\script-in-db-python2.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\r\media\rsql-keyscenario2.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\r\ref-r-microsoftml.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\rsql-sue-histogramresults.jpg,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\deepdive-create-and-run-r-scripts.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\select-pythontestdata.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\rsql-e2e-mapplot.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\demo-data-iris-in-sql.md,Succeeded,Successful
+docs\advanced-analytics\administration\media\dmv-installed-packages-r.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\r-working-input-outputs-results-1.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\security\media\implied-auth-login3.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\r\media\script_in-db-r.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\what-is-sql-server-machine-learning.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\deepdive-load-data-into-memory-using-rximport.md,Succeeded,Successful
+docs\advanced-analytics\r\sql-server-r-services.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\rsql-e2e-performanceplot.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\rsql-e2e-rxhistogramresult.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\quickstart-python-functions.md,Succeeded,Successful
+docs\advanced-analytics\r\r-and-data-optimization-r-services.md,Succeeded,Successful
+docs\advanced-analytics\media\index\logo_R.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\import-airlinedemosmall.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\quickstart-r-data-types-and-objects.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\quickstart-r-working-input-outputs-results-3.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\package-management\install-r-packages-with-tsql.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\sqldev-in-database-r-for-sql-developers.md,Succeeded,Successful
+docs\advanced-analytics\python\ref-py-microsoftml.md,Succeeded,Successful
+docs\advanced-analytics\media\index\logo_python.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\r\performance-case-study-r-services.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\deepdive-perform-chunking-analysis-using-rxdatastep.md,Succeeded,Successful
+docs\advanced-analytics\r\r-server-standalone.md,Succeeded,Successful
+docs\advanced-analytics\administration\extended-events.md,Succeeded,Successful
+docs\advanced-analytics\install\media\2016setup-rserver-features.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\rsql-devtut-filelist.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\package-management\install-r-packages-standard-tools.md,Succeeded,Successful
+docs\advanced-analytics\python\media\ready-to-install-python.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\sqldev-in-database-python-for-sql-developers.md,Succeeded,Successful
+docs\advanced-analytics\r\media\2017setup-installation-page-mlsvcs.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\r-train-model-with-additional-output.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\administration\media\dmv-execution-statistics.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\install\media\rclient-rgui-r-prompt.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\r\media\configure-the-installation.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\rsql-basictut-plotresult-small.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\r\media\rclient-setup-scatterplot.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\python\media\powershell-python-exe.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\rsql-devtut-browsetables.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\quickstart-python-create-script.md,Succeeded,Successful
+docs\advanced-analytics\package-management\create-a-local-package-repository-using-minicran.md,Succeeded,Successful
+docs\advanced-analytics\r\data-exploration-and-predictive-modeling-with-r.md,Succeeded,Successful
+docs\advanced-analytics\administration\resource-governor.md,Succeeded,Successful
+docs\advanced-analytics\connect\loopback-connection.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\sqldev-python-filelist.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\deepdive-work-with-sql-server-data-using-r.md,Succeeded,Successful
+docs\advanced-analytics\security\sql-server-launchpad-service-account.md,Succeeded,Successful
+docs\advanced-analytics\media\create-workflows-using-r-in-sql-server\ssis-exec-F5-run.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\sqldev-operationalize-the-model.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\deepdive-custom-r-functions-using-rxexec.md,Succeeded,Successful
+docs\advanced-analytics\install\media\2017setup-python-license.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\r\media\2017setup-features-page-mlsvr-rpy.PNG,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\rsql-basictut-scoringresults-smalldata.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\administration\media\dmv-performance-counters.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\walkthrough-create-data-features.md,Succeeded,Successful
+docs\advanced-analytics\known-issues-for-sql-server-machine-learning-services.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\rsql-sue-complex-histogram.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\r-verify-package-install.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\python\media\jupyter-notebook-new-p3.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\python\python-libraries-and-data-types.md,Succeeded,Successful
+docs\advanced-analytics\python\media\2017setup-installation-page-mlsvcs.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\install\sql-ml-component-commandline-install.md,Succeeded,Successful
+docs\advanced-analytics\tutorials\media\rslq-basictut-coefficients.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\python-data-generated-output.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\tutorials\media\rsql-e2e-psscriptresults.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\python\media\jupyter-notebook-scatterplot.png,Skipped,Skipped - No tranformation required
+docs\advanced-analytics\r\media\2017setup-installation-page-mlsvr.png,Skipped,Skipped - No tranformation required
